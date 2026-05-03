@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet">
+  <rect width="1600" height="1000" fill="#080808"/>
+
+  <!-- Section label -->
+  <text x="800" y="172" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" letter-spacing="14" fill="#00c8ff" font-weight="600">PROGRESS</text>
+
+  <!-- Big title -->
+  <text x="800" y="320" text-anchor="middle" font-family="'Arial Black', 'Helvetica Neue', sans-serif" font-size="160" font-weight="900" fill="#ffffff" letter-spacing="8">10 STEPS</text>
+
+  <!-- Step numbers above dots -->
+  <g font-family="'Arial Black', sans-serif" font-size="42" font-weight="900" text-anchor="middle">
+    <text x="170" y="490" fill="#00c8ff">01</text>
+    <text x="310" y="490" fill="#00c8ff">02</text>
+    <text x="450" y="490" fill="#00c8ff">03</text>
+    <text x="590" y="490" fill="#00c8ff">04</text>
+    <text x="730" y="490" fill="#00c8ff">05</text>
+    <text x="870" y="490" fill="#3a3a3a">06</text>
+    <text x="1010" y="490" fill="#3a3a3a">07</text>
+    <text x="1150" y="490" fill="#3a3a3a">08</text>
+    <text x="1290" y="490" fill="#3a3a3a">09</text>
+    <text x="1430" y="490" fill="#3a3a3a">10</text>
+  </g>
+
+  <!-- Connecting line behind dots -->
+  <line x1="170" y1="600" x2="1430" y2="600" stroke="#333333" stroke-width="3"/>
+
+  <!-- Dots: 5 completed (cyan), 5 upcoming (hollow) -->
+  <g>
+    <circle cx="170" cy="600" r="44" fill="#00c8ff"/>
+    <circle cx="310" cy="600" r="44" fill="#00c8ff"/>
+    <circle cx="450" cy="600" r="44" fill="#00c8ff"/>
+    <circle cx="590" cy="600" r="44" fill="#00c8ff"/>
+    <circle cx="730" cy="600" r="44" fill="#00c8ff"/>
+    <circle cx="870" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+    <circle cx="1010" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+    <circle cx="1150" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+    <circle cx="1290" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+    <circle cx="1430" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+  </g>
+
+  <!-- Stats -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif" letter-spacing="6">
+    <text x="540" y="850" text-anchor="middle" font-size="42" fill="#888888" font-weight="500">完了</text>
+    <text x="700" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#00c8ff" font-weight="900">5</text>
+    <text x="800" y="850" text-anchor="middle" font-size="42" fill="#444444">/</text>
+    <text x="940" y="850" text-anchor="middle" font-size="42" fill="#888888" font-weight="500">未着手</text>
+    <text x="1100" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#ffffff" font-weight="900">5</text>
+  </g>
+</svg>
