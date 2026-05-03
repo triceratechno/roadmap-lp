@@ -1564,7 +1564,7 @@
 
   /* ===== FUTURE SCENE (B+A) ===== */
   .future-section {
-    max-width: 760px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 0 16px;
     text-align: center;
@@ -1573,10 +1573,14 @@
     background: linear-gradient(135deg, rgba(0,200,255,0.04) 0%, rgba(0,128,255,0.08) 100%);
     border: 1px solid rgba(0,200,255,0.18);
     border-radius: 16px;
-    padding: 40px 36px;
-    margin-bottom: 40px;
+    padding: 28px;
+    margin-bottom: 28px;
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
   }
   .future-scene::before {
     content: '';
@@ -1585,6 +1589,34 @@
     width: 200px; height: 200px;
     background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
+  }
+  /* Reverse: image right, text left (Scene 2) */
+  .future-scene--reverse .future-scene-image-wrap {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .future-scene--reverse .future-scene-text-wrap {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .future-scene-image-wrap {
+    position: relative;
+    z-index: 1;
+  }
+  .future-scene-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .future-scene-text-wrap {
+    text-align: left;
+    position: relative;
+    z-index: 1;
   }
   .future-scene-eyebrow {
     font-size: 11px;
@@ -1592,11 +1624,11 @@
     color: var(--accent);
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .future-scene-text {
-    font-size: clamp(16px, 2.4vw, 20px);
-    line-height: 2.1;
+    font-size: clamp(13px, 1.5vw, 15px);
+    line-height: 2.0;
     color: var(--text);
     font-weight: 500;
     text-align: left;
@@ -1611,10 +1643,13 @@
     color: var(--white);
     font-weight: 800;
   }
+  .future-highlight-wrap {
+    text-align: center;
+    margin: 8px 0 16px;
+  }
   .future-scene-highlight {
     display: inline-block;
-    margin-top: 24px;
-    padding: 10px 20px;
+    padding: 12px 28px;
     background: rgba(245,197,24,0.08);
     border: 1px solid rgba(245,197,24,0.3);
     border-radius: 6px;
@@ -1622,8 +1657,28 @@
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    width: 100%;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    .future-scene {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 22px;
+    }
+    .future-scene--reverse .future-scene-image-wrap {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .future-scene--reverse .future-scene-text-wrap {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .future-scene-text-wrap {
+      grid-row: 2;
+    }
+    .future-scene-image-wrap {
+      grid-row: 1;
+    }
   }
   /* B+A table */
   .ba-wrap {
@@ -3115,50 +3170,59 @@
   <p>受講者のリアルなデータから描いた、<strong>購入後の世界</strong>。</p>
 
   <div class="future-section">
-    <!-- Scene 1: 内的な変化 -->
+    <!-- Scene 1: 1ヶ月後 - 内的な変化（左イラスト・右テキスト） -->
     <div class="future-scene reveal">
-      <p class="future-scene-eyebrow">🌙 &nbsp;1ヶ月後 ─ ある夜</p>
-      <p class="future-scene-text">
-        30分悩んで閉じていた、あのDAW。<br>
-        いまは、<strong>開いた瞬間に手が動き出す</strong>。<br><br>
-        「今日もこの音をいじりたい」<br>
-        ── その衝動が、毎日訪れる。<br><br>
-        頭の中で鳴っている音が、目の前で確かに形になっていく。<br>
-        少年の頃にゲームに熱中したあの感覚で、<br>
-        気づけば<em>&quot;曲を作る時間&quot;が、人生の中心に戻ってきている</em>。
-      </p>
+      <div class="future-scene-image-wrap">
+        <img class="future-scene-image" src="future-1month.jpg" alt="深夜のDTMに没頭する様子" loading="lazy">
+      </div>
+      <div class="future-scene-text-wrap">
+        <p class="future-scene-eyebrow">🌙 &nbsp;1ヶ月後 ─ ある夜</p>
+        <p class="future-scene-text">
+          30分悩んで閉じていた、あのDAW。<br>
+          いまは、<strong>開いた瞬間に手が動き出す</strong>。<br>
+          「今日もこの音をいじりたい」── その衝動が、毎日訪れる。<br>
+          頭の中の音が、目の前で確かに形になっていく。<br>
+          <em>&quot;曲を作る時間&quot;が、人生の中心に戻ってきている。</em>
+        </p>
+      </div>
     </div>
 
-    <!-- Scene 2: 外への発信 -->
-    <div class="future-scene reveal">
-      <p class="future-scene-eyebrow">🚀 &nbsp;2ヶ月後 ─ リリース日</p>
-      <p class="future-scene-text">
-        検索バーに自分の名前を打ち込むと、<br>
-        <strong>あなたのジャケットが、世界の音楽と並んで表示される</strong>。<br><br>
-        その夜、Instagramのプロフィールにリンクを貼った。<br>
-        <em>通知が、止まらない</em>。<br><br>
-        ストーリーズに自分の音源を流せる ── あの快感。<br>
-        「お前これ、作ったの？」── 友達からのリプライ。<br><br>
-        翌朝、知らない人からDMが届いている。<br>
-        <strong>「次の曲、いつリリースですか？楽しみにしてます」</strong><br><br>
-        手元には、まだ世に出ていない次の曲がある。<br>
-        <em>&quot;出すのが楽しみで眠れない夜&quot;</em>を、人生で初めて味わう。
-      </p>
+    <!-- Scene 2: 2ヶ月後 - 外への発信（右イラスト・左テキスト = reverse） -->
+    <div class="future-scene future-scene--reverse reveal">
+      <div class="future-scene-image-wrap">
+        <img class="future-scene-image" src="future-2month.jpg" alt="自分の曲が配信に並んだ瞬間の喜び" loading="lazy">
+      </div>
+      <div class="future-scene-text-wrap">
+        <p class="future-scene-eyebrow">🚀 &nbsp;2ヶ月後 ─ リリース日</p>
+        <p class="future-scene-text">
+          自分の曲が、<strong>Apple Music と Spotify に並ぶ</strong>。<br>
+          Instagramのストーリーズに音源を流せる ── <em>通知が、止まらない</em>。<br>
+          翌朝、知らない人からDMが届く。<br>
+          <strong>「次の曲、いつリリースですか？楽しみにしてます」</strong><br>
+          <em>&quot;出すのが楽しみで眠れない夜&quot;</em>を、人生で初めて味わう。
+        </p>
+      </div>
     </div>
 
-    <!-- Scene 3: ファンの誕生 -->
+    <!-- Scene 3: 3ヶ月後 - ファンの誕生（左イラスト・右テキスト） -->
     <div class="future-scene reveal">
-      <p class="future-scene-eyebrow">💌 &nbsp;3ヶ月後 ─ 朝のDM</p>
-      <p class="future-scene-text">
-        朝、スマホを開く。<br>
-        熱量のある長文メッセージが、ひとつ届いている。<br><br>
-        <strong>「あなたの楽曲が大好きで、応援したいです。<br>
-        何か、私にサポートできることはありませんか？」</strong><br><br>
-        ── 思わず、画面を二度見する。<br><br>
-        &quot;作る人&quot;から、<em>&quot;応援される人&quot;</em>へ。<br>
-        あなたの音楽に、はじめて<strong>&quot;ファン&quot;</strong>と呼べる人が現れた瞬間。<br><br>
-        3ヶ月前、DAWを開けずにいた自分は ── <em>もう、別人だ</em>。
-      </p>
+      <div class="future-scene-image-wrap">
+        <img class="future-scene-image" src="future-3month.jpg" alt="朝、ファンからのメッセージに胸を打たれる" loading="lazy">
+      </div>
+      <div class="future-scene-text-wrap">
+        <p class="future-scene-eyebrow">💌 &nbsp;3ヶ月後 ─ 朝のDM</p>
+        <p class="future-scene-text">
+          朝、長文メッセージが届いている。<br>
+          <strong>「あなたの楽曲が大好きで、応援したいです。<br>
+          何か、私にサポートできることはありませんか？」</strong><br>
+          ── 思わず、画面を二度見する。<br>
+          &quot;作る人&quot;から、<em>&quot;応援される人&quot;</em>へ。<br>
+          3ヶ月前、DAWを開けずにいた自分は ── <em>もう、別人だ</em>。
+        </p>
+      </div>
+    </div>
+
+    <div class="future-highlight-wrap">
       <span class="future-scene-highlight">✦ &nbsp;これは想像じゃない。実際の受講者が、ここまで辿り着いた道だ。 &nbsp;✦</span>
     </div>
 
