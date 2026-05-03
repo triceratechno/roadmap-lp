@@ -16,7 +16,7 @@
     <text x="590" y="490" fill="#00c8ff">04</text>
     <text x="730" y="490" fill="#00c8ff">05</text>
     <text x="870" y="490" fill="#00c8ff">06</text>
-    <text x="1010" y="490" fill="#3a3a3a">07</text>
+    <text x="1010" y="490" fill="#00c8ff">07</text>
     <text x="1150" y="490" fill="#3a3a3a">08</text>
     <text x="1290" y="490" fill="#3a3a3a">09</text>
     <text x="1430" y="490" fill="#3a3a3a">10</text>
@@ -33,7 +33,7 @@
     <circle cx="590" cy="600" r="44" fill="#00c8ff"/>
     <circle cx="730" cy="600" r="44" fill="#00c8ff"/>
     <circle cx="870" cy="600" r="44" fill="#00c8ff"/>
-    <circle cx="1010" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
+    <circle cx="1010" cy="600" r="44" fill="#00c8ff"/>
     <circle cx="1150" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
     <circle cx="1290" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
     <circle cx="1430" cy="600" r="44" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="4"/>
@@ -42,9 +42,9 @@
   <!-- Stats -->
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif" letter-spacing="6">
     <text x="540" y="850" text-anchor="middle" font-size="42" fill="#888888" font-weight="500">完了</text>
-    <text x="700" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#00c8ff" font-weight="900">6</text>
+    <text x="700" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#00c8ff" font-weight="900">7</text>
     <text x="800" y="850" text-anchor="middle" font-size="42" fill="#444444">/</text>
     <text x="940" y="850" text-anchor="middle" font-size="42" fill="#888888" font-weight="500">未着手</text>
-    <text x="1100" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#ffffff" font-weight="900">4</text>
+    <text x="1100" y="870" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="100" fill="#ffffff" font-weight="900">3</text>
   </g>
 </svg>
