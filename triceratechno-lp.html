@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース</title>
+<meta name="description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わないトリケラテクノ流ロードマップPROコース（10STEP / 30記事超 / 3ヶ月マンツーマンサポート）。">
+
+<!-- OGP / Twitter Card -->
+<meta property="og:title" content="トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース">
+<meta property="og:description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わない10STEPロードマップ＋3ヶ月マンツーマンサポート。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース">
+<meta name="twitter:description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わない10STEPロードマップ＋3ヶ月マンツーマンサポート。">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="tricera-icon.jpg">
+<link rel="apple-touch-icon" href="tricera-icon.jpg">
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -381,6 +400,15 @@
       border-top: 1px solid rgba(0,200,255,0.3);
       padding: 10px 16px;
       text-align: center;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .sticky-cta-bar.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .sticky-cta-bar a {
@@ -1612,6 +1640,11 @@
     display: block;
     box-shadow: 0 12px 32px rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+  .future-scene:hover .future-scene-image {
+    transform: scale(1.02);
+    box-shadow: 0 18px 48px rgba(0,200,255,0.18), 0 12px 32px rgba(0,0,0,0.6);
   }
   .future-scene-text-wrap {
     text-align: left;
@@ -3587,6 +3620,23 @@
   }, { threshold: 0.1 });
   reveals.forEach(r => observer.observe(r));
 
+  // Sticky CTA bar: show after scrolling past the hero (mobile only)
+  (function () {
+    const bar = document.querySelector('.sticky-cta-bar');
+    if (!bar) return;
+    const trigger = window.innerHeight * 0.7; // Show after ~70% of viewport scrolled
+    let visible = false;
+    function update() {
+      const shouldShow = window.scrollY > trigger;
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        bar.classList.toggle('visible', visible);
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
   // Note carousel
   const track = document.getElementById('noteTrack');
   const itemWidth = () => track.querySelector('.note-carousel-item').offsetWidth + 16;
@@ -3693,8 +3743,8 @@
 </script>
 
 <!-- Sticky CTA bar (mobile only) -->
-<div class="sticky-cta-bar">
-  <a href="#price">→ 今すぐ始める</a>
+<div class="sticky-cta-bar" role="complementary" aria-label="購入セクションへ">
+  <a href="#price" aria-label="価格セクションへスクロール">→ 今すぐ始める</a>
 </div>
 </body>
 </html>
