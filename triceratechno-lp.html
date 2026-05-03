@@ -680,26 +680,47 @@
 
   .pain-list li {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: center;
+    gap: 18px;
     padding: 20px 24px;
     background: var(--panel);
     border-left: 3px solid #333;
     font-size: 15px;
     color: #c2c2c2;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, transform 0.3s;
   }
 
   .pain-list li:hover {
     border-color: var(--accent);
     color: var(--text);
+    transform: translateX(2px);
   }
 
-  .pain-list li::before {
-    content: '—';
-    color: var(--muted);
+  .pain-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
     flex-shrink: 0;
-    margin-top: 2px;
+    border: 1px solid rgba(0,200,255,0.35);
+    background: #0a0a0a;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .pain-list li:hover .pain-avatar {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px rgba(0,200,255,0.25);
+  }
+
+  @media (max-width: 720px) {
+    .pain-avatar {
+      width: 52px;
+      height: 52px;
+    }
+    .pain-list li {
+      gap: 14px;
+      padding: 16px 18px;
+    }
   }
 
   /* ===== WARNING BG ===== */
@@ -2633,9 +2654,18 @@
   <p>才能でもセンスでもない。機材でもプラグインでもない。<br><strong>「正しい順番」を知らないまま作り続けているから。</strong></p>
   <p>あなたにも、心当たりはありませんか？</p>
   <ul class="pain-list">
-    <li>曲を作ってみたい。<br>でも音楽はずっと&quot;聴く専門&quot;。本当にゼロから作れるのか、不安しかない。</li>
-    <li>DJはやってきた。次は&quot;自分の曲&quot;を作りたい。<br>でも作る側は完全に初心者。何から始めればいいか分からない。</li>
-    <li>8小節のループは作れる。<br>でも、もう半年以上「完成した曲」がない。</li>
+    <li>
+      <img class="pain-avatar" src="persona-beginner.jpg" alt="完全初心者">
+      <span>曲を作ってみたい。<br>でも音楽はずっと&quot;聴く専門&quot;。本当にゼロから作れるのか、不安しかない。</span>
+    </li>
+    <li>
+      <img class="pain-avatar" src="persona-dj.jpg" alt="音楽経験ありDTM初心者">
+      <span>DJはやってきた。次は&quot;自分の曲&quot;を作りたい。<br>でも作る側は完全に初心者。何から始めればいいか分からない。</span>
+    </li>
+    <li>
+      <img class="pain-avatar" src="persona-dtm-stuck.jpg" alt="DTM経験者・未完成">
+      <span>8小節のループは作れる。<br>でも、もう半年以上「完成した曲」がない。</span>
+    </li>
   </ul>
   <p class="pain-bridge">実は、<strong>これはあなただけじゃない。</strong></p>
 </section>
