@@ -1827,9 +1827,33 @@
 
   .demo-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: stretch;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .demo-left { text-align: center; }
+  .demo-left .section-label { justify-content: center; }
+  .demo-sub { max-width: 600px; margin: 0 auto; }
+
+  .demo-bridge {
+    font-size: clamp(15px, 2vw, 17px);
+    line-height: 1.8;
+    color: var(--text);
+    text-align: center;
+    padding: 24px 28px;
+    border: 1px solid rgba(0,200,255,0.2);
+    background: rgba(0,200,255,0.03);
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  .demo-bridge strong {
+    color: var(--accent);
+    font-weight: 700;
   }
 
   .demo-left .section-label { margin-bottom: 20px; }
@@ -2736,41 +2760,7 @@
       </p>
     </div>
 
-    <ul class="demo-checklist">
-      <li class="demo-phase"><span class="demo-phase-num">1</span>ループ完成</li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP1</span>
-        <span>リファレンス分析で、迷わない制作スタート</span>
-      </li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP2-3</span>
-        <span>キック・ベース・ドラムスで楽曲の骨格を組む</span>
-      </li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP4-5</span>
-        <span>ボーカル＋メロディで楽曲の顔を決める</span>
-      </li>
-      <li class="demo-phase"><span class="demo-phase-num">2</span>アレンジ設計</li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP6-7</span>
-        <span>FX＋アレンジ構成でループ地獄から脱出する</span>
-      </li>
-      <li class="demo-phase"><span class="demo-phase-num">3</span>仕上げ</li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP8-9</span>
-        <span>ミキシング＋マスタリングでプロレベルの仕上げ</span>
-      </li>
-      <li>
-        <span class="demo-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></span>
-        <span class="step-tag">STEP10</span>
-        <span>配信申請でApple Music・Spotifyにリリース完了</span>
-      </li>
-    </ul>
+    <p class="demo-bridge">この<strong>10STEP</strong>を完走した結果が、この曲です。</p>
 
     <div class="demo-player-wrap" id="demoPlayer">
       <button class="player-btn" id="playBtn" aria-label="再生">
