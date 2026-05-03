@@ -319,6 +319,94 @@
     transform: translateY(0);
   }
 
+  /* ===== MID-PAGE MINI CTA ===== */
+  .mini-cta {
+    max-width: 620px;
+    margin: 56px auto;
+    padding: 32px 28px;
+    background: linear-gradient(135deg, rgba(0,200,255,0.05) 0%, rgba(0,128,255,0.10) 100%);
+    border: 1px solid rgba(0,200,255,0.28);
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .mini-cta-lead {
+    font-size: clamp(15px, 2vw, 17px);
+    color: var(--text);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    margin: 0 0 22px;
+    font-weight: 500;
+  }
+
+  .mini-cta-lead strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .mini-cta .buy-btn {
+    margin-top: 0;
+    font-size: 15px;
+    padding: 16px 40px;
+  }
+
+  @media (max-width: 720px) {
+    .mini-cta {
+      padding: 26px 20px;
+      margin: 40px auto;
+    }
+    .mini-cta .buy-btn {
+      font-size: 14px;
+      padding: 14px 32px;
+      width: 100%;
+    }
+  }
+
+  /* ===== STICKY MOBILE CTA BAR ===== */
+  .sticky-cta-bar {
+    display: none;
+  }
+
+  @media (max-width: 720px) {
+    .sticky-cta-bar {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(0,200,255,0.3);
+      padding: 10px 16px;
+      text-align: center;
+    }
+
+    .sticky-cta-bar a {
+      display: block;
+      background: var(--gold);
+      color: #000;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+
+    .sticky-cta-bar a:hover,
+    .sticky-cta-bar a:active {
+      background: #ffd740;
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
   .cta-ghost {
     display: inline-block;
     border: 1px solid rgba(0,200,255,0.5);
@@ -2818,6 +2906,12 @@
       <p>内容が合わないと感じたら7日以内に申請で全額返金。<br>納得して進んでほしいから。</p>
     </div>
   </div>
+
+  <!-- MINI CTA #1: 構造納得型（ロードマップ全体像直後） -->
+  <div class="mini-cta reveal">
+    <p class="mini-cta-lead">順番が見えたなら、<strong>もう迷う必要はない。</strong></p>
+    <a href="#price" class="buy-btn">→ 今すぐ始める</a>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -3073,9 +3167,13 @@
       </table>
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
+  <!-- MINI CTA #2: 感情ピーク型（3ヶ月後の未来直後） -->
+  <div class="mini-cta reveal">
+    <p class="mini-cta-lead">3ヶ月後の自分を、<strong>いま掴みにいく。</strong></p>
+    <a href="#price" class="buy-btn">→ 今すぐ始める</a>
+  </div>
+</section>
 
 <div class="divider"></div>
 
@@ -3496,5 +3594,10 @@
     });
   });
 </script>
+
+<!-- Sticky CTA bar (mobile only) -->
+<div class="sticky-cta-bar">
+  <a href="#price">→ 今すぐ始める</a>
+</div>
 </body>
 </html>
