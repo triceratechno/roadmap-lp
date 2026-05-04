@@ -1515,6 +1515,24 @@
     box-sizing: border-box;
   }
 
+  /* PRICE: stack cards vertically on mobile */
+  @media (max-width: 768px) {
+    .price-cards {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .price-card {
+      padding: 28px 22px 32px;
+    }
+    .price-card--featured {
+      transform: none;
+      order: -1;
+    }
+    .price-card-badge {
+      top: -14px;
+    }
+  }
 
   /* ===== TROUBLE RANKING ===== */
   .trouble-ranking {
@@ -2225,8 +2243,22 @@
   }
 
   @media (max-width: 720px) {
-    .demo-inner { grid-template-columns: 1fr; gap: 40px; }
-    .demo-player-wrap { grid-column: 1; }
+    .demo-section { padding: 60px 20px 80px; }
+    .demo-inner { grid-template-columns: 1fr; gap: 36px; }
+    .demo-player-wrap { grid-column: 1; padding: 22px 18px; gap: 14px; }
+    .demo-title {
+      font-size: clamp(24px, 7vw, 32px);
+      line-height: 1.15;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .demo-bridge {
+      padding: 20px 18px;
+      font-size: 14px;
+    }
+    .player-meta { gap: 2px; }
+    .player-label { font-size: 11px; }
+    .player-time { font-size: 11px; }
   }
 
   /* ===== PHASE FLOW (3-phase visual above demo checklist) ===== */
