@@ -3,50 +3,38 @@
   <rect width="1600" height="1000" fill="#080808"/>
 
   <!-- Section label -->
-  <text x="800" y="132" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" letter-spacing="14" fill="#00c8ff" font-weight="600">READ TRACKING</text>
+  <text x="800" y="132" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" letter-spacing="14" fill="#00c8ff" font-weight="600">PROGRESS</text>
 
-  <!-- Article rows with checkmarks -->
-  <g transform="translate(180,240)" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif">
-    <!-- Row 1: read -->
-    <g transform="translate(0,0)">
-      <circle cx="40" cy="40" r="38" fill="#00c8ff"/>
-      <text x="40" y="59" text-anchor="middle" font-size="50" fill="#000000" font-weight="900">✓</text>
-      <text x="120" y="58" font-size="40" fill="#e8e8e8" font-weight="500">STEP2 全体解説：ローエンドは"音作り"…</text>
-    </g>
-    <!-- Row 2: read -->
-    <g transform="translate(0,110)">
-      <circle cx="40" cy="40" r="38" fill="#00c8ff"/>
-      <text x="40" y="59" text-anchor="middle" font-size="50" fill="#000000" font-weight="900">✓</text>
-      <text x="120" y="58" font-size="40" fill="#e8e8e8" font-weight="500">STEP2-1：プロが必ず行う「正しいキック…」</text>
-    </g>
-    <!-- Row 3: read -->
-    <g transform="translate(0,220)">
-      <circle cx="40" cy="40" r="38" fill="#00c8ff"/>
-      <text x="40" y="59" text-anchor="middle" font-size="50" fill="#000000" font-weight="900">✓</text>
-      <text x="120" y="58" font-size="40" fill="#e8e8e8" font-weight="500">STEP2-2：キックを1つに決める…</text>
-    </g>
-    <!-- Row 4: unread -->
-    <g transform="translate(0,330)">
-      <circle cx="40" cy="40" r="38" fill="none" stroke="#333333" stroke-width="4"/>
-      <text x="120" y="58" font-size="40" fill="#666666" font-weight="500">STEP2-3：キックを4小節に配置する…</text>
-    </g>
-    <!-- Row 5: unread -->
-    <g transform="translate(0,440)">
-      <circle cx="40" cy="40" r="38" fill="none" stroke="#333333" stroke-width="4"/>
-      <text x="120" y="58" font-size="40" fill="#666666" font-weight="500">STEP2-4：トップベースの作り方…</text>
-    </g>
-    <!-- Row 6: unread -->
-    <g transform="translate(0,550)">
-      <circle cx="40" cy="40" r="38" fill="none" stroke="#333333" stroke-width="4"/>
-      <text x="120" y="58" font-size="40" fill="#666666" font-weight="500">STEP2-5：サブベースの作り方…</text>
-    </g>
+  <!-- Big percentage number -->
+  <text x="800" y="490" text-anchor="middle" font-family="'Arial Black', sans-serif" font-weight="900">
+    <tspan font-size="320" fill="#00c8ff" letter-spacing="2">38</tspan>
+    <tspan font-size="160" fill="#666666" dx="8">%</tspan>
+  </text>
+
+  <!-- Course completion label -->
+  <text x="800" y="580" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="36" letter-spacing="18" fill="#888888" font-weight="500">COURSE COMPLETION</text>
+
+  <!-- Progress dots track (10 dots: 4 completed cyan, 6 empty) -->
+  <g transform="translate(0,720)">
+    <line x1="200" y1="0" x2="1400" y2="0" stroke="#333333" stroke-width="3"/>
+    <circle cx="200" cy="0" r="32" fill="#00c8ff"/>
+    <circle cx="333" cy="0" r="32" fill="#00c8ff"/>
+    <circle cx="467" cy="0" r="32" fill="#00c8ff"/>
+    <circle cx="600" cy="0" r="32" fill="#00c8ff"/>
+    <circle cx="733" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="867" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="1000" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="1133" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="1267" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="1400" cy="0" r="32" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="3"/>
   </g>
 
-  <!-- Progress fraction -->
-  <text x="800" y="940" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="44" letter-spacing="6">
+  <!-- Detail text -->
+  <text x="800" y="900" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="36" letter-spacing="6">
     <tspan fill="#888888" font-weight="500">読了</tspan>
-    <tspan fill="#00c8ff" font-weight="900" font-family="'Arial Black', sans-serif" font-size="72" dx="20">3</tspan>
-    <tspan fill="#444444" dx="20">/</tspan>
-    <tspan fill="#ffffff" font-weight="900" font-family="'Arial Black', sans-serif" font-size="72" dx="20">6</tspan>
+    <tspan fill="#ffffff" font-weight="900" font-family="'Arial Black', sans-serif" font-size="56" dx="14">11</tspan>
+    <tspan fill="#444444" dx="14">/  全</tspan>
+    <tspan fill="#ffffff" font-weight="900" font-family="'Arial Black', sans-serif" font-size="56" dx="14">29</tspan>
+    <tspan fill="#888888" dx="10">記事</tspan>
   </text>
 </svg>

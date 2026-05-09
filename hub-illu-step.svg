@@ -3,32 +3,38 @@
   <rect width="1600" height="1000" fill="#080808"/>
 
   <!-- Section label -->
-  <text x="800" y="172" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" letter-spacing="14" fill="#00c8ff" font-weight="600">DUAL ACCESS</text>
+  <text x="800" y="172" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" letter-spacing="14" fill="#00c8ff" font-weight="600">TRIPLE ACCESS</text>
 
-  <!-- Article title sample row (mimics hub UI) -->
+  <!-- Article title sample row (mimics hub UI with overview type) -->
   <g transform="translate(140,290)">
     <rect x="0" y="0" width="1320" height="120" fill="#111111" stroke="#1e1e1e" stroke-width="2"/>
-    <text x="40" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="38" fill="#e8e8e8" font-weight="500">
+    <text x="40" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="36" fill="#e8e8e8" font-weight="500">
       <tspan fill="#00c8ff" font-size="42">▸</tspan>
-      <tspan dx="20">STEP5：8小節で止まらない、メロディ設計</tspan>
+      <tspan dx="20">STEP5 全体解説：8小節で止まらないメロディ設計</tspan>
     </text>
   </g>
 
-  <!-- Two big buttons side by side -->
+  <!-- Three buttons side by side -->
   <g transform="translate(0,520)">
     <!-- PDF button (gold) -->
     <g>
-      <rect x="200" y="0" width="540" height="200" fill="#1a1a0a" stroke="#f5c518" stroke-width="5"/>
-      <text x="470" y="135" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="78" fill="#f5c518" font-weight="900" letter-spacing="6">↓ PDF</text>
+      <rect x="150" y="0" width="400" height="200" fill="#1a1a0a" stroke="#f5c518" stroke-width="5"/>
+      <text x="350" y="135" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="68" fill="#f5c518" font-weight="900" letter-spacing="6">↓ PDF</text>
+    </g>
+
+    <!-- Video button (magenta) -->
+    <g>
+      <rect x="600" y="0" width="400" height="200" fill="#1a0a14" stroke="#ec4899" stroke-width="5"/>
+      <text x="800" y="135" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="62" fill="#ec4899" font-weight="900" letter-spacing="6">▶ 動 画</text>
     </g>
 
     <!-- Read button (cyan) -->
     <g>
-      <rect x="860" y="0" width="540" height="200" fill="#0a1a22" stroke="#00c8ff" stroke-width="5"/>
-      <text x="1130" y="135" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="68" fill="#00c8ff" font-weight="900" letter-spacing="6">→ 読 む</text>
+      <rect x="1050" y="0" width="400" height="200" fill="#0a1a22" stroke="#00c8ff" stroke-width="5"/>
+      <text x="1250" y="135" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="62" fill="#00c8ff" font-weight="900" letter-spacing="6">→ 読 む</text>
     </g>
   </g>
 
   <!-- Bottom tagline -->
-  <text x="800" y="900" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="42" fill="#aaaaaa" letter-spacing="6" font-weight="500">DLしてオフライン　／　ブラウザで即読み</text>
+  <text x="800" y="900" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="38" fill="#aaaaaa" letter-spacing="6" font-weight="500">読む　／　観る　／　持ち歩く　を1ヶ所で</text>
 </svg>
