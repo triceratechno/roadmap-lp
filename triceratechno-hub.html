@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロードマップHUB｜トリケラテクノ流</title>
+<meta name="description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- OGP / Twitter Card (※デプロイ時、og:url と og:image を絶対URLに差し替え推奨) -->
+<meta property="og:title" content="ロードマップHUB｜トリケラテクノ流">
+<meta property="og:description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="mockup-pro.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ロードマップHUB｜トリケラテクノ流">
+<meta name="twitter:description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
+<meta name="twitter:image" content="mockup-pro.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="tricera-icon.jpg">
+<link rel="apple-touch-icon" href="tricera-icon.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS (LPから継承) ===== */
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #666;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* Section-scoped horizontal overflow control (避：body全体への overflow-x:hidden) */
+  .hub-hero,
+  .hub-section { overflow-x: clip; }
+
+  /* ===== Skip link (a11y) ===== */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 8px;
+    background: var(--accent);
+    color: #001018;
+    padding: 8px 14px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 8px; }
+
+  /* ===== Focus visible (keyboard a11y) ===== */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .progress-dot:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  /* ===== NOISE TEXTURE (LPから流用) ===== */
+  /* z-index: 1 でback-to-top(z:100)などUIの下に。テクスチャは下に敷くのが本来 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  /* ===== HERO ===== */
+  .hub-hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hub-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,200,255,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,255,200,0.05) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .hub-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    z-index: 2;
+  }
+
+  .hub-hero-inner {
+    position: relative;
+    z-index: 3;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hub-hero-eyebrow {
+    font-size: clamp(13px, 2vw, 15px);
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hub-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 12vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hub-hero-title span {
+    color: var(--accent);
+    display: block;
+  }
+
+  .hub-hero-subtitle {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--muted);
+    margin: 28px auto 0;
+    max-width: 560px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hub-hero-lead {
+    font-size: clamp(13px, 2vw, 15px);
+    color: var(--text);
+    margin: 16px auto 0;
+    letter-spacing: 0.05em;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hub-hero-meta {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-top: 40px;
+    text-transform: uppercase;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+
+  /* ===== SECTIONS ===== */
+  .hub-section {
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 32px;
+  }
+
+  h2 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .hub-section > p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+    margin: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .hub-footer {
+    border-top: 1px solid var(--border);
+    padding: 56px 24px 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .hub-footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hub-footer-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hub-footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+  @media (hover: hover) {
+    .hub-footer-links a:hover {
+      color: var(--accent);
+    }
+  }
+
+  /* ===== BACK TO TOP ===== */
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0,200,255,0.12);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .back-to-top svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (hover: hover) {
+    .back-to-top:hover {
+      background: var(--accent);
+      color: #001018;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .back-to-top {
+      right: 14px;
+      bottom: 14px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; color: #000; }
+    body::before { display: none; }
+    .hub-hero-bg, .hub-hero-grid { display: none; }
+    .back-to-top, .skip-link { display: none !important; }
+    .hub-hero-title, .hub-step-title, .hub-consult-name,
+    h2, h3 { color: #000 !important; }
+    .hub-section, .hub-hero { padding: 24px 16px; max-width: 100%; }
+    .hub-article-pdf, .hub-article-video, .hub-article-cta,
+    .hub-consult-cta { display: none; }
+    a[href]::after { content: ' (' attr(href) ')'; font-size: 10px; color: #666; }
+    .hub-article-item a[href]::after { content: ''; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .progress-dot { background: #ccc !important; border-color: #999 !important; }
+    .progress-dot.completed { background: #000 !important; border-color: #000 !important; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* prefers-reduced-motion 対応：アニメ嫌いユーザーには即表示 */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .tag, .hub-hero-eyebrow, .hub-hero-title,
+    .hub-hero-subtitle, .hub-hero-lead, .hub-hero-meta {
+      animation: none !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== PHASE STUB (Phase 3で置き換え) ===== */
+  .phase-stub {
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    border: 1px dashed var(--border);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  /* ===== PROGRESS OVERVIEW ===== */
+  .progress-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 720px;
+    margin: 8px auto 32px;
+    padding: 24px 0;
+  }
+
+  .progress-track::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 50%;
+    height: 1px;
+    background: #333;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .progress-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--black);
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+
+  /* Larger invisible hit area for touch devices (44x44 推奨) */
+  .progress-dot::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+  }
+
+  @media (hover: hover) {
+    .progress-dot:hover {
+      transform: scale(1.5);
+      border-color: var(--accent);
+    }
+  }
+
+  .progress-dot.completed {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .progress-dot.in_progress {
+    background: transparent;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,200,255,0.15);
+    animation: progressPulse 1.8s ease-in-out infinite;
+  }
+
+  .progress-dot.upcoming {
+    background: var(--black);
+    border-color: var(--border);
+  }
+
+  @keyframes progressPulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(0,200,255,0.55), 0 0 0 2px rgba(0,200,255,0.2);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(0,200,255,0), 0 0 0 2px rgba(0,200,255,0.2);
+    }
+  }
+
+  .progress-stats {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin: 0;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+  }
+
+  .progress-stats > span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .progress-stats strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .progress-stats .stat-completed strong { color: var(--accent); }
+  .progress-stats .stat-in-progress strong { color: var(--accent); }
+  .progress-stats .stat-upcoming strong { color: var(--white); }
+  .progress-stats .stat-divider {
+    color: var(--border);
+    letter-spacing: 0;
+  }
+
+  /* ===== Big Progress Percentage ===== */
+  .progress-pct-block {
+    text-align: center;
+    margin: 8px auto 28px;
+  }
+
+  .progress-pct {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+  }
+
+  .progress-pct strong {
+    font-size: clamp(72px, 14vw, 112px);
+    color: var(--accent);
+    font-weight: normal;
+  }
+
+  .progress-pct span {
+    font-size: clamp(28px, 5vw, 40px);
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .progress-pct-label {
+    margin-top: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .progress-pct-detail {
+    margin-top: 6px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .progress-pct-detail strong {
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    margin: 0 2px;
+  }
+
+  .progress-pct.is-zero strong { color: var(--muted); }
+  .progress-pct.is-complete strong {
+    color: var(--gold);
+    text-shadow: 0 0 24px var(--gold-glow);
+  }
+
+  /* ===== SUPPORT ===== */
+  .hub-support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .hub-support-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 26px 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .hub-support-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: rgba(0,200,255,0.04);
+      box-shadow: 0 12px 32px rgba(0,200,255,0.08);
+    }
+  }
+
+  .hub-support-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hub-support-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .hub-support-card h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .hub-support-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .hub-support-cta {
+    margin-top: auto;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .hub-support-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .hub-support-card { padding: 22px 20px; }
+  }
+
+  /* ===== VIDEO CONSULT ===== */
+  .hub-consult-lead {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .hub-consult-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .hub-consult-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 26px 28px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .hub-consult-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,200,255,0.4);
+      box-shadow: 0 12px 32px rgba(0,200,255,0.06);
+    }
+    .hub-consult-card--featured:hover {
+      border-color: var(--accent);
+      box-shadow: 0 16px 40px rgba(0,200,255,0.18);
+    }
+  }
+
+  .hub-consult-card--featured {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(0,200,255,0.05), var(--panel) 60%);
+  }
+
+  .hub-consult-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    padding: 4px 14px;
+    background: var(--black);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .hub-consult-card--featured .hub-consult-badge {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #001018;
+  }
+
+  .hub-consult-name {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0 4px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+
+  .hub-consult-meta {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hub-consult-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .hub-consult-card--featured .hub-consult-price { color: var(--accent); }
+
+  .hub-consult-tax {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .hub-consult-savings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .hub-consult-strike {
+    text-decoration: line-through;
+    text-decoration-color: var(--muted);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .hub-consult-savings-tag {
+    display: inline-block;
+    background: rgba(245,197,24,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(245,197,24,0.35);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .hub-consult-pitch {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--white);
+    font-style: normal;
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-left: 2px solid var(--accent);
+    background: rgba(0,200,255,0.04);
+  }
+
+  .hub-consult-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hub-consult-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .hub-consult-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-left: 1.5px solid var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+    transform: rotate(-45deg);
+  }
+
+  .hub-consult-cta {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    padding: 13px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  @media (hover: hover) {
+    .hub-consult-cta:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--white);
+    }
+    .hub-consult-card--featured .hub-consult-cta:hover {
+      background: #33d6ff;
+      border-color: #33d6ff;
+    }
+  }
+
+  .hub-consult-card--featured .hub-consult-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #001018;
+    font-weight: 600;
+  }
+
+  .hub-consult-cta--soon {
+    pointer-events: none;
+    color: var(--muted);
+    border-color: var(--border);
+    background: transparent;
+  }
+
+  .hub-consult-card--featured .hub-consult-cta--soon {
+    background: rgba(0,200,255,0.15);
+    color: var(--accent);
+    border-color: rgba(0,200,255,0.3);
+  }
+
+  .hub-consult-note {
+    margin-top: 32px;
+    padding: 20px 22px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .hub-consult-note strong {
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 860px) {
+    .hub-consult-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .hub-consult-card { padding: 28px 22px 24px; }
+    .hub-consult-price { font-size: 38px; }
+  }
+
+  /* ===== STEPS ===== */
+  #stepsContainer {
+    margin-top: 8px;
+  }
+
+  .hub-step-block {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 80px;
+  }
+
+  .hub-step-block:first-of-type { padding-top: 24px; }
+  .hub-step-block:last-of-type { border-bottom: 0; padding-bottom: 24px; }
+
+  .hub-step-head {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 8px;
+  }
+
+  .hub-step-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+    margin-top: 4px;
+  }
+
+  .hub-step-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media (hover: hover) {
+    .hub-step-block:hover .hub-step-icon { color: var(--accent); }
+  }
+
+  .hub-step-block.is-completed .hub-step-icon { color: rgba(0,200,255,0.65); }
+  .hub-step-block.is-in_progress .hub-step-icon { color: var(--accent); }
+
+  .hub-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 0.85;
+    color: var(--border);
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .hub-step-block:hover .hub-step-num {
+      color: var(--accent);
+    }
+  }
+
+  .hub-step-block.is-completed .hub-step-num {
+    color: rgba(0,200,255,0.55);
+  }
+
+  .hub-step-block.is-in_progress .hub-step-num {
+    color: var(--accent);
+  }
+
+  .hub-step-title-wrap { min-width: 0; }
+
+  .hub-step-status {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    padding: 4px 10px;
+    border: 1px solid;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .hub-step-status.badge-completed {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,200,255,0.08);
+  }
+
+  .hub-step-status.badge-in_progress {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: transparent;
+  }
+
+  .hub-step-status.badge-upcoming {
+    border-color: #2a2a2a;
+    color: var(--muted);
+    background: transparent;
+  }
+
+  .hub-step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 3.5vw, 32px);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  .hub-step-subtitle {
+    font-size: 14px;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+
+  .hub-step-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ===== ARTICLE LIST ===== */
+  .hub-article-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .hub-article-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease;
+    flex-wrap: wrap;
+  }
+
+  @media (hover: hover) {
+    .hub-article-item:hover {
+      background: rgba(0,200,255,0.025);
+    }
+  }
+
+  .hub-article-item.is-draft,
+  .hub-article-item.is-upcoming {
+    opacity: 0.55;
+  }
+
+  .hub-article-item.is-upcoming {
+    opacity: 0.4;
+  }
+
+  .hub-article-marker {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1;
+    flex: 0 0 auto;
+    transition: color 0.2s;
+  }
+
+  .hub-article-item.is-published .hub-article-marker {
+    color: var(--accent);
+  }
+
+  .hub-article-title {
+    flex: 1 1 60%;
+    min-width: 0;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .hub-article-time {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .hub-article-time::before {
+    content: '⏱';
+    margin-right: 3px;
+    opacity: 0.7;
+  }
+
+  .hub-article-check {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--accent);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .hub-article-item.is-read .hub-article-check {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hub-article-pdf {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 7px 12px;
+    border: 1px solid var(--gold);
+    background: rgba(245,197,24,0.05);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex: 0 0 auto;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .hub-article-pdf:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-1px);
+    }
+  }
+
+  .hub-article-pdf.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+  }
+
+  .hub-article-video {
+    display: inline-block;
+    color: #ec4899;
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 7px 12px;
+    border: 1px solid #ec4899;
+    background: rgba(236,72,153,0.06);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex: 0 0 auto;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .hub-article-video:hover {
+      background: #ec4899;
+      color: var(--black);
+      transform: translateY(-1px);
+    }
+  }
+
+  .hub-article-video.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+  }
+
+  .hub-article-cta {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 7px 16px;
+    border: 1px solid var(--accent);
+    background: rgba(0,200,255,0.05);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex: 0 0 auto;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .hub-article-cta:hover {
+      background: var(--accent);
+      color: var(--black);
+      transform: translateY(-1px);
+    }
+  }
+
+  .hub-article-cta.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hub-hero {
+      padding: 80px 20px 60px;
+      min-height: 60vh;
+    }
+    .hub-section {
+      padding: 80px 20px;
+    }
+    .progress-track {
+      padding: 20px 4px;
+      margin: 4px auto 24px;
+    }
+    .progress-dot {
+      width: 12px;
+      height: 12px;
+    }
+    .progress-track::before {
+      left: 6px;
+      right: 6px;
+    }
+    .progress-stats {
+      font-size: 11px;
+      gap: 12px;
+      letter-spacing: 0.12em;
+    }
+    .progress-stats strong {
+      font-size: 18px;
+    }
+
+    /* STEPS — number on top, title below */
+    .hub-step-block {
+      padding: 44px 0;
+    }
+    .hub-step-head {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "num . icon"
+        "title title title";
+      gap: 4px 12px;
+      margin-bottom: 4px;
+      align-items: center;
+    }
+    .hub-step-num { grid-area: num; }
+    .hub-step-icon {
+      grid-area: icon;
+      width: 36px;
+      height: 36px;
+      margin-top: 0;
+    }
+    .hub-step-title-wrap { grid-area: title; }
+    .hub-step-num {
+      font-size: 44px;
+    }
+    .hub-step-title {
+      font-size: 22px;
+    }
+    .hub-article-list {
+      margin-top: 20px;
+    }
+    .hub-article-item {
+      gap: 8px;
+      padding: 14px 6px;
+      align-items: center;
+    }
+    /* 1段目: marker + title + check（タイトル行） */
+    .hub-article-marker {
+      order: 0;
+      flex: 0 0 auto;
+    }
+    .hub-article-title {
+      order: 1;
+      flex: 1 1 auto;
+      min-width: 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .hub-article-check {
+      order: 2;
+      flex: 0 0 auto;
+    }
+    /* 2段目: PDF / 動画 / 読む（ボタン行を独立化） */
+    .hub-article-pdf,
+    .hub-article-video,
+    .hub-article-cta {
+      font-size: 11px;
+      padding: 6px 12px;
+    }
+    .hub-article-pdf { order: 3; margin-left: 32px; }
+    .hub-article-video { order: 4; }
+    .hub-article-cta { order: 5; margin-left: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- ===== HERO ===== -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg"></div>
+    <div class="hub-hero-grid"></div>
+    <div class="hub-hero-inner">
+      <div class="tag">FOR MEMBERS ONLY</div>
+      <p class="hub-hero-eyebrow">TRICERATECHNO ROADMAP 1.0</p>
+      <h1 class="hub-hero-title">ROADMAP <span>HUB</span></h1>
+      <p class="hub-hero-subtitle">最短で1曲完成するための10STEP</p>
+      <p class="hub-hero-lead">あなたの学習進捗を、ひとつにまとめました。</p>
+      <p class="hub-hero-meta" id="heroMeta">最終更新 ----</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PROGRESS OVERVIEW (Phase 3で実装) ===== -->
+  <section class="hub-section reveal" id="main">
+    <div class="section-label">PROGRESS</div>
+    <h2>あなたの<em>進捗</em></h2>
+    <div id="progressOverview"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== SUPPORT ===== -->
+  <section class="hub-section reveal">
+    <div class="section-label">SUPPORT</div>
+    <h2>つまずく前に、<em>読んでおくTips</em></h2>
+    <p>受講中によくある相談を、先回りで潰しておくための記事集。<br>迷ったらここをチェックしてください。</p>
+    <div class="hub-support-grid">
+      <a href="https://note.com/triceratechno/n/n0683acbbd268" class="hub-support-card" target="_blank" rel="noopener">
+        <span class="hub-support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="3" rx="1"/>
+            <rect x="3" y="10.5" width="13" height="3" rx="1"/>
+            <rect x="3" y="16" width="16" height="3" rx="1"/>
+            <circle cx="20" cy="6.5" r="1" fill="currentColor"/>
+            <circle cx="17" cy="12" r="1" fill="currentColor"/>
+            <circle cx="21" cy="17.5" r="1" fill="currentColor"/>
+          </svg>
+        </span>
+        <h3>トラック整理の基本</h3>
+        <p>プロが必ずやっている、DTM作業を効率化する整理術。</p>
+        <span class="hub-support-cta">→ 読む</span>
+      </a>
+      <a href="https://note.com/triceratechno/n/n81c595770fad" class="hub-support-card" target="_blank" rel="noopener">
+        <span class="hub-support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 18a4 4 0 1 1 .7-7.94A6 6 0 0 1 19 11a3.5 3.5 0 0 1-1 6.86"/>
+            <path d="M12 12v7"/>
+            <path d="M9 15l3-3 3 3"/>
+          </svg>
+        </span>
+        <h3>Google Driveで楽曲を共有</h3>
+        <p>完成した楽曲のフィードバックを依頼するときの送り方。</p>
+        <span class="hub-support-cta">→ 読む</span>
+      </a>
+      <a href="https://note.com/triceratechno/n/nd255a6cc4df5" class="hub-support-card" target="_blank" rel="noopener">
+        <span class="hub-support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <path d="M8 14v-2"/>
+            <path d="M11 15v-4"/>
+            <path d="M14 14v-2"/>
+            <path d="M17 15v-4"/>
+          </svg>
+        </span>
+        <h3>Abletonプロジェクトの送り方</h3>
+        <p>サンプル・トラック・エフェクトを個別にFBしてもらうときに。</p>
+        <span class="hub-support-cta">→ 読む</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== STEPS (Phase 4で実装) ===== -->
+  <section class="hub-section reveal">
+    <div class="section-label">10 STEPS</div>
+    <h2>1曲完成までの<em>全工程</em></h2>
+    <div id="stepsContainer"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== VIDEO CONSULT ===== -->
+  <section class="hub-section reveal">
+    <div class="section-label">VIDEO CONSULT</div>
+    <h2>もっと深く、<em>マンツーマンで</em></h2>
+    <p class="hub-consult-lead">
+      テキストでは伝わらない感覚を、画面共有で直接。<br>
+      あなたのDAWを開きながら、その場で壁打ちします。
+    </p>
+
+    <div class="hub-consult-grid">
+
+      <!-- スポット相談 -->
+      <div class="hub-consult-card">
+        <span class="hub-consult-badge">SPOT</span>
+        <p class="hub-consult-name">スポット相談</p>
+        <p class="hub-consult-meta">60分 × 1回</p>
+        <div class="hub-consult-price">¥15,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-pitch">詰まったSTEPを、一気に突破。</p>
+        <ul class="hub-consult-list">
+          <li>DAW画面共有でその場でFB</li>
+          <li>セッション録画データ進呈</li>
+          <li>1週間以内のフォローLINE1往復</li>
+        </ul>
+        <a href="https://buy.stripe.com/7sYfZa8MZ4uwaongL9gEg05" class="hub-consult-cta" target="_blank" rel="noopener">枠を予約する →</a>
+      </div>
+
+      <!-- 1曲完走パック（MOST POPULAR） -->
+      <div class="hub-consult-card hub-consult-card--featured">
+        <span class="hub-consult-badge">MOST POPULAR</span>
+        <p class="hub-consult-name">1曲完走パック</p>
+        <p class="hub-consult-meta">60分 × 4回</p>
+        <div class="hub-consult-price">¥45,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-savings">
+          <span class="hub-consult-strike">通常 ¥60,000</span>
+          <span class="hub-consult-savings-tag">1回分 ¥15,000 お得</span>
+        </p>
+        <p class="hub-consult-pitch">着想からマスタリングまで、並走。</p>
+        <ul class="hub-consult-list">
+          <li>着想 / 構成 / ミックス / 仕上げの4節目で1回ずつ</li>
+          <li>期間中のLINE質問 無制限</li>
+          <li>完成曲ラフFB 1回付き</li>
+          <li>各セッション録画データ進呈</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVqcMYd3f5yA8gf66vgEg06" class="hub-consult-cta" target="_blank" rel="noopener">1曲、最後まで仕上げる →</a>
+      </div>
+
+      <!-- マンツーマン3ヶ月 -->
+      <div class="hub-consult-card">
+        <span class="hub-consult-badge">DEEP DIVE</span>
+        <p class="hub-consult-name">マンツーマン3ヶ月</p>
+        <p class="hub-consult-meta">60分 × 全10回</p>
+        <div class="hub-consult-price">¥120,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-savings">
+          <span class="hub-consult-strike">通常 ¥150,000</span>
+          <span class="hub-consult-savings-tag">2回分 ¥30,000 お得</span>
+        </p>
+        <p class="hub-consult-pitch">継続的に、プロの目を借りる。</p>
+        <ul class="hub-consult-list">
+          <li>3ヶ月で全10回（月3〜4回ペース）のセッション</li>
+          <li>制作中曲のレビュー回数 無制限</li>
+          <li>配信戦略・ジャケ・タイトルまで相談可</li>
+          <li>全セッション録画データ進呈</li>
+        </ul>
+        <a href="https://buy.stripe.com/fZu4gs1kxaSU1RRgL9gEg07" class="hub-consult-cta" target="_blank" rel="noopener">3ヶ月、本気で取り組む →</a>
+      </div>
+
+    </div>
+
+    <div class="hub-consult-note">
+      <strong>セッション形式</strong>　Discord / Zoom 対応（Discord推奨：専用トークルームを作成し、セッション後のやり取りもそのまま完結）<br>
+      <strong>顔出し不要</strong>　トリケラテクノは顔出しで対応。受講者側は顔出し不要（出していただいても構いません）<br>
+      <strong>事前準備</strong>　申込後にヒアリングシートをお送りします。論点を整理してから本番セッションへ<br>
+      <strong>キャンセルポリシー</strong>　前日までは無料・当日キャンセルは1回分消化<br>
+      <strong>決済</strong>　Stripeの安全な決済ページへ移動します
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="hub-footer">
+    <p>&copy; TRICERATECHNO &nbsp;/&nbsp; DTM解説恐竜</p>
+    <div class="hub-footer-links">
+      <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+      <a href="#" id="resetProgress">進捗をリセット</a>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="ページ最上部へ戻る" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 15 12 9 18 15"/>
+    </svg>
+  </button>
+
+  <script src="hub-data.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    const data = (typeof ROADMAP_DATA !== 'undefined') ? ROADMAP_DATA : null;
+
+    const PROGRESS_KEY = 'triceratechno_hub_progress_v1';
+
+    const STEP_STATUS = ['completed', 'in_progress', 'upcoming'];
+    const ARTICLE_STATUS = ['published', 'draft', 'upcoming'];
+
+    const STEP_STATUS_LABEL = {
+      completed: 'COMPLETED',
+      in_progress: 'IN PROGRESS',
+      upcoming: 'UPCOMING'
+    };
+    const ARTICLE_STATUS_LABEL = {
+      published: '公開',
+      draft: '準備中',
+      upcoming: '予告'
+    };
+
+    // ===== STEP ICONS (line art + music motif) =====
+    const STEP_ICONS = {
+      1: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.6 14.6L20 20"/><path d="M7 10h1l1-2 1 4 1-3 1 2h1"/></svg>',
+      2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="13" r="5"/><circle cx="15" cy="13" r="5"/><path d="M3 20h18"/></svg>',
+      3: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="18" y1="6" x2="18" y2="18"/><circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></svg>',
+      4: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg>',
+      5: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l4-6 3 3 5-9 4 6 4-3"/><circle cx="2" cy="16" r="0.8" fill="currentColor"/><circle cx="22" cy="7" r="0.8" fill="currentColor"/></svg>',
+      6: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="2"/><circle cx="9" cy="14" r="5" stroke-dasharray="2 2"/><circle cx="9" cy="14" r="8" stroke-dasharray="1 3" opacity="0.5"/><path d="M18 4l0.8 2 2 0.8-2 0.8L18 10l-0.8-2.4L15 7l2.2-1z"/></svg>',
+      7: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><rect x="3" y="9" width="3" height="6"/><rect x="8" y="6" width="4" height="12"/><rect x="14" y="9" width="3" height="6"/><rect x="19" y="6" width="3" height="12"/></svg>',
+      8: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="18" y1="3" x2="18" y2="21"/><rect x="4" y="8" width="4" height="3" rx="0.5" fill="currentColor"/><rect x="10" y="14" width="4" height="3" rx="0.5" fill="currentColor"/><rect x="16" y="6" width="4" height="3" rx="0.5" fill="currentColor"/></svg>',
+      9: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6-6 6 6-6 12z"/><path d="M6 9l6 4 6-4"/><path d="M12 13v8"/></svg>',
+      10: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="13" r="8"/><path d="M11 13l8-8"/><path d="M14 5h5v5"/></svg>'
+    };
+
+    // ===== Utility: HTML escape =====
+    function esc(str) {
+      return String(str == null ? '' : str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    function normStepStatus(s) {
+      return STEP_STATUS.includes(s) ? s : 'upcoming';
+    }
+    function normArticleStatus(s) {
+      return ARTICLE_STATUS.includes(s) ? s : 'upcoming';
+    }
+
+    // ===== localStorage progress =====
+    function getReadIds() {
+      try {
+        const raw = localStorage.getItem(PROGRESS_KEY);
+        return new Set(JSON.parse(raw || '[]'));
+      } catch (e) {
+        return new Set();
+      }
+    }
+    function saveReadIds(set) {
+      try {
+        localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set]));
+      } catch (e) { /* noop */ }
+    }
+    function markAsRead(id) {
+      if (!id) return;
+      const set = getReadIds();
+      if (set.has(id)) return;
+      set.add(id);
+      saveReadIds(set);
+      const item = document.querySelector(`.hub-article-item[data-article-id="${CSS.escape(id)}"]`);
+      if (item) item.classList.add('is-read');
+      // Re-render progress overview to reflect new read state
+      renderProgressOverview();
+    }
+    function clearAllProgress() {
+      const set = getReadIds();
+      if (set.size === 0) {
+        alert('読了マーク（✓）はまだ付いていません。');
+        return;
+      }
+      if (!confirm('読了マーク（✓）を全てリセットしますか？')) return;
+      try { localStorage.removeItem(PROGRESS_KEY); } catch (e) {}
+      document.querySelectorAll('.hub-article-item.is-read').forEach(el => el.classList.remove('is-read'));
+      // Re-render progress overview to reflect cleared state
+      renderProgressOverview();
+    }
+
+    // ===== Hero meta =====
+    function renderHeroMeta() {
+      if (!data || !data.meta) return;
+      const metaEl = document.getElementById('heroMeta');
+      if (metaEl && data.meta.lastUpdated) {
+        metaEl.textContent = '最終更新 ' + data.meta.lastUpdated;
+      }
+    }
+
+    // ===== Render PROGRESS OVERVIEW =====
+    // Note: Reflects the BUYER's read progress (derived from localStorage),
+    // NOT the author's publishing progress. Each STEP's dot color is
+    // computed from how many of its articles the buyer has marked as read.
+    function renderProgressOverview() {
+      const container = document.getElementById('progressOverview');
+      if (!container || !data || !Array.isArray(data.steps)) return;
+
+      const readIds = getReadIds();
+      const counts = { completed: 0, in_progress: 0, upcoming: 0 };
+      let totalArticles = 0;
+      let readArticles = 0;
+
+      const dotsHtml = data.steps.map(step => {
+        const articles = step.articles || [];
+        const total = articles.length;
+        const readCount = articles.reduce((n, a) => n + (readIds.has(a.id) ? 1 : 0), 0);
+        totalArticles += total;
+        readArticles += readCount;
+
+        let status;
+        if (total === 0 || readCount === 0) status = 'upcoming';
+        else if (readCount >= total) status = 'completed';
+        else status = 'in_progress';
+
+        counts[status]++;
+        const num = String(step.id).padStart(2, '0');
+        const label = `STEP${num}　${step.title}（既読 ${readCount}/${total}）`;
+        return `<a href="#step-${step.id}" class="progress-dot ${status}" title="${esc(label)}" data-step="${step.id}" aria-label="${esc(label)}"></a>`;
+      }).join('');
+
+      const pct = totalArticles > 0 ? Math.round((readArticles / totalArticles) * 100) : 0;
+      const pctClass = pct === 0 ? 'is-zero' : (pct >= 100 ? 'is-complete' : '');
+      const pctLabel = pct === 0 ? 'START FROM STEP 01'
+                     : pct >= 100 ? 'COURSE COMPLETED'
+                     : 'COURSE COMPLETION';
+
+      container.innerHTML = `
+        <div class="progress-pct-block">
+          <div class="progress-pct ${pctClass}">
+            <strong>${pct}</strong><span>%</span>
+          </div>
+          <div class="progress-pct-label">${pctLabel}</div>
+          <div class="progress-pct-detail">
+            読了 <strong>${readArticles}</strong> / 全 <strong>${totalArticles}</strong> 記事
+          </div>
+        </div>
+        <div class="progress-track" role="navigation" aria-label="あなたの読了進捗">${dotsHtml}</div>
+        <p class="progress-stats">
+          <span class="stat-completed">読了STEP <strong>${counts.completed}</strong></span>
+          <span class="stat-divider">/</span>
+          <span class="stat-in-progress">進行中 <strong>${counts.in_progress}</strong></span>
+          <span class="stat-divider">/</span>
+          <span class="stat-upcoming">未読 <strong>${counts.upcoming}</strong></span>
+        </p>
+      `;
+    }
+
+    // ===== Render STEPS =====
+    function renderSteps() {
+      const container = document.getElementById('stepsContainer');
+      if (!container || !data || !Array.isArray(data.steps)) return;
+
+      const readIds = getReadIds();
+
+      container.innerHTML = data.steps.map(step => {
+        const stepStatus = normStepStatus(step.status);
+        const num = String(step.id).padStart(2, '0');
+
+        const articlesHtml = (step.articles || []).map(article => {
+          const aStatus = normArticleStatus(article.status);
+          const hasUrl = !!(article.noteUrl && String(article.noteUrl).trim());
+          const hasPdf = !!(article.pdfUrl && String(article.pdfUrl).trim());
+          const hasVideo = !!(article.videoUrl && String(article.videoUrl).trim());
+          const isOverview = article.type === 'overview';
+          const canRead = aStatus === 'published' && hasUrl;
+          const canPdf = aStatus === 'published' && hasPdf;
+          const canVideo = aStatus === 'published' && hasVideo;
+          const isRead = readIds.has(article.id);
+
+          // Reading time: explicit estMin > type-based default
+          const estMin = (typeof article.estMin === 'number' && article.estMin > 0)
+            ? article.estMin
+            : (article.type === 'overview' ? 10 : 5);
+          const timeHtml = aStatus === 'published'
+            ? `<span class="hub-article-time">約${estMin}分</span>`
+            : '';
+
+          const pdfHtml = canPdf
+            ? `<a class="hub-article-pdf" href="${esc(article.pdfUrl)}" download data-article-id="${esc(article.id)}" aria-label="PDFダウンロード">↓ PDF</a>`
+            : `<span class="hub-article-pdf disabled" aria-disabled="true" aria-label="PDF（準備中）">↓ PDF</span>`;
+
+          // Video button only on STEP overview articles (bonus videos are per-step, not per-lesson)
+          const videoHtml = isOverview
+            ? (canVideo
+                ? `<a class="hub-article-video" href="${esc(article.videoUrl)}" target="_blank" rel="noopener" data-article-id="${esc(article.id)}" aria-label="動画を見る">▶ 動画</a>`
+                : `<span class="hub-article-video disabled" aria-disabled="true" aria-label="動画（準備中）">▶ 動画</span>`)
+            : '';
+
+          const ctaHtml = canRead
+            ? `<a class="hub-article-cta" href="${esc(article.noteUrl)}" target="_blank" rel="noopener" data-article-id="${esc(article.id)}">→ 読む</a>`
+            : `<span class="hub-article-cta disabled" aria-disabled="true">→ 読む</span>`;
+
+          return `
+            <li class="hub-article-item is-${aStatus}${isRead ? ' is-read' : ''}" data-article-id="${esc(article.id)}">
+              <span class="hub-article-marker" aria-hidden="true">▸</span>
+              <span class="hub-article-title">${esc(article.title)}${timeHtml}</span>
+              <span class="hub-article-check" title="既読" aria-label="既読">✓</span>
+              ${pdfHtml}
+              ${videoHtml}
+              ${ctaHtml}
+            </li>
+          `;
+        }).join('');
+
+        const iconHtml = STEP_ICONS[step.id]
+          ? `<div class="hub-step-icon" aria-hidden="true">${STEP_ICONS[step.id]}</div>`
+          : '';
+
+        return `
+          <article class="hub-step-block is-${stepStatus}" id="step-${step.id}">
+            <div class="hub-step-head">
+              <div class="hub-step-num">${num}</div>
+              <div class="hub-step-title-wrap">
+                <span class="hub-step-status badge-${stepStatus}">${STEP_STATUS_LABEL[stepStatus]}</span>
+                <h3 class="hub-step-title">${esc(step.title)}</h3>
+                <p class="hub-step-subtitle">${esc(step.subtitle || '')}</p>
+                <p class="hub-step-desc">${esc(step.description || '')}</p>
+              </div>
+              ${iconHtml}
+            </div>
+            <ul class="hub-article-list">
+              ${articlesHtml}
+            </ul>
+          </article>
+        `;
+      }).join('');
+
+      // Wire up "→ 読む" / "↓ PDF" / "▶ 動画" clicks → mark as read
+      container.querySelectorAll('a.hub-article-cta[data-article-id], a.hub-article-pdf[data-article-id], a.hub-article-video[data-article-id]').forEach(el => {
+        el.addEventListener('click', () => {
+          markAsRead(el.dataset.articleId);
+        });
+      });
+    }
+
+    // ===== Reveal on scroll =====
+    function setupRevealObserver() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(r => observer.observe(r));
+    }
+
+    // ===== Reset progress button =====
+    function setupResetButton() {
+      const resetBtn = document.getElementById('resetProgress');
+      if (!resetBtn) return;
+      resetBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearAllProgress();
+      });
+    }
+
+    // ===== Back to top =====
+    function setupBackToTop() {
+      const btn = document.getElementById('backToTop');
+      if (!btn) return;
+      const SHOW_AT = 600;
+      let ticking = false;
+      function update() {
+        if (window.scrollY > SHOW_AT) btn.classList.add('is-visible');
+        else btn.classList.remove('is-visible');
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      update();
+    }
+
+    // ===== INIT =====
+    function init() {
+      renderHeroMeta();
+      renderProgressOverview();
+      renderSteps();
+      setupRevealObserver();
+      setupResetButton();
+      setupBackToTop();
+      // Re-scroll to hash after dynamic content is rendered
+      // (browsers auto-scroll to fragment on initial load, but our target
+      //  elements like #step-5 don't exist until JS runs)
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+</body>
+</html>
