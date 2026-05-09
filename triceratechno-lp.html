@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース</title>
-<meta name="description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わないトリケラテクノ流ロードマップPROコース（10STEP / 30記事超 / 3ヶ月マンツーマンサポート）。">
+<meta name="description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わないトリケラテクノ流ロードマップPROコース（10STEP / 39記事 / PDF 428ページ / 動画24本 約7時間 / 3ヶ月マンツーマンサポート）。">
 
 <!-- OGP / Twitter Card -->
 <meta property="og:title" content="トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース">
-<meta property="og:description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わない10STEPロードマップ＋3ヶ月マンツーマンサポート。">
+<meta property="og:description" content="DTM初心者でも、ループ地獄から完成・配信まで。10STEP / 39記事 / PDF 428ページ / 動画解説7時間超 ＋ 3ヶ月マンツーマンサポート。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="トリケラテクノ">
 <meta property="og:locale" content="ja_JP">
@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/mockup-pro.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="トリケラテクノ流｜最短で1曲完成するためのロードマップPROコース">
-<meta name="twitter:description" content="DTM初心者でも、ループ地獄から完成・配信まで。順番で迷わない10STEPロードマップ＋3ヶ月マンツーマンサポート。">
+<meta name="twitter:description" content="DTM初心者でも、ループ地獄から完成・配信まで。10STEP / 39記事 / PDF 428ページ / 動画解説7時間超 ＋ 3ヶ月マンツーマンサポート。">
 <meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/mockup-pro.png">
 
 <!-- Favicon -->
@@ -1024,6 +1024,74 @@
     transition: background 0.2s;
   }
   .note-carousel-btn:hover { background: rgba(0,200,255,0.1); }
+
+  /* ===== WHAT'S INSIDE — STATS BANNER ===== */
+  .inside-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0 auto 56px;
+    max-width: 900px;
+    background: rgba(0,200,255,0.03);
+    border: 1px solid rgba(0,200,255,0.15);
+  }
+
+  .stat-block {
+    padding: 28px 18px;
+    text-align: center;
+    border-right: 1px solid rgba(0,200,255,0.12);
+  }
+
+  .stat-block:last-child { border-right: 0; }
+
+  .stat-block strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 76px);
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    font-weight: normal;
+  }
+
+  .stat-block .stat-unit {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--muted);
+    margin-left: 4px;
+    vertical-align: baseline;
+  }
+
+  .stat-block .stat-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .stat-block .stat-sub {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 720px) {
+    .inside-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-block {
+      padding: 22px 12px;
+      border-right: 1px solid rgba(0,200,255,0.12);
+      border-bottom: 1px solid rgba(0,200,255,0.12);
+    }
+    .stat-block:nth-child(2n) { border-right: 0; }
+    .stat-block:nth-last-child(-n+2) { border-bottom: 0; }
+  }
 
   /* ===== WHAT'S INSIDE ===== */
   .inside-grid {
@@ -2803,7 +2871,9 @@
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span>10 STEPS</span><span class="accent">◆</span>
-    <span>30+ ARTICLES</span><span class="accent">◆</span>
+    <span>39 ARTICLES</span><span class="accent">◆</span>
+    <span>428 PDF PAGES</span><span class="accent">◆</span>
+    <span>24 VIDEOS / 7H+</span><span class="accent">◆</span>
     <span>3ヶ月LINEサポート</span><span class="accent">◆</span>
     <span>買い切り</span><span class="accent">◆</span>
     <span>100件以上の相談実績</span><span class="accent">◆</span>
@@ -2811,7 +2881,9 @@
     <span>返金保証あり</span><span class="accent">◆</span>
     <!-- duplicate for seamless loop -->
     <span>10 STEPS</span><span class="accent">◆</span>
-    <span>30+ ARTICLES</span><span class="accent">◆</span>
+    <span>39 ARTICLES</span><span class="accent">◆</span>
+    <span>428 PDF PAGES</span><span class="accent">◆</span>
+    <span>24 VIDEOS / 7H+</span><span class="accent">◆</span>
     <span>3ヶ月LINEサポート</span><span class="accent">◆</span>
     <span>買い切り</span><span class="accent">◆</span>
     <span>100件以上の相談実績</span><span class="accent">◆</span>
@@ -2968,7 +3040,7 @@
     <p class="phase-flow-goal">→ Apple Music / Spotify への配信申請まで、丸ごとサポート 🎵</p>
   </div>
 
-  <p style="margin-bottom:40px;">楽曲制作の最初からリリースまでを10のSTEPに分解。<br>各STEPは3〜5記事、合計<strong>30記事超</strong>。<br>1記事＝1タスクなので「今日はここだけ」で迷わず進められる。</p>
+  <p style="margin-bottom:40px;">楽曲制作の最初からリリースまでを10のSTEPに分解。<br>合計 <strong>39記事＋PDF 428ページ＋動画解説 約7時間</strong>。<br>1記事＝1タスクなので「今日はここだけ」で迷わず進められる。</p>
 
   <div class="note-carousel-wrap">
     <p style="font-size:11px; color:var(--muted); letter-spacing:0.08em; text-align:center; margin-bottom:16px;">— 実際の記事イメージ（スワイプで確認） —</p>
@@ -3110,16 +3182,40 @@
   <div class="section-label">WHAT'S INSIDE</div>
   <h2>ロードマップの<em>全体像</em></h2>
 
+  <!-- ボリューム訴求スタッツバナー -->
+  <div class="inside-stats">
+    <div class="stat-block">
+      <strong>39</strong>
+      <span class="stat-label">ARTICLES</span>
+      <span class="stat-sub">完全非公開記事</span>
+    </div>
+    <div class="stat-block">
+      <strong>428</strong><span class="stat-unit">P</span>
+      <span class="stat-label">PDF PAGES</span>
+      <span class="stat-sub">全38ファイル</span>
+    </div>
+    <div class="stat-block">
+      <strong>24</strong>
+      <span class="stat-label">VIDEOS</span>
+      <span class="stat-sub">約7時間の解説</span>
+    </div>
+    <div class="stat-block">
+      <strong>10</strong>
+      <span class="stat-label">STEPS</span>
+      <span class="stat-sub">着想〜配信まで</span>
+    </div>
+  </div>
+
   <div class="inside-grid">
     <div class="inside-item">
       <span class="inside-icon">📐</span>
-      <h3>完全非公開 STEP記事 全30本超</h3>
-      <p>1記事＝1タスク。「今日はここだけ」で進められる。</p>
+      <h3>完全非公開 STEP記事 全39本</h3>
+      <p>1記事＝1タスク。「今日はここだけ」で進められる。<br>付属PDF 38枚（合計428ページ）でオフライン保存も可能。</p>
     </div>
     <div class="inside-item">
       <span class="inside-icon">🎬</span>
-      <h3>動画・図表つき解説</h3>
-      <p>文字だけでなく視覚的に理解。判断のプロセスが「見える」。</p>
+      <h3>動画解説 24本（約7時間）</h3>
+      <p>文字だけでなく視覚的に理解。<br>判断のプロセスとDAW操作が「見える」かたちで合計約7時間。</p>
     </div>
     <div class="inside-item">
       <span class="inside-icon">🎵</span>
@@ -3166,8 +3262,8 @@
         <div class="price-card-amount">¥9,800</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
-          <li>STEP1〜10 全30記事超</li>
-          <li>動画・図表つき解説</li>
+          <li>STEP1〜10 全39記事 / PDF 428ページ</li>
+          <li>動画解説 24本（約7時間）</li>
           <li>未公開曲「Dimension」での実例公開</li>
           <li>随時アップデート（追加費用ゼロ）</li>
           <li>7日間返金保証</li>
@@ -3186,8 +3282,8 @@
         <div class="price-card-amount">¥19,800</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
-          <li>STEP1〜10 全30記事超</li>
-          <li>動画・図表つき解説</li>
+          <li>STEP1〜10 全39記事 / PDF 428ページ</li>
+          <li>動画解説 24本（約7時間）</li>
           <li>未公開曲「Dimension」での実例公開</li>
           <li>3ヶ月間・無制限LINEサポート</li>
           <li>随時アップデート（追加費用ゼロ）</li>
@@ -3210,8 +3306,8 @@
         <div class="price-card-amount">¥98,000</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
-          <li>STEP1〜10 全30記事超</li>
-          <li>動画・図表つき解説</li>
+          <li>STEP1〜10 全39記事 / PDF 428ページ</li>
+          <li>動画解説 24本（約7時間）</li>
           <li>未公開曲「Dimension」での実例公開</li>
           <li>永年・無制限LINEサポート</li>
           <li>随時アップデート（追加費用ゼロ）</li>
