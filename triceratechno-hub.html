@@ -59,6 +59,143 @@
   .hub-hero,
   .hub-section { overflow-x: clip; }
 
+  /* ===== PASSWORD GATE ===== */
+  /* Static hosting なので完全な認証ではないが、未認可ユーザーの閲覧抑止には十分 */
+  .password-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .password-gate-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 30%, rgba(0,200,255,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 50% 70%, rgba(0,255,200,0.05) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .password-gate-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    padding: 48px 32px;
+    border: 1px solid var(--border);
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .password-gate-icon {
+    font-size: 36px;
+    margin-bottom: 18px;
+    color: var(--accent);
+  }
+
+  .password-gate-tag {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    padding: 4px 12px;
+    margin-bottom: 24px;
+  }
+
+  .password-gate-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 6vw, 44px);
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin: 0 0 12px;
+  }
+
+  .password-gate-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+
+  .password-gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .password-gate-form input {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s;
+    text-align: center;
+  }
+
+  .password-gate-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .password-gate-form button {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: #001018;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-transform: uppercase;
+  }
+
+  @media (hover: hover) {
+    .password-gate-form button:hover {
+      background: #33d6ff;
+      transform: translateY(-1px);
+    }
+  }
+
+  .password-gate-error {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #ff5577;
+    letter-spacing: 0.04em;
+  }
+
+  .password-gate-foot {
+    margin-top: 28px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+  }
+
+  .password-gate-foot a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Hide content until unlocked (defense in depth — JSが無効化されても） */
+  body.is-locked > *:not(.password-gate) {
+    visibility: hidden;
+  }
+
   /* ===== Skip link (a11y) ===== */
   .skip-link {
     position: absolute;
@@ -1291,7 +1428,32 @@
   }
 </style>
 </head>
-<body>
+<body class="is-locked">
+
+  <!-- ===== PASSWORD GATE (購入者専用アクセス制限) ===== -->
+  <div class="password-gate" id="passwordGate" role="dialog" aria-modal="true" aria-labelledby="pwGateTitle">
+    <div class="password-gate-bg"></div>
+    <div class="password-gate-inner">
+      <span class="password-gate-tag">PURCHASERS ONLY</span>
+      <h2 class="password-gate-title" id="pwGateTitle">ROADMAP HUB</h2>
+      <p class="password-gate-desc">合言葉を入力してアクセスしてください。</p>
+      <form class="password-gate-form" id="passwordForm" autocomplete="off">
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="合言葉"
+          aria-label="合言葉"
+          autocomplete="current-password"
+          required>
+        <button type="submit">アクセスする</button>
+      </form>
+      <p class="password-gate-error" id="passwordError" hidden>合言葉が違います。</p>
+      <p class="password-gate-foot">
+        合言葉が分からない場合は<br>
+        <a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノまでお問い合わせ</a>ください。
+      </p>
+    </div>
+  </div>
 
   <a class="skip-link" href="#main">本文へスキップ</a>
 
@@ -1476,6 +1638,81 @@
       <polyline points="6 15 12 9 18 15"/>
     </svg>
   </button>
+
+  <!-- ===== PASSWORD GATE LOGIC =====
+       パスワードを変更する手順:
+       1. ターミナルで `python3 -c "import hashlib; print(hashlib.sha256('新しい合言葉'.encode()).hexdigest())"` を実行
+       2. 出てきた64文字のhash値を下記 PW_HASH に貼り付け
+       3. 保存して終了。リロードで反映
+       現在の合言葉: roadmap1.0
+  -->
+  <script>
+  (function () {
+    'use strict';
+    const PW_HASH = 'c569f84de4d7cabf8d5135469b22c2e638046b5ddcf21515d1f56aceca249b7b';
+    const STORAGE_KEY = 'tricera_hub_unlocked_v1';
+
+    async function sha256(text) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function isUnlocked() {
+      try { return sessionStorage.getItem(STORAGE_KEY) === '1'; }
+      catch (e) { return false; }
+    }
+
+    function unlock() {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      const gate = document.getElementById('passwordGate');
+      if (gate) gate.remove();
+      document.body.classList.remove('is-locked');
+    }
+
+    function initGate() {
+      if (isUnlocked()) {
+        unlock();
+        return;
+      }
+      const form = document.getElementById('passwordForm');
+      const input = document.getElementById('passwordInput');
+      const error = document.getElementById('passwordError');
+      if (!form || !input) return;
+
+      // Auto-focus
+      requestAnimationFrame(() => input.focus());
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const pw = (input.value || '').trim().toLowerCase();
+        if (!pw) return;
+        try {
+          const hash = await sha256(pw);
+          if (hash === PW_HASH) {
+            unlock();
+          } else {
+            error.hidden = false;
+            input.value = '';
+            input.focus();
+            input.style.borderColor = '#ff5577';
+            setTimeout(() => { input.style.borderColor = ''; }, 1500);
+          }
+        } catch (err) {
+          // Subtle.crypto unavailable (very old browser) — fail open with warning
+          console.warn('[hub-gate] crypto.subtle unavailable', err);
+          error.textContent = 'ブラウザを最新版にアップデートしてください。';
+          error.hidden = false;
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGate);
+    } else {
+      initGate();
+    }
+  })();
+  </script>
 
   <script src="hub-data.js"></script>
   <script>
