@@ -1126,10 +1126,16 @@
   }
 
   .inside-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .inside-icon svg {
     display: block;
-    text-align: center;
+    transition: opacity 0.3s ease;
+  }
+  .inside-item:hover .inside-icon svg {
+    opacity: 0.65;
   }
 
   .inside-item h3 {
@@ -3243,33 +3249,78 @@
   </div>
 
   <div class="inside-grid">
+    <!-- ① 教材：書類スタック -->
     <div class="inside-item">
-      <span class="inside-icon">📐</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="16" y="5" width="24" height="30" rx="1.5"/>
+          <rect x="10" y="11" width="24" height="30" rx="1.5"/>
+          <rect x="4" y="17" width="24" height="30" rx="1.5"/>
+          <line x1="9" y1="25" x2="23" y2="25"/>
+          <line x1="9" y1="30" x2="21" y2="30"/>
+          <line x1="9" y1="35" x2="23" y2="35"/>
+        </svg>
+      </span>
       <h3>PROコース限定 オリジナル教材 全39本</h3>
       <p>noteやYouTubeでは公開しない、PRO購入者だけが読める書き下ろし教材。<br>1記事＝1タスク設計で、付属PDF 38枚（合計428ページ）でオフライン保存も可能。</p>
     </div>
+    <!-- ② 動画：再生ボタン -->
     <div class="inside-item">
-      <span class="inside-icon">🎬</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="18"/>
+          <polygon points="20,15 20,33 35,24"/>
+        </svg>
+      </span>
       <h3>動画解説 24本（約7時間）</h3>
       <p>文字だけでなく視覚的に理解。<br>判断のプロセスとDAW操作が「見える」かたちで合計約7時間。</p>
     </div>
+    <!-- ③ 楽曲：イコライザー -->
     <div class="inside-item">
-      <span class="inside-icon">🎵</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3"  y="24" width="6" height="16"/>
+          <rect x="12" y="12" width="6" height="28"/>
+          <rect x="21" y="30" width="6" height="10"/>
+          <rect x="30" y="17" width="6" height="23"/>
+          <rect x="39" y="22" width="6" height="18"/>
+        </svg>
+      </span>
       <h3>PROコース専用書き下ろし曲「Dimension」で実例解説</h3>
       <p>PROコース専用に制作した書き下ろし曲「Dimension」を実例に、考え方・手順・プラグイン選びまで超具体的に公開。</p>
     </div>
+    <!-- ④ サポート：吹き出し -->
     <div class="inside-item">
-      <span class="inside-icon">💬</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="5" width="40" height="26" rx="4"/>
+          <polyline points="8,31 8,41 18,31"/>
+          <circle cx="16" cy="18" r="2.5" fill="#00c8ff" stroke="none"/>
+          <circle cx="24" cy="18" r="2.5" fill="#00c8ff" stroke="none"/>
+          <circle cx="32" cy="18" r="2.5" fill="#00c8ff" stroke="none"/>
+        </svg>
+      </span>
       <h3>3ヶ月間・無制限LINEサポート</h3>
       <p>質問・楽曲フィードバック・判断相談を3ヶ月間・回数無制限で対応。返信は原則24時間以内。</p>
     </div>
+    <!-- ⑤ 買い切り：∞ -->
     <div class="inside-item">
-      <span class="inside-icon">🔄</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round">
+          <path d="M24,24 C24,10 6,10 6,24 C6,38 24,38 24,24 C24,10 42,10 42,24 C42,38 24,38 24,24"/>
+        </svg>
+      </span>
       <h3>買い切り・追加費用ゼロ</h3>
       <p>購入後も随時アップデート。新しい内容が追加されても追加費用は一切かからない。</p>
     </div>
+    <!-- ⑥ 返金保証：六角形＋チェック -->
     <div class="inside-item">
-      <span class="inside-icon">🛡️</span>
+      <span class="inside-icon">
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#00c8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="24,5 40,15 40,33 24,43 8,33 8,15"/>
+          <polyline points="15,25 21,32 34,17"/>
+        </svg>
+      </span>
       <h3>7日間返金保証</h3>
       <p>内容が合わないと感じたら7日以内に申請で全額返金。<br>納得して進んでほしいから。</p>
     </div>
