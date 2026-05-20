@@ -451,6 +451,52 @@
     font-weight: 700;
   }
 
+  /* ===== CTA BUTTON ===== */
+  .ref-cta-wrap {
+    text-align: center;
+    margin: 48px 0 8px;
+  }
+
+  .ref-cta-btn {
+    display: inline-block;
+    padding: 20px 52px;
+    background: var(--gold);
+    color: #001018;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.22em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 36px rgba(245,197,24,0.22);
+    min-width: 300px;
+  }
+
+  @media (hover: hover) {
+    .ref-cta-btn:hover {
+      background: #f7d046;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 44px rgba(245,197,24,0.38);
+    }
+  }
+
+  .ref-cta-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+  }
+
+  @media (max-width: 600px) {
+    .ref-cta-btn {
+      min-width: 0;
+      width: 100%;
+      padding: 18px 24px;
+      font-size: 16px;
+    }
+  }
+
   /* ===== QUOTE / CLOSING ===== */
   .ref-closing {
     margin-top: 56px;
@@ -615,6 +661,11 @@
         あなたはその一人です。<br><br>
         それだけで、十分すごいことだと思っています。
       </p>
+      <div class="ref-cta-wrap" style="animation: fadeUp 0.8s 0.45s ease both;">
+        <!-- TODO: href にラボ専用LINEのURLを設定 -->
+        <a href="#" class="ref-cta-btn" id="heroCta">LINEでクーポンを申請する</a>
+        <span class="ref-cta-sub">「紹介したい人がいます」の一言でOK</span>
+      </div>
     </div>
   </section>
 
@@ -682,6 +733,11 @@
     <div class="ref-line-cta">
       <p>クーポンコードはラボ専用LINEから個別に発行しています。</p>
       <p><strong>「紹介したい人がいます」</strong>と一言送ってもらえれば。</p>
+    </div>
+
+    <div class="ref-cta-wrap">
+      <a href="#" class="ref-cta-btn">LINEでクーポンを申請する</a>
+      <span class="ref-cta-sub">「紹介したい人がいます」の一言でOK</span>
     </div>
   </section>
 
@@ -767,6 +823,11 @@
       あなたがSTEP1から積み上げてきたものが、<br>
       誰かの「やってみよう」を生む瞬間があります。</p>
       <p>あなたの言葉で、誰かの1曲目を動かしてほしい。</p>
+    </div>
+
+    <div class="ref-cta-wrap" style="margin-top: 52px;">
+      <a href="#" class="ref-cta-btn">LINEでクーポンを申請する</a>
+      <span class="ref-cta-sub">「紹介したい人がいます」の一言でOK</span>
     </div>
 
     <div class="ref-closing">── トリケラテクノ</div>
