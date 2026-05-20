@@ -1031,6 +1031,88 @@
   .hub-step-block:first-of-type { padding-top: 24px; }
   .hub-step-block:last-of-type { border-bottom: 0; padding-bottom: 24px; }
 
+  /* ===== REFERRAL BLOCK (完走者専用) ===== */
+  .hub-step-referral {
+    border-bottom: 0 !important;
+    padding-bottom: 48px !important;
+    margin-top: 16px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(245,197,24,0.18);
+  }
+
+  .hub-step-referral .hub-step-num {
+    color: var(--gold) !important;
+    text-shadow: 0 0 24px var(--gold-glow);
+  }
+
+  .hub-step-referral .hub-step-icon {
+    color: var(--gold) !important;
+  }
+
+  @media (hover: hover) {
+    .hub-step-referral:hover .hub-step-num { color: var(--gold) !important; }
+    .hub-step-referral:hover .hub-step-icon { color: var(--gold) !important; }
+    .hub-step-referral:hover { background: none; }
+  }
+
+  .hub-step-referral .hub-step-status {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(245,197,24,0.08) !important;
+  }
+
+  .hub-step-referral .hub-article-list {
+    border-top-color: rgba(245,197,24,0.15);
+  }
+
+  .hub-step-referral .hub-article-item {
+    border-bottom-color: rgba(245,197,24,0.1);
+  }
+
+  @media (hover: hover) {
+    .hub-step-referral .hub-article-item:hover {
+      background: rgba(245,197,24,0.025);
+    }
+  }
+
+  .hub-step-referral .hub-article-marker {
+    color: var(--gold);
+  }
+
+  /* "→ 開く" ボタン */
+  .hub-article-open {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 7px 16px;
+    border: 1px solid var(--gold);
+    background: rgba(245,197,24,0.05);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .hub-article-open:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hub-article-open {
+      font-size: 11px;
+      padding: 6px 12px;
+      order: 5;
+      margin-left: auto;
+    }
+  }
+
   .hub-step-head {
     display: grid;
     grid-template-columns: 80px 1fr auto;
@@ -1539,6 +1621,36 @@
     <div class="section-label">10 STEPS</div>
     <h2>1曲完成までの<em>全工程</em></h2>
     <div id="stepsContainer"></div>
+
+    <!-- ===== REFERRAL BLOCK (完走者専用・STEP10後) ===== -->
+    <article class="hub-step-block hub-step-referral" id="referral">
+      <div class="hub-step-head">
+        <div class="hub-step-num">★</div>
+        <div class="hub-step-title-wrap">
+          <span class="hub-step-status">BONUS</span>
+          <h3 class="hub-step-title">紹介制度</h3>
+          <p class="hub-step-subtitle">完走者だけが持てる、特別な力。</p>
+          <p class="hub-step-desc">あなたの言葉で、誰かの1曲目を動かしてほしい。</p>
+        </div>
+        <div class="hub-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 12v10H4V12"/>
+            <path d="M22 7H2v5h20V7z"/>
+            <path d="M12 22V7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+        </div>
+      </div>
+      <ul class="hub-article-list">
+        <li class="hub-article-item is-published">
+          <span class="hub-article-marker" aria-hidden="true">▸</span>
+          <span class="hub-article-title">完走者専用 紹介制度ページ</span>
+          <a class="hub-article-open" href="hub-referral.html" target="_blank" rel="noopener">→ 開く</a>
+        </li>
+      </ul>
+    </article>
+
   </section>
 
   <div class="divider"></div>
