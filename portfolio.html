@@ -671,6 +671,33 @@ ul { list-style:none; }
   background: rgba(245,197,24,0.85);
   color: #001018;
 }
+.portfolio-type-badge--apple {
+  background: rgba(252,60,68,0.88);
+  color: #fff;
+}
+
+.portfolio-music-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(252,60,68,0.18);
+  border: 1.5px solid rgba(252,60,68,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fc3c44;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+@media (hover:hover) {
+  .portfolio-card:hover .portfolio-music-icon {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
 
 .portfolio-body {
   padding: 16px 18px 20px;
@@ -1228,6 +1255,36 @@ ul { list-style:none; }
         </div>
       </a>
 
+      <!-- Apple Music card 1 -->
+      <a href="https://music.apple.com/jp/album/no-worries-at-all-ep/1829270683" target="_blank" rel="noopener" class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-thumb">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/83/a5/4a/83a54aed-633e-a7fd-4dea-ca0f95dfd57d/4550711159277_cover.png/1200x630wp-60.jpg" alt="No Worries At All EP" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="portfolio-thumb-overlay"></div>
+          <span class="portfolio-type-badge portfolio-type-badge--apple">Apple Music</span>
+          <div class="portfolio-music-icon"><i class="fa-solid fa-music"></i></div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-label">Original EP</p>
+          <p class="portfolio-title">No Worries At All - EP</p>
+          <p class="portfolio-meta">2024 / TRICERA-TECHNO</p>
+        </div>
+      </a>
+
+      <!-- Apple Music card 2 -->
+      <a href="https://music.apple.com/jp/album/dream-within-a-dream-ep/1850867216" target="_blank" rel="noopener" class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-thumb">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9e/75/0f/9e750f11-804e-1154-e4e0-7103c9ed1ff0/4550713459467_cover.png/1200x630wp-60.jpg" alt="Dream Within A Dream EP" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="portfolio-thumb-overlay"></div>
+          <span class="portfolio-type-badge portfolio-type-badge--apple">Apple Music</span>
+          <div class="portfolio-music-icon"><i class="fa-solid fa-music"></i></div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-label">Original EP</p>
+          <p class="portfolio-title">Dream Within A Dream - EP</p>
+          <p class="portfolio-meta">2025 / TRICERA-TECHNO</p>
+        </div>
+      </a>
+
       <!-- note card 1 -->
       <a href="https://note.com/triceratechno/m/mecaa266ddb1f" target="_blank" rel="noopener" class="portfolio-card reveal reveal-delay-1">
         <div class="portfolio-thumb">
@@ -1263,6 +1320,9 @@ ul { list-style:none; }
         </a>
         <a href="https://note.com/triceratechno" target="_blank" rel="noopener" class="btn btn--ghost">
           <i class="fa-solid fa-n"></i> noteをもっと見る
+        </a>
+        <a href="https://music.apple.com/jp/artist/tricera-techno/1829270684" target="_blank" rel="noopener" class="btn btn--ghost" style="color:#fc3c44; border-color:rgba(252,60,68,0.4);">
+          <i class="fa-brands fa-apple"></i> Apple Musicで全楽曲を聴く
         </a>
       </div>
 
