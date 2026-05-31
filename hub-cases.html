@@ -299,6 +299,135 @@
     border: 0;
   }
 
+  /* ===== CASE REFERENCE MARQUEE ===== */
+  .case-marquee {
+    margin: 40px 0 8px;
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  }
+
+  .case-marquee-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .case-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: caseSlide 44s linear infinite;
+  }
+
+  .case-marquee:hover .case-marquee-track,
+  .case-marquee:focus-within .case-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes caseSlide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .case-slide {
+    flex: 0 0 auto;
+    width: 248px;
+    margin-right: 16px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    transition: border-color 0.2s, transform 0.2s;
+    display: block;
+  }
+
+  @media (hover: hover) {
+    .case-slide:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+  }
+
+  .case-slide-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .case-slide-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .case-slide-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: #001018;
+    background: var(--gold);
+    padding: 2px 8px;
+    line-height: 1.3;
+  }
+
+  .case-slide-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.28);
+    transition: background 0.2s;
+  }
+
+  .case-slide:hover .case-slide-play { background: rgba(0,0,0,0.12); }
+
+  .case-slide-play svg {
+    width: 38px;
+    height: 38px;
+    color: #fff;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+  }
+
+  .case-slide-body { padding: 12px 14px 14px; }
+
+  .case-slide-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .case-slide-track {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .case-slide-genre {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-top: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-marquee { overflow-x: auto; }
+    .case-marquee-track { animation: none; }
+  }
+
   /* ===== BODY TEXT ===== */
   .ref-body {
     font-size: 15px;
@@ -618,6 +747,111 @@
       </div>
     </div>
 
+    <!-- ===== REFERENCE MARQUEE ===== -->
+    <div class="case-marquee-label">どんな曲をレファレンスにした？</div>
+    <div class="case-marquee" aria-label="先輩たちのレファレンス音源">
+      <div class="case-marquee-track">
+        <!-- set 1 -->
+        <a class="case-slide" href="#case01">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/8-WvBDkCfy8/hqdefault.jpg" alt="NOBさんのレファレンス" loading="lazy">
+            <span class="case-slide-badge">CASE 01</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">NOBさん</div>
+            <div class="case-slide-track">Supernova - Velvet Avenue</div>
+            <div class="case-slide-genre">Tech House</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case02">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/Z0ZpTtZPLII/hqdefault.jpg" alt="高松さんのレファレンス" loading="lazy">
+            <span class="case-slide-badge">CASE 02</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">高松さん</div>
+            <div class="case-slide-track">bermei.inazawa - Circle</div>
+            <div class="case-slide-genre">メロディック系 / 同人音楽</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case03">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/j785JgP7tiA/hqdefault.jpg" alt="うらのさんのレファレンス" loading="lazy">
+            <span class="case-slide-badge">CASE 03</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">うらのさん</div>
+            <div class="case-slide-track">Refraction - Magma</div>
+            <div class="case-slide-genre">テクノ / ミニマル</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case04">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/jc7Q1X0LeyY/hqdefault.jpg" alt="やすさんのレファレンス" loading="lazy">
+            <span class="case-slide-badge">CASE 04</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">やすさん</div>
+            <div class="case-slide-track">Argy - Melodia</div>
+            <div class="case-slide-genre">Melodic Techno</div>
+          </div>
+        </a>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <a class="case-slide" href="#case01" aria-hidden="true" tabindex="-1">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/8-WvBDkCfy8/hqdefault.jpg" alt="" loading="lazy">
+            <span class="case-slide-badge">CASE 01</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">NOBさん</div>
+            <div class="case-slide-track">Supernova - Velvet Avenue</div>
+            <div class="case-slide-genre">Tech House</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case02" aria-hidden="true" tabindex="-1">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/Z0ZpTtZPLII/hqdefault.jpg" alt="" loading="lazy">
+            <span class="case-slide-badge">CASE 02</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">高松さん</div>
+            <div class="case-slide-track">bermei.inazawa - Circle</div>
+            <div class="case-slide-genre">メロディック系 / 同人音楽</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case03" aria-hidden="true" tabindex="-1">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/j785JgP7tiA/hqdefault.jpg" alt="" loading="lazy">
+            <span class="case-slide-badge">CASE 03</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">うらのさん</div>
+            <div class="case-slide-track">Refraction - Magma</div>
+            <div class="case-slide-genre">テクノ / ミニマル</div>
+          </div>
+        </a>
+        <a class="case-slide" href="#case04" aria-hidden="true" tabindex="-1">
+          <div class="case-slide-thumb">
+            <img src="https://img.youtube.com/vi/jc7Q1X0LeyY/hqdefault.jpg" alt="" loading="lazy">
+            <span class="case-slide-badge">CASE 04</span>
+            <span class="case-slide-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="case-slide-body">
+            <div class="case-slide-name">やすさん</div>
+            <div class="case-slide-track">Argy - Melodia</div>
+            <div class="case-slide-genre">Melodic Techno</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <div class="ref-body">
       <p>ジャンル違い・DAW違いの先輩たちが並んでいます。<br>
       「自分と全く同じ条件の人」を探すよりも、<strong>「自分と違う条件でもこう進めたんだ」と知ること</strong>が一番の収穫です。</p>
@@ -627,7 +861,7 @@
   <div class="divider"></div>
 
   <!-- ===== CASE 01 ===== -->
-  <section class="ref-section reveal">
+  <section class="ref-section reveal" id="case01">
     <div class="case-head">
       <span class="case-num">CASE 01</span>
       <span class="case-name">NOBさん</span>
@@ -710,7 +944,7 @@
   <div class="divider"></div>
 
   <!-- ===== CASE 02 ===== -->
-  <section class="ref-section reveal">
+  <section class="ref-section reveal" id="case02">
     <div class="case-head">
       <span class="case-num">CASE 02</span>
       <span class="case-name">高松さん</span>
@@ -810,7 +1044,7 @@
   <div class="divider"></div>
 
   <!-- ===== CASE 03 ===== -->
-  <section class="ref-section reveal">
+  <section class="ref-section reveal" id="case03">
     <div class="case-head">
       <span class="case-num">CASE 03</span>
       <span class="case-name">うらのさん</span>
@@ -911,7 +1145,7 @@
   <div class="divider"></div>
 
   <!-- ===== CASE 04 ===== -->
-  <section class="ref-section reveal">
+  <section class="ref-section reveal" id="case04">
     <div class="case-head">
       <span class="case-num">CASE 04</span>
       <span class="case-name">やすさん</span>
