@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【STEP1 特典ファイル】先輩たちの REAL CASES｜トリケラテクノ</title>
+<meta name="description" content="ロードマップ受講生が実際に提出した、レファレンス分析の生データ。あなたが今やっていることは、間違っていない。">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS ===== */
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #666;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ===== NOISE TEXTURE ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  /* ===== HERO ===== */
+  .ref-hero {
+    min-height: 56vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ref-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,197,24,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,200,255,0.04) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .ref-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245,197,24,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,197,24,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    z-index: 2;
+  }
+
+  .ref-hero-inner {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .ref-tag {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .ref-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 9vw, 92px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .ref-hero-title span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .ref-hero-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: clamp(15px, 2.4vw, 20px);
+    color: var(--white);
+    letter-spacing: 0.08em;
+    margin-top: 20px;
+    animation: fadeUp 0.8s 0.25s ease both;
+  }
+
+  .ref-hero-lead {
+    font-size: clamp(14px, 2.2vw, 17px);
+    color: #aaa;
+    margin: 24px auto 0;
+    max-width: 620px;
+    line-height: 1.9;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+
+  /* ===== SECTIONS ===== */
+  .ref-section {
+    padding: 80px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .ref-section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ref-section-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .ref-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 5vw, 50px);
+    line-height: 1.05;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  .ref-section h2 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .ref-section h2 .h2-jp {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3.2vw, 30px);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+
+  /* ===== CASE HEADER ===== */
+  .case-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+
+  .case-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 0.9;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+
+  .case-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--white);
+  }
+
+  .case-genre {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+
+  /* ===== META / PROFILE CARDS ===== */
+  .ref-coupon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .ref-coupon-card {
+    padding: 22px 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .ref-coupon-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .ref-coupon-value {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .ref-coupon-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== REFERENCE STRIP ===== */
+  .ref-track {
+    margin: 24px 0;
+    padding: 20px 22px;
+    background: rgba(0,200,255,0.04);
+    border: 1px solid rgba(0,200,255,0.18);
+    border-left: 2px solid var(--accent);
+  }
+
+  .ref-track-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .ref-track-title {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .ref-track-spec {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-top: 6px;
+  }
+
+  /* ===== BODY TEXT ===== */
+  .ref-body {
+    font-size: 15px;
+    line-height: 1.95;
+    color: #b8b8b8;
+  }
+
+  .ref-body p { margin-bottom: 1.4em; }
+  .ref-body p:last-child { margin-bottom: 0; }
+
+  .ref-body strong { color: var(--white); font-weight: 700; }
+
+  .ref-body em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .ref-body blockquote {
+    border-left: 2px solid var(--gold);
+    background: rgba(245,197,24,0.04);
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.85;
+  }
+
+  .ref-body blockquote p { margin-bottom: 0.6em; }
+  .ref-body blockquote p:last-child { margin-bottom: 0; }
+
+  .ref-body blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  /* ===== LESSON ===== */
+  .lesson-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 36px 0 12px;
+    padding-left: 16px;
+    border-left: 3px solid var(--gold);
+    line-height: 1.5;
+  }
+
+  .lesson-title span { color: var(--gold); }
+
+  /* ===== STRUCTURE / MONO BLOCK ===== */
+  .ref-mono {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #cfcfcf;
+    background: var(--deep);
+    border: 1px solid var(--border);
+    padding: 20px 22px;
+    margin: 20px 0;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+
+  /* ===== HOW / TEMPLATE BOX ===== */
+  .ref-how-box {
+    padding: 28px;
+    background: rgba(245,197,24,0.04);
+    border: 1px solid rgba(245,197,24,0.2);
+    margin: 32px 0;
+  }
+
+  .ref-how-box p {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  .ref-how-box strong { color: var(--white); font-weight: 700; }
+
+  /* ===== CTA ===== */
+  .ref-cta-wrap { text-align: center; margin: 48px 0 8px; }
+
+  .ref-cta-btn {
+    display: inline-block;
+    padding: 20px 52px;
+    background: var(--gold);
+    color: #001018;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.22em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 36px rgba(245,197,24,0.22);
+    min-width: 300px;
+  }
+
+  @media (hover: hover) {
+    .ref-cta-btn:hover {
+      background: #f7d046;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 44px rgba(245,197,24,0.38);
+    }
+  }
+
+  .ref-cta-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+  }
+
+  @media (max-width: 600px) {
+    .ref-cta-btn { min-width: 0; width: 100%; padding: 18px 24px; font-size: 16px; }
+  }
+
+  /* ===== CLOSING ===== */
+  .ref-closing {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted);
+    text-align: right;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+    margin: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .ref-footer {
+    border-top: 1px solid var(--border);
+    padding: 56px 24px 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .ref-footer p { margin-bottom: 16px; }
+
+  .ref-footer-note {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.06em;
+    margin-bottom: 24px;
+  }
+
+  .ref-footer-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ref-footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  @media (hover: hover) {
+    .ref-footer-links a:hover { color: var(--gold); }
+  }
+
+  /* ===== BACK TO TOP ===== */
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(245,197,24,0.12);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top svg { width: 18px; height: 18px; }
+
+  @media (hover: hover) {
+    .back-to-top:hover { background: var(--gold); color: #001018; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .ref-tag, .ref-hero-title, .ref-hero-jp, .ref-hero-lead { animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 768px) {
+    .ref-hero { padding: 80px 20px 60px; min-height: 50vh; }
+    .ref-section { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="ref-hero">
+    <div class="ref-hero-bg"></div>
+    <div class="ref-hero-grid"></div>
+    <div class="ref-hero-inner">
+      <div class="ref-tag">STEP1 特典ファイル</div>
+      <h1 class="ref-hero-title">REAL <span>CASES</span></h1>
+      <p class="ref-hero-jp">先輩たちの「リアルなレファレンス分析」── 順次更新中</p>
+      <p class="ref-hero-lead">
+        ロードマップ受講生が実際に提出した、レファレンス分析の生データ。<br>
+        あなたが今やっていることは、間違っていない。
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== なぜこの特典記事を用意したのか ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">WHY THIS FILE</div>
+    <h2>なぜ、この特典記事を<em>用意したのか</em>。</h2>
+
+    <div class="ref-body">
+      <p>STEP1（1-1 + 1-2）を読み終えた今、こう感じていないでしょうか。</p>
+
+      <blockquote>
+        <p>「自分のレファレンス選びは、本当にこれで合っているのか？」</p>
+        <p>「自分が書いた構成メモは、的を外していないか？」</p>
+        <p>「ステム解析の聴き取りポイント、自分の感じ方は正しいのか？」</p>
+      </blockquote>
+
+      <p>不安になるのは、当然です。<br>
+      私自身も、最初の1曲を作るときはずっとそうでした。</p>
+
+      <p>だからこの特典記事では、実際にロードマップを受講した先輩たちの<em>"リアルなレファレンス分析"</em>を、生のままでお見せします。</p>
+
+      <p>「正解の例」ではありません。<br>
+      <strong>「あなたと同じ立場の人が、こうやって乗り越えた」記録</strong>です。</p>
+
+      <p>ジャンルも、DAWも、DTM歴も、選んだ曲もバラバラ。<br>
+      でも全員に共通していたことが、たった1つあります。</p>
+
+      <p>それは ──<br>
+      <strong>「最初は不安なまま、それでも提出した」</strong>ということ。</p>
+
+      <p>そして全員が、その先で前に進めています。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CASE 一覧表 ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">CASE INDEX</div>
+    <h2>CASE 一覧表<span class="h2-jp">自分と近い先輩を探してください</span></h2>
+
+    <div class="ref-coupon-grid">
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">CASE 01</div>
+        <div class="ref-coupon-value">NOBさん<br><small style="font-weight:400;color:#888;font-size:12px;">Tech House × Ableton Live<br>DTM歴 3ヶ月</small></div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">CASE 02</div>
+        <div class="ref-coupon-value">高松さん<br><small style="font-weight:400;color:#888;font-size:12px;">メロディック系（同人音楽）× FL Studio<br>完全初心者</small></div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">CASE 03</div>
+        <div class="ref-coupon-value">うらのさん<br><small style="font-weight:400;color:#888;font-size:12px;">テクノ / ミニマル × Bitwig Studio<br>DAW初体験</small></div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">CASE 04</div>
+        <div class="ref-coupon-value">Yさん<br><small style="font-weight:400;color:#888;font-size:12px;">Melodic Techno × Ableton Live<br>触ったり触らなかったり</small></div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">CASE 05〜</div>
+        <div class="ref-coupon-value" style="color:var(--muted);">順次<br>追加予定</div>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>ジャンル違い・DAW違いの先輩たちが並んでいます。<br>
+      「自分と全く同じ条件の人」を探すよりも、<strong>「自分と違う条件でもこう進めたんだ」と知ること</strong>が一番の収穫です。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CASE 01 ===== -->
+  <section class="ref-section reveal">
+    <div class="case-head">
+      <span class="case-num">CASE 01</span>
+      <span class="case-name">NOBさん</span>
+    </div>
+    <p class="case-genre">Tech House × Ableton Live</p>
+
+    <div class="ref-coupon-grid">
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DAW</div>
+        <div class="ref-coupon-value">Ableton Live</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">ジャンル</div>
+        <div class="ref-coupon-value">Tech House → House</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DTM歴</div>
+        <div class="ref-coupon-value">開始3ヶ月</div>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>特徴：DJ として活動中。クラブで自分の曲をかけたい。</p>
+    </div>
+
+    <div class="ref-track">
+      <div class="ref-track-label">選んだレファレンス</div>
+      <div class="ref-track-title">Supernova - Velvet Avenue (Extended Mix)</div>
+      <div class="ref-track-spec">BPM 129 / KEY F MINOR</div>
+    </div>
+
+    <div class="ref-body">
+      <p>DJ活動の中で出会った1曲。House系のグルーヴで、「この感じを自分でも作れるようになりたい」という"旗"が明確に立った。</p>
+
+      <p class="lesson-title"><span>教訓①</span>　解析ツールの結果が違っても、慌てない</p>
+
+      <blockquote>
+        <p>「Mix in keyというソフトで解析したところ、Tunebatとキーが違って表示されました」</p>
+        <cite>── NOBさんが最初にぶつかった壁</cite>
+      </blockquote>
+
+      <p>解析ツールごとに微妙に結果が違うのは、普通のこと。完璧な答えを探すのではなく、Tunebat / Beatport / Mix in key などで複数チェックし、最後は<strong>自分の耳で「これだ」と思った方</strong>を私と相談して採用する（今回はBeatport記載のキーに決定）。これが正解です。</p>
+
+      <p class="lesson-title"><span>教訓②</span>　構成メモは "提出してから" 整理される</p>
+
+      <p>NOBさんは構成メモを自力で書き出して提出した。その時の用語は「ヴァース①」「ヴァース②」「ヴァース③」「ドロップ①」「ドロップ②」…。</p>
+
+      <blockquote>
+        <p>「ほとんど小節の区切り方に違いはありません。使われている楽器も同様です。」</p>
+        <cite>── 私が返したフィードバック</cite>
+      </blockquote>
+
+      <p>ただし呼び方を整理すると ──<br>
+      「ヴァース」と書いていた箇所 → 実は「ドロップ」。<br>
+      「ドロップ①」と書いていた箇所 → 実は「フック → ビルドアップ」。<br>
+      「ドロップ（ビルドアップ？）」と書いていた箇所 → 「ブレイク（ブリッジ）」。</p>
+
+      <p>つまり ── <strong>区切り位置は最初から正解だった。呼び方だけが違っていた。</strong>そして呼び方は、フィードバックを受けて初めて整理されるもの。最初から完璧に呼べる人は誰もいない。</p>
+
+      <p class="lesson-title"><span>教訓③</span>　Ableton Stems は高音質モード一択</p>
+
+      <p>NOBさんは Ableton Live 12.3 のステム分離機能をいち早く活用。「特に、高音質モードの分解のクオリティは非常に高い」。このNOBさんからのフィードバックが、ロードマップv1.1のSTEP1アップデートにも反映されました。30分待つ価値が、確実にある。</p>
+
+      <p class="lesson-title">NOBさんが残した名言</p>
+
+      <p>NOBさんは構成メモを提出するとき、こう書いた。</p>
+
+      <blockquote>
+        <p>「自信がないのでお願いします」</p>
+      </blockquote>
+
+      <p>これでいい。むしろこれがいい。<strong>不安なまま提出していい。</strong>そのほうが、的確なフィードバックが返ってくる。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CASE 02 ===== -->
+  <section class="ref-section reveal">
+    <div class="case-head">
+      <span class="case-num">CASE 02</span>
+      <span class="case-name">高松さん</span>
+    </div>
+    <p class="case-genre">メロディック系（同人音楽）× FL Studio</p>
+
+    <div class="ref-coupon-grid">
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DAW</div>
+        <div class="ref-coupon-value">FL Studio</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">ジャンル</div>
+        <div class="ref-coupon-value">同人音楽 / メロディック系</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DTM歴</div>
+        <div class="ref-coupon-value">完全初心者</div>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>特徴：人生の折り返しで「世界に自分が生きた証を残したい」と決意。</p>
+    </div>
+
+    <div class="ref-track">
+      <div class="ref-track-label">選んだレファレンス</div>
+      <div class="ref-track-title">bermei.inazawa - Circle (zts mix)</div>
+      <div class="ref-track-spec">BPM 120 / KEY B♭ MAJOR</div>
+    </div>
+
+    <div class="ref-body">
+      <p>20年以上前、大学生の頃に「とらのあな」でたまたま購入した bermei.inazawa の同人アルバム。家で再生した瞬間、心が震えた。「自分もこういう音楽が作れたらいいな」── その記憶が、人生の折り返しで再点火した。</p>
+
+      <p class="lesson-title"><span>教訓①</span>　Tunebatに曲が出なくても、諦めない</p>
+
+      <blockquote>
+        <p>「Circle (zts mix) にはしないことにしました。理由はTunebatに検索をかけても出ないからです。」</p>
+        <cite>── 高松さんからの最初の連絡</cite>
+      </blockquote>
+
+      <p>同人音楽やマイナーレーベルの曲は、Tunebat の検索にHITしないことがある。ここで私は踏み込みました。</p>
+
+      <blockquote>
+        <p>「高松さんの Circle (zts mix) への熱い思いを、私は知っています。だからこそ、私が構成のメモを作って送らせてください。」</p>
+      </blockquote>
+
+      <p>結果、高松さんはCircleで進めることを決断。そして、本当に心が動く1曲で制作することができた。<strong>レファレンスは "解析ツールにHITするか" ではなく "感情が動くか" で選ぶ。</strong></p>
+
+      <p>ちなみにBPM/Keyは、vocalremover.org/ja/key-bpm-finder という別のWebサービスで解析できた。Tunebat以外にも選択肢はある。</p>
+
+      <p class="lesson-title"><span>教訓②</span>　BPMは "好み" より "実測"</p>
+
+      <p>高松さんは最初、BPMを128にしようとしていた。理由は「私の大好きな曲のひとつ Booyah のBPMが128だから」。でも、解析サイトで Circle を実測すると120 BPM。高松さんは迷わず120に修正した。</p>
+
+      <blockquote>
+        <p>「BPMについては128でなく120で進めていきたいと思います。」</p>
+      </blockquote>
+
+      <p><strong>レファレンスのBPMには、素直に従う。自分の好みに引っ張られない。</strong></p>
+
+      <p class="lesson-title"><span>教訓③</span>　完全初心者でも、構成は自力で分解できる</p>
+
+      <p>高松さんは「DTM初心者中の初心者」と自認していた。それでも、ロードマップを読みながら自力で構成を分解した。</p>
+
+      <div class="ref-mono">1～57    イントロ
+58～76   フック1
+77～96   ビルドアップ1
+97～114  フック2
+115～134 ビルドアップ2
+135～172 ドロップ1
+173～182 ブレイクダウン1
+183～201 フック3
+…</div>
+
+      <blockquote>
+        <p>「送っていただいた内容に大きな違いはございません。」</p>
+        <cite>── 私が返したフィードバック</cite>
+      </blockquote>
+
+      <p><strong>DTM完全初心者でも、ロードマップに沿って手を動かせば、構成は読み解ける。</strong></p>
+
+      <p class="lesson-title">高松さんが残した名言</p>
+
+      <blockquote>
+        <p>「もしできるなら少人数でもいいので人に感動してもらえるような曲、さらにいえば inazawa さんの様な音楽が作れたらと考えるようになりました。それが自分のDTMの出発点です。」</p>
+      </blockquote>
+
+      <p>レファレンスは、論理ではなく感情の核から選ぶ。高松さんの「20年前の感動の記憶」── これ以上のレファレンス選定理由はない。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CASE 03 ===== -->
+  <section class="ref-section reveal">
+    <div class="case-head">
+      <span class="case-num">CASE 03</span>
+      <span class="case-name">うらのさん</span>
+    </div>
+    <p class="case-genre">テクノ / ミニマル × Bitwig Studio</p>
+
+    <div class="ref-coupon-grid">
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DAW</div>
+        <div class="ref-coupon-value">Bitwig Studio</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">ジャンル</div>
+        <div class="ref-coupon-value">テクノ / ミニマルテクノ</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DTM歴</div>
+        <div class="ref-coupon-value">DAW初体験</div>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>特徴：DJ として活動。Richie Hawtin への強い憧れ。Mathew Jonson、ANNA、Toru Ikemoto などミニマル / テクノ系を愛聴。</p>
+    </div>
+
+    <div class="ref-track">
+      <div class="ref-track-label">選んだレファレンス</div>
+      <div class="ref-track-title">Alexx Wolfe, Refraction (IT) - Magma (Original Mix)</div>
+      <div class="ref-track-spec">BPM 126 / KEY F MINOR / TECHNO (PEAK TIME / DRIVING)</div>
+    </div>
+
+    <div class="ref-body">
+      <p>「派手すぎず展開が控えめのさっぱりした曲が好み」── そのまま体現した1曲。</p>
+
+      <p class="lesson-title"><span>教訓①</span>　Tunebatに出ない時の現実解 = Beatport</p>
+
+      <blockquote>
+        <p>「Tunebatで検索しても今回のリファレンス曲が出てこない」</p>
+        <cite>── うらのさんも同じ壁にぶつかった</cite>
+      </blockquote>
+
+      <blockquote>
+        <p>「Beatport の曲のキー（F minor）と BPM (126) に従っていただいて問題ございません。」</p>
+        <cite>── 私の回答</cite>
+      </blockquote>
+
+      <p><strong>Beatport / SoundCloud / アーティスト本人の表記など、信頼できる情報源を素直に使う。</strong>完璧主義になる必要はない。</p>
+
+      <p class="lesson-title"><span>教訓②</span>　「サビがない曲」の構造を理解する</p>
+
+      <blockquote>
+        <p>「はっきりとしたサビがない曲のように感じ、ビルドアップとドロップの違いが判りませんでした。このような曲の場合どう対処すればよいのでしょうか？」</p>
+      </blockquote>
+
+      <p>ミニマルテクノ / Peak Time Techno の特徴は「キックとドラムスの8小節ループの中で、数多くのSEが出入りする」こと。ポップスのような明確な「サビ」はない。代わりにあるのは、エネルギーの高低差。</p>
+
+      <blockquote>
+        <p>ダンスミュージックにおけるブレイクは、「ドロップのエネルギーを一度落としつつ、次のドロップに向けて "緊張感を保つための区間"」</p>
+      </blockquote>
+
+      <p>つまり、<strong>ビルドアップ → ドロップ → ブレイク → ドロップ</strong>の流れが基本。うらのさんは最初「ビルドアップ → ブレイク → ドロップ」と並べていた。ここを修正することで、テクノ系楽曲の構造が一気に腹落ちした。</p>
+
+      <p class="lesson-title"><span>教訓③</span>　自分の構成メモは、思っている以上に正確</p>
+
+      <p>うらのさんは Magma の構成を小節レベルで詳細に分解して提出した。</p>
+
+      <div class="ref-mono">17-79   ビルドアップ
+   29-32  キックが少し絞られる、ベースがゼロまで下がっていく
+   33-40  ハット追加（16拍目のみ違う打ち込み）
+   35.5から獣のSE
+   …
+80-84   ブレイク（実際は誤り、ここはブリッジ）
+85-100  ドロップ
+   87から獣SE
+   …</div>
+
+      <blockquote>
+        <p>「イントロ・ドロップ・アウトロの捉え方は基本的に合っています。この3つに関しては、今の理解のままで問題ありません。一点だけ、ブレイクの考え方について補足と修正をさせてください。」</p>
+        <cite>── 私が返したフィードバック</cite>
+      </blockquote>
+
+      <p>DAW初体験でも、ここまで詳細に分解できた。<strong>修正されたのは「ブレイクの位置」だけ。骨組みは最初から合っていた。</strong></p>
+
+      <p class="lesson-title">うらのさんが残した名言</p>
+
+      <blockquote>
+        <p>「？になるとすぐにフリーズしてしまうタイプなので大変ありがたいです。」</p>
+      </blockquote>
+
+      <p>分からなくなったら、フリーズせず質問する。ラボ専用LINEの本来の使い方は、これです。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CASE 04 ===== -->
+  <section class="ref-section reveal">
+    <div class="case-head">
+      <span class="case-num">CASE 04</span>
+      <span class="case-name">Yさん</span>
+    </div>
+    <p class="case-genre">Melodic Techno × Ableton Live</p>
+
+    <div class="ref-coupon-grid">
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DAW</div>
+        <div class="ref-coupon-value">Ableton Live</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">ジャンル</div>
+        <div class="ref-coupon-value">Melodic Techno</div>
+      </div>
+      <div class="ref-coupon-card">
+        <div class="ref-coupon-label">DTM歴</div>
+        <div class="ref-coupon-value">触ったり触らなかったり</div>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>特徴：Anyma の Bad Angel を聴き込んでハマったところからスタート。Anyma の世界観が好き。</p>
+    </div>
+
+    <div class="ref-track">
+      <div class="ref-track-label">選んだレファレンス</div>
+      <div class="ref-track-title">Argy - Melodia</div>
+      <div class="ref-track-spec">BPM 132 / KEY A♯ / B♭ MINOR</div>
+    </div>
+
+    <div class="ref-body">
+      <p>最初は Anyma の Bad Angel をレファレンスにしようとしたが、再現の難しさで一度行き詰まり ── その後、自分が「これなら作れそう」と感じる Argy の Melodia に切り替えて再スタート。</p>
+
+      <p class="lesson-title"><span>教訓①</span>　「同じ音が再現できなくて止まる」は、次に進むサイン</p>
+
+      <blockquote>
+        <p>「同じ音を再現するのができなくて、止まってしまいました！」</p>
+      </blockquote>
+
+      <p>これは、独学のDTMだと、ほぼ100%通る場所。そして実は ── 次のステップに進むベストなタイミングでもある。</p>
+
+      <blockquote>
+        <p>「独学だとほぼ100%通る場所なので、むしろ次のステップに進むタイミングです。私も2年間は一曲も完成できませんでした。」</p>
+        <cite>── 私が返した言葉</cite>
+      </blockquote>
+
+      <p>止まることは、失敗ではない。<strong>「自分1人では限界がある」と気づけたこと自体が、進歩。</strong></p>
+
+      <p class="lesson-title"><span>教訓②</span>　レファレンスは "途中で変えてもいい"</p>
+
+      <p>Yさんは最初 Bad Angel で進めようとしたが、最終的に Argy - Melodia に変更した。これは大事なポイント。</p>
+
+      <blockquote>
+        <p>・最初に選んだ曲を絶対に貫く必要はない<br>
+        ・進められない曲で止まり続けるより、進められる曲で前に進む方がずっと大事<br>
+        ・ただし「Anymaの世界観が好き」という核（= ジャンル）は変わっていない</p>
+      </blockquote>
+
+      <p><strong>レファレンスは "感情の核" さえブレなければ、曲を変えてもOK。</strong>最初の選択にこだわって止まるより、進められる選択肢に柔軟に切り替える。</p>
+
+      <p class="lesson-title"><span>教訓③</span>　構成メモは「できた」と即提出する勇気</p>
+
+      <p>Yさんは構成メモをサクッと書き上げて、「できた」と即提出した。</p>
+
+      <div class="ref-mono">【STEP1 課題】レファレンス提出
+アーティスト名：Argy
+曲名：Melodia
+BPM：132
+Key：A#/Bb minor
+構成のメモ → できた</div>
+
+      <blockquote>
+        <p>「BPMとキー、そして構成メモもできているということで、すごく順調ですね！そのままSTEP2に進んでいただいて問題ございません。」</p>
+        <cite>── 私の即レス</cite>
+      </blockquote>
+
+      <p>完璧主義で抱え込むより、「できた」と思った時点で出してしまう。他のCASEは「自信がない」「サポート依頼」で出していたが、Yさんのように<strong>即提出スタイルでもOK。</strong></p>
+
+      <p class="lesson-title">Yさんが残した名言</p>
+
+      <blockquote>
+        <p>「同じ音を再現するのができなくて、止まってしまいました！」</p>
+      </blockquote>
+
+      <p>止まることは、終わりではない。「自分1人では限界がある」と気づけたこと自体が、次に進むためのスイッチ。そしてYさんはそのスイッチを押して、ロードマップを購入し、Argy - Melodia でしっかり STEP1 を完走した。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 受講生の共通点 ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">WHAT THEY SHARE</div>
+    <h2>受講生の共通点<span class="h2-jp">そして、あなたへ</span></h2>
+
+    <div class="ref-body">
+      <p>ジャンルも、DAWも、DTM歴も、選んだ曲も違う先輩たち。でも、全員に共通していたことがいくつかあります。</p>
+
+      <p class="lesson-title"><span>共通点①</span>　全員、Tunebatの壁にぶつかった</p>
+      <p>NOBさん：Tunebat と Mix in key で結果が違った。<br>
+      高松さん：Tunebat に曲そのものが出なかった。<br>
+      うらのさん：同じく Tunebat に出なかった。</p>
+      <p><strong>解析ツールは絶対ではない。</strong>Beatport、別の解析サイト、自分の耳 ── 複数のソースを組み合わせる。</p>
+
+      <p class="lesson-title"><span>共通点②</span>　全員、最初の構成メモは "呼び方" を整理し直された</p>
+      <p>NOBさん：「ヴァース」「ドロップ①」「ドロップ②」→ フック / ドロップ / ブリッジ に整理。<br>
+      高松さん：細かな修正を経て構成メモが完成。<br>
+      うらのさん：「ビルドアップ → ブレイク → ドロップ」→「ビルドアップ → ドロップ → ブレイク → ドロップ」に修正。</p>
+      <p><strong>最初から完璧に呼べる人はいない。</strong>フィードバックを受けて初めて整理される。</p>
+
+      <p class="lesson-title"><span>共通点③</span>　全員、レファレンスを "感情の核" から選んだ</p>
+      <p>NOBさん：DJ活動で出会い、心が動いた1曲。<br>
+      高松さん：20年前の同人音楽の記憶。<br>
+      うらのさん：憧れの DJ Richie Hawtin の世界観。</p>
+      <p><strong>レファレンスは、論理ではなく感情で選ぶ。</strong></p>
+
+      <p class="lesson-title"><span>共通点④</span>　全員、最初は不安なまま提出した</p>
+      <p>NOBさん：「自信がないのでお願いします」<br>
+      高松さん：「DTM初心者中の初心者なのでどこまで行けるか分かりませんが」<br>
+      うらのさん：「？になるとすぐにフリーズしてしまうタイプ」</p>
+      <p><strong>不安なまま提出していい。</strong>むしろそのほうが的確なフィードバックが返ってくる。</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== あなたへ ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">FOR YOU</div>
+    <h2>あなたが今やっていることは、<em>間違っていない</em>。</h2>
+
+    <div class="ref-body">
+      <p>先輩たちのCASEを読んで、こう感じてくれたら嬉しい。</p>
+
+      <blockquote>
+        <p>「あ、自分も Tunebat に出なくて困ってた」<br>
+        「自分も "ヴァース" って書いてた」<br>
+        「自分も DAW初心者だ」<br>
+        「自分も自信がない」</p>
+      </blockquote>
+
+      <p>── 全部、この先輩たちと同じです。</p>
+
+      <p>そして全員、今は STEP2 以降に進んでいる。高松さんに至っては、STEP10 の楽曲完成までたどり着いた。</p>
+
+      <p><strong>あなたも、必ず進めます。</strong></p>
+    </div>
+
+    <div class="divider" style="margin: 48px 0;"></div>
+
+    <div class="ref-body">
+      <p>「自信がない」── それでいい。</p>
+      <p>先輩たちと同じテンプレートで送ってくれれば、私がしっかり読みます。</p>
+    </div>
+
+    <div class="ref-how-box">
+      <div class="ref-mono" style="margin:0;background:transparent;border:none;padding:0;">【STEP1 完了報告】レファレンス + ステム解析
+アーティスト名：
+曲名：
+BPM：
+Key：
+URL：
+使用ツール：MVSep / Ableton Stems / その他
+構成のメモ → できた / サポート依頼
+ステム聴き比べ → 完了 / 質問あり
+★不安な点があれば自由記述：</div>
+    </div>
+
+    <div class="ref-body">
+      <p>「自信がないのでお願いします」── そう書いて送ってOKです。</p>
+    </div>
+
+    <div class="ref-cta-wrap">
+      <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" class="ref-cta-btn">ラボ専用LINEへ送る</a>
+      <span class="ref-cta-sub">不安なまま、提出してください</span>
+    </div>
+
+    <div class="divider" style="margin: 48px 0;"></div>
+
+    <div class="ref-body">
+      <p>この特典記事は、これからも追加されていきます。</p>
+      <p>CASE 05、CASE 06 ── これから先輩たちが加わるたびに、この記事は更新されます。あなたが STEP1 を完走した時、もしかしたらこの記事の中で、誰かの背中を押す側に回るかもしれません。</p>
+      <p>そのときが、私（トリケラテクノ）にとっての一番嬉しい瞬間です。</p>
+      <p>STEP1 を終えたら、いよいよ STEP2 へ。ローエンド設計（キックとベース）の世界へ進みましょう。</p>
+    </div>
+
+    <div class="ref-closing">── トリケラテクノ</div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="ref-footer">
+    <p class="ref-footer-note">※ 受講生のお名前は、ご本人の許諾を得て掲載しています。</p>
+    <p>&copy; TRICERATECHNO &nbsp;/&nbsp; DTM解説恐竜</p>
+    <div class="ref-footer-links">
+      <a href="triceratechno-hub.html">← HUBに戻る</a>
+      <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="ページ最上部へ戻る" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 15 12 9 18 15"/>
+    </svg>
+  </button>
+
+  <script>
+  (function () {
+    'use strict';
+
+    function setupReveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach(r => observer.observe(r));
+    }
+
+    function setupBackToTop() {
+      const btn = document.getElementById('backToTop');
+      if (!btn) return;
+      let ticking = false;
+      function update() {
+        if (window.scrollY > 600) btn.classList.add('is-visible');
+        else btn.classList.remove('is-visible');
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      update();
+    }
+
+    function init() {
+      setupReveal();
+      setupBackToTop();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+
+</body>
+</html>

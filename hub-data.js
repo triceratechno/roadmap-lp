@@ -45,7 +45,7 @@ const ROADMAP_DATA = {
       articles: [
         { id: "1-1", type: "lesson", title: "STEP1-1：楽曲構成の理解と、1曲を選ぶ ── ロードマップ最初の\"コンパス\"を立てる", noteUrl: "https://note.com/preview/ncecfa60df4c6?prev_access_key=928d40d37c991b488c4dc4ba01bb2b52", pdfUrl: "step1-1.pdf", videoUrl: "", status: "published" },
         { id: "1-2", type: "lesson", title: "STEP1-2：レファレンスを丸裸にする ── AIステム分離で、プロの設計図を読み解く", noteUrl: "https://note.com/preview/nc2001a80fe23?prev_access_key=e6acca3e5743e3250683ec1447a0121b", pdfUrl: "step1-2.pdf", videoUrl: "", status: "published" },
-        { id: "1-bonus", type: "bonus", title: "STEP1 特典ファイル：先輩たちの REAL CASES ── 順次更新中", noteUrl: "https://note.com/preview/nb7ad979cf708?prev_access_key=6131b00d650ad3e14d14f9073137d8f2", pdfUrl: "", videoUrl: "", status: "published" }
+        { id: "1-bonus", type: "bonus", title: "STEP1 特典ファイル：先輩たちの REAL CASES ── 順次更新中", noteUrl: "hub-cases.html", pdfUrl: "", videoUrl: "", status: "published" }
       ]
     },
 
