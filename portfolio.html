@@ -552,6 +552,120 @@ ul { list-style:none; }
   .services-grid { grid-template-columns: 1fr; }
 }
 
+/* ===== CUSTOMER VOICE MARQUEE ===== */
+.voice-marquee-head {
+  margin-top: 64px;
+  text-align: center;
+}
+.voice-marquee-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.voice-marquee-sub {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.voice-marquee {
+  position: relative;
+  overflow: hidden;
+  margin-top: 26px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+.voice-track {
+  display: flex;
+  width: max-content;
+  animation: voiceSlide 48s linear infinite;
+}
+.voice-marquee:hover .voice-track { animation-play-state: paused; }
+@keyframes voiceSlide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.voice-card {
+  flex: 0 0 320px;
+  width: 320px;
+  margin-right: 18px;
+  padding: 22px 22px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.voice-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.voice-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,200,255,0.1);
+  border: 1px solid rgba(0,200,255,0.3);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 16px;
+}
+.voice-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+}
+.voice-meta {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  margin-top: 2px;
+}
+.voice-stars {
+  color: var(--gold, #f5c518);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.voice-quote {
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1.6;
+}
+.voice-body {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
+}
+.voice-badge {
+  align-self: flex-start;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  border: 1px solid rgba(0,200,255,0.3);
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+.voice-badge--progress {
+  color: var(--muted);
+  border-color: var(--border);
+}
+@media (prefers-reduced-motion: reduce) {
+  .voice-track { animation: none; width: auto; }
+  .voice-marquee { overflow-x: auto; scrollbar-width: none; }
+  .voice-marquee::-webkit-scrollbar { display: none; }
+}
+
 /* =============================================
    PORTFOLIO
    ============================================= */
@@ -1188,6 +1302,100 @@ ul { list-style:none; }
       </div>
 
     </div>
+
+    <!-- ===== CUSTOMER VOICE MARQUEE ===== -->
+    <div class="voice-marquee-head reveal">
+      <p class="voice-marquee-label">REAL VOICES</p>
+      <p class="voice-marquee-sub">ロードマップ受講生からの、リアルな声</p>
+    </div>
+    <div class="voice-marquee reveal" aria-label="購入者のリアルな声">
+      <div class="voice-track" id="voiceTrack">
+
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <img class="voice-avatar" src="ジジさんアイコン.jpg" alt="ジジさん">
+            <div>
+              <p class="voice-name">ジジさん</p>
+              <p class="voice-meta">DTM歴1年未満 ・ FL Studio</p>
+              <div class="voice-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-quote">「DTMの教科書」</p>
+          <p class="voice-body">まず何をするか、曲を最後まで作るには何が必要かを教えてもらえた。挫折しそうな時も言葉を思い出して頑張れた。</p>
+          <span class="voice-badge">STEP 1〜10 完走</span>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <img class="voice-avatar" src="yasu-icon.png" alt="やすさん">
+            <div>
+              <p class="voice-name">やすさん</p>
+              <p class="voice-meta">DTM歴3〜5年 ・ Ableton Live</p>
+              <div class="voice-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-quote">「欲しかった情報が全部ここにあった」</p>
+          <p class="voice-body">曲の作り方がまったく分からない状態から、今は毎日曲作りに夢中。根拠づけて書かれていて読みやすい。</p>
+          <span class="voice-badge">STEP 1〜10 完走</span>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <img class="voice-avatar" src="nob-icon.png" alt="Nobさん">
+            <div>
+              <p class="voice-name">Nobさん</p>
+              <p class="voice-meta">DTM歴1年未満 ・ Ableton Live</p>
+              <div class="voice-stars">★★★★☆</div>
+            </div>
+          </div>
+          <p class="voice-quote">「自分でも曲を完成させられる自信が手に入る」</p>
+          <p class="voice-body">レファレンスを基にステップアップ方式で完成まで学べた。自分一人でも作れるという自信が手に入った。</p>
+          <span class="voice-badge voice-badge--progress">STEP 7 進行中</span>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <img class="voice-avatar" src="usada-icon.png" alt="うさださん">
+            <div>
+              <p class="voice-name">うさださん</p>
+              <p class="voice-meta">DTM歴1年未満 ・ Bitwig Studio</p>
+              <div class="voice-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-quote">「最初の一曲を作り上げるまでの指針」</p>
+          <p class="voice-body">不明な点を解消し、一歩ずつ進めることができた。一曲をリリースできるまで引き続きお願いしたい。</p>
+          <span class="voice-badge voice-badge--progress">STEP 3 進行中</span>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <span class="voice-avatar">D</span>
+            <div>
+              <p class="voice-name">DAnさん</p>
+              <p class="voice-meta">DTM歴1年未満 ・ Ableton Live ・ <span style="color:var(--accent);">ビデオコンサル有</span></p>
+              <div class="voice-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-quote">「楽曲の解像度が高まった」</p>
+          <p class="voice-body">何から始めていいか分からない状態から、普段聴く曲の中でも学びが増えるように。伴奏でモチベも向上。</p>
+          <span class="voice-badge voice-badge--progress">STEP 2 進行中</span>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      (function () {
+        var t = document.getElementById('voiceTrack');
+        if (!t) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        Array.prototype.slice.call(t.children).forEach(function (n) {
+          var c = n.cloneNode(true);
+          c.setAttribute('aria-hidden', 'true');
+          t.appendChild(c);
+        });
+      })();
+    </script>
+
   </div>
 </section>
 
