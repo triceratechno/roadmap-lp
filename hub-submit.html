@@ -433,6 +433,275 @@
     letter-spacing: 0.08em;
   }
 
+  /* ===== VIDEO CONSULT (anxious-user funnel) ===== */
+  .consult-lead {
+    font-size: 15px;
+    line-height: 1.95;
+    color: #b8b8b8;
+    margin-bottom: 8px;
+  }
+
+  .consult-lead strong { color: var(--white); font-weight: 700; }
+
+  .hub-consult-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .hub-consult-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 26px 28px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .hub-consult-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,200,255,0.4);
+      box-shadow: 0 12px 32px rgba(0,200,255,0.06);
+    }
+    .hub-consult-card--featured:hover {
+      border-color: var(--accent);
+      box-shadow: 0 16px 40px rgba(0,200,255,0.18);
+    }
+  }
+
+  .hub-consult-card--featured {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(0,200,255,0.05), var(--panel) 60%);
+  }
+
+  .hub-consult-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    padding: 4px 14px;
+    background: var(--black);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .hub-consult-card--featured .hub-consult-badge {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #001018;
+  }
+
+  .hub-consult-name {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0 4px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+
+  .hub-consult-meta {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hub-consult-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .hub-consult-card--featured .hub-consult-price { color: var(--accent); }
+
+  .hub-consult-tax {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .hub-consult-savings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .hub-consult-strike {
+    text-decoration: line-through;
+    text-decoration-color: var(--muted);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .hub-consult-savings-tag {
+    display: inline-block;
+    background: rgba(245,197,24,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(245,197,24,0.35);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .hub-consult-pitch {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--white);
+    font-style: normal;
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-left: 2px solid var(--accent);
+    background: rgba(0,200,255,0.04);
+  }
+
+  .hub-consult-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hub-consult-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .hub-consult-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-left: 1.5px solid var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+    transform: rotate(-45deg);
+  }
+
+  .hub-consult-cta {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    padding: 13px 18px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  @media (hover: hover) {
+    .hub-consult-cta:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--white);
+    }
+    .hub-consult-card--featured .hub-consult-cta:hover {
+      background: #33d6ff;
+      border-color: #33d6ff;
+    }
+  }
+
+  .hub-consult-card--featured .hub-consult-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #001018;
+    font-weight: 600;
+  }
+
+  /* LINE-first callout (consult before purchase) */
+  .consult-line-box {
+    margin: 36px 0 0;
+    padding: 28px 28px;
+    background: rgba(0,200,255,0.05);
+    border: 1px solid rgba(0,200,255,0.28);
+    text-align: center;
+  }
+
+  .consult-line-box h3 {
+    font-size: 17px;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 10px;
+  }
+
+  .consult-line-box p {
+    font-size: 13.5px;
+    color: #aaa;
+    line-height: 1.85;
+    margin: 0 auto 20px;
+    max-width: 600px;
+  }
+
+  .consult-line-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 36px;
+    background: #06c755;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 28px rgba(6,199,85,0.22);
+  }
+
+  .consult-line-btn svg { width: 20px; height: 20px; }
+
+  @media (hover: hover) {
+    .consult-line-btn:hover {
+      background: #05b34c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(6,199,85,0.34);
+    }
+  }
+
+  .consult-line-note {
+    margin: 14px 0 0;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 860px) {
+    .hub-consult-grid { grid-template-columns: 1fr; gap: 14px; }
+    .hub-consult-card { padding: 28px 22px 24px; }
+    .hub-consult-price { font-size: 38px; }
+  }
+
+  @media (max-width: 600px) {
+    .consult-line-btn { width: 100%; justify-content: center; }
+  }
+
   /* ===== DIVIDER ===== */
   .divider {
     width: 100%;
@@ -700,6 +969,92 @@ BPM / Key：
       <p>送ってくれた音は、必ず私が聴きます。<br>
       止まりそうになったら、完成を待たずに、その時点で出してしまってください。<br>
       一番もったいないのは、不安をかかえたまま手が止まることです。</p>
+    </div>
+
+    <div class="ref-closing">── トリケラテクノ</div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== VIDEO CONSULT (不安な人へ) ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">STILL ANXIOUS?</div>
+    <h2>それでも不安なら、<em>画面共有で</em></h2>
+
+    <div class="consult-lead">
+      <p>「提出する勇気が出ない」「テキストだけじゃ不安」── そういう人のために、<strong>ビデオコンサル</strong>を用意しています。あなたのDAWを開いたまま画面共有で、その場で一緒に壁打ちします。</p>
+    </div>
+
+    <div class="hub-consult-grid">
+
+      <!-- スポット相談 -->
+      <div class="hub-consult-card">
+        <span class="hub-consult-badge">SPOT</span>
+        <p class="hub-consult-name">スポット相談</p>
+        <p class="hub-consult-meta">60分 × 1回</p>
+        <div class="hub-consult-price">¥15,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-pitch">詰まったSTEPを、一気に突破。</p>
+        <ul class="hub-consult-list">
+          <li>DAW画面共有でその場でFB</li>
+          <li>セッション録画データ進呈</li>
+          <li>1週間以内のフォローLINE1往復</li>
+        </ul>
+        <a href="https://buy.stripe.com/7sYfZa8MZ4uwaongL9gEg05" class="hub-consult-cta" target="_blank" rel="noopener">枠を予約する →</a>
+      </div>
+
+      <!-- 1曲完走パック（MOST POPULAR） -->
+      <div class="hub-consult-card hub-consult-card--featured">
+        <span class="hub-consult-badge">MOST POPULAR</span>
+        <p class="hub-consult-name">1曲完走パック</p>
+        <p class="hub-consult-meta">60分 × 4回</p>
+        <div class="hub-consult-price">¥45,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-savings">
+          <span class="hub-consult-strike">通常 ¥60,000</span>
+          <span class="hub-consult-savings-tag">1回分 ¥15,000 お得</span>
+        </p>
+        <p class="hub-consult-pitch">着想からマスタリングまで、並走。</p>
+        <ul class="hub-consult-list">
+          <li>着想 / 構成 / ミックス / 仕上げの4節目で1回ずつ</li>
+          <li>期間中のLINE質問 無制限</li>
+          <li>完成曲ラフFB 1回付き</li>
+          <li>各セッション録画データ進呈</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVqcMYd3f5yA8gf66vgEg06" class="hub-consult-cta" target="_blank" rel="noopener">1曲、最後まで仕上げる →</a>
+      </div>
+
+      <!-- マンツーマン3ヶ月 -->
+      <div class="hub-consult-card">
+        <span class="hub-consult-badge">DEEP DIVE</span>
+        <p class="hub-consult-name">マンツーマン3ヶ月</p>
+        <p class="hub-consult-meta">60分 × 全10回</p>
+        <div class="hub-consult-price">¥120,000</div>
+        <p class="hub-consult-tax">税込・買い切り</p>
+        <p class="hub-consult-savings">
+          <span class="hub-consult-strike">通常 ¥150,000</span>
+          <span class="hub-consult-savings-tag">2回分 ¥30,000 お得</span>
+        </p>
+        <p class="hub-consult-pitch">継続的に、プロの目を借りる。</p>
+        <ul class="hub-consult-list">
+          <li>3ヶ月で全10回（月3〜4回ペース）のセッション</li>
+          <li>制作中曲のレビュー回数 無制限</li>
+          <li>配信戦略・ジャケ・タイトルまで相談可</li>
+          <li>全セッション録画データ進呈</li>
+        </ul>
+        <a href="https://buy.stripe.com/fZu4gs1kxaSU1RRgL9gEg07" class="hub-consult-cta" target="_blank" rel="noopener">3ヶ月、本気で取り組む →</a>
+      </div>
+
+    </div>
+
+    <div class="consult-line-box">
+      <h3>いきなり購入しなくて大丈夫。</h3>
+      <p>「自分にどのプランが合うか分からない」「そもそも相談すべきか迷う」── そんな時は、<strong>購入前に、まずラボ専用LINEで相談してください。</strong>今のあなたに本当に必要かどうか、私が正直にお答えします。</p>
+      <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" class="consult-line-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6C21.5 13.6 22 12 22 10.2 22 5.7 17.5 2 12 2z"/></svg>
+        購入前にLINEで相談する
+      </a>
+      <p class="consult-line-note">「ビデオコンサルについて聞きたい」の一言でOKです</p>
     </div>
 
     <div class="ref-closing">── トリケラテクノ</div>
