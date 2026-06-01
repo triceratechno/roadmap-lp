@@ -181,8 +181,8 @@
   /* ===== CHECKPOINT GRID ===== */
   .submit-cp-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
     margin: 32px 0;
   }
 
@@ -242,7 +242,11 @@
     white-space: nowrap;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 760px) {
+    .submit-cp-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 460px) {
     .submit-cp-grid { grid-template-columns: 1fr; }
     .submit-cp-card.is-active::after { left: auto; right: 12px; transform: none; }
   }
@@ -556,10 +560,15 @@
     <h2 id="cpHeading">今回、送るもの</h2>
 
     <div class="ref-body">
-      <p id="cpLead">ロードマップには、3つの提出チェックポイントがあります。今どこにいても大丈夫。完成したものを、そのまま送ってください。</p>
+      <p id="cpLead">ロードマップには、4つの提出チェックポイントがあります。今どこにいても大丈夫。完成したものを、そのまま送ってください。</p>
     </div>
 
     <div class="submit-cp-grid">
+      <div class="submit-cp-card" data-cp="reference">
+        <div class="cp-step">STEP 1 完了</div>
+        <div class="cp-name">レファレンス</div>
+        <div class="cp-desc">設計図ができた</div>
+      </div>
       <div class="submit-cp-card" data-cp="loop">
         <div class="cp-step">STEP 1–5 完了</div>
         <div class="cp-name">8小節ループ</div>
@@ -586,10 +595,11 @@
     <h2>提出の<em>3ステップ</em></h2>
 
     <div class="ref-body">
-      <p>難しいことはありません。書き出して、アップして、LINEで送る。それだけです。</p>
+      <p id="stepsIntro">難しいことはありません。書き出して、アップして、LINEで送る。それだけです。</p>
     </div>
 
-    <div class="submit-steps">
+    <!-- 音源・プロジェクト提出（loop / arrange / master） -->
+    <div class="submit-steps" id="stepsFile">
       <div class="submit-step">
         <div class="submit-step-num">1</div>
         <div class="submit-step-body">
@@ -612,6 +622,33 @@
         <div class="submit-step-body">
           <h3>ラボ専用LINEに送る</h3>
           <p>コピーしたURL（または音源ファイル）を、下のテンプレートと一緒にラボ専用LINEへ送ってください。私が直接、聴いてフィードバックを返します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- レファレンス提出（reference）：音源ではなく曲情報＋構成メモ -->
+    <div class="submit-steps" id="stepsRef" hidden>
+      <div class="submit-step">
+        <div class="submit-step-num">1</div>
+        <div class="submit-step-body">
+          <h3>レファレンスを1曲決める</h3>
+          <p>「この曲みたいに作りたい」と心が動いた1曲を選び、<strong>アーティスト名・曲名・BPM・Key</strong>を控えます。<a href="https://tunebat.com/" target="_blank" rel="noopener">Tunebat</a> で出なければ Beatport や <a href="https://vocalremover.org/ja/key-bpm-finder" target="_blank" rel="noopener">vocalremover.org</a> でもOK。</p>
+          <p><small>解析ツールにHITするかではなく、感情が動くかで選んで大丈夫です。</small></p>
+        </div>
+      </div>
+      <div class="submit-step">
+        <div class="submit-step-num">2</div>
+        <div class="submit-step-body">
+          <h3>楽曲構成を自分で分解する</h3>
+          <p>イントロ・ビルドアップ・ドロップ・ブレイクなどを、<strong>小節単位</strong>でメモします（例：1〜57 イントロ／58〜76 フック1…）。AIステム分離を使った場合は、その状況も書き添えてください。</p>
+          <p><small>完璧でなくて大丈夫。「自分はこう読んだ」をそのまま出すのが正解です。</small></p>
+        </div>
+      </div>
+      <div class="submit-step">
+        <div class="submit-step-num">3</div>
+        <div class="submit-step-body">
+          <h3>ラボ専用LINEに送る</h3>
+          <p>構成メモ（テキストでも、DAW画面のスクリーンショットでもOK）を、下のテンプレートと一緒にラボ専用LINEへ送ってください。あなたの"設計図"が合っているか、私が確認します。</p>
         </div>
       </div>
     </div>
@@ -639,6 +676,14 @@
 曲名（仮でOK）：
 ファイルURL（ギガファイル便など）：
 今、不安に思っていること：</pre>
+      <pre id="tplTextRef" hidden>【提出】レファレンス分析（STEP1）
+お名前（ニックネーム可）：
+使用DAW：
+レファレンス曲（アーティスト / 曲名）：
+BPM / Key：
+自分で分解した構成（小節）：
+ステム分析：やった / これから
+今、不安に思っていること：</pre>
     </div>
 
     <div class="ref-line-cta">
@@ -648,7 +693,7 @@
 
     <div class="ref-cta-wrap">
       <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" class="ref-cta-btn">ラボ専用LINEで提出する</a>
-      <span class="ref-cta-sub">ファイルのURLと、お名前・曲名を添えて</span>
+      <span class="ref-cta-sub" id="ctaSub">ファイルのURLと、お名前・曲名を添えて</span>
     </div>
 
     <div class="ref-body" style="margin-top:40px;">
@@ -682,6 +727,8 @@
 
     // ===== Checkpoint highlight from ?cp= =====
     var CP = {
+      reference: { name: 'レファレンス',  heading: 'レファレンスを送る',  tpl: 'レファレンス分析（STEP1）', mode: 'ref',
+                 lead: 'STEP1、おつかれさまでした。レファレンスを決めて、構成を自分なりに分解できたはずです。本格的に音を作り始める前に、その"設計図"が合っているかを、私に一度見せてください。' },
       loop:    { name: '8小節ループ',   heading: '8小節ループを送る',   tpl: 'チェックポイント1（8小節ループ）',
                  lead: 'STEP1〜5、おつかれさまでした。鳴り続けるループが完成したはずです。この時点の音を、いったん私に聴かせてください。' },
       arrange: { name: 'フル展開',       heading: 'フル展開を送る',       tpl: 'チェックポイント2（フル展開）',
@@ -709,14 +756,33 @@
       if (heading) heading.textContent = data.heading;
       if (lead) lead.textContent = data.lead;
       if (tplCp) tplCp.textContent = data.tpl;
+
+      // Swap steps / template / texts for the reference checkpoint
+      var isRef = data.mode === 'ref';
+      var stepsFile = document.getElementById('stepsFile');
+      var stepsRef = document.getElementById('stepsRef');
+      var tplFile = document.getElementById('tplText');
+      var tplRef = document.getElementById('tplTextRef');
+      var stepsIntro = document.getElementById('stepsIntro');
+      var ctaSub = document.getElementById('ctaSub');
+      if (stepsFile) stepsFile.hidden = isRef;
+      if (stepsRef) stepsRef.hidden = !isRef;
+      if (tplFile) tplFile.hidden = isRef;
+      if (tplRef) tplRef.hidden = !isRef;
+      if (isRef) {
+        if (stepsIntro) stepsIntro.textContent = 'レファレンス提出は、音源ファイルではなく、選んだ曲の情報と、自分で分解した構成メモを送ります。';
+        if (ctaSub) ctaSub.textContent = '選んだ曲と、自分で分解した構成メモを添えて';
+      }
     }
 
     // ===== Copy template =====
     function setupCopy() {
       var btn = document.getElementById('copyBtn');
-      var pre = document.getElementById('tplText');
-      if (!btn || !pre) return;
+      if (!btn) return;
       btn.addEventListener('click', function () {
+        var ref = document.getElementById('tplTextRef');
+        var pre = (ref && !ref.hidden) ? ref : document.getElementById('tplText');
+        if (!pre) return;
         var text = pre.innerText;
         var done = function () {
           var orig = btn.textContent;
