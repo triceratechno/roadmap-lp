@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楽曲を提出する｜トリケラテクノ ロードマップ</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS ===== */
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #666;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ===== NOISE TEXTURE ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  /* ===== HERO ===== */
+  .ref-hero {
+    min-height: 52vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 24px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ref-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,197,24,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,200,255,0.04) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .ref-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245,197,24,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,197,24,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    z-index: 2;
+  }
+
+  .ref-hero-inner {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .ref-tag {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .ref-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 9vw, 92px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .ref-hero-title span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .ref-hero-lead {
+    font-size: clamp(14px, 2.2vw, 17px);
+    color: #aaa;
+    margin: 28px auto 0;
+    max-width: 620px;
+    line-height: 1.9;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  /* ===== SECTIONS ===== */
+  .ref-section {
+    padding: 72px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .ref-section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ref-section-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .ref-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  .ref-section h2 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ===== BODY TEXT ===== */
+  .ref-body {
+    font-size: 15px;
+    line-height: 1.95;
+    color: #b8b8b8;
+  }
+
+  .ref-body p { margin-bottom: 1.4em; }
+  .ref-body p:last-child { margin-bottom: 0; }
+
+  .ref-body strong { color: var(--white); font-weight: 700; }
+
+  .ref-body em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* ===== CHECKPOINT GRID ===== */
+  .submit-cp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .submit-cp-card {
+    padding: 22px 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
+    position: relative;
+  }
+
+  .submit-cp-card .cp-step {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .submit-cp-card .cp-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #888;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    transition: color 0.3s;
+  }
+
+  .submit-cp-card .cp-desc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .submit-cp-card.is-active {
+    border-color: var(--gold);
+    background: rgba(245,197,24,0.06);
+    transform: translateY(-3px);
+  }
+
+  .submit-cp-card.is-active .cp-name { color: var(--gold); }
+
+  .submit-cp-card.is-active::after {
+    content: '今ここ';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #001018;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 10px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .submit-cp-grid { grid-template-columns: 1fr; }
+    .submit-cp-card.is-active::after { left: auto; right: 12px; transform: none; }
+  }
+
+  /* ===== NUMBERED STEPS ===== */
+  .submit-steps { margin: 8px 0 0; }
+
+  .submit-step {
+    display: flex;
+    gap: 20px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .submit-step:last-child { border-bottom: none; }
+
+  .submit-step-num {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .submit-step-body { flex: 1; }
+
+  .submit-step-body h3 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .submit-step-body p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.85;
+    margin-bottom: 0.6em;
+  }
+
+  .submit-step-body p:last-child { margin-bottom: 0; }
+
+  .submit-step-body a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,200,255,0.4);
+  }
+
+  @media (hover: hover) {
+    .submit-step-body a:hover { color: #5fdcff; }
+  }
+
+  .submit-step-body small { color: var(--muted); font-size: 12px; }
+
+  /* ===== TEMPLATE BOX ===== */
+  .submit-template {
+    margin: 32px 0 8px;
+    border: 1px solid rgba(245,197,24,0.2);
+    background: rgba(245,197,24,0.04);
+  }
+
+  .submit-template-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(245,197,24,0.16);
+  }
+
+  .submit-template-head span {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .submit-copy-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  @media (hover: hover) {
+    .submit-copy-btn:hover { background: var(--gold); color: #001018; }
+  }
+
+  .submit-template pre {
+    margin: 0;
+    padding: 20px 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #cfcfcf;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* ===== LINE CTA ===== */
+  .ref-line-cta {
+    margin: 40px 0 0;
+    padding: 32px 28px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .ref-line-cta p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .ref-line-cta p:last-child { margin-bottom: 0; }
+  .ref-line-cta strong { color: var(--white); font-weight: 700; }
+
+  /* ===== CTA BUTTON ===== */
+  .ref-cta-wrap {
+    text-align: center;
+    margin: 40px 0 8px;
+  }
+
+  .ref-cta-btn {
+    display: inline-block;
+    padding: 20px 52px;
+    background: var(--gold);
+    color: #001018;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 36px rgba(245,197,24,0.22);
+    min-width: 320px;
+  }
+
+  @media (hover: hover) {
+    .ref-cta-btn:hover {
+      background: #f7d046;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 44px rgba(245,197,24,0.38);
+    }
+  }
+
+  .ref-cta-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 600px) {
+    .ref-cta-btn {
+      min-width: 0;
+      width: 100%;
+      padding: 18px 24px;
+      font-size: 16px;
+    }
+  }
+
+  /* ===== CLOSING ===== */
+  .ref-closing {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted);
+    text-align: right;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+    margin: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .ref-footer {
+    border-top: 1px solid var(--border);
+    padding: 56px 24px 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .ref-footer p { margin-bottom: 16px; }
+
+  .ref-footer-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ref-footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  @media (hover: hover) {
+    .ref-footer-links a:hover { color: var(--gold); }
+  }
+
+  /* ===== BACK TO TOP ===== */
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(245,197,24,0.12);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .back-to-top svg { width: 18px; height: 18px; }
+
+  @media (hover: hover) {
+    .back-to-top:hover { background: var(--gold); color: #001018; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .ref-tag, .ref-hero-title, .ref-hero-lead { animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 768px) {
+    .ref-hero { padding: 80px 20px 56px; min-height: 46vh; }
+    .ref-section { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="ref-hero">
+    <div class="ref-hero-bg"></div>
+    <div class="ref-hero-grid"></div>
+    <div class="ref-hero-inner">
+      <div class="ref-tag">SUBMIT YOUR TRACK</div>
+      <h1 class="ref-hero-title">作った音を、<span>私に聴かせてください。</span></h1>
+      <p class="ref-hero-lead" id="heroLead">
+        ロードマップは、区切りごとに一度立ち止まって「今の自分の音」を外に出すと、一気に伸びます。<br>
+        不安なままで構いません。むしろ、不安なまま出してもらったほうが、的確なフィードバックを返せます。
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== どこまで進んだ？ ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">CHECKPOINT</div>
+    <h2 id="cpHeading">今回、送るもの</h2>
+
+    <div class="ref-body">
+      <p id="cpLead">ロードマップには、3つの提出チェックポイントがあります。今どこにいても大丈夫。完成したものを、そのまま送ってください。</p>
+    </div>
+
+    <div class="submit-cp-grid">
+      <div class="submit-cp-card" data-cp="loop">
+        <div class="cp-step">STEP 1–5 完了</div>
+        <div class="cp-name">8小節ループ</div>
+        <div class="cp-desc">鳴り続けるループが完成</div>
+      </div>
+      <div class="submit-cp-card" data-cp="arrange">
+        <div class="cp-step">STEP 6–7 完了</div>
+        <div class="cp-name">フル展開</div>
+        <div class="cp-desc">1曲の流れができた</div>
+      </div>
+      <div class="submit-cp-card" data-cp="master">
+        <div class="cp-step">STEP 8–9 完了</div>
+        <div class="cp-name">マスター音源</div>
+        <div class="cp-desc">リリースできる状態</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 提出の手順 ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">HOW TO SUBMIT</div>
+    <h2>提出の<em>3ステップ</em></h2>
+
+    <div class="ref-body">
+      <p>難しいことはありません。書き出して、アップして、LINEで送る。それだけです。</p>
+    </div>
+
+    <div class="submit-steps">
+      <div class="submit-step">
+        <div class="submit-step-num">1</div>
+        <div class="submit-step-body">
+          <h3>ファイルを書き出す</h3>
+          <p><strong>音源で送る場合：</strong>DAWからWAV（推奨）またはMP3で書き出します。現時点のバウンスで構いません。</p>
+          <p><strong>プロジェクトで送る場合：</strong>使っているDAWのプロジェクトを保存します。Ableton Liveなら「Collect All and Save」で音源を同梱、FL Studio／BitwigなどはプロジェクトフォルダごとZIPにまとめると確実です。</p>
+          <p><small>どちらで送るか迷ったら、まずは音源（WAV）でOK。構成や展開の相談はプロジェクトのほうが正確に見られます。</small></p>
+        </div>
+      </div>
+      <div class="submit-step">
+        <div class="submit-step-num">2</div>
+        <div class="submit-step-body">
+          <h3>大容量ファイル便でアップする</h3>
+          <p>プロジェクトファイルは数百MB〜GB級になるため、<a href="https://gigafile.nu/" target="_blank" rel="noopener">ギガファイル便</a>（無料・登録不要）などにアップして、発行されたダウンロードURLをコピーします。</p>
+          <p><small>音源1ファイルだけなら、そのままLINEに添付してもらっても大丈夫です。</small></p>
+        </div>
+      </div>
+      <div class="submit-step">
+        <div class="submit-step-num">3</div>
+        <div class="submit-step-body">
+          <h3>ラボ専用LINEに送る</h3>
+          <p>コピーしたURL（または音源ファイル）を、下のテンプレートと一緒にラボ専用LINEへ送ってください。私が直接、聴いてフィードバックを返します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 送るときのテンプレ ===== -->
+  <section class="ref-section reveal">
+    <div class="ref-section-label">TEMPLATE</div>
+    <h2>送るときの<em>ひな形</em></h2>
+
+    <div class="ref-body">
+      <p>これをコピーして、埋めて送ってもらえれば完璧です。空欄があっても、分かる範囲で構いません。<strong>「不安に思っていること」だけは、ぜひ一行でも書いてください。</strong>そこが一番、フィードバックの精度を上げます。</p>
+    </div>
+
+    <div class="submit-template">
+      <div class="submit-template-head">
+        <span>提出テンプレート</span>
+        <button type="button" class="submit-copy-btn" id="copyBtn">コピー</button>
+      </div>
+      <pre id="tplText">【提出】<span id="tplCp">チェックポイント</span>
+お名前（ニックネーム可）：
+使用DAW：
+曲名（仮でOK）：
+ファイルURL（ギガファイル便など）：
+今、不安に思っていること：</pre>
+    </div>
+
+    <div class="ref-line-cta">
+      <p>提出先は<strong>ラボ専用LINE</strong>です。</p>
+      <p>完璧じゃなくていい。「ここまで来ました」のひと言と一緒に送ってください。</p>
+    </div>
+
+    <div class="ref-cta-wrap">
+      <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" class="ref-cta-btn">ラボ専用LINEで提出する</a>
+      <span class="ref-cta-sub">ファイルのURLと、お名前・曲名を添えて</span>
+    </div>
+
+    <div class="ref-body" style="margin-top:40px;">
+      <p>送ってくれた音は、必ず私が聴きます。<br>
+      止まりそうになったら、完成を待たずに、その時点で出してしまってください。<br>
+      一番もったいないのは、不安をかかえたまま手が止まることです。</p>
+    </div>
+
+    <div class="ref-closing">── トリケラテクノ</div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="ref-footer">
+    <p>&copy; TRICERATECHNO &nbsp;/&nbsp; DTM解説恐竜</p>
+    <div class="ref-footer-links">
+      <a href="triceratechno-hub.html">← HUBに戻る</a>
+      <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="ページ最上部へ戻る" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 15 12 9 18 15"/>
+    </svg>
+  </button>
+
+  <script>
+  (function () {
+    'use strict';
+
+    // ===== Checkpoint highlight from ?cp= =====
+    var CP = {
+      loop:    { name: '8小節ループ',   heading: '8小節ループを送る',   tpl: 'チェックポイント1（8小節ループ）',
+                 lead: 'STEP1〜5、おつかれさまでした。鳴り続けるループが完成したはずです。この時点の音を、いったん私に聴かせてください。' },
+      arrange: { name: 'フル展開',       heading: 'フル展開を送る',       tpl: 'チェックポイント2（フル展開）',
+                 lead: 'STEP6〜7、おつかれさまでした。ループが1曲の流れになったはずです。展開の判断は、ここで一度プロの目を通すのが一番の近道です。' },
+      master:  { name: 'マスター音源',   heading: 'マスター音源を送る',   tpl: 'チェックポイント3（マスター音源）',
+                 lead: 'STEP8〜9、おつかれさまでした。リリースできる状態に到達しています。配信申請の前に、最終チェックを受けましょう。' }
+    };
+
+    function getParam(name) {
+      try { return new URLSearchParams(window.location.search).get(name); }
+      catch (e) { return null; }
+    }
+
+    function applyCheckpoint() {
+      var cp = getParam('cp');
+      var data = CP[cp];
+      // Highlight the matching card
+      document.querySelectorAll('.submit-cp-card').forEach(function (card) {
+        if (card.getAttribute('data-cp') === cp) card.classList.add('is-active');
+      });
+      if (!data) return;
+      var heading = document.getElementById('cpHeading');
+      var lead = document.getElementById('cpLead');
+      var tplCp = document.getElementById('tplCp');
+      if (heading) heading.textContent = data.heading;
+      if (lead) lead.textContent = data.lead;
+      if (tplCp) tplCp.textContent = data.tpl;
+    }
+
+    // ===== Copy template =====
+    function setupCopy() {
+      var btn = document.getElementById('copyBtn');
+      var pre = document.getElementById('tplText');
+      if (!btn || !pre) return;
+      btn.addEventListener('click', function () {
+        var text = pre.innerText;
+        var done = function () {
+          var orig = btn.textContent;
+          btn.textContent = 'コピーしました';
+          setTimeout(function () { btn.textContent = orig; }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {
+            fallbackCopy(text); done();
+          });
+        } else {
+          fallbackCopy(text); done();
+        }
+      });
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // ===== Reveal on scroll =====
+    function setupReveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach(function (r) { observer.observe(r); });
+    }
+
+    // ===== Back to top =====
+    function setupBackToTop() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      var ticking = false;
+      function update() {
+        if (window.scrollY > 600) btn.classList.add('is-visible');
+        else btn.classList.remove('is-visible');
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      update();
+    }
+
+    function init() {
+      applyCheckpoint();
+      setupCopy();
+      setupReveal();
+      setupBackToTop();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+
+</body>
+</html>

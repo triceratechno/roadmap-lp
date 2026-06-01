@@ -1031,6 +1031,92 @@
   .hub-step-block:first-of-type { padding-top: 24px; }
   .hub-step-block:last-of-type { border-bottom: 0; padding-bottom: 24px; }
 
+  /* ===== MILESTONE SUBMIT BANNER ===== */
+  .hub-milestone {
+    margin: 8px 0 4px;
+    padding: 32px 32px;
+    background:
+      radial-gradient(ellipse 70% 100% at 0% 0%, rgba(245,197,24,0.10) 0%, transparent 60%),
+      var(--panel);
+    border: 1px solid rgba(245,197,24,0.32);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hub-milestone::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+  }
+
+  .hub-milestone-chapter {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: #001018;
+    background: var(--gold);
+    padding: 3px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hub-milestone-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.5;
+    margin: 0 0 8px;
+  }
+
+  .hub-milestone-title .ms-accent { color: var(--gold); }
+
+  .hub-milestone-sub {
+    font-size: 13.5px;
+    color: #aaa;
+    line-height: 1.8;
+    margin: 0 0 22px;
+    max-width: 640px;
+  }
+
+  .hub-milestone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: var(--gold);
+    color: #001018;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 28px rgba(245,197,24,0.18);
+  }
+
+  .hub-milestone-btn svg { width: 18px; height: 18px; }
+
+  @media (hover: hover) {
+    .hub-milestone-btn:hover {
+      background: #f7d046;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(245,197,24,0.34);
+    }
+  }
+
+  .hub-milestone-note {
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin: 14px 0 0;
+  }
+
+  @media (max-width: 600px) {
+    .hub-milestone { padding: 26px 22px; }
+    .hub-milestone-btn { width: 100%; justify-content: center; }
+  }
+
   /* ===== REFERRAL BLOCK (完走者専用) ===== */
   .hub-step-referral {
     border-bottom: 0 !important;
@@ -1982,6 +2068,33 @@
       `;
     }
 
+    // ===== Milestone submit banners (after STEP 5 / 7 / 9) =====
+    const MILESTONES = {
+      5: { chapter: 'CHAPTER 1 CLEAR', what: '8小節ループ', cta: 'ループを提出する', cp: 'loop',
+           sub: 'STEP1〜5、おつかれさまでした。鳴り続けるループが完成したはずです。完璧じゃなくていい。この時点の音を、いったん私に聴かせてください。' },
+      7: { chapter: 'CHAPTER 2 CLEAR', what: 'フル展開', cta: 'フル展開を提出する', cp: 'arrange',
+           sub: 'STEP6〜7、おつかれさまでした。ループが1曲の流れになりました。展開の判断は、ここで一度プロの目を通すのが一番の近道です。' },
+      9: { chapter: 'CHAPTER 3 CLEAR', what: 'マスター音源', cta: 'マスター音源を提出する', cp: 'master',
+           sub: 'STEP8〜9、おつかれさまでした。リリースできる状態に到達しています。配信申請の前に、最終チェックを受けましょう。' }
+    };
+
+    function milestoneHtml(stepId) {
+      const m = MILESTONES[stepId];
+      if (!m) return '';
+      return `
+        <div class="hub-milestone">
+          <span class="hub-milestone-chapter">${m.chapter}</span>
+          <p class="hub-milestone-title">ここまでで<span class="ms-accent">${esc(m.what)}</span>が完成。トリケラテクノに提出しよう。</p>
+          <p class="hub-milestone-sub">${esc(m.sub)}</p>
+          <a class="hub-milestone-btn" href="hub-submit.html?cp=${m.cp}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+            ${esc(m.cta)}
+          </a>
+          <p class="hub-milestone-note">送ってくれた音は、私が直接聴いてフィードバックします</p>
+        </div>
+      `;
+    }
+
     // ===== Render STEPS =====
     function renderSteps() {
       const container = document.getElementById('stepsContainer');
@@ -2059,6 +2172,7 @@
               ${articlesHtml}
             </ul>
           </article>
+          ${milestoneHtml(step.id)}
         `;
       }).join('');
 
