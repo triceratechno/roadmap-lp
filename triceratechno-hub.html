@@ -1017,6 +1017,94 @@
     .hub-consult-price { font-size: 38px; }
   }
 
+  /* ===== HOW TO USE (compact) ===== */
+  .hub-howto-box {
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 28px 28px 24px;
+  }
+  .hub-howto-intro {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.85;
+    margin: 0 0 26px;
+  }
+  .hub-howto-intro strong { color: var(--white); font-weight: 700; }
+  .hub-howto-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .hub-howto-step { display: flex; flex-direction: column; gap: 9px; }
+  .hub-howto-step-num {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .hub-howto-step h3 {
+    font-size: 13.5px;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0;
+  }
+  .hub-howto-step p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.72;
+    margin: 0;
+  }
+  .hub-howto-legend {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    align-items: center;
+  }
+  .hub-howto-legend-title {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .hub-howto-legend-item {
+    font-size: 12px;
+    color: #bbb;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .hub-howto-legend-item .tagk {
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid rgba(0,200,255,0.4);
+    padding: 1px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .hub-howto-legend-item .tagk.is-check {
+    color: var(--gold);
+    border-color: rgba(245,197,24,0.45);
+  }
+  @media (max-width: 760px) {
+    .hub-howto-steps { grid-template-columns: repeat(2, 1fr); gap: 22px 18px; }
+    .hub-howto-box { padding: 24px 20px 20px; }
+  }
+  @media (max-width: 460px) {
+    .hub-howto-steps { grid-template-columns: 1fr; }
+  }
+
   /* ===== STEPS ===== */
   #stepsContainer {
     margin-top: 8px;
@@ -1636,6 +1724,48 @@
       <p class="hub-hero-subtitle">最短で1曲完成するための10STEP</p>
       <p class="hub-hero-lead">あなたの学習進捗を、ひとつにまとめました。</p>
       <p class="hub-hero-meta" id="heroMeta">最終更新 ----</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== HOW TO USE ===== -->
+  <section class="hub-section reveal">
+    <div class="section-label">HOW TO USE</div>
+    <h2>このHUBの<em>使い方</em></h2>
+    <div class="hub-howto-box">
+      <p class="hub-howto-intro">このページは、あなたが手に入れたロードマップの<strong>「基地」</strong>です。STEP1〜10の記事・PDF・動画・進捗・提出が、すべてここに集まっています。まずは下の4ステップだけ押さえてください。</p>
+
+      <div class="hub-howto-steps">
+        <div class="hub-howto-step">
+          <div class="hub-howto-step-num">1</div>
+          <h3>上から順に読む</h3>
+          <p>STEP1から順番に。各記事は「→ 読む」で本文、「↓ PDF」で保存版、「▶ 動画」で解説が開きます。</p>
+        </div>
+        <div class="hub-howto-step">
+          <div class="hub-howto-step-num">2</div>
+          <h3>進捗は自動で残る</h3>
+          <p>開いた記事は「✓ 既読」になり、上の進捗バーに反映。続きから迷わず再開できます（この端末に保存）。</p>
+        </div>
+        <div class="hub-howto-step">
+          <div class="hub-howto-step-num">3</div>
+          <h3>節目で提出する</h3>
+          <p>STEP1・5・7・9の区切りに「提出」ボタン。完成物を送ると、私が直接フィードバックします。</p>
+        </div>
+        <div class="hub-howto-step">
+          <div class="hub-howto-step-num">4</div>
+          <h3>困ったら相談する</h3>
+          <p>下の「つまずく前のTips」やラボ専用LINEへ。一人で抱え込まないでください。</p>
+        </div>
+      </div>
+
+      <div class="hub-howto-legend">
+        <span class="hub-howto-legend-title">アイコンの意味</span>
+        <span class="hub-howto-legend-item"><span class="tagk">→ 読む</span> note記事を開く</span>
+        <span class="hub-howto-legend-item"><span class="tagk">↓ PDF</span> 保存用PDF</span>
+        <span class="hub-howto-legend-item"><span class="tagk">▶ 動画</span> 解説動画</span>
+        <span class="hub-howto-legend-item"><span class="tagk is-check">✓</span> 既読</span>
+      </div>
     </div>
   </section>
 
