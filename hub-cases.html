@@ -279,8 +279,9 @@
     margin-top: 6px;
   }
 
-  /* ===== REFERENCE VIDEO EMBED ===== */
+  /* ===== REFERENCE VIDEO (thumbnail link → opens on YouTube) ===== */
   .ref-video {
+    display: block;
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
@@ -289,14 +290,49 @@
     border: 1px solid var(--border);
     background: #000;
     overflow: hidden;
+    text-decoration: none;
   }
 
-  .ref-video iframe {
+  .ref-video img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    border: 0;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.2s ease;
+  }
+
+  .ref-video:hover img { transform: scale(1.04); opacity: 0.82; }
+
+  .ref-video-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .ref-video-play svg {
+    width: 68px;
+    height: 48px;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
+    transition: transform 0.2s ease;
+  }
+
+  .ref-video:hover .ref-video-play svg { transform: scale(1.08); }
+
+  .ref-video-cta {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 4px 10px;
+    pointer-events: none;
   }
 
   /* ===== CASE REFERENCE MARQUEE ===== */
@@ -893,9 +929,11 @@
       <div class="ref-track-spec">BPM 129 / KEY F MINOR</div>
     </div>
 
-    <div class="ref-video">
-      <iframe src="https://www.youtube.com/embed/8-WvBDkCfy8" title="NOBさんのレファレンス" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <a class="ref-video" href="https://youtu.be/8-WvBDkCfy8" target="_blank" rel="noopener" aria-label="NOBさんのレファレンスをYouTubeで見る">
+      <img src="https://img.youtube.com/vi/8-WvBDkCfy8/maxresdefault.jpg" alt="NOBさんのレファレンス" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/8-WvBDkCfy8/hqdefault.jpg';">
+      <span class="ref-video-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8 8 0 00-5.6-5.7C56 .7 34 .7 34 .7s-22 0-26.9 1.3a8 8 0 00-5.6 5.7A83 83 0 000 24a83 83 0 001.5 16.3 8 8 0 005.6 5.7C12 47.3 34 47.3 34 47.3s22 0 26.9-1.3a8 8 0 005.6-5.7A83 83 0 0068 24a83 83 0 00-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+      <span class="ref-video-cta">YouTubeで見る</span>
+    </a>
 
     <div class="ref-body">
       <p>DJ活動の中で出会った1曲。House系のグルーヴで、「この感じを自分でも作れるようになりたい」という"旗"が明確に立った。</p>
@@ -976,9 +1014,11 @@
       <div class="ref-track-spec">BPM 120 / KEY B♭ MAJOR</div>
     </div>
 
-    <div class="ref-video">
-      <iframe src="https://www.youtube.com/embed/Z0ZpTtZPLII" title="高松さんのレファレンス" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <a class="ref-video" href="https://youtu.be/Z0ZpTtZPLII" target="_blank" rel="noopener" aria-label="高松さんのレファレンスをYouTubeで見る">
+      <img src="https://img.youtube.com/vi/Z0ZpTtZPLII/maxresdefault.jpg" alt="高松さんのレファレンス" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Z0ZpTtZPLII/hqdefault.jpg';">
+      <span class="ref-video-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8 8 0 00-5.6-5.7C56 .7 34 .7 34 .7s-22 0-26.9 1.3a8 8 0 00-5.6 5.7A83 83 0 000 24a83 83 0 001.5 16.3 8 8 0 005.6 5.7C12 47.3 34 47.3 34 47.3s22 0 26.9-1.3a8 8 0 005.6-5.7A83 83 0 0068 24a83 83 0 00-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+      <span class="ref-video-cta">YouTubeで見る</span>
+    </a>
 
     <div class="ref-body">
       <p>20年以上前、大学生の頃に「とらのあな」でたまたま購入した bermei.inazawa の同人アルバム。家で再生した瞬間、心が震えた。「自分もこういう音楽が作れたらいいな」── その記憶が、人生の折り返しで再点火した。</p>
@@ -1076,9 +1116,11 @@
       <div class="ref-track-spec">BPM 126 / KEY F MINOR / TECHNO (PEAK TIME / DRIVING)</div>
     </div>
 
-    <div class="ref-video">
-      <iframe src="https://www.youtube.com/embed/j785JgP7tiA" title="うらのさんのレファレンス" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <a class="ref-video" href="https://youtu.be/j785JgP7tiA" target="_blank" rel="noopener" aria-label="うらのさんのレファレンスをYouTubeで見る">
+      <img src="https://img.youtube.com/vi/j785JgP7tiA/maxresdefault.jpg" alt="うらのさんのレファレンス" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/j785JgP7tiA/hqdefault.jpg';">
+      <span class="ref-video-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8 8 0 00-5.6-5.7C56 .7 34 .7 34 .7s-22 0-26.9 1.3a8 8 0 00-5.6 5.7A83 83 0 000 24a83 83 0 001.5 16.3 8 8 0 005.6 5.7C12 47.3 34 47.3 34 47.3s22 0 26.9-1.3a8 8 0 005.6-5.7A83 83 0 0068 24a83 83 0 00-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+      <span class="ref-video-cta">YouTubeで見る</span>
+    </a>
 
     <div class="ref-body">
       <p>「派手すぎず展開が控えめのさっぱりした曲が好み」── そのまま体現した1曲。</p>
@@ -1177,9 +1219,11 @@
       <div class="ref-track-spec">BPM 132 / KEY A♯ / B♭ MINOR</div>
     </div>
 
-    <div class="ref-video">
-      <iframe src="https://www.youtube.com/embed/jc7Q1X0LeyY" title="やすさんのレファレンス" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <a class="ref-video" href="https://youtu.be/jc7Q1X0LeyY" target="_blank" rel="noopener" aria-label="やすさんのレファレンスをYouTubeで見る">
+      <img src="https://img.youtube.com/vi/jc7Q1X0LeyY/maxresdefault.jpg" alt="やすさんのレファレンス" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/jc7Q1X0LeyY/hqdefault.jpg';">
+      <span class="ref-video-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8 8 0 00-5.6-5.7C56 .7 34 .7 34 .7s-22 0-26.9 1.3a8 8 0 00-5.6 5.7A83 83 0 000 24a83 83 0 001.5 16.3 8 8 0 005.6 5.7C12 47.3 34 47.3 34 47.3s22 0 26.9-1.3a8 8 0 005.6-5.7A83 83 0 0068 24a83 83 0 00-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></span>
+      <span class="ref-video-cta">YouTubeで見る</span>
+    </a>
 
     <div class="ref-body">
       <p>最初は Anyma の Bad Angel をレファレンスにしようとしたが、再現の難しさで一度行き詰まり ── その後、自分が「これなら作れそう」と感じる Argy の Melodia に切り替えて再スタート。</p>
