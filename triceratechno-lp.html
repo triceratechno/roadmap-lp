@@ -931,21 +931,32 @@
     position: relative;
     margin-top: 48px;
     overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
   }
   .note-carousel-track {
     display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    width: max-content;
     padding-bottom: 8px;
-    cursor: grab;
+    animation: noteSlide 70s linear infinite;
   }
-  .note-carousel-track::-webkit-scrollbar { display: none; }
-  .note-carousel-track.grabbing { cursor: grabbing; }
+  .note-carousel-wrap:hover .note-carousel-track { animation-play-state: paused; }
+  @keyframes noteSlide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .note-carousel-track { animation: none; width: auto; }
+    .note-carousel-wrap {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .note-carousel-wrap::-webkit-scrollbar { display: none; }
+  }
   .note-carousel-item {
     flex: 0 0 320px;
+    margin-right: 16px;
     scroll-snap-align: start;
     border-radius: 12px;
     overflow: hidden;
@@ -3085,7 +3096,7 @@
   <p style="margin-bottom:40px;">楽曲制作の最初からリリースまでを10のSTEPに分解。<br>合計 <strong>39記事＋PDF 428ページ＋動画解説 約7時間</strong>。<br>1記事＝1タスクなので「今日はここだけ」で迷わず進められる。</p>
 
   <div class="note-carousel-wrap">
-    <p style="font-size:11px; color:var(--muted); letter-spacing:0.08em; text-align:center; margin-bottom:16px;">— 実際の記事イメージ（スワイプで確認） —</p>
+    <p style="font-size:11px; color:var(--muted); letter-spacing:0.08em; text-align:center; margin-bottom:16px;">— 実際の記事イメージ（自動で流れます／カーソルを乗せると停止） —</p>
     <div class="note-carousel-track" id="noteTrack">
       <div class="note-carousel-item">
         <div class="note-carousel-thumb"><img src="note-screenshot-1.png" alt="STEP1"></div>
@@ -3174,10 +3185,6 @@
           <p class="note-carousel-title">あなたの質問が、全購入者の学びになる。動画で全員にシェアされます。</p>
         </div>
       </div>
-    </div>
-    <div class="note-carousel-arrows">
-      <button class="note-carousel-btn" id="notePrev">&#8592;</button>
-      <button class="note-carousel-btn" id="noteNext">&#8594;</button>
     </div>
   </div>
 </section>
@@ -3998,20 +4005,19 @@
     update();
   })();
 
-  // Note carousel
-  const track = document.getElementById('noteTrack');
-  const itemWidth = () => track.querySelector('.note-carousel-item').offsetWidth + 16;
-  document.getElementById('noteNext').addEventListener('click', () => {
-    track.scrollBy({ left: itemWidth(), behavior: 'smooth' });
-  });
-  document.getElementById('notePrev').addEventListener('click', () => {
-    track.scrollBy({ left: -itemWidth(), behavior: 'smooth' });
-  });
-  let isDragging = false, startX, scrollLeft;
-  track.addEventListener('mousedown', e => { isDragging = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; track.classList.add('grabbing'); });
-  track.addEventListener('mouseleave', () => { isDragging = false; track.classList.remove('grabbing'); });
-  track.addEventListener('mouseup', () => { isDragging = false; track.classList.remove('grabbing'); });
-  track.addEventListener('mousemove', e => { if (!isDragging) return; e.preventDefault(); track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX); });
+  // Note carousel → auto-scrolling marquee
+  (function () {
+    const track = document.getElementById('noteTrack');
+    if (!track) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return; // keep single set; wrap becomes manually scrollable via CSS
+    // Duplicate the item set once so translateX(-50%) loops seamlessly
+    Array.from(track.children).forEach(node => {
+      const clone = node.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  })();
 
   // Demo audio player
   (function() {
