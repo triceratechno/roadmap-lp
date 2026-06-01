@@ -2293,7 +2293,7 @@
             <div class="hub-step-head">
               <div class="hub-step-num">${num}</div>
               <div class="hub-step-title-wrap">
-                <span class="hub-step-status badge-${stepStatus}">${STEP_STATUS_LABEL[stepStatus]}</span>
+                ${stepStatus === 'completed' ? '' : `<span class="hub-step-status badge-${stepStatus}">${STEP_STATUS_LABEL[stepStatus]}</span>`}
                 <h3 class="hub-step-title">${esc(step.title)}</h3>
                 <p class="hub-step-subtitle">${esc(step.subtitle || '')}</p>
                 <p class="hub-step-desc">${esc(step.description || '')}</p>
