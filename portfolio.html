@@ -666,6 +666,100 @@ ul { list-style:none; }
   .voice-marquee::-webkit-scrollbar { display: none; }
 }
 
+/* ===== REAL FEEDBACK CASE ===== */
+.fb-head { margin-top: 60px; text-align: center; }
+.fb-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.fb-sub { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+.fb-case {
+  margin: 26px auto 0;
+  max-width: 860px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 28px 28px 30px;
+}
+.fb-case-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fb-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,200,255,0.1);
+  border: 1px solid rgba(0,200,255,0.3);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+.fb-name { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.4; }
+.fb-channel {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 8px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.fb-channel:hover { text-decoration: underline; }
+.fb-meta { font-size: 11px; color: var(--muted); letter-spacing: 0.03em; margin-top: 3px; }
+.fb-badge {
+  margin-left: auto;
+  align-self: center;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  border: 1px solid rgba(0,200,255,0.3);
+  padding: 3px 9px;
+  text-transform: uppercase;
+}
+.fb-lead { font-size: 13px; color: var(--white); line-height: 1.85; margin-top: 18px; }
+.fb-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+.fb-point {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  padding: 14px 16px;
+}
+.fb-point-t { font-size: 12.5px; font-weight: 700; color: var(--white); line-height: 1.55; margin-bottom: 7px; }
+.fb-point-b { font-size: 11.5px; color: var(--muted); line-height: 1.75; margin: 0; }
+.fb-result-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+.fb-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fb-video {
+  position: relative;
+  display: block;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.fb-video img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+.fb-video:hover img { transform: scale(1.05); }
+.fb-video-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.fb-video-play i { color: #fff; font-size: 22px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
+.fb-note { font-size: 10.5px; color: var(--muted); line-height: 1.7; margin-top: 16px; }
+@media (max-width: 600px) {
+  .fb-points { grid-template-columns: 1fr; }
+  .fb-videos { grid-template-columns: 1fr; }
+}
+
 /* =============================================
    PORTFOLIO
    ============================================= */
@@ -1395,6 +1489,60 @@ ul { list-style:none; }
         });
       })();
     </script>
+
+    <!-- ===== REAL FEEDBACK CASE ===== -->
+    <div class="fb-head reveal">
+      <p class="fb-label">REAL FEEDBACK</p>
+      <p class="fb-sub">LINE無料相談で実際に行った、楽曲フィードバックの一例</p>
+    </div>
+    <div class="fb-case reveal">
+      <div class="fb-case-head">
+        <span class="fb-avatar">A</span>
+        <div>
+          <p class="fb-name">ATSUKIさん<a class="fb-channel" href="https://www.youtube.com/@ATSUKI0226" target="_blank" rel="noopener">@ATSUKI0226 ↗</a></p>
+          <p class="fb-meta">Progressive House ・ DTM歴2年 ・ FL Studio</p>
+        </div>
+        <span class="fb-badge">掲載許可済み</span>
+      </div>
+
+      <p class="fb-lead">「ミックスで迫力を出したい」というご相談から始まり、何度も楽曲を聴かせていただきながらフィードバックを重ねました。回を追うごとにミックスが整い、ご本人も手応えを感じながら、新曲を投稿し続けてくださっています。</p>
+
+      <div class="fb-points">
+        <div class="fb-point">
+          <p class="fb-point-t">こもりは「低域削り」より「中高域の不足」</p>
+          <p class="fb-point-b">250Hzを削っても抜けが出ないときは、OTTやサチュレーターで倍音を足し、2〜8kHzの情報量を増やすと芯のある音になります。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">ボーカルとシンセは「抜き差し」で整理</p>
+          <p class="fb-point-b">帯域被りはEQカット・ダイナミックEQ・サイドチェインで解決。音量を上げるより倍音で前に出すと、バランスを崩さず前に来ます。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">ブレイクは「2つ目のメロディ」で核にする</p>
+          <p class="fb-point-b">1stドロップ終わり〜2ndビルドアップにプラック系アルペジオを足すと、無難なブレイクが展開の核へと変わります。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">音圧はLUFSより「圧縮量（GR）」で見る</p>
+          <p class="fb-point-b">LUFS -7〜-8は業界標準。本質は圧縮量で、GR最大-5dB／平均-3dB程度を目安にダイナミクスを残します。</p>
+        </div>
+      </div>
+
+      <p class="fb-result-label">フィードバック後に投稿された楽曲</p>
+      <div class="fb-videos">
+        <a class="fb-video" href="https://youtu.be/RbSsNzAoTrM" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/RbSsNzAoTrM/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/RbSsNzAoTrM/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+        <a class="fb-video" href="https://youtu.be/rUEO5whdNN8" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/rUEO5whdNN8/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/rUEO5whdNN8/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+        <a class="fb-video" href="https://youtu.be/sgT2O3Pui04" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/sgT2O3Pui04/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/sgT2O3Pui04/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+      </div>
+      <p class="fb-note">※ ATSUKIさんご本人の許可を得て掲載しています。各動画の概要欄に、トリケラテクノのチャンネルを掲載いただいています。</p>
+    </div>
 
   </div>
 </section>
