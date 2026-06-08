@@ -756,6 +756,16 @@ ul { list-style:none; }
 .fb-video-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 .fb-video-play i { color: #fff; font-size: 22px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
 .fb-note { font-size: 10.5px; color: var(--muted); line-height: 1.7; margin-top: 16px; }
+.fb-roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.fb-role {
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid rgba(0,200,255,0.3);
+  background: rgba(0,200,255,0.06);
+  padding: 5px 12px;
+  letter-spacing: 0.04em;
+}
+.fb-videos--single { grid-template-columns: minmax(0, 520px); }
 @media (max-width: 600px) {
   .fb-points { grid-template-columns: 1fr; }
   .fb-videos { grid-template-columns: 1fr; }
@@ -1494,7 +1504,7 @@ ul { list-style:none; }
     <!-- ===== REAL FEEDBACK CASE ===== -->
     <div class="fb-head reveal">
       <p class="fb-label">REAL FEEDBACK</p>
-      <p class="fb-sub">LINE無料相談で実際に行った、楽曲フィードバックの一例</p>
+      <p class="fb-sub">楽曲フィードバックや楽曲制作の監修を行った、実際の事例</p>
     </div>
     <div class="fb-case reveal">
       <div class="fb-case-head">
@@ -1543,6 +1553,34 @@ ul { list-style:none; }
         </a>
       </div>
       <p class="fb-note">※ ATSUKIさんご本人の許可を得て掲載しています。各動画の概要欄に、トリケラテクノのチャンネルを掲載いただいています。</p>
+    </div>
+
+    <div class="fb-case reveal">
+      <div class="fb-case-head">
+        <img class="fb-avatar" src="justice-icon.jpg" alt="Justice音信不通さん" loading="lazy">
+        <div>
+          <p class="fb-name">Justice音信不通さん<a class="fb-channel" href="https://www.youtube.com/@impermanence8/videos" target="_blank" rel="noopener">@impermanence8 ↗</a></p>
+          <p class="fb-meta">楽曲フィードバック ・ ドラムス制作 ・ 楽曲制作監修</p>
+        </div>
+        <span class="fb-badge">掲載許可済み</span>
+      </div>
+
+      <p class="fb-lead">楽曲のフィードバックに加え、ドラムスの制作と楽曲全体の制作監修を担当しました。リズムの設計から構成・サウンドの方向づけまで、完成までのプロセスに伴走しています。</p>
+
+      <div class="fb-roles">
+        <span class="fb-role">楽曲フィードバック</span>
+        <span class="fb-role">ドラムス制作</span>
+        <span class="fb-role">楽曲制作監修</span>
+      </div>
+
+      <p class="fb-result-label">制作監修を担当した楽曲</p>
+      <div class="fb-videos fb-videos--single">
+        <a class="fb-video" href="https://youtu.be/AZSLVKhdW38" target="_blank" rel="noopener" aria-label="Justice音信不通さんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/AZSLVKhdW38/maxresdefault.jpg" alt="Justice音信不通さんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/AZSLVKhdW38/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+      </div>
+      <p class="fb-note">※ ご本人の許可を得て掲載しています。</p>
     </div>
 
   </div>
