@@ -1204,6 +1204,9 @@
     aspect-ratio: 16/10;
     object-fit: cover;
     object-position: top center;
+    pointer-events: none; /* ブラウザの画像検索ホバーボタンを抑止（クリック動作のない飾り画像） */
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .hub-showcase-card figcaption {
