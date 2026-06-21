@@ -4119,5 +4119,111 @@
 <div class="sticky-cta-bar" role="complementary" aria-label="購入セクションへ">
   <a href="#price" aria-label="価格セクションへスクロール">→ 今すぐ始める</a>
 </div>
+
+<!-- ========== IN-PAGE VIDEO MODAL ========== -->
+<style>
+  .vid-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0,0,0,0.88);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .vid-modal.open { display: flex; }
+  .vid-modal-inner { position: relative; width: 100%; max-width: 960px; text-align: center; }
+  .vid-modal-frame-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+  .vid-modal-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .vid-modal-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  .vid-modal-close:hover { opacity: 1; }
+  .vid-modal-yt {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .vid-modal-yt:hover { color: var(--accent); }
+  @media (max-width: 600px) {
+    .vid-modal { padding: 16px; }
+    .vid-modal-close { top: -38px; }
+  }
+</style>
+<div class="vid-modal" id="vidModal" role="dialog" aria-modal="true" aria-label="動画プレーヤー">
+  <div class="vid-modal-inner">
+    <button class="vid-modal-close" data-close aria-label="閉じる">&times;</button>
+    <div class="vid-modal-frame-wrap">
+      <iframe id="vidModalFrame" class="vid-modal-frame" src="about:blank" title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <a id="vidModalYt" class="vid-modal-yt" href="#" target="_blank" rel="noopener">YouTubeで見る ↗</a>
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('vidModal');
+    if (!modal) return;
+    var frame = document.getElementById('vidModalFrame');
+    var ytLink = document.getElementById('vidModalYt');
+    var ID_RE = /(?:youtu\.be\/|[?&]v=)([A-Za-z0-9_-]{11})/;
+
+    function open(id) {
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      if (ytLink) ytLink.href = 'https://youtu.be/' + id;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('open');
+      frame.src = 'about:blank'; // 再生を停止
+      document.body.style.overflow = '';
+    }
+
+    // 解説スタイル動画カードのクリックを横取り（別タブ→サイト内モーダル）
+    document.addEventListener('click', function (e) {
+      var trigger = e.target.closest && e.target.closest('a.video-link-card');
+      if (!trigger) return;
+      var m = (trigger.getAttribute('href') || '').match(ID_RE);
+      if (!m) return;
+      e.preventDefault();
+      open(m[1]);
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || (e.target.closest && e.target.closest('[data-close]'))) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
+    });
+  })();
+</script>
 </body>
 </html>
