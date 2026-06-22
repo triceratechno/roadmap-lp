@@ -350,6 +350,15 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   pointer-events:none;
 }
 
+/* Content figure (本文中の画像) */
+.ch-figure{margin:24px 0}
+.ch-figure img{
+  width:100%;height:auto;display:block;
+  border-radius:10px;
+  border:1px solid var(--border);
+  pointer-events:none;user-select:none;
+}
+
 /* Author card */
 .author-card{
   display:flex;align-items:center;gap:20px;
@@ -437,6 +446,9 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   <div class="ch-body">
 
     <h2>DTMで挫折する人に、共通点がある</h2>
+    <figure class="ch-figure">
+      <img src="intro-1.jpg" alt="たった1つの共通点">
+    </figure>
     <p>「DAWを買ったけど、何をすればいいか分からなかった」<br>
     「プラグインを揃えたのに、音楽らしい音楽が作れなかった」<br>
     「YouTubeで勉強しようとしたら、情報が多すぎて混乱した」</p>
@@ -447,6 +459,9 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <hr>
 
     <h2>この本で得られること</h2>
+    <figure class="ch-figure">
+      <img src="intro-2.jpg" alt="このすべてをあなたに">
+    </figure>
     <ul>
       <li>DTMの全工程が「作る→整える→届ける」の3段階で整理される</li>
       <li>Ableton Liveという作業場の全体像が分かる</li>
