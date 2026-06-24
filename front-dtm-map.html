@@ -269,16 +269,16 @@
   .author-albums-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-align: center; margin-bottom: 16px; }
   .author-albums-grid { display: flex; gap: 14px; justify-content: center; }
 
-  /* ===== AUTHOR VIDEOS ===== */
-  .author-videos { max-width: 760px; margin: 40px auto 0; }
-  .author-videos-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-align: center; margin-bottom: 16px; }
-  .author-videos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .av-card { display: block; text-decoration: none; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
-  .av-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-  .av-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-  .av-body { padding: 10px 12px; }
-  .av-tag { font-size: 10px; color: var(--accent); display: flex; align-items: center; gap: 4px; margin-bottom: 4px; }
-  .av-title { font-size: 12px; color: var(--text); line-height: 1.5; }
+  /* ===== AUTHOR VIDEOS (小さい横型カード／ロードマップ同様) ===== */
+  .author-videos { max-width: 760px; margin: 36px auto 0; }
+  .author-videos-label { font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-align: center; margin-bottom: 16px; }
+  .author-videos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .av-card { display: flex; align-items: center; background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+  .av-card:hover { border-color: rgba(0,200,255,0.3); transform: translateY(-2px); }
+  .av-thumb { width: 100px; height: 68px; object-fit: cover; flex-shrink: 0; }
+  .av-body { padding: 10px 12px; flex: 1; }
+  .av-tag { font-size: 10px; letter-spacing: 0.08em; color: #ff4444; margin-bottom: 5px; display: flex; align-items: center; gap: 4px; }
+  .av-title { font-size: 11px; color: var(--text); line-height: 1.5; }
   @media (max-width: 560px) {
     .author-stats { grid-template-columns: repeat(2, 1fr); }
     .author-videos-grid { grid-template-columns: 1fr; }
