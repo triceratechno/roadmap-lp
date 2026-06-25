@@ -389,6 +389,51 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   pointer-events:none;user-select:none;
 }
 
+/* Next map card (ロードマップ昇華・フロントLP流用) */
+.nextmap{
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:linear-gradient(160deg, rgba(0,200,255,0.05), transparent);
+  padding:32px 34px;
+  margin:28px 0;
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:32px;align-items:center;
+}
+.nextmap .nm-media img{
+  width:100%;display:block;border-radius:10px;
+  pointer-events:none;user-select:none;
+}
+.nextmap .nm-label{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:.28em;color:var(--accent);
+  font-size:13px;margin:0;
+}
+.nextmap h3{
+  font-weight:700;color:var(--white);
+  font-size:20px;line-height:1.5;
+  margin:10px 0 0;border:none;padding:0;
+}
+.nextmap p{
+  font-size:14px;color:var(--muted);
+  line-height:1.9;margin:12px 0 0;
+}
+.nm-cta{margin-top:20px}
+.nm-cta-btn{
+  display:inline-block;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:13px 28px;border-radius:4px;
+  font-size:13px;font-weight:700;letter-spacing:.06em;
+  text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.nm-cta-btn:hover{background:var(--accent);color:var(--black)}
+@media(max-width:600px){
+  .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
+  .nextmap .nm-media{max-width:230px;margin:0 auto}
+}
+
 /* Author card */
 .author-card{
   display:flex;align-items:center;gap:20px;
@@ -1149,6 +1194,20 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <h3>道②：オリジナル曲を、伴走しながら完成させる</h3>
     <p>「自分だけの曲を作りたい」「誰かに見てもらいながら進めたい」という人に向いています。</p>
     <p><strong>ロードマップ</strong>は、オリジナル曲を1曲完成させるための3ヶ月プログラムです。作曲・アレンジ・ミキシングの順番を、私が設計したカリキュラムに沿って進めます。途中で詰まったとき、私が直接フィードバックします。</p>
+
+    <div class="nextmap">
+      <div class="nm-media">
+        <img src="mockup-pro.png" alt="トリケラテクノ ロードマップPROコース">
+      </div>
+      <div class="nm-content">
+        <p class="nm-label">NEXT MAP</p>
+        <h3>音が出せたら、次は"曲"にする番です。</h3>
+        <p>「最初の音」の次は、それを"1曲"に仕上げる番。0から完成・配信までを順番に並べたのが「トリケラテクノ ロードマップ」です。まずは、この地図から。</p>
+        <div class="nm-cta">
+          <a class="nm-cta-btn" href="triceratechno-lp.html">ロードマップを見てみる →</a>
+        </div>
+      </div>
+    </div>
 
     <hr>
 
