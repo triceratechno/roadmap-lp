@@ -281,20 +281,23 @@
 
   /* ===== PRICE ===== */
   .price-box {
-    max-width: 600px; margin: 0 auto; border: 1px solid rgba(0,200,255,0.3); border-radius: 16px;
-    background: var(--panel); padding: 48px 40px; text-align: center;
+    max-width: 920px; margin: 0 auto; border: 1px solid rgba(0,200,255,0.3); border-radius: 16px;
+    background: var(--panel); padding: 44px 44px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    display: grid; grid-template-columns: 0.82fr 1fr; gap: 44px; align-items: center; text-align: left;
   }
-  .price-mockup { width: 100%; max-width: 280px; margin: 0 auto 22px; display: block; }
+  .price-left { text-align: center; }
+  .price-right { border-left: 1px solid var(--border); padding-left: 44px; }
+  .price-mockup { width: 100%; max-width: 210px; margin: 0 auto 18px; display: block; }
   .price-mockup img { width: 100%; display: block; pointer-events: none; user-select: none; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55)); }
   .price-name { font-size: 14px; letter-spacing: 0.08em; color: var(--muted); }
-  .price-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 84px; line-height: 1; margin: 12px 0 6px; letter-spacing: 0.02em; }
-  .price-tag .yen { font-size: 40px; vertical-align: 6px; }
+  .price-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 76px; line-height: 1; margin: 10px 0 6px; letter-spacing: 0.02em; }
+  .price-tag .yen { font-size: 36px; vertical-align: 6px; }
   .price-tax { font-size: 12px; color: var(--muted); }
-  .price-desc { font-size: 14px; color: var(--text); line-height: 1.9; margin: 22px auto 24px; max-width: 420px; }
+  .price-desc { font-size: 13px; color: var(--text); line-height: 1.85; margin: 18px auto 24px; max-width: 320px; }
   .price-launch { display: inline-block; margin-bottom: 22px; padding: 6px 14px; border: 1px dashed rgba(245,197,24,0.5); border-radius: 4px; color: var(--gold); font-size: 12px; letter-spacing: 0.06em; }
-  .price-incl-label { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-align: center; margin: 30px 0 6px; }
-  .price-checklist { list-style: none; max-width: 460px; margin: 8px auto 30px; text-align: left; }
+  .price-incl-label { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-align: left; margin: 0 0 6px; }
+  .price-checklist { list-style: none; max-width: none; margin: 8px 0 0; text-align: left; }
   .price-checklist li { position: relative; padding: 13px 0 13px 30px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text); line-height: 1.55; }
   .price-checklist li:last-child { border-bottom: 0; }
   .price-checklist li::before { content: '✓'; position: absolute; left: 0; top: 13px; color: var(--accent); font-weight: 700; }
@@ -386,6 +389,12 @@
     .hero-grid { grid-template-columns: 1fr; gap: 30px; }
     .map-emblem { max-width: 360px; margin: 0 auto; }
     .bonus-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .price-box { grid-template-columns: 1fr; gap: 28px; }
+    .price-right { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: 28px; }
+    .price-incl-label { text-align: center; }
+    .price-checklist { max-width: 460px; margin: 8px auto 0; }
   }
   @media (max-width: 560px) {
     .section { padding: 64px 0; }
@@ -581,25 +590,27 @@
   <div class="wrap">
     <div class="section-label center reveal">PRICE</div>
     <div class="price-box reveal">
-      <span class="price-mockup"><img src="mockup-dtm-map.png" alt="DTMの地図 表紙モックアップ"></span>
-      <p class="price-name">DTMの地図</p>
-      <p class="price-tag"><span class="yen">¥</span>500</p>
-      <p class="price-tax">税込</p>
-      <p class="price-desc">コーヒー1杯分で、DTMの全体像と、初めての1音が手に入ります。高価な教材を買う前に、まずはここから。</p>
-
-      <p class="price-incl-label">― このセットに含まれるもの ―</p>
-      <ul class="price-checklist">
-        <li><strong>全8章のロードマップ（記事8本以上）</strong><span class="sub">DTMとは何か／DAW選び／用語／音が鳴る仕組み／道具とジャンルの地図まで、ゼロから順番に</span></li>
-        <li><strong>【実践】第7章「はじめての音を鳴らす」</strong><span class="sub">DAWを開く→ドラム→コード→4小節ループを手取り足取り。<em>自分のPCから音が鳴る</em></span></li>
-        <li><strong>解説動画 約60分</strong><span class="sub">操作が「見て」分かる。つまずきやすいポイントを動画でフォロー</span></li>
-        <li><strong>特典① DTM用語ミニ辞典（PDF）</strong><span class="sub">調べる手間ゼロ。困ったらこの1枚</span></li>
-        <li><strong>特典② DAW選びフローチャート（PDF）</strong><span class="sub">「どのDAWを選べばいい？」が一発で決まる</span></li>
-        <li><strong>特典③ 第7章のデモ音源＆プロジェクトファイル</strong><span class="sub">完成形を耳で確認、中身もそのまま開ける</span></li>
-        <li><strong>買い切り・追加費用ゼロ</strong><span class="sub">購入後のアップデートも無料</span></li>
-      </ul>
-
-      <!-- 仮リンク：決済URLに差し替え -->
-      <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を踏み出す →</a>
+      <div class="price-left">
+        <span class="price-mockup"><img src="mockup-dtm-map.png" alt="DTMの地図 表紙モックアップ"></span>
+        <p class="price-name">DTMの地図</p>
+        <p class="price-tag"><span class="yen">¥</span>500</p>
+        <p class="price-tax">税込</p>
+        <p class="price-desc">コーヒー1杯分で、DTMの全体像と、初めての1音が手に入ります。高価な教材を買う前に、まずはここから。</p>
+        <!-- 仮リンク：決済URLに差し替え -->
+        <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を踏み出す →</a>
+      </div>
+      <div class="price-right">
+        <p class="price-incl-label">― このセットに含まれるもの ―</p>
+        <ul class="price-checklist">
+          <li><strong>全8章のロードマップ（記事8本以上）</strong><span class="sub">DTMとは何か／DAW選び／用語／音が鳴る仕組み／道具とジャンルの地図まで、ゼロから順番に</span></li>
+          <li><strong>【実践】第7章「はじめての音を鳴らす」</strong><span class="sub">DAWを開く→ドラム→コード→4小節ループを手取り足取り。<em>自分のPCから音が鳴る</em></span></li>
+          <li><strong>解説動画 約60分</strong><span class="sub">操作が「見て」分かる。つまずきやすいポイントを動画でフォロー</span></li>
+          <li><strong>特典① DTM用語ミニ辞典（PDF）</strong><span class="sub">調べる手間ゼロ。困ったらこの1枚</span></li>
+          <li><strong>特典② DAW選びフローチャート（PDF）</strong><span class="sub">「どのDAWを選べばいい？」が一発で決まる</span></li>
+          <li><strong>特典③ 第7章のデモ音源＆プロジェクトファイル</strong><span class="sub">完成形を耳で確認、中身もそのまま開ける</span></li>
+          <li><strong>買い切り・追加費用ゼロ</strong><span class="sub">購入後のアップデートも無料</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
