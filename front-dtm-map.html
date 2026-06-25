@@ -149,18 +149,25 @@
   }
   .hero-grid {
     position: relative; z-index: 1;
-    display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;
-    max-width: 680px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr; gap: 28px; justify-items: center; align-items: center;
+    max-width: 720px; margin: 0 auto; text-align: center;
+  }
+  .hero-content { display: flex; flex-direction: column; align-items: center; }
+  .hero-tag {
+    display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 0.28em;
+    color: var(--accent); border: 1px solid rgba(0,200,255,0.4); border-radius: 4px; padding: 7px 18px; margin-bottom: 22px;
   }
   .hero-eyebrow {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 18px;
+    font-size: 14px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 18px;
   }
-  .hero-title { font-weight: 900; color: var(--white); font-size: clamp(30px, 5.6vw, 50px); line-height: 1.3; letter-spacing: 0.01em; }
+  .hero-title { font-weight: 900; color: var(--white); font-size: clamp(40px, 9vw, 76px); line-height: 1.15; letter-spacing: 0.02em; }
   .hero-title .ac { color: var(--accent); }
-  .hero-sub { margin-top: 24px; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; max-width: 540px; }
+  .hero-sub { margin-top: 26px; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; max-width: 560px; }
+  .hero-sub strong { color: var(--white); font-weight: 700; }
+  .hero-lead { margin-top: 26px; font-size: clamp(15px, 2.2vw, 17px); color: var(--text); font-weight: 700; letter-spacing: 0.02em; }
+  .hero-lead em { color: var(--accent); font-style: normal; }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
-  .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .hero-price {
     display: inline-flex; align-items: baseline; gap: 8px; margin-bottom: 18px;
     padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--panel);
@@ -374,10 +381,11 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content">
-        <p class="hero-eyebrow">THE MAP OF DTM</p>
-        <h1 class="hero-title">音楽経験ゼロでも、<br>今日、<span class="ac">はじめての音</span>が鳴る。</h1>
-        <p class="hero-sub">「DAWは入れた。でも、何から始めればいいのか分からない」――そんなあなたへ。DTMの全体像と、最初の1音までを、迷わない順番で。</p>
-        <p class="hero-note">才能も、楽譜の知識も、高価なPCもいりません。</p>
+        <div class="hero-tag">FOR ABSOLUTE BEGINNERS</div>
+        <p class="hero-eyebrow">あなたに足りないのは、才能じゃない。</p>
+        <h1 class="hero-title">DTMの<span class="ac">地図</span></h1>
+        <p class="hero-sub">何から始めればいいか分からない人のための<strong>DTMの全体図</strong><br>＋はじめての1音まで、迷わない順番で。</p>
+        <p class="hero-lead">この地図で<em>何が変わるのか</em>、まず1分で確認してください。</p>
       </div>
       <div class="hero-video-frame">
         <!-- ★ YouTubeアップ後に YOUR_VIDEO_ID を差し替え（下のプレースホルダーは削除） ★
