@@ -255,6 +255,42 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   line-height:1.7;
 }
 
+/* Promo code (ロードマップ割引) */
+.promo-code{
+  display:inline-block;
+  font-family:'Courier New',monospace;
+  font-size:20px;font-weight:700;
+  letter-spacing:.12em;
+  color:var(--gold);
+  background:var(--black);
+  border:1px dashed var(--gold);
+  border-radius:6px;
+  padding:10px 22px;
+  user-select:all;
+}
+.promo-steps{
+  counter-reset:promo;
+  list-style:none;
+  padding:0;margin:16px 0 0;
+}
+.promo-steps li{
+  position:relative;
+  padding:0 0 0 38px;
+  margin-bottom:12px;
+  color:#ccc;line-height:1.7;
+}
+.promo-steps li::before{
+  counter-increment:promo;
+  content:counter(promo);
+  position:absolute;left:0;top:1px;
+  width:24px;height:24px;
+  background:var(--accent);color:var(--black);
+  border-radius:50%;
+  font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.promo-steps li strong{color:var(--white)}
+
 /* Tables */
 .ch-body table{
   width:100%;border-collapse:collapse;
@@ -1234,9 +1270,14 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <hr>
 
     <h2>「DTMの地図」購入者への特典</h2>
-    <div class="warn-box">
-      ロードマップを検討している方へ。この本を購入してくださった方には、<strong>ロードマップを¥980引き</strong>でお申し込みいただけます。LINEでご連絡ください。
-    </div>
+    <p>この本を読んでくださったあなたへ。<strong>ロードマップを ¥980 引き</strong>で申し込めるプロモーションコードを用意しました。</p>
+    <p>プロモーションコード（タップで選択 → コピー）：</p>
+    <p><span class="promo-code">ROADMAP980</span></p>
+    <ol class="promo-steps">
+      <li>上の「<strong>ロードマップを見てみる</strong>」から申し込みページを開く</li>
+      <li>Stripeの決済画面で「<strong>プロモーションコード</strong>」欄に <strong>ROADMAP980</strong> を入力</li>
+      <li><strong>¥980引き</strong>が適用されたのを確認して、購入を完了する</li>
+    </ol>
 
     <hr>
 
@@ -1294,7 +1335,7 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <p>質問や感想があれば、LINEでトリケラテクノにメッセージを送ってください。</p>
 
     <div class="info-box">
-      <strong>ロードマップ割引：</strong>この本の購入者はロードマップ申し込み時に¥980引きになります。LINEで「ロードマップ申し込みたい」とお送りください。
+      <strong>ロードマップ割引：</strong>この本の購入者は、ロードマップのStripe決済画面で「プロモーションコード」欄に <strong>ROADMAP980</strong> を入力すると ¥980 引きになります。
     </div>
 
   </div>
