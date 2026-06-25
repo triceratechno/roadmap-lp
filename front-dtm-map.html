@@ -100,7 +100,7 @@
     line-height: 1.35;
     letter-spacing: 0.01em;
   }
-  h2.h-jp { font-size: clamp(26px, 4.6vw, 42px); margin-bottom: 26px; }
+  h2.h-jp { font-size: clamp(26px, 4.6vw, 42px); margin-bottom: 26px; text-align: center; }
   h2.h-jp em { color: var(--accent); font-style: normal; }
   .lead { font-size: clamp(14px, 2vw, 16px); color: var(--muted); line-height: 2; }
   .center { text-align: center; }
@@ -221,6 +221,7 @@
 
   /* ===== WHAT IS ===== */
   .what-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .what-body { text-align: center; }
   .what-body p { font-size: 15px; color: var(--muted); line-height: 2.05; margin-top: 16px; }
   .what-body strong { color: var(--text); font-weight: 700; }
   .what-body .hl { color: var(--accent); font-weight: 700; }
@@ -306,8 +307,9 @@
   .price-checklist li .sub em { color: var(--accent); font-style: normal; }
 
   /* ===== AUTHOR ===== */
-  .author { display: grid; grid-template-columns: 120px 1fr; gap: 30px; align-items: start; max-width: 760px; margin: 0 auto; }
+  .author { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; max-width: 760px; margin: 0 auto; }
   .author-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+  .author-body { max-width: 620px; }
   .author-body h3 { font-weight: 900; color: var(--white); font-size: clamp(18px, 2.8vw, 24px); margin-bottom: 16px; line-height: 1.5; }
   .author-body p { font-size: 14px; color: var(--muted); line-height: 2; margin-top: 14px; }
 
@@ -450,7 +452,7 @@
 <!-- ========== 2. 共感（痛み） ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">YOUR REALITY</div>
+    <div class="section-label center reveal">YOUR REALITY</div>
     <h2 class="h-jp reveal">もしかして、こんな状態で<br><em>止まっていませんか？</em></h2>
     <div class="pain-img-wrap reveal">
       <img src="img-pain.jpg" alt="止まってしまっている状態のイメージ">
@@ -488,7 +490,7 @@
 <!-- ========== 4. これは何か ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">WHAT IS THIS</div>
+    <div class="section-label center reveal">WHAT IS THIS</div>
     <h2 class="h-jp reveal">「DTMの地図」は、<br>DAWを開く前に読む<em>全体図</em>です。</h2>
     <div class="what-body reveal">
       <p>この教材は、テクニックを詰め込んだものではありません。<br><strong>「DTMとは何か」「音はどうやって鳴るのか」「自分は今どこにいて、次どこへ進むのか」</strong><br>――その全体像を、ゼロから順番に見渡せるようにした"地図"です。</p>
@@ -502,7 +504,7 @@
 <!-- ========== 5. カリキュラム（ルート） ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">CONTENTS</div>
+    <div class="section-label center reveal">CONTENTS</div>
     <h2 class="h-jp reveal">ゼロから、最初の音まで。<br>迷わない<em>8章＋実践</em>。</h2>
     <div class="route reveal">
       <div class="route-step"><div class="route-node">0</div><div class="route-content"><p class="route-title">はじめに</p><p class="route-desc">なぜ多くの人がDTMで迷うのか。地図を持つことの意味。</p></div></div>
@@ -573,7 +575,7 @@
 <!-- ========== 8. 特典 ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">BONUS</div>
+    <div class="section-label center reveal">BONUS</div>
     <h2 class="h-jp reveal">3つの<em>特典</em>つき。</h2>
     <div class="bonus-grid">
       <div class="bonus-card reveal"><p class="bonus-num">BONUS 01</p><p class="bonus-title">DTM用語ミニ辞典</p><p class="bonus-desc">迷ったらここを開けば、言葉の意味がすぐ分かる。手元に置いておける1枚。</p></div>
@@ -620,7 +622,7 @@
 <!-- ========== 10. 作者 ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">WHO AM I</div>
+    <div class="section-label center reveal">WHO AM I</div>
     <div class="author reveal">
       <img class="author-img" src="tricera-icon.jpg" alt="トリケラテクノ">
       <div class="author-body">
@@ -711,7 +713,7 @@
 <!-- ========== 11. FAQ ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label reveal">Q&amp;A</div>
+    <div class="section-label center reveal">Q&amp;A</div>
     <h2 class="h-jp reveal">よくある<em>質問</em>。</h2>
     <div class="faq reveal">
       <details>
