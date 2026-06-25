@@ -149,7 +149,8 @@
   }
   .hero-grid {
     position: relative; z-index: 1;
-    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+    display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;
+    max-width: 680px; margin: 0 auto;
   }
   .hero-eyebrow {
     font-family: 'Bebas Neue', sans-serif;
@@ -159,7 +160,7 @@
   .hero-title .ac { color: var(--accent); }
   .hero-sub { margin-top: 24px; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; max-width: 540px; }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
-  .hero-cta { margin-top: 34px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
   .hero-price {
     display: inline-flex; align-items: baseline; gap: 8px; margin-bottom: 18px;
     padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--panel);
@@ -170,6 +171,20 @@
   /* ===== MAP EMBLEM (hero) ===== */
   .map-emblem { width: 100%; }
   .map-emblem svg { width: 100%; height: auto; display: block; }
+
+  /* ===== HERO VIDEO (placeholder / roadmap同様) ===== */
+  .hero-video-frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #080e1a; border: 1px solid rgba(0,200,255,0.18); border-radius: 6px; overflow: hidden; box-shadow: 0 0 60px rgba(0,200,255,0.08); }
+  .hero-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+  .hero-video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer;
+    background: radial-gradient(ellipse at 50% 40%, rgba(0,200,255,0.08), transparent 70%), #080e1a; }
+  .hero-video-placeholder::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); pointer-events: none; }
+  .hero-video-play { width: 76px; height: 76px; border-radius: 50%; background: rgba(0,200,255,0.85); border: 3px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; animation: hv-pulse 2.4s ease-in-out infinite; z-index: 1; box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
+  .hero-video-play svg { width: 30px; height: 30px; fill: #001018; margin-left: 4px; }
+  .hero-video-text { font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.55); padding: 6px 14px; border-radius: 2px; z-index: 1; text-transform: uppercase; }
+  @keyframes hv-pulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(0,200,255,0.5); }
+    50% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 16px rgba(0,200,255,0); }
+  }
 
   /* ===== SECTION IMAGES ===== */
   .pain-img-wrap { margin-top: 28px; border-radius: 12px; overflow: hidden; }
@@ -363,33 +378,25 @@
         <h1 class="hero-title">音楽経験ゼロでも、<br>今日、<span class="ac">はじめての音</span>が鳴る。</h1>
         <p class="hero-sub">「DAWは入れた。でも、何から始めればいいのか分からない」――そんなあなたへ。DTMの全体像と、最初の1音までを、迷わない順番で。</p>
         <p class="hero-note">才能も、楽譜の知識も、高価なPCもいりません。</p>
-        <div class="hero-cta">
-          <span class="hero-price"><span class="yen">¥500</span><span class="tag">コーヒー1杯分</span></span>
-          <!-- 仮リンク：決済URLに差し替え -->
-          <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">最初の一歩を踏み出す →</a>
+      </div>
+      <div class="hero-video-frame">
+        <!-- ★ YouTubeアップ後に YOUR_VIDEO_ID を差し替え（下のプレースホルダーは削除） ★
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        -->
+        <!-- 動画準備中のプレースホルダー（仮動画再生） -->
+        <div class="hero-video-placeholder">
+          <div class="hero-video-play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="hero-video-text">COMING SOON</p>
         </div>
       </div>
-      <div class="map-emblem" aria-hidden="true">
-        <svg viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="route" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#00c8ff"/>
-              <stop offset="1" stop-color="#0080ff"/>
-            </linearGradient>
-          </defs>
-          <rect x="6" y="6" width="308" height="288" rx="14" stroke="#1e1e1e" stroke-width="1.5"/>
-          <path d="M48 250 C 40 190, 120 200, 110 150 C 102 108, 200 120, 200 80 C 200 52, 250 56, 268 48"
-                stroke="url(#route)" stroke-width="2.5" stroke-dasharray="5 7" stroke-linecap="round"/>
-          <g>
-            <circle cx="48" cy="250" r="9" fill="#111" stroke="#00c8ff" stroke-width="2"/>
-            <circle cx="110" cy="150" r="7" fill="#111" stroke="#00c8ff" stroke-width="2"/>
-            <circle cx="200" cy="80" r="7" fill="#111" stroke="#00c8ff" stroke-width="2"/>
-            <circle cx="268" cy="48" r="11" fill="#f5c518" stroke="#f5c518" stroke-width="2"/>
-            <path d="M264 48 l3 3 l6 -7" stroke="#1a1400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </g>
-          <text x="40" y="278" fill="#9a9a9a" font-family="Bebas Neue" font-size="13" letter-spacing="1">START</text>
-          <text x="232" y="34" fill="#f5c518" font-family="Bebas Neue" font-size="13" letter-spacing="1">SOUND</text>
-        </svg>
+      <div class="hero-cta">
+        <span class="hero-price"><span class="yen">¥500</span><span class="tag">コーヒー1杯分</span></span>
+        <!-- 仮リンク：決済URLに差し替え -->
+        <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">最初の一歩を踏み出す →</a>
       </div>
     </div>
   </div>
