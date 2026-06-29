@@ -168,6 +168,11 @@
   .hero-lead strong { font-weight: 700; color: var(--text); }
   .hero-because { font-size: clamp(14px, 2vw, 16px); color: var(--text); font-weight: 700; letter-spacing: 0.02em; margin-bottom: 18px; }
   .hero-because em { color: var(--accent); font-style: normal; }
+  .hero-price-strip { display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; font-size: clamp(14px, 2.2vw, 16px); color: var(--text); letter-spacing: 0.02em; }
+  .hero-price-strip s { color: var(--muted); text-decoration-color: rgba(245,197,24,0.7); }
+  .hero-price-strip strong { font-family: 'Bebas Neue', sans-serif; font-size: 1.7em; color: var(--gold); line-height: 1; letter-spacing: 0.02em; }
+  .hps-off { font-size: 11px; font-weight: 900; color: var(--black); background: var(--gold); padding: 2px 8px; border-radius: 5px; letter-spacing: 0.03em; }
+  .hps-dl { font-size: 11px; color: var(--gold); padding: 2px 9px; border: 1px solid rgba(245,197,24,0.4); border-radius: 999px; }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
   .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .hero-price {
@@ -566,7 +571,8 @@
       </div>
       <div class="hero-cta">
         <p class="hero-because">才能はいりません。<em>必要なのはセンスではなく"順番"</em>だから。</p>
-        <a class="btn btn--primary" href="#price">最初の一歩を踏み出す →</a>
+        <p class="hero-price-strip">通常 <s>¥1,980</s> → 今だけ <strong>¥500</strong> <span class="hps-off">75%OFF</span> <span class="hps-dl">7/31まで</span></p>
+        <a class="btn btn--primary" href="#price">¥500で、最初の一歩を踏み出す →</a>
       </div>
     </div>
   </div>
