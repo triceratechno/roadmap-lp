@@ -352,7 +352,9 @@
 
   /* ===== BONUS ===== */
   .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
-  .bonus-card { border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 26px 22px; }
+  .bonus-card { border: 1px solid var(--border); background: var(--panel); border-radius: 10px; overflow: hidden; }
+  .bonus-img { width: 100%; aspect-ratio: 16/9; background-size: cover; background-position: center; background-color: #1a1a2e; background-image: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #001a22 100%); }
+  .bonus-body { padding: 20px 22px 24px; }
   .bonus-num { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 0.1em; color: var(--accent); }
   .bonus-title { font-size: 15px; font-weight: 700; color: var(--white); margin: 8px 0 10px; line-height: 1.5; }
   .bonus-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
@@ -717,9 +719,9 @@
     <div class="section-label center reveal">BONUS</div>
     <h2 class="h-jp reveal">3つの<em>特典</em>つき。</h2>
     <div class="bonus-grid">
-      <div class="bonus-card reveal"><p class="bonus-num">BONUS 01</p><p class="bonus-title">DTM用語ミニ辞典</p><p class="bonus-desc">迷ったらここを開けば、言葉の意味がすぐ分かる。手元に置いておける1枚。</p></div>
-      <div class="bonus-card reveal"><p class="bonus-num">BONUS 02</p><p class="bonus-title">DAW選びフローチャート</p><p class="bonus-desc">質問に答えるだけで、あなたに合うDAWが決まる。もう選びで迷わない。</p></div>
-      <div class="bonus-card reveal"><p class="bonus-num">BONUS 03</p><p class="bonus-title">第7章のデモ音源＆プロジェクト</p><p class="bonus-desc">「同じ音が出た」を、自分の耳で確かめられる。実践のお手本に。</p></div>
+      <div class="bonus-card reveal"><div class="bonus-img" style="background-image:url('bonus01.jpg')"></div><div class="bonus-body"><p class="bonus-num">BONUS 01</p><p class="bonus-title">DTM用語ミニ辞典</p><p class="bonus-desc">迷ったらここを開けば、言葉の意味がすぐ分かる。手元に置いておける1枚。</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-img" style="background-image:url('bonus02.jpg')"></div><div class="bonus-body"><p class="bonus-num">BONUS 02</p><p class="bonus-title">DAW選びフローチャート</p><p class="bonus-desc">質問に答えるだけで、あなたに合うDAWが決まる。もう選びで迷わない。</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-img" style="background-image:url('bonus03.jpg')"></div><div class="bonus-body"><p class="bonus-num">BONUS 03</p><p class="bonus-title">第7章のデモ音源＆プロジェクト</p><p class="bonus-desc">「同じ音が出た」を、自分の耳で確かめられる。実践のお手本に。</p></div></div>
     </div>
   </div>
 </section>
