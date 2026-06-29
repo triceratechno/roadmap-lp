@@ -372,9 +372,14 @@
   .price-mockup { width: 100%; max-width: 210px; margin: 0 auto 18px; display: block; }
   .price-mockup img { width: 100%; display: block; pointer-events: none; user-select: none; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55)); }
   .price-name { font-size: 14px; letter-spacing: 0.08em; color: var(--muted); }
-  .price-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 76px; line-height: 1; margin: 10px 0 6px; letter-spacing: 0.02em; }
+  .price-anchor { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; }
+  .price-regular { font-size: 16px; color: var(--muted); }
+  .price-regular s { text-decoration: line-through; text-decoration-color: rgba(245,197,24,0.7); }
+  .price-off { font-size: 12px; font-weight: 900; color: var(--black); background: var(--gold); padding: 2px 9px; border-radius: 5px; letter-spacing: 0.04em; }
+  .price-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 76px; line-height: 1; margin: 4px 0 6px; letter-spacing: 0.02em; }
   .price-tag .yen { font-size: 36px; vertical-align: 6px; }
   .price-tax { font-size: 12px; color: var(--muted); }
+  .price-launch { font-size: 11px; color: var(--gold); margin-top: 8px; letter-spacing: 0.02em; }
   .price-desc { font-size: 13px; color: var(--text); line-height: 1.85; margin: 18px auto 24px; max-width: 320px; }
   .price-launch { display: inline-block; margin-bottom: 22px; padding: 6px 14px; border: 1px dashed rgba(245,197,24,0.5); border-radius: 4px; color: var(--gold); font-size: 12px; letter-spacing: 0.06em; }
   .price-incl-label { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-align: left; margin: 0 0 6px; }
@@ -738,9 +743,14 @@
       <div class="price-left">
         <span class="price-mockup"><img src="mockup-dtm-map.png" alt="DTMの地図 表紙モックアップ"></span>
         <p class="price-name">DTMの地図</p>
+        <div class="price-anchor">
+          <span class="price-regular">通常 <s>¥1,980</s></span>
+          <span class="price-off">75%OFF</span>
+        </div>
         <p class="price-tag"><span class="yen">¥</span>500</p>
-        <p class="price-tax">税込</p>
-        <p class="price-desc">全8章＋解説動画 約60分＋特典3つ。これで¥500。<br><strong style="color:var(--text);">なぜここまで出せるのか</strong>――入口で利益を取らないから。まず"自分にもできた"を体験してほしいからです。</p>
+        <p class="price-tax">税込・ローンチ記念の期間限定価格</p>
+        <p class="price-launch">※今後、通常価格 ¥1,980 に戻します。いま入る人だけの価格です。</p>
+        <p class="price-desc">全8章＋解説動画 約60分＋特典3つ。<strong style="color:var(--text);">通常¥1,980のところ、ローンチ記念で¥500。</strong><br>なぜここまで出せるのか――入口で利益を取らないから。まず"自分にもできた"を体験してほしいからです。</p>
         <!-- 仮リンク：決済URLに差し替え -->
         <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を踏み出す →</a>
         <p style="font-size:11px; color:var(--muted); margin-top:12px; letter-spacing:0.04em;">100名以上が相談に来た解説者の、最初の地図。</p>
