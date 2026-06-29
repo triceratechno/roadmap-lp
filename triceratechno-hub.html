@@ -2363,6 +2363,13 @@
     // ===== Reveal on scroll =====
     function setupRevealObserver() {
       const reveals = document.querySelectorAll('.reveal');
+      // フォールバック：IntersectionObserver非対応なら全て表示
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach(r => r.classList.add('visible'));
+        return;
+      }
+      // threshold:0 = 少しでも交差したら発火。ビューポートより高い縦長セクション
+      // （10 STEPS等）でも確実に表示される（0.1だと交差率が届かず発火しない不具合の修正）
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (e.isIntersecting) {
@@ -2370,8 +2377,19 @@
             observer.unobserve(e.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
       reveals.forEach(r => observer.observe(r));
+      // 安全網：万一発火しなかった要素も、画面内に入っていれば強制表示
+      const sweep = () => {
+        reveals.forEach(r => {
+          if (r.classList.contains('visible')) return;
+          const rect = r.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            r.classList.add('visible');
+          }
+        });
+      };
+      window.addEventListener('load', () => setTimeout(sweep, 400));
     }
 
     // ===== Reset progress button =====
