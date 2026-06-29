@@ -267,6 +267,55 @@
   .route-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 4px; }
   .route-foot { margin-top: 26px; font-size: 13px; color: var(--muted); text-align: center; }
 
+  /* ===== CHAPTER CARDS ===== */
+  .ch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    gap: 12px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .ch-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ch-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+  .ch-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a2e;
+    background-image: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #0d1a1a 100%);
+    position: relative;
+  }
+  .ch-num {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  }
+  .ch-body { padding: 12px 14px 14px; }
+  .ch-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 5px; line-height: 1.4; }
+  .ch-desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
+  .ch-card--key { border-color: rgba(245,197,24,0.4); }
+  .ch-card--key .ch-num { color: var(--gold); }
+  .ch-card--key .ch-title { color: var(--gold); }
+  .ch-card--key .ch-img { background-image: linear-gradient(135deg, #1a1200 0%, #2a2000 50%, #1a1a00 100%); }
+  .ch-card--next .ch-num { color: var(--muted); }
+  @media (max-width: 600px) {
+    .ch-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+  }
+
   /* ===== FIRST SOUND ===== */
   .firstsound {
     border: 1px solid rgba(245,197,24,0.35); border-radius: 14px;
@@ -589,16 +638,18 @@
 <section class="section">
   <div class="wrap">
     <div class="section-label center reveal">CONTENTS</div>
-    <div class="route reveal">
-      <div class="route-step"><div class="route-node">0</div><div class="route-content"><p class="route-title">はじめに</p><p class="route-desc">なぜ多くの人がDTMで迷うのか。地図を持つことの意味。</p></div></div>
-      <div class="route-step"><div class="route-node">1</div><div class="route-content"><p class="route-title">DTMって何？</p><p class="route-desc">作る→整える→届ける。曲ができるまでの全体像を1枚で。</p></div></div>
-      <div class="route-step"><div class="route-node">2</div><div class="route-content"><p class="route-title">DAWを選ぶ</p><p class="route-desc">作業場の選び方。あなたに合うDAWが分かる。</p></div></div>
-      <div class="route-step"><div class="route-node">3</div><div class="route-content"><p class="route-title">これだけ用語</p><p class="route-desc">MIDI、トラック、BPM…最低限の共通言語を図解で。</p></div></div>
-      <div class="route-step"><div class="route-node">4</div><div class="route-content"><p class="route-title">音が鳴る仕組み</p><p class="route-desc">音源→エフェクト→マスター。すべてがつながる瞬間。</p></div></div>
-      <div class="route-step"><div class="route-node">5</div><div class="route-content"><p class="route-title">道具の地図</p><p class="route-desc">シンセ、EQ、リバーブ…が「何のための道具か」だけ分かる。</p></div></div>
-      <div class="route-step"><div class="route-node">6</div><div class="route-content"><p class="route-title">ジャンルの地図</p><p class="route-desc">作りたい音楽を決める。それが最初の一歩。</p></div></div>
-      <div class="route-step route-step--key"><div class="route-node">7</div><div class="route-content"><p class="route-title">【実践】はじめての音を鳴らす</p><p class="route-desc">DAWを開き、4小節のループを鳴らすまで。この教材のゴール。</p></div></div>
-      <div class="route-step route-step--goal"><div class="route-node">8</div><div class="route-content"><p class="route-title">次の地図</p><p class="route-desc">音が出せたあなたが、次に進むべき道。</p></div></div>
+    <div class="ch-grid reveal">
+      <!-- 左列 0→1→2→3→4 -->
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch00.jpg')"><span class="ch-num">0</span></div><div class="ch-body"><p class="ch-title">はじめに</p><p class="ch-desc">なぜ多くの人がDTMで迷うのか。地図を持つことの意味。</p></div></div>
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch01.jpg')"><span class="ch-num">1</span></div><div class="ch-body"><p class="ch-title">DTMって何？</p><p class="ch-desc">作る→整える→届ける。曲ができるまでの全体像を1枚で。</p></div></div>
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch02.jpg')"><span class="ch-num">2</span></div><div class="ch-body"><p class="ch-title">DAWを選ぶ</p><p class="ch-desc">作業場の選び方。あなたに合うDAWが分かる。</p></div></div>
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch03.jpg')"><span class="ch-num">3</span></div><div class="ch-body"><p class="ch-title">これだけ用語</p><p class="ch-desc">MIDI、トラック、BPM…最低限の共通言語を図解で。</p></div></div>
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch04.jpg')"><span class="ch-num">4</span></div><div class="ch-body"><p class="ch-title">音が鳴る仕組み</p><p class="ch-desc">音源→エフェクト→マスター。すべてがつながる瞬間。</p></div></div>
+      <!-- 右列 5→6→7→8 -->
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch05.jpg')"><span class="ch-num">5</span></div><div class="ch-body"><p class="ch-title">道具の地図</p><p class="ch-desc">シンセ、EQ、リバーブ…が「何のための道具か」だけ分かる。</p></div></div>
+      <div class="ch-card"><div class="ch-img" style="background-image:url('ch06.jpg')"><span class="ch-num">6</span></div><div class="ch-body"><p class="ch-title">ジャンルの地図</p><p class="ch-desc">作りたい音楽を決める。それが最初の一歩。</p></div></div>
+      <div class="ch-card ch-card--key"><div class="ch-img" style="background-image:url('ch07.jpg')"><span class="ch-num">7</span></div><div class="ch-body"><p class="ch-title">【実践】はじめての音を鳴らす</p><p class="ch-desc">DAWを開き、4小節のループを鳴らすまで。この教材のゴール。</p></div></div>
+      <div class="ch-card ch-card--next"><div class="ch-img" style="background-image:url('ch08.jpg')"><span class="ch-num">8</span></div><div class="ch-body"><p class="ch-title">次の地図</p><p class="ch-desc">音が出せたあなたが、次に進むべき道。</p></div></div>
     </div>
     <p class="route-foot reveal">1章ずつ、上から読むだけ。専門用語は、出てきた場所で必ず説明します。</p>
   </div>
