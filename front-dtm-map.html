@@ -226,6 +226,26 @@
   .what-body p { font-size: 15px; color: var(--muted); line-height: 2.05; margin-top: 16px; }
   .what-body strong { color: var(--text); font-weight: 700; }
   .what-body .hl { color: var(--accent); font-weight: 700; }
+  /* WHAT IS THIS visual */
+  .what-visual { display: flex; gap: 32px; align-items: flex-start; max-width: 820px; margin: 36px auto 0; }
+  .what-mockup { flex: 0 0 auto; width: 180px; }
+  .what-mockup img { width: 100%; display: block; filter: drop-shadow(0 8px 24px rgba(0,200,255,0.15)); pointer-events: none; }
+  .what-map { flex: 1; }
+  .what-map-label { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+  .what-map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .wm-step { display: flex; align-items: center; gap: 10px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
+  .wm-num { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--accent); flex: 0 0 22px; line-height: 1; }
+  .wm-title { font-size: 12px; color: var(--text); font-weight: 500; line-height: 1.4; }
+  .wm-step--key { border-color: rgba(245,197,24,0.4); background: rgba(245,197,24,0.06); }
+  .wm-step--key .wm-num { color: var(--gold); }
+  .wm-step--key .wm-title { color: var(--gold); font-weight: 700; }
+  .wm-goal { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 12px 16px; background: rgba(0,200,255,0.07); border: 1px solid rgba(0,200,255,0.3); border-radius: 8px; font-size: 13px; color: var(--accent); font-weight: 700; }
+  @media (max-width: 640px) {
+    .what-visual { flex-direction: column; align-items: center; }
+    .what-mockup { width: 140px; }
+    .what-map { width: 100%; }
+    .what-map-grid { grid-template-columns: 1fr; }
+  }
 
   /* ===== CURRICULUM ROUTE ===== */
   .route { margin-top: 40px; position: relative; }
@@ -530,8 +550,31 @@
     <div class="section-label center reveal">WHAT IS THIS</div>
     <h2 class="h-jp reveal">「DTMの地図」は、<br>DAWを開く前に読む<em>全体図</em>です。</h2>
     <div class="what-body reveal">
-      <p>この教材は、テクニックを詰め込んだものではありません。<br><strong>「DTMとは何か」「音はどうやって鳴るのか」「自分は今どこにいて、次どこへ進むのか」</strong><br>――その全体像を、ゼロから順番に見渡せるようにした"地図"です。</p>
-      <p>そして最後に、あなたは初めて、<span class="hl">自分のPCから音を鳴らします。</span></p>
+      <p>テクニックを教える教材ではありません。<br><strong>全8章で、DTMの全体像を順番に教える教材です。</strong><br>読み終えたとき、あなたのPCから音が鳴ります。</p>
+    </div>
+
+    <!-- モックアップ＋章マップ -->
+    <div class="what-visual reveal">
+      <div class="what-mockup">
+        <img src="mockup-dtm-map.png" alt="DTMの地図 モックアップ">
+      </div>
+      <div class="what-map">
+        <p class="what-map-label">— 全体図：8章の構成 —</p>
+        <div class="what-map-grid">
+          <div class="wm-step"><span class="wm-num">0</span><span class="wm-title">はじめに</span></div>
+          <div class="wm-step"><span class="wm-num">1</span><span class="wm-title">DTMって何？</span></div>
+          <div class="wm-step"><span class="wm-num">2</span><span class="wm-title">DAWを選ぶ</span></div>
+          <div class="wm-step"><span class="wm-num">3</span><span class="wm-title">これだけ用語</span></div>
+          <div class="wm-step"><span class="wm-num">4</span><span class="wm-title">音が鳴る仕組み</span></div>
+          <div class="wm-step"><span class="wm-num">5</span><span class="wm-title">道具の地図</span></div>
+          <div class="wm-step"><span class="wm-num">6</span><span class="wm-title">ジャンルの地図</span></div>
+          <div class="wm-step wm-step--key"><span class="wm-num">7</span><span class="wm-title">【実践】はじめての音を鳴らす</span></div>
+        </div>
+        <div class="wm-goal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          あなたのPCから、はじめての音が鳴る
+        </div>
+      </div>
     </div>
   </div>
 </section>
