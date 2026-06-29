@@ -306,6 +306,25 @@
   .price-checklist li .sub { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
   .price-checklist li .sub em { color: var(--accent); font-style: normal; }
 
+  /* ===== WHY TRICERA (選ばれる理由) ===== */
+  .why-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 720px; margin: 0 auto 44px; }
+  .why-stat { text-align: center; border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 18px 10px; }
+  .why-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 38px; line-height: 1; color: var(--accent); display: block; }
+  .why-stat-label { font-size: 11px; letter-spacing: 0.06em; color: var(--muted); margin-top: 7px; display: block; line-height: 1.4; }
+  .why-reasons { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .why-reason { border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 26px 26px; text-align: left; }
+  .why-reason-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .why-reason-no { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--accent); line-height: 1; flex: 0 0 auto; }
+  .why-reason-title { font-size: clamp(16px, 2.4vw, 19px); font-weight: 900; color: var(--white); line-height: 1.45; }
+  .why-reason p { font-size: 14px; color: var(--muted); line-height: 1.95; }
+  .why-reason p .ac { color: var(--accent); font-weight: 700; }
+  .why-reason p strong { color: var(--text); font-weight: 700; }
+  .why-reason .ev { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 13px; color: var(--gold); }
+  .why-reason .ev .note { color: var(--muted); font-size: 11px; }
+  @media (max-width: 560px) {
+    .why-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+
   /* ===== AUTHOR ===== */
   .author { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; max-width: 760px; margin: 0 auto; }
   .author-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
@@ -587,6 +606,39 @@
 
 <div class="divider"></div>
 
+<!-- ========== 8.5 選ばれる理由 ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">WHY TRICERA</div>
+    <h2 class="h-jp reveal">なぜ、トリケラテクノの<em>地図</em>なのか。</h2>
+
+    <div class="why-stats reveal">
+      <div class="why-stat"><span class="why-stat-num">2</span><span class="why-stat-label">EP リリース<br>(Apple Music)</span></div>
+      <div class="why-stat"><span class="why-stat-num">100+</span><span class="why-stat-label">相談実績</span></div>
+      <div class="why-stat"><span class="why-stat-num">1,700+</span><span class="why-stat-label">総フォロワー</span></div>
+      <div class="why-stat"><span class="why-stat-num">0→</span><span class="why-stat-label">音楽経験ゼロ<br>から到達</span></div>
+    </div>
+
+    <div class="why-reasons">
+      <div class="why-reason reveal">
+        <div class="why-reason-head"><span class="why-reason-no">01</span><span class="why-reason-title">迷う場所を、知っているから。</span></div>
+        <p><span class="ac">なぜなら</span>、私自身が楽器も楽譜もゼロから始め、<strong>音楽経験ゼロから2枚のEPをApple Musicでリリースする</strong>まで、何年も遠回りをしたから。初心者が「どこで」「なぜ」詰まるかを、経験として知っています。その回り道を、あなたはしなくていい。</p>
+      </div>
+      <div class="why-reason reveal">
+        <div class="why-reason-head"><span class="why-reason-no">02</span><span class="why-reason-title">つまずきの原因は、才能ではなく"順番"だから。</span></div>
+        <p><span class="ac">なぜなら</span>、<strong>100名以上の相談</strong>に乗る中で、つまずく人の共通点が「地図を持たないまま歩き出すこと」だと分かったから。だからこの教材は、テクニックの寄せ集めではなく、最初の音まで迷わない"順番"そのものです。</p>
+        <span class="ev">▶ 順番を変えるだけで、DTM歴1〜3年の方が<strong>たった2週間で1曲を完成</strong>させた例も。<span class="note">（同じ"順番"の考え方で作った当方ロードマップ受講者の実例／個人の成果例です）</span></span>
+      </div>
+      <div class="why-reason reveal">
+        <div class="why-reason-head"><span class="why-reason-no">03</span><span class="why-reason-title">¥500で終わらない、設計された入口だから。</span></div>
+        <p><span class="ac">なぜなら</span>、これは<strong>1,700人以上が見てくれている解説スタイル</strong>を、そのまま"最初の地図"にしたものだから。音が鳴った先（ロードマップ）まで道が続いていて、行き止まりになりません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ========== 9. 価格・オファー ========== -->
 <section class="section" id="price">
   <div class="wrap">
@@ -597,9 +649,10 @@
         <p class="price-name">DTMの地図</p>
         <p class="price-tag"><span class="yen">¥</span>500</p>
         <p class="price-tax">税込</p>
-        <p class="price-desc">コーヒー1杯分で、DTMの全体像と、初めての1音が手に入ります。高価な教材を買う前に、まずはここから。</p>
+        <p class="price-desc">全8章＋解説動画 約60分＋特典3つ。これで¥500。<br><strong style="color:var(--text);">なぜここまで出せるのか</strong>――入口で利益を取らないから。まず"自分にもできた"を体験してほしいからです。</p>
         <!-- 仮リンク：決済URLに差し替え -->
         <a class="btn btn--primary" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を踏み出す →</a>
+        <p style="font-size:11px; color:var(--muted); margin-top:12px; letter-spacing:0.04em;">100名以上が相談に来た解説者の、最初の地図。</p>
       </div>
       <div class="price-right">
         <p class="price-incl-label">― このセットに含まれるもの ―</p>
@@ -756,7 +809,9 @@
       <div class="nm-content">
         <p class="nm-label">NEXT MAP</p>
         <h3>音が出せたら、次は"曲"にする番です。</h3>
-        <p>「最初の音」の次は、それを"1曲"に仕上げる番。0から完成・配信までを順番に並べたのが「トリケラテクノ ロードマップ」です。まずは、この地図から。</p>
+        <p>「最初の音」の次は、それを"1曲"に仕上げる番。0から完成・配信までを順番に並べたのが「トリケラテクノ ロードマップ」です。</p>
+        <p style="margin-top:14px; padding:14px 16px; background:rgba(0,200,255,0.06); border:1px solid var(--border); border-radius:10px; font-size:13px; color:var(--text); line-height:1.8;">その先のロードマップでは――<br><strong style="color:var(--accent);">初心者（DTM歴1年未満）が3ヶ月で1曲完成。経験者（1〜3年）は"順番"を変えて2週間で1曲完成。</strong><br><span style="font-size:11px; color:var(--muted);">（受講者の実例／個人の成果例です）</span></p>
+        <p style="margin-top:12px; font-size:13px; color:var(--muted);">まずは¥500のこの地図で「最初の1音」を。その先に、ちゃんと"完成"までの道があります。</p>
         <div class="nm-cta">
           <a class="btn btn--ghost" href="triceratechno-lp.html">ロードマップを見てみる →</a>
         </div>
