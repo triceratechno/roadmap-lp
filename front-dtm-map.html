@@ -312,6 +312,10 @@
   .ch-card--key .ch-title { color: var(--gold); }
   .ch-card--key .ch-img { background-image: linear-gradient(135deg, #1a1200 0%, #2a2000 50%, #1a1a00 100%); }
   .ch-card--next .ch-num { color: var(--muted); }
+  .ch-card--bonus { border-color: rgba(0,200,255,0.35); }
+  .ch-img--bonus { background-image: linear-gradient(135deg, #001a22 0%, #002a35 100%) !important; }
+  .ch-num--bonus { color: var(--accent); font-size: 32px; }
+  .ch-card--bonus .ch-title { color: var(--accent); }
   @media (max-width: 600px) {
     .ch-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
   }
@@ -600,7 +604,6 @@
   <div class="wrap">
     <div class="section-label center reveal">WHAT IS THIS</div>
     <h2 class="h-jp reveal">「DTMの地図」は、<br>DAWを開く前に読む<em>全体図</em>です。</h2>
-    <p class="what-sub reveal">ゼロから最初の音まで、迷わない<strong>8章＋実践</strong>。</p>
     <div class="what-body reveal">
       <p>テクニックを教える教材ではありません。<br><strong>全8章で、DTMの全体像を順番に教える教材です。</strong><br>読み終えたとき、あなたのPCから音が鳴ります。</p>
     </div>
@@ -623,12 +626,9 @@
           <div class="wm-step wm-step--key"><span class="wm-num">7</span><span class="wm-title">【実践】はじめての音を鳴らす</span></div>
           <div class="wm-step"><span class="wm-num">8</span><span class="wm-title">次の地図</span></div>
         </div>
-        <div class="wm-goal">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          あなたのPCから、はじめての音が鳴る
-        </div>
       </div>
     </div>
+    <p class="what-sub reveal">ゼロから最初の音まで、迷わない<strong>8章＋実践</strong>。</p>
   </div>
 </section>
 
@@ -650,6 +650,7 @@
       <div class="ch-card"><div class="ch-img" style="background-image:url('ch06.jpg')"><span class="ch-num">6</span></div><div class="ch-body"><p class="ch-title">ジャンルの地図</p><p class="ch-desc">作りたい音楽を決める。それが最初の一歩。</p></div></div>
       <div class="ch-card ch-card--key"><div class="ch-img" style="background-image:url('ch07.jpg')"><span class="ch-num">7</span></div><div class="ch-body"><p class="ch-title">【実践】はじめての音を鳴らす</p><p class="ch-desc">DAWを開き、4小節のループを鳴らすまで。この教材のゴール。</p></div></div>
       <div class="ch-card ch-card--next"><div class="ch-img" style="background-image:url('ch08.jpg')"><span class="ch-num">8</span></div><div class="ch-body"><p class="ch-title">次の地図</p><p class="ch-desc">音が出せたあなたが、次に進むべき道。</p></div></div>
+      <div class="ch-card ch-card--bonus"><div class="ch-img ch-img--bonus"><span class="ch-num ch-num--bonus">+</span></div><div class="ch-body"><p class="ch-title">3つの限定特典</p><p class="ch-desc">DTM用語ミニ辞典・DAW選びフローチャート・デモ音源＆プロジェクトファイル</p></div></div>
     </div>
     <p class="route-foot reveal">1章ずつ、上から読むだけ。専門用語は、出てきた場所で必ず説明します。</p>
   </div>
