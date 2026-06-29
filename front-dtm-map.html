@@ -325,6 +325,24 @@
     .why-stats { grid-template-columns: repeat(2, 1fr); }
   }
 
+  /* ===== WHY PROFILE ===== */
+  .why-profile { display: flex; align-items: flex-start; gap: 20px; max-width: 760px; margin: 32px auto 0; padding: 24px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; text-align: left; }
+  .why-profile-img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); flex: 0 0 auto; }
+  .why-profile-body { flex: 1; }
+  .why-profile-name { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .why-profile-desc { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 14px; }
+  .why-profile-albums { display: flex; gap: 10px; flex-wrap: wrap; }
+  .why-album-card { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; text-decoration: none; transition: background 0.2s; flex: 1; min-width: 180px; max-width: 260px; }
+  .why-album-card:hover { background: rgba(255,255,255,0.08); }
+  .why-album-card img { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; flex: 0 0 auto; }
+  .why-album-card span { font-size: 12px; color: var(--text); line-height: 1.4; }
+  .why-album-card em { display: block; font-style: normal; font-size: 10px; color: var(--accent); margin-top: 2px; }
+  @media (max-width: 560px) {
+    .why-profile { flex-direction: column; align-items: center; text-align: center; }
+    .why-profile-albums { justify-content: center; }
+    .why-album-card { min-width: 140px; }
+  }
+
   /* ===== AUTHOR ===== */
   .author { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; max-width: 760px; margin: 0 auto; }
   .author-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
@@ -634,6 +652,26 @@
         <p><span class="ac">なぜなら</span>、これは<strong>1,700人以上が見てくれている解説スタイル</strong>を、そのまま"最初の地図"にしたものだから。音が鳴った先（ロードマップ）まで道が続いていて、行き止まりになりません。</p>
       </div>
     </div>
+
+    <!-- 著者ミニプロフィール（権威性の補足） -->
+    <div class="why-profile reveal">
+      <img class="why-profile-img" src="tricera-icon.jpg" alt="トリケラテクノ">
+      <div class="why-profile-body">
+        <p class="why-profile-name">トリケラテクノ（DTM解説恐竜）</p>
+        <p class="why-profile-desc">楽器も楽譜もゼロから始め、音楽経験ゼロから2枚のEPをApple Musicでリリース。その遠回りの全部が、この地図になりました。</p>
+        <div class="why-profile-albums">
+          <a href="https://music.apple.com/jp/album/no-worries-at-all-ep/1829270683" target="_blank" rel="noopener" class="why-album-card">
+            <img src="jacket_001.png" alt="No Worries At All EP" style="pointer-events:none;">
+            <span>No Worries At All <em>EP · 2025</em></span>
+          </a>
+          <a href="https://music.apple.com/jp/album/dream-within-a-dream-ep/1850867216" target="_blank" rel="noopener" class="why-album-card">
+            <img src="jacket_002.png" alt="Dream Within A Dream EP" style="pointer-events:none;">
+            <span>Dream Within A Dream <em>EP · 2025</em></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -672,56 +710,11 @@
 
 <div class="divider"></div>
 
-<!-- ========== 10. 作者 ========== -->
+<!-- ========== 10. 作者（YouTube解説） ========== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-label center reveal">WHO AM I</div>
-    <div class="author reveal">
-      <img class="author-img" src="tricera-icon.jpg" alt="トリケラテクノ">
-      <div class="author-body">
-        <h3>私も、音楽経験ゼロから始めました。</h3>
-        <p>はじめまして。DTM解説恐竜のトリケラテクノです。私は、楽器も弾けず、楽譜も読めないところからDTMを始めました。フェスで心を動かされたあの瞬間に「自分も、こんな音を作ってみたい」と思ったのが、すべての始まりです。</p>
-        <p>そこからは、決してスマートな道のりではありませんでした。どの動画を観ればいいかも、何が正解かも分からず、何年も遠回りをしました。</p>
-        <p>だからこそ、あの頃の自分がいちばん欲しかった「1枚の地図」を、あなたに渡したいのです。</p>
-      </div>
-    </div>
-
-    <!-- アルバムリンク -->
-    <div class="author-albums reveal">
-      <p class="author-albums-label">— リリース済み作品 —</p>
-      <div class="author-albums-grid">
-        <a href="https://music.apple.com/jp/album/no-worries-at-all-ep/1829270683" target="_blank" rel="noopener" style="text-decoration:none; flex:1; max-width:180px; background:#111; border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; transition:transform 0.2s,box-shadow 0.2s; display:block;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <img src="jacket_001.png" alt="No Worries At All - EP" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block; pointer-events:none;">
-          <div style="padding:10px 12px 12px;">
-            <p style="font-size:11px; color:var(--accent); font-family:'Bebas Neue',sans-serif; letter-spacing:0.08em; margin:0 0 4px;">EP · 2025</p>
-            <p style="font-size:12px; color:var(--white); margin:0; line-height:1.4;">No Worries At All</p>
-            <p style="font-size:10px; color:var(--muted); margin:6px 0 0; display:flex; align-items:center; gap:4px;">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--muted)"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 14.5v-9l7 4.5-7 4.5z"/></svg>
-              Apple Musicで聴く
-            </p>
-          </div>
-        </a>
-        <a href="https://music.apple.com/jp/album/dream-within-a-dream-ep/1850867216" target="_blank" rel="noopener" style="text-decoration:none; flex:1; max-width:180px; background:#111; border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; transition:transform 0.2s,box-shadow 0.2s; display:block;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <img src="jacket_002.png" alt="Dream Within A Dream - EP" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block; pointer-events:none;">
-          <div style="padding:10px 12px 12px;">
-            <p style="font-size:11px; color:var(--accent); font-family:'Bebas Neue',sans-serif; letter-spacing:0.08em; margin:0 0 4px;">EP · 2025</p>
-            <p style="font-size:12px; color:var(--white); margin:0; line-height:1.4;">Dream Within A Dream</p>
-            <p style="font-size:10px; color:var(--muted); margin:6px 0 0; display:flex; align-items:center; gap:4px;">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--muted)"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 14.5v-9l7 4.5-7 4.5z"/></svg>
-              Apple Musicで聴く
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 数字実績 -->
-    <div class="author-stats reveal">
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">リリース済みアルバム</span></div>
-      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">相談実績</span></div>
-      <div class="stat"><span class="stat-num">1700+</span><span class="stat-label">総フォロワー数</span></div>
-      <div class="stat"><span class="stat-num">∞</span><span class="stat-label">DTMへの情熱</span></div>
-    </div>
+    <div class="section-label center reveal">STYLE</div>
+    <h2 class="h-jp reveal">実際の<em>解説スタイル</em>を見てみる。</h2>
 
     <!-- YouTube動画 -->
     <div class="author-videos reveal">
