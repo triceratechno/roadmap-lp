@@ -171,11 +171,12 @@
   .hero-lead strong { font-weight: 700; color: var(--text); }
   .hero-because { font-size: clamp(14px, 2vw, 16px); color: var(--text); font-weight: 700; letter-spacing: 0.02em; margin-bottom: 18px; }
   .hero-because em { color: var(--accent); font-style: normal; }
-  .hero-price-strip { display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; font-size: clamp(14px, 2.2vw, 16px); color: var(--text); letter-spacing: 0.02em; }
-  .hero-price-strip s { color: var(--muted); text-decoration-color: rgba(245,197,24,0.7); }
-  .hero-price-strip strong { font-family: 'Bebas Neue', sans-serif; font-size: 1.7em; color: var(--gold); line-height: 1; letter-spacing: 0.02em; }
-  .hps-off { font-size: 11px; font-weight: 900; color: var(--black); background: var(--gold); padding: 2px 8px; border-radius: 5px; letter-spacing: 0.03em; }
-  .hps-dl { font-size: 11px; color: var(--gold); padding: 2px 9px; border: 1px solid rgba(245,197,24,0.4); border-radius: 999px; }
+  .btn--gold-offer { position: relative; flex-direction: column; gap: 4px; padding: 15px 40px; background: var(--gold); color: #1a1400; box-shadow: 0 8px 30px rgba(245,197,24,0.28); }
+  .btn--gold-offer:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,197,24,0.4); }
+  .bgo-l1 { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
+  .bgo-l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); letter-spacing: 0.02em; }
+  .bgo-l2 s { opacity: 0.72; }
+  .bgo-rib { position: absolute; top: -11px; right: -7px; font-size: 11px; font-weight: 900; color: var(--gold); background: var(--black); border: 1px solid rgba(245,197,24,0.55); padding: 3px 9px; border-radius: 5px; letter-spacing: 0.03em; }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
   .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .hero-price {
@@ -574,8 +575,11 @@
       </div>
       <div class="hero-cta">
         <p class="hero-because">才能はいりません。<em>必要なのはセンスではなく"順番"</em>だから。</p>
-        <p class="hero-price-strip">通常 <s>¥1,980</s> → 今だけ <strong>¥500</strong> <span class="hps-off">75%OFF</span> <span class="hps-dl">7/31まで</span></p>
-        <a class="btn btn--primary" href="#price">¥500で、最初の一歩を踏み出す →</a>
+        <a class="btn btn--gold-offer" href="#price">
+          <span class="bgo-rib">75%OFF</span>
+          <span class="bgo-l1">¥500で、最初の一歩を踏み出す →</span>
+          <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
+        </a>
       </div>
     </div>
   </div>
