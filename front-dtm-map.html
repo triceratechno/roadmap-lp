@@ -516,9 +516,8 @@
   .footer-copy { font-size: 11px; color: #555; letter-spacing: 0.06em; }
 
   /* ===== STICKY CTA (mobile) ===== */
-  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 500; background: rgba(8,8,8,0.95); border-top: 1px solid var(--border); padding: 12px 16px; display: none; backdrop-filter: blur(6px); }
-  .sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #001018; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 4px; text-decoration: none; }
-  .sticky-cta .sc-price { font-family: 'Bebas Neue', sans-serif; font-size: 20px; }
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 500; background: rgba(8,8,8,0.95); border-top: 1px solid var(--border); padding: 10px 16px; display: none; backdrop-filter: blur(6px); }
+  .sticky-cta a.btn--gold-offer { width: 100%; max-width: 480px; margin: 0 auto; padding: 12px 24px; }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 820px) {
@@ -999,7 +998,11 @@
 <!-- ========== STICKY CTA (mobile) ========== -->
 <div class="sticky-cta">
   <!-- 仮リンク：決済URLに差し替え -->
-  <a href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK"><span class="sc-price">¥500</span> で始める →</a>
+  <a class="btn btn--gold-offer" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">
+    <span class="bgo-rib">75%OFF</span>
+    <span class="bgo-l1">¥500で、最初の一歩を踏み出す →</span>
+    <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
+  </a>
 </div>
 
 <script>
