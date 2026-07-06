@@ -549,6 +549,16 @@
   .wc-close { font-size: clamp(16px, 3.7vw, 19px) !important; line-height: 1.95 !important; margin-top: 6px !important; }
   @media (max-width: 640px) { .whycreate { padding: 70px 0; } .wc-body p { line-height: 2.02; margin-bottom: 28px; } }
 
+  /* ===== AFTER THE MAP ===== */
+  .am-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .am-item { display: flex; gap: 18px; align-items: flex-start; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
+  .am-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--accent); line-height: 1; flex: 0 0 auto; }
+  .am-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+  .am-desc { font-size: 13.5px; color: var(--muted); line-height: 1.9; }
+  .am-desc strong { color: var(--text); }
+  .am-close { text-align: center; margin-top: 26px; font-size: 13.5px; color: var(--muted); line-height: 2; }
+  .am-close a { color: var(--accent); }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 820px) {
     .hero-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -759,6 +769,40 @@
       <p class="quote">この教材は、断片ではなく「一本の道」です。</p>
       <p>上から読むだけで、最初の音にたどり着く。</p>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ========== 7.5 読み終えたあと ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">AFTER THE MAP</div>
+    <h2 class="h-jp reveal">読み終えたあと、<em>あなたは</em>。</h2>
+    <div class="am-list reveal">
+      <div class="am-item">
+        <p class="am-num">01</p>
+        <div>
+          <p class="am-title">冒頭2分で閉じていた動画が、最後まで見れる</p>
+          <p class="am-desc">「MIDI？ ピアノロール？」——言葉が全部分かるから、YouTubeのチュートリアルを真似して、曲作りを進められる。</p>
+        </div>
+      </div>
+      <div class="am-item">
+        <p class="am-num">02</p>
+        <div>
+          <p class="am-title">無料の情報が、"使える教材"に変わる</p>
+          <p class="am-desc">全体像さえあれば、<strong>無料のチュートリアルだけでも曲作りは続けられます。</strong>もちろん、トリケラテクノの次の教材で最短ルートを進む道もある。どちらでも進める状態にする——それが、この地図の役目です。</p>
+        </div>
+      </div>
+      <div class="am-item">
+        <p class="am-num">03</p>
+        <div>
+          <p class="am-title">「またDTMを頑張れる」自分に戻れる</p>
+          <p class="am-desc">一度諦めた人こそ。「自分にもできた」という証拠が、次の一歩を軽くします。</p>
+        </div>
+      </div>
+    </div>
+    <p class="am-close reveal">その先、"最短で1曲"を目指したくなったら——そのとき初めて、<a href="#nextmap">次の地図</a>があります。<br>進むかどうかは、音が鳴ったあとのあなたが決めてください。</p>
   </div>
 </section>
 
@@ -985,7 +1029,7 @@
 <div class="divider"></div>
 
 <!-- ========== 12. 昇華（ロードマップ） ========== -->
-<section class="section">
+<section class="section" id="nextmap">
   <div class="wrap">
     <div class="nextmap reveal">
       <div class="nm-media">
