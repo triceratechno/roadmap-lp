@@ -610,8 +610,18 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 .fx-node.is-src{border-color:var(--accent);color:var(--accent)}
 .fx-arrow{color:var(--muted);font-size:14px}
 
+/* チェックリスト（達成項目） */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin:20px 0}
+.check-item{position:relative;padding:6px 0 6px 26px;font-size:13.5px;color:#cfcfcf;line-height:1.6}
+.check-item::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--accent);font-weight:700}
+
+/* フロー2枚版（現在地→ゴール） */
+.flow-cards.two{grid-template-columns:1fr auto 1fr}
+
 @media(max-width:600px){
   .compare-cards{grid-template-columns:1fr;gap:12px}
+  .check-grid{grid-template-columns:1fr;gap:2px}
+  .flow-cards.two{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
@@ -1647,15 +1657,15 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     </div>
 
     <h2>ここまで来たこと</h2>
-    <ul>
-      <li>DTMが「作る→整える→届ける」の3段階であることを知った</li>
-      <li>Ableton Liveという作業場を手に入れた</li>
-      <li>MIDIとオーディオ、トラック、BPM、ピアノロールという言葉が分かった</li>
-      <li>音がシグナルフローに沿って流れることを知った</li>
-      <li>作る道具と整える道具の種類を把握した</li>
-      <li>ジャンルの地図で、自分が作りたい音楽の位置を確認した</li>
-      <li>自分のパソコンから音楽を鳴らした</li>
-    </ul>
+    <div class="check-grid">
+      <div class="check-item">「作る→整える→届ける」の3段階を理解</div>
+      <div class="check-item">Ableton Liveという作業場を手に入れた</div>
+      <div class="check-item">MIDI・トラック・BPM等の用語が分かった</div>
+      <div class="check-item">音が流れる仕組み（シグナルフロー）</div>
+      <div class="check-item">作る道具・整える道具の種類を把握</div>
+      <div class="check-item">ジャンルの地図で行き先を確認</div>
+      <div class="check-item">自分のPCから、音を鳴らした</div>
+    </div>
     <p>地図は手に入りました。</p>
 
     <hr>
@@ -1663,6 +1673,18 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <h2>でも、まだ「曲」にはなっていない</h2>
     <p>正直に言います。第7章で鳴らしたのは4小節のループです。同じパターンが繰り返されるだけで、曲にはなっていない。イントロもサビも展開もない。ミックスも整っていない。</p>
     <p>それは当然のことです。この本の目的は「地図を渡すこと」であって、「曲を完成させること」ではありませんでした。でも今、あなたには地図がある。次に何が必要かが、見えているはずです。</p>
+
+    <div class="flow-cards two">
+      <div class="flow-card is-tune">
+        <p class="fc-title">4小節ループ</p>
+        <p class="fc-sub">今 ― 同じ繰り返し</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card is-deliver">
+        <p class="fc-title">1曲</p>
+        <p class="fc-sub">ゴール ― 展開もミックスもある</p>
+      </div>
+    </div>
 
     <hr>
 
@@ -1672,6 +1694,27 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <p>YouTubeのチュートリアル、解説記事、無料のサンプル。あなたはきっと、一度は見て、途中で分からなくなって、そっと閉じた経験があるはずです。理由は、才能ではありません。<strong>地図がないまま、部分だけを見ていたから。</strong></p>
     <p>今は違います。「これは"整える"の話だ」「これは"作る"の道具だ」と、全体像の中に位置づけながら見られる。同じ動画が、まったく別のものに見えてくるはずです。</p>
     <p>進み方は、2つ。</p>
+
+    <div class="compare-cards">
+      <div class="compare-card is-cyan">
+        <p class="cc-title">道① 独学で進む</p>
+        <p class="cc-sub">自分のペースで</p>
+        <ul>
+          <li>無料の情報が"使える教材"に変わる</li>
+          <li>諦めた動画に、もう一度戻れる</li>
+          <li>完コピして、真似て、覚える</li>
+        </ul>
+      </div>
+      <div class="compare-card is-gold">
+        <p class="cc-title">道② 最短で進む</p>
+        <p class="cc-sub">トリケラテクノと</p>
+        <ul>
+          <li>ロードマップ＝3ヶ月で1曲完成</li>
+          <li>設計されたカリキュラム</li>
+          <li>詰まったら直接フィードバック</li>
+        </ul>
+      </div>
+    </div>
 
     <h3>道①：独学で、自分のペースで進む</h3>
     <p>全体像さえあれば、<strong>無料のチュートリアルだけでも曲作りは続けられます。</strong>好きな曲を完コピして、真似て、覚える。かつて途中で諦めた動画に、もう一度戻ってみてください。今度は、意味が分かるはずです。</p>
