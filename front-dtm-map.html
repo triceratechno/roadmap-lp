@@ -385,7 +385,9 @@
     background: var(--panel); padding: 44px 44px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     display: grid; grid-template-columns: 0.82fr 1fr; gap: 44px; align-items: center; text-align: left;
+    cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   }
+  .price-box:hover { border-color: rgba(0,200,255,0.55); transform: translateY(-2px); box-shadow: 0 24px 70px rgba(0,0,0,0.5); }
   .price-left { text-align: center; }
   .price-right { border-left: 1px solid var(--border); padding-left: 44px; }
   .price-mockup { width: 100%; max-width: 210px; margin: 0 auto 18px; display: block; }
@@ -840,7 +842,7 @@
 <section class="section" id="price">
   <div class="wrap">
     <div class="section-label center reveal">PRICE</div>
-    <div class="price-box reveal">
+    <a class="price-box reveal" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK" style="text-decoration:none;">
       <div class="price-left">
         <span class="price-mockup"><img src="mockup-dtm-map.png" alt="DTMの地図 表紙モックアップ"></span>
         <p class="price-name">DTMの地図</p>
@@ -853,11 +855,11 @@
         <p class="price-deadline">🔥 <strong>7/31まで</strong>の特別価格</p>
         <p class="price-desc">記事8本＋解説動画8本（計60分）＋特典3つで、<strong style="color:var(--text);">¥500。</strong><br>まず"自分にもできた"を、あなたに。</p>
         <!-- 仮リンク：決済URLに差し替え -->
-        <a class="btn btn--gold-offer" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">
+        <span class="btn btn--gold-offer">
           <span class="bgo-rib">75%OFF</span>
           <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
           <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
-        </a>
+        </span>
         <p style="font-size:11px; color:var(--muted); margin-top:12px; letter-spacing:0.04em;">100名以上が相談に来た解説者の、最初の地図。</p>
       </div>
       <div class="price-right">
@@ -872,7 +874,7 @@
           <li><strong>買い切り・追加費用ゼロ</strong><span class="sub">購入後のアップデートも無料</span></li>
         </ul>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
