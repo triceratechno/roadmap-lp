@@ -492,7 +492,8 @@
   .faq .a { padding: 0 22px 22px 50px; font-size: 14px; color: var(--muted); line-height: 1.95; }
 
   /* ===== NEXT MAP (roadmap ascension) ===== */
-  .nextmap { border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(160deg, rgba(0,200,255,0.05), transparent); padding: 36px 40px; max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: center; text-align: left; }
+  .nextmap { border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(160deg, rgba(0,200,255,0.05), transparent); padding: 36px 40px; max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: center; text-align: left; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
+  .nextmap:hover { border-color: rgba(0,200,255,0.4); transform: translateY(-2px); }
   .nextmap .nm-media img { width: 100%; display: block; border-radius: 10px; pointer-events: none; user-select: none; }
   .nextmap .nm-label { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.28em; color: var(--accent); font-size: 13px; }
   .nextmap h3 { font-weight: 900; color: var(--white); font-size: clamp(18px, 2.4vw, 22px); margin: 10px 0 14px; line-height: 1.5; }
@@ -1031,7 +1032,7 @@
 <!-- ========== 12. 昇華（ロードマップ） ========== -->
 <section class="section" id="nextmap">
   <div class="wrap">
-    <div class="nextmap reveal">
+    <a class="nextmap reveal" href="triceratechno-lp.html" style="text-decoration:none;">
       <div class="nm-media">
         <img src="mockup-pro.png" alt="トリケラテクノ ロードマップPROコース">
       </div>
@@ -1042,10 +1043,10 @@
         <p style="margin-top:14px; padding:14px 16px; background:rgba(0,200,255,0.06); border:1px solid var(--border); border-radius:10px; font-size:13px; color:var(--text); line-height:1.8;">その先の実例――<br><strong style="color:var(--accent);">初心者（DTM歴1年未満）の高松さんは3ヶ月。経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</strong><br><span style="font-size:11px; color:var(--muted);">（個人の成果例）</span></p>
         <p style="margin-top:12px; font-size:13px; color:var(--muted);">まずは¥500のこの地図で「最初の音」を。その先に、"完成"までの道は続いています。</p>
         <div class="nm-cta">
-          <a class="btn btn--ghost" href="triceratechno-lp.html">ロードマップを見てみる →</a>
+          <span class="btn btn--ghost">ロードマップを見てみる →</span>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
