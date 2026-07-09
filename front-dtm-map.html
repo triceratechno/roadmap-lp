@@ -199,6 +199,13 @@
   .hero-video-play { width: 76px; height: 76px; border-radius: 50%; background: rgba(0,200,255,0.85); border: 3px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; animation: hv-pulse 2.4s ease-in-out infinite; z-index: 1; box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
   .hero-video-play svg { width: 30px; height: 30px; fill: #001018; margin-left: 4px; }
   .hero-video-text { font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.55); padding: 6px 14px; border-radius: 2px; z-index: 1; text-transform: uppercase; }
+  /* スマホ幅：中央の特典テキストと重なるため、下の余白帯へ再生ボタンを退避 */
+  @media (max-width: 640px) {
+    .hero-video-placeholder { justify-content: flex-start; }
+    .hero-video-play { position: absolute; top: 79%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; margin: 0; }
+    .hero-video-play svg { width: 20px; height: 20px; }
+    .hero-video-text { position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 9px; padding: 4px 10px; white-space: nowrap; }
+  }
   @keyframes hv-pulse {
     0%, 100% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(0,200,255,0.5); }
     50% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 16px rgba(0,200,255,0); }
@@ -622,7 +629,7 @@
         <p class="hero-because">才能はいりません。<em>必要なのはセンスではなく"順番"</em>だから。</p>
         <a class="btn btn--gold-offer" href="#price">
           <span class="bgo-rib">75%OFF</span>
-          <span class="bgo-l1">¥500で、最初の一歩を踏み出す →</span>
+          <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
           <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
         </a>
       </div>
@@ -725,7 +732,7 @@
     </div>
     <p class="route-foot reveal">1章ずつ、上から読むだけ。専門用語は、出てきた場所で必ず説明します。</p>
     <div class="reveal" style="text-align:center; margin-top:28px;">
-      <a class="btn btn--primary" href="#price">¥500で、最初の一歩を踏み出す →</a>
+      <a class="btn btn--primary" href="#price">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></a>
     </div>
   </div>
 </section>
@@ -803,12 +810,12 @@
       <div class="am-item">
         <p class="am-num">03</p>
         <div>
-          <p class="am-title">「またDTMを頑張れる」自分に戻れる</p>
+          <p class="am-title">「またDTMを頑張れる」自分に<span class="nowrap-tail">戻れる</span></p>
           <p class="am-desc">一度諦めた人こそ。「自分にもできた」という証拠が、次の一歩を軽くします。</p>
         </div>
       </div>
     </div>
-    <p class="am-close reveal">その先、"最短で1曲"を目指したくなったら——そのとき初めて、<a href="#nextmap">次の地図</a>があります。<br>進むかどうかは、音が鳴ったあとのあなたが決めてください。</p>
+    <p class="am-close reveal">その先、"最短で1曲"を目指したくなったら——そのとき初めて、<a href="#nextmap">次の地図</a>があります。<br>進むかどうかは、音が鳴ったあとのあなたが<span class="nowrap-tail">決めてください。</span></p>
   </div>
 </section>
 
@@ -848,7 +855,7 @@
         <!-- 仮リンク：決済URLに差し替え -->
         <a class="btn btn--gold-offer" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">
           <span class="bgo-rib">75%OFF</span>
-          <span class="bgo-l1">¥500で、最初の一歩を踏み出す →</span>
+          <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
           <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
         </a>
         <p style="font-size:11px; color:var(--muted); margin-top:12px; letter-spacing:0.04em;">100名以上が相談に来た解説者の、最初の地図。</p>
@@ -908,8 +915,8 @@
       <div class="author-body">
         <h3>私も、音楽経験ゼロから始めました。</h3>
         <p>楽器も弾けない。楽譜も読めない。<br>そんな私が、独学だけで<strong>2枚のEPをApple Musicまで</strong>届けました。</p>
-        <p>でも、ここまで<strong>3年</strong>。どの動画が正解かも分からず、ずっと遠回りでした。</p>
-        <p>だから、あの頃の自分がいちばん欲しかった「1枚の地図」を、あなたに渡します。</p>
+        <p>でも、ここまで<strong>3年</strong>。どの動画が正解かも分からず、<span class="nowrap-tail">ずっと</span>遠回りでした。</p>
+        <p>だから、あの頃の自分がいちばん欲しかった「1枚の<span class="nowrap-tail">地図」</span>を、あなたに渡します。</p>
       </div>
     </div>
 
@@ -1043,9 +1050,9 @@
       </div>
       <div class="nm-content">
         <p class="nm-label">NEXT MAP</p>
-        <h3>音が出せたら、次は"曲"にする番です。</h3>
-        <p>「最初の音」を、"1曲"へ。0から完成・配信まで順番に並べたのが「トリケラテクノ ロードマップ」です。</p>
-        <p style="margin-top:14px; padding:14px 16px; background:rgba(0,200,255,0.06); border:1px solid var(--border); border-radius:10px; font-size:13px; color:var(--text); line-height:1.8;">その先の実例――<br><strong style="color:var(--accent);">初心者（DTM歴1年未満）の高松さんは3ヶ月。経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</strong><br><span style="font-size:11px; color:var(--muted);">（個人の成果例）</span></p>
+        <h3>音が出せたら、次は"曲"にする<span class="nowrap-tail">番です。</span></h3>
+        <p>「最初の音」を、"1曲"へ。0から完成・配信<span class="nowrap-tail">まで</span>順番に並べたのが「トリケラテクノ ロード<span class="nowrap-tail">マップ」</span>です。</p>
+        <p style="margin-top:14px; padding:14px 16px; background:rgba(0,200,255,0.06); border:1px solid var(--border); border-radius:10px; font-size:13px; color:var(--text); line-height:1.8;">その先の実例――<br><strong style="color:var(--accent);">初心者（DTM歴1年未満）の高松さんは<span class="nowrap-tail">3ヶ月。</span>経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</strong><br><span style="font-size:11px; color:var(--muted);">（個人の成果例）</span></p>
         <p style="margin-top:12px; font-size:13px; color:var(--muted);">まずは¥500のこの地図で「最初の音」を。その先に、"完成"までの道は続いています。</p>
         <div class="nm-cta">
           <span class="btn btn--ghost">ロードマップを見てみる →</span>
@@ -1066,11 +1073,11 @@
     <div class="wc-body">
       <p>答えは、ひとつです。<br>
       音楽を作るという、<span class="wc-hl">自分の内に秘めた想像力を形にして、自己表現する。</span><br>
-      その<span class="wc-hl2">“プロセス”</span>を、あなたにも体験してほしいから。</p>
+      その<span class="wc-hl2">“プロセス”</span>を、あなたにも体験してほしい<span class="nowrap-tail">から。</span></p>
 
       <p>私は、音楽経験ゼロ。楽譜も読めません。<br>
       それでも、一曲を最後まで完成させました。<br>
-      少しずつ聴いてくれる人ができて、DTMを始めて3年後、全く知らない人から<span class="wc-hl">「あの曲、良かったね」</span>と言われた。<br>
+      少しずつ聴いてくれる人ができて、DTMを始めて<span class="nowrap-tail">3年後、</span>全く知らない人から<span class="wc-hl">「あの曲、良かったね」</span>と言われた。<br>
       ——あの時の感動は、<span class="wc-hl2">いまも言葉にできません。</span></p>
 
       <p>この一歩目を通じて、DTMを、あなたの人生の“趣味のひとつ”にしてほしい。</p>
@@ -1096,7 +1103,7 @@
     <h2 class="reveal">DAWを開く前に、<br>この<span style="color:var(--accent);">地図</span>を。</h2>
     <p class="reveal">才能はいりません。<br><br>順番に読むだけで、あなたの4小節ループが、DAWから鳴ります。<br>4小節はいつか1曲になり、1曲が、あなたをアーティストにする。<br><strong>すべては、この¥500の一歩から。</strong></p>
     <!-- 仮リンク：決済URLに差し替え -->
-    <a class="btn btn--primary reveal" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を踏み出す →</a>
+    <a class="btn btn--primary reveal" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></a>
     <span class="btn-sub reveal">不安なことがあれば、まずは公式LINEで気軽に相談してください。</span>
     <p class="reveal" style="margin-top:18px;"><a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" style="color:var(--accent); font-size:13px; letter-spacing:0.04em; text-decoration:none;">公式LINEで相談する →</a></p>
   </div>
@@ -1118,7 +1125,7 @@
   <!-- 仮リンク：決済URLに差し替え -->
   <a class="btn btn--gold-offer" href="https://buy.stripe.com/REPLACE_WITH_DTM_MAP_LINK">
     <span class="bgo-rib">75%OFF</span>
-    <span class="bgo-l1">¥500で、最初の一歩を踏み出す →</span>
+    <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
     <span class="bgo-l2">通常 <s>¥1,980</s> ・ 7/31まで</span>
   </a>
 </div>
