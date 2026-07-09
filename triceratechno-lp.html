@@ -4343,9 +4343,9 @@
       document.body.style.overflow = '';
     }
 
-    // 解説スタイル動画カードのクリックを横取り（別タブ→サイト内モーダル）
+    // 解説スタイル動画カード／参考曲チップのクリックを横取り（別タブ→サイト内モーダル）
     document.addEventListener('click', function (e) {
-      var trigger = e.target.closest && e.target.closest('a.video-link-card');
+      var trigger = e.target.closest && e.target.closest('a.video-link-card, a.review-ref');
       if (!trigger) return;
       var m = (trigger.getAttribute('href') || '').match(ID_RE);
       if (!m) return;
