@@ -584,6 +584,35 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 @media(max-width:600px){
   .reason-cards,.edition-cards,.view-cards{grid-template-columns:1fr;gap:12px}
 }
+
+/* 用語チップ一覧 */
+.term-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.term-chip{background:var(--panel2);border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700}
+
+/* 対比カード（MIDI / オーディオ など） */
+.compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.compare-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:20px}
+.compare-card.is-cyan{border-color:var(--accent)}
+.compare-card.is-gold{border-color:var(--gold)}
+.compare-card .cc-title{font-size:19px;font-weight:800;margin:0}
+.compare-card.is-cyan .cc-title{color:var(--accent)}
+.compare-card.is-gold .cc-title{color:var(--gold)}
+.compare-card .cc-sub{font-size:13.5px;font-weight:700;color:var(--white);margin:8px 0 12px}
+.compare-card ul{list-style:none;margin:0;padding:0}
+.compare-card li{font-size:12.5px;color:var(--muted);padding:4px 0 4px 16px;position:relative;line-height:1.6}
+.compare-card li::before{content:"•";position:absolute;left:2px}
+.compare-card.is-cyan li::before{color:var(--accent)}
+.compare-card.is-gold li::before{color:var(--gold)}
+
+/* エフェクトチェーン */
+.fx-chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 0}
+.fx-node{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:10px 16px;font-size:13px;font-weight:700;color:var(--white)}
+.fx-node.is-src{border-color:var(--accent);color:var(--accent)}
+.fx-arrow{color:var(--muted);font-size:14px}
+
+@media(max-width:600px){
+  .compare-cards{grid-template-columns:1fr;gap:12px}
+}
 @media(max-width:600px){
   .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
   .nextmap .nm-media{max-width:230px;margin:0 auto}
@@ -1054,13 +1083,39 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <p>DTMには専門用語が山ほどあります。シンセシス、サイドチェイン、アタックタイム、ゲイン、ステム……。全部最初から覚えようとすると、音楽を作る前に力尽きる。</p>
     <p>この章では<strong>本当に必要な5つだけ</strong>を扱います。この5つを知っていれば、第7章で実際に音を出せます。それ以外は、必要になったときに覚えれば十分です。</p>
 
+    <div class="term-chips">
+      <span class="term-chip">① MIDIとオーディオ</span>
+      <span class="term-chip">② トラック</span>
+      <span class="term-chip">③ BPM</span>
+      <span class="term-chip">④ 小節</span>
+      <span class="term-chip">⑤ ピアノロール</span>
+    </div>
+
     <hr>
 
     <h2>① MIDIとオーディオ</h2>
     <p><strong>MIDI</strong>は「演奏の指示書」。「ドの音を、この強さで、この長さで鳴らせ」という命令データです。実際の音は含んでいません。楽器（シンセサイザーなど）に命令を送って、初めて音になります。後からいくらでも音程や長さを書き直せる。これがMIDIの強みです。</p>
     <p><strong>オーディオ</strong>は「録音された音そのもの」。マイクで録った声、ギターの演奏、サンプルパック（あらかじめ録音された素材集）などがこれに当たります。波形として保存されていて、MIDIのように音程を自由に書き換えることはできません。</p>
-    <pre>MIDI      ＝ 楽譜（指示）→ 楽器が音を出す
-オーディオ ＝ 録音（音そのもの）→ そのまま再生する</pre>
+    <div class="compare-cards">
+      <div class="compare-card is-cyan">
+        <p class="cc-title">MIDI</p>
+        <p class="cc-sub">演奏の「指示書」</p>
+        <ul>
+          <li>音そのものではない</li>
+          <li>楽器に命令を送って鳴る</li>
+          <li>後から自由に直せる</li>
+        </ul>
+      </div>
+      <div class="compare-card is-gold">
+        <p class="cc-title">オーディオ</p>
+        <p class="cc-sub">録音された「音そのもの」</p>
+        <ul>
+          <li>声・ギター・サンプル等</li>
+          <li>波形として保存される</li>
+          <li>音程は書き換えできない</li>
+        </ul>
+      </div>
+    </div>
 
     <h2>② トラック</h2>
     <p>DAWの画面を見ると、横に伸びた「レーン」がいくつも並んでいます。これが<strong>トラック</strong>です。1つのトラックが1つの楽器を担当します。ドラムのトラック、ベースのトラック、シンセのトラック。それぞれが独立していて、音量・音色・エフェクトを個別に調整できます。</p>
@@ -1132,7 +1187,22 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 
     <h2>音は「流れる」</h2>
     <p>DTMの中で音は、水のように一方向に流れています。この流れを<strong>シグナルフロー</strong>と呼びます。大きな流れは3段階。</p>
-    <pre>[ 音源 ] → [ エフェクト ] → [ マスター ]</pre>
+    <div class="flow-cards">
+      <div class="flow-card is-make">
+        <p class="fc-title">音源</p>
+        <p class="fc-sub">音を作る</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card is-tune">
+        <p class="fc-title">エフェクト</p>
+        <p class="fc-sub">音を加工する</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card is-deliver">
+        <p class="fc-title">マスター</p>
+        <p class="fc-sub">最終出力</p>
+      </div>
+    </div>
     <p>この順番は変わりません。音源があって、エフェクトを通って、最終出力へ向かう。これだけです。</p>
 
     <hr>
@@ -1142,7 +1212,17 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 
     <h2>② エフェクト</h2>
     <p>音源から出た音が次に通る関門。ここで音を加工します。音量を整える、高音を削る、残響を加える……。エフェクトはトラックに複数並べることができます。上から順番に音が通過していく。これが「プラグインを挿す」という意味です。</p>
-    <pre>音源 → [EQ] → [コンプ] → [リバーブ] → …</pre>
+    <div class="fx-chain">
+      <span class="fx-node is-src">音源</span>
+      <span class="fx-arrow">→</span>
+      <span class="fx-node">EQ</span>
+      <span class="fx-arrow">→</span>
+      <span class="fx-node">コンプ</span>
+      <span class="fx-arrow">→</span>
+      <span class="fx-node">リバーブ</span>
+      <span class="fx-arrow">→</span>
+      <span class="fx-node">…</span>
+    </div>
     <p>並べる順番によって、音の結果が変わります。ただし今の段階では順番を気にしなくて大丈夫です。「複数のエフェクトを直列に並べて音が通る」という構造だけ覚えておいてください。</p>
 
     <h2>③ マスタートラック</h2>
