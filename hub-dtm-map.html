@@ -499,6 +499,60 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 .nm-proof strong{color:var(--accent)}
 .nm-proof .nm-proof-note{font-size:11px;color:var(--muted)}
 .nm-close{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* ===== 本文中のビジュアルカード（章内解説） ===== */
+.concept-cards,.phase-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:14px;margin:24px 0;
+}
+.concept-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-top:3px solid var(--accent);border-radius:8px;
+  padding:20px 18px;
+}
+.concept-card h4{margin:0 0 12px;font-size:15px;font-weight:700;color:var(--white)}
+.concept-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* フロー：作る→整える→届ける */
+.flow-cards{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:center;gap:10px;margin:24px 0;
+}
+.flow-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:8px;
+  padding:22px 12px;text-align:center;
+}
+.flow-card.is-make{border-color:var(--accent)}
+.flow-card.is-tune{border-color:var(--white)}
+.flow-card.is-deliver{border-color:var(--gold)}
+.flow-card .fc-title{font-size:22px;font-weight:800;margin:0;line-height:1.2}
+.flow-card.is-make .fc-title{color:var(--accent)}
+.flow-card.is-tune .fc-title{color:var(--white)}
+.flow-card.is-deliver .fc-title{color:var(--gold)}
+.flow-card .fc-sub{font-size:12px;color:var(--muted);margin:8px 0 0}
+.flow-arrow{color:var(--muted);font-size:18px;text-align:center;line-height:1}
+
+/* フェーズ道具カード（色付きヘッダー＋リスト） */
+.phase-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+}
+.phase-card .pc-head{padding:11px 8px;text-align:center;font-weight:700;font-size:15px}
+.phase-card.is-make .pc-head{background:var(--accent);color:var(--black)}
+.phase-card.is-tune .pc-head{background:var(--white);color:var(--black)}
+.phase-card.is-deliver .pc-head{background:var(--gold);color:var(--black)}
+.phase-card ul{list-style:none;margin:0;padding:16px 18px 20px}
+.phase-card li{font-size:13px;color:#cfcfcf;padding:5px 0}
+.phase-card li::before{content:"―  ";font-weight:700}
+.phase-card.is-make li::before{color:var(--accent)}
+.phase-card.is-tune li::before{color:var(--white)}
+.phase-card.is-deliver li::before{color:var(--gold)}
+
+@media(max-width:600px){
+  .concept-cards,.phase-cards{grid-template-columns:1fr;gap:12px}
+  .flow-cards{grid-template-columns:1fr;gap:6px}
+  .flow-arrow{transform:rotate(90deg)}
+}
 @media(max-width:600px){
   .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
   .nextmap .nm-media{max-width:230px;margin:0 auto}
@@ -708,35 +762,82 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <p>バンドがスタジオに集まる必要はありません。プロのエンジニアを雇う必要もない。キーボードすら必須ではありません。パソコンとソフトウェアさえあれば、作曲・編曲・録音・ミキシング・マスタリングまで、1人でできます。</p>
     <p>「楽器が弾けないと無理では？」という心配もいりません。私自身、DTMを始めたとき音楽経験はゼロ。音符も読めませんでした。それでも今、テクノの曲を作って公開できている。DTMは演奏技術ではなく、<strong>音を組み立てる設計の仕事</strong>だからです。</p>
 
+    <div class="concept-cards">
+      <div class="concept-card">
+        <h4>スタジオもバンドも不要</h4>
+        <p>パソコンとソフトが1つあればいい</p>
+      </div>
+      <div class="concept-card">
+        <h4>楽器が弾けなくてもいい</h4>
+        <p>音符が読めなくても始められる</p>
+      </div>
+      <div class="concept-card">
+        <h4>演奏ではなく「設計」</h4>
+        <p>音を組み立てる仕事だから</p>
+      </div>
+    </div>
+
     <hr>
 
     <h2>1枚の地図：作る → 整える → 届ける</h2>
     <p>DTMの全工程を、私は「3つの大きな国」で捉えています。</p>
-    <pre>[ 作る ] → [ 整える ] → [ 届ける ]</pre>
+    <div class="flow-cards">
+      <div class="flow-card is-make">
+        <p class="fc-title">作る</p>
+        <p class="fc-sub">音を並べる</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card is-tune">
+        <p class="fc-title">整える</p>
+        <p class="fc-sub">音を磨く</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card is-deliver">
+        <p class="fc-title">届ける</p>
+        <p class="fc-sub">外に出す</p>
+      </div>
+    </div>
     <p>この3段階が分かると、「今自分は何をしているのか」「次に何をすればいいのか」が見えてきます。DAWの画面がどれだけ複雑に見えても、やっていることは必ずこの3つのどれかに収まる。</p>
 
     <h3>① 作る（コンポジション）</h3>
-    <p>音を並べるフェーズ。メロディ、コード、リズム（ドラム）、ベース。楽曲の素材をDAWの中に置いていく作業です。ピアノロールと呼ばれる格子状の画面に音符を打ち込むか、あらかじめ録音されたループ素材（サンプル）を貼り付けます。</p>
-    <p>このフェーズで使う主な道具：</p>
-    <ul>
-      <li><strong>シンセサイザー</strong>（音を電子的に合成する楽器）</li>
-      <li><strong>サンプラー</strong>（録音した音や既存のサンプル音源を再生する）</li>
-      <li><strong>ドラムマシン / ドラム音源</strong></li>
-    </ul>
+    <p>音を並べるフェーズ。メロディ、コード、リズム（ドラム）、ベース。楽曲の素材をDAWの中に置いていく作業です。ピアノロールと呼ばれる格子状の画面に音符を打ち込むか、あらかじめ録音されたループ素材（サンプル）を貼り付けます。主な道具はシンセサイザー・サンプラー・ドラム音源（種類は下の早見表に）。</p>
     <p>最初は「良い/悪い」よりも「音が出た/出なかった」が基準で十分です。第7章で実際に音を出しますから、まずは全体像の把握に集中してください。</p>
 
     <h3>② 整える（ミキシング・エフェクト処理）</h3>
-    <p>音を磨くフェーズ。素材を並べただけでは音はガチャガチャします。キックが埋もれる。シンセが耳に刺さる。全体のバランスが崩れる。これを整えるのがミキシングです。</p>
-    <ul>
-      <li><strong>EQ（イコライザー）</strong></li>
-      <li><strong>コンプレッサー</strong></li>
-      <li><strong>リバーブ / ディレイ</strong></li>
-    </ul>
+    <p>音を磨くフェーズ。素材を並べただけでは音はガチャガチャします。キックが埋もれる。シンセが耳に刺さる。全体のバランスが崩れる。これを整えるのがミキシングです。使う道具はEQ・コンプレッサー・リバーブ / ディレイなど（下の早見表に）。</p>
     <p>正直に言います。このフェーズが、DTMで最も時間がかかる。プロでも永遠に学び続ける領域です。だからこの本ではミキシングの実技には踏み込みません。第5章で「整える道具の種類」を地図として見るところまでにします。</p>
 
     <h3>③ 届ける（マスタリング・配信）</h3>
     <p>外に出すフェーズ。完成した曲を、他の人が聴けるようにする作業です。マスタリングで音量・音質を最終調整し、MP3やWAVに書き出して、DistroKidやTuneCoreなどの配信代行サービスで各ストリーミングサービスに届けます。</p>
     <p>このフェーズはこの本では扱いません。まず音を出すこと。それだけで十分です。</p>
+
+    <p>3つのフェーズと、それぞれの道具を早見表にまとめます。</p>
+    <div class="phase-cards">
+      <div class="phase-card is-make">
+        <div class="pc-head">作る</div>
+        <ul>
+          <li>シンセサイザー</li>
+          <li>サンプラー</li>
+          <li>ドラム音源</li>
+        </ul>
+      </div>
+      <div class="phase-card is-tune">
+        <div class="pc-head">整える</div>
+        <ul>
+          <li>EQ（イコライザー）</li>
+          <li>コンプレッサー</li>
+          <li>リバーブ / ディレイ</li>
+        </ul>
+      </div>
+      <div class="phase-card is-deliver">
+        <div class="pc-head">届ける</div>
+        <ul>
+          <li>マスタリング</li>
+          <li>音源を書き出す</li>
+          <li>各サービスへ配信</li>
+        </ul>
+      </div>
+    </div>
 
     <hr>
 
