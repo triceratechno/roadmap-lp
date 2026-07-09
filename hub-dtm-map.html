@@ -453,6 +453,12 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   display:grid;
   grid-template-columns:240px 1fr;
   gap:32px;align-items:center;
+  text-decoration:none;color:inherit;cursor:pointer;
+  transition:border-color .2s, background .2s;
+}
+.nextmap:hover{
+  border-color:var(--accent);
+  background:linear-gradient(160deg, rgba(0,200,255,0.10), transparent);
 }
 .nextmap .nm-media img{
   width:100%;display:block;border-radius:10px;
@@ -483,6 +489,16 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
   transition:background .2s,color .2s;
 }
 .nm-cta-btn:hover{background:var(--accent);color:var(--black)}
+.nextmap:hover .nm-cta-btn{background:var(--accent);color:var(--black)}
+.nm-proof{
+  margin-top:14px;padding:14px 16px;
+  background:rgba(0,200,255,0.06);
+  border:1px solid var(--border);border-radius:10px;
+  font-size:13px;color:var(--white);line-height:1.8;
+}
+.nm-proof strong{color:var(--accent)}
+.nm-proof .nm-proof-note{font-size:11px;color:var(--muted)}
+.nm-close{font-size:13px;color:var(--muted);margin-top:12px}
 @media(max-width:600px){
   .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
   .nextmap .nm-media{max-width:230px;margin:0 auto}
@@ -1332,19 +1348,21 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     <p><strong>ロードマップ</strong>は、オリジナル曲を1曲完成させるための3ヶ月プログラムです。作曲・アレンジ・ミキシングの順番を、私が設計したカリキュラムに沿って進めます。途中で詰まったとき、私が直接フィードバックします。</p>
     <p>この本を購入してくださったあなたには、ロードマップを <strong>¥980引き</strong> で申し込めるプロモーションコードをお渡ししています。下のカードからロードマップを確認して、Stripe決済画面で <strong>ROADMAP980</strong> を入力してください。</p>
 
-    <div class="nextmap">
+    <a class="nextmap" href="triceratechno-lp.html">
       <div class="nm-media">
         <img src="mockup-pro.png" alt="トリケラテクノ ロードマップPROコース">
       </div>
       <div class="nm-content">
         <p class="nm-label">NEXT MAP</p>
         <h3>音が出せたら、次は"曲"にする番です。</h3>
-        <p>「最初の音」の次は、それを"1曲"に仕上げる番。0から完成・配信までを順番に並べたのが「トリケラテクノ ロードマップ」です。まずは、この地図から。</p>
+        <p>「最初の音」の次は、それを"1曲"に仕上げる番。0から完成・配信までを順番に並べたのが「トリケラテクノ ロードマップ」です。</p>
+        <p class="nm-proof">その先の実例――<br><strong>初心者（DTM歴1年未満）の高松さんは3ヶ月。経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</strong><br><span class="nm-proof-note">（個人の成果例）</span></p>
+        <p class="nm-close">あなたはもう「最初の音」を鳴らせた。その先に、"完成"までの道は続いています。</p>
         <div class="nm-cta">
-          <a class="nm-cta-btn" href="triceratechno-lp.html">ロードマップを見てみる →</a>
+          <span class="nm-cta-btn">ロードマップを見てみる →</span>
         </div>
       </div>
-    </div>
+    </a>
 
     <hr>
 
