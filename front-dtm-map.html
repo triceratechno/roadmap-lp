@@ -550,6 +550,11 @@
   .wc-close { font-size: clamp(16px, 3.7vw, 19px) !important; line-height: 1.95 !important; margin-top: 6px !important; }
   @media (max-width: 640px) { .whycreate { padding: 70px 0; } .wc-body p { line-height: 2.02; margin-bottom: 28px; } }
 
+  /* PC専用の手動改行。スマホ幅では無効化し、ブラウザの自動折り返しに任せる（孤立文字の防止） */
+  @media (max-width: 640px) { br.br-pc { display: none; } }
+  /* 文末の孤立防止：末尾の短い語をひとかたまりで折り返す */
+  .nowrap-tail { white-space: nowrap; }
+
   /* ===== AFTER THE MAP ===== */
   .am-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
   .am-item { display: flex; gap: 18px; align-items: flex-start; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
@@ -596,7 +601,7 @@
       <div class="hero-content">
         <div class="hero-tag">FOR ABSOLUTE BEGINNERS</div>
         <h1 class="hero-title">DTMの<span class="ac">地図</span></h1>
-        <p class="hero-sub">何から始めればいいか分からない人のための<strong>DTMの全体図</strong><br>＋最初の4小節ループを鳴らすまで、迷わない順番で。</p>
+        <p class="hero-sub">何から始めればいいか分からない人のための<strong class="nowrap-tail">DTMの全体図</strong><br>＋最初の4小節ループを鳴らすまで、迷わない順番で。</p>
         <p class="hero-lead"><strong>まず1分で確認してください。</strong></p>
       </div>
       <div class="hero-video-frame">
@@ -651,12 +656,12 @@
   <div class="wrap">
     <div class="statement reveal">
       <div class="section-label center">WHY YOU GET LOST</div>
-      <p class="big">挫折する理由は、<span class="ac">才能ではありません。</span></p>
+      <p class="big">挫折する理由は、<span class="ac">才能ではありま<span class="nowrap-tail">せん。</span></span></p>
       <div class="stmt-img-wrap">
         <img src="img-statement.jpg" alt="才能ではなく地図がないことが問題">
       </div>
       <p>原因は、シンプルです。<br>「<strong>地図なしで、歩き出したから。</strong>」</p>
-      <p>テクニックを集めても、順番がなければ前に進めない。</p>
+      <p>テクニックを集めても、順番がなければ前に進<span class="nowrap-tail">めない。</span></p>
       <p class="quote">必要なのは、特別なセンスではなく、1枚の地図です。</p>
     </div>
   </div>
@@ -668,7 +673,7 @@
 <section class="section">
   <div class="wrap">
     <div class="section-label center reveal">WHAT IS THIS</div>
-    <h2 class="h-jp reveal">「DTMの地図」は、<br>DAWを開く前に読む<em>全体図</em>です。</h2>
+    <h2 class="h-jp reveal">「DTMの地図」は、<br>DAWを開く前に読む<span class="nowrap-tail"><em>全体図</em>です。</span></h2>
     <div class="what-body reveal">
       <p>テクニックを教える教材ではありません。<br><strong>全8章で、DTMの全体像を順番に教える教材です。</strong><br>読み終えたとき——DAWを開き、ドラムとコードを置いて、<strong>4小節のループを"自分の手で"鳴らせています</strong>。</p>
     </div>
@@ -745,7 +750,7 @@
         <div class="ba-col ba-col--after">
           <p class="ba-tag">AFTER</p>
           <img class="ba-img" src="img-after.jpg" alt="自分のPCから初めて音楽が鳴り喜ぶ姿">
-          <p class="ba-cap">地図を読んだあと<br>「自分にもできた」4小節のループが、PCから鳴る。</p>
+          <p class="ba-cap">地図を読んだあと<br>「自分にもできた」4小節のループが、PC<span class="nowrap-tail">から鳴る。</span></p>
         </div>
       </div>
 
@@ -767,7 +772,7 @@
         <img src="img-free.jpg" alt="無料情報だけでは進めないあなたへ">
       </div>
       <p>情報はある。でも、順番がない。<br>だから、どこから始めればいいか分からない。</p>
-      <p class="quote">この教材は、断片ではなく「一本の道」です。</p>
+      <p class="quote">この教材は、断片ではなく「一本の道」<span class="nowrap-tail">です。</span></p>
       <p>上から読むだけで、最初の音にたどり着く。</p>
     </div>
   </div>
