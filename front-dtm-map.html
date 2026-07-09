@@ -575,6 +575,35 @@
   .am-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
   .am-desc { font-size: 13.5px; color: var(--muted); line-height: 1.9; }
   .am-desc strong { color: var(--text); }
+
+  /* ===== AFTER THE MAP: scene cards (future-scene と同じパターン) ===== */
+  .am-scenes { max-width: 900px; margin: 0 auto; }
+  .am-scene {
+    background: linear-gradient(135deg, rgba(0,200,255,0.04) 0%, rgba(0,128,255,0.08) 100%);
+    border: 1px solid rgba(0,200,255,0.18);
+    border-radius: 16px; padding: 28px; margin-bottom: 24px;
+    position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+  }
+  .am-scene--reverse .am-scene-image-wrap { grid-column: 2; grid-row: 1; }
+  .am-scene--reverse .am-scene-text-wrap { grid-column: 1; grid-row: 1; }
+  .am-scene-image-wrap { position: relative; z-index: 1; }
+  .am-scene-image {
+    width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 8px; display: block;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05);
+    pointer-events: none; -webkit-user-select: none; user-select: none;
+  }
+  .am-scene-text-wrap { text-align: left; position: relative; z-index: 1; }
+  .am-scene-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+  .am-scene-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+  .am-scene-desc { font-size: 13.5px; color: var(--muted); line-height: 1.9; margin: 0; }
+  .am-scene-desc strong { color: var(--text); }
+  @media (max-width: 768px) {
+    .am-scene { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
+    .am-scene--reverse .am-scene-image-wrap { grid-column: 1; grid-row: 1; }
+    .am-scene--reverse .am-scene-text-wrap { grid-column: 1; grid-row: 2; }
+    .am-scene-text-wrap { grid-row: 2; }
+  }
   .am-close { text-align: center; margin-top: 26px; font-size: 13.5px; color: var(--muted); line-height: 2; }
   .am-close a { color: var(--accent); }
 
@@ -799,26 +828,35 @@
   <div class="wrap">
     <div class="section-label center reveal">AFTER THE MAP</div>
     <h2 class="h-jp reveal">読み終えたあと、<em>あなたは</em>。</h2>
-    <div class="am-list reveal">
-      <div class="am-item">
-        <p class="am-num">01</p>
-        <div>
-          <p class="am-title">冒頭2分で閉じていた動画が、最後まで見れる</p>
-          <p class="am-desc">「MIDI？ ピアノロール？」——言葉が全部分かるから、YouTubeのチュートリアルを真似して、曲作りを進められる。</p>
+    <div class="am-scenes">
+      <div class="am-scene reveal">
+        <div class="am-scene-image-wrap">
+          <img class="am-scene-image" src="am-scene-1.jpg" alt="動画チュートリアルを最後まで見て理解できるようになった様子" loading="lazy">
+        </div>
+        <div class="am-scene-text-wrap">
+          <p class="am-scene-eyebrow">01 ── 動画が「わかる」に変わる</p>
+          <p class="am-scene-title">冒頭2分で閉じていた動画が、最後まで見れる</p>
+          <p class="am-scene-desc">「MIDI？ ピアノロール？」——言葉が全部分かるから、YouTubeのチュートリアルを真似して、曲作りを進められる。</p>
         </div>
       </div>
-      <div class="am-item">
-        <p class="am-num">02</p>
-        <div>
-          <p class="am-title">無料の情報が、"使える教材"に変わる</p>
-          <p class="am-desc">全体像さえあれば、<strong>無料のチュートリアルだけでも曲作りは続けられます。</strong>もちろん、トリケラテクノの次の教材で最短ルートを進む道もある。どちらでも進める状態にする——それが、この地図の役目です。</p>
+      <div class="am-scene am-scene--reverse reveal">
+        <div class="am-scene-image-wrap">
+          <img class="am-scene-image" src="am-scene-2.jpg" alt="散らばった無料情報が整理された教材に変わる様子" loading="lazy">
+        </div>
+        <div class="am-scene-text-wrap">
+          <p class="am-scene-eyebrow">02 ── 無料情報が「教材」に変わる</p>
+          <p class="am-scene-title">無料の情報が、"使える教材"に変わる</p>
+          <p class="am-scene-desc">全体像さえあれば、<strong>無料のチュートリアルだけでも曲作りは続けられます。</strong>もちろん、トリケラテクノの次の教材で最短ルートを進む道もある。どちらでも進める状態にする——それが、この地図の役目です。</p>
         </div>
       </div>
-      <div class="am-item">
-        <p class="am-num">03</p>
-        <div>
-          <p class="am-title">「またDTMを頑張れる」自分に<span class="nowrap-tail">戻れる</span></p>
-          <p class="am-desc">一度諦めた人こそ。「自分にもできた」という証拠が、次の一歩を軽くします。</p>
+      <div class="am-scene reveal">
+        <div class="am-scene-image-wrap">
+          <img class="am-scene-image" src="am-scene-3.jpg" alt="もう一度DTMへのやる気が戻ってきた様子" loading="lazy">
+        </div>
+        <div class="am-scene-text-wrap">
+          <p class="am-scene-eyebrow">03 ── もう一度、頑張れる自分に</p>
+          <p class="am-scene-title">「またDTMを頑張れる」自分に<span class="nowrap-tail">戻れる</span></p>
+          <p class="am-scene-desc">一度諦めた人こそ。「自分にもできた」という証拠が、次の一歩を軽くします。</p>
         </div>
       </div>
     </div>
