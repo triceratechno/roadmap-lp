@@ -229,6 +229,12 @@
   .rh-num { color: var(--gold); font-family: 'Bebas Neue', sans-serif; font-size: 1.7em; letter-spacing: 0.02em; vertical-align: -0.06em; }
   .rh-hl { color: var(--accent); font-weight: 700; }
   .rh-source { font-size: 11px; color: #666; letter-spacing: 0.04em; margin-top: 4px; }
+  .rh-chart { max-width: 540px; margin: 26px auto 20px; }
+  .rh-chart svg { width: 100%; height: auto; display: block; }
+  .rh-c-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; }
+  .rh-c-num--gold { font-size: 58px; }
+  .rh-c-lbl { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: 700; }
+  .rh-c-annot { font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 700; }
   .reality-bridge { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: clamp(17px, 3vw, 23px); font-weight: 700; color: var(--white); line-height: 1.7; }
   .reality-bridge em { color: var(--accent); font-style: normal; }
 
@@ -693,7 +699,30 @@
     <div class="section-label center reveal">YOUR REALITY</div>
     <div class="reality-hook reveal">
       <h2 class="rh-title">そのDAW、来月も開いている<br><em>自信はありますか？</em></h2>
-      <p class="rh-stat">海外の大規模調査では、<strong>2年目まで続くDTMerは、わずか<span class="rh-num">8%</span>。</strong><br>10人に9人が、<span class="rh-hl">最初の1音を鳴らす前に</span>去っていく。</p>
+      <p class="rh-stat">海外の大規模調査では、<strong>2年目まで続くDTMerは、わずか<span class="rh-num">8%</span>。</strong></p>
+      <div class="rh-chart reveal" role="img" aria-label="DTM継続率の推移。1年目61%から2年目8%、3年目5%へ急減する棒グラフ。">
+        <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+          <!-- baseline -->
+          <line x1="55" y1="290" x2="600" y2="290" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+          <!-- bar 1: 1年目 61% -->
+          <rect x="95" y="90" width="90" height="200" rx="5" fill="rgba(0,200,255,0.22)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="140" y="74" text-anchor="middle" class="rh-c-num" fill="var(--accent)">61%</text>
+          <text x="140" y="320" text-anchor="middle" class="rh-c-lbl" fill="var(--muted)">1年目</text>
+          <!-- plunge arrow -->
+          <path d="M 205 108 Q 250 210 300 258" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="7 6"/>
+          <path d="M 300 258 l -14 -6 l 5 15 z" fill="var(--gold)"/>
+          <text x="270" y="185" text-anchor="middle" class="rh-c-annot" fill="var(--gold)">急降下</text>
+          <!-- bar 2: 2年目 8% (highlight) -->
+          <rect x="325" y="264" width="90" height="26" rx="5" fill="rgba(245,197,24,0.32)" stroke="var(--gold)" stroke-width="2.5"/>
+          <text x="370" y="250" text-anchor="middle" class="rh-c-num rh-c-num--gold" fill="var(--gold)">8%</text>
+          <text x="370" y="320" text-anchor="middle" class="rh-c-lbl" fill="var(--muted)">2年目</text>
+          <!-- bar 3: 3年目 5% -->
+          <rect x="470" y="273" width="90" height="17" rx="5" fill="rgba(0,200,255,0.12)" stroke="rgba(0,200,255,0.45)" stroke-width="2"/>
+          <text x="515" y="260" text-anchor="middle" class="rh-c-lbl" fill="#777">5%</text>
+          <text x="515" y="320" text-anchor="middle" class="rh-c-lbl" fill="var(--muted)">3年目</text>
+        </svg>
+      </div>
+      <p class="rh-stat">10人に9人が、<span class="rh-hl">最初の1音を鳴らす前に</span>去っていく。</p>
       <p class="rh-source">※ 音楽制作者1,228人への海外調査（EDMProd）より</p>
     </div>
     <p class="reality-bridge reveal">その差は、才能じゃない。<br>もしかして、<em>あなたも</em>——こんな状態で止まっていませんか？</p>
