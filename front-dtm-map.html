@@ -220,6 +220,18 @@
   .stmt-img-wrap { margin: 24px auto 0; border-radius: 12px; overflow: hidden; max-width: 640px; }
   .stmt-img-wrap img { width: 100%; display: block; pointer-events: none; user-select: none; }
 
+  /* ===== REALITY HOOK (shocking stat) ===== */
+  .reality-hook { max-width: 720px; margin: 0 auto; text-align: center; }
+  .rh-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; color: var(--white); font-size: clamp(24px, 4.4vw, 40px); line-height: 1.45; letter-spacing: 0.01em; margin-bottom: 26px; }
+  .rh-title em { color: var(--gold); font-style: normal; }
+  .rh-stat { font-size: clamp(15px, 2.6vw, 19px); line-height: 1.95; color: var(--muted); margin-bottom: 10px; }
+  .rh-stat strong { color: var(--text); font-weight: 700; }
+  .rh-num { color: var(--gold); font-family: 'Bebas Neue', sans-serif; font-size: 1.7em; letter-spacing: 0.02em; vertical-align: -0.06em; }
+  .rh-hl { color: var(--accent); font-weight: 700; }
+  .rh-source { font-size: 11px; color: #666; letter-spacing: 0.04em; margin-top: 4px; }
+  .reality-bridge { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: clamp(17px, 3vw, 23px); font-weight: 700; color: var(--white); line-height: 1.7; }
+  .reality-bridge em { color: var(--accent); font-style: normal; }
+
   /* ===== PAIN CHECKLIST ===== */
   .pain-card {
     margin: 12px auto 0; max-width: 640px; border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 14px 10px;
@@ -679,7 +691,12 @@
 <section class="section">
   <div class="wrap">
     <div class="section-label center reveal">YOUR REALITY</div>
-    <h2 class="h-jp reveal">もしかして、こんな状態で<br><em>止まっていませんか？</em></h2>
+    <div class="reality-hook reveal">
+      <h2 class="rh-title">そのDAW、来月も開いている<br><em>自信はありますか？</em></h2>
+      <p class="rh-stat">海外の大規模調査では、<strong>2年目まで続くDTMerは、わずか<span class="rh-num">8%</span>。</strong><br>10人に9人が、<span class="rh-hl">最初の1音を鳴らす前に</span>去っていく。</p>
+      <p class="rh-source">※ 音楽制作者1,228人への海外調査（EDMProd）より</p>
+    </div>
+    <p class="reality-bridge reveal">その差は、才能じゃない。<br>もしかして、<em>あなたも</em>——こんな状態で止まっていませんか？</p>
     <div class="pain-img-wrap reveal">
       <img src="img-pain.jpg" alt="止まってしまっている状態のイメージ">
     </div>
