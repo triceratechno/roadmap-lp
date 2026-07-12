@@ -50,6 +50,13 @@
   .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video-cap { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
 
+  /* 著者プロフィール */
+  .author-row { display: flex; align-items: center; gap: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 6px 0 22px; }
+  .author-row img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 2px solid rgba(0,200,255,0.4); }
+  .author-row .a-name { font-size: 16px; font-weight: 700; color: var(--white); }
+  .author-row .a-desc { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+  .author-row .a-desc strong { color: var(--accent); }
+
   /* CTA */
   .cta-box { margin: 48px 0 8px; padding: 32px 24px; background: linear-gradient(160deg, rgba(245,197,24,0.06), transparent); border: 1px solid rgba(245,197,24,0.3); border-radius: 16px; text-align: center; }
   .cta-box .ttl { font-size: 18px; font-weight: 900; color: var(--white); line-height: 1.6; margin-bottom: 8px; }
@@ -60,6 +67,12 @@
   .btn-gold .l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); }
   .btn-gold .l2 s { opacity: 0.72; }
   .cta-rib { position: absolute; top: -11px; right: -7px; font-size: 11px; font-weight: 900; color: var(--gold); background: var(--black); border: 1px solid rgba(245,197,24,0.55); padding: 3px 9px; border-radius: 5px; }
+
+  /* サムネ入り カード全体リンク */
+  .cta-card { display: block; text-decoration: none; margin: 48px 0 8px; border: 1px solid rgba(245,197,24,0.3); border-radius: 16px; overflow: hidden; background: linear-gradient(160deg, rgba(245,197,24,0.06), transparent); transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; }
+  .cta-card:hover { transform: translateY(-2px); border-color: rgba(245,197,24,0.6); box-shadow: 0 16px 44px rgba(0,0,0,0.5); }
+  .cta-card-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-bottom: 1px solid rgba(245,197,24,0.2); }
+  .cta-card-body { padding: 28px 24px 32px; text-align: center; }
 
   /* 章マップ（ロック） */
   .map { padding: 24px 0 8px; }
@@ -119,8 +132,9 @@
 
     <p>この章を読み終える頃には、あなたはひとつ、大事なことに気づいているはずです。<br>——DTMが続かなかったのは、あなたに才能がなかったからじゃない、ということに。</p>
 
-    <h2>なぜ、9割の人は挫折するのか</h2>
+    <h2>なぜ、9割のDTMerは挫折するのか</h2>
     <p>先に、少しショッキングな事実をお伝えします。<br>海外の大規模な調査では、DTMを始めた人のうち<strong>2年目まで続くのは、わずか8%</strong>。裏を返せば、<strong>10人に9人が、1年以内にDTMを辞めていきます。</strong></p>
+    <p style="margin:8px 0 24px;"><img src="dtm-dropout-chart.jpg" alt="DTM継続率のグラフ：1年目61%から2年目8%、3年目5%へ急減" style="width:100%; display:block; border-radius:10px; border:1px solid var(--border);"></p>
     <p>しかも、その多くは、一度も自分の曲を完成させないまま去っていく。<br>かつての私も、その中のひとりでした。</p>
     <p>でも、これだけは断言できます。原因は、才能でもセンスでもありません。<br><span class="cy">「何を、どの順番でやればいいか」という地図を、誰も渡してくれなかった。</span>ただ、それだけなんです。</p>
     <p>地図を持たずに、いきなり森の中を歩き出す。だから迷う。だから止まる。<br>DTMで挫折する人の9割は、まさにこれをやっています。</p>
@@ -131,6 +145,13 @@
     <p>この地図は、難しい音楽理論も、複雑なテクニックも要求しません。<br>ただ、上から順番に読むだけ。9割が迷子になる道を、迷わず歩けるように並べてあります。</p>
 
     <h2>私について（音楽経験ゼロから始めました）</h2>
+    <div class="author-row">
+      <img src="tricera-icon.jpg" alt="トリケラテクノ">
+      <div>
+        <p class="a-name">トリケラテクノ</p>
+        <p class="a-desc">音楽経験ゼロからDTMを開始。<strong>Apple Music / Spotifyに楽曲リリース</strong>／DTM相談<strong>100件超</strong>／総フォロワー<strong>1,700人超</strong></p>
+      </div>
+    </div>
     <p>申し遅れました。トリケラテクノです。<br>偉そうに書いていますが、私自身、<strong>音楽経験ゼロ。楽譜もまともに読めません。</strong></p>
     <p>DTMを始めてからの最初の2年近くは、遠回りと挫折の連続でした。かっこいい機材を買っては使いこなせず、作りかけのプロジェクトだけが増えていく。「自分には才能がないのかもしれない」と、何度も思いました。</p>
     <p>でも、"順番"という地図を手にしてから、変わりました。今では、Apple MusicやSpotifyに自分の曲をリリースできるところまで来ています。<br>これまで<strong>100件を超えるDTMの相談</strong>にも答えてきて、確信しています。完成できないのは、才能のせいじゃない。地図がないだけだ、と。</p>
@@ -141,15 +162,18 @@
     <p class="lead">それでは——ここから先が、あなたの"最初の一歩"です。</p>
   </article>
 
-  <div class="cta-box">
-    <p class="ttl">続きは、本編で。<br>第1章から、最初の1音まで。</p>
-    <p class="sub">第1章から先と、3つの限定特典は、本編を手に入れると読めます。<br>いまなら期間限定 ¥500（通常¥1,980）。</p>
-    <a class="btn-gold" href="NOTE_PURCHASE_URL">
-      <span class="cta-rib">75%OFF</span>
-      <span class="l1">¥500で、続きを読む →</span>
-      <span class="l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
-    </a>
-  </div>
+  <a class="cta-card" href="NOTE_PURCHASE_URL">
+    <img class="cta-card-thumb" src="hero-thumb-dtm.jpg" alt="DTMの地図 本編">
+    <div class="cta-card-body">
+      <p class="ttl">続きは、本編で。<br>第1章から、最初の1音まで。</p>
+      <p class="sub">第1章から先と、3つの限定特典は、本編を手に入れると読めます。<br>いまなら期間限定 ¥500（通常¥1,980）。</p>
+      <span class="btn-gold">
+        <span class="cta-rib">75%OFF</span>
+        <span class="l1">¥500で、続きを読む →</span>
+        <span class="l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+      </span>
+    </div>
+  </a>
 
   <div class="map">
     <p class="map-label">— 全体図：8章の構成 —</p>
