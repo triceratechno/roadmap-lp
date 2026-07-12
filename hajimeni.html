@@ -43,6 +43,13 @@
   .art .cy { color: var(--accent); font-weight: 700; }
   .art .lead { font-size: 17px; color: var(--white); font-weight: 500; }
 
+  /* 解説動画 */
+  .video-wrap { margin: 34px 0 8px; }
+  .video-h { font-size: 13px; color: var(--accent); font-weight: 700; letter-spacing: 0.06em; margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+  .video-frame { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,200,255,0.2); box-shadow: 0 0 40px rgba(0,200,255,0.08); background: #000; }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-cap { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
+
   /* CTA */
   .cta-box { margin: 48px 0 8px; padding: 32px 24px; background: linear-gradient(160deg, rgba(245,197,24,0.06), transparent); border: 1px solid rgba(245,197,24,0.3); border-radius: 16px; text-align: center; }
   .cta-box .ttl { font-size: 18px; font-weight: 900; color: var(--white); line-height: 1.6; margin-bottom: 8px; }
@@ -98,6 +105,18 @@
 
   <article class="art">
     <p class="lead">ようこそ、「DTMの地図」へ。<br>まず、この第0章を開いてくれて、ありがとうございます。</p>
+
+    <div class="video-wrap">
+      <p class="video-h">▶ この章の解説動画</p>
+      <!-- ★ 第0章の解説動画IDに差し替え（現状は紹介動画） ★ -->
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/S722JxvpcHI?rel=0&modestbranding=1"
+                title="DTMの地図 第0章 はじめに"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+      <p class="video-cap">文字が苦手な方は、まずこの動画からどうぞ。</p>
+    </div>
 
     <p>この章を読み終える頃には、あなたはひとつ、大事なことに気づいているはずです。<br>——DTMが続かなかったのは、あなたに才能がなかったからじゃない、ということに。</p>
 
