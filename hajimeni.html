@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第0章 はじめに｜DTMの地図（無料公開）</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="第0章 はじめに｜DTMの地図">
+<meta property="og:description" content="音楽経験ゼロから、迷わず最初の1音まで。「DTMの地図」第0章を無料公開中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808; --panel: #111111; --border: #1e1e1e;
+    --accent: #00c8ff; --gold: #f5c518; --text: #e8e8e8; --muted: #9a9a9a; --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--black); color: var(--text); font-family: 'Noto Sans JP', sans-serif; line-height: 1.95; -webkit-text-size-adjust: 100%; }
+  a { color: var(--accent); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* ヘッダー */
+  .top { border-bottom: 1px solid var(--border); background: rgba(8,8,8,0.9); }
+  .top-inner { max-width: 720px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 900; color: var(--white); font-size: 15px; letter-spacing: 0.02em; }
+  .brand .ac { color: var(--accent); }
+  .top-free { font-size: 11px; color: var(--gold); border: 1px solid rgba(245,197,24,0.5); border-radius: 4px; padding: 3px 10px; letter-spacing: 0.06em; }
+
+  /* 記事ヘッダー */
+  .art-head { padding: 56px 0 8px; text-align: center; }
+  .art-eyebrow { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.28em; color: var(--accent); font-size: 14px; }
+  .art-title { font-size: clamp(28px, 6vw, 40px); font-weight: 900; color: var(--white); margin-top: 8px; line-height: 1.4; }
+  .art-sub { font-size: 13px; color: var(--muted); margin-top: 14px; }
+  .divider { width: 40px; height: 3px; background: var(--gold); margin: 32px auto 0; border-radius: 2px; }
+
+  /* 本文 */
+  .art { padding: 40px 0 8px; }
+  .art h2 { font-size: clamp(19px, 4vw, 24px); font-weight: 700; color: var(--white); margin: 44px 0 14px; padding-left: 14px; border-left: 3px solid var(--accent); line-height: 1.5; }
+  .art p { font-size: 15.5px; color: var(--text); margin: 0 0 20px; line-height: 2.05; }
+  .art strong { color: var(--white); font-weight: 700; }
+  .art .gold { color: var(--gold); font-weight: 700; }
+  .art .cy { color: var(--accent); font-weight: 700; }
+  .art .lead { font-size: 17px; color: var(--white); font-weight: 500; }
+
+  /* CTA */
+  .cta-box { margin: 48px 0 8px; padding: 32px 24px; background: linear-gradient(160deg, rgba(245,197,24,0.06), transparent); border: 1px solid rgba(245,197,24,0.3); border-radius: 16px; text-align: center; }
+  .cta-box .ttl { font-size: 18px; font-weight: 900; color: var(--white); line-height: 1.6; margin-bottom: 8px; }
+  .cta-box .sub { font-size: 13px; color: var(--muted); margin-bottom: 22px; line-height: 1.8; }
+  .btn-gold { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 4px; background: var(--gold); color: #1a1400; text-decoration: none; padding: 15px 34px; border-radius: 8px; box-shadow: 0 8px 30px rgba(245,197,24,0.28); transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,197,24,0.4); }
+  .btn-gold .l1 { font-size: 16px; font-weight: 700; letter-spacing: 0.02em; }
+  .btn-gold .l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); }
+  .btn-gold .l2 s { opacity: 0.72; }
+  .cta-rib { position: absolute; top: -11px; right: -7px; font-size: 11px; font-weight: 900; color: var(--gold); background: var(--black); border: 1px solid rgba(245,197,24,0.55); padding: 3px 9px; border-radius: 5px; }
+
+  /* 章マップ（ロック） */
+  .map { padding: 24px 0 8px; }
+  .map-label { text-align: center; font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+  .ch-list { display: flex; flex-direction: column; gap: 8px; }
+  .ch-row { display: flex; align-items: center; gap: 14px; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+  .ch-row .num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--muted); flex: 0 0 30px; text-align: center; }
+  .ch-row .name { font-size: 14px; color: var(--muted); flex: 1; }
+  .ch-row .state { font-size: 12px; color: #555; display: flex; align-items: center; gap: 5px; }
+  /* 解放済み（第0章） */
+  .ch-row.open { border-color: rgba(0,200,255,0.4); background: rgba(0,200,255,0.05); }
+  .ch-row.open .num { color: var(--accent); }
+  .ch-row.open .name { color: var(--white); font-weight: 700; }
+  .ch-row.open .state { color: var(--accent); }
+  /* ロック */
+  .ch-row.locked { opacity: 0.72; }
+  .ch-row.locked .state { color: var(--gold); }
+  .lock { width: 13px; height: 13px; display: inline-block; }
+  .ch-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; line-height: 1.8; }
+
+  footer { margin-top: 64px; padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; }
+  .foot-logo { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.2em; color: #555; font-size: 15px; }
+  .foot-copy { font-size: 11px; color: #444; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <span class="brand">DTMの<span class="ac">地図</span></span>
+    <span class="top-free">第0章 無料公開</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="art-head">
+    <p class="art-eyebrow">CHAPTER 0</p>
+    <h1 class="art-title">はじめに</h1>
+    <p class="art-sub">この地図が、あなたを「最初の1音」まで連れていきます。</p>
+    <div class="divider"></div>
+  </div>
+
+  <article class="art">
+    <p class="lead">ようこそ、「DTMの地図」へ。<br>まず、この第0章を開いてくれて、ありがとうございます。</p>
+
+    <p>この章を読み終える頃には、あなたはひとつ、大事なことに気づいているはずです。<br>——DTMが続かなかったのは、あなたに才能がなかったからじゃない、ということに。</p>
+
+    <h2>なぜ、9割の人は挫折するのか</h2>
+    <p>先に、少しショッキングな事実をお伝えします。<br>海外の大規模な調査では、DTMを始めた人のうち<strong>2年目まで続くのは、わずか8%</strong>。裏を返せば、<strong>10人に9人が、1年以内にDTMを辞めていきます。</strong></p>
+    <p>しかも、その多くは、一度も自分の曲を完成させないまま去っていく。<br>かつての私も、その中のひとりでした。</p>
+    <p>でも、これだけは断言できます。原因は、才能でもセンスでもありません。<br><span class="cy">「何を、どの順番でやればいいか」という地図を、誰も渡してくれなかった。</span>ただ、それだけなんです。</p>
+    <p>地図を持たずに、いきなり森の中を歩き出す。だから迷う。だから止まる。<br>DTMで挫折する人の9割は、まさにこれをやっています。</p>
+
+    <h2>この地図が、あなたに約束すること</h2>
+    <p>「DTMの地図」のゴールは、たったひとつです。<br><span class="gold">DAWを開いて、ドラムとコードを置いて、4小節のループを"あなた自身の手で"鳴らすこと。</span></p>
+    <p>「たった4小節？」と思うかもしれません。でも、これは"おもちゃ"じゃない。<br>テクノもハウスも、フロアを揺らすあの曲も、分解すれば数小節のループの積み重ねです。<strong>その4小節が鳴った瞬間、あなたの曲作りは、もう始まっています。</strong></p>
+    <p>この地図は、難しい音楽理論も、複雑なテクニックも要求しません。<br>ただ、上から順番に読むだけ。9割が迷子になる道を、迷わず歩けるように並べてあります。</p>
+
+    <h2>私について（音楽経験ゼロから始めました）</h2>
+    <p>申し遅れました。トリケラテクノです。<br>偉そうに書いていますが、私自身、<strong>音楽経験ゼロ。楽譜もまともに読めません。</strong></p>
+    <p>DTMを始めてからの最初の2年近くは、遠回りと挫折の連続でした。かっこいい機材を買っては使いこなせず、作りかけのプロジェクトだけが増えていく。「自分には才能がないのかもしれない」と、何度も思いました。</p>
+    <p>でも、"順番"という地図を手にしてから、変わりました。今では、Apple MusicやSpotifyに自分の曲をリリースできるところまで来ています。<br>これまで<strong>100件を超えるDTMの相談</strong>にも答えてきて、確信しています。完成できないのは、才能のせいじゃない。地図がないだけだ、と。</p>
+
+    <h2>この地図の歩き方</h2>
+    <p>やることは、シンプルです。<strong>第1章から、上から順番に読んでいくだけ。</strong><br>各章には解説動画もついているので、文字で分かりにくいところは"見て"真似できます。そして第7章で、実際にDAWを開いて、最初の4小節を鳴らします。</p>
+    <p>焦らなくて大丈夫。1日1章でも、8日後には、あなたのPCから初めての音が鳴っています。</p>
+    <p class="lead">それでは——ここから先が、あなたの"最初の一歩"です。</p>
+  </article>
+
+  <div class="cta-box">
+    <p class="ttl">続きは、本編で。<br>第1章から、最初の1音まで。</p>
+    <p class="sub">第1章から先と、3つの限定特典は、本編を手に入れると読めます。<br>いまなら期間限定 ¥500（通常¥1,980）。</p>
+    <a class="btn-gold" href="NOTE_PURCHASE_URL">
+      <span class="cta-rib">75%OFF</span>
+      <span class="l1">¥500で、続きを読む →</span>
+      <span class="l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+    </a>
+  </div>
+
+  <div class="map">
+    <p class="map-label">— 全体図：8章の構成 —</p>
+    <div class="ch-list">
+      <div class="ch-row open"><span class="num">0</span><span class="name">はじめに</span><span class="state">✓ いま読んでいます</span></div>
+      <div class="ch-row locked"><span class="num">1</span><span class="name">DTMって何？</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">2</span><span class="name">DAWを選ぶ</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">3</span><span class="name">これだけ用語</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">4</span><span class="name">音が鳴る仕組み</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">5</span><span class="name">道具の地図</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">6</span><span class="name">ジャンルの地図</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">7</span><span class="name">【実践】はじめての音を鳴らす</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">8</span><span class="name">1曲完成の地図</span><span class="state">🔒 ロック中</span></div>
+      <div class="ch-row locked"><span class="num">+</span><span class="name">3つの限定特典</span><span class="state">🔒 ロック中</span></div>
+    </div>
+    <p class="ch-note">第1章から先を解放するには、本編（¥500・8/16まで）を手に入れてください。</p>
+  </div>
+
+  <div class="cta-box" style="margin-bottom:0;">
+    <p class="ttl">この地図で、最初の一歩を。</p>
+    <a class="btn-gold" href="NOTE_PURCHASE_URL">
+      <span class="cta-rib">75%OFF</span>
+      <span class="l1">¥500で、続きを読む →</span>
+      <span class="l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+    </a>
+  </div>
+
+  <footer>
+    <p class="foot-logo">TRICERA TECHNO</p>
+    <p class="foot-copy">&copy; 2026 TRICERA TECHNO All Rights Reserved.</p>
+  </footer>
+
+</div>
+</body>
+</html>
