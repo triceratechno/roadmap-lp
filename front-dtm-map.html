@@ -199,14 +199,17 @@
   .hero-video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer;
     background-image: url('hero-thumb-dtm.jpg'); background-size: cover; background-position: center; background-color: #080e1a; }
   .hero-video-placeholder::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%); pointer-events: none; }
-  .hero-video-play { width: 76px; height: 76px; border-radius: 50%; background: rgba(0,200,255,0.85); border: 3px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; animation: hv-pulse 2.4s ease-in-out infinite; z-index: 1; box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
-  .hero-video-play svg { width: 30px; height: 30px; fill: #001018; margin-left: 4px; }
+  .hero-video-play { width: 92px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1; transition: transform 0.2s; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.45)); }
+  .hero-video-placeholder:hover .hero-video-play { transform: scale(1.06); }
+  .hero-video-play svg { width: 100%; height: 100%; display: block; }
+  .hero-video-play .yt-bg { fill: #f00; transition: fill 0.2s; }
+  .hero-video-placeholder:hover .hero-video-play .yt-bg { fill: #ff2323; }
+  .hero-video-play .yt-tri { fill: #fff; }
   .hero-video-text { font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.55); padding: 6px 14px; border-radius: 2px; z-index: 1; text-transform: uppercase; }
   /* スマホ幅：中央の特典テキストと重なるため、下の余白帯へ再生ボタンを退避 */
   @media (max-width: 640px) {
     .hero-video-placeholder { justify-content: flex-start; }
-    .hero-video-play { position: absolute; top: 79%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; margin: 0; }
-    .hero-video-play svg { width: 20px; height: 20px; }
+    .hero-video-play { position: absolute; top: 79%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 45px; margin: 0; }
     .hero-video-text { position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 9px; padding: 4px 10px; white-space: nowrap; }
   }
   @keyframes hv-pulse {
@@ -675,8 +678,8 @@
       <div class="hero-video-frame">
         <!-- クリックでモーダル再生（YouTubeモーダルscriptが自動でリンクを検知） -->
         <a class="hero-video-placeholder" href="https://youtu.be/S722JxvpcHI" aria-label="紹介動画を再生">
-          <div class="hero-video-play">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div class="hero-video-play" aria-hidden="true">
+            <svg viewBox="0 0 68 48"><path class="yt-bg" d="M66.52 7.74c-.78-2.93-2.49-5.42-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.77-4.64 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.42 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.77 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z"/><path class="yt-tri" d="M45 24 27 14v20z"/></svg>
           </div>
         </a>
       </div>
