@@ -2744,6 +2744,7 @@
   }
   .intro-video-frame {
     position: relative;
+    display: block;
     width: 100%;
     max-width: 860px;
     margin: 0 auto 36px;
@@ -2753,69 +2754,26 @@
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 0 60px rgba(0,200,255,0.08);
+    text-decoration: none;
+    cursor: pointer;
   }
-  .intro-video-frame iframe {
+  .intro-video-poster {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover;
   }
-  /* placeholder shown when no video — now uses hero thumbnail as poster */
-  .intro-video-placeholder {
+  .intro-video-yt-btn {
     position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    background-image: url('hero-thumbnail.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: #080e1a;
-  }
-  .intro-video-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%),
-                radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%);
-    pointer-events: none;
-  }
-  .intro-video-play {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    background: rgba(0,200,255,0.85);
-    border: 3px solid rgba(255,255,255,0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: pulse-ring 2.4s ease-in-out infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+    filter: drop-shadow(0 4px 18px rgba(0,0,0,0.5));
   }
-  .intro-video-play svg {
-    width: 32px;
-    height: 32px;
-    fill: #001018;
-    margin-left: 4px;
-  }
-  .intro-video-placeholder-text {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.85);
-    background: rgba(0,0,0,0.55);
-    padding: 6px 14px;
-    border-radius: 2px;
-    z-index: 1;
-    text-transform: uppercase;
-  }
-  @keyframes pulse-ring {
-    0%, 100% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(0,200,255,0.5); }
-    50% { box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 0 16px rgba(0,200,255,0); }
-  }
+  .intro-video-frame:hover .intro-video-yt-btn { transform: translate(-50%, -50%) scale(1.08); }
   .intro-video-cta-btn {
     margin-top: 36px;
     text-align: center;
@@ -2977,21 +2935,12 @@
         このコースで<em>何が変わるのか</em>、まず1分で確認してください。
       </p>
 
-      <div class="intro-video-frame" style="margin-top:32px;">
-        <!-- ★ YouTubeアップ後に YOUR_VIDEO_ID を差し替え ★
-             例: src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        -->
-        <!-- 動画準備中のプレースホルダー（動画差し替え後は削除） -->
-        <div class="intro-video-placeholder">
-          <div class="intro-video-play">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <p class="intro-video-placeholder-text">COMING SOON</p>
-        </div>
-      </div>
+      <a class="intro-video-frame" style="margin-top:32px;" href="https://youtu.be/3g7p_QcPx-g" aria-label="ROADMAP PROコース紹介動画を再生">
+        <img class="intro-video-poster" src="https://img.youtube.com/vi/3g7p_QcPx-g/hqdefault.jpg" alt="ROADMAP PROコース紹介動画">
+        <span class="intro-video-yt-btn">
+          <svg width="88" height="62" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+        </span>
+      </a>
 
       <p class="intro-video-desc">
         ゼロからでも1曲完成させるPROコースで、音楽制作の可能性を最大限に引き出しましょう。DTM初心者を対象としたこのPROコースでは、楽曲制作の基礎的な知識の解説からアイデア出し、アレンジ、そして最終的なマスタリングまで、必要なすべてのステップを丁寧に解説します。
@@ -4350,7 +4299,7 @@
 
     // 解説スタイル動画カード／参考曲チップのクリックを横取り（別タブ→サイト内モーダル）
     document.addEventListener('click', function (e) {
-      var trigger = e.target.closest && e.target.closest('a.video-link-card, a.review-ref');
+      var trigger = e.target.closest && e.target.closest('a.video-link-card, a.review-ref, a.intro-video-frame');
       if (!trigger) return;
       var m = (trigger.getAttribute('href') || '').match(ID_RE);
       if (!m) return;
