@@ -575,6 +575,20 @@
   .yt-modal__close:hover { opacity: 1; }
   @media (max-width: 640px) { .yt-modal__close { top: -42px; } }
 
+  /* ===== VOICES（ロードマップ受講生の声） ===== */
+  .voices-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .voice-item { text-align: center; }
+  .voice-ava { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 18px; border: 2px solid rgba(0,200,255,0.35); }
+  .voice-quote { font-size: 13.5px; color: var(--text); line-height: 1.95; margin: 0 0 14px; text-align: left; }
+  .voice-quote strong { color: var(--white); font-weight: 700; }
+  .voice-name { font-size: 13px; font-weight: 700; color: var(--white); }
+  .voice-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .voice-disc { text-align: center; font-size: 11px; color: #666; margin-top: 30px; }
+  @media (max-width: 720px) {
+    .voices-grid { grid-template-columns: 1fr; gap: 34px; max-width: 460px; }
+    .voice-quote { text-align: center; }
+  }
+
   /* ===== WHY CREATE ===== */
   .whycreate { position: relative; padding: 104px 0; overflow: hidden;
     background: radial-gradient(120% 85% at 50% 0%, rgba(0,200,255,0.07) 0%, rgba(8,8,8,0) 55%), var(--black);
@@ -1159,6 +1173,35 @@
         </div>
       </div>
     </a>
+  </div>
+</section>
+
+<!-- ========== 12.4 受講生の声（ロードマップ） ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">VOICES</div>
+    <h2 class="h-jp reveal">その先へ進んだ、<em>受講生の声</em>。</h2>
+    <div class="voices-grid reveal">
+      <div class="voice-item">
+        <img class="voice-ava" src="ジジさんアイコン.jpg" alt="ジジさん">
+        <p class="voice-quote">「DTM初心者の私は右も左も分かってませんでした。まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>トリケラさんはDTMの先生でもあり、優秀なモチベーターでもあった</strong>。挫折しそうな時も、言葉を思い出すとがんばれました。」</p>
+        <p class="voice-name">ジジさん</p>
+        <p class="voice-meta">DTM歴1年未満 ・ STEP1〜10 完走</p>
+      </div>
+      <div class="voice-item">
+        <img class="voice-ava" src="yasu-icon.png" alt="やすさん">
+        <p class="voice-quote">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日、曲作りに夢中になっています。根拠づけてしっかり書かれていて読みやすく、<strong>自分が欲しかった情報がたくさん詰まっていた</strong>。友人にもぜひすすめたいです。」</p>
+        <p class="voice-name">やすさん</p>
+        <p class="voice-meta">DTM歴3〜5年 ・ STEP1〜10 完走</p>
+      </div>
+      <div class="voice-item">
+        <img class="voice-ava" src="nob-icon.png" alt="Nobさん">
+        <p class="voice-quote">「レファレンス曲をベースに、ステップアップ方式で楽曲完成までを細かく学べたので、今後は<strong>自分一人でも曲を完成させられるという『自信』が手に入った</strong>。チュートリアルを理解して活用できるベースが、自分の中にできました。」</p>
+        <p class="voice-name">Nobさん</p>
+        <p class="voice-meta">DTM歴1年未満 ・ STEP7 進行中</p>
+      </div>
+    </div>
+    <p class="voice-disc reveal">※「トリケラテクノ ロードマップ」受講生の声です。個人の感想であり、成果を保証するものではありません。</p>
   </div>
 </section>
 
