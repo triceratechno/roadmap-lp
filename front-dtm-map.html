@@ -105,29 +105,6 @@
   }
   h2.h-jp { font-size: clamp(26px, 4.6vw, 42px); margin-bottom: 26px; text-align: center; }
   h2.h-jp em { color: var(--accent); font-style: normal; }
-
-  /* 整列：左揃えセクション（YOUR REALITY 〜 WHAT IS THIS）。見出しも含め共通の左端に揃える */
-  .section--left h2.h-jp { text-align: left; }
-  .section--left .reality-hook,
-  .section--left .rh-title,
-  .section--left .rh-stat,
-  .section--left .rh-source,
-  .section--left .reality-bridge,
-  .section--left .pain-close,
-  .section--left .statement,
-  .section--left .statement .big,
-  .section--left .statement .quote,
-  .section--left .what-sub { text-align: left; }
-  /* 左の芯を揃える：中央寄せのブロックを左端起点に */
-  .section--left .reality-hook,
-  .section--left .reality-bridge,
-  .section--left .statement,
-  .section--left .what-body,
-  .section--left .pain-card,
-  .section--left .pain-img-wrap,
-  .section--left .stmt-img-wrap { margin-left: 0; margin-right: 0; }
-  .section--left .statement > p:not(.big):not(.quote),
-  .section--left .firstsound > p { margin-left: 0; margin-right: 0; }
   .lead { font-size: clamp(14px, 2vw, 16px); color: var(--muted); line-height: 2; }
   .center { text-align: center; }
 
@@ -736,9 +713,9 @@
 <div class="divider"></div>
 
 <!-- ========== 2. 共感（痛み） ========== -->
-<section class="section section--left">
+<section class="section">
   <div class="wrap">
-    <div class="section-label reveal">YOUR REALITY</div>
+    <div class="section-label center reveal">YOUR REALITY</div>
     <div class="reality-hook reveal">
       <h2 class="rh-title">そのDAW、来月も開いている<br><em>自信はありますか？</em></h2>
       <p class="rh-stat">海外の大規模調査では、<strong>2年目まで続くDTMerは、わずか<span class="rh-num">8%</span>。</strong></p>
@@ -783,10 +760,10 @@
 <div class="divider"></div>
 
 <!-- ========== 3. 原因の再定義 ========== -->
-<section class="section section--left">
+<section class="section">
   <div class="wrap">
     <div class="statement reveal">
-      <div class="section-label">WHY YOU GET LOST</div>
+      <div class="section-label center">WHY YOU GET LOST</div>
       <p class="big">9割のDTMerは、<span class="ac">楽曲制作の順番を<span class="nowrap-tail">知らない</span></span></p>
       <div class="stmt-img-wrap">
         <img src="img-statement.jpg" alt="才能ではなく地図がないことが問題">
@@ -801,9 +778,9 @@
 <div class="divider"></div>
 
 <!-- ========== 4. これは何か ========== -->
-<section class="section section--left">
+<section class="section">
   <div class="wrap">
-    <div class="section-label reveal">WHAT IS THIS</div>
+    <div class="section-label center reveal">WHAT IS THIS</div>
     <h2 class="h-jp reveal">「DTMの地図」は、<br>DTMの<em>全体像</em>を<span class="nowrap-tail">順番に教える教材</span></h2>
     <div class="what-body reveal">
       <p>テクニックを教える教材ではありません。<br><strong>全8章で、DTMの全体像を順番に教える教材です。</strong><br>読み終えたとき——DAWを開き、ドラムとコードを置いて、<strong>4小節のループを"自分の手で"鳴らせています</strong>。</p>
