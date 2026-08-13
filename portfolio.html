@@ -572,6 +572,72 @@ ul { list-style:none; }
 .review-ref-title span { color: #8888aa; }
 .review-ref-yt { flex: 0 0 auto; }
 
+/* ===== WHO / SOLUTION ===== */
+.who-box {
+  position: relative;
+  overflow: hidden;
+  max-width: 820px;
+  margin: 44px auto 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 52px;
+}
+.who-box::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(0,200,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.who-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 5vw, 44px);
+  color: var(--white);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.who-role {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 26px;
+}
+.who-avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 28px;
+  display: block;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 26px rgba(0,200,255,0.32);
+}
+.who-story p {
+  font-size: 14.5px;
+  color: #a8a8c0;
+  line-height: 2.05;
+  margin: 0 0 18px;
+}
+.who-story p:last-child { margin-bottom: 0; }
+.who-story strong { color: var(--white); font-weight: 700; }
+.who-story em { color: var(--accent); font-style: normal; font-weight: 700; }
+.who-close {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.9;
+}
+@media (max-width: 640px) {
+  .who-box { padding: 34px 24px; }
+  .who-story p { font-size: 13.5px; line-height: 1.95; }
+}
+
 /* ===== FINAL CTA ===== */
 .finalcta-grid {
   display: grid;
@@ -2205,6 +2271,34 @@ ul { list-style:none; }
         </a>
       </div>
       <p class="fb-note">※ ご本人の許可を得て掲載しています。</p>
+    </div>
+
+  </div>
+</section>
+
+<div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
+
+<!-- ========== WHO / SOLUTION ========== -->
+<section class="section" id="who">
+  <div class="container">
+
+    <div class="section-label reveal">SOLUTION</div>
+    <h2 class="section-title reveal">私がすべて<em>直接教えます</em></h2>
+
+    <div class="who-box reveal">
+      <p class="who-name">TRICERA TECHNO</p>
+      <p class="who-role">DJ ｜ Melodic Techno Producer</p>
+      <img class="who-avatar" src="tricera-icon.jpg" alt="TRICERA TECHNO">
+
+      <div class="who-story">
+        <p>私もあなたと同じだった。</p>
+        <p>元々は<strong>DJ</strong>からスタートし、<strong>パーティーを主催</strong>してきた。"鳴らす側"としては音楽の現場にずっと居た。</p>
+        <p>でも"作る側"は完全に初心者だった。<strong>2020年</strong>、「自分の曲を作りたい」とDTMを開始 ── 楽譜も読めない、機材の使い方も分からない。結果、<strong>2年間1曲も完成できなかった。</strong></p>
+        <p>変わったきっかけは単純だった。「作る順番を決めた」それだけ。才能でもセンスでもなく、<em>順番</em>だった。その瞬間から制作が動き出し、たった2ヶ月で1stシングルを完成・セルフリリース。</p>
+        <p>あの2年間の遠回りを、あなたにはさせたくない。<strong>100件以上の制作相談</strong>で見えてきた「つまずくパターン」をすべて潰した設計図が、この教材とロードマップです。</p>
+      </div>
+
+      <p class="who-close">だから、<strong>あなたが「どこで」詰まるか分かります。</strong><br>その一歩目から、私が直接ご案内します。</p>
     </div>
 
   </div>
