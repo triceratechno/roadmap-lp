@@ -9,7 +9,7 @@
 <meta property="og:description" content="DTMプロデューサー「トリケラテクノ」へのお仕事依頼・ポートフォリオページ。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 /* =============================================
@@ -305,6 +305,225 @@ ul { list-style:none; }
   flex-wrap: wrap;
   animation: fadeUp 0.8s 0.4s ease both;
 }
+
+/* ===== HERO: avatar + quick stats ===== */
+.hero-avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 26px;
+  border: 2px solid rgba(0,200,255,0.5);
+  box-shadow: 0 0 44px rgba(0,200,255,0.28);
+  animation: fadeUp 0.8s ease both;
+}
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  margin: 0 auto 40px;
+  animation: fadeUp 0.8s 0.35s ease both;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.hero-stat-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #8888aa;
+}
+.hero-sns {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
+.hero-sns a { color: #8888aa; font-size: 19px; transition: color 0.2s; }
+.hero-sns a:hover { color: var(--accent); }
+
+/* ===== LESSON CARDS ===== */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+  margin-top: 48px;
+}
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 34px 30px 30px;
+  text-decoration: none;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.lesson-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,200,255,0.45);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+}
+.lesson-card--pro { border-color: rgba(0,200,255,0.32); }
+.lesson-step {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.lesson-title {
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.lesson-desc {
+  font-size: 13.5px;
+  color: #9a9ab0;
+  line-height: 1.95;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.lesson-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.lesson-price-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--white);
+}
+.lesson-price-note { font-size: 11.5px; color: #8888aa; letter-spacing: 0.05em; }
+.lesson-go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(0,200,255,0.1);
+  border: 1px solid rgba(0,200,255,0.45);
+  color: var(--accent);
+  transition: background 0.2s, color 0.2s;
+}
+.lesson-card:hover .lesson-go { background: var(--accent); color: #001018; }
+
+/* ===== REVIEW CARDS (roadmap LP と同構造) ===== */
+.review-list { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; }
+.review-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 30px 32px;
+  transition: border-color 0.3s;
+}
+.review-card:hover { border-color: var(--accent); }
+.review-card--featured { border-left-color: #00ffc8; background: rgba(0,255,200,0.03); }
+.review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; flex-wrap: wrap; }
+.review-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(0,200,255,0.1);
+  border: 1px solid rgba(0,200,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--accent);
+  flex-shrink: 0; overflow: hidden;
+}
+.review-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.review-name { font-size: 15px; font-weight: 700; color: var(--white); margin: 0; line-height: 1.3; }
+.review-meta { font-size: 11px; color: #8888aa; margin: 2px 0 0; letter-spacing: 0.04em; }
+.review-stars { font-size: 13px; color: var(--accent); letter-spacing: 0.1em; margin-top: 2px; }
+.review-badge {
+  margin-left: auto; font-size: 11px; letter-spacing: 0.1em;
+  color: #00ffc8; border: 1px solid rgba(0,255,200,0.3);
+  padding: 4px 12px; white-space: nowrap;
+}
+.review-badge--progress { color: #8888aa; border-color: #333344; }
+.review-oneliner {
+  font-size: clamp(15px, 2.2vw, 17px); font-weight: 800; color: var(--text);
+  line-height: 1.5; letter-spacing: 0.02em; margin: 14px 0 16px;
+  padding: 13px 16px 13px 19px; border-left: 4px solid var(--accent);
+  background: rgba(0,200,255,0.05); position: relative;
+}
+.review-oneliner::after {
+  content: '"'; position: absolute; right: 14px; bottom: 4px;
+  font-size: 44px; line-height: 1; color: rgba(0,200,255,0.12); font-family: Georgia, serif;
+}
+.review-body { font-size: 14.5px; color: #a8a8c0; line-height: 1.9; margin: 0; }
+.review-body strong { color: var(--white); font-weight: 700; }
+.review-ref {
+  display: flex; align-items: center; gap: 12px; margin-top: 16px;
+  padding: 10px 12px; background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border); border-radius: 10px;
+  text-decoration: none; transition: background 0.2s, border-color 0.2s;
+}
+.review-ref:hover { background: rgba(255,255,255,0.06); border-color: rgba(0,200,255,0.35); }
+.review-ref-thumb {
+  position: relative; flex: 0 0 auto; width: 64px; height: 40px;
+  border-radius: 6px; overflow: hidden; background: #000;
+}
+.review-ref-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.review-ref-thumb::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); width: 0; height: 0; border-style: solid;
+  border-width: 6px 0 6px 10px; border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.85));
+}
+.review-ref-body { flex: 1; min-width: 0; }
+.review-ref-label {
+  display: block; font-size: 10px; color: var(--accent);
+  letter-spacing: 0.1em; font-weight: 700; margin-bottom: 3px;
+}
+.review-ref-genre { color: #8888aa; font-weight: 400; letter-spacing: 0.02em; }
+.review-ref-title {
+  display: block; font-size: 13px; color: var(--text); line-height: 1.4;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.review-ref-title span { color: #8888aa; }
+.review-ref-yt { flex: 0 0 auto; }
+
+/* ===== FINAL CTA ===== */
+.finalcta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  max-width: 760px;
+  margin: 36px auto 0;
+}
+.finalcta-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 22px 24px; border-radius: 12px; text-decoration: none;
+  border: 1px solid rgba(0,200,255,0.4); background: rgba(0,200,255,0.07);
+  transition: background 0.2s, transform 0.2s;
+}
+.finalcta-btn:hover { background: rgba(0,200,255,0.16); transform: translateY(-3px); }
+.finalcta-btn-main { font-size: 16px; font-weight: 800; color: var(--white); letter-spacing: 0.03em; }
+.finalcta-btn-sub { font-size: 12px; color: var(--accent); letter-spacing: 0.06em; }
+.finalcta-work {
+  margin-top: 44px; padding-top: 26px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px; color: #8888aa; line-height: 2;
+}
+.finalcta-work a { color: #9a9ab0; text-decoration: underline; text-underline-offset: 3px; }
+.finalcta-work a:hover { color: var(--accent); }
 
 .hero-scroll {
   position: absolute;
@@ -1341,10 +1560,9 @@ ul { list-style:none; }
 <nav class="nav" id="mainNav">
   <div class="nav-logo">TRICERA TECHNO</div>
   <div class="nav-links">
-    <a href="#profile">プロフィール</a>
-    <a href="#services">サービス</a>
-    <a href="#portfolio">実績</a>
-    <a href="#contact" class="nav-cta">依頼する</a>
+    <a href="#free">無料コンテンツ</a>
+    <a href="#voice">受講生の声</a>
+    <a href="#lesson" class="nav-cta">レッスンを見る</a>
   </div>
 </nav>
 
@@ -1356,23 +1574,54 @@ ul { list-style:none; }
   <div class="hero-orb hero-orb--2"></div>
 
   <div class="hero-inner">
+    <div class="hero-avatar">
+      <img src="tricera-icon.jpg" alt="トリケラテクノ">
+    </div>
     <p class="hero-logo">TRICERA TECHNO</p>
-    <div class="hero-tag">DTMプロデューサー / クリエイター</div>
+    <div class="hero-tag">DTM解説恐竜 / メロディックテクノ</div>
     <h1 class="hero-title">
-      9割のDTMerの悩みを解決する<br>
-      <em>トリケラテクノ｜DTM解説恐竜</em>
+      音楽経験ゼロから、<br>
+      <em>1曲完成まで導く。</em>
     </h1>
     <p class="hero-sub">
-      音楽経験ゼロからプロデューサーへ。<br>
-      DTMの本質を発信し続けています。
+      「何から始めればいいか分からない」を解決する、<br>
+      DTMの地図とロードマップ。
     </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <span class="hero-stat-label">リリースEP</span>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100+</div>
+        <span class="hero-stat-label">相談実績</span>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1,700+</div>
+        <span class="hero-stat-label">総フォロワー</span>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">230+</div>
+        <span class="hero-stat-label">note記事</span>
+      </div>
+    </div>
+
     <div class="hero-cta">
-      <a href="#contact" class="btn btn--primary">
-        <i class="fa-regular fa-envelope"></i> お仕事を依頼する
+      <a href="#lesson" class="btn btn--primary">
+        <i class="fa-solid fa-graduation-cap"></i> レッスンを見る
       </a>
-      <a href="#portfolio" class="btn btn--outline">
-        <i class="fa-regular fa-folder-open"></i> 実績を見る
+      <a href="#free" class="btn btn--outline">
+        <i class="fa-regular fa-circle-play"></i> 無料コンテンツを見る
       </a>
+    </div>
+
+    <div class="hero-sns">
+      <a href="https://www.youtube.com/@triceratechno" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://note.com/triceratechno" target="_blank" rel="noopener" title="note"><i class="fa-solid fa-n"></i></a>
+      <a href="https://twitter.com/triceratechno" target="_blank" rel="noopener" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/triceratechno" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" title="LINE"><i class="fa-brands fa-line"></i></a>
     </div>
   </div>
 
@@ -1382,284 +1631,13 @@ ul { list-style:none; }
   </div>
 </section>
 
-<!-- ========== PROFILE ========== -->
-<section class="section" id="profile">
+<!-- ========== FREE ========== -->
+<section class="section" id="free">
   <div class="container">
 
-    <div class="section-label reveal">PROFILE</div>
-
-    <div class="profile">
-      <div class="profile-avatar-wrap reveal">
-        <div class="profile-avatar">
-          <img src="tricera-icon.jpg" alt="トリケラテクノ">
-        </div>
-        <div class="profile-social">
-          <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" title="LINE">
-            <i class="fa-brands fa-line"></i>
-          </a>
-          <a href="https://note.com/triceratechno" target="_blank" rel="noopener" title="note">
-            <i class="fa-solid fa-n"></i>
-          </a>
-          <a href="https://twitter.com/triceratechno" target="_blank" rel="noopener" title="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="https://www.youtube.com/@triceratechno" target="_blank" rel="noopener" title="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="profile-body reveal reveal-delay-1">
-        <div class="section-label">ABOUT</div>
-        <h2 class="section-title">トリケラテクノ<br><em>DTM解説恐竜</em></h2>
-        <p class="profile-name-en">TRICERA TECHNO</p>
-        <p class="profile-role">メロディックテクノプロデューサー｜DTM解説者</p>
-        <p class="profile-text">
-          音楽経験ゼロから、地方の無名DJ時代を経て、プロデューサーへ。<br>
-          「ループから曲にできない」「構成が分からない」など、9割のDTMerが抱える<br>
-          悩みを解決するテクニックを発信。note・XでDTMの本質を解説し、<br>
-          読者からのリアルな相談に本気で答えるマガジンは100本超。<br>
-          2026年3月よりYouTubeチュートリアルも本格始動。
-        </p>
-        <div class="profile-badges">
-          <span class="profile-badge">
-            <i class="fa-solid fa-music"></i> 音楽経験ゼロ → プロデューサー
-          </span>
-          <span class="profile-badge">
-            <i class="fa-regular fa-file-lines"></i> 相談マガジン 100本超
-          </span>
-          <span class="profile-badge">
-            <i class="fa-brands fa-youtube"></i> YouTube チュートリアル 本格始動
-          </span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
-
-<!-- ========== SERVICES ========== -->
-<section class="section section--navy" id="services">
-  <div class="container">
-
-    <div class="section-label reveal">SERVICES</div>
-    <h2 class="section-title reveal">お仕事<em>内容</em></h2>
-    <p class="section-lead reveal">「1曲完成できない」を卒業するところから、監修・コンテンツ制作まで。<br>まずはお気軽にご相談ください。</p>
-
-    <div class="services-grid">
-
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,26 13,18 20,22 27,7"/><circle cx="5" cy="26" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="13" cy="18" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="20" cy="22" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="27" cy="7" r="2.6" fill="var(--accent)" stroke="none"/></svg></div>
-        <h3 class="service-title">ロードマップ＋<br>マンツーマンサポート</h3>
-        <p class="service-desc">「ループから曲にできない」「何から手をつければいいかわからない」——そんな悩みを、あなた専用のロードマップと個別サポートで最短ルートに変えます。</p>
-        <span class="service-tag">ROADMAP / MENTORING</span>
-      </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="16" cy="16" r="12.5"/><circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="1.6" fill="var(--accent)" stroke="none"/></svg></div>
-        <h3 class="service-title">DTM監修・<br>コンサルティング</h3>
-        <p class="service-desc">制作フローの改善提案、DTM教材・コンテンツの監修、個人クリエイターへのアドバイスまで。現場目線で実践的なフィードバックを提供します。</p>
-        <span class="service-tag">CONSULTING</span>
-      </div>
-
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,4 28,11 16,18 4,11"/><polyline points="4,16 16,23 28,16"/><polyline points="4,21 16,28 28,21"/></svg></div>
-        <h3 class="service-title">コンテンツ制作</h3>
-        <p class="service-desc">DTM解説記事・動画スクリプト・SNS投稿など、専門知識を活かしたコンテンツ制作をお手伝いします。note100本超の実績をそのままお届けします。</p>
-        <span class="service-tag">CONTENT</span>
-      </div>
-
-    </div>
-
-    <!-- ===== CUSTOMER VOICE MARQUEE ===== -->
-    <div class="voice-marquee-head reveal">
-      <p class="voice-marquee-label">REAL VOICES</p>
-      <p class="voice-marquee-sub">ロードマップ受講生からの、リアルな声</p>
-    </div>
-    <div class="voice-marquee reveal" aria-label="購入者のリアルな声">
-      <div class="voice-track" id="voiceTrack">
-
-        <div class="voice-card">
-          <div class="voice-card-head">
-            <img class="voice-avatar" src="ジジさんアイコン.jpg" alt="ジジさん">
-            <div>
-              <p class="voice-name">ジジさん</p>
-              <p class="voice-meta">DTM歴1年未満 ・ FL Studio</p>
-              <div class="voice-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="voice-quote">「DTMの教科書」</p>
-          <p class="voice-body">まず何をするか、曲を最後まで作るには何が必要かを教えてもらえた。挫折しそうな時も言葉を思い出して頑張れた。</p>
-          <span class="voice-badge">STEP 1〜10 完走</span>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-card-head">
-            <img class="voice-avatar" src="yasu-icon.png" alt="やすさん">
-            <div>
-              <p class="voice-name">やすさん</p>
-              <p class="voice-meta">DTM歴3〜5年 ・ Ableton Live</p>
-              <div class="voice-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="voice-quote">「欲しかった情報が全部ここにあった」</p>
-          <p class="voice-body">曲の作り方がまったく分からない状態から、今は毎日曲作りに夢中。根拠づけて書かれていて読みやすい。</p>
-          <span class="voice-badge">STEP 1〜10 完走</span>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-card-head">
-            <img class="voice-avatar" src="nob-icon.png" alt="Nobさん">
-            <div>
-              <p class="voice-name">Nobさん</p>
-              <p class="voice-meta">DTM歴1年未満 ・ Ableton Live</p>
-              <div class="voice-stars">★★★★☆</div>
-            </div>
-          </div>
-          <p class="voice-quote">「自分でも曲を完成させられる自信が手に入る」</p>
-          <p class="voice-body">レファレンスを基にステップアップ方式で完成まで学べた。自分一人でも作れるという自信が手に入った。</p>
-          <span class="voice-badge voice-badge--progress">STEP 7 進行中</span>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-card-head">
-            <img class="voice-avatar" src="usada-icon.png" alt="うさださん">
-            <div>
-              <p class="voice-name">うさださん</p>
-              <p class="voice-meta">DTM歴1年未満 ・ Bitwig Studio</p>
-              <div class="voice-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="voice-quote">「最初の一曲を作り上げるまでの指針」</p>
-          <p class="voice-body">不明な点を解消し、一歩ずつ進めることができた。一曲をリリースできるまで引き続きお願いしたい。</p>
-          <span class="voice-badge voice-badge--progress">STEP 3 進行中</span>
-        </div>
-
-        <div class="voice-card">
-          <div class="voice-card-head">
-            <span class="voice-avatar">D</span>
-            <div>
-              <p class="voice-name">DAnさん</p>
-              <p class="voice-meta">DTM歴1年未満 ・ Ableton Live ・ <span style="color:var(--accent);">ビデオコンサル有</span></p>
-              <div class="voice-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="voice-quote">「楽曲の解像度が高まった」</p>
-          <p class="voice-body">何から始めていいか分からない状態から、普段聴く曲の中でも学びが増えるように。伴奏でモチベも向上。</p>
-          <span class="voice-badge voice-badge--progress">STEP 2 進行中</span>
-        </div>
-
-      </div>
-    </div>
-    <script>
-      (function () {
-        var t = document.getElementById('voiceTrack');
-        if (!t) return;
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        Array.prototype.slice.call(t.children).forEach(function (n) {
-          var c = n.cloneNode(true);
-          c.setAttribute('aria-hidden', 'true');
-          t.appendChild(c);
-        });
-      })();
-    </script>
-
-    <!-- ===== REAL FEEDBACK CASE ===== -->
-    <div class="fb-head reveal">
-      <p class="fb-label">REAL FEEDBACK</p>
-      <p class="fb-sub">楽曲フィードバックや楽曲制作の監修を行った、実際の事例</p>
-    </div>
-    <div class="fb-case reveal">
-      <div class="fb-case-head">
-        <img class="fb-avatar" src="atsuki-icon.jpg" alt="ATSUKIさん" loading="lazy">
-        <div>
-          <p class="fb-name">ATSUKIさん<a class="fb-channel" href="https://www.youtube.com/@ATSUKI0226" target="_blank" rel="noopener">@ATSUKI0226 ↗</a></p>
-          <p class="fb-meta">Progressive House ・ DTM歴2年 ・ FL Studio</p>
-        </div>
-        <span class="fb-badge">掲載許可済み</span>
-      </div>
-
-      <p class="fb-lead">「ミックスで迫力を出したい」というご相談から始まり、何度も楽曲を聴かせていただきながらフィードバックを重ねました。回を追うごとにミックスが整い、ご本人も手応えを感じながら、新曲を投稿し続けてくださっています。</p>
-
-      <div class="fb-points">
-        <div class="fb-point">
-          <p class="fb-point-t">こもりは「低域削り」より「中高域の不足」</p>
-          <p class="fb-point-b">250Hzを削っても抜けが出ないときは、OTTやサチュレーターで倍音を足し、2〜8kHzの情報量を増やすと芯のある音になります。</p>
-        </div>
-        <div class="fb-point">
-          <p class="fb-point-t">ボーカルとシンセは「抜き差し」で整理</p>
-          <p class="fb-point-b">帯域被りはEQカット・ダイナミックEQ・サイドチェインで解決。音量を上げるより倍音で前に出すと、バランスを崩さず前に来ます。</p>
-        </div>
-        <div class="fb-point">
-          <p class="fb-point-t">ブレイクは「2つ目のメロディ」で核にする</p>
-          <p class="fb-point-b">1stドロップ終わり〜2ndビルドアップにプラック系アルペジオを足すと、無難なブレイクが展開の核へと変わります。</p>
-        </div>
-        <div class="fb-point">
-          <p class="fb-point-t">音圧はLUFSより「圧縮量（GR）」で見る</p>
-          <p class="fb-point-b">LUFS -7〜-8は業界標準。本質は圧縮量で、GR最大-5dB／平均-3dB程度を目安にダイナミクスを残します。</p>
-        </div>
-      </div>
-
-      <p class="fb-result-label">フィードバック後に投稿された楽曲</p>
-      <div class="fb-videos">
-        <a class="fb-video" href="https://youtu.be/RbSsNzAoTrM" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
-          <img src="https://img.youtube.com/vi/RbSsNzAoTrM/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/RbSsNzAoTrM/hqdefault.jpg';">
-          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
-        </a>
-        <a class="fb-video" href="https://youtu.be/rUEO5whdNN8" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
-          <img src="https://img.youtube.com/vi/rUEO5whdNN8/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/rUEO5whdNN8/hqdefault.jpg';">
-          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
-        </a>
-        <a class="fb-video" href="https://youtu.be/sgT2O3Pui04" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
-          <img src="https://img.youtube.com/vi/sgT2O3Pui04/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/sgT2O3Pui04/hqdefault.jpg';">
-          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
-        </a>
-      </div>
-      <p class="fb-note">※ ATSUKIさんご本人の許可を得て掲載しています。各動画の概要欄に、トリケラテクノのチャンネルを掲載いただいています。</p>
-    </div>
-
-    <div class="fb-case reveal">
-      <div class="fb-case-head">
-        <img class="fb-avatar" src="justice-icon.jpg" alt="Justice音信不通さん" loading="lazy">
-        <div>
-          <p class="fb-name">Justice音信不通さん<a class="fb-channel" href="https://www.youtube.com/@impermanence8/videos" target="_blank" rel="noopener">@impermanence8 ↗</a></p>
-          <p class="fb-meta">楽曲フィードバック ・ ドラムス制作 ・ 楽曲制作監修</p>
-        </div>
-        <span class="fb-badge">掲載許可済み</span>
-      </div>
-
-      <p class="fb-lead">楽曲のフィードバックに加え、ドラムスの制作と楽曲全体の制作監修を担当しました。リズムの設計から構成・サウンドの方向づけまで、完成までのプロセスに伴走しています。</p>
-
-      <div class="fb-roles">
-        <span class="fb-role">楽曲フィードバック</span>
-        <span class="fb-role">ドラムス制作</span>
-        <span class="fb-role">楽曲制作監修</span>
-      </div>
-
-      <p class="fb-result-label">制作監修を担当した楽曲</p>
-      <div class="fb-videos fb-videos--single">
-        <a class="fb-video" href="https://youtu.be/AZSLVKhdW38" target="_blank" rel="noopener" aria-label="Justice音信不通さんの楽曲をYouTubeで見る">
-          <img src="https://img.youtube.com/vi/AZSLVKhdW38/maxresdefault.jpg" alt="Justice音信不通さんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/AZSLVKhdW38/hqdefault.jpg';">
-          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
-        </a>
-      </div>
-      <p class="fb-note">※ ご本人の許可を得て掲載しています。</p>
-    </div>
-
-  </div>
-</section>
-
-<div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
-
-<!-- ========== PORTFOLIO ========== -->
-<section class="section" id="portfolio">
-  <div class="container">
-
-    <div class="section-label reveal">PORTFOLIO</div>
-    <h2 class="section-title reveal">実績・<em>作品</em></h2>
-    <p class="section-lead reveal">楽曲・解説記事・チュートリアル動画など、これまでの主な制作物です。</p>
+    <div class="section-label reveal">FREE CONTENTS</div>
+    <h2 class="section-title reveal">無料で、<em>ここまで</em>発信しています</h2>
+    <p class="section-lead reveal">YouTubeのチュートリアル、noteの解説記事、オリジナル楽曲。<br>まずは無料のコンテンツから、私の教え方に触れてみてください。</p>
 
     <div class="portfolio-grid">
 
@@ -1799,30 +1777,267 @@ ul { list-style:none; }
 
 <div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
 
-<!-- ========== STATS ========== -->
-<section class="section section--navy">
+<!-- ========== LESSON ========== -->
+<section class="section section--navy" id="lesson">
   <div class="container">
 
-    <div class="section-label reveal">BY THE NUMBERS</div>
-    <h2 class="section-title reveal">数字で見る<em>実績</em></h2>
+    <div class="section-label reveal">LESSON</div>
+    <h2 class="section-title reveal">本気で<em>1曲</em>を完成させたい人へ</h2>
+    <p class="section-lead reveal">無料の情報だけでは埋まらない「順番」と「伴走」を用意しました。<br>今のあなたに合うほうから、始めてください。</p>
 
-    <div class="stats-grid reveal">
-      <div class="stat-item">
-        <div class="stat-number">2</div>
-        <div class="stat-label">リリース済みアルバム<span class="stat-sub">released albums</span></div>
+    <div class="lesson-grid">
+
+      <a class="lesson-card reveal reveal-delay-1" href="front-dtm-map.html">
+        <p class="lesson-step">STEP 1 ・ 入門</p>
+        <p class="lesson-title">DTMの地図</p>
+        <p class="lesson-desc">「何から始めればいいか分からない」を、最短で終わらせる全体図。全8章＋解説動画8本で、DAWを開いて4小節のループを鳴らすところまで。</p>
+        <div class="lesson-price">
+          <span class="lesson-price-num">¥500</span>
+          <span class="lesson-price-note">買い切り・記事8本＋動画8本</span>
+        </div>
+        <span class="lesson-go">DTMの地図を見る <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="lesson-card lesson-card--pro reveal reveal-delay-2" href="triceratechno-lp.html">
+        <p class="lesson-step">STEP 2 ・ 本格</p>
+        <p class="lesson-title">ROADMAP PROコース</p>
+        <p class="lesson-desc">オリジナル曲を1曲、最後まで完成させる10STEP。3ヶ月のマンツーマンサポート付きで、詰まったところを個別に解決しながら進めます。</p>
+        <div class="lesson-price">
+          <span class="lesson-price-num">¥19,800</span>
+          <span class="lesson-price-note">10STEP＋3ヶ月サポート</span>
+        </div>
+        <span class="lesson-go">ロードマップを見る <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
+
+<!-- ========== VOICE ========== -->
+<section class="section" id="voice">
+  <div class="container">
+
+    <div class="section-label reveal">REAL VOICES</div>
+    <h2 class="section-title reveal">受講生からの、<em>リアルな声</em></h2>
+    <p class="section-lead reveal">実際にロードマップを進めている方々からいただいた、そのままの言葉です。</p>
+
+    <div class="review-list reveal">
+
+    <div class="review-card review-card--featured">
+      <div class="review-header">
+        <div class="review-avatar" style="background:none; border:none; padding:0;"><img src="ジジさんアイコン.jpg" alt="ジジさん" style="width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;"></div>
+        <div>
+          <p class="review-name">ジジさん</p>
+          <p class="review-meta">DTM歴1年未満 ・ FL Studio</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge">STEP 1〜10 完走</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="100">0</div>
-        <div class="stat-label">相談実績<span class="stat-sub">consultations</span></div>
+      <p class="review-oneliner">DTMの教科書</p>
+      <p class="review-body">「DTM初心者の私は右も左も分かってませんでした。トリケラさんのロードマップと出会えて、まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>トリケラさんはDTMの先生でもあり、優秀なモチベーターでもあった</strong>。挫折しそうな時もトリケラさんの言葉を思い出すとがんばれました。」</p>
+      <a class="review-ref" href="https://youtu.be/Z0ZpTtZPLII" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/Z0ZpTtZPLII/mqdefault.jpg" alt="Circle (zts mix)"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ テクノ</span></span>
+          <span class="review-ref-title">Circle (zts mix) <span>— bermei.inazawa</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:none; border:none; padding:0;"><img src="yasu-icon.png" alt="やすさん" style="width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;"></div>
+        <div>
+          <p class="review-name">やすさん</p>
+          <p class="review-meta">DTM歴3〜5年 ・ Ableton Live</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge">STEP 1〜10 完走</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="1700">0</div>
-        <div class="stat-label">総フォロワー数<span class="stat-sub">all platforms</span></div>
+      <p class="review-oneliner">欲しかった情報が全部ここにあった</p>
+      <p class="review-body">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日曲作りに夢中になっています。根拠づけてしっかり書かれていて率直に読みやすく、<strong>自分が欲しかった情報がたくさん詰まっていた</strong>。友人にもぜひすすめたいです。」</p>
+      <a class="review-ref" href="https://youtu.be/jc7Q1X0LeyY" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/jc7Q1X0LeyY/mqdefault.jpg" alt="Melodia"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ メロディックテクノ</span></span>
+          <span class="review-ref-title">Melodia <span>— Argy, MEDUZA</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">Y</div>
+        <div>
+          <p class="review-name">YU-YAさん</p>
+          <p class="review-meta">DTM歴1〜3年 ・ Ableton Live</p>
+          <div class="review-stars">★★★☆☆</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 8 進行中</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">DTMへの情熱<span class="stat-sub">passion for music</span></div>
+      <p class="review-oneliner">プロの曲の"構造"が、少しずつ見えてきた</p>
+      <p class="review-body">「購入前は、<strong>なかなか曲作りが進まなかった</strong>。今までSTEM分離をしてこなかったので、<strong>"プロの曲ってこうなっているのか"</strong>と、少しだけ解像度が上がった。」</p>
+      <a class="review-ref" href="https://youtu.be/C7ufAUax8gM" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/C7ufAUax8gM/mqdefault.jpg" alt="Network In Heaven"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ トランス</span></span>
+          <span class="review-ref-title">Network In Heaven <span>— Metta &amp; Glyde</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:none; border:none; padding:0;"><img src="nob-icon.png" alt="Nobさん" style="width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;"></div>
+        <div>
+          <p class="review-name">Nobさん</p>
+          <p class="review-meta">DTM歴1年未満 ・ Ableton Live</p>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 7 進行中</div>
       </div>
+      <p class="review-oneliner">自分もプロレベルに近い曲が作れるという自信を手にできる最短ルート</p>
+      <p class="review-body">「レファレンス曲をベースに、ステップアップ方式で楽曲完成までを細かく学ぶことができたので、今後は自分一人でも曲を完成させられるという<strong>『自信』が手に入った</strong>。チュートリアル等を理解して活用できるだけのベースが自分の中にできた。」</p>
+      <a class="review-ref" href="https://youtu.be/8-WvBDkCfy8" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/8-WvBDkCfy8/mqdefault.jpg" alt="Velvet Avenue"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ ハウス</span></span>
+          <span class="review-ref-title">Velvet Avenue <span>— Supernova</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:none; border:none; padding:0;"><img src="usada-icon.png" alt="うさださん" style="width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;"></div>
+        <div>
+          <p class="review-name">うさださん</p>
+          <p class="review-meta">DTM歴1年未満 ・ Bitwig Studio</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 3 進行中</div>
+      </div>
+      <p class="review-oneliner">最初の一曲を作り上げるまでの指針</p>
+      <p class="review-body">「不明な点を解消し<strong>一歩ずつ進めることができた</strong>。一曲をリリースできるまで引き続きお願いしたい。」</p>
+      <a class="review-ref" href="https://youtu.be/j785JgP7tiA" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/j785JgP7tiA/mqdefault.jpg" alt="Magma"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ テクノ</span></span>
+          <span class="review-ref-title">Magma <span>— Alexx Wolfe, Refraction IT</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">D</div>
+        <div>
+          <p class="review-name">DAnさん</p>
+          <p class="review-meta">DTM歴1年未満 ・ Ableton Live ・ <span style="color:var(--accent);">ビデオコンサル有</span></p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 2 進行中</div>
+      </div>
+      <p class="review-oneliner">楽曲の解像度が高まり、普段聴く曲の中でも学びが増えるようになった</p>
+      <p class="review-body">「購入前は<strong>何から始めていいかわからない</strong>状態でした。発信されている内容が初心者でもわかりやすく、購入を決めました。STEP1〜2を終えた今は、<strong>楽曲の解像度が高まり普段聴く曲の中でも学びが増える</strong>ようになりました。伴奏していただけることでモチベーションも向上し、レベルに合わせてわかりやすく説明していただけるのが心強いです。」</p>
+      <a class="review-ref" href="https://youtu.be/F6d3cogYtjc" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/F6d3cogYtjc/mqdefault.jpg" alt="Weird Flex"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ テクノ</span></span>
+          <span class="review-ref-title">Weird Flex <span>— Kaufmann (DE)</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+      </div>
+    </div>
+
+    <!-- ===== REAL FEEDBACK CASE ===== -->
+    <div class="fb-head reveal">
+      <p class="fb-label">REAL FEEDBACK</p>
+      <p class="fb-sub">楽曲フィードバックや楽曲制作の監修を行った、実際の事例</p>
+    </div>
+    <div class="fb-case reveal">
+      <div class="fb-case-head">
+        <img class="fb-avatar" src="atsuki-icon.jpg" alt="ATSUKIさん" loading="lazy">
+        <div>
+          <p class="fb-name">ATSUKIさん<a class="fb-channel" href="https://www.youtube.com/@ATSUKI0226" target="_blank" rel="noopener">@ATSUKI0226 ↗</a></p>
+          <p class="fb-meta">Progressive House ・ DTM歴2年 ・ FL Studio</p>
+        </div>
+        <span class="fb-badge">掲載許可済み</span>
+      </div>
+
+      <p class="fb-lead">「ミックスで迫力を出したい」というご相談から始まり、何度も楽曲を聴かせていただきながらフィードバックを重ねました。回を追うごとにミックスが整い、ご本人も手応えを感じながら、新曲を投稿し続けてくださっています。</p>
+
+      <div class="fb-points">
+        <div class="fb-point">
+          <p class="fb-point-t">こもりは「低域削り」より「中高域の不足」</p>
+          <p class="fb-point-b">250Hzを削っても抜けが出ないときは、OTTやサチュレーターで倍音を足し、2〜8kHzの情報量を増やすと芯のある音になります。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">ボーカルとシンセは「抜き差し」で整理</p>
+          <p class="fb-point-b">帯域被りはEQカット・ダイナミックEQ・サイドチェインで解決。音量を上げるより倍音で前に出すと、バランスを崩さず前に来ます。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">ブレイクは「2つ目のメロディ」で核にする</p>
+          <p class="fb-point-b">1stドロップ終わり〜2ndビルドアップにプラック系アルペジオを足すと、無難なブレイクが展開の核へと変わります。</p>
+        </div>
+        <div class="fb-point">
+          <p class="fb-point-t">音圧はLUFSより「圧縮量（GR）」で見る</p>
+          <p class="fb-point-b">LUFS -7〜-8は業界標準。本質は圧縮量で、GR最大-5dB／平均-3dB程度を目安にダイナミクスを残します。</p>
+        </div>
+      </div>
+
+      <p class="fb-result-label">フィードバック後に投稿された楽曲</p>
+      <div class="fb-videos">
+        <a class="fb-video" href="https://youtu.be/RbSsNzAoTrM" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/RbSsNzAoTrM/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/RbSsNzAoTrM/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+        <a class="fb-video" href="https://youtu.be/rUEO5whdNN8" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/rUEO5whdNN8/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/rUEO5whdNN8/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+        <a class="fb-video" href="https://youtu.be/sgT2O3Pui04" target="_blank" rel="noopener" aria-label="ATSUKIさんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/sgT2O3Pui04/maxresdefault.jpg" alt="ATSUKIさんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/sgT2O3Pui04/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+      </div>
+      <p class="fb-note">※ ATSUKIさんご本人の許可を得て掲載しています。各動画の概要欄に、トリケラテクノのチャンネルを掲載いただいています。</p>
+    </div>
+
+    <div class="fb-case reveal">
+      <div class="fb-case-head">
+        <img class="fb-avatar" src="justice-icon.jpg" alt="Justice音信不通さん" loading="lazy">
+        <div>
+          <p class="fb-name">Justice音信不通さん<a class="fb-channel" href="https://www.youtube.com/@impermanence8/videos" target="_blank" rel="noopener">@impermanence8 ↗</a></p>
+          <p class="fb-meta">楽曲フィードバック ・ ドラムス制作 ・ 楽曲制作監修</p>
+        </div>
+        <span class="fb-badge">掲載許可済み</span>
+      </div>
+
+      <p class="fb-lead">楽曲のフィードバックに加え、ドラムスの制作と楽曲全体の制作監修を担当しました。リズムの設計から構成・サウンドの方向づけまで、完成までのプロセスに伴走しています。</p>
+
+      <div class="fb-roles">
+        <span class="fb-role">楽曲フィードバック</span>
+        <span class="fb-role">ドラムス制作</span>
+        <span class="fb-role">楽曲制作監修</span>
+      </div>
+
+      <p class="fb-result-label">制作監修を担当した楽曲</p>
+      <div class="fb-videos fb-videos--single">
+        <a class="fb-video" href="https://youtu.be/AZSLVKhdW38" target="_blank" rel="noopener" aria-label="Justice音信不通さんの楽曲をYouTubeで見る">
+          <img src="https://img.youtube.com/vi/AZSLVKhdW38/maxresdefault.jpg" alt="Justice音信不通さんの楽曲" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/AZSLVKhdW38/hqdefault.jpg';">
+          <span class="fb-video-play"><i class="fa-solid fa-play"></i></span>
+        </a>
+      </div>
+      <p class="fb-note">※ ご本人の許可を得て掲載しています。</p>
     </div>
 
   </div>
@@ -1830,33 +2045,38 @@ ul { list-style:none; }
 
 <div style="height:1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);"></div>
 
-<!-- ========== CONTACT ========== -->
+<!-- ========== FINAL CTA ========== -->
 <section class="section contact" id="contact">
   <div class="contact-bg"></div>
   <div class="container">
     <div class="contact-inner">
-      <div class="section-label reveal" style="justify-content:center;">CONTACT</div>
-      <h2 class="contact-title reveal">お仕事のご依頼・<br><em style="color:var(--accent); font-style:normal;">ご相談</em></h2>
+      <div class="section-label reveal" style="justify-content:center;">START HERE</div>
+      <h2 class="contact-title reveal">あなたの1曲を、<br><em style="color:var(--accent); font-style:normal;">完成させにいく</em></h2>
       <p class="contact-lead reveal">
-        楽曲制作・DTM監修・コンテンツ制作など、<br>
-        お気軽にご連絡ください。
+        才能はいりません。必要なのは、順番だけ。<br>
+        今のあなたに合うほうから、始めてください。
       </p>
-      <div class="contact-ctas reveal">
-        <a href="mailto:triceratechno@gmail.com" class="btn btn--primary">
-          <i class="fa-regular fa-envelope"></i> メールでお問い合わせ
+
+      <div class="finalcta-grid reveal">
+        <a class="finalcta-btn" href="front-dtm-map.html">
+          <span class="finalcta-btn-main">DTMの地図</span>
+          <span class="finalcta-btn-sub">¥500 ・ まず全体像をつかむ →</span>
         </a>
-        <a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" class="btn btn--outline">
-          <i class="fa-brands fa-line"></i> 公式LINEで相談する
+        <a class="finalcta-btn" href="triceratechno-lp.html">
+          <span class="finalcta-btn-main">ROADMAP PROコース</span>
+          <span class="finalcta-btn-sub">¥19,800 ・ 1曲を完成させる →</span>
         </a>
       </div>
-      <div class="contact-note reveal">
-        <strong>ご返信について</strong><br>
-        いただいたメッセージには2〜3営業日以内にご返信いたします。<br>
-        お急ぎの場合はLINEからご連絡ください。
-      </div>
+
+      <p class="finalcta-work reveal">
+        迷ったら、<a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener">公式LINE</a>から気軽にご相談ください。<br>
+        楽曲制作・DTM監修・コンテンツ制作などのお仕事のご依頼は
+        <a href="mailto:triceratechno@gmail.com">triceratechno@gmail.com</a> まで。
+      </p>
     </div>
   </div>
 </section>
+
 
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
@@ -2023,7 +2243,7 @@ ul { list-style:none; }
 
     // サムネのクリックを横取り（作品グリッド＋REAL FEEDBACK。note/Apple等は11桁IDに一致せず対象外）
     document.addEventListener('click', function (e) {
-      const trigger = e.target.closest && e.target.closest('a.portfolio-card, a.fb-video');
+      const trigger = e.target.closest && e.target.closest('a.portfolio-card, a.fb-video, a.review-ref');
       if (!trigger) return;
       const m = (trigger.getAttribute('href') || '').match(ID_RE);
       if (!m) return;
