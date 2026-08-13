@@ -211,7 +211,7 @@ ul { list-style:none; }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 76px 24px 76px;
+  padding: 52px 24px 52px;
 }
 
 /* Background layers */
@@ -290,16 +290,23 @@ ul { list-style:none; }
   font-family: 'Noto Sans JP', sans-serif;
   font-size: clamp(26px, 4.5vw, 52px);
   font-weight: 900;
-  line-height: 1.4;
+  line-height: 1.28;
   color: var(--white);
   letter-spacing: 0.04em;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   animation: fadeUp 0.8s 0.2s ease both;
 }
 
 .hero-title em {
   color: var(--accent);
   font-style: normal;
+}
+
+.hero-title--left {
+  text-align: left;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-sub {
@@ -309,6 +316,10 @@ ul { list-style:none; }
   margin: 0 auto 24px;
   line-height: 1.85;
   animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-sub--left {
+  text-align: left;
 }
 
 .hero-cta {
@@ -325,7 +336,7 @@ ul { list-style:none; }
   height: 112px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 18px;
+  margin: 0 auto 14px;
   border: 2px solid rgba(0,200,255,0.5);
   box-shadow: 0 0 44px rgba(0,200,255,0.28);
   animation: fadeUp 0.8s ease both;
@@ -335,7 +346,7 @@ ul { list-style:none; }
 /* ヒーロー：悩み → 解決 */
 .hero-pains {
   max-width: 700px;
-  margin: 0 auto 18px;
+  margin: 0 auto 14px;
   animation: fadeUp 0.8s 0.34s ease both;
 }
 .hero-pains-label {
@@ -365,7 +376,7 @@ ul { list-style:none; }
   color: var(--text);
   line-height: 1.95;
   max-width: 620px;
-  margin: 0 auto 26px;
+  margin: 0 auto 20px;
   animation: fadeUp 0.8s 0.4s ease both;
 }
 .hero-solution strong { color: var(--accent); font-weight: 700; }
@@ -385,7 +396,7 @@ ul { list-style:none; }
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px 26px;
-  margin: 0 auto 22px;
+  margin: 0 auto 20px;
   animation: fadeUp 0.8s 0.46s ease both;
 }
 .hero-stat { text-align: center; }
@@ -1803,15 +1814,14 @@ ul { list-style:none; }
       <img src="tricera-icon.jpg" alt="トリケラテクノ">
     </div>
     <p class="hero-logo">TRICERA TECHNO</p>
-    <div class="hero-tag">HOUSE ・ TECHNO ・ TRANCE 専門</div>
-    <h1 class="hero-title">
-      音楽経験ゼロから、<br>
-      <em>1曲完成まで導くDTMコーチ</em>
+    <div class="hero-tag">ダンスミュージック専門</div>
+    <h1 class="hero-title hero-title--left">
+      音楽経験ゼロから<br>
+      1曲完成まで導く<br>
+      <em>DTMコーチ</em>
     </h1>
-    <p class="hero-sub">
-      日本ではまだ情報が圧倒的に少ない、<br>
-      ハウス・テクノ・トランスなど<strong style="color:var(--text);">ダンスミュージックの楽曲制作</strong>。<br>
-      その「順番」を、ゼロから最後までお教えします。
+    <p class="hero-sub hero-sub--left">
+      日本ではまだ情報が圧倒的に少ない、ハウス・テクノ・トランスなど<strong style="color:var(--text);">ダンスミュージックの楽曲制作</strong>。その「順番」を、打ち込みから完成、さらにリリースまでお教えします。
     </p>
 
     <div class="hero-pains">
