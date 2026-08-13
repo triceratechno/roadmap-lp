@@ -211,7 +211,7 @@ ul { list-style:none; }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 120px 24px 100px;
+  padding: 76px 24px 76px;
 }
 
 /* Background layers */
@@ -271,7 +271,7 @@ ul { list-style:none; }
   font-size: clamp(11px, 1.5vw, 13px);
   letter-spacing: 0.45em;
   color: var(--accent);
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   animation: fadeUp 0.8s ease both;
 }
 
@@ -282,7 +282,7 @@ ul { list-style:none; }
   font-size: 10px;
   letter-spacing: 0.28em;
   padding: 5px 14px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   animation: fadeUp 0.8s 0.1s ease both;
 }
 
@@ -293,7 +293,7 @@ ul { list-style:none; }
   line-height: 1.4;
   color: var(--white);
   letter-spacing: 0.04em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   animation: fadeUp 0.8s 0.2s ease both;
 }
 
@@ -306,8 +306,8 @@ ul { list-style:none; }
   font-size: clamp(13px, 2vw, 16px);
   color: #8888aa;
   max-width: 560px;
-  margin: 0 auto 44px;
-  line-height: 1.9;
+  margin: 0 auto 24px;
+  line-height: 1.85;
   animation: fadeUp 0.8s 0.3s ease both;
 }
 
@@ -321,24 +321,72 @@ ul { list-style:none; }
 
 /* ===== HERO: avatar + quick stats ===== */
 .hero-avatar {
-  width: 132px;
-  height: 132px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 26px;
+  margin: 0 auto 18px;
   border: 2px solid rgba(0,200,255,0.5);
   box-shadow: 0 0 44px rgba(0,200,255,0.28);
   animation: fadeUp 0.8s ease both;
 }
 .hero-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* ヒーロー：悩み → 解決 */
+.hero-pains {
+  max-width: 700px;
+  margin: 0 auto 18px;
+  animation: fadeUp 0.8s 0.34s ease both;
+}
+.hero-pains-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.hero-pain-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+.hero-pain {
+  font-size: 12.5px;
+  color: #b4b4cc;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.hero-solution {
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.95;
+  max-width: 620px;
+  margin: 0 auto 26px;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+.hero-solution strong { color: var(--accent); font-weight: 700; }
+.hero-guide {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #7a7a96;
+  letter-spacing: 0.06em;
+  animation: fadeUp 0.8s 0.55s ease both;
+}
+@media (max-width: 640px) {
+  .hero-pain { white-space: normal; font-size: 12px; padding: 7px 14px; }
+}
+
 .hero-stats {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px 30px;
-  margin: 0 auto 40px;
-  animation: fadeUp 0.8s 0.35s ease both;
+  gap: 12px 26px;
+  margin: 0 auto 22px;
+  animation: fadeUp 0.8s 0.46s ease both;
 }
 .hero-stat { text-align: center; }
 .hero-stat-num {
@@ -359,7 +407,7 @@ ul { list-style:none; }
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 30px;
+  margin-top: 22px;
   animation: fadeUp 0.8s 0.5s ease both;
 }
 .hero-sns a { color: #8888aa; font-size: 19px; transition: color 0.2s; }
@@ -1755,14 +1803,29 @@ ul { list-style:none; }
       <img src="tricera-icon.jpg" alt="トリケラテクノ">
     </div>
     <p class="hero-logo">TRICERA TECHNO</p>
-    <div class="hero-tag">DTM解説恐竜 / メロディックテクノ</div>
+    <div class="hero-tag">HOUSE ・ TECHNO ・ TRANCE 専門</div>
     <h1 class="hero-title">
       音楽経験ゼロから、<br>
       <em>1曲完成まで導くDTMコーチ</em>
     </h1>
     <p class="hero-sub">
-      「何から始めればいいか分からない」を解決する、<br>
-      DTMの地図とロードマップ。
+      日本ではまだ情報が圧倒的に少ない、<br>
+      ハウス・テクノ・トランスなど<strong style="color:var(--text);">ダンスミュージックの楽曲制作</strong>。<br>
+      その「順番」を、ゼロから最後までお教えします。
+    </p>
+
+    <div class="hero-pains">
+      <p class="hero-pains-label">— 100件以上届いた、リアルな悩み —</p>
+      <div class="hero-pain-list">
+        <span class="hero-pain">「何から始めればいいか分からない」</span>
+        <span class="hero-pain">「1曲の作り方が分からない」</span>
+        <span class="hero-pain">「作った曲がプロっぽくならない」</span>
+      </div>
+    </div>
+
+    <p class="hero-solution">
+      この悩みを解決するために作ったのが、<br>
+      オリジナル教材「<strong>DTMの地図</strong>」と「<strong>ロードマップ</strong>」です。
     </p>
 
     <div class="hero-stats">
@@ -1792,6 +1855,8 @@ ul { list-style:none; }
         <i class="fa-regular fa-circle-play"></i> 無料コンテンツを見る
       </a>
     </div>
+
+    <p class="hero-guide">このページでは、無料コンテンツと有料レッスンを紹介しています。</p>
 
     <div class="hero-sns">
       <a href="https://www.youtube.com/@triceratechno" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
