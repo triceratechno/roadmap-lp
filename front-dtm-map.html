@@ -180,6 +180,11 @@
   .bgo-l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); letter-spacing: 0.02em; }
   .bgo-l2 s { opacity: 0.72; }
   .bgo-rib { position: absolute; top: -11px; right: -7px; font-size: 11px; font-weight: 900; color: var(--gold); background: var(--black); border: 1px solid rgba(245,197,24,0.55); padding: 3px 9px; border-radius: 5px; letter-spacing: 0.03em; }
+  /* ===== SALE / POST-SALE TOGGLE (セール終了 2026-08-16 23:59 JST で自動切替) ===== */
+  .normal-only { display: none !important; }
+  html.sale-ended .sale-only { display: none !important; }
+  html.sale-ended .normal-only { display: revert !important; }
+  html.sale-ended .sale-hide { display: none !important; }
   .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
   .hero-cta { margin-top: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .hero-price {
@@ -675,6 +680,23 @@
     .reveal { opacity: 1; transform: none; transition: none; }
   }
 </style>
+<script>
+  /* セール終了（2026-08-16 23:59:59 JST）で自動的に通常価格(¥1,980)へ切替。
+     ページ描画前にクラスを付与してチラつきを防止。 */
+  (function () {
+    var SALE_END = new Date('2026-08-16T23:59:59+09:00').getTime();
+    var root = document.documentElement;
+    function apply() {
+      if (Date.now() >= SALE_END) {
+        root.classList.add('sale-ended');
+        if (window.__saleTimer) { clearInterval(window.__saleTimer); window.__saleTimer = null; }
+      }
+    }
+    apply();
+    // ページを開いたまま終了時刻を跨いだ場合も反映させる
+    window.__saleTimer = setInterval(apply, 15000);
+  })();
+</script>
 </head>
 <body>
 
@@ -700,9 +722,9 @@
       <div class="hero-cta">
         <p class="hero-because">才能はいりません。<em>必要なのはセンスではなく"順番"</em>だから。</p>
         <a class="btn btn--gold-offer" href="#price">
-          <span class="bgo-rib">75%OFF</span>
-          <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
-          <span class="bgo-l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+          <span class="bgo-rib sale-hide">75%OFF</span>
+          <span class="bgo-l1"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></span>
+          <span class="bgo-l2 sale-hide">通常 <s>¥1,980</s> ・ 8/16まで</span>
         </a>
       </div>
       <p class="hero-credit">作者：トリケラテクノ　―　相談実績<strong>100件超</strong>／総フォロワー<strong>1,700人超</strong></p>
@@ -833,7 +855,7 @@
     </div>
     <p class="route-foot reveal">1章ずつ、上から読むだけ。専門用語は、出てきた場所で必ず説明します。</p>
     <div class="reveal" style="text-align:center; margin-top:28px;">
-      <a class="btn btn--primary" href="#price">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></a>
+      <a class="btn btn--primary" href="#price"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></a>
     </div>
   </div>
 </section>
@@ -847,7 +869,7 @@
       <p class="fs-label">THE FIRST SOUND</p>
       <h3>この教材のゴールは<br>「<span class="ac">4小節のループ</span>」を<span style="color:var(--gold);">あなたが</span>完成させること</h3>
 
-      <p class="ba-head">たった¥500で、<span class="ac">この距離</span>を越えられる。</p>
+      <p class="ba-head">たった<span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>で、<span class="ac">この距離</span>を越えられる。</p>
       <div class="ba-grid">
         <div class="ba-col ba-col--before">
           <p class="ba-tag">BEFORE</p>
@@ -954,19 +976,20 @@
       <div class="price-left">
         <span class="price-mockup"><img src="mockup-dtm-map.png" alt="DTMの地図 表紙モックアップ"></span>
         <p class="price-name">DTMの地図</p>
-        <div class="price-anchor">
+        <div class="price-anchor sale-hide">
           <span class="price-regular">通常 <s>¥1,980</s></span>
           <span class="price-off">75%OFF</span>
         </div>
-        <p class="price-tag"><span class="yen">¥</span>500</p>
-        <p class="price-tax">税込・ローンチ記念の期間限定価格</p>
-        <p class="price-deadline">🔥 <strong>8/16まで</strong>の特別価格</p>
-        <p class="price-desc">記事8本＋解説動画8本（計60分）＋特典3つで、<strong style="color:var(--text);">¥500。</strong><br>まず"自分にもできた"を、あなたに。</p>
+        <p class="price-tag sale-only"><span class="yen">¥</span>500</p>
+        <p class="price-tag normal-only"><span class="yen">¥</span>1,980</p>
+        <p class="price-tax"><span class="sale-only">税込・ローンチ記念の期間限定価格</span><span class="normal-only">税込</span></p>
+        <p class="price-deadline sale-hide">🔥 <strong>8/16まで</strong>の特別価格</p>
+        <p class="price-desc">記事8本＋解説動画8本（計60分）＋特典3つで、<strong style="color:var(--text);"><span class="sale-only">¥500。</span><span class="normal-only">¥1,980。</span></strong><br>まず"自分にもできた"を、あなたに。</p>
         <!-- 仮リンク：決済URLに差し替え -->
         <span class="btn btn--gold-offer">
-          <span class="bgo-rib">75%OFF</span>
-          <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
-          <span class="bgo-l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+          <span class="bgo-rib sale-hide">75%OFF</span>
+          <span class="bgo-l1"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></span>
+          <span class="bgo-l2 sale-hide">通常 <s>¥1,980</s> ・ 8/16まで</span>
         </span>
         <p style="font-size:11px; color:var(--muted); margin-top:12px; letter-spacing:0.04em;">100名以上が相談に来た解説者の、最初の地図。</p>
       </div>
@@ -1005,7 +1028,7 @@
         <span class="ev">▶ 順番を変えただけで、DTM歴1〜3年の受講者が<strong>2週間で1曲を完成</strong>させた例も。<span class="note">（個人の成果例）</span></span>
       </div>
       <div class="why-reason reveal">
-        <div class="why-reason-head"><span class="why-reason-no">03</span><span class="why-reason-title">¥500で終わらない、設計された入口だから。</span></div>
+        <div class="why-reason-head"><span class="why-reason-no">03</span><span class="why-reason-title"><span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>で終わらない、設計された入口だから。</span></div>
         <p><span class="ac">なぜなら</span>、<strong>5媒体で1,700人以上</strong>が見てくれている解説を、そのまま"最初の地図"にしたものだから。音が鳴った先まで、道は続いています。</p>
         <span class="ev">▶ YouTube 320｜X 207｜Instagram 582｜公式LINE 232｜note 414　／　note記事は累計<strong>239本</strong>。<span class="note">（2026年時点）</span></span>
       </div>
@@ -1146,7 +1169,7 @@
         <p class="a">大丈夫です。詰まって手が止まらないよう、ゴールは「4小節」まで小さく、全記事に解説動画を付けています。読んで分からなくても、"見て"真似できます。</p>
       </details>
       <details>
-        <summary><span class="q"><span class="mk">Q</span>¥500で本当に身につきますか？</span><span class="chev"></span></summary>
+        <summary><span class="q"><span class="mk">Q</span><span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>で本当に身につきますか？</span><span class="chev"></span></summary>
         <p class="a">身につきます。「全体像」と「最初の4小節」に範囲を絞っているからです。読み終えれば、冒頭2分で閉じていたチュートリアル動画が、最後まで分かるようになります。</p>
       </details>
     </div>
@@ -1167,7 +1190,7 @@
         <h3>音が出せたら、次は<span class="nowrap-tail">"曲"にする番です。</span></h3>
         <p>「最初の音」を、"1曲"へ。0から完成・配信<span class="nowrap-tail">まで</span>順番に並べたのが「トリケラテクノ <span class="nowrap-tail">1曲完成の地図」</span>です。</p>
         <p style="margin-top:14px; padding:14px 16px; background:rgba(0,200,255,0.06); border:1px solid var(--border); border-radius:10px; font-size:13px; color:var(--text); line-height:1.8;">その先の実例――<br><strong style="color:var(--accent);">初心者（DTM歴1年未満）のジジさんは<span class="nowrap-tail">3ヶ月。</span>経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</strong><br><span style="font-size:11px; color:var(--muted);">（個人の成果例）</span></p>
-        <p style="margin-top:12px; font-size:13px; color:var(--muted);">まずは¥500のこの地図で「最初の音」を。その先に、"完成"までの道は続いています。</p>
+        <p style="margin-top:12px; font-size:13px; color:var(--muted);">まずは<span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>のこの地図で「最初の音」を。その先に、"完成"までの道は続いています。</p>
         <div class="nm-cta">
           <span class="btn btn--ghost">1曲完成の地図を見てみる →</span>
         </div>
@@ -1244,9 +1267,9 @@
   <div class="final-bg"></div>
   <div class="final-inner wrap">
     <h2 class="reveal">DAWを開く前に、<br>この<span style="color:var(--accent);">地図</span>を。</h2>
-    <p class="reveal">才能はいりません。<br><br>順番に読むだけで、あなたの4小節ループが、DAWから鳴ります。<br>4小節はいつか1曲になり、1曲が、あなたをアーティ<span class="nowrap-tail">ストにする。</span><br><strong>すべては、この¥500の一歩から。</strong></p>
+    <p class="reveal">才能はいりません。<br><br>順番に読むだけで、あなたの4小節ループが、DAWから鳴ります。<br>4小節はいつか1曲になり、1曲が、あなたをアーティ<span class="nowrap-tail">ストにする。</span><br><strong>すべては、この<span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>の一歩から。</strong></p>
     <!-- 仮リンク：決済URLに差し替え -->
-    <a class="btn btn--primary reveal" href="https://note.com/triceratechno/n/n3412916bbf68" target="_blank" rel="noopener">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></a>
+    <a class="btn btn--primary reveal" href="https://note.com/triceratechno/n/n3412916bbf68" target="_blank" rel="noopener"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></a>
     <span class="btn-sub reveal">不安なことがあれば、まずは公式LINEで気軽に相談して<span class="nowrap-tail">ください。</span></span>
     <p class="reveal" style="margin-top:18px;"><a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener" style="color:var(--accent); font-size:13px; letter-spacing:0.04em; text-decoration:none;">公式LINEで相談する →</a></p>
   </div>
@@ -1271,9 +1294,9 @@
 <div class="sticky-cta">
   <!-- 仮リンク：決済URLに差し替え -->
   <a class="btn btn--gold-offer" href="https://note.com/triceratechno/n/n3412916bbf68" target="_blank" rel="noopener">
-    <span class="bgo-rib">75%OFF</span>
-    <span class="bgo-l1">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span>
-    <span class="bgo-l2">通常 <s>¥1,980</s> ・ 8/16まで</span>
+    <span class="bgo-rib sale-hide">75%OFF</span>
+    <span class="bgo-l1"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></span>
+    <span class="bgo-l2 sale-hide">通常 <s>¥1,980</s> ・ 8/16まで</span>
   </a>
 </div>
 
