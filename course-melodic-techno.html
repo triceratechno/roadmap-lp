@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メロディックテクノ 0→1曲完成コース｜トリケラテクノ</title>
+<meta name="description" content="空のプロジェクトから、リリースできる1曲へ。Argy系メロディックテクノを、アイデア出しからマスタリングまで通しで作る動画コース。制作に使った音源とAbletonプロジェクトファイルをすべて同梱。">
+
+<!-- ===========================================================
+     差し替えポイント（TODO）：
+       購入CTA   … NOTE_COURSE_URL（課題曲チュートリアルの有料記事URL。全「アクセスする」ボタン共通）
+       トレーラー … TRAILER_URL（39秒トレーラー動画のYouTube URL。hero-video の href）
+       OGP画像   … course-melodic-ogp.jpg（専用サムネ未作成。暫定でヒーローサムネを使用）
+       価格       … ¥4,980（note有料記事）
+=========================================================== -->
+
+<!-- OGP / Twitter Card -->
+<meta property="og:title" content="メロディックテクノ 0→1曲完成コース｜トリケラテクノ">
+<meta property="og:description" content="空のプロジェクトから、リリースできる1曲へ。アイデア出しからマスタリングまで通しで作る動画コース。制作に使った音源とプロジェクトファイルを同梱。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/course-melodic-techno.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/course-melodic-ogp.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="メロディックテクノ 0→1曲完成コース｜トリケラテクノ">
+<meta name="twitter:description" content="アイデア出しからマスタリングまで、1曲を通しで作る動画コース。音源とプロジェクトファイル同梱。">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/course-melodic-ogp.jpg">
+
+<link rel="icon" type="image/jpeg" href="tricera-icon.jpg">
+<link rel="apple-touch-icon" href="tricera-icon.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --panel2: #151515;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #9a9a9a;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.85; overflow-x: hidden; }
+  a { color: inherit; }
+  ::selection { background: rgba(0,200,255,0.25); }
+
+  /* ===== LAYOUT ===== */
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 84px 0; position: relative; }
+  .section--tight { padding: 60px 0; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent); }
+
+  .section-label { font-size: 11px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
+  .section-label.center { justify-content: center; }
+  .section-label::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+  .section-label.center::after { content: ''; width: 32px; height: 1px; background: var(--accent); }
+
+  .h-jp { font-weight: 900; color: var(--white); line-height: 1.35; letter-spacing: 0.01em; }
+  h2.h-jp { font-size: clamp(25px, 4.4vw, 40px); margin-bottom: 22px; text-align: center; }
+  h2.h-jp em { color: var(--accent); font-style: normal; }
+  .lead { font-size: clamp(14px, 2vw, 16px); color: var(--muted); line-height: 2; text-align: center; max-width: 640px; margin: 0 auto; }
+  .center { text-align: center; }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* ===== BUTTONS ===== */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.05em; text-decoration: none; padding: 17px 44px; border-radius: 4px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s, color 0.2s; cursor: pointer; }
+  .btn--primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #001018; box-shadow: 0 8px 30px rgba(0,200,255,0.22); }
+  .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,200,255,0.32); }
+  .btn--gold { position: relative; flex-direction: column; gap: 4px; padding: 16px 44px; background: var(--gold); color: #1a1400; box-shadow: 0 8px 30px rgba(245,197,24,0.28); }
+  .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,197,24,0.4); }
+  .bgo-l1 { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
+  .bgo-l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); letter-spacing: 0.02em; }
+  .btn-sub { display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* ===== HERO ===== */
+  .hero { position: relative; padding: 96px 0 64px; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(circle at 78% 16%, rgba(0,200,255,0.10), transparent 42%), radial-gradient(circle at 12% 90%, rgba(245,197,24,0.06), transparent 45%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .hero-tag { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 0.26em; color: var(--accent); border: 1px solid rgba(0,200,255,0.4); border-radius: 4px; padding: 7px 18px; margin-bottom: 24px; }
+  .hero-title { font-weight: 900; color: var(--white); font-size: clamp(32px, 6.4vw, 60px); line-height: 1.18; letter-spacing: 0.01em; }
+  .hero-title .ac { color: var(--accent); }
+  .hero-title .zero { font-family: 'Bebas Neue', sans-serif; color: var(--gold); letter-spacing: 0.02em; }
+  .hero-sub { margin-top: 26px; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; max-width: 560px; }
+  .hero-sub strong { color: var(--white); font-weight: 700; }
+  .hero-cta { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hero-trust { margin-top: 4px; font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+
+  /* ===== HERO VIDEO / TRAILER ===== */
+  .trailer-wrap { max-width: 760px; margin: 40px auto 0; }
+  .video-frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #080e1a; border: 1px solid rgba(0,200,255,0.18); border-radius: 8px; overflow: hidden; box-shadow: 0 0 60px rgba(0,200,255,0.08); }
+  .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer; background: linear-gradient(135deg, #0a1420 0%, #0e1a2c 55%, #0a1220 100%); }
+  .video-play { width: 82px; height: 58px; z-index: 1; transition: transform 0.2s; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.45)); }
+  .video-placeholder:hover .video-play { transform: scale(1.06); }
+  .video-play svg { width: 100%; height: 100%; display: block; }
+  .video-play .yt-bg { fill: #f00; transition: fill 0.2s; }
+  .video-placeholder:hover .video-play .yt-bg { fill: #ff2323; }
+  .video-play .yt-tri { fill: #fff; }
+  .video-text { font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.8); text-transform: uppercase; z-index: 1; }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ===== FEATURE CARDS (What you get) ===== */
+  .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
+  .feat-card { border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 26px 22px; text-align: center; }
+  .feat-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 0.02em; color: var(--accent); line-height: 1; }
+  .feat-name { font-size: 14px; font-weight: 700; color: var(--white); margin: 12px 0 8px; letter-spacing: 0.02em; }
+  .feat-desc { font-size: 12.5px; color: var(--muted); line-height: 1.75; }
+  @media (max-width: 760px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .feat-grid { grid-template-columns: 1fr; } }
+
+  /* ===== INCLUDED LIST ===== */
+  .incl { max-width: 620px; margin: 0 auto; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 30px 34px; }
+  .incl li { list-style: none; position: relative; padding: 13px 0 13px 34px; border-bottom: 1px solid var(--border); font-size: 14.5px; color: var(--text); line-height: 1.6; }
+  .incl li:last-child { border-bottom: 0; }
+  .incl li::before { content: ''; position: absolute; left: 4px; top: 20px; width: 8px; height: 14px; border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+  /* ===== MODULES ===== */
+  .mod-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .mod { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 22px 26px; transition: border-color 0.2s, transform 0.2s; }
+  .mod:hover { border-color: rgba(0,200,255,0.4); transform: translateY(-2px); }
+  .mod-ep { font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.08em; color: var(--accent); white-space: nowrap; padding-top: 3px; }
+  .mod-ep .n { display: block; font-size: 34px; line-height: 0.9; color: var(--white); }
+  .mod-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .mod-desc { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  @media (max-width: 480px) { .mod { grid-template-columns: 1fr; gap: 6px; } .mod-ep { display: flex; align-items: baseline; gap: 8px; } .mod-ep .n { display: inline; font-size: 22px; } }
+
+  /* ===== PROJECT FILE HIGHLIGHT ===== */
+  .proj { max-width: 720px; margin: 0 auto; border: 1px solid rgba(0,200,255,0.28); background: linear-gradient(135deg, rgba(0,200,255,0.05), rgba(0,128,255,0.02)); border-radius: 16px; padding: 40px 40px; text-align: center; }
+  .proj h3 { font-size: clamp(20px, 3.6vw, 28px); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+  .proj p { font-size: 14px; color: var(--text); line-height: 1.95; max-width: 540px; margin: 0 auto; }
+  .proj .note { display: block; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+
+  /* ===== AUTHOR ===== */
+  .author { max-width: 640px; margin: 0 auto; display: flex; align-items: center; gap: 24px; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 26px 30px; }
+  .author img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,200,255,0.3); flex: 0 0 auto; }
+  .author-name { font-size: 16px; font-weight: 700; color: var(--white); }
+  .author-role { font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin: 2px 0 10px; }
+  .author-bio { font-size: 13px; color: var(--muted); line-height: 1.85; }
+  @media (max-width: 480px) { .author { flex-direction: column; text-align: center; } }
+
+  /* ===== PRICE ===== */
+  .buy-box { max-width: 560px; margin: 0 auto; border: 1px solid rgba(245,197,24,0.35); background: var(--panel); border-radius: 18px; padding: 44px 40px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .buy-name { font-size: 15px; letter-spacing: 0.06em; color: var(--muted); }
+  .buy-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 74px; line-height: 1; margin: 8px 0 4px; letter-spacing: 0.02em; }
+  .buy-tag .yen { font-size: 34px; vertical-align: 8px; }
+  .buy-tax { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+  .buy-list { list-style: none; text-align: left; max-width: 340px; margin: 0 auto 28px; }
+  .buy-list li { position: relative; padding: 11px 0 11px 30px; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--text); }
+  .buy-list li:last-child { border-bottom: 0; }
+  .buy-list li::before { content: ''; position: absolute; left: 2px; top: 16px; width: 7px; height: 12px; border: solid var(--gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .buy-trust { margin-top: 22px; font-size: 12px; color: var(--muted); line-height: 1.9; }
+  .buy-trust strong { color: var(--text); font-weight: 700; }
+
+  /* ===== FAQ ===== */
+  .faq { max-width: 760px; margin: 0 auto; }
+  .faq details { border: 1px solid var(--border); border-radius: 8px; background: var(--panel); margin-bottom: 12px; overflow: hidden; }
+  .faq summary { list-style: none; cursor: pointer; padding: 20px 22px; font-size: 15px; font-weight: 700; color: var(--white); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .q { display: flex; gap: 12px; align-items: baseline; }
+  .faq summary .q .mk { color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 18px; }
+  .faq summary .chev { flex: 0 0 auto; width: 20px; height: 20px; position: relative; transition: transform 0.25s; }
+  .faq summary .chev::before, .faq summary .chev::after { content: ''; position: absolute; top: 9px; width: 11px; height: 2px; background: var(--accent); }
+  .faq summary .chev::before { left: 0; transform: rotate(45deg); }
+  .faq summary .chev::after { right: 0; transform: rotate(-45deg); }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq .a { padding: 0 22px 22px 50px; font-size: 14px; color: var(--muted); line-height: 1.95; }
+
+  /* ===== FINAL CTA ===== */
+  .final { text-align: center; }
+  .final h2 { font-size: clamp(24px, 4.4vw, 38px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+  .final p { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
+
+  /* ===== FOOTER ===== */
+  .footer { border-top: 1px solid var(--border); padding: 50px 24px 90px; text-align: center; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.12em; color: var(--white); }
+  .footer-sns { display: flex; justify-content: center; gap: 22px; margin: 20px 0; }
+  .footer-sns a { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; text-decoration: none; transition: color 0.2s; }
+  .footer-sns a:hover { color: var(--accent); }
+  .footer-legal { display: flex; justify-content: center; gap: 22px; margin-bottom: 18px; flex-wrap: wrap; }
+  .footer-legal a { color: #666; font-size: 11px; letter-spacing: 0.04em; text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: #555; letter-spacing: 0.06em; }
+
+  /* ===== STICKY CTA ===== */
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 500; background: rgba(8,8,8,0.95); border-top: 1px solid var(--border); padding: 10px 16px; display: none; backdrop-filter: blur(6px); }
+  .sticky-cta a.btn--gold { width: 100%; max-width: 480px; margin: 0 auto; padding: 12px 24px; }
+  @media (max-width: 720px) { .sticky-cta { display: block; } .footer { padding-bottom: 110px; } }
+
+  /* ===== YT MODAL ===== */
+  .yt-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px; }
+  .yt-modal.is-open { display: flex; }
+  .yt-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.86); backdrop-filter: blur(4px); }
+  .yt-modal__box { position: relative; width: min(960px, 92vw); }
+  .yt-modal__frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .yt-modal__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt-modal__close { position: absolute; top: -46px; right: 0; width: 40px; height: 40px; border: none; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; opacity: 0.85; }
+  .yt-modal__close:hover { opacity: 1; }
+  @media (max-width: 640px) { .yt-modal__close { top: -42px; } }
+</style>
+</head>
+<body>
+
+<!-- ========== 1. HERO ========== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-tag">MELODIC TECHNO / START TO FINISH</div>
+      <h1 class="hero-title">メロディックテクノを、<br><span class="zero">0</span> から <span class="ac">1曲完成</span>まで。</h1>
+      <p class="hero-sub">空のプロジェクトから、リリースできる1曲へ。<br>アイデア出し・ドラム・ベース・シンセ・アレンジ・ミックス・マスタリング——<strong>制作の全工程を、私と一緒に通しで。</strong></p>
+      <div class="hero-cta">
+        <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+          <span class="bgo-l1">¥4,980でアクセスする →</span>
+          <span class="bgo-l2">動画コース＋音源＋プロジェクトファイル</span>
+        </a>
+        <p class="hero-trust">買い切り・無期限アクセス／購入後すぐに視聴できます</p>
+      </div>
+
+      <!-- トレーラー動画：TRAILER_URL を実URLに差し替えると、クリックでモーダル再生されます -->
+      <div class="trailer-wrap">
+        <div class="video-frame">
+          <a class="video-placeholder" href="TRAILER_URL" aria-label="コーストレーラーを再生">
+            <span class="video-play" aria-hidden="true">
+              <svg viewBox="0 0 68 48"><path class="yt-bg" d="M66.52 7.74c-.78-2.93-2.49-5.42-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.77-4.64 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.42 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.77 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z"/><path class="yt-tri" d="M45 24 27 14v20z"/></svg>
+            </span>
+            <span class="video-text">Course Trailer</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 2. WHAT YOU GET ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">WHAT YOU GET</div>
+    <h2 class="h-jp reveal">メロディックテクノを<em>1曲完成</em>させる、すべて。</h2>
+    <p class="lead reveal">お手本にした海外コースのような大量サンプルパックはありません。その代わり——<strong style="color:var(--text);">この1曲を作るのに実際に使った音源を、まるごと同梱します。</strong></p>
+    <div class="feat-grid reveal" style="margin-top:40px;">
+      <div class="feat-card">
+        <div class="feat-num">VIDEO</div>
+        <div class="feat-name">解説動画</div>
+        <div class="feat-desc">アイデアからマスタリングまで、1曲を通しで作る全工程。自分のペースで何度でも。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">1 PROJECT</div>
+        <div class="feat-name">プロジェクトファイル</div>
+        <div class="feat-desc">完成曲のAbletonプロジェクトを同梱。全チャンネル・エフェクト・オートメーションを解剖できる。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">SOUNDS</div>
+        <div class="feat-name">使用音源すべて</div>
+        <div class="feat-desc">この曲の制作に使ったサンプル・プリセットを同梱。同じ音を、あなたの手元でも。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">FOREVER</div>
+        <div class="feat-name">無期限アクセス</div>
+        <div class="feat-desc">買い切り。視聴期限なし。必要なときに、いつでも見返せる。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 3. START TO FINISH (included list) ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">START TO FINISH</div>
+    <h2 class="h-jp reveal">0から完成までを、<em>通しで</em>。</h2>
+    <ul class="incl reveal" style="margin-top:34px;">
+      <li>ステップ・バイ・ステップのメロディックテクノ制作</li>
+      <li>アイデアから、最終マスターまで</li>
+      <li>Abletonプロジェクトファイルを同梱</li>
+      <li>制作に使った音源（サンプル・プリセット）をすべて同梱</li>
+      <li>サウンドデザイン／アレンジ／ミックス／マスタリングまで</li>
+      <li>初〜中級のDTMer向け</li>
+      <li>無期限アクセス・視聴期限なし</li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 4. COURSE MODULES ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">COURSE MODULES</div>
+    <h2 class="h-jp reveal">カリキュラム</h2>
+    <div class="mod-list reveal" style="margin-top:36px;">
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">01</span></div>
+        <div><p class="mod-title">アイデアとグルーヴ</p><p class="mod-desc">トラックの核になるコード進行とグルーヴを組む。1曲の"温度感"を決める最初の一歩。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">02</span></div>
+        <div><p class="mod-title">ドラム & パーカッション</p><p class="mod-desc">4つ打ちの土台と、転がるようなパーカッション。グルーヴを前に進める打ち込みの考え方。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">03</span></div>
+        <div><p class="mod-title">ベース & シンセ</p><p class="mod-desc">重心の低いベースライン、催眠的なアルペジオ、曲を象徴するリード／パッドのサウンドデザイン。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">04</span></div>
+        <div><p class="mod-title">アレンジ & FX</p><p class="mod-desc">ループを1曲へ。展開・トランジション・ライザー・FXで、聴かせる構成に仕上げる。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">05</span></div>
+        <div><p class="mod-title">ミックス</p><p class="mod-desc">EQとバランスで各パートを整理。クラブで鳴らしても崩れない、クリーンなミックスへ。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mod-ep">EP<span class="n">06</span></div>
+        <div><p class="mod-title">マスタリング</p><p class="mod-desc">最終的な質感とラウドネスを整え、リリースできる状態まで持っていく。</p></div>
+      </div>
+    </div>
+    <p class="lead reveal" style="margin-top:24px; font-size:12.5px;">※各エピソードの構成・本数は制作進行に応じて調整する場合があります。</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 5. PROJECT FILE ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="proj reveal">
+      <h3>完成プロジェクトファイル、同梱。</h3>
+      <p>動画で作った完成曲のプロジェクトファイルを、そのままお渡しします。すべてのチャンネル、エフェクトチェーン、オートメーションを開いて、「この音がどう作られたのか」を自分の目で確かめられる。<span class="note">動画で学び、プロジェクトで確認する。理解のスピードが変わります。</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 6. AUTHOR ========== -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-label center reveal">WHO AM I</div>
+    <div class="author reveal" style="margin-top:24px;">
+      <img src="tricera-icon.jpg" alt="トリケラテクノ">
+      <div>
+        <div class="author-name">トリケラテクノ</div>
+        <div class="author-role">DTM解説 / メロディックテクノ・プロデューサー</div>
+        <p class="author-bio">DTMの始め方から曲の完成までを解説しています。これまで100名以上の制作相談に向き合ってきました。この1曲を、私が実際に作る手順のまま、順番に見せていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 7. PRICE ========== -->
+<section class="section" id="price">
+  <div class="wrap">
+    <div class="section-label center reveal">START LEARNING</div>
+    <h2 class="h-jp reveal">いま、始める。</h2>
+    <div class="buy-box reveal" style="margin-top:34px;">
+      <p class="buy-name">メロディックテクノ 0→1曲完成コース</p>
+      <p class="buy-tag"><span class="yen">¥</span>4,980</p>
+      <p class="buy-tax">税込・買い切り</p>
+      <ul class="buy-list">
+        <li>1曲を通しで作る解説動画</li>
+        <li>Abletonプロジェクトファイル</li>
+        <li>制作に使った音源すべて</li>
+        <li>無期限アクセス（視聴期限なし）</li>
+      </ul>
+      <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener" style="width:100%;">
+        <span class="bgo-l1">¥4,980でアクセスする →</span>
+        <span class="bgo-l2">noteで購入・購入後すぐ視聴</span>
+      </a>
+      <p class="buy-trust"><strong>購入後すぐアクセス。</strong>視聴はいつでも、何度でも。<br>お困りのときは公式LINEまたはメールでサポートします。</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 8. FAQ ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">FAQ</div>
+    <h2 class="h-jp reveal">よくある質問</h2>
+    <div class="faq reveal" style="margin-top:34px;">
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>使用するDAWは何ですか？</span><span class="chev"></span></summary>
+        <div class="a">Ableton Liveで制作しています。プロジェクトファイルもAbleton形式です。ただし、アレンジ・ミックス・マスタリングの考え方はどのDAWでも応用できます。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>初心者でも大丈夫ですか？</span><span class="chev"></span></summary>
+        <div class="a">初〜中級のDTMer向けです。DAWの基本操作にある程度触れている方を想定しています。DTMがまったく初めての方は、まず入門教材「DTMの地図」から始めるのがおすすめです。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>いつまで視聴できますか？</span><span class="chev"></span></summary>
+        <div class="a">買い切り・無期限アクセスです。視聴期限はありません。購入後は、いつでも何度でも見返せます。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>どんな音源が付属しますか？</span><span class="chev"></span></summary>
+        <div class="a">この1曲の制作に実際に使ったサンプル・プリセットを同梱します。海外コースのような大規模サンプルパックではなく、「この曲を再現できる音源一式」という位置づけです。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>返金はできますか？</span><span class="chev"></span></summary>
+        <div class="a">デジタルコンテンツという商品の性質上、購入後の返品・返金はお受けできません。あらかじめご了承ください。ご不明点は購入前にお問い合わせください。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>スマホだけで受講できますか？</span><span class="chev"></span></summary>
+        <div class="a">動画の視聴はスマホでも可能ですが、実際の制作にはPCとDAW（Ableton Live推奨）が必要です。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 9. FINAL CTA ========== -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="reveal">空のプロジェクトを、<br>あなたの1曲に。</h2>
+    <p class="reveal">次に完成させるのは、あなたのメロディックテクノです。</p>
+    <div class="reveal" style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+        <span class="bgo-l1">¥4,980でアクセスする →</span>
+        <span class="bgo-l2">動画コース＋音源＋プロジェクトファイル</span>
+      </a>
+      <p class="hero-trust">買い切り・無期限アクセス</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-logo">TRICERA TECHNO</div>
+  <div class="footer-sns">
+    <a href="https://www.youtube.com/@triceratechno" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <div class="footer-legal">
+    <a href="tokutei.html">特定商取引法に基づく表記</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 TRICERA TECHNO All Rights Reserved.</p>
+</footer>
+
+<!-- ========== STICKY CTA (mobile) ========== -->
+<div class="sticky-cta">
+  <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+    <span class="bgo-l1">¥4,980でアクセスする →</span>
+    <span class="bgo-l2">動画＋音源＋プロジェクトファイル</span>
+  </a>
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('visible'); }); return; }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+
+<!-- ========== YOUTUBE MODAL ========== -->
+<div class="yt-modal" id="ytModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="yt-modal__backdrop" data-yt-close></div>
+  <div class="yt-modal__box">
+    <button class="yt-modal__close" type="button" aria-label="閉じる" data-yt-close>&times;</button>
+    <div class="yt-modal__frame"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    function ytId(url) {
+      if (!url) return null;
+      try {
+        var u = new URL(url, location.href);
+        if (u.hostname.indexOf('youtu.be') > -1) return (u.pathname.slice(1).split('/')[0] || null);
+        if (u.hostname.indexOf('youtube.com') > -1) {
+          if (u.pathname === '/watch') return u.searchParams.get('v');
+          var m = u.pathname.match(/\/embed\/([^/?]+)/);
+          if (m) return m[1];
+        }
+      } catch (e) {}
+      return null;
+    }
+    var modal = document.getElementById('ytModal');
+    var frame = modal.querySelector('.yt-modal__frame');
+    function open(id) {
+      frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+      modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); frame.innerHTML = ''; document.body.style.overflow = '';
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a) return;
+      var id = ytId(a.getAttribute('href'));
+      if (id) { e.preventDefault(); open(id); }
+    });
+    modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-yt-close')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+  })();
+</script>
+
+</body>
+</html>
