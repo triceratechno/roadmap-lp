@@ -188,6 +188,22 @@
   .faq details[open] summary .chev { transform: rotate(180deg); }
   .faq .a { padding: 0 22px 22px 50px; font-size: 14px; color: var(--muted); line-height: 1.95; }
 
+  /* ===== RECOMMEND (You might also like) ===== */
+  .rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; margin: 36px auto 0; }
+  .rec-card { display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; overflow: hidden; text-decoration: none; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .rec-card:hover { border-color: rgba(0,200,255,0.45); transform: translateY(-3px); box-shadow: 0 18px 44px rgba(0,0,0,0.4); }
+  .rec-media { width: 100%; aspect-ratio: 16/10; background: #0c0c14; display: flex; align-items: center; justify-content: center; padding: 22px; }
+  .rec-media img { max-width: 74%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 14px 30px rgba(0,0,0,0.5)); }
+  .rec-body { padding: 22px 24px 26px; }
+  .rec-tag { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.14em; color: var(--accent); border: 1px solid rgba(0,200,255,0.4); border-radius: 4px; padding: 3px 10px; margin-bottom: 12px; }
+  .rec-title { font-size: 18px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+  .rec-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .rec-cta { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.03em; }
+  .rec-more { text-align: center; margin-top: 26px; }
+  .rec-more a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
+  .rec-more a:hover { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 620px) { .rec-grid { grid-template-columns: 1fr; } }
+
   /* ===== FINAL CTA ===== */
   .final { text-align: center; }
   .final h2 { font-size: clamp(24px, 4.4vw, 38px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
@@ -239,10 +255,10 @@
         <p class="hero-trust">買い切り・無期限アクセス／購入後すぐに視聴できます</p>
       </div>
 
-      <!-- トレーラー動画：TRAILER_URL を実URLに差し替えると、クリックでモーダル再生されます -->
+      <!-- トレーラー動画：現在は仮動画。完成後 href を本番トレーラーURLに差し替え -->
       <div class="trailer-wrap">
         <div class="video-frame">
-          <a class="video-placeholder" href="TRAILER_URL" aria-label="コーストレーラーを再生">
+          <a class="video-placeholder" href="https://youtu.be/47JWYmvcb_A" aria-label="コーストレーラーを再生">
             <span class="video-play" aria-hidden="true">
               <svg viewBox="0 0 68 48"><path class="yt-bg" d="M66.52 7.74c-.78-2.93-2.49-5.42-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.77-4.64 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.42 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.77 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z"/><path class="yt-tri" d="M45 24 27 14v20z"/></svg>
             </span>
@@ -431,6 +447,37 @@
         <div class="a">動画の視聴はスマホでも可能ですが、実際の制作にはPCとDAW（Ableton Live推奨）が必要です。</div>
       </details>
     </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 8.5 YOU MIGHT ALSO LIKE ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">YOU MIGHT ALSO LIKE</div>
+    <h2 class="h-jp reveal">こちらもおすすめです</h2>
+    <div class="rec-grid reveal">
+      <a class="rec-card" href="front-dtm-map.html">
+        <div class="rec-media"><img src="mockup-dtm-map.png" alt="DTMの地図"></div>
+        <div class="rec-body">
+          <span class="rec-tag">入門</span>
+          <p class="rec-title">DTMの地図</p>
+          <p class="rec-desc">音楽経験ゼロから、はじめての1音まで。DAWを開く前に読む、全8章の入門書。</p>
+          <span class="rec-cta">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="rec-card" href="triceratechno-lp.html">
+        <div class="rec-media"><img src="mockup-pro.png" alt="ロードマップ PROコース"></div>
+        <div class="rec-body">
+          <span class="rec-tag">本格</span>
+          <p class="rec-title">ロードマップ PROコース</p>
+          <p class="rec-desc">0から曲を完成・配信まで。制作の全工程を順番に並べた、本格ロードマップ。</p>
+          <span class="rec-cta">詳しく見る →</span>
+        </div>
+      </a>
+    </div>
+    <p class="rec-more reveal"><a href="portfolio.html">トリケラテクノの制作実績・ポートフォリオを見る →</a></p>
   </div>
 </section>
 
