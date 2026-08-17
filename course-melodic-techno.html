@@ -33,6 +33,7 @@
 <link rel="apple-touch-icon" href="tricera-icon.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
@@ -49,6 +50,7 @@
     --deep: #0d0d0d;
     --panel: #111111;
     --panel2: #151515;
+    --card: #1a1a2e;
     --border: #1e1e1e;
     --accent: #00c8ff;
     --accent2: #0080ff;
@@ -188,21 +190,28 @@
   .faq details[open] summary .chev { transform: rotate(180deg); }
   .faq .a { padding: 0 22px 22px 50px; font-size: 14px; color: var(--muted); line-height: 1.95; }
 
-  /* ===== RECOMMEND (You might also like) ===== */
-  .rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; margin: 36px auto 0; }
-  .rec-card { display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; overflow: hidden; text-decoration: none; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-  .rec-card:hover { border-color: rgba(0,200,255,0.45); transform: translateY(-3px); box-shadow: 0 18px 44px rgba(0,0,0,0.4); }
-  .rec-media { width: 100%; aspect-ratio: 16/10; background: #0c0c14; display: flex; align-items: center; justify-content: center; padding: 22px; }
-  .rec-media img { max-width: 74%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 14px 30px rgba(0,0,0,0.5)); }
-  .rec-body { padding: 22px 24px 26px; }
-  .rec-tag { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.14em; color: var(--accent); border: 1px solid rgba(0,200,255,0.4); border-radius: 4px; padding: 3px 10px; margin-bottom: 12px; }
-  .rec-title { font-size: 18px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-  .rec-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
-  .rec-cta { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.03em; }
-  .rec-more { text-align: center; margin-top: 26px; }
-  .rec-more a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
-  .rec-more a:hover { color: var(--accent); border-color: var(--accent); }
-  @media (max-width: 620px) { .rec-grid { grid-template-columns: 1fr; } }
+  /* ===== RECOMMEND (You might also like) — portfolio lesson cards 流用 ===== */
+  .lesson-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; margin-top: 40px; }
+  .lesson-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
+  .lesson-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #0a0a14; }
+  .level-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 900; letter-spacing: 0.06em; white-space: nowrap; }
+  .level-badge--start { background: rgba(0,200,255,0.14); border: 1px solid rgba(0,200,255,0.6); color: #5fdcff; }
+  .level-badge--next { background: rgba(245,197,24,0.14); border: 1px solid rgba(245,197,24,0.6); color: #f5c518; }
+  .lesson-thumb .level-badge { position: absolute; top: 12px; left: 12px; z-index: 2; backdrop-filter: blur(6px); box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+  .lesson-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+  .lesson-card:hover .lesson-thumb img { transform: scale(1.04); }
+  .lesson-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(19,19,32,0.85) 100%); pointer-events: none; }
+  .lesson-body { display: flex; flex-direction: column; flex: 1; padding: 26px 30px 30px; }
+  .lesson-card:hover { transform: translateY(-4px); border-color: rgba(0,200,255,0.45); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+  .lesson-card--pro { border-color: rgba(0,200,255,0.32); }
+  .lesson-step { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); margin-bottom: 12px; }
+  .lesson-title { font-size: 21px; font-weight: 900; color: var(--white); line-height: 1.45; margin-bottom: 12px; }
+  .lesson-desc { font-size: 13.5px; color: #b4b4cc; line-height: 1.95; margin-bottom: 20px; flex: 1; }
+  .lesson-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 20px; border-radius: 8px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.45); color: var(--accent); transition: background 0.2s, color 0.2s; }
+  .lesson-card:hover .lesson-go { background: var(--accent); color: #001018; }
+  .lesson-more { text-align: center; margin-top: 30px; }
+  .lesson-more a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
+  .lesson-more a:hover { color: var(--accent); border-color: var(--accent); }
 
   /* ===== FINAL CTA ===== */
   .final { text-align: center; }
@@ -457,27 +466,33 @@
   <div class="wrap">
     <div class="section-label center reveal">YOU MIGHT ALSO LIKE</div>
     <h2 class="h-jp reveal">こちらもおすすめです</h2>
-    <div class="rec-grid reveal">
-      <a class="rec-card" href="front-dtm-map.html">
-        <div class="rec-media"><img src="mockup-dtm-map.png" alt="DTMの地図"></div>
-        <div class="rec-body">
-          <span class="rec-tag">入門</span>
-          <p class="rec-title">DTMの地図</p>
-          <p class="rec-desc">音楽経験ゼロから、はじめての1音まで。DAWを開く前に読む、全8章の入門書。</p>
-          <span class="rec-cta">詳しく見る →</span>
+    <div class="lesson-grid reveal">
+      <a class="lesson-card" href="front-dtm-map.html#price">
+        <div class="lesson-thumb">
+          <span class="level-badge level-badge--start"><i class="fa-solid fa-seedling"></i> 初心者のための</span>
+          <img src="hero-thumb-dtm.jpg" alt="DTMの地図" loading="lazy">
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-step">STEP 1 ・ 入門</p>
+          <p class="lesson-title">DTMの地図</p>
+          <p class="lesson-desc">「何から始めればいいか分からない」を、最短で終わらせる全体図。全8章＋解説動画8本で、DAWを開いて4小節のループを鳴らすところまで。</p>
+          <span class="lesson-go">DTMの地図を見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <a class="rec-card" href="triceratechno-lp.html">
-        <div class="rec-media"><img src="mockup-pro.png" alt="ロードマップ PROコース"></div>
-        <div class="rec-body">
-          <span class="rec-tag">本格</span>
-          <p class="rec-title">ロードマップ PROコース</p>
-          <p class="rec-desc">0から曲を完成・配信まで。制作の全工程を順番に並べた、本格ロードマップ。</p>
-          <span class="rec-cta">詳しく見る →</span>
+      <a class="lesson-card lesson-card--pro" href="triceratechno-lp.html">
+        <div class="lesson-thumb">
+          <span class="level-badge level-badge--next"><i class="fa-solid fa-rocket"></i> 脱初心者のための</span>
+          <img src="hero-thumbnail.jpg" alt="ROADMAP PROコース" loading="lazy">
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-step">STEP 2 ・ 本格</p>
+          <p class="lesson-title">ROADMAP PROコース</p>
+          <p class="lesson-desc">オリジナル曲を1曲、最後まで完成させる10STEP。3ヶ月のマンツーマンサポート付きで、詰まったところを個別に解決しながら進めます。</p>
+          <span class="lesson-go">ロードマップを見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
     </div>
-    <p class="rec-more reveal"><a href="portfolio.html">トリケラテクノの制作実績・ポートフォリオを見る →</a></p>
+    <p class="lesson-more reveal"><a href="portfolio.html">トリケラテクノの制作実績・ポートフォリオを見る →</a></p>
   </div>
 </section>
 
