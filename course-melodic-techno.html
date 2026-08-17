@@ -140,15 +140,33 @@
   .incl li:last-child { border-bottom: 0; }
   .incl li::before { content: ''; position: absolute; left: 4px; top: 20px; width: 8px; height: 14px; border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
-  /* ===== MODULES ===== */
-  .mod-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-  .mod { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 22px 26px; transition: border-color 0.2s, transform 0.2s; }
-  .mod:hover { border-color: rgba(0,200,255,0.4); transform: translateY(-2px); }
-  .mod-ep { font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.08em; color: var(--accent); white-space: nowrap; padding-top: 3px; }
-  .mod-ep .n { display: block; font-size: 34px; line-height: 0.9; color: var(--white); }
-  .mod-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-  .mod-desc { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
-  @media (max-width: 480px) { .mod { grid-template-columns: 1fr; gap: 6px; } .mod-ep { display: flex; align-items: baseline; gap: 8px; } .mod-ep .n { display: inline; font-size: 22px; } }
+  /* ===== MODULES (横スクロール・カルーセル) ===== */
+  .cur-wrap { position: relative; margin-top: 36px; }
+  .cur-track { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,200,255,0.4) transparent; }
+  .cur-track::-webkit-scrollbar { height: 8px; }
+  .cur-track::-webkit-scrollbar-thumb { background: rgba(0,200,255,0.35); border-radius: 999px; }
+  .cur-track::-webkit-scrollbar-track { background: transparent; }
+  .cur-card { flex: 0 0 300px; scroll-snap-align: start; border: 1px solid var(--border); background: var(--card); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
+  .cur-card:hover { border-color: rgba(0,200,255,0.45); transform: translateY(-3px); }
+  @media (max-width: 520px) { .cur-card { flex-basis: 80%; } }
+  .cur-thumb { position: relative; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cur-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cur-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45)); }
+  .cur-ep { position: relative; z-index: 1; font-family: 'Bebas Neue', sans-serif; font-size: 46px; letter-spacing: 0.06em; color: rgba(255,255,255,0.94); text-shadow: 0 4px 22px rgba(0,0,0,0.55); }
+  .cur-thumb-1 { background: linear-gradient(135deg, #0a1a2e, #0f3355); }
+  .cur-thumb-2 { background: linear-gradient(135deg, #0b1226, #24184a); }
+  .cur-thumb-3 { background: linear-gradient(135deg, #0a2233, #0e4a4a); }
+  .cur-thumb-4 { background: linear-gradient(135deg, #1a1330, #3a1b52); }
+  .cur-thumb-5 { background: linear-gradient(135deg, #08202e, #0d3a52); }
+  .cur-thumb-6 { background: linear-gradient(135deg, #1f1a10, #4a3410); }
+  .cur-body { padding: 20px 22px 24px; }
+  .cur-title { font-size: 16px; font-weight: 900; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+  .cur-desc { font-size: 13px; color: #b4b4cc; line-height: 1.85; }
+  .cur-nav { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 14px; }
+  .cur-nav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,200,255,0.4); background: var(--panel); color: var(--accent); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s, opacity 0.2s; }
+  .cur-nav button:hover { background: var(--accent); color: #001018; }
+  .cur-hint { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  @media (max-width: 640px) { .cur-nav button { display: none; } }
 
   /* ===== PROJECT FILE HIGHLIGHT ===== */
   .proj { max-width: 720px; margin: 0 auto; border: 1px solid rgba(0,200,255,0.28); background: linear-gradient(135deg, rgba(0,200,255,0.05), rgba(0,128,255,0.02)); border-radius: 16px; padding: 40px 40px; text-align: center; }
@@ -339,33 +357,40 @@
   <div class="wrap">
     <div class="section-label center reveal">COURSE MODULES</div>
     <h2 class="h-jp reveal">カリキュラム</h2>
-    <div class="mod-list reveal" style="margin-top:36px;">
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">01</span></div>
-        <div><p class="mod-title">アイデアとグルーヴ</p><p class="mod-desc">トラックの核になるコード進行とグルーヴを組む。1曲の"温度感"を決める最初の一歩。</p></div>
+    <div class="cur-wrap reveal">
+      <div class="cur-track" id="curTrack">
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-1"><!-- 差し替え用: <img src="ep01.jpg" alt="EP01"> --><span class="cur-ep">EP01</span></div>
+          <div class="cur-body"><p class="cur-title">アイデアとグルーヴ</p><p class="cur-desc">トラックの核になるコード進行とグルーヴを組む。1曲の"温度感"を決める最初の一歩。</p></div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-2"><span class="cur-ep">EP02</span></div>
+          <div class="cur-body"><p class="cur-title">ドラム & パーカッション</p><p class="cur-desc">4つ打ちの土台と、転がるようなパーカッション。グルーヴを前に進める打ち込みの考え方。</p></div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-3"><span class="cur-ep">EP03</span></div>
+          <div class="cur-body"><p class="cur-title">ベース & シンセ</p><p class="cur-desc">重心の低いベースライン、催眠的なアルペジオ、曲を象徴するリード／パッドのサウンドデザイン。</p></div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-4"><span class="cur-ep">EP04</span></div>
+          <div class="cur-body"><p class="cur-title">アレンジ & FX</p><p class="cur-desc">ループを1曲へ。展開・トランジション・ライザー・FXで、聴かせる構成に仕上げる。</p></div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-5"><span class="cur-ep">EP05</span></div>
+          <div class="cur-body"><p class="cur-title">ミックス</p><p class="cur-desc">EQとバランスで各パートを整理。クラブで鳴らしても崩れない、クリーンなミックスへ。</p></div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-6"><span class="cur-ep">EP06</span></div>
+          <div class="cur-body"><p class="cur-title">マスタリング</p><p class="cur-desc">最終的な質感とラウドネスを整え、リリースできる状態まで持っていく。</p></div>
+        </div>
       </div>
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">02</span></div>
-        <div><p class="mod-title">ドラム & パーカッション</p><p class="mod-desc">4つ打ちの土台と、転がるようなパーカッション。グルーヴを前に進める打ち込みの考え方。</p></div>
-      </div>
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">03</span></div>
-        <div><p class="mod-title">ベース & シンセ</p><p class="mod-desc">重心の低いベースライン、催眠的なアルペジオ、曲を象徴するリード／パッドのサウンドデザイン。</p></div>
-      </div>
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">04</span></div>
-        <div><p class="mod-title">アレンジ & FX</p><p class="mod-desc">ループを1曲へ。展開・トランジション・ライザー・FXで、聴かせる構成に仕上げる。</p></div>
-      </div>
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">05</span></div>
-        <div><p class="mod-title">ミックス</p><p class="mod-desc">EQとバランスで各パートを整理。クラブで鳴らしても崩れない、クリーンなミックスへ。</p></div>
-      </div>
-      <div class="mod">
-        <div class="mod-ep">EP<span class="n">06</span></div>
-        <div><p class="mod-title">マスタリング</p><p class="mod-desc">最終的な質感とラウドネスを整え、リリースできる状態まで持っていく。</p></div>
+      <div class="cur-nav">
+        <button type="button" id="curPrev" aria-label="前へ">&#8249;</button>
+        <span class="cur-hint">横にスワイプ</span>
+        <button type="button" id="curNext" aria-label="次へ">&#8250;</button>
       </div>
     </div>
-    <p class="lead reveal" style="margin-top:24px; font-size:12.5px;">※各エピソードの構成・本数は制作進行に応じて調整する場合があります。</p>
+    <p class="lead reveal" style="margin-top:20px; font-size:12.5px;">※各エピソードの構成・本数は制作進行に応じて調整する場合があります。</p>
   </div>
 </section>
 
@@ -544,6 +569,23 @@
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     els.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+
+<script>
+  /* カリキュラム・カルーセルの矢印スクロール */
+  (function () {
+    var track = document.getElementById('curTrack');
+    if (!track) return;
+    var prev = document.getElementById('curPrev');
+    var next = document.getElementById('curNext');
+    function step() {
+      var card = track.querySelector('.cur-card');
+      var gap = 18;
+      return card ? card.getBoundingClientRect().width + gap : 318;
+    }
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
   })();
 </script>
 
