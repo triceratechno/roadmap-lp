@@ -140,6 +140,21 @@
   .incl li:last-child { border-bottom: 0; }
   .incl li::before { content: ''; position: absolute; left: 4px; top: 20px; width: 8px; height: 14px; border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
+  /* ===== DEMO AUDIO PLAYER ===== */
+  .demo-lead { max-width: 620px; margin: 30px auto 0; text-align: center; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; }
+  .demo-lead strong { color: var(--white); font-weight: 700; }
+  .demo-card { max-width: 620px; margin: 18px auto 0; display: flex; align-items: center; gap: 18px; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 18px 22px; }
+  .demo-play { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; border: none; background: var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(0,200,255,0.3); }
+  .demo-play:hover { transform: scale(1.06); }
+  .demo-play svg { width: 22px; height: 22px; fill: #001018; display: block; }
+  .demo-wave { flex: 1 1 auto; display: flex; align-items: center; gap: 3px; height: 44px; cursor: pointer; overflow: hidden; }
+  .demo-bar { flex: 1 1 auto; min-width: 2px; border-radius: 2px; background: #3a3a44; transition: background 0.12s; }
+  .demo-bar.on { background: var(--accent); }
+  .demo-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 58px; }
+  .demo-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  .demo-time { font-size: 13px; color: var(--muted); font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+  @media (max-width: 500px) { .demo-card { gap: 12px; padding: 16px; } .demo-label { display: none; } .demo-meta { min-width: 40px; } }
+
   /* ===== MODULES (横スクロール・カルーセル) ===== */
   .cur-wrap { position: relative; margin-top: 36px; }
   .cur-track { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,200,255,0.4) transparent; }
@@ -347,6 +362,18 @@
       <li>初〜中級のDTMer向け</li>
       <li>無期限アクセス・視聴期限なし</li>
     </ul>
+
+    <p class="demo-lead reveal">そしてこのコースで、<strong>実際にこの1曲が完成します。</strong><br>下の再生ボタンで、これから作るトラックを試聴できます。</p>
+    <!-- コースデモ音源：course-demo.mp3 をリポジトリに置くと再生されます -->
+    <div class="demo-card reveal">
+      <button class="demo-play" id="demoPlay" type="button" aria-label="コースデモを再生">
+        <svg class="demo-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="demo-ico-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <div class="demo-wave" id="demoWave" aria-hidden="true"></div>
+      <div class="demo-meta"><span class="demo-label">コースデモ</span><span class="demo-time" id="demoTime">0:00</span></div>
+      <audio id="demoAudio" src="course-demo.mp3" preload="none"></audio>
+    </div>
   </div>
 </section>
 
@@ -573,6 +600,58 @@
 </script>
 
 <script>
+  /* コースデモ音源プレーヤー（波形＋再生ボタン） */
+  (function () {
+    var wave = document.getElementById('demoWave');
+    var audio = document.getElementById('demoAudio');
+    var playBtn = document.getElementById('demoPlay');
+    var timeEl = document.getElementById('demoTime');
+    if (!wave || !audio || !playBtn) return;
+    var N = 44, bars = [];
+    for (var i = 0; i < N; i++) {
+      var h = 16 + Math.round(Math.abs(Math.sin(i * 0.7) + 0.6 * Math.sin(i * 0.31 + 1)) * 42);
+      if (h > 100) h = 100;
+      var b = document.createElement('span');
+      b.className = 'demo-bar';
+      b.style.height = h + '%';
+      wave.appendChild(b);
+      bars.push(b);
+    }
+    function fmt(t) {
+      if (!isFinite(t) || t < 0) t = 0;
+      var m = Math.floor(t / 60), s = Math.floor(t % 60);
+      return m + ':' + (s < 10 ? '0' : '') + s;
+    }
+    function paint(ratio) {
+      var on = Math.round(ratio * N);
+      for (var i = 0; i < N; i++) bars[i].classList.toggle('on', i < on);
+    }
+    var icoPlay = playBtn.querySelector('.demo-ico-play');
+    var icoPause = playBtn.querySelector('.demo-ico-pause');
+    function setPlaying(p) {
+      icoPlay.style.display = p ? 'none' : 'block';
+      icoPause.style.display = p ? 'block' : 'none';
+      playBtn.setAttribute('aria-label', p ? 'コースデモを一時停止' : 'コースデモを再生');
+    }
+    playBtn.addEventListener('click', function () {
+      if (audio.paused) { audio.play().catch(function () {}); } else { audio.pause(); }
+    });
+    audio.addEventListener('play', function () { setPlaying(true); });
+    audio.addEventListener('pause', function () { setPlaying(false); });
+    audio.addEventListener('ended', function () { setPlaying(false); paint(0); timeEl.textContent = '0:00'; });
+    audio.addEventListener('timeupdate', function () {
+      var d = audio.duration || 0;
+      paint(d ? audio.currentTime / d : 0);
+      timeEl.textContent = fmt(audio.currentTime);
+    });
+    wave.addEventListener('click', function (e) {
+      var d = audio.duration;
+      if (!isFinite(d) || !d) return;
+      var r = wave.getBoundingClientRect();
+      audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * d;
+    });
+  })();
+
   /* カリキュラム・カルーセルの矢印スクロール */
   (function () {
     var track = document.getElementById('curTrack');
