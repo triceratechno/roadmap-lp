@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>メロディックテクノ 0→1曲完成コース | トリケラテクノ</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#00c8ff;
+  --gold:#f5c518;
+  --black:#080808;
+  --panel:#111;
+  --panel2:#161616;
+  --border:#1e1e1e;
+  --white:#fff;
+  --muted:#888;
+  --danger:#ff5577;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:15px;
+  line-height:1.8;
+  min-height:100vh;
+}
+
+/* ===== PASSWORD GATE ===== */
+.password-gate{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px}
+.password-gate-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,#0d1f2a 0%,var(--black) 70%);z-index:0}
+.password-gate-inner{position:relative;z-index:1;max-width:420px;width:100%;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:40px 32px;text-align:center}
+.password-gate-tag{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:10px;letter-spacing:.15em;padding:4px 12px;border-radius:2px;margin-bottom:20px}
+.password-gate-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,6vw,44px);color:var(--white);letter-spacing:.06em;margin:0 0 10px}
+.password-gate-desc{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 28px}
+.password-gate-form{display:flex;flex-direction:column;gap:12px}
+.password-gate-form input{width:100%;padding:14px 16px;background:var(--black);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:14px;letter-spacing:.08em;text-align:center;font-family:'Noto Sans JP',sans-serif}
+.password-gate-form input:focus{outline:none;border-color:var(--accent)}
+.password-gate-form button{width:100%;padding:14px;background:var(--accent);border:none;border-radius:6px;color:var(--black);font-weight:700;font-size:14px;letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
+.password-gate-form button:hover{opacity:.85}
+.password-gate-error{margin-top:12px;font-size:12px;color:var(--danger);letter-spacing:.04em}
+body.is-locked>*:not(.password-gate){visibility:hidden}
+
+/* ===== SITE HEADER ===== */
+.site-header{background:var(--panel);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;gap:16px}
+.site-header-brand{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.08em;color:var(--accent)}
+.site-header-by{font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+/* ===== TAB NAV ===== */
+.tab-nav{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab-nav::-webkit-scrollbar{height:3px}
+.tab-nav::-webkit-scrollbar-track{background:var(--panel)}
+.tab-nav::-webkit-scrollbar-thumb{background:var(--border)}
+.tab-nav-inner{display:flex;min-width:max-content;padding:0 12px}
+.tab-btn{background:none;border:none;padding:14px 18px;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.06em;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
+.tab-btn:hover{color:var(--white)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ===== MAIN ===== */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.chapter{max-width:740px;margin:0 auto;padding:48px 24px 80px}
+
+/* Chapter hero */
+.ch-hero{margin-bottom:48px}
+.ch-num{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
+.ch-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5.6vw,48px);letter-spacing:.06em;color:var(--white);line-height:1.15}
+.ch-hero hr{border:none;border-top:1px solid var(--border);margin-top:24px}
+
+/* Body typography */
+.ch-body h2{font-size:18px;font-weight:700;color:var(--white);margin:40px 0 14px;padding-left:12px;border-left:3px solid var(--accent)}
+.ch-body h3{font-size:15px;font-weight:700;color:var(--accent);margin:28px 0 10px}
+.ch-body p{color:#ccc;margin-bottom:16px}
+.ch-body p strong{color:var(--white)}
+.ch-body ul,.ch-body ol{padding-left:1.4em;margin-bottom:16px}
+.ch-body li{color:#ccc;margin-bottom:6px}
+.ch-body li strong{color:var(--white)}
+.ch-body hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+
+/* Summary box */
+.summary-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin:32px 0}
+.summary-box h3{color:var(--gold);font-size:12px;letter-spacing:.12em;margin:0 0 14px}
+.summary-box ul{padding-left:1.2em;margin:0}
+.summary-box li{color:#ccc;margin-bottom:6px}
+.summary-box li strong{color:var(--white)}
+
+/* Info box */
+.info-box{background:#0d1f2a;border:1px solid #1a3a4a;border-radius:8px;padding:20px 24px;margin:20px 0;font-size:14px;color:#88ccee;line-height:1.7}
+.info-box strong{color:var(--accent)}
+
+/* TODO placeholder box（収録後に本文を差し込む枠） */
+.todo-box{border:1px dashed #3a3a3a;border-radius:8px;background:rgba(255,255,255,0.015);padding:18px 22px;margin:18px 0;font-size:13px;color:#7a7a7a;line-height:1.8}
+.todo-box::before{content:"WRITING";display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.18em;color:#5a5a5a;border:1px solid #333;border-radius:3px;padding:2px 8px;margin-right:10px;vertical-align:2px}
+
+/* Video block */
+.ch-video{margin:0 0 32px}
+.ch-video-label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.04em;margin-bottom:12px}
+.ch-video-label::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.ch-video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#000}
+.ch-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ch-video-note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.7}
+.ch-video-frame.is-placeholder{background:var(--panel)}
+.ch-video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:16px}
+.ch-video-ph .ph-badge{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.18em;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:5px 18px}
+.ch-video-ph .ph-text{font-size:13px;color:var(--muted)}
+
+/* Download cards（特典・同梱物） */
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin:24px 0}
+.bonus-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:24px 20px;text-align:center}
+.bonus-card.is-bonus{border-top:3px solid var(--gold)}
+.bonus-card-icon{font-size:28px;margin-bottom:12px}
+.bonus-card-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px}
+.bonus-card-desc{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.7}
+.dl-btn{display:inline-block;background:var(--gold);color:var(--black);font-size:12px;font-weight:700;letter-spacing:.06em;padding:8px 20px;border-radius:4px;text-decoration:none;transition:opacity .2s}
+.dl-btn:hover{opacity:.85}
+.dl-btn.disabled{background:var(--border);color:var(--muted);pointer-events:none}
+
+/* EP内のダウンロード行（該当EPの素材） */
+.ep-dl{display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 20px;margin:24px 0}
+.ep-dl-text{flex:1 1 220px;min-width:0}
+.ep-dl-title{font-size:13px;font-weight:700;color:var(--white)}
+.ep-dl-desc{font-size:12px;color:var(--muted);line-height:1.7;margin-top:2px}
+
+/* Checklist */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin:20px 0}
+.check-item{position:relative;padding:6px 0 6px 26px;font-size:13.5px;color:#cfcfcf;line-height:1.6}
+.check-item::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--accent);font-weight:700}
+
+/* Concept cards */
+.concept-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.concept-card{background:var(--panel);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:8px;padding:20px 18px}
+.concept-card h4{margin:0 0 12px;font-size:15px;font-weight:700;color:var(--white)}
+.concept-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* EP一覧（はじめに内） */
+.ep-list{display:flex;flex-direction:column;gap:8px;margin:22px 0}
+.ep-row{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:13px 18px;cursor:pointer;text-align:left;width:100%;font-family:'Noto Sans JP',sans-serif;transition:border-color .2s}
+.ep-row:hover{border-color:var(--accent)}
+.ep-row .er-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);letter-spacing:.06em}
+.ep-row .er-name{font-size:14px;font-weight:700;color:var(--white)}
+
+/* Author card */
+.author-card{display:flex;align-items:center;gap:20px;background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:20px 0 24px}
+.author-card img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--accent);pointer-events:none;user-select:none}
+.author-card-name{font-size:17px;font-weight:700;color:var(--white)}
+.author-card-role{font-size:12px;color:var(--accent);letter-spacing:.06em;margin-top:3px}
+
+/* Promo code */
+.promo-code{display:inline-block;font-family:'Courier New',monospace;font-size:20px;font-weight:700;letter-spacing:.12em;color:var(--gold);background:var(--black);border:1px dashed var(--gold);border-radius:6px;padding:10px 22px;user-select:all}
+.promo-steps{counter-reset:promo;list-style:none;padding:0;margin:16px 0 0}
+.promo-steps li{position:relative;padding:0 0 0 38px;margin-bottom:12px;color:#ccc;line-height:1.7}
+.promo-steps li::before{counter-increment:promo;content:counter(promo);position:absolute;left:0;top:1px;width:24px;height:24px;background:var(--accent);color:var(--black);border-radius:50%;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.promo-steps li strong{color:var(--white)}
+
+/* Next map card */
+.nextmap{border:1px solid var(--border);border-radius:16px;background:linear-gradient(160deg, rgba(0,200,255,0.05), transparent);padding:32px 34px;margin:28px 0;display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center;text-decoration:none;color:inherit;cursor:pointer;transition:border-color .2s, background .2s}
+.nextmap:hover{border-color:var(--accent);background:linear-gradient(160deg, rgba(0,200,255,0.10), transparent)}
+.nextmap .nm-media img{width:100%;display:block;border-radius:10px;pointer-events:none;user-select:none}
+.nextmap .nm-label{font-family:'Bebas Neue',sans-serif;letter-spacing:.28em;color:var(--accent);font-size:13px;margin:0}
+.nextmap h3{font-weight:700;color:var(--white);font-size:20px;line-height:1.5;margin:10px 0 0;border:none;padding:0}
+.nextmap p{font-size:14px;color:var(--muted);line-height:1.9;margin:12px 0 0}
+.nm-cta{margin-top:20px}
+.nm-cta-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:13px 28px;border-radius:4px;font-size:13px;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:background .2s,color .2s}
+.nextmap:hover .nm-cta-btn{background:var(--accent);color:var(--black)}
+
+/* Next chapter button */
+.ch-footer{margin-top:56px;padding-top:32px;border-top:1px solid var(--border);text-align:center}
+.next-btn{display:inline-block;background:none;border:1px solid var(--accent);color:var(--accent);padding:14px 32px;border-radius:4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:background .2s,color .2s}
+.next-btn:hover{background:var(--accent);color:var(--black)}
+
+@media(max-width:600px){
+  .chapter{padding:32px 16px 60px}
+  .ch-body h2{font-size:16px}
+  .concept-cards{grid-template-columns:1fr;gap:12px}
+  .check-grid{grid-template-columns:1fr;gap:2px}
+  .nextmap{grid-template-columns:1fr;gap:20px;text-align:center}
+  .nextmap .nm-media{max-width:230px;margin:0 auto}
+  .author-card{padding:16px 18px;gap:16px}
+  .author-card img{width:68px;height:68px}
+  .ch-hero .ch-title,.ch-body h2,.ch-body h3{text-wrap:balance}
+  .ch-body p,.ch-body li{text-wrap:pretty}
+}
+</style>
+</head>
+<body class="is-locked">
+
+<!-- ===== PASSWORD GATE ===== -->
+<div class="password-gate" id="passwordGate" role="dialog" aria-modal="true" aria-labelledby="pwTitle">
+  <div class="password-gate-bg"></div>
+  <div class="password-gate-inner">
+    <span class="password-gate-tag">メロディックテクノコース 購入者専用</span>
+    <h2 class="password-gate-title" id="pwTitle">合言葉を入力</h2>
+    <p class="password-gate-desc">noteの有料エリアに記載されている合言葉を入力してください。</p>
+    <form class="password-gate-form" id="passwordForm" autocomplete="off">
+      <input type="text" id="passwordInput" placeholder="合言葉を入力" aria-label="合言葉" autocomplete="off" required>
+      <button type="submit">解放する</button>
+    </form>
+    <p class="password-gate-error" id="passwordError" hidden>合言葉が違います。</p>
+  </div>
+</div>
+
+<!-- ===== SITE HEADER ===== -->
+<header class="site-header">
+  <div class="site-header-brand">MELODIC TECHNO</div>
+  <div class="site-header-by">by トリケラテクノ</div>
+</header>
+
+<!-- ===== TAB NAV ===== -->
+<nav class="tab-nav" id="tabNav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="intro">はじめに</button>
+    <button class="tab-btn" data-tab="ep01">EP01</button>
+    <button class="tab-btn" data-tab="ep02">EP02</button>
+    <button class="tab-btn" data-tab="ep03">EP03</button>
+    <button class="tab-btn" data-tab="ep04">EP04</button>
+    <button class="tab-btn" data-tab="ep05">EP05</button>
+    <button class="tab-btn" data-tab="ep06">EP06</button>
+    <button class="tab-btn" data-tab="ep07">EP07</button>
+    <button class="tab-btn" data-tab="ep08">EP08</button>
+    <button class="tab-btn" data-tab="outro">さいごに</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ======================================
+     はじめに
+====================================== -->
+<div class="tab-panel active" id="intro">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">INTRODUCTION</div>
+    <h1 class="ch-title">はじめに</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">はじめに の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">この動画では、コース全体の進め方を解説しています。まず動画を見て、そのあと記事で確認してください。</p>
+    </div>
+
+    <h2>このコースでやること</h2>
+    <p>空のプロジェクトから、リリースできる1曲へ。メロディックテクノの楽曲を、アイデア出しからマスタリングまで、全8エピソードで通して作り切ります。</p>
+    <p>大事なのは、<strong>順番通りに進めること</strong>です。EP01から順に、実際に手を動かしながら進めてください。</p>
+
+    <div class="concept-cards">
+      <div class="concept-card">
+        <h4>1. 動画を見る</h4>
+        <p>各EPの冒頭にある動画で、実際の操作と考え方を確認する</p>
+      </div>
+      <div class="concept-card">
+        <h4>2. 手を動かす</h4>
+        <p>同梱のプロジェクトと音源を開いて、同じ手順を自分のPCで再現する</p>
+      </div>
+      <div class="concept-card">
+        <h4>3. 記事で復習</h4>
+        <p>迷ったら記事に戻る。要点はテキストでまとめてあります</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>ダウンロード（同梱物）</h2>
+    <p>このコースで使うプロジェクトファイルと音源です。<strong>先にすべてダウンロードしてから</strong>EP01に進んでください。</p>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-card-icon">🎛️</div>
+        <div class="bonus-card-title">Ableton Live プロジェクトファイル</div>
+        <div class="bonus-card-desc">完成曲のプロジェクト一式。全チャンネル・エフェクトチェーン・オートメーションをそのまま確認できます。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-card-icon">🔊</div>
+        <div class="bonus-card-title">使用音源（サンプル・プリセット）</div>
+        <div class="bonus-card-desc">この1曲の制作に実際に使ったサンプルとプリセット。まったく同じ音を、あなたの手元でも。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-card-icon">🎵</div>
+        <div class="bonus-card-title">完成トラック（WAV / MP3）</div>
+        <div class="bonus-card-desc">これから作る完成形。まず聴いて、ゴールのイメージを掴んでください。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>購入者限定特典</h2>
+    <p>販売ページには掲載していない、購入者だけの特典です。</p>
+    <div class="info-box">
+      <strong>特典は準備中です。</strong>内容が確定しだい、このページに追加します。ダウンロードできるようになったタイミングで、公式LINEからお知らせします。
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card is-bonus">
+        <div class="bonus-card-icon">🎁</div>
+        <div class="bonus-card-title">特典 1</div>
+        <div class="bonus-card-desc">内容は準備中です。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+      <div class="bonus-card is-bonus">
+        <div class="bonus-card-icon">🎁</div>
+        <div class="bonus-card-title">特典 2</div>
+        <div class="bonus-card-desc">内容は準備中です。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+      <div class="bonus-card is-bonus">
+        <div class="bonus-card-icon">🎁</div>
+        <div class="bonus-card-title">特典 3</div>
+        <div class="bonus-card-desc">内容は準備中です。</div>
+        <a href="#" class="dl-btn disabled">準備中</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>コースの全体像</h2>
+    <div class="ep-list">
+      <button class="ep-row next-btn-plain" data-next="ep01"><span class="er-num">EP01</span><span class="er-name">アイデアと全体構成</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep02"><span class="er-num">EP02</span><span class="er-name">キック & ベース</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep03"><span class="er-num">EP03</span><span class="er-name">ドラムス & グルーヴ</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep04"><span class="er-num">EP04</span><span class="er-name">ボーカル</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep05"><span class="er-num">EP05</span><span class="er-name">シンセ</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep06"><span class="er-num">EP06</span><span class="er-name">アレンジ & FX</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep07"><span class="er-num">EP07</span><span class="er-name">ミックス</span></button>
+      <button class="ep-row next-btn-plain" data-next="ep08"><span class="er-num">EP08</span><span class="er-name">マスタリング</span></button>
+    </div>
+
+    <hr>
+
+    <h2>私について</h2>
+    <div class="author-card">
+      <img src="tricera-icon.jpg" alt="トリケラテクノ">
+      <div>
+        <div class="author-card-name">トリケラテクノ</div>
+        <div class="author-card-role">DTM解説 / メロディックテクノ・プロデューサー</div>
+      </div>
+    </div>
+    <p>DTMの始め方から曲の完成までを解説しています。これまで100名以上の制作相談に向き合ってきました。このコースでは、私が実際にこの1曲を作った手順を、そのままの順番で見せていきます。</p>
+
+    <div class="info-box">
+      <strong>質問がある方へ：</strong>詰まったところがあれば、公式LINEからメッセージを送ってください。
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep01">EP01 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP01
+====================================== -->
+<div class="tab-panel" id="ep01">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 01</div>
+    <h1 class="ch-title">アイデアと全体構成</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP01 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>トラックの核になる<strong>フック</strong>を決める</li>
+        <li>曲全体の<strong>構成</strong>を先に描く</li>
+        <li>BPM・キーなど、土台になる設定を決める</li>
+      </ul>
+    </div>
+
+    <h2>リファレンスを決める</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>フックから作る理由</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>曲全体の構成を先に描く</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>BPMとキーを決める</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP01 の素材</div>
+        <div class="ep-dl-desc">このEPで使うプロジェクトと音源です。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">リファレンスを1曲決めた</div>
+      <div class="check-item">フックのアイデアが手元にある</div>
+      <div class="check-item">曲の構成を紙かメモに書いた</div>
+      <div class="check-item">BPMとキーを決めた</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep02">EP02 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP02
+====================================== -->
+<div class="tab-panel" id="ep02">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 02</div>
+    <h1 class="ch-title">キック & ベース</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP02 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>4つ打ちの土台になる<strong>キック</strong>を決める</li>
+        <li>重心の低い<strong>ベースライン</strong>を組む</li>
+        <li>キックとベースの<strong>住み分け</strong>でローエンドを固める</li>
+      </ul>
+    </div>
+
+    <h2>キックの選び方</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>ベースラインの作り方</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>キックとベースを共存させる</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP02 の素材</div>
+        <div class="ep-dl-desc">キック・ベースのサンプルとプリセットです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">キックを決めた</div>
+      <div class="check-item">ベースラインを打ち込んだ</div>
+      <div class="check-item">キックとベースが濁っていない</div>
+      <div class="check-item">ローエンドが安定している</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep03">EP03 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP03
+====================================== -->
+<div class="tab-panel" id="ep03">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 03</div>
+    <h1 class="ch-title">ドラムス & グルーヴ</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP03 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>アクセントになる<strong>スネアとクラップ</strong>を置く</li>
+        <li>体が動き出す<strong>パーカッション</strong>を組む</li>
+        <li>グルーヴを前に進める打ち込みの考え方を掴む</li>
+      </ul>
+    </div>
+
+    <h2>スネアとクラップ</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>ハイハットで前に進める</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>パーカッションのレイヤー</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>グルーヴを作る</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP03 の素材</div>
+        <div class="ep-dl-desc">ドラム・パーカッションのサンプルです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">スネア／クラップを置いた</div>
+      <div class="check-item">ハイハットを組んだ</div>
+      <div class="check-item">パーカッションを重ねた</div>
+      <div class="check-item">聴いていて体が動く</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep04">EP04 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP04
+====================================== -->
+<div class="tab-panel" id="ep04">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 04</div>
+    <h1 class="ch-title">ボーカル</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP04 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>ただ乗せただけの<strong>"浮いた"ボーカル</strong>を、曲に溶け込ませる</li>
+        <li>大胆な<strong>エフェクトアレンジ</strong>を掛ける</li>
+        <li>空間系の処理で、同じフレーズの繰り返しを<strong>強烈なフック</strong>に変える</li>
+      </ul>
+    </div>
+
+    <h2>ボーカルの選び方</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>ピッチとタイミングを合わせる</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>空間系で曲に溶け込ませる</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>エフェクトで印象を変える</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP04 の素材</div>
+        <div class="ep-dl-desc">ボーカル素材とエフェクトチェーンのプリセットです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">ボーカルを配置した</div>
+      <div class="check-item">ピッチとタイミングを整えた</div>
+      <div class="check-item">空間系で馴染ませた</div>
+      <div class="check-item">聴いてフックとして成立している</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep05">EP05 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP05
+====================================== -->
+<div class="tab-panel" id="ep05">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 05</div>
+    <h1 class="ch-title">シンセ</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP05 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>催眠的な<strong>アルペジオ</strong>を作る</li>
+        <li>曲を象徴する<strong>リード／パッド</strong>をデザインする</li>
+        <li>曲の表情を決めるサウンドデザインの考え方を掴む</li>
+      </ul>
+    </div>
+
+    <h2>アルペジオで催眠感を作る</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>リードのサウンドデザイン</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>パッドで空気を作る</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP05 の素材</div>
+        <div class="ep-dl-desc">シンセのプリセットです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">アルペジオを作った</div>
+      <div class="check-item">リードを作った</div>
+      <div class="check-item">パッドを重ねた</div>
+      <div class="check-item">曲の"顔"が見えてきた</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep06">EP06 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP06
+====================================== -->
+<div class="tab-panel" id="ep06">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 06</div>
+    <h1 class="ch-title">アレンジ & FX</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP06 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>ループを<strong>1曲</strong>にする</li>
+        <li>展開・トランジション・ライザー・FXを入れる</li>
+        <li>最後まで聴かせる構成に仕上げる</li>
+      </ul>
+    </div>
+
+    <h2>ループから曲の形へ</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>トランジションの作り方</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>ライザーとインパクト</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>オートメーションで動きを出す</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP06 の素材</div>
+        <div class="ep-dl-desc">FX・ライザー系のサンプルです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">曲の頭から終わりまで並べた</div>
+      <div class="check-item">トランジションを入れた</div>
+      <div class="check-item">FXで繋ぎを作った</div>
+      <div class="check-item">通して聴いて飽きない</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep07">EP07 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP07
+====================================== -->
+<div class="tab-panel" id="ep07">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 07</div>
+    <h1 class="ch-title">ミックス</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP07 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>EQとバランスで各パートを整理する</li>
+        <li>クラブで鳴らしても崩れない<strong>クリーンなミックス</strong>にする</li>
+      </ul>
+    </div>
+
+    <h2>音量バランスから始める</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>EQで場所を空ける</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>コンプレッサーの使いどころ</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>空間の作り方</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP07 の素材</div>
+        <div class="ep-dl-desc">ミックス済みプロジェクトの参照用ファイルです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">音量バランスを取った</div>
+      <div class="check-item">EQで整理した</div>
+      <div class="check-item">音が濁っていない</div>
+      <div class="check-item">スマホでも聴いて確認した</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="ep08">EP08 へ進む →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     EP08
+====================================== -->
+<div class="tab-panel" id="ep08">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">EPISODE 08</div>
+    <h1 class="ch-title">マスタリング</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">EP08 の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">動画で全体の流れを掴んでから、下の記事で要点を確認してください。</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>このEPでやること</h3>
+      <ul>
+        <li>最終的な<strong>質感とラウドネス</strong>を整える</li>
+        <li>リリースできる状態まで持っていく</li>
+      </ul>
+    </div>
+
+    <h2>マスタリングで何をするのか</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>仕上げのEQ</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>ラウドネスを上げる</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <h2>書き出しと最終チェック</h2>
+    <div class="todo-box">収録後に本文を追加します。</div>
+
+    <div class="ep-dl">
+      <div class="ep-dl-text">
+        <div class="ep-dl-title">EP08 の素材</div>
+        <div class="ep-dl-desc">マスターチェーンのプリセットと完成トラックです。</div>
+      </div>
+      <a href="#" class="dl-btn disabled">準備中</a>
+    </div>
+
+    <hr>
+
+    <h3>このEPのチェックリスト</h3>
+    <div class="check-grid">
+      <div class="check-item">マスターチェーンを組んだ</div>
+      <div class="check-item">ラウドネスを確認した</div>
+      <div class="check-item">歪みや潰れがない</div>
+      <div class="check-item">書き出しまで完了した</div>
+    </div>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="outro">さいごに →</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+<!-- ======================================
+     さいごに
+====================================== -->
+<div class="tab-panel" id="outro">
+<article class="chapter">
+  <div class="ch-hero">
+    <div class="ch-num">OUTRO</div>
+    <h1 class="ch-title">さいごに</h1>
+    <hr>
+  </div>
+  <div class="ch-body">
+
+    <div class="ch-video">
+      <div class="ch-video-label">まずは動画から</div>
+      <div class="ch-video-frame is-placeholder">
+        <div class="ch-video-ph">
+          <span class="ph-badge">COMING SOON</span>
+          <span class="ph-text">さいごに の動画は準備中です</span>
+        </div>
+      </div>
+      <p class="ch-video-note">最後まで進めてくれたあなたへ、次の一歩の話をしています。</p>
+    </div>
+
+    <h2>1曲、完成しました</h2>
+    <p>空のプロジェクトから始めて、いまあなたの手元には1曲があります。アイデアを出し、キックとベースで土台を作り、ドラムでグルーヴを与え、ボーカルとシンセで表情をつけ、アレンジして、ミックスして、マスタリングまで通した。これは<strong>制作の全工程を1周した</strong>ということです。</p>
+    <p>ここまで来れば、次の曲は自分の力で作れます。順番はもう身体に入っているからです。</p>
+
+    <div class="todo-box">収録後に、この曲を通して伝えたかったことを追記します。</div>
+
+    <hr>
+
+    <h2>次のステップ</h2>
+    <p>「1曲は作れた。でも、自分だけのオリジナル曲を最後まで完成させて、配信まで持っていきたい」——そう思ったなら、次の地図があります。</p>
+
+    <a class="nextmap" href="triceratechno-lp.html">
+      <div class="nm-media"><img src="mockup-pro.png" alt="ロードマップ PROコース"></div>
+      <div>
+        <p class="nm-label">NEXT STEP</p>
+        <h3>ロードマップ PROコース</h3>
+        <p>オリジナル曲を1曲、最後まで完成させる10STEP。3ヶ月のマンツーマンサポート付きで、詰まったところを個別に解決しながら進めます。</p>
+        <div class="nm-cta"><span class="nm-cta-btn">ロードマップを見る →</span></div>
+      </div>
+    </a>
+
+    <h2>購入者限定の割引</h2>
+    <p>このコースの購入者は、ロードマップを割引価格で受講できます。</p>
+    <div class="info-box">
+      <strong>割引コードは準備中です。</strong>確定しだい、このページに掲載し、公式LINEからお知らせします。
+    </div>
+
+    <hr>
+
+    <h2>感想を聞かせてください</h2>
+    <p>完成した曲を、ぜひ聴かせてください。公式LINEにメッセージを送ってもらえれば、私が聴きます。</p>
+    <p>質問や、詰まったところがあれば、それも遠慮なく送ってください。</p>
+
+    <div class="ch-footer">
+      <button class="next-btn" data-next="intro">はじめに に戻る</button>
+    </div>
+
+  </div>
+</article>
+</div>
+
+</main>
+
+<!-- ===== PASSWORD GATE LOGIC =====
+     合言葉: ミドル（仮）
+     変更手順: python3 -c "import hashlib; print(hashlib.sha256('新しい合言葉'.encode()).hexdigest())"
+-->
+<script>
+(function(){
+  'use strict';
+  // sha256("ミドル")
+  const PW_HASH = '90a992122fe5532c00e7e853906937aef0f29c8c01302f5852582325712b0afe';
+  const STORAGE_KEY = 'tricera_melodic_unlocked_v1';
+
+  async function sha256(text){
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function isUnlocked(){
+    try{ return sessionStorage.getItem(STORAGE_KEY)==='1'; }catch(e){ return false; }
+  }
+
+  function unlock(){
+    try{ sessionStorage.setItem(STORAGE_KEY,'1'); }catch(e){}
+    const gate = document.getElementById('passwordGate');
+    if(gate) gate.remove();
+    document.body.classList.remove('is-locked');
+  }
+
+  function initGate(){
+    if(isUnlocked()){ unlock(); return; }
+    const form  = document.getElementById('passwordForm');
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('passwordError');
+    if(!form||!input) return;
+    requestAnimationFrame(()=>input.focus());
+    form.addEventListener('submit', async e=>{
+      e.preventDefault();
+      const pw = (input.value||'').trim().toLowerCase();
+      if(!pw) return;
+      try{
+        const hash = await sha256(pw);
+        if(hash===PW_HASH){ unlock(); }
+        else{
+          error.hidden=false;
+          input.style.borderColor='var(--danger)';
+          setTimeout(()=>{ input.style.borderColor=''; },1500);
+        }
+      }catch(err){
+        error.textContent='ブラウザを最新版にアップデートしてください。';
+        error.hidden=false;
+      }
+    });
+  }
+
+  // ===== TAB SWITCHING =====
+  function initTabs(){
+    const btns   = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(tabId){
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.tab===tabId));
+      panels.forEach(p=>p.classList.toggle('active', p.id===tabId));
+      window.scrollTo({top:0, behavior:'instant'});
+      const activeBtn = document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+      if(activeBtn) activeBtn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
+
+    btns.forEach(btn=>{
+      btn.addEventListener('click',()=>switchTab(btn.dataset.tab));
+    });
+
+    document.querySelectorAll('[data-next]').forEach(btn=>{
+      btn.addEventListener('click',()=>switchTab(btn.dataset.next));
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    initGate();
+    initTabs();
+  });
+})();
+</script>
+</body>
+</html>
