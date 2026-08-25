@@ -2048,6 +2048,27 @@
     background: rgba(255,255,255,0.06);
     border-color: rgba(0,200,255,0.35);
   }
+  /* リリース楽曲チップ（実績＝金でハイライト） */
+  .review-ref--release {
+    background: rgba(245,197,24,0.07);
+    border-color: rgba(245,197,24,0.4);
+  }
+  .review-ref--release:hover {
+    background: rgba(245,197,24,0.12);
+    border-color: rgba(245,197,24,0.65);
+  }
+  .review-ref--release .review-ref-label { color: var(--gold); }
+  .review-ref--release .review-ref-title { color: #fff; font-weight: 700; }
+  .review-ref-thumb--release::after { display: none; }
+  .review-ref-thumb--release {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2a2000 0%, #1a1400 100%);
+    border: 1px solid rgba(245,197,24,0.45);
+  }
+  .review-ref-thumb--release svg { width: 20px; height: 20px; fill: var(--gold); }
+  .review-ref-ext { flex: 0 0 auto; fill: var(--gold); }
   .review-ref-thumb {
     position: relative;
     flex: 0 0 auto;
@@ -3888,9 +3909,9 @@
 
     <div class="review-card">
       <div class="review-header">
-        <div class="review-avatar">Y</div>
+        <div class="review-avatar">E</div>
         <div>
-          <p class="review-name">YU-YAさん</p>
+          <p class="review-name">Eternal Fieldさん</p>
           <p class="review-meta">DTM歴1〜3年 ・ Ableton Live</p>
           <div class="review-stars">★★★☆☆</div>
         </div>
@@ -3898,6 +3919,16 @@
       </div>
       <p class="review-oneliner">プロの曲の"構造"が、少しずつ見えてきた</p>
       <p class="review-body">「購入前は、<strong>なかなか曲作りが進まなかった</strong>。今までSTEM分離をしてこなかったので、<strong>"プロの曲ってこうなっているのか"</strong>と、少しだけ解像度が上がった。」</p>
+      <a class="review-ref review-ref--release" href="https://linkco.re/U2y3V0M5" target="_blank" rel="noopener">
+        <span class="review-ref-thumb review-ref-thumb--release">
+          <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
+        </span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">リリース楽曲<span class="review-ref-genre"> ・ 配信中</span></span>
+          <span class="review-ref-title">Pendulum <span>— Eternal Field</span></span>
+        </span>
+        <svg class="review-ref-ext" width="16" height="16" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM5 5h5V3H3v18h18v-7h-2v5H5V5z"/></svg>
+      </a>
       <a class="review-ref" href="https://youtu.be/C7ufAUax8gM" target="_blank" rel="noopener">
         <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/C7ufAUax8gM/mqdefault.jpg" alt="Network In Heaven"></span>
         <span class="review-ref-body">
