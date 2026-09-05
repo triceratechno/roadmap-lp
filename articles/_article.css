@@ -271,6 +271,17 @@ body.is-locked .article-footer { filter: blur(9px); pointer-events: none; user-s
   color: var(--white);
 }
 
+/* 英語タイトルが用意されていない記事用の日本語見出し */
+.hero-jp-title {
+  margin: 0 0 18px;
+  font-size: clamp(27px, 5.6vw, 50px);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: var(--white);
+}
+.hero-jp-title em { color: var(--accent); font-style: normal; }
+
 .hero-ja {
   margin: 0 auto 26px;
   max-width: 620px;
@@ -1412,4 +1423,101 @@ strong { color: var(--white); font-weight: 700; }
 
 @media (max-width: 620px) {
   .figures--2 { grid-template-columns: 1fr; gap: 20px; }
+}
+
+
+/* ===== 3要素の分解ブロック（Click / Body / Tail など） ===== */
+.parts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.part {
+  padding: 26px 22px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+}
+
+.part-name {
+  margin: 0 0 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--white);
+}
+
+.part-freq {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.part-lead {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text);
+}
+
+.part dl { margin: 0; font-size: 13px; line-height: 1.8; }
+.part dt {
+  float: left;
+  width: 3.2em;
+  clear: left;
+  color: var(--muted);
+}
+.part dd { margin: 0 0 8px 3.4em; color: var(--muted); }
+.part dd:last-child { margin-bottom: 0; }
+
+.part-judge {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.part-judge b { color: var(--gold); font-size: 16px; }
+
+@media (max-width: 720px) {
+  .parts { grid-template-columns: 1fr; }
+}
+
+/* ===== 早見表 ===== */
+.table-wrap { margin: 30px 0; overflow-x: auto; }
+
+table.ref {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+table.ref th,
+table.ref td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+table.ref thead th {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+  border-bottom-color: var(--accent);
+  white-space: nowrap;
+}
+table.ref tbody th {
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+}
+table.ref td { color: var(--muted); }
+@media (hover: hover) {
+  table.ref tbody tr:hover { background: rgba(0, 200, 255, 0.03); }
 }
