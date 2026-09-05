@@ -1549,3 +1549,71 @@ table.ref tbody tr.is-focus th { color: var(--ok); }
   font-size: 12px;
   color: var(--muted);
 }
+
+/* ===== 特典の図解（VU / レベル / パン振りガイド） ===== */
+.guide { margin: 34px 0; }
+
+.guide-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.guide-no {
+  flex: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.guide-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+}
+.guide-title span {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.guide-figure {
+  display: block;
+  margin: 0;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+.guide-figure img { width: 100%; height: auto; }
+@media (hover: hover) {
+  .guide-figure:hover { border-color: var(--gold); }
+}
+
+.guide-cap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.guide-zoom {
+  flex: none;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.guide-zoom::after { content: ' ↗'; }
