@@ -491,6 +491,47 @@
     });
   }
 
+  /* ---------- 12. 前後リンクの自動解決 ---------- */
+  /* body の data-prev-id / data-next-id を hub-data.js と突き合わせ、
+     その記事が自作ページ化されていれば pageUrl（同一タブ）に、
+     まだなら noteUrl（別タブ）に貼り替える。
+     新しい記事ページを追加したとき、前後の記事を手で直さなくて済む。 */
+
+  function initPager() {
+    if (typeof ROADMAP_DATA === 'undefined' || !ROADMAP_DATA || !Array.isArray(ROADMAP_DATA.steps)) return;
+
+    var index = {};
+    ROADMAP_DATA.steps.forEach(function (step) {
+      (step.articles || []).forEach(function (a) { index[a.id] = a; });
+    });
+
+    function apply(selector, id) {
+      if (!id) return;
+      var link = document.querySelector(selector);
+      var article = index[id];
+      if (!link || !article) return;
+
+      var page = article.pageUrl && String(article.pageUrl).trim();
+      var note = article.noteUrl && String(article.noteUrl).trim();
+      var url = page || note;
+      if (!url) return;
+
+      // pageUrl は HUB からの相対パス（articles/xxx.html）なので、記事間はファイル名だけにする
+      if (page) {
+        link.setAttribute('href', url.replace(/^articles\//, ''));
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+      } else {
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      }
+    }
+
+    apply('.pager a.next', body.getAttribute('data-next-id'));
+    apply('.pager a:not(.next)', body.getAttribute('data-prev-id'));
+  }
+
   /* ---------- 汎用 ---------- */
 
   function escapeHtml(s) {
@@ -515,6 +556,7 @@
     initFinish();
     initFigureFallback();
     initImgSwap();
+    initPager();
   }
 
   if (document.readyState === 'loading') {
