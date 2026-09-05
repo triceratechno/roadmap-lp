@@ -279,17 +279,32 @@
     font-weight: 700; color: var(--white) !important; line-height: 1.9;
   }
 
-  /* ===== 2冊の対比 ===== */
-  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 620px; margin: 0 auto 18px; text-align: center; }
-  .two-up figure { margin: 0; }
-  .two-up img {
+  /* ===== ノート → 教材の変換 ===== */
+  .tf-before { max-width: min(220px, 46vw); margin: 0 auto; }
+  .tf-before img {
     width: 100%; display: block; border-radius: 2px;
     border: 1px solid rgba(255,255,255,0.1);
-    aspect-ratio: 16 / 10; object-fit: contain; background: var(--black);
   }
-  .two-up figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; line-height: 1.6; }
-  .two-up-note { font-size: clamp(14px, 4vw, 17px); color: var(--muted); margin: 0 auto 34px; max-width: 620px; }
-  .two-up-note .gold { color: var(--gold); font-weight: 700; }
+  .tf-before figcaption {
+    margin-top: 10px; font-size: 12px; color: var(--muted);
+    letter-spacing: 0.06em; line-height: 1.6;
+  }
+  .tf-arrow {
+    width: 1px; height: 46px; margin: 22px auto 20px;
+    background: linear-gradient(to bottom, var(--border), var(--gold));
+    position: relative;
+  }
+  .tf-arrow::after {
+    content: ''; position: absolute; left: 50%; bottom: -1px;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent; border-right: 5px solid transparent;
+    border-top: 8px solid var(--gold);
+  }
+  .tf-note {
+    font-size: clamp(14px, 4vw, 17px); color: var(--muted);
+    margin: 0 auto 30px; line-height: 1.9;
+  }
+  .tf-note .gold { color: var(--gold); font-weight: 700; }
 
   /* ===== B1 ノート → 商品 ===== */
   .bridge { background: var(--black); border-top: 1px solid var(--border); }
@@ -784,17 +799,17 @@
 <section class="block bridge">
   <div class="inner reveal">
     <p class="bridge-headline">あのノートが、<br><span class="gold">これになりました。</span></p>
-    <div class="two-up">
-      <figure>
-        <img src="manga/notebook-real.jpg" alt="2年分の手書きノート" loading="lazy" decoding="async">
-        <figcaption>2年分の走り書き<br>順番も、まとまりもない</figcaption>
-      </figure>
-      <figure>
-        <img src="roadmap-hero.jpg" alt="ロードマップPROコース" loading="lazy" decoding="async">
-        <figcaption>同じ中身を、<br>順番に並べ直したもの</figcaption>
-      </figure>
-    </div>
-    <p class="two-up-note">足したものは、ありません。<br><span class="gold">順番に並べ直しただけです。</span></p>
+    <figure class="tf-before">
+      <img src="manga/notebook-real.jpg" alt="2年分の手書きノート" loading="lazy" decoding="async">
+      <figcaption>2年分の走り書き<br>順番も、まとまりもない</figcaption>
+    </figure>
+
+    <div class="tf-arrow" aria-hidden="true"></div>
+
+    <p class="tf-note">足したものは、ありません。<br><span class="gold">順番に並べ直しただけです。</span></p>
+
+    <img class="bridge-visual" src="roadmap-hero.jpg" alt="ロードマップPROコース" loading="lazy" decoding="async">
+
     <div class="bridge-name">ROADMAP PRO COURSE</div>
     <p class="bridge-sub">1曲を完成させるまでの、10のSTEP</p>
   </div>
