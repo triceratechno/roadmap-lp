@@ -651,6 +651,19 @@ strong { color: var(--white); font-weight: 700; }
 
 .card p { margin: 0; font-size: 13.5px; line-height: 1.9; color: var(--muted); }
 
+/* カード内の進捗ステータス（REAL CASES など） */
+.card-status {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.card-status--done { border-color: var(--ok); color: var(--ok); }
+.card-status--wip { border-color: var(--accent); color: var(--accent); }
+
 @media (max-width: 720px) {
   .cards--3 { grid-template-columns: 1fr; }
   .cards--2 { grid-template-columns: 1fr; }
