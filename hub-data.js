@@ -80,10 +80,10 @@ const ROADMAP_DATA = {
       description: "スネア・ハット・ライドで楽曲の前進感を作る。",
       status: "completed",
       articles: [
-        { id: "3-overview", type: "overview", title: "STEP3 全体解説：ドラムは\"音を足す工程\"じゃない。グルーブを設計する工程だ。", noteUrl: "https://note.com/preview/nc7f24367887c?prev_access_key=2b2570dcb392497e3f1904a1f89113cd", pdfUrl: "step3_overview.pdf", videoUrl: "https://note.com/preview/n881f5979137f?prev_access_key=f1daa1f32ea8e9940fa9dba01408f9aa", status: "published" },
-        { id: "3-1", type: "lesson", title: "STEP3-1：グルーブを生み出すたった2つのポイント。ドラムス6つの役割を正しく理解せよ", noteUrl: "https://note.com/preview/nb6ad2803d308?prev_access_key=c0e3f19ce056c8fce244aae06c15e4b0", pdfUrl: "step3-1.pdf", videoUrl: "", status: "published" },
-        { id: "3-2", type: "lesson", title: "STEP3-2：疾走感を手に入れろ。ハット／ライドで\"前へ・上へ\"動くビートを作る", noteUrl: "https://note.com/preview/nb204d1edb112?prev_access_key=aeab931621d84fbf1673f20913ed2a1e", pdfUrl: "step3-2.pdf", videoUrl: "", status: "published" },
-        { id: "3-3", type: "lesson", title: "STEP3-3：ドラムスを\"完成形\"にする最終ステップ──トップ／パーカッションでグルーブを完成させる", noteUrl: "https://note.com/preview/n2d2cfc77237e?prev_access_key=d57afd0cc3daea88152d86c8bc119ab0", pdfUrl: "step3-3.pdf", videoUrl: "", status: "published" }
+        { id: "3-overview", type: "overview", title: "STEP3 全体解説：ドラムは\"音を足す工程\"じゃない。グルーブを設計する工程だ。", pageUrl: "articles/step3-overview.html", noteUrl: "https://note.com/preview/nc7f24367887c?prev_access_key=2b2570dcb392497e3f1904a1f89113cd", pdfUrl: "step3_overview.pdf", videoUrl: "https://note.com/preview/n881f5979137f?prev_access_key=f1daa1f32ea8e9940fa9dba01408f9aa", status: "published" },
+        { id: "3-1", type: "lesson", title: "STEP3-1：グルーブを生み出すたった2つのポイント。ドラムス6つの役割を正しく理解せよ", pageUrl: "articles/step3-1.html", noteUrl: "https://note.com/preview/nb6ad2803d308?prev_access_key=c0e3f19ce056c8fce244aae06c15e4b0", pdfUrl: "step3-1.pdf", videoUrl: "", status: "published" },
+        { id: "3-2", type: "lesson", title: "STEP3-2：疾走感を手に入れろ。ハット／ライドで\"前へ・上へ\"動くビートを作る", pageUrl: "articles/step3-2.html", noteUrl: "https://note.com/preview/nb204d1edb112?prev_access_key=aeab931621d84fbf1673f20913ed2a1e", pdfUrl: "step3-2.pdf", videoUrl: "", status: "published" },
+        { id: "3-3", type: "lesson", title: "STEP3-3：ドラムスを\"完成形\"にする最終ステップ──トップ／パーカッションでグルーブを完成させる", pageUrl: "articles/step3-3.html", noteUrl: "https://note.com/preview/n2d2cfc77237e?prev_access_key=d57afd0cc3daea88152d86c8bc119ab0", pdfUrl: "step3-3.pdf", videoUrl: "", status: "published" }
       ]
     },
 

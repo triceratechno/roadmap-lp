@@ -1995,3 +1995,168 @@ a.dl-item:hover {
   .chain-name { font-size: 15px; }
   .chain-params b { min-width: 76px; }
 }
+
+/* ===== BEAT ── MIDI配置を1小節のグリッドで見せる ===== */
+/* 「表拍」「裏拍」は文章より figure で見せたほうが早い。
+   8分音符8マス＋左のパート名で1行、それを重ねて1小節を作る */
+.beat {
+  margin: 26px 0;
+  padding: 22px 24px 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.beat-head {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.beat-sub {
+  margin-bottom: 16px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.beat-row {
+  display: grid;
+  grid-template-columns: 62px repeat(8, 1fr);
+  gap: 4px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+
+.beat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.beat-cell {
+  display: grid;
+  place-items: center;
+  height: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--deep);
+  border: 1px solid var(--border);
+}
+
+/* 拍アタマ（1・2・3・4）はうっすら明るくして小節の骨格を見せる */
+.beat-cell--head { background: #141414; }
+
+.beat-cell.is-on {
+  color: var(--black);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.beat-cell.is-sub {
+  color: var(--black);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.beat-ruler {
+  display: grid;
+  grid-template-columns: 62px repeat(8, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.beat-ruler span {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.beat-ruler span:first-child { text-align: left; }
+
+.beat-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.beat-note:last-child { margin-bottom: 0; }
+
+@media (max-width: 560px) {
+  .beat { padding: 18px 15px 16px; }
+  .beat-row, .beat-ruler { grid-template-columns: 46px repeat(8, 1fr); gap: 3px; }
+  .beat-cell { height: 26px; font-size: 10px; }
+  .beat-label { font-size: 9px; }
+}
+
+/* ===== STACK ── ドラムを役割の層として積んで見せる ===== */
+.stack {
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.stack-layer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 22px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-layer:last-child { border-bottom: 0; }
+
+/* いま作っている層。ここだけ色を持たせる */
+.stack-layer--now {
+  background: linear-gradient(90deg, rgba(0, 200, 255, 0.07), transparent 70%), var(--panel);
+  border-left: 3px solid var(--accent);
+  padding-left: 19px;
+}
+
+/* 完成済みの層は沈める */
+.stack-layer--done { background: var(--deep); }
+
+.stack-name {
+  margin: 0 0 3px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.stack-layer--done .stack-name { color: var(--muted); }
+
+.stack-role {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.stack-tag {
+  flex-shrink: 0;
+  padding: 4px 11px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.stack-layer--now .stack-tag {
+  color: var(--black);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .stack-layer { padding: 14px 15px; gap: 10px; }
+  .stack-layer--now { padding-left: 12px; }
+  .stack-name { font-size: 14px; }
+  .stack-tag { padding: 3px 8px; font-size: 9px; }
+}
