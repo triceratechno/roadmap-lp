@@ -1929,15 +1929,14 @@ a.dl-item:hover {
   color: var(--white);
 }
 
+/* プラグイン画面の文字が読めることが最優先。
+   横に並べると縮んで読めなくなるため、画面を上にフル幅で置く */
 .chain-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 20px;
   padding: 20px 22px 22px;
 }
 
 .chain-shot {
-  margin: 0;
+  margin: 0 0 18px;
   min-width: 0;
 }
 
@@ -1963,7 +1962,7 @@ a.dl-item:hover {
 /* 設定値の一覧 */
 .chain-params {
   list-style: none;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   padding: 0;
   border-top: 1px solid var(--border);
 }
@@ -1990,7 +1989,7 @@ a.dl-item:hover {
 .chain-params span { color: var(--white); font-weight: 700; }
 
 @media (max-width: 720px) {
-  .chain-body { grid-template-columns: 1fr; gap: 16px; padding: 16px 16px 18px; }
+  .chain-body { padding: 16px 16px 18px; }
   .chain-head { padding: 15px 16px 14px; gap: 11px; }
   .chain-no { width: 30px; height: 30px; font-size: 18px; }
   .chain-name { font-size: 15px; }
