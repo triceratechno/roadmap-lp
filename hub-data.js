@@ -27,10 +27,10 @@
 
 const ROADMAP_DATA = {
   meta: {
-    productName: "トリケラテクノ流 最短で1曲完成するためのロードマップ1.0",
+    productName: "トリケラテクノ流 最短で1曲完成するためのロードマップPROコース",
     tagline: "8小節で止まらない。1曲を引っ張るDTM学習設計図。",
     totalSteps: 10,
-    lastUpdated: "2026-05-09",
+    lastUpdated: "2026-09-05",
     author: {
       name: "トリケラテクノ",
       role: "DTM解説恐竜 / Melodic Techno Producer",
