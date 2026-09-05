@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRICERA TECHNOの創生秘話｜音楽経験ゼロ、2年間1曲も完成しなかった私が</title>
+<meta name="description" content="120人のフロアで他人の曲をかけながら、私は悔しさを抱えていました。音楽経験ゼロ、2年間1曲も完成できなかった私が、なぜロードマップを作ることになったのか。TRICERA TECHNOの創生秘話。">
+
+<!-- OGP / Twitter Card ／ TODO: 専用OGP(og-story.jpg)ができたら差し替え -->
+<meta property="og:title" content="TRICERA TECHNOの創生秘話">
+<meta property="og:description" content="120人のフロアで他人の曲をかけながら、私は悔しさを抱えていました。音楽経験ゼロ、2年間1曲も完成できなかった私が、なぜロードマップを作ることになったのか。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/origin-story.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/hero-thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TRICERA TECHNOの創生秘話">
+<meta name="twitter:description" content="音楽経験ゼロ、2年間1曲も完成できなかった私が、なぜロードマップを作ることになったのか。">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/hero-thumbnail.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #9a9a9a;
+    --white: #ffffff;
+    /* 漫画パート専用：物語の「中」は真っ黒、現実に戻ると --black */
+    --story-bg: #000000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ===== NOISE ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ===== ANNOUNCE BAR ===== */
+  .announce-bar {
+    background: rgba(0,200,255,0.08);
+    border-bottom: 1px solid rgba(0,200,255,0.2);
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 100;
+  }
+  .announce-bar strong { color: var(--gold); }
+  .announce-dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); margin-right: 8px; vertical-align: middle;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--story-bg);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--story-bg));
+    pointer-events: none;
+  }
+  .hero-img {
+    width: 100%; max-width: 760px; margin: 0 auto 44px;
+    display: block; border-radius: 3px;
+  }
+  .hero-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.42em; color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(24px, 6.2vw, 44px);
+    font-weight: 900; line-height: 1.55; letter-spacing: 0.02em;
+    color: var(--white); margin-bottom: 26px;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero-lead {
+    font-size: clamp(14px, 3.6vw, 17px);
+    color: var(--muted); max-width: 640px; margin: 0 auto;
+  }
+  .hero-scroll {
+    margin-top: 56px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px; letter-spacing: 0.34em; color: var(--muted);
+  }
+  .hero-scroll span {
+    display: block; width: 1px; height: 46px; margin: 14px auto 0;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+
+  /* ===== STORY (漫画パート) ===== */
+  .story {
+    background: var(--story-bg);
+    padding: 0 20px 120px;
+  }
+  .story-inner { max-width: 720px; margin: 0 auto; }
+
+  .act {
+    display: flex; align-items: center; gap: 16px;
+    margin: 76px 0 44px;
+    color: var(--muted);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 0.3em;
+  }
+  .act::before, .act::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .panel { margin: 0 0 52px; }
+  .panel img {
+    width: 100%; display: block;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    background: #0a0a0a;
+  }
+  .panel--wide img { aspect-ratio: 16 / 9; }
+  .panel figcaption {
+    margin-top: 20px;
+    font-size: clamp(14px, 3.8vw, 16.5px);
+    line-height: 2;
+    color: var(--text);
+  }
+  .panel figcaption .quote {
+    display: block;
+    margin-top: 14px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: clamp(15px, 4.2vw, 19px);
+    line-height: 1.85;
+  }
+  .panel figcaption .num {
+    color: var(--gold); font-weight: 700;
+  }
+
+  /* 空プレースホルダ（画像未配置時） */
+  .panel.is-empty img { display: none; }
+  .panel.is-empty::before {
+    content: attr(data-slot);
+    display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 4 / 3;
+    border: 1px dashed rgba(0,200,255,0.35);
+    border-radius: 2px;
+    color: rgba(0,200,255,0.55);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.2em;
+    background: rgba(0,200,255,0.03);
+  }
+  .panel--wide.is-empty::before { aspect-ratio: 16 / 9; }
+
+  /* 8-2：スクロールの手を止めるための余白 */
+  .panel--beat { margin: 150px 0 150px; }
+  .panel--beat figcaption .quote {
+    font-size: clamp(17px, 5vw, 24px);
+    letter-spacing: 0.02em;
+  }
+
+  /* 6コマ畳みかけの共通キャプション */
+  .panel-group-caption {
+    margin: -20px 0 52px;
+    font-size: clamp(14px, 3.8vw, 16.5px);
+    line-height: 2;
+  }
+
+  /* ===== 現実へ戻る境界 ===== */
+  .to-reality {
+    background: linear-gradient(to bottom, var(--story-bg), var(--black));
+    padding: 90px 20px 0;
+  }
+  .to-reality-inner { max-width: 720px; margin: 0 auto; }
+  .to-reality img {
+    width: 100%; display: block; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .is-empty-photo {
+    display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 16 / 10;
+    border: 1px dashed rgba(245,197,24,0.35);
+    color: rgba(245,197,24,0.6);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.2em;
+    background: rgba(245,197,24,0.03);
+    text-align: center; padding: 20px;
+  }
+
+  /* ===== SECTION 共通 ===== */
+  section.block { padding: 100px 20px; }
+  .inner { max-width: 760px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 0.34em;
+    color: var(--accent); margin-bottom: 18px;
+  }
+  h2 {
+    font-size: clamp(21px, 5.6vw, 34px);
+    font-weight: 900; line-height: 1.6; color: var(--white);
+    margin-bottom: 30px; letter-spacing: 0.01em;
+  }
+  h2 .gold { color: var(--gold); }
+  .block p { font-size: clamp(14px, 3.8vw, 16.5px); margin-bottom: 22px; }
+  .block p:last-child { margin-bottom: 0; }
+  .lead-big {
+    font-size: clamp(16px, 4.6vw, 21px) !important;
+    font-weight: 700; color: var(--white); line-height: 1.85;
+  }
+
+  /* ===== B1 ノート → 商品 ===== */
+  .bridge { background: var(--black); border-top: 1px solid var(--border); }
+  .bridge .inner { text-align: center; }
+  .bridge-headline {
+    font-size: clamp(20px, 5.6vw, 34px);
+    font-weight: 900; color: var(--white); line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .bridge-headline .gold { color: var(--gold); }
+  .bridge-visual {
+    width: 100%; max-width: 620px; margin: 0 auto 34px; display: block;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 2px;
+  }
+  .bridge-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 6vw, 38px);
+    letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px;
+  }
+  .bridge-sub { color: var(--muted); font-size: 14px; letter-spacing: 0.1em; }
+
+  /* ===== B2 3段階 ===== */
+  .flow {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin: 36px 0 30px;
+  }
+  .flow-step {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 22px 12px; text-align: center; border-radius: 2px;
+    position: relative;
+  }
+  .flow-step .n {
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+    color: var(--accent); display: block; line-height: 1;
+  }
+  .flow-step .t {
+    font-weight: 900; color: var(--white); font-size: clamp(14px, 4vw, 18px);
+    margin-top: 8px; display: block;
+  }
+  .flow-step .d { font-size: 11.5px; color: var(--muted); margin-top: 6px; display: block; }
+  .flow-step--first { border-color: rgba(245,197,24,0.5); }
+  .flow-step--first .n { color: var(--gold); }
+  .flow-note {
+    font-size: 13.5px; color: var(--muted); text-align: center;
+    border-left: 2px solid var(--accent); padding-left: 14px; text-align: left;
+  }
+
+  /* ===== B3 反響 ===== */
+  .proof-shot {
+    width: 100%; max-width: 520px; margin: 0 auto 26px; display: block;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 2px;
+  }
+  .voices { display: grid; gap: 12px; margin-top: 28px; }
+  .voice {
+    background: var(--panel); border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    padding: 16px 18px; font-size: 14.5px; border-radius: 2px;
+  }
+
+  /* ===== B4 実績 ===== */
+  .metrics {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin-top: 34px;
+  }
+  .metric {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 22px 16px; text-align: center; border-radius: 2px;
+  }
+  .metric .v {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 8vw, 42px);
+    color: var(--gold); line-height: 1; letter-spacing: 0.04em;
+  }
+  .metric .l { font-size: 12px; color: var(--muted); margin-top: 10px; display: block; line-height: 1.6; }
+  .disclaimer { font-size: 12px; color: var(--muted); margin-top: 20px; }
+
+  /* ===== B6 由来 ===== */
+  .tricera-grid { display: grid; gap: 10px; margin: 30px 0 34px; }
+  .tricera-row {
+    display: grid; grid-template-columns: 58px 1fr; align-items: center;
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 16px 18px; border-radius: 2px;
+  }
+  .tricera-row .k {
+    font-family: 'Bebas Neue', sans-serif; font-size: 30px;
+    color: var(--accent); line-height: 1;
+  }
+  .tricera-row .w { font-size: 14.5px; }
+  .tricera-row .w b { color: var(--white); font-weight: 700; }
+  .donation {
+    border: 1px solid rgba(245,197,24,0.35);
+    background: rgba(245,197,24,0.04);
+    padding: 24px; border-radius: 2px; margin-top: 12px;
+  }
+  .donation .t { color: var(--gold); font-weight: 900; margin-bottom: 10px; }
+
+  /* ===== B7 向き不向き ===== */
+  .fit { display: grid; gap: 14px; margin-top: 30px; }
+  @media (min-width: 720px) { .fit { grid-template-columns: 1fr 1fr; } }
+  .fit-box { border: 1px solid var(--border); background: var(--panel); padding: 24px; border-radius: 2px; }
+  .fit-box h3 { font-size: 15px; font-weight: 900; margin-bottom: 14px; letter-spacing: 0.04em; }
+  .fit-box--no h3 { color: var(--muted); }
+  .fit-box--yes { border-color: rgba(0,200,255,0.35); }
+  .fit-box--yes h3 { color: var(--accent); }
+  .fit-box ul { list-style: none; }
+  .fit-box li { font-size: 14px; padding: 7px 0 7px 20px; position: relative; line-height: 1.75; }
+  .fit-box li::before {
+    content: ''; position: absolute; left: 4px; top: 15px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
+  }
+  .fit-box--yes li::before { background: var(--accent); }
+
+  /* ===== 受付枠 ===== */
+  .commit {
+    border: 1px solid rgba(245,197,24,0.35);
+    background: rgba(245,197,24,0.04);
+    padding: 40px 26px; border-radius: 2px; text-align: center;
+  }
+  .commit-eyebrow { font-size: 12.5px; color: var(--muted); letter-spacing: 0.14em; margin-bottom: 16px; }
+  .commit-headline {
+    font-size: clamp(18px, 5.2vw, 26px); font-weight: 900;
+    color: var(--gold); margin-bottom: 24px; line-height: 1.6;
+  }
+  .commit p { font-size: clamp(13.5px, 3.6vw, 15.5px); color: var(--text); }
+  .commit strong { color: var(--gold); font-weight: 900; }
+
+  /* ===== 最後の一押し ===== */
+  .finale { background: var(--story-bg); text-align: center; border-top: 1px solid var(--border); }
+  .finale p { font-size: clamp(15px, 4.2vw, 19px); line-height: 2.1; }
+  .finale .big {
+    font-size: clamp(20px, 6vw, 32px); font-weight: 900;
+    color: var(--white); margin: 44px 0 14px; line-height: 1.6;
+  }
+  .finale .sig {
+    font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.24em;
+    color: var(--accent); font-size: 17px; margin-top: 6px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-wrap { text-align: center; padding: 20px 20px 110px; background: var(--story-bg); }
+
+  .offer-card {
+    max-width: 860px; margin: 0 auto 32px;
+    background: var(--deep);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 34px 26px;
+    display: grid; gap: 28px;
+    text-align: left;
+  }
+  @media (min-width: 760px) {
+    .offer-card {
+      grid-template-columns: 38% 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 46px 44px;
+    }
+  }
+  .offer-visual { text-align: center; }
+  .offer-visual img {
+    width: 100%; max-width: 240px; height: auto; display: inline-block;
+    filter: drop-shadow(0 18px 34px rgba(0,0,0,0.65));
+  }
+  @media (min-width: 760px) { .offer-visual img { max-width: 100%; } }
+
+  .offer-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12.5px; letter-spacing: 0.3em; color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .offer-title {
+    font-size: clamp(19px, 5vw, 27px); font-weight: 900;
+    color: var(--white); line-height: 1.6; margin-bottom: 18px;
+  }
+  .offer-lead {
+    font-size: clamp(13.5px, 3.6vw, 15px); color: var(--muted);
+    line-height: 1.95; margin-bottom: 22px;
+  }
+  .offer-proof {
+    background: rgba(0,200,255,0.05);
+    border: 1px solid rgba(0,200,255,0.22);
+    border-radius: 8px; padding: 18px 20px; margin-bottom: 22px;
+  }
+  .offer-proof-title {
+    font-size: 12.5px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .offer-proof p {
+    font-size: clamp(13px, 3.5vw, 14.5px) !important;
+    color: var(--text); line-height: 1.9; margin: 0 0 8px !important;
+  }
+  .offer-proof-note { font-size: 11.5px; color: var(--muted); }
+  .offer-slots {
+    font-size: 13px !important; color: var(--muted);
+    margin-bottom: 22px !important;
+  }
+  .offer-slots strong { color: var(--gold); font-weight: 700; }
+  .offer-btn {
+    display: block; text-align: center;
+    background: var(--gold); color: #000;
+    font-weight: 900; font-size: clamp(14px, 3.9vw, 16.5px);
+    letter-spacing: 0.04em; padding: 18px 26px;
+    text-decoration: none; border-radius: 4px;
+    transition: background .2s, transform .2s;
+  }
+  .offer-btn:hover { background: #ffd740; transform: translateY(-2px); }
+
+  .cta-sub {
+    display: inline-block; margin-top: 22px;
+    border: 1px solid rgba(0,200,255,0.5); color: var(--accent);
+    font-size: 14px; letter-spacing: 0.04em; padding: 14px 30px;
+    text-decoration: none; border-radius: 2px; transition: background .2s;
+  }
+  .cta-sub:hover { background: rgba(0,200,255,0.08); }
+  .cta-note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--black); border-top: 1px solid var(--border);
+    padding: 40px 20px; text-align: center;
+    font-size: 12px; color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+
+  /* ===== STICKY CTA (mobile) ===== */
+  .sticky-cta-bar { display: none; }
+  @media (max-width: 720px) {
+    .sticky-cta-bar {
+      display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(0,200,255,0.3);
+      padding: 10px 16px; text-align: center;
+      transform: translateY(100%); opacity: 0;
+      transition: transform .4s ease, opacity .4s ease; pointer-events: none;
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .sticky-cta-bar a {
+      display: block; background: var(--gold); color: #000;
+      font-weight: 900; font-size: 14px; letter-spacing: 0.06em;
+      padding: 14px 20px; text-decoration: none; border-radius: 2px;
+    }
+    body { padding-bottom: 70px; }
+    section.block { padding: 76px 20px; }
+    .panel--beat { margin: 110px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <!-- 提供いただいたマスク写真を manga/mask-hero.jpg として保存してください -->
+  <img class="hero-img" src="manga/mask-hero.jpg" alt="トリケラトプスのマスクを手にしたトリケラテクノ" onerror="this.style.display='none'">
+  <div class="hero-eyebrow">THE ORIGIN</div>
+  <h1>音楽経験ゼロ。<br>2年間、<span class="accent">1曲も</span>完成しなかった私が、<br>なぜここにいるのか。</h1>
+  <p class="hero-lead">TRICERA TECHNOが生まれるまでの話です。<br>少し長いですが、これが全部の理由です。</p>
+  <div class="hero-scroll">SCROLL<span></span></div>
+</header>
+
+<!-- ============ 漫画パート ============ -->
+<main class="story">
+  <div class="story-inner">
+
+    <!-- ---- 第1幕 ---- -->
+    <div class="act reveal">ACT 1 — 原体験</div>
+
+    <figure class="panel reveal" data-slot="1-1">
+      <img loading="lazy" decoding="async" src="manga/opt/1-1.jpg" alt="深夜、参考書に囲まれて机に向かう">
+      <figcaption>2022年、大学院の受験勉強。<br>机と参考書と、蛍光灯だけの毎日。<br>音楽なんて、そこまでの人生に一度も出てこなかった。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="1-2">
+      <img loading="lazy" decoding="async" src="manga/opt/1-2.jpg" alt="スマホに届いたフェスの映像">
+      <figcaption>そんな夜、友人から一本の動画が届く。<br>TomorrowlandとUltra。海の向こうのフェス映像。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="1-3">
+      <img loading="lazy" decoding="async" src="manga/opt/1-3.jpg" alt="スマホの光に照らされたマスク">
+      <figcaption>音、光、熱狂。<br>手のひらの画面の中で、それが全部交差していた。<br>DJ Snakeのステージが、その日から頭を離れない。<span class="quote">あの音を、体の芯で浴びたい。<br>——その一心だけで、受験に受かった。</span></figcaption>
+    </figure>
+
+    <!-- ---- 第2幕 ---- -->
+    <div class="act reveal">ACT 2 — 観客としての衝撃</div>
+
+    <figure class="panel reveal" data-slot="2-1">
+      <img loading="lazy" decoding="async" src="manga/opt/2-1.jpg" alt="巨大なフェス会場で立ち尽くす">
+      <figcaption>2023年1月、GMO SONIC。人生で初めてのフェス。<br>Alan Walker、Steve Aoki、Marshmello。<br>最初の一音が鳴った瞬間、わかってしまった。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="2-2">
+      <img loading="lazy" decoding="async" src="manga/opt/2-2.jpg" alt="ステージを見つめ拳を握る">
+      <figcaption>音楽は聴くものじゃない。身体で浴びるものだ。<br>そしてその震えの奥で、もうひとつ火が灯る。<span class="quote">——作る側に、行きたい。</span></figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="3-1">
+      <img loading="lazy" decoding="async" src="manga/opt/3-1.jpg" alt="韓国の野外フェス、思い思いに音を浴びる人々">
+      <figcaption>火がついたまま、研究の短期留学で韓国へ。<br>音を中心に、人が自然とつながる場。<br>踊る人、喋る人、ただ座って浴びる人。<br>全員バラバラで、全員が正解だった。<span class="quote">——こんな場所を、自分の手で。</span></figcaption>
+    </figure>
+
+    <!-- ---- 第3幕 ---- -->
+    <div class="act reveal">ACT 3 — 最初の行動</div>
+
+    <figure class="panel reveal" data-slot="4-1">
+      <img loading="lazy" decoding="async" src="manga/opt/4-1.jpg" alt="届いたDJコントローラーを箱から取り出す">
+      <figcaption>帰国した週に、人生で初めてのDJ機材。<br>Pioneer DDJ-200。いちばん安い、入門機。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="4-2">
+      <img loading="lazy" decoding="async" src="manga/opt/4-2.jpg" alt="深夜、チュートリアルを見ながら機材を触る">
+      <figcaption>BPMはずれる。エフェクトはかけすぎる。選曲は外す。<br>毎晩、失敗ばかり。<br>それでも、2曲がぴたりと重なる一瞬。<br>あの快感だけは、忘れられなかった。</figcaption>
+    </figure>
+
+    <!-- ---- 第4幕 ---- -->
+    <div class="act reveal">ACT 4 — 主催の決意</div>
+
+    <figure class="panel reveal" data-slot="5-1">
+      <img loading="lazy" decoding="async" src="manga/opt/5-1.jpg" alt="居酒屋で友人と話す">
+      <figcaption>バイト先の友人が、何気なく言った。<span class="quote">「日本にはパーティー文化がないよね」</span></figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="5-2">
+      <img loading="lazy" decoding="async" src="manga/opt/5-2.jpg" alt="ハッとして正面を向くマスク">
+      <figcaption>ないなら、つくればいい。<br>気づいたら、そう答えていた。<br>親友と2人、50人規模のイベント。本気で動きはじめた。</figcaption>
+    </figure>
+
+    <!-- ---- 第5幕 ---- -->
+    <div class="act reveal">ACT 5 — 3ヶ月</div>
+
+    <figure class="panel reveal" data-slot="6-1">
+      <img loading="lazy" decoding="async" src="manga/opt/6-1.jpg" alt="夏祭りでフライヤーを配る">
+    </figure>
+
+    <figure class="panel reveal" data-slot="6-2">
+      <img loading="lazy" decoding="async" src="manga/opt/6-2.jpg" alt="飲食店で深く頭を下げる">
+    </figure>
+
+    <figure class="panel reveal" data-slot="6-3">
+      <img loading="lazy" decoding="async" src="manga/opt/6-3.jpg" alt="シーシャバーでのプレパーティー">
+    </figure>
+
+    <figure class="panel reveal" data-slot="6-4">
+      <img loading="lazy" decoding="async" src="manga/opt/6-4.jpg" alt="PCの前でうなだれる">
+    </figure>
+
+    <p class="panel-group-caption reveal">
+      会場を押さえ、ロゴを作り、フライヤーを刷る。SNSで叫び、祭りで配り、飲食店に頭を下げ、
+      外国人の交流イベントに顔を出し、シーシャバーでプレパーティーまでやった。<br>
+      3ヶ月、走れるだけ走って——<br>
+      最初に売れたチケットは、<span class="num">10枚</span>。
+    </p>
+
+    <figure class="panel reveal" data-slot="6-5">
+      <img loading="lazy" decoding="async" src="manga/opt/6-5.jpg" alt="深夜、スマホで一人ずつメッセージを送り続ける">
+      <figcaption>それでも、やめる理由にはならない。<br>その日から毎晩、友人に、知り合いに、その知り合いに。<br>一人ずつ、手打ちでメッセージを送った。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="6-6">
+      <img loading="lazy" decoding="async" src="manga/opt/6-6.jpg" alt="カレンダーに残り日数、机の上に売れ残ったチケットの束">
+      <figcaption>返事が来ない夜のほうが、ずっと多かった。<br>それでも本番までの2週間、送る手だけは止めなかった。<span class="quote">来なかったら、そのときはそのときだ。</span></figcaption>
+    </figure>
+
+    <!-- ---- 第6幕 ---- -->
+    <div class="act reveal">ACT 6 — 当日</div>
+
+    <figure class="panel panel--beat reveal" data-slot="6-7">
+      <img loading="lazy" decoding="async" src="manga/opt/6-7.jpg" alt="開演30分前、誰もいないフロアに一人で立つ">
+      <figcaption>開演30分前。<br>照明だけが点いたフロアに、まだ誰もいない。<span class="quote">——このまま、誰も来なかったら。</span></figcaption>
+    </figure>
+
+    <figure class="panel panel--wide reveal" data-slot="7-1">
+      <img loading="lazy" decoding="async" src="manga/opt/7-1.jpg" alt="120人が熱狂するフロアをDJブースから見た光景">
+      <figcaption>——扉が開いた瞬間、人の流れが止まらなかった。<br>前売り10枚から、当日券、友達の友達、その場で呼ばれた誰か。<br>最終的に入ったのは、<span class="num">120人</span>。売上、20万円超え。<br>自分がかけた音で、フロアが揺れている。<br>目の前の人が、泣きそうな顔で笑っている。<span class="quote">音楽は、聴かせるものじゃない。自分を表現する手段だ。<br>そしてその表現は、ちゃんと誰かの心を動かす。</span></figcaption>
+    </figure>
+
+    <!-- ---- 第7幕 ---- -->
+    <div class="act reveal">ACT 7 — 消えなかった引っかかり</div>
+
+    <figure class="panel reveal" data-slot="8-1">
+      <img loading="lazy" decoding="async" src="manga/opt/8-1.jpg" alt="熱狂の中で一人だけ動かない">
+      <figcaption>なのに、イベントを重ねるほど、引っかかりは濃くなっていく。<br>熱狂のど真ん中で、私だけが、どこか醒めている。</figcaption>
+    </figure>
+
+    <figure class="panel panel--beat reveal" data-slot="8-2">
+      <img loading="lazy" decoding="async" src="manga/opt/8-2.jpg" alt="うつむいたマスクのアップ">
+      <figcaption><span class="quote">——この盛り上がっている音、全部、他人の曲なんだよな。</span></figcaption>
+    </figure>
+
+    <p class="panel-group-caption reveal">
+      私はまだ、誰かがつくった感動を運んでいるだけ。<br>
+      自分の音で、あの顔が見たい。<br>
+      ——そう思ってDAWを開いた。それが、長い迷子のはじまりだった。
+    </p>
+
+    <!-- ---- 第8幕 ---- -->
+    <div class="act reveal">ACT 8 — 2年</div>
+
+    <figure class="panel reveal" data-slot="9-1">
+      <img loading="lazy" decoding="async" src="manga/opt/9-1.jpg" alt="8小節のループだけが並んだDAWの画面">
+      <figcaption>先に、結果から。<span class="quote">そこから2年間、1曲も完成させられなかった。</span></figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="9-2">
+      <img loading="lazy" decoding="async" src="manga/opt/9-2.jpg" alt="未完成プロジェクトで埋まったフォルダ">
+      <figcaption>8小節のループを作って、満足して、閉じる。<br>次に開くのは、数ヶ月後。<br>曲は増えない。増えるのは、未完成のフォルダだけ。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="9-3">
+      <img loading="lazy" decoding="async" src="manga/opt/9-3.jpg" alt="ノートPCの蓋を静かに閉じる">
+      <figcaption>フェーダーも触らない。プラグインも挿さない。<br>今見返せば、恥ずかしくなるようなプロジェクトばかり。<br>でも当時は、原因が自分の才能にあるとしか思えなかった。<span class="quote">——向いてないんだ。本気で、そう思っていた。</span></figcaption>
+    </figure>
+
+    <p class="panel-group-caption reveal">
+      海外の調査では、DTMを始めて2年目まで続く人は<span class="num">1,228人中わずか8%</span>。
+      10人に9人が、1曲もリリースしないまま辞めていく。<br>
+      私は完全に、その9人側だった。<br>
+      ——もし今あなたが同じ場所にいるなら、それは、あなたの才能のせいじゃありません。
+    </p>
+
+    <!-- ---- 第9幕 ---- -->
+    <div class="act reveal">ACT 9 — 転機</div>
+
+    <figure class="panel reveal" data-slot="10-1">
+      <img loading="lazy" decoding="async" src="manga/opt/10-1.jpg" alt="タイの年越しフェス、巨大なステージ">
+      <figcaption>変わったのは、たった一晩。<br>タイの年越しフェス「NEON COUNTDOWN」。<br>MRAKのステージで鳴っていたのは、それまで聴いてきたEDMとは、まったく別の音だった。</figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="10-2">
+      <img loading="lazy" decoding="async" src="manga/opt/10-2.jpg" alt="光を浴びて静止する">
+      <figcaption>空間ごと包み込むシンセ。美しいメロディ。重く、深いグルーヴ。<br>立ち尽くしたまま、体の芯が鳴った。<span class="quote">——これだ。私が作りたかったのは、この音だ。</span></figcaption>
+    </figure>
+
+    <!-- ---- 第10幕 ---- -->
+    <div class="act reveal">ACT 10 — 2つ目の壁</div>
+
+    <figure class="panel reveal" data-slot="11-1">
+      <img loading="lazy" decoding="async" src="manga/opt/11-1.jpg" alt="外国語のチュートリアルばかりが並ぶ画面">
+      <figcaption>帰国してすぐ、メロディックテクノを片っ端から調べた。<br>Anyma、Tale of Us、Massano、ARGY、ARTBAT、Mind Against。<br>そこで、2つ目の壁。<span class="quote">——この音楽を日本語で学べる場所が、どこにもなかった。</span></figcaption>
+    </figure>
+
+    <figure class="panel reveal" data-slot="11-2">
+      <img loading="lazy" decoding="async" src="manga/opt/11-2.jpg" alt="深夜、手書きのノートに書き続ける背中">
+      <figcaption>英語のチュートリアル。断片的な動画。<br>つなぎ合わせて、遠回りするしかなかった。<br>だから、調べたことを全部、自分のためにノートへ書き始めた。<span class="quote">あの頃の自分に寄り添ってくれる場所が、ひとつでもあったら。<br>私はもっと早く、音を楽しめていたはずです。</span></figcaption>
+    </figure>
+
+  </div>
+</main>
+
+<!-- ============ 漫画 → 現実 ============ -->
+<div class="to-reality">
+  <div class="to-reality-inner reveal">
+    <!-- 実物の手書きノートの写真を manga/notebook-real.jpg として保存してください -->
+    <img src="manga/notebook-real.jpg" alt="実際に書き続けた手書きのノート" onerror="this.outerHTML='&lt;div class=\'is-empty-photo\'&gt;NOTEBOOK PHOTO — manga/notebook-real.jpg&lt;/div&gt;'">
+  </div>
+</div>
+
+<!-- ============ B1｜あのノートが、これになった ============ -->
+<section class="block bridge">
+  <div class="inner reveal">
+    <p class="bridge-headline">あのノートが、<br><span class="gold">これになりました。</span></p>
+    <img class="bridge-visual" src="roadmap-hero.jpg" alt="ロードマップPROコース" onerror="this.outerHTML='&lt;div class=\'is-empty-photo\' style=\'max-width:620px;margin:0 auto 34px;\'&gt;ROADMAP VISUAL — roadmap-hero.jpg&lt;/div&gt;'">
+    <div class="bridge-name">ROADMAP PRO COURSE</div>
+    <p class="bridge-sub">1曲を完成させるまでの、10のSTEP</p>
+  </div>
+</section>
+
+<!-- ============ B2｜変えたのは順番だけ ============ -->
+<section class="block">
+  <div class="inner reveal">
+    <div class="eyebrow">WHAT CHANGED</div>
+    <h2>才能が湧いたわけでも、<br>時間が増えたわけでもない。<br><span class="gold">変えたのは「作る順番」だけです。</span></h2>
+    <p>ある時期から、制作が急に変わりました。迷う時間が減り、次に何をすべきかが自然と分かり、曲が完成に向かって進んでいる感覚が持てるようになりました。</p>
+    <p>作曲はひらめきではなく、順番です。</p>
+
+    <div class="flow">
+      <div class="flow-step flow-step--first">
+        <span class="n">01</span><span class="t">作る</span><span class="d">音を並べる</span>
+      </div>
+      <div class="flow-step">
+        <span class="n">02</span><span class="t">整える</span><span class="d">音を磨く</span>
+      </div>
+      <div class="flow-step">
+        <span class="n">03</span><span class="t">届ける</span><span class="d">書き出す</span>
+      </div>
+    </div>
+
+    <p class="flow-note">9割の人は、②や③のテクニック（EQ、コンプ、マスタリング）から手を出して迷子になります。本当に最初にやるべきなのは、①の中の最初の一歩——ドラムとコードで、4小節のループを1つ鳴らすこと。それだけです。</p>
+  </div>
+</section>
+
+<!-- ============ B3｜私だけの話ではない ============ -->
+<section class="block" style="background:var(--deep); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="inner reveal">
+    <div class="eyebrow">NOT ONLY ME</div>
+    <h2>同じ場所で止まっている人が、<br>これほどいました。</h2>
+    <!-- Xポストのスクショを proof-x-post.png として保存してください -->
+    <img class="proof-shot" src="proof-x-post.png" alt="69万インプレッションを超えたXの投稿" onerror="this.style.display='none'">
+    <p>「耳で判断できるようになるまでは時間がかかる。だから数値で理解して、判断基準を作るしかない」——Xにそう書いた投稿が、<strong style="color:var(--gold)">69万インプレッション</strong>まで広がりました。</p>
+    <p style="margin:24px 0 0; color:var(--muted); font-size:14px;">同じことについて、別の投稿やnoteのコメント、LINEでも声が届いています。</p>
+    <div class="voices">
+      <div class="voice">「今の自分すぎる」</div>
+      <div class="voice">「判断基準がないまま作業していた」</div>
+      <div class="voice">「自分のことが書かれていた」</div>
+    </div>
+    <p style="margin-top:26px;">曲が完成しない理由は、センスではありません。<br><strong style="color:var(--white)">正しい順番を、誰にも教わっていないだけです。</strong></p>
+  </div>
+</section>
+
+<!-- ============ B4｜実績 ============ -->
+<section class="block">
+  <div class="inner reveal">
+    <div class="eyebrow">WHERE I AM NOW</div>
+    <h2>楽譜も読めなかった私の、<br>いまの現在地です。</h2>
+    <div class="metrics">
+      <div class="metric"><div class="v">2023.5</div><span class="l">音楽経験ゼロからDTM開始</span></div>
+      <div class="metric"><div class="v">EP 2枚</div><span class="l">Apple Music / Spotifyでリリース</span></div>
+      <div class="metric"><div class="v">1,700+</div><span class="l">5媒体で届けている人数</span></div>
+      <div class="metric"><div class="v">239</div><span class="l">note記事の累計本数</span></div>
+      <div class="metric"><div class="v">100+</div><span class="l">実際にお答えした個別相談</span></div>
+      <div class="metric"><div class="v">30–60<span style="font-size:.5em">min</span></div><span class="l">1日の制作時間。それでも進む</span></div>
+    </div>
+    <p class="disclaimer">※2026年時点の数値です。</p>
+
+    <p style="margin-top:40px;">1曲目は完成まで約2ヶ月かかりました。2作目のアルバムでは、同じ期間で2曲を完成させています。<br>制作時間が増えたわけではありません。<strong style="color:var(--white)">迷う時間が、ほぼゼロになっただけです。</strong></p>
+    <p>そしていま、ベルギー、カナダ、韓国から、私の曲の感想が返ってきます。</p>
+
+    <div class="voices" style="margin-top:30px;">
+      <div class="voice">ジジさん（DTM歴1年未満）— 3ヶ月で1曲完成</div>
+      <div class="voice">やすさん（DTM歴1〜3年）— やる順番を変えただけで2週間で完成</div>
+    </div>
+    <p class="disclaimer">※個人の成果例であり、誰にでも同じ結果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ============ B5｜1人で作らない ============ -->
+<section class="block" style="background:var(--deep); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="inner reveal">
+    <div class="eyebrow">NOT ALONE</div>
+    <h2>1人で作り続けるのは、<br>才能の問題ではなく、<br><span class="gold">単純にきついのです。</span></h2>
+    <p>完成した曲を、親友に送りました。すると彼がDTMを始めました。さらにその友人も始めました。<br>いま私たちは3人で曲を送り合い、フィードバックし合いながらアルバムを作っています。</p>
+    <p>ステージもマイクもなくても、画面の向こうで誰かが「すごい」と言ってくれたとき、この小さな音が誰かの心に触れたのだと、涙が出るほど嬉しかった。</p>
+    <p class="lead-big">出す → 反応が返る → 直す → 上達する。<br>このサイクルに入れた人だけが、続いていきます。</p>
+    <p>だから私は、ロードマップを「渡して終わり」にしていません。<br>あなたが1人で迷わないように、3ヶ月のLINEサポートと楽曲フィードバックで並走します。</p>
+  </div>
+</section>
+
+<!-- ============ B7｜向き不向き ============ -->
+<section class="block" style="border-top:1px solid var(--border);">
+  <div class="inner reveal">
+    <div class="eyebrow">HONESTLY</div>
+    <h2>正直に書きます。</h2>
+    <div class="fit">
+      <div class="fit-box fit-box--no">
+        <h3>向いていない人</h3>
+        <ul>
+          <li>楽をして一瞬でうまくなりたい人</li>
+          <li>答えだけが欲しい人</li>
+          <li>できない理由を探してしまう人</li>
+          <li>読んで満足して、手を動かさない人</li>
+        </ul>
+      </div>
+      <div class="fit-box fit-box--yes">
+        <h3>向いている人</h3>
+        <ul>
+          <li>一度でも「自分の曲を作りたい」と思ったことがある人</li>
+          <li>過去に挫折して、もう一度だけやってみたい人</li>
+          <li>感覚ではなく、判断基準を持って作りたい人</li>
+          <li>順番通りに積み上げられる人</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:30px;">魔法はありません。順番通りに、実際に手を動かす必要があります。<br>それでも、ここに当てはまる人なら、間違いなくたどり着けます。</p>
+  </div>
+</section>
+
+<!-- ============ 受付枠 ============ -->
+<section class="block" style="padding-top:0;">
+  <div class="inner reveal">
+    <div class="commit">
+      <div class="commit-eyebrow">— なぜ受付枠を絞るのか —</div>
+      <div class="commit-headline">質のために、量を捨てています。</div>
+      <p>
+        3ヶ月のLINEサポート、楽曲フィードバック。<br>
+        これらを「形式的にこなす」のではなく、1人1人の状況に合わせて本気でやり切るには、<br>
+        私が同時に向き合える人数に限界があります。
+      </p>
+      <p style="margin-top:22px;">
+        だから、受付枠は1ヶ月<strong><span data-slots-capacity>5</span>名まで</strong>。<br>
+        枠が埋まれば、翌月以降のご案内になります。
+      </p>
+      <p style="margin-top:22px; color:var(--muted); font-size:14px;">
+        私は「いつかやる人」ではなく、「いま動く人」と進みたいと思っています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 最後の一押し ============ -->
+<section class="block finale">
+  <div class="inner reveal">
+    <p>私は120人のフロアで、他人の曲をかけながら、悔しさを抱えていました。<br>2年間、1曲も完成させられずに、自分には向いていないと思っていました。</p>
+    <p style="margin-top:26px;">それでもいま、私の音を、会ったこともない国の誰かが聴いてくれています。</p>
+    <p style="margin-top:26px;">音楽経験ゼロ、楽譜も読めなかった私にできたことです。<br>順番さえ知っていれば、あなたにもできます。</p>
+    <p class="big">次は、あなたの音で。</p>
+    <div class="sig">TRICERA TECHNO</div>
+    <p style="font-size:14px; color:var(--muted); margin-top:10px;">あなたの音が、誰かの心を震わせる。</p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-wrap">
+  <div class="offer-card reveal">
+    <div class="offer-visual">
+      <img src="roadmap-book.png" alt="ロードマップPROコース" loading="lazy" decoding="async">
+    </div>
+    <div class="offer-body">
+      <div class="offer-eyebrow">ROADMAP PRO COURSE</div>
+      <h3 class="offer-title">迷う時間を、<br>ゼロにするための地図です。</h3>
+      <p class="offer-lead">2年以上迷い続けた私が、抜け出すために自分で描いた設計図を、10のSTEPに分解しました。3ヶ月のLINEサポートと楽曲フィードバックで、最後まで並走します。</p>
+
+      <div class="offer-proof">
+        <div class="offer-proof-title">その先の実例 ——</div>
+        <p>初心者（DTM歴1年未満）のジジさんは3ヶ月。経験者（1〜3年）のやすさんは"順番"を変えて2週間で1曲完成。</p>
+        <span class="offer-proof-note">〈個人の成果例です〉</span>
+      </div>
+
+      <p class="offer-slots">
+        受付枠は1ヶ月<span data-slots-capacity>5</span>名まで。<span id="ctaMonth"></span>の残りは<strong>あと<span data-slots-remaining>2</span>名</strong>です。
+      </p>
+
+      <a class="offer-btn" href="triceratechno-lp.html?utm_source=origin_story&utm_medium=owned&utm_campaign=story2lp&utm_content=final_cta">ロードマップPROコースを見てみる →</a>
+    </div>
+  </div>
+
+  <a class="cta-sub" href="https://lin.ee/73qcA3u" target="_blank" rel="noopener">まだ迷っている方は、公式LINEで質問する</a>
+</div>
+
+<footer>
+  <p>&copy; TRICERA TECHNO</p>
+</footer>
+
+<div class="sticky-cta-bar" role="complementary" aria-label="ロードマップの詳細へ">
+  <a href="triceratechno-lp.html?utm_source=origin_story&utm_medium=owned&utm_campaign=story2lp&utm_content=sticky">→ ロードマップの詳細を見る</a>
+</div>
+
+<script>
+  // 月の自動表示
+  (function () {
+    var m = (new Date().getMonth() + 1) + '月';
+    var a = document.getElementById('announceMonth');
+    var c = document.getElementById('ctaMonth');
+    if (a) a.textContent = m;
+    if (c) c.textContent = m;
+  })();
+
+  // 画像が未配置のコマはプレースホルダ表示に切り替える
+  document.querySelectorAll('.panel img').forEach(function (img) {
+    function markEmpty() {
+      var p = img.closest('.panel');
+      if (p) p.classList.add('is-empty');
+    }
+    img.addEventListener('error', markEmpty);
+    if (img.complete && img.naturalWidth === 0) markEmpty();
+  });
+
+  // スクロールで出現
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (r) { r.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function (r) { observer.observe(r); });
+  })();
+
+  // スティッキーCTA（スマホのみ）：漫画が終わるまでは出さない
+  (function () {
+    var bar = document.querySelector('.sticky-cta-bar');
+    var gate = document.querySelector('.to-reality');
+    if (!bar) return;
+    var visible = false;
+    function update() {
+      var trigger = gate ? gate.offsetTop - window.innerHeight : window.innerHeight * 0.7;
+      var shouldShow = window.scrollY > trigger;
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        bar.classList.toggle('visible', visible);
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+<script src="slots.js"></script>
+</body>
+</html>
