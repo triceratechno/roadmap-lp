@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_article.css?v=20260906">
+<link rel="stylesheet" href="_article.css?v=20260906b">
 </head>
 
 <body class="is-locked" data-prev-id="2-3" data-article-id="2-4" data-next-id="2-5">
@@ -238,52 +238,103 @@
       <!-- 処理の流れ -->
       <h3 class="sub-title">処理の流れ ── 4ステップ</h3>
 
-      <div class="anatomy">
-        <div class="anatomy-row">
-          <div class="anatomy-no">1</div>
-          <div class="anatomy-name">EQ（1回目）<span class="anatomy-en">Cut</span></div>
-          <div class="anatomy-desc"><strong>100Hz以下をカット。</strong>超低域はキック・サブの領域。ここを削るだけで中高域のアタックが前に出ます。</div>
-        </div>
-        <div class="anatomy-row">
-          <div class="anatomy-no">2</div>
-          <div class="anatomy-name">OTT を 20%<span class="anatomy-en">Density</span></div>
-          <div class="anatomy-desc">Depth 20%、Time 100%。<em>“圧縮”ではなく“密度を詰める”</em>目的で使う。かけすぎ禁止。</div>
-        </div>
-        <div class="anatomy-row">
-          <div class="anatomy-no">3</div>
-          <div class="anatomy-name">CamelCrusher<span class="anatomy-en">Warmth</span></div>
-          <div class="anatomy-desc">プリセット「British Clean」、Drive 20〜30%、Mix 50%前後。歪ませるのではなく<strong>“温める”感覚</strong>で。</div>
-        </div>
-        <div class="anatomy-row">
-          <div class="anatomy-no">4</div>
-          <div class="anatomy-name">EQ（2回目）<span class="anatomy-en">Re-Cut</span></div>
-          <div class="anatomy-desc">CamelCrusher の歪みで低域が再び出るため、<strong>もう一度100Hz以下をカット。</strong></div>
-        </div>
-      </div>
+      <p>上から順に、<strong>この順番のまま</strong>挿していってください。</p>
 
-      <p>手順②と③で使うプラグインは、<strong>どちらも無料</strong>です。まだ入れていなければ、ここからどうぞ。</p>
+      <ol class="chain">
+        <li class="chain-step">
+          <div class="chain-head">
+            <span class="chain-no">1</span>
+            <div class="chain-headline">
+              <span class="chain-en">Cut</span>
+              <h4 class="chain-name">EQ（1回目）── 100Hz以下をカット</h4>
+            </div>
+          </div>
+          <div class="chain-body">
+            <figure class="chain-shot">
+              <img src="img/step2-4/eq-first.webp" alt="Pro EQ3 で 100Hz 以下を 48dB/Oct でカットした状態" loading="lazy">
+              <figcaption class="chain-cap">画面は Studio One の Pro EQ3。左下の LC（ローカット）だけを使い、他のバンドは触っていない。</figcaption>
+            </figure>
+            <div class="chain-desc">
+              <ul class="chain-params">
+                <li><b>カット帯域</b><span>100Hz 以下</span></li>
+                <li><b>スロープ</b><span>48dB/Oct</span></li>
+              </ul>
+              <p>超低域はキック・サブの領域。<strong>ここを削るだけで中高域のアタックが前に出ます。</strong></p>
+            </div>
+          </div>
+        </li>
 
-      <a class="linkcard" href="https://xferrecords.com/freeware" target="_blank" rel="noopener">
-        <span class="linkcard-thumb"><img src="img/link/ott.jpg" alt="OTT のプラグイン画面" loading="lazy"></span>
-        <span class="linkcard-text">
-          <span class="linkcard-tag linkcard-tag--free">無料</span>
-          <span class="linkcard-eyebrow">手順② ── 密度を詰める</span>
-          <span class="linkcard-title">OTT（Xfer Records）</span>
-          <span class="linkcard-sub">マルチバンドのアップ/ダウンコンプ。Depth 20%、Time 100% で薄くかける。</span>
-          <span class="linkcard-domain">xferrecords.com</span>
-        </span>
-      </a>
+        <li class="chain-step">
+          <div class="chain-head">
+            <span class="chain-no">2</span>
+            <div class="chain-headline">
+              <span class="chain-en">Density</span>
+              <h4 class="chain-name">OTT を 20% だけかける</h4>
+            </div>
+          </div>
+          <div class="chain-body">
+            <figure class="chain-shot">
+              <img src="img/step2-4/ott.webp" alt="OTT を DEPTH 20%、TIME 100% に設定した状態" loading="lazy">
+              <figcaption class="chain-cap">画面では OUT GAIN を −2.6dB。OTT で持ち上がった分の音量を、ここで戻している。</figcaption>
+            </figure>
+            <div class="chain-desc">
+              <ul class="chain-params">
+                <li><b>DEPTH</b><span>20%</span></li>
+                <li><b>TIME</b><span>100%</span></li>
+              </ul>
+              <p><em>“圧縮”ではなく“密度を詰める”</em>目的で使います。<strong>かけすぎ禁止。</strong></p>
+            </div>
+          </div>
+        </li>
 
-      <a class="linkcard" href="https://camelcrusher.com/" target="_blank" rel="noopener">
-        <span class="linkcard-thumb"><img src="img/link/camelcrusher.jpg" alt="CamelCrusher のプラグイン画面" loading="lazy"></span>
-        <span class="linkcard-text">
-          <span class="linkcard-tag linkcard-tag--free">無料</span>
-          <span class="linkcard-eyebrow">手順③ ── 温める</span>
-          <span class="linkcard-title">CamelCrusher</span>
-          <span class="linkcard-sub">macOS / Windows 対応の定番無料サチュレーター。「British Clean」を使う。</span>
-          <span class="linkcard-domain">camelcrusher.com</span>
-        </span>
-      </a>
+        <li class="chain-step">
+          <div class="chain-head">
+            <span class="chain-no">3</span>
+            <div class="chain-headline">
+              <span class="chain-en">Warmth</span>
+              <h4 class="chain-name">CamelCrusher で温める</h4>
+            </div>
+          </div>
+          <div class="chain-body">
+            <figure class="chain-shot">
+              <img src="img/step2-4/camelcrusher.webp" alt="CamelCrusher でパッチを British Clean にした状態" loading="lazy">
+              <figcaption class="chain-cap">画面は Patch を「British Clean」にした状態。ここから Drive と Mix だけを動かす。</figcaption>
+            </figure>
+            <div class="chain-desc">
+              <ul class="chain-params">
+                <li><b>プリセット</b><span>British Clean</span></li>
+                <li><b>Drive</b><span>20〜30%</span></li>
+                <li><b>Mix</b><span>50% 前後</span></li>
+              </ul>
+              <p>歪ませるのではなく、<strong>“温める”感覚</strong>で。</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="chain-step">
+          <div class="chain-head">
+            <span class="chain-no">4</span>
+            <div class="chain-headline">
+              <span class="chain-en">Re-Cut</span>
+              <h4 class="chain-name">EQ（2回目）── もう一度同じカット</h4>
+            </div>
+          </div>
+          <div class="chain-body">
+            <figure class="chain-shot">
+              <img src="img/step2-4/eq-second.webp" alt="処理後にもう一度 100Hz 以下をカットした状態。アナライザーの山が増えている" loading="lazy">
+              <figcaption class="chain-cap">設定は1回目と完全に同じ。でもアナライザーを見ると、100Hz 付近から上の山が明らかに育っている。これが“戻ってきた低域”。</figcaption>
+            </figure>
+            <div class="chain-desc">
+              <ul class="chain-params">
+                <li><b>カット帯域</b><span>100Hz 以下</span></li>
+                <li><b>スロープ</b><span>48dB/Oct（1回目と同じ）</span></li>
+              </ul>
+              <p>CamelCrusher の歪みで<strong>低域が再び出てくる</strong>ため、もう一度同じところをカットします。</p>
+              <p><em>「なぜ2回やるのか」の答えは、この画面の中にあります。</em></p>
+            </div>
+          </div>
+        </li>
+      </ol>
 
       <h3 class="sub-title">Ableton Live ユーザーは Saturator で代替できる</h3>
 
@@ -418,6 +469,14 @@
         </table>
       </div>
 
+      <figure class="figure">
+        <img src="img/step2-4/kickstart2.png" alt="Kickstart 2 を 1/4、SYNC に設定し、左上のシェイプを選んだ状態" loading="lazy" width="300" height="170">
+        <figcaption>
+          上のバーで <strong>1/4</strong>、右のタブで <strong>SYNC</strong> を選ぶだけ。シェイプは下列の左上をそのまま使います。<br>
+          ※ 画面の MIX は 100%（サブベース用の値）です。<strong>トップベースは 60% に下げてください。</strong>
+        </figcaption>
+      </figure>
+
       <div class="callout callout--core">
         <div class="callout-head">なぜ 60% か？</div>
         <p>
@@ -549,7 +608,7 @@
   </p>
 </footer>
 
-<script src="../hub-data.js?v=20260906"></script>
-<script src="_article.js?v=20260906"></script>
+<script src="../hub-data.js?v=20260906b"></script>
+<script src="_article.js?v=20260906b"></script>
 </body>
 </html>
