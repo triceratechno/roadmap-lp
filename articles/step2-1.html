@@ -232,6 +232,27 @@
 
       <p>これは単なるチェック項目ではなく、<strong>その音の“性格”そのもの</strong>です。</p>
 
+      <div class="imgswap">
+        <div class="imgswap-tabs" role="group" aria-label="ハイライトする要素の切り替え">
+          <button type="button" class="imgswap-tab" data-src="img/step2-1/kick-structure.webp"
+            data-alt="キックの波形。Click / Body / Tail の3区間すべてをハイライト"
+            data-cap="キック1発の波形。前から順に Click（黄）→ Body（紫）→ Tail（青）。この3つの配分が、そのキックの性格になる。">全体</button>
+          <button type="button" class="imgswap-tab" data-src="img/step2-1/kick-click.webp"
+            data-alt="キックの波形。Click 区間のみをハイライト"
+            data-cap="Click ── 立ち上がりの一瞬。2〜4kHz。ここが強いと前に出る、弱いと輪郭がぼやける。">Click</button>
+          <button type="button" class="imgswap-tab" data-src="img/step2-1/kick-body.webp"
+            data-alt="キックの波形。Body 区間のみをハイライト"
+            data-cap="Body ── 波形が一番大きい中心部。120〜200Hz。ここが太いと曲に重量感が出る。">Body</button>
+          <button type="button" class="imgswap-tab" data-src="img/step2-1/kick-tail.webp"
+            data-alt="キックの波形。Tail 区間のみをハイライト"
+            data-cap="Tail ── 減衰していく後半。40〜60Hz。長いと深く沈み、短いとタイトに切れる。">Tail</button>
+        </div>
+        <div class="imgswap-frame">
+          <img src="img/step2-1/kick-structure.webp" alt="キックの波形と3要素" loading="lazy">
+        </div>
+        <p class="imgswap-cap"></p>
+      </div>
+
       <div class="parts">
         <div class="part">
           <p class="part-name">Click</p>
@@ -309,30 +330,42 @@
         </p>
       </div>
 
-      <div class="anatomy">
-        <div class="anatomy-row">
-          <div class="anatomy-no">①</div>
-          <div class="anatomy-name">4つ打ち<span class="anatomy-en">BPM 120〜130</span></div>
-          <div class="anatomy-desc">
-            <strong>House / Techno / EDM。</strong>1小節に4発、均等に刻む。世界中のダンスフロアを支えてきた“最も普遍的な構造”。
-            ダンスミュージックだと BPM128 が一番ポピュラー。<em>このロードマップで使う基本パターン。</em>
-          </div>
+      <div class="pattern">
+        <div class="pattern-head">
+          <h3 class="pattern-name">4つ打ち</h3>
+          <span class="pattern-bpm">BPM 120〜130</span>
+          <span class="pattern-genre">House / Techno / EDM</span>
         </div>
-        <div class="anatomy-row">
-          <div class="anatomy-no">②</div>
-          <div class="anatomy-name">2つ打ち<span class="anatomy-en">BPM 140〜150</span></div>
-          <div class="anatomy-desc">
-            <strong>Future Bass / Dubstep。</strong>1小節に2発だけ。ドラムが半分の速度に聞こえる、重心の低いグルーヴ。
-            中毒性のある激しい音楽。→ 参考として把握しておく。
-          </div>
+        <p class="pattern-body">1小節に4発、均等に刻む。世界中のダンスフロアを支えてきた<strong>“最も普遍的な構造”</strong>。ダンスミュージックだと BPM128 が一番ポピュラー。<em>このロードマップで使う基本パターン。</em></p>
+        <div class="pattern-artists">
+          <img src="img/step2-1/pattern-4onfloor.webp" alt="4つ打ちを代表するアーティスト" loading="lazy">
+          <p>代表アーティスト：AVICII ／ Martin Garrix ／ Zedd ／ Calvin Harris ／ Afrojack ／ W&amp;W ／ Tiësto ／ Armin van Buuren ／ Adam Beyer ／ Anyma</p>
         </div>
-        <div class="anatomy-row">
-          <div class="anatomy-no">③</div>
-          <div class="anatomy-name">変則キック<span class="anatomy-en">BPM 140〜175</span></div>
-          <div class="anatomy-desc">
-            <strong>Trap / Drum &amp; Bass。</strong>3拍目裏に置いたり、キックの間隔を崩してグルーヴを作る。
-            特にドラムンベースは近年、世界の大型フェスでもメインステージを張るジャンルに。→ 参考として把握しておく。
-          </div>
+      </div>
+
+      <div class="pattern">
+        <div class="pattern-head">
+          <h3 class="pattern-name">2つ打ち</h3>
+          <span class="pattern-bpm">BPM 140〜150</span>
+          <span class="pattern-genre">Future Bass / Dubstep</span>
+        </div>
+        <p class="pattern-body">1小節に2発だけ。ドラムが半分の速度に聞こえる、<strong>重心の低いグルーヴ</strong>。中毒性のある激しい音楽。→ 参考として把握しておく。</p>
+        <div class="pattern-artists">
+          <img src="img/step2-1/pattern-2step.webp" alt="2つ打ちを代表するアーティスト" loading="lazy">
+          <p>代表アーティスト：Skrillex ／ Illenium ／ DJ Snake ／ Marshmello ／ Virtual Riot ／ Don Diablo</p>
+        </div>
+      </div>
+
+      <div class="pattern">
+        <div class="pattern-head">
+          <h3 class="pattern-name">変則キック</h3>
+          <span class="pattern-bpm">BPM 140〜175</span>
+          <span class="pattern-genre">Trap / Drum &amp; Bass</span>
+        </div>
+        <p class="pattern-body">3拍目裏に置いたり、キックの間隔を崩してグルーヴを作る。特にドラムンベースは近年、<strong>世界の大型フェスでもメインステージを張るジャンル</strong>に。→ 参考として把握しておく。</p>
+        <div class="pattern-artists">
+          <img src="img/step2-1/pattern-irregular.webp" alt="変則キックを代表するアーティスト" loading="lazy">
+          <p>代表アーティスト：Yellow Claw ／ Isoxo ／ Knock2 ／ Dimension ／ Sub Focus ／ Arcando</p>
         </div>
       </div>
 

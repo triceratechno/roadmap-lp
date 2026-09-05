@@ -455,6 +455,42 @@
     });
   }
 
+  /* ---------- 11. 画像切り替え ---------- */
+  /* 同じ図の一部を順にハイライトした画像セットを、タブで切り替えて見比べる */
+
+  function initImgSwap() {
+    var blocks = document.querySelectorAll('.imgswap');
+    Array.prototype.forEach.call(blocks, function (block) {
+      var tabs = block.querySelectorAll('.imgswap-tab');
+      var img = block.querySelector('.imgswap-frame img');
+      var cap = block.querySelector('.imgswap-cap');
+      if (!tabs.length || !img) return;
+
+      // 切り替え時にちらつかないよう先読みしておく
+      Array.prototype.forEach.call(tabs, function (t) {
+        var src = t.getAttribute('data-src');
+        if (src) { var pre = new Image(); pre.src = src; }
+      });
+
+      function select(tab) {
+        Array.prototype.forEach.call(tabs, function (t) {
+          var on = t === tab;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        img.src = tab.getAttribute('data-src') || img.src;
+        img.alt = tab.getAttribute('data-alt') || img.alt;
+        if (cap) cap.textContent = tab.getAttribute('data-cap') || '';
+      }
+
+      Array.prototype.forEach.call(tabs, function (t) {
+        t.addEventListener('click', function () { select(t); });
+      });
+
+      select(tabs[0]);
+    });
+  }
+
   /* ---------- 汎用 ---------- */
 
   function escapeHtml(s) {
@@ -478,6 +514,7 @@
     initChecklist();
     initFinish();
     initFigureFallback();
+    initImgSwap();
   }
 
   if (document.readyState === 'loading') {
