@@ -256,6 +256,41 @@
     font-weight: 700; color: var(--white); line-height: 1.85;
   }
 
+  /* ===== B0 ノートのその後 ===== */
+  .after-note { background: var(--black); }
+  .after-note .inner { max-width: 640px; }
+  .after-note p { line-height: 2.0; color: var(--muted); }
+  .after-note p strong { color: var(--white); font-weight: 700; }
+  .an-turn { margin-top: 46px !important; padding-top: 34px; border-top: 1px solid var(--border); }
+  .an-count {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 17vw, 104px); line-height: 0.9;
+    color: var(--accent); letter-spacing: 0.02em; margin: 6px 0 4px;
+  }
+  .an-count-label { color: var(--muted); font-size: 13px; letter-spacing: 0.18em; }
+  .an-hit {
+    font-size: clamp(19px, 5.2vw, 27px) !important;
+    font-weight: 900; color: var(--white) !important; line-height: 1.75;
+    border-left: 2px solid var(--gold); padding-left: 18px; margin: 34px 0 !important;
+  }
+  .an-hit .gold { color: var(--gold); }
+  .an-return {
+    font-size: clamp(16px, 4.4vw, 20px) !important;
+    font-weight: 700; color: var(--white) !important; line-height: 1.9;
+  }
+
+  /* ===== 2冊の対比 ===== */
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 620px; margin: 0 auto 18px; text-align: center; }
+  .two-up figure { margin: 0; }
+  .two-up img {
+    width: 100%; display: block; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.1);
+    aspect-ratio: 16 / 10; object-fit: contain; background: var(--black);
+  }
+  .two-up figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; line-height: 1.6; }
+  .two-up-note { font-size: clamp(14px, 4vw, 17px); color: var(--muted); margin: 0 auto 34px; max-width: 620px; }
+  .two-up-note .gold { color: var(--gold); font-weight: 700; }
+
   /* ===== B1 ノート → 商品 ===== */
   .bridge { background: var(--black); border-top: 1px solid var(--border); }
   .bridge .inner { text-align: center; }
@@ -709,11 +744,57 @@
   </div>
 </div>
 
+<!-- ============ B0｜あれから、そして100件 ============ -->
+<section class="block after-note">
+  <div class="inner reveal">
+    <p>ノートを書きなぐりながら、遠回りと挫折を繰り返して——<br>
+    それでも、<strong>1曲目をリリースできた。</strong></p>
+
+    <p>国内にリスナーがつき、海外からも聴かれるようになった。<br>
+    「この曲いいね。次はいつ出るの？」<br>
+    いつのまにか、そう聞かれる側に回っていた。</p>
+
+    <p>いまは一人で曲を作り、友人とアルバムを作り、DJをしている。</p>
+
+    <p class="an-turn">2025年5月。<br>
+    ダンスミュージックを<strong>1曲完成させること</strong>だけに絞って、noteを書き始めた。<br>
+    そのうち、制作の相談に乗るようになった。</p>
+
+    <div class="an-count">100+</div>
+    <p class="an-count-label">CONSULTATIONS</p>
+
+    <p>ジャンルも、機材も、年齢も、かけられる時間もバラバラ。<br>
+    なのに、詰まっている場所は、全員おなじだった。</p>
+
+    <p class="an-hit">1曲を完成させるまでの<span class="gold">道のり</span>を、<br>誰も持っていない。</p>
+
+    <p>才能でも、根気でもない。<br>
+    地図を持たないまま歩いていただけ。<br>
+    <strong>2年間の私と、まったく同じだった。</strong></p>
+
+    <p class="an-return">100件の悩みに答えるうち、私はあのノートに立ち返った。<br>
+    そう、あの手書きのノートに。<br>
+    答えは全部、そこに書いてあった。</p>
+
+    <p>順番に並べ直し、図解にして、動画にした。</p>
+  </div>
+</section>
+
 <!-- ============ B1｜あのノートが、これになった ============ -->
 <section class="block bridge">
   <div class="inner reveal">
     <p class="bridge-headline">あのノートが、<br><span class="gold">これになりました。</span></p>
-    <img class="bridge-visual" src="roadmap-hero.jpg" alt="ロードマップPROコース" onerror="this.outerHTML='&lt;div class=\'is-empty-photo\' style=\'max-width:620px;margin:0 auto 34px;\'&gt;ROADMAP VISUAL — roadmap-hero.jpg&lt;/div&gt;'">
+    <div class="two-up">
+      <figure>
+        <img src="manga/notebook-real.jpg" alt="2年分の手書きノート" loading="lazy" decoding="async">
+        <figcaption>2年分の走り書き<br>順番も、まとまりもない</figcaption>
+      </figure>
+      <figure>
+        <img src="roadmap-hero.jpg" alt="ロードマップPROコース" loading="lazy" decoding="async">
+        <figcaption>同じ中身を、<br>順番に並べ直したもの</figcaption>
+      </figure>
+    </div>
+    <p class="two-up-note">足したものは、ありません。<br><span class="gold">順番に並べ直しただけです。</span></p>
     <div class="bridge-name">ROADMAP PRO COURSE</div>
     <p class="bridge-sub">1曲を完成させるまでの、10のSTEP</p>
   </div>
