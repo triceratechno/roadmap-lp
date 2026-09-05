@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP2 全体解説：ローエンドは“音作り”じゃない｜ロードマップPROコース</title>
+<meta name="description" content="キック・トップベース・サブベースを「1つの楽器」として設計する。6つのステップでローエンドを1本化するSTEP2の全体像、使うプラグイン、共通の基準、やらなくていいこと。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP2 全体解説：ローエンドは“音作り”じゃない。設計で9割決まる。">
+<meta property="og:description" content="キックとベース ── 曲の“土台”を作る。FROM LOOP TO TRACK">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step2-overview.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css">
+</head>
+
+<body class="is-locked" data-article-id="2-overview" data-next-id="2-1">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 2 全体解説 ／ From Loop To Track</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 2 ／ 全体解説</div>
+  <h1 class="hero-en">From Loop<br>To Track</h1>
+  <p class="hero-ja">ローエンドは“音作り”じゃない。<br>設計で9割決まる。</p>
+  <p class="hero-lead">キックとベース ── 曲の“土台”を作る。<br>FROM LOOP TO TRACK</p>
+  <div class="hero-meta">
+    <span>読了 <b>約8分</b></span>
+    <span>STEP <b>02</b> ／ 10</span>
+    <span>レッスン <b>6</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">STEP1、<em>お疲れ様でした。</em></h2>
+
+      <p class="lead-p">
+        レファレンスが決まり、目指す曲の方向性が固まった状態でここに来ています。
+        <strong>それだけで、多くのDTMerより一歩先にいます。</strong>
+      </p>
+
+      <p>
+        STEP2では、その方向性に合った<em>ローエンド（低域の土台）</em>を設計します。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP2でやること</div>
+        <p>
+          ここでやることはシンプルです。
+          <span class="term" data-term="キック" data-desc="バスドラム。ダンスミュージックの心臓部で、曲の推進力とローエンドの基準点になる。">キック</span>・
+          <span class="term" data-term="トップベース" data-desc="ベースのうち中低域〜中域を担当する層。輪郭やグルーヴを作り、耳に「ベースが動いている」と感じさせる部分。">トップベース</span>・
+          <span class="term" data-term="サブベース" data-desc="おおよそ60Hz以下を担当する超低域の層。輪郭ではなく“太さ”と重量感だけを担う。">サブベース</span>
+          の3つを<em>「1つの楽器」として設計すること。</em>
+        </p>
+        <p>
+          音を派手にすることでも、EQで太くすることでもありません。<strong>役割・順番・基準を固定すること。</strong>それだけです。
+        </p>
+      </div>
+
+      <p>この認識を持てるかどうかで、<strong>この先の完成率は大きく変わります。</strong></p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 全体像 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Overview</div>
+      <h2 class="sec-title">STEP2 の<em>全体像</em></h2>
+      <p class="sec-title-en">6つのステップで「1本のローエンド」を完成させる</p>
+
+      <p>STEP2は以下の6つのステップで構成されています。<strong>1本の流れです。順番通りに進めてください。</strong></p>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-1</div>
+          <div class="anatomy-name">キック構造理解<span class="anatomy-en">Structure</span></div>
+          <div class="anatomy-desc">Click / Body / Tail でキックを見分ける。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-2</div>
+          <div class="anatomy-name">キックを選ぶ<span class="anatomy-en">Choose</span></div>
+          <div class="anatomy-desc">5個に絞って構造評価 → 1個に決める。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-3</div>
+          <div class="anatomy-name">キックを配置する<span class="anatomy-en">Place</span></div>
+          <div class="anatomy-desc">4小節ループ・mvMeter・フェーダー −6dB。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-4</div>
+          <div class="anatomy-name">トップベース<span class="anatomy-en">Top Bass</span></div>
+          <div class="anatomy-desc">音色・EQ・<span class="term" data-term="サイドチェイン" data-desc="キックが鳴る瞬間だけ他の音を自動的に下げる処理。低域のぶつかりを避け、キックを前に出すために使う。">サイドチェイン</span>（Mix 60%）。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-5</div>
+          <div class="anatomy-name">サブベース<span class="anatomy-en">Sub Bass</span></div>
+          <div class="anatomy-desc">150Hzカット・サイドチェイン（Mix 100%）。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2-6</div>
+          <div class="anatomy-name">ローエンド統合<span class="anatomy-en">Integrate</span></div>
+          <div class="anatomy-desc">LOW BUS・Glueコンプ・最終チェック。</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">3つのフェーズに分かれています</h3>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Kick ── STEP 2-1〜2-3</span>
+          <h3 class="card-title">ローエンドの基準点を作る</h3>
+          <p>キックの構造を理解し、1つに決め、4小節に固定する。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Bass ── STEP 2-4〜2-5</span>
+          <h3 class="card-title">輪郭と太さを設計する</h3>
+          <p>トップベースで輪郭を、サブベースで太さを作る。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Integrate ── STEP 2-6</span>
+          <h3 class="card-title">3つを1本に統合する</h3>
+          <p>LOW BUSにまとめ、1本のローエンドとして仕上げる。</p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">覚えておいてほしいこと</div>
+        <p>
+          この6つは<strong>別々の作業ではありません。</strong>　→　<em>1本の流れです。</em><br>
+          順番通りに進めるだけで、ローエンドが完成します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 終えるとどうなる ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">The Outcome</div>
+      <h2 class="sec-title">STEP2 を終えると、<em>こうなる</em></h2>
+
+      <p>このSTEPが完了した時点で、こうなります。</p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">STEP2 完了後の状態</div>
+        <ul>
+          <li>キックとベースが喧嘩しない</li>
+          <li>ローエンドがどの環境でも安定する</li>
+          <li>低域の判断に迷わなくなる</li>
+          <li>ミックス全体が一気に楽になる</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP2 最大の価値</div>
+        <p>「音が良くなる」よりも ── <em>「迷いが消える」</em></p>
+        <p>ここを乗り越えた人は、<strong>ドラム・メロディ・アレンジが驚くほどスムーズに進みます。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 解説動画 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Video ── 完全公開</div>
+      <h2 class="sec-title">未公開曲で学ぶ、<br>プロの<em>ミキシングの全工程</em></h2>
+
+      <p>
+        「トリケラテクノの完全未公開曲のミキシングの裏側」を<strong>フルバージョン＆ノーカット</strong>で全5回に分けて公開しています。
+      </p>
+
+      <p>
+        これを見れば、なんとなくでやっていたミキシングから抜け出し、<em>プロと同じ“判断基準”で音を仕上げること</em>ができるようになります。
+      </p>
+
+      <a class="linkcard linkcard--music linkcard--plain" href="https://note.com/preview/nebb2b55edafa?prev_access_key=57c45be6df3374406f2299442c6d8ac1" target="_blank" rel="noopener">
+        <span class="linkcard-text">
+          <span class="linkcard-tag">解説動画 ／ 28分</span>
+          <span class="linkcard-eyebrow">1 / 5 ── キック＆ベース編</span>
+          <span class="linkcard-title">【完全公開】未公開曲で学ぶ、<br>プロのミキシングの全工程</span>
+          <span class="linkcard-sub">この動画を見て、STEP2でどこまで制作を進めることができるのか。まずは確認してください。</span>
+          <span class="linkcard-domain">動画を見る</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== プラグイン ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Plugins</div>
+      <h2 class="sec-title">STEP2 で使う<em>プラグイン</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">高額なものは必要ありません</div>
+        <p><strong>DAW付属品＋無料プラグインで完結します。</strong></p>
+      </div>
+
+      <h3 class="sub-title">必須（すべて無料）</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">①</div>
+          <div class="anatomy-name">mvMeter2<span class="anatomy-en">VU Meter</span></div>
+          <div class="anatomy-desc">
+            <span class="term" data-term="VU（ブイユー）" data-desc="音量の“体感的な大きさ”を示すメーター。ピークではなく平均的なエネルギーを見るため、トラック間の音量バランスを揃える基準に使う。">VU</span>基準の音量計測。
+            <a href="https://www.tbproaudio.de/products/mvmeter2" target="_blank" rel="noopener">tbproaudio.de</a> から無料ダウンロード。
+          </div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">②</div>
+          <div class="anatomy-name">OTT<span class="anatomy-en">Xfer Records</span></div>
+          <div class="anatomy-desc">
+            マルチバンドの定番。
+            <a href="https://xferrecords.com/freeware" target="_blank" rel="noopener">xferrecords.com</a> から無料ダウンロード。
+          </div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">③</div>
+          <div class="anatomy-name">CamelCrusher<span class="anatomy-en">Saturator</span></div>
+          <div class="anatomy-desc">サチュレーター。camelcrusher.com から無料ダウンロード。</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">DAW付属でOK</h3>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Saturation</span>
+          <h3 class="card-title">サチュレーター</h3>
+          <p>Ableton Live 付属の Saturator など。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">EQ</span>
+          <h3 class="card-title">EQ</h3>
+          <p>Ableton Live / FL Studio / Studio One / Bitwig Studio、いずれも付属品でOK。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Compression</span>
+          <h3 class="card-title">コンプレッサー</h3>
+          <p>DAW付属のもので問題ありません。</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">強く推奨（有料・約2,500円）</h3>
+
+      <a class="linkcard linkcard--plain" href="https://www.kickstart-plugin.com" target="_blank" rel="noopener">
+        <span class="linkcard-text">
+          <span class="linkcard-tag linkcard-tag--paid">有料 ／ 約2,500円</span>
+          <span class="linkcard-eyebrow">Sidechain ── 唯一の有料推奨</span>
+          <span class="linkcard-title">Kickstart 2<br>── サイドチェイン専用プラグイン</span>
+          <span class="linkcard-sub">Nicky Romero &amp; Cableguys。ゼロ操作でプロ品質のサイドチェインが作れる定番ツール。</span>
+          <span class="linkcard-domain">www.kickstart-plugin.com</span>
+        </span>
+      </a>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">DAW付属コンプでやろうとすると起きること</div>
+        <ul>
+          <li>アタックが合わない</li>
+          <li>戻りが遅い・速すぎる</li>
+          <li>曲によってバラつく</li>
+        </ul>
+        <p>これらの問題が<strong>必ず</strong>起きます。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜ Kickstart 2 なのか</div>
+        <p>Kickstart 2 は、その問題を<em>ゼロ操作で回避できます。</em></p>
+        <p>
+          開発には、Ultra や Tomorrowland などの世界的なダンスミュージックフェスのメインステージでヘッドライナーを務める
+          <strong>Nicky Romero</strong> が携わっており、<strong>David Guetta</strong> をはじめ世界トップクラスのプロデューサーも実際に使っている定番ツールです。
+        </p>
+        <p>
+          <em>「考えなくていい・迷わなくていい」</em>という時短と安定感は、価格以上の価値があります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 共通の基準 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">The Standard</div>
+      <h2 class="sec-title">STEP2 <em>共通の基準</em></h2>
+
+      <p>このロードマップでは、全STEPを通じて以下の共通ルールで進みます。</p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">VU Guide</span>
+          <h3 class="card-title">VUガイド</h3>
+          <p>トラック別のVU基準値。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Level Guide</span>
+          <h3 class="card-title">レベルガイド</h3>
+          <p>トラック別のフェーダー基準。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Pan Guide</span>
+          <h3 class="card-title">パン振りガイド</h3>
+          <p>トラック別の定位ルール。</p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">先に知っておいてほしいこと</div>
+        <p>詳細は各STEPで解説しますが、<em>「基準が用意されている」</em>ということを先に知っておいてください。</p>
+        <p><strong>迷ったときに戻ってくる地図です。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== やらなくていいこと ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Don't</div>
+      <h2 class="sec-title">STEP2 で<em>やらなくていいこと</em></h2>
+
+      <p>ここは重要なので先に伝えます。</p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この段階では、やらない</div>
+        <ul>
+          <li>この段階で音作りにこだわらない</li>
+          <li>EQや歪みで太さを作ろうとしない</li>
+          <li>ローエンドを派手にしようとしない</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP2 の位置づけ</div>
+        <p>STEP2は<strong>音を良くするSTEPではありません。</strong></p>
+        <p>ローエンドの<em>役割・順番・基準を固定するSTEP</em>です。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== エール ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Before You Start</div>
+      <h2 class="sec-title">あなたにも<em>必ずできます</em></h2>
+
+      <p>
+        正直に言います。<strong>STEP2は少し長いです。</strong>6つのステップがあり、慣れない概念も出てきます。
+      </p>
+
+      <p>でも、安心してください。</p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">難しいことは、何もありません</div>
+        <p>
+          このSTEPでやることは毎回シンプルで、<strong>1つずつ順番にこなすだけ</strong>です。
+          ここまで来られたあなたなら、必ず完走できます。
+        </p>
+        <p>
+          詰まったら、すぐにサポートラインに連絡してください。<em>一人で抱え込まなくていい。</em>
+          それがこのロードマップの強みです。
+        </p>
+      </div>
+
+      <p>では、始めましょう。</p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 2-1</div>
+      <h2 class="sec-title">キックの構造と<br><em>ジャンルを理解する</em></h2>
+
+      <p>
+        次は【STEP2-1】キックの構造とジャンルを理解するところから始めます。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">最初の1音がすべてを決める</div>
+        <p><em>ローエンドの設計は、最初の1音で決まります。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step1-2.html">
+          <em>Previous ── STEP 1-2</em>
+          <b>Strip The Reference<br>レファレンスを丸裸にする</b>
+        </a>
+        <a class="next" href="https://note.com/preview/n3b634df5d619?prev_access_key=4d98fb6dd104c0fce67e08897f02e1fa" target="_blank" rel="noopener">
+          <em>Next ── STEP 2-1</em>
+          <b>プロが必ず行う<br>「正しいキックの選び方」</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step2_overview.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="_article.js"></script>
+</body>
+</html>

@@ -1308,6 +1308,23 @@ strong { color: var(--white); font-weight: 700; }
 .linkcard--music .linkcard-eyebrow,
 .linkcard--music .linkcard-domain { color: var(--accent); }
 
+/* サムネイルが無いカード（配布元にog:imageが無い場合） */
+.linkcard--plain { grid-template-columns: 1fr; }
+.linkcard--plain .linkcard-text { padding: 26px 28px; }
+
+/* 価格・無料などの小さいラベル */
+.linkcard-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.linkcard-tag--free { border-color: var(--ok); color: var(--ok); }
+.linkcard-tag--paid { border-color: var(--gold); color: var(--gold); }
+
 /* 画像を主役にする大きいカード */
 .linkcard--hero {
   grid-template-columns: 1fr;
