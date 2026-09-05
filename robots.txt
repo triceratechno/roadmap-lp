@@ -1,0 +1,10 @@
+User-agent: *
+
+# 購入者専用ページ（検索結果に出さない）
+Disallow: /triceratechno-hub.html
+Disallow: /hub-cases.html
+Disallow: /hub-referral.html
+Disallow: /articles/
+
+# 構想段階のコース（URLを知っている人だけが開ける状態にする）
+Disallow: /course-zeus.html

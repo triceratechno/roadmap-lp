@@ -17,6 +17,11 @@
  *   3. pdfUrl に PDFファイル名を入れる（例: "step2-1.pdf"）
  *   4. ブラウザをリロード
  *
+ * 記事を自作HTMLページに移行したとき：
+ *   pageUrl に "articles/stepX-Y.html" を追加する。
+ *   pageUrl があれば「→ 読む」はそちらを優先し、無ければ noteUrl を使う。
+ *   noteUrl は消さずに残しておくこと（note側の単品販売導線として生かす）。
+ *
  * PDFは LP/ フォルダ直下に置けば相対パスでDL可能。
  */
 
@@ -43,7 +48,7 @@ const ROADMAP_DATA = {
       description: "プロの曲を分析して、自分が作る曲の設計図を作る。",
       status: "completed",
       articles: [
-        { id: "1-1", type: "lesson", title: "STEP1-1：楽曲構成の理解と、1曲を選ぶ ── ロードマップ最初の\"コンパス\"を立てる", noteUrl: "https://note.com/preview/ncecfa60df4c6?prev_access_key=928d40d37c991b488c4dc4ba01bb2b52", pdfUrl: "step1-1.pdf", videoUrl: "", status: "published" },
+        { id: "1-1", type: "lesson", title: "STEP1-1：楽曲構成の理解と、1曲を選ぶ ── ロードマップ最初の\"コンパス\"を立てる", pageUrl: "articles/step1-1.html", noteUrl: "https://note.com/preview/ncecfa60df4c6?prev_access_key=928d40d37c991b488c4dc4ba01bb2b52", pdfUrl: "step1-1.pdf", videoUrl: "", status: "published" },
         { id: "1-2", type: "lesson", title: "STEP1-2：レファレンスを丸裸にする ── AIステム分離で、プロの設計図を読み解く", noteUrl: "https://note.com/preview/nc2001a80fe23?prev_access_key=e6acca3e5743e3250683ec1447a0121b", pdfUrl: "step1-2.pdf", videoUrl: "", status: "published" },
         { id: "1-bonus", type: "bonus", title: "STEP1 特典ファイル：先輩たちの REAL CASES ── 順次更新中", noteUrl: "hub-cases.html", pdfUrl: "", videoUrl: "", status: "published" }
       ]

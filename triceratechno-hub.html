@@ -2284,7 +2284,12 @@
 
         const articlesHtml = (step.articles || []).map(article => {
           const aStatus = normArticleStatus(article.status);
-          const hasUrl = !!(article.noteUrl && String(article.noteUrl).trim());
+          // pageUrl（自作記事ページ）があればそちらを優先。無ければ従来どおり noteUrl。
+          const readUrl = (article.pageUrl && String(article.pageUrl).trim())
+            || (article.noteUrl && String(article.noteUrl).trim())
+            || '';
+          const isOwnPage = !!(article.pageUrl && String(article.pageUrl).trim());
+          const hasUrl = !!readUrl;
           const hasPdf = !!(article.pdfUrl && String(article.pdfUrl).trim());
           const hasVideo = !!(article.videoUrl && String(article.videoUrl).trim());
           const isOverview = article.type === 'overview';
@@ -2312,8 +2317,9 @@
                 : `<span class="hub-article-video disabled" aria-disabled="true" aria-label="動画（準備中）">▶ 動画</span>`)
             : '';
 
+          // 自作ページは同一タブで開く（戻るボタンでHUBに戻れる）。noteは別タブ。
           const ctaHtml = canRead
-            ? `<a class="hub-article-cta" href="${esc(article.noteUrl)}" target="_blank" rel="noopener" data-article-id="${esc(article.id)}">→ 読む</a>`
+            ? `<a class="hub-article-cta" href="${esc(readUrl)}"${isOwnPage ? '' : ' target="_blank" rel="noopener"'} data-article-id="${esc(article.id)}">→ 読む</a>`
             : `<span class="hub-article-cta disabled" aria-disabled="true">→ 読む</span>`;
 
           return `

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEUS｜メロディックテクノ サウンドデザインコース｜トリケラテクノ</title>
+<meta name="description" content="静寂から雷鳴まで。Anyma系メロディックテクノのシグネチャーサウンドを、アルペジオ・パッド・ボイスデザインから楽曲構成まで分解して組み直す動画コース。制作に使った音源とAbletonプロジェクトファイルをすべて同梱。">
+
+<!-- 構想段階のため検索エンジンに載せない。URLを直接知っている人だけが開ける状態を維持する。
+     公開する準備ができたらこの2行を削除し、robots.txt の Disallow も外すこと。 -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow">
+
+<!-- ===========================================================
+     差し替えポイント（TODO）：
+       購入CTA     … NOTE_COURSE_URL（ZEUSコースの有料記事URL。全CTAボタン共通）
+       トレーラー   … 暫定でNEW WORLDのトレーラー(47JWYmvcb_A)を流用中。ZEUS用完成後に href を差し替え
+       コースデモ   … 楽曲完成後、COMING SOONブロックを波形プレーヤーに差し替え（course-zeus-demo.mp3）
+       価格         … ¥4,980（note有料記事）
+=========================================================== -->
+
+<!-- OGP / Twitter Card -->
+<meta property="og:title" content="ZEUS｜メロディックテクノ サウンドデザインコース｜トリケラテクノ">
+<meta property="og:description" content="静寂から雷鳴まで。あのサウンドを分解して組み直す、Anyma系メロディックテクノのサウンドデザインコース。制作に使った音源とプロジェクトファイルを同梱。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/course-zeus.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/course-zeus-ogp.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZEUS｜メロディックテクノ サウンドデザインコース｜トリケラテクノ">
+<meta name="twitter:description" content="シグネチャー音色の設計から楽曲構成まで分解する動画コース。音源とプロジェクトファイル同梱。">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/course-zeus-ogp.jpg">
+
+<link rel="icon" type="image/jpeg" href="tricera-icon.jpg">
+<link rel="apple-touch-icon" href="tricera-icon.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --panel2: #151515;
+    --card: #1a1a2e;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #9a9a9a;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.85; overflow-x: hidden; }
+  a { color: inherit; }
+  ::selection { background: rgba(0,200,255,0.25); }
+
+  /* ===== LAYOUT ===== */
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 84px 0; position: relative; }
+  .section--tight { padding: 60px 0; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent); }
+
+  .section-label { font-size: 11px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
+  .section-label.center { justify-content: center; }
+  .section-label::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+  .section-label.center::after { content: ''; width: 32px; height: 1px; background: var(--accent); }
+
+  .h-jp { font-weight: 900; color: var(--white); line-height: 1.35; letter-spacing: 0.01em; }
+  h2.h-jp { font-size: clamp(25px, 4.4vw, 40px); margin-bottom: 22px; text-align: center; }
+  h2.h-jp em { color: var(--accent); font-style: normal; }
+  .lead { font-size: clamp(14px, 2vw, 16px); color: var(--muted); line-height: 2; text-align: center; max-width: 640px; margin: 0 auto; }
+  .center { text-align: center; }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* ===== BUTTONS ===== */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.05em; text-decoration: none; padding: 17px 44px; border-radius: 4px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s, color 0.2s; cursor: pointer; }
+  .btn--primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #001018; box-shadow: 0 8px 30px rgba(0,200,255,0.22); }
+  .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,200,255,0.32); }
+  .btn--gold { position: relative; flex-direction: column; gap: 4px; padding: 16px 44px; background: var(--gold); color: #1a1400; box-shadow: 0 8px 30px rgba(245,197,24,0.28); }
+  .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,197,24,0.4); }
+  .bgo-l1 { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
+  .bgo-l2 { font-size: 12px; font-weight: 700; color: rgba(26,20,0,0.8); letter-spacing: 0.02em; }
+  .btn-sub { display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* ===== HERO ===== */
+  .hero { position: relative; padding: 96px 0 64px; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(circle at 78% 16%, rgba(0,200,255,0.10), transparent 42%), radial-gradient(circle at 12% 90%, rgba(245,197,24,0.06), transparent 45%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .hero-tag { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 0.26em; color: var(--accent); border: 1px solid rgba(0,200,255,0.4); border-radius: 4px; padding: 7px 18px; margin-bottom: 24px; }
+  .hero-brand { font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px, 7.4vw, 68px); line-height: 1; letter-spacing: 0.12em; color: var(--white); margin-bottom: 12px; text-shadow: 0 0 40px rgba(0,200,255,0.35); }
+  .hero-title { font-weight: 900; color: var(--white); font-size: clamp(32px, 6.4vw, 60px); line-height: 1.18; letter-spacing: 0.01em; }
+  .hero-title .ac { color: var(--accent); }
+  .hero-title .zero { font-family: 'Bebas Neue', sans-serif; color: var(--gold); letter-spacing: 0.02em; }
+  .hero-title .line1 { display: block; white-space: nowrap; font-size: clamp(20px, 5vw, 60px); }
+  .hero-sub { margin-top: 26px; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; max-width: 560px; }
+  .hero-sub strong { color: var(--white); font-weight: 700; }
+  .hero-cta { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hero-trust { margin-top: 4px; font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+  .hero-scroll { display: flex; justify-content: center; margin-top: 36px; }
+  .hero-scroll svg { width: 22px; height: 22px; stroke: var(--muted); animation: hero-scroll-bounce 1.8s ease-in-out infinite; }
+  @keyframes hero-scroll-bounce { 0%, 100% { transform: translateY(0); opacity: 0.55; } 50% { transform: translateY(7px); opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .hero-scroll svg { animation: none; } }
+
+  /* ===== HERO VIDEO / TRAILER ===== */
+  .trailer-wrap { width: 100%; max-width: 760px; margin: 40px auto 0; }
+  .video-frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #080e1a; border: 1px solid rgba(0,200,255,0.18); border-radius: 8px; overflow: hidden; box-shadow: 0 0 60px rgba(0,200,255,0.08); }
+  .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer; background-color: #080e1a; background-size: cover; background-position: center; }
+  .video-placeholder::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.5) 100%); pointer-events: none; }
+  .video-play { width: 82px; height: 58px; z-index: 1; transition: transform 0.2s; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.45)); }
+  .video-placeholder:hover .video-play { transform: scale(1.06); }
+  .video-play svg { width: 100%; height: 100%; display: block; }
+  .video-play .yt-bg { fill: #f00; transition: fill 0.2s; }
+  .video-placeholder:hover .video-play .yt-bg { fill: #ff2323; }
+  .video-play .yt-tri { fill: #fff; }
+  .video-text { font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.8); text-transform: uppercase; z-index: 1; }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ===== FEATURE CARDS (What you get) ===== */
+  .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
+  .feat-card { border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 26px 22px; text-align: left; }
+  .feat-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 0.02em; color: var(--accent); line-height: 1; }
+  .feat-name { font-size: 14px; font-weight: 700; color: var(--white); margin: 12px 0 8px; letter-spacing: 0.02em; }
+  .feat-desc { font-size: 12.5px; color: var(--muted); line-height: 1.75; }
+  @media (max-width: 760px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .feat-grid { grid-template-columns: 1fr; } }
+
+  /* ===== INCLUDED LIST ===== */
+  .incl { max-width: 620px; margin: 0 auto; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 30px 34px; }
+  .incl li { list-style: none; position: relative; padding: 13px 0 13px 34px; border-bottom: 1px solid var(--border); font-size: 14.5px; color: var(--text); line-height: 1.6; }
+  .incl li:last-child { border-bottom: 0; }
+  .incl li::before { content: ''; position: absolute; left: 4px; top: 20px; width: 8px; height: 14px; border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+  /* ===== DEMO AUDIO PLAYER ===== */
+  .demo-lead { max-width: 620px; margin: 30px auto 0; text-align: center; font-size: clamp(14px, 2vw, 16px); color: var(--text); line-height: 1.95; }
+  .demo-lead strong { color: var(--white); font-weight: 700; }
+  .demo-card { max-width: 620px; margin: 18px auto 0; display: flex; align-items: center; gap: 18px; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 18px 22px; }
+  .demo-play { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; border: none; background: var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(0,200,255,0.3); }
+  .demo-play:hover { transform: scale(1.06); }
+  .demo-play svg { width: 22px; height: 22px; fill: #001018; display: block; }
+  .demo-wave { flex: 1 1 auto; display: flex; align-items: center; gap: 3px; height: 44px; cursor: pointer; overflow: hidden; }
+  .demo-bar { flex: 1 1 auto; min-width: 2px; border-radius: 2px; background: #3a3a44; transition: background 0.12s; }
+  .demo-bar.on { background: var(--accent); }
+  .demo-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 58px; }
+  .demo-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  .demo-time { font-size: 13px; color: var(--muted); font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+  @media (max-width: 500px) { .demo-card { gap: 12px; padding: 16px; } .demo-label { display: none; } .demo-meta { min-width: 40px; } }
+
+  /* ===== MODULES (横スクロール・カルーセル) ===== */
+  .cur-wrap { position: relative; margin-top: 36px; }
+  .cur-track { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,200,255,0.4) transparent; }
+  .cur-track::-webkit-scrollbar { height: 8px; }
+  .cur-track::-webkit-scrollbar-thumb { background: rgba(0,200,255,0.35); border-radius: 999px; }
+  .cur-track::-webkit-scrollbar-track { background: transparent; }
+  .cur-card { flex: 0 0 300px; scroll-snap-align: start; border: 1px solid var(--border); background: var(--card); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
+  .cur-card:hover { border-color: rgba(0,200,255,0.45); transform: translateY(-3px); }
+  @media (max-width: 520px) { .cur-card { flex-basis: 80%; } }
+  .cur-thumb { position: relative; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cur-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cur-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45)); }
+  .cur-ep { position: relative; z-index: 1; font-family: 'Bebas Neue', sans-serif; font-size: 46px; letter-spacing: 0.06em; color: rgba(255,255,255,0.94); text-shadow: 0 4px 22px rgba(0,0,0,0.55); }
+  .cur-thumb-1 { background: linear-gradient(135deg, #0a1a2e, #0f3355); }
+  .cur-thumb-2 { background: linear-gradient(135deg, #0b1226, #24184a); }
+  .cur-thumb-3 { background: linear-gradient(135deg, #0a2233, #0e4a4a); }
+  .cur-thumb-4 { background: linear-gradient(135deg, #1a1330, #3a1b52); }
+  .cur-thumb-5 { background: linear-gradient(135deg, #08202e, #0d3a52); }
+  .cur-thumb-6 { background: linear-gradient(135deg, #1f1a10, #4a3410); }
+  .cur-thumb-7 { background: linear-gradient(135deg, #0d1424, #1b2f5c); }
+  .cur-thumb-8 { background: linear-gradient(135deg, #14161f, #2e3350); }
+  .cur-body { padding: 20px 22px 24px; }
+  .cur-title { font-size: 16px; font-weight: 900; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+  .cur-desc { font-size: 13px; color: #b4b4cc; line-height: 1.85; }
+  .cur-nav { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 14px; }
+  .cur-nav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,200,255,0.4); background: var(--panel); color: var(--accent); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s, opacity 0.2s; }
+  .cur-nav button:hover { background: var(--accent); color: #001018; }
+  .cur-hint { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  @media (max-width: 640px) { .cur-nav button { display: none; } }
+
+  /* ===== PROJECT FILE HIGHLIGHT ===== */
+  .proj { max-width: 720px; margin: 0 auto; border: 1px solid rgba(0,200,255,0.28); background: linear-gradient(135deg, rgba(0,200,255,0.05), rgba(0,128,255,0.02)); border-radius: 16px; padding: 40px 40px; text-align: center; }
+  .proj h3 { font-size: clamp(20px, 3.6vw, 28px); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+  .proj p { font-size: 14px; color: var(--text); line-height: 1.95; max-width: 540px; margin: 0 auto; }
+  .proj .note { display: block; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+
+  /* ===== AUTHOR ===== */
+  .author { max-width: 640px; margin: 0 auto; display: flex; align-items: center; gap: 24px; border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 26px 30px; }
+  .author img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,200,255,0.3); flex: 0 0 auto; }
+  .author-name { font-size: 16px; font-weight: 700; color: var(--white); }
+  .author-role { font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin: 2px 0 10px; }
+  .author-bio { font-size: 13px; color: var(--muted); line-height: 1.85; }
+  @media (max-width: 480px) { .author { flex-direction: column; text-align: center; } }
+
+  /* ===== PRICE ===== */
+  .buy-box { max-width: 560px; margin: 0 auto; border: 1px solid rgba(245,197,24,0.35); background: var(--panel); border-radius: 18px; padding: 44px 40px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .buy-mockup { position: relative; display: block; width: 100%; max-width: 220px; margin: 0 auto 22px; }
+  .buy-mockup::before { content: ''; position: absolute; left: 50%; top: 50%; width: 150%; height: 120%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at center, rgba(0,200,255,0.22) 0%, rgba(0,140,220,0.10) 42%, transparent 70%); pointer-events: none; }
+  .buy-mockup img { position: relative; width: 100%; display: block; pointer-events: none; user-select: none; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.75)) drop-shadow(0 0 26px rgba(0,200,255,0.28)); }
+  .buy-brand { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 0.1em; color: var(--white); line-height: 1.1; }
+  .buy-name { font-size: 13px; letter-spacing: 0.06em; color: var(--muted); margin-top: 4px; }
+  .buy-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 74px; line-height: 1; margin: 8px 0 4px; letter-spacing: 0.02em; }
+  .buy-tag .yen { font-size: 34px; vertical-align: 8px; }
+  .buy-tax { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+  .buy-list { list-style: none; text-align: left; max-width: 340px; margin: 0 auto 28px; }
+  .buy-list li { position: relative; padding: 11px 0 11px 30px; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--text); }
+  .buy-list li:last-child { border-bottom: 0; }
+  .buy-list li::before { content: ''; position: absolute; left: 2px; top: 16px; width: 7px; height: 12px; border: solid var(--gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .buy-trust { margin-top: 22px; font-size: 12px; color: var(--muted); line-height: 1.9; }
+  .buy-trust strong { color: var(--text); font-weight: 700; }
+
+  /* ===== FAQ ===== */
+  .faq { max-width: 760px; margin: 0 auto; }
+  .faq details { border: 1px solid var(--border); border-radius: 8px; background: var(--panel); margin-bottom: 12px; overflow: hidden; }
+  .faq summary { list-style: none; cursor: pointer; padding: 20px 22px; font-size: 15px; font-weight: 700; color: var(--white); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .q { display: flex; gap: 12px; align-items: baseline; }
+  .faq summary .q .mk { color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 18px; }
+  .faq summary .chev { flex: 0 0 auto; width: 20px; height: 20px; position: relative; transition: transform 0.25s; }
+  .faq summary .chev::before, .faq summary .chev::after { content: ''; position: absolute; top: 9px; width: 11px; height: 2px; background: var(--accent); }
+  .faq summary .chev::before { left: 0; transform: rotate(45deg); }
+  .faq summary .chev::after { right: 0; transform: rotate(-45deg); }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq .a { padding: 0 22px 22px 50px; font-size: 14px; color: var(--muted); line-height: 1.95; }
+
+  /* ===== RECOMMEND (You might also like) — portfolio lesson cards 流用 ===== */
+  .lesson-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; margin-top: 40px; }
+  .lesson-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
+  .lesson-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #0a0a14; }
+  .level-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 900; letter-spacing: 0.06em; white-space: nowrap; }
+  .level-badge--start { background: rgba(0,200,255,0.14); border: 1px solid rgba(0,200,255,0.6); color: #5fdcff; }
+  .level-badge--next { background: rgba(245,197,24,0.14); border: 1px solid rgba(245,197,24,0.6); color: #f5c518; }
+  .lesson-thumb .level-badge { position: absolute; top: 12px; left: 12px; z-index: 2; backdrop-filter: blur(6px); box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+  .lesson-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+  .lesson-card:hover .lesson-thumb img { transform: scale(1.04); }
+  .lesson-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(19,19,32,0.85) 100%); pointer-events: none; }
+  .lesson-body { display: flex; flex-direction: column; flex: 1; padding: 26px 30px 30px; }
+  .lesson-card:hover { transform: translateY(-4px); border-color: rgba(0,200,255,0.45); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+  .lesson-card--pro { border-color: rgba(0,200,255,0.32); }
+  .lesson-step { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); margin-bottom: 12px; }
+  .lesson-title { font-size: 21px; font-weight: 900; color: var(--white); line-height: 1.45; margin-bottom: 12px; }
+  .lesson-desc { font-size: 13.5px; color: #b4b4cc; line-height: 1.95; margin-bottom: 20px; flex: 1; }
+  .lesson-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 20px; border-radius: 8px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.45); color: var(--accent); transition: background 0.2s, color 0.2s; }
+  .lesson-card:hover .lesson-go { background: var(--accent); color: #001018; }
+  .lesson-more { text-align: center; margin-top: 30px; }
+  .lesson-more a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
+  .lesson-more a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ===== VOICES（ロードマップ受講生の声） ===== */
+  .voices-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .voice-item { text-align: center; }
+  .voice-ava { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 18px; border: 2px solid rgba(0,200,255,0.35); }
+  .voice-quote { font-size: 13.5px; color: var(--text); line-height: 1.95; margin: 14px 0 0; text-align: left; }
+  .voice-quote strong { color: var(--white); font-weight: 700; }
+  .voice-name { font-size: 13px; font-weight: 700; color: var(--white); margin: 0; }
+  .voice-meta { font-size: 11px; color: var(--muted); margin: 6px 0 0; line-height: 1.85; }
+  .voice-meta .hit { color: var(--gold); font-weight: 700; }
+  .voice-disc { text-align: center; font-size: 11px; color: #666; margin-top: 30px; }
+  @media (max-width: 720px) {
+    .voices-grid { grid-template-columns: 1fr; gap: 34px; max-width: 460px; }
+    .voice-quote { text-align: center; }
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final { text-align: center; }
+  .final h2 { font-size: clamp(24px, 4.4vw, 38px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+  .final p { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
+
+  /* ===== FOOTER ===== */
+  .footer { border-top: 1px solid var(--border); padding: 50px 24px 90px; text-align: center; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.12em; color: var(--white); }
+  .footer-sns { display: flex; justify-content: center; gap: 22px; margin: 20px 0; }
+  .footer-sns a { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; text-decoration: none; transition: color 0.2s; }
+  .footer-sns a:hover { color: var(--accent); }
+  .footer-legal { display: flex; justify-content: center; gap: 22px; margin-bottom: 18px; flex-wrap: wrap; }
+  .footer-legal a { color: #666; font-size: 11px; letter-spacing: 0.04em; text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: #555; letter-spacing: 0.06em; }
+
+  /* ===== STICKY CTA ===== */
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 500; background: rgba(8,8,8,0.95); border-top: 1px solid var(--border); padding: 10px 16px; display: none; backdrop-filter: blur(6px); }
+  .sticky-cta a.btn--gold { width: 100%; max-width: 480px; margin: 0 auto; padding: 12px 24px; }
+  @media (max-width: 720px) { .sticky-cta { display: block; } .footer { padding-bottom: 110px; } }
+
+  /* ===== YT MODAL ===== */
+  .yt-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px; }
+  .yt-modal.is-open { display: flex; }
+  .yt-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.86); backdrop-filter: blur(4px); }
+  .yt-modal__box { position: relative; width: min(960px, 92vw); }
+  .yt-modal__frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .yt-modal__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt-modal__close { position: absolute; top: -46px; right: 0; width: 40px; height: 40px; border: none; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; opacity: 0.85; }
+  .yt-modal__close:hover { opacity: 1; }
+  @media (max-width: 640px) { .yt-modal__close { top: -42px; } }
+</style>
+</head>
+<body>
+
+<!-- ========== 1. HERO ========== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-tag">START TO FINISH</div>
+      <p class="hero-brand">ZEUS</p>
+      <h1 class="hero-title"><span class="line1">世界レベルのメロディックテクノを</span><span class="ac">ゼロ</span>から<span class="zero">1曲完成</span>まで</h1>
+      <p class="hero-sub">あの硬質でメタリックな音は、何でできているのか。<br>シグネチャーアルペジオ・パッド・ボイスデザイン・テクスチャ・構成・ミックス——<strong>あのサウンドを一つずつ分解して、あなたのPC上で組み直しましょう。</strong></p>
+      <!-- トレーラー動画：暫定でNEW WORLDのトレーラーを流用中。ZEUS用トレーラー完成後に href を差し替え -->
+      <div class="trailer-wrap">
+        <div class="video-frame">
+          <a class="video-placeholder" href="https://youtu.be/47JWYmvcb_A" aria-label="コーストレーラーを再生" style="background-image:url('hero-thumb-zeus.jpg');">
+            <span class="video-play" aria-hidden="true">
+              <svg viewBox="0 0 68 48"><path class="yt-bg" d="M66.52 7.74c-.78-2.93-2.49-5.42-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.77-4.64 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.42 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.77 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z"/><path class="yt-tri" d="M45 24 27 14v20z"/></svg>
+            </span>
+            <span class="video-text">Course Trailer</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+          <span class="bgo-l1">今すぐコースを始める →</span>
+          <span class="bgo-l2">動画コース＋音源＋プロジェクトファイル</span>
+        </a>
+        <p class="hero-trust">買い切り・無期限アクセス／購入後すぐに視聴できます</p>
+        <div class="hero-scroll" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 2. WHAT YOU GET ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">WHAT YOU GET</div>
+    <h2 class="h-jp reveal">このコースで<em>手に入るもの</em></h2>
+    <p class="lead reveal"><strong style="color:var(--text);">このサウンドを作るのに実際に使ったプリセット・音源を、すべてお渡しします。</strong></p>
+    <div class="feat-grid reveal" style="margin-top:40px;">
+      <div class="feat-card">
+        <div class="feat-num">VIDEO</div>
+        <div class="feat-name">解説動画</div>
+        <div class="feat-desc">リファレンス解剖からシグネチャー音色の設計、構成、マスタリングまで。1曲分の全工程を、自分のペースで何度でも。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">1 PROJECT</div>
+        <div class="feat-name">プロジェクトファイル</div>
+        <div class="feat-desc">完成曲のAbletonプロジェクトを同梱。全チャンネル・エフェクト・オートメーションを解剖できる。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">SOUNDS</div>
+        <div class="feat-name">使用音源すべて</div>
+        <div class="feat-desc">アルペジオ・パッド・ボイスのプリセットとサンプルを同梱。あの音を、そのままあなたの手元でも。</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">FOREVER</div>
+        <div class="feat-name">無期限アクセス</div>
+        <div class="feat-desc">買い切り。視聴期限なし。必要なときに、いつでも見返せる。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 3. START TO FINISH (included list) ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">START TO FINISH</div>
+    <h2 class="h-jp reveal"><em>音色</em>から<span style="color:var(--gold);">構成</span>まで分解するコース</h2>
+    <ul class="incl reveal" style="margin-top:34px;">
+      <li>Anyma系メロディックテクノのサウンドデザイン・チュートリアル</li>
+      <li>リファレンス解剖から、最終マスタリングまで</li>
+      <li>Abletonプロジェクトファイルを同梱</li>
+      <li>制作に使った音源（サンプル・プリセット）をすべて同梱</li>
+      <li>シグネチャーアルペジオ／パッド／ボイスデザインを重点的に解説</li>
+      <li>長い導入・ブレイクの静寂・押し出すドロップまで、ドラマの設計を解説</li>
+      <li>初心者〜中級者DTMer向け</li>
+      <li>無期限アクセス・視聴期限なし</li>
+    </ul>
+
+    <p class="demo-lead reveal">そしてこのコースで、<strong>実際にこの1曲が完成します。</strong><br>デモ音源はただいま制作中です。公開までもう少しお待ちください。</p>
+    <!-- コースデモ音源：楽曲完成後、このブロックをNEW WORLD同様の波形プレーヤーに差し替える（course-zeus-demo.mp3） -->
+    <div class="demo-card reveal" style="justify-content:center; text-align:center; gap:14px;">
+      <span style="font-family:'Bebas Neue', sans-serif; font-size:24px; letter-spacing:0.18em; color:var(--gold); line-height:1;">COMING SOON</span>
+      <span style="font-size:12.5px; color:var(--muted); letter-spacing:0.04em;">デモ音源は制作中です</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 4. COURSE MODULES ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">COURSE MODULES</div>
+    <h2 class="h-jp reveal">コースの<em>全体像</em></h2>
+    <p class="lead reveal">EP03〜EP05が、このコースの核。<strong style="color:var(--text);">「あの音」を成立させている3つの層</strong>を、重点的に解剖します。</p>
+    <div class="cur-wrap reveal">
+      <div class="cur-track" id="curTrack">
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-1"><span class="cur-ep">EP01</span></div>
+          <div class="cur-body">
+            <p class="cur-title">リファレンス解剖と全体設計</p>
+            <p class="cur-desc">完成形から逆算して構造を決める。目指す音像を先に定義してから、空のプロジェクトを開く。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-2"><span class="cur-ep">EP02</span></div>
+          <div class="cur-body">
+            <p class="cur-title">キック &amp; ベース</p>
+            <p class="cur-desc">タイトな四つ打ちと、鳴らしすぎない低域。荘厳さを支えるのは、詰め込まないローエンド。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-3"><span class="cur-ep">EP03</span></div>
+          <div class="cur-body">
+            <span style="display:inline-block; font-family:'Bebas Neue', sans-serif; font-size:12px; letter-spacing:0.16em; color:var(--gold); border:1px solid rgba(245,197,24,0.5); border-radius:999px; padding:2px 11px; margin-bottom:10px; line-height:1.5;">KEY EP</span>
+            <p class="cur-title">シグネチャーアルペジオ</p>
+            <p class="cur-desc">硬質でメタリックなプラック。FM的な倍音、短いディケイ、ディレイで空間を埋める——このコースの中核になる音色設計。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-4"><span class="cur-ep">EP04</span></div>
+          <div class="cur-body">
+            <span style="display:inline-block; font-family:'Bebas Neue', sans-serif; font-size:12px; letter-spacing:0.16em; color:var(--gold); border:1px solid rgba(245,197,24,0.5); border-radius:999px; padding:2px 11px; margin-bottom:10px; line-height:1.5;">KEY EP</span>
+            <p class="cur-title">パッドとコード感</p>
+            <p class="cur-desc">sus系・マイナー9thの浮遊感。深いサイドチェインでキックに呼吸を合わせ、曲全体の重力を作る。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-5"><span class="cur-ep">EP05</span></div>
+          <div class="cur-body">
+            <span style="display:inline-block; font-family:'Bebas Neue', sans-serif; font-size:12px; letter-spacing:0.16em; color:var(--gold); border:1px solid rgba(245,197,24,0.5); border-radius:999px; padding:2px 11px; margin-bottom:10px; line-height:1.5;">KEY EP</span>
+            <p class="cur-title">ボイスデザイン</p>
+            <p class="cur-desc">ボコーダー／フォルマント処理で、人の声を素材に変える。歌わせるのではなく、音として設計する。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-6"><span class="cur-ep">EP06</span></div>
+          <div class="cur-body">
+            <p class="cur-title">ドラムとテクスチャ</p>
+            <p class="cur-desc">抑えたハット、巨大なインパクト、ノイズの層。派手さではなく密度でグルーヴを前に進める。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-7"><span class="cur-ep">EP07</span></div>
+          <div class="cur-body">
+            <p class="cur-title">構成とドラマ設計</p>
+            <p class="cur-desc">長い導入、ブレイクの静寂、押し出すドロップ。聴き手の集中をどこで解放するかを設計する。</p>
+          </div>
+        </div>
+        <div class="cur-card">
+          <div class="cur-thumb cur-thumb-8"><span class="cur-ep">EP08</span></div>
+          <div class="cur-body">
+            <p class="cur-title">ミックス &amp; マスタリング</p>
+            <p class="cur-desc">荘厳さを保ったまま音圧を出す。潰さずに前に出す、最終処理の考え方。</p>
+          </div>
+        </div>
+      </div>
+      <div class="cur-nav">
+        <button type="button" id="curPrev" aria-label="前へ">&#8249;</button>
+        <span class="cur-hint">横にスワイプ</span>
+        <button type="button" id="curNext" aria-label="次へ">&#8250;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 5. PROJECT FILE ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="proj reveal">
+      <h3>完成プロジェクトファイル、同梱。</h3>
+      <p>動画で作った完成曲のプロジェクトファイルを、そのままお渡しします。アルペジオのエフェクトチェーン、パッドのサイドチェイン設定、ボイスの処理——「この音がどう作られたのか」をパラメータ単位で自分の目で確かめられる。<span class="note">動画で学び、プロジェクトで確認する。理解のスピードが劇的に変わります。</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 6. AUTHOR ========== -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="section-label center reveal">WHO AM I</div>
+    <div class="author reveal" style="margin-top:24px;">
+      <img src="tricera-icon.jpg" alt="トリケラテクノ">
+      <div>
+        <div class="author-name">トリケラテクノ</div>
+        <div class="author-role">DTM解説 / メロディックテクノ・プロデューサー</div>
+        <p class="author-bio">DTMの始め方から曲の完成までを解説しています。これまで100名以上の制作相談に向き合ってきました。このサウンドを、私が実際に作る手順のまま、順番に見せていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 7. PRICE ========== -->
+<section class="section" id="price">
+  <div class="wrap">
+    <div class="section-label center reveal">START LEARNING</div>
+    <h2 class="h-jp reveal">いま、始める。</h2>
+    <div class="buy-box reveal" style="margin-top:34px;">
+      <span class="buy-mockup"><img src="mockup-zeus.png" alt="ZEUS パッケージ"></span>
+      <p class="buy-brand">ZEUS</p>
+      <p class="buy-name">Anyma系メロディックテクノ サウンドデザインコース</p>
+      <p class="buy-tag"><span class="yen">¥</span>4,980</p>
+      <p class="buy-tax">税込・買い切り</p>
+      <ul class="buy-list">
+        <li>サウンドデザインを軸にした解説動画</li>
+        <li>Abletonプロジェクトファイル</li>
+        <li>制作に使った音源すべて</li>
+        <li>無期限アクセス（視聴期限なし）</li>
+      </ul>
+      <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener" style="width:100%;">
+        <span class="bgo-l1">今すぐコースを始める →</span>
+        <span class="bgo-l2">noteで購入・購入後すぐ視聴</span>
+      </a>
+      <p class="buy-trust"><strong>購入後すぐアクセス。</strong>視聴はいつでも、何度でも。<br>お困りのときは公式LINEまたはメールでサポートします。</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 8. 受講生の声（ロードマップ） ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">VOICES</div>
+    <h2 class="h-jp reveal">トリケラテクノの教材で学んだ<br><em>受講生のリアルな変化</em></h2>
+    <div class="voices-grid reveal">
+      <div class="voice-item">
+        <img class="voice-ava" src="ジジさんアイコン.jpg" alt="ジジさん">
+        <p class="voice-name">ジジさん</p>
+        <p class="voice-meta">DTM歴1年未満 ・ STEP1〜10 完走<br><span class="hit">3ヶ月で1曲完成</span></p>
+        <p class="voice-quote">「DTM初心者の私は右も左も分かってませんでした。まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>トリケラさんはDTMの先生でもあり、優秀なモチベーターでもあった</strong>。挫折しそうな時も、言葉を思い出すとがんばれました。」</p>
+      </div>
+      <div class="voice-item">
+        <img class="voice-ava" src="yasu-icon.png" alt="やすさん">
+        <p class="voice-name">やすさん</p>
+        <p class="voice-meta">DTM歴3〜5年 ・ STEP1〜10 完走<br><span class="hit">順番を変えて2週間で完成</span></p>
+        <p class="voice-quote">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日、曲作りに夢中になっています。根拠づけてしっかり書かれていて読みやすく、<strong>自分が欲しかった情報がたくさん詰まっていた</strong>。友人にもぜひすすめたいです。」</p>
+      </div>
+      <div class="voice-item">
+        <img class="voice-ava" src="eternalfield-icon.jpg" alt="Eternal Fieldさん">
+        <p class="voice-name">Eternal Fieldさん</p>
+        <p class="voice-meta">DTM歴3年 ・ STEP1〜10 完走<br><span class="hit">3ヶ月で1曲完成・リリース達成</span></p>
+        <p class="voice-quote">「購入前は、<strong>なかなか曲作りが進まなかった</strong>。今までSTEM分離をしてこなかったので、<strong>"プロの曲ってこうなっているのか"</strong>と、解像度が上がった。」</p>
+      </div>
+    </div>
+    <p class="voice-disc reveal">※「トリケラテクノ ロードマップ」受講生の声です。個人の感想・成果例であり、誰にでも同じ結果を保証するものではありません。</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 9. FAQ ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">FAQ</div>
+    <h2 class="h-jp reveal">よくある質問</h2>
+    <div class="faq reveal" style="margin-top:34px;">
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>使用するDAWは何ですか？</span><span class="chev"></span></summary>
+        <div class="a">Ableton Liveで制作しています。プロジェクトファイルもAbleton形式です。ただし、アレンジ・ミックス・マスタリングの考え方はどのDAWでも応用できます。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>初心者でも大丈夫ですか？</span><span class="chev"></span></summary>
+        <div class="a">初〜中級のDTMer向けです。DAWの基本操作にある程度触れている方を想定しています。DTMがまったく初めての方は、まず入門教材「DTMの地図」から始めるのがおすすめです。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>いつまで視聴できますか？</span><span class="chev"></span></summary>
+        <div class="a">買い切り・無期限アクセスです。視聴期限はありません。購入後は、いつでも何度でも見返せます。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>どんな音源が付属しますか？</span><span class="chev"></span></summary>
+        <div class="a">この1曲の制作に実際に使ったサンプル・プリセットを同梱します。海外コースのような大規模サンプルパックではなく、「この曲を再現できる音源一式」という位置づけです。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>返金はできますか？</span><span class="chev"></span></summary>
+        <div class="a">デジタルコンテンツという商品の性質上、購入後の返品・返金はお受けできません。あらかじめご了承ください。ご不明点は購入前にお問い合わせください。</div>
+      </details>
+      <details>
+        <summary><span class="q"><span class="mk">Q</span>スマホだけで受講できますか？</span><span class="chev"></span></summary>
+        <div class="a">動画の視聴はスマホでも可能ですが、実際の制作にはPCとDAW（Ableton Live推奨）が必要です。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 10. YOU MIGHT ALSO LIKE ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">YOU MIGHT ALSO LIKE</div>
+    <h2 class="h-jp reveal">こちらもおすすめです</h2>
+    <!-- カード3枚を1行に収めるため、この要素だけ min を 300px→260px に上書き（共有CSSは変更なし） -->
+    <div class="lesson-grid reveal" style="grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));">
+      <a class="lesson-card" href="front-dtm-map.html#price">
+        <div class="lesson-thumb">
+          <span class="level-badge level-badge--start"><i class="fa-solid fa-seedling"></i> 初心者のための</span>
+          <img src="hero-thumb-dtm.jpg" alt="DTMの地図" loading="lazy">
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-step">STEP 1 ・ 入門</p>
+          <p class="lesson-title">DTMの地図</p>
+          <p class="lesson-desc">「何から始めればいいか分からない」を、最短で終わらせる全体図。全8章＋解説動画8本で、DAWを開いて4小節のループを鳴らすところまで。</p>
+          <span class="lesson-go">DTMの地図を見る <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a class="lesson-card" href="course-melodic-techno.html">
+        <div class="lesson-thumb">
+          <span class="level-badge level-badge--next"><i class="fa-solid fa-compact-disc"></i> シリーズ第1弾</span>
+          <img src="hero-thumb-melodic.jpg" alt="NEW WORLD" loading="lazy">
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-step">単発コース ・ Argy系</p>
+          <p class="lesson-title">NEW WORLD</p>
+          <p class="lesson-desc">空のプロジェクトから、リリースできる1曲へ。アイデア出しからマスタリングまで、制作の全工程を通しで再現するコース。音源とプロジェクトファイル同梱。</p>
+          <span class="lesson-go">NEW WORLDを見る <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a class="lesson-card lesson-card--pro" href="triceratechno-lp.html">
+        <div class="lesson-thumb">
+          <span class="level-badge level-badge--next"><i class="fa-solid fa-rocket"></i> 脱初心者のための</span>
+          <img src="hero-thumbnail.jpg" alt="ROADMAP PROコース" loading="lazy">
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-step">STEP 2 ・ 本格</p>
+          <p class="lesson-title">ROADMAP PROコース</p>
+          <p class="lesson-desc">オリジナル曲を1曲、最後まで完成させる10STEP。3ヶ月のマンツーマンサポート付きで、詰まったところを個別に解決しながら進めます。</p>
+          <span class="lesson-go">ロードマップを見る <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+    <p class="lesson-more reveal"><a href="portfolio.html">トリケラテクノの制作実績・ポートフォリオを見る →</a></p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ========== 11. FINAL CTA ========== -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="reveal"><span style="color:var(--accent);">あの音</span>の正体を<br><span style="color:var(--gold);">あなたの手</span>に</h2>
+    <p class="reveal">仕組みが分かれば、次の1曲は自分で設計できます。</p>
+    <div class="reveal" style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+        <span class="bgo-l1">今すぐコースを始める →</span>
+        <span class="bgo-l2">動画コース＋音源＋プロジェクトファイル</span>
+      </a>
+      <p class="hero-trust">買い切り・無期限アクセス</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-logo">TRICERA TECHNO</div>
+  <div class="footer-sns">
+    <a href="https://www.youtube.com/@triceratechno" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <div class="footer-legal">
+    <a href="tokutei.html">特定商取引法に基づく表記</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 TRICERA TECHNO All Rights Reserved.</p>
+</footer>
+
+<!-- ========== STICKY CTA (mobile) ========== -->
+<div class="sticky-cta">
+  <a class="btn btn--gold" href="NOTE_COURSE_URL" target="_blank" rel="noopener">
+    <span class="bgo-l1">今すぐコースを始める →</span>
+    <span class="bgo-l2">動画＋音源＋プロジェクトファイル</span>
+  </a>
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('visible'); }); return; }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+
+<script>
+  /* コースデモ音源プレーヤー（波形＋再生ボタン） */
+  (function () {
+    var wave = document.getElementById('demoWave');
+    var audio = document.getElementById('demoAudio');
+    var playBtn = document.getElementById('demoPlay');
+    var timeEl = document.getElementById('demoTime');
+    if (!wave || !audio || !playBtn) return;
+    var N = 44, bars = [];
+    for (var i = 0; i < N; i++) {
+      var h = 16 + Math.round(Math.abs(Math.sin(i * 0.7) + 0.6 * Math.sin(i * 0.31 + 1)) * 42);
+      if (h > 100) h = 100;
+      var b = document.createElement('span');
+      b.className = 'demo-bar';
+      b.style.height = h + '%';
+      wave.appendChild(b);
+      bars.push(b);
+    }
+    function fmt(t) {
+      if (!isFinite(t) || t < 0) t = 0;
+      var m = Math.floor(t / 60), s = Math.floor(t % 60);
+      return m + ':' + (s < 10 ? '0' : '') + s;
+    }
+    function paint(ratio) {
+      var on = Math.round(ratio * N);
+      for (var i = 0; i < N; i++) bars[i].classList.toggle('on', i < on);
+    }
+    var icoPlay = playBtn.querySelector('.demo-ico-play');
+    var icoPause = playBtn.querySelector('.demo-ico-pause');
+    function setPlaying(p) {
+      icoPlay.style.display = p ? 'none' : 'block';
+      icoPause.style.display = p ? 'block' : 'none';
+      playBtn.setAttribute('aria-label', p ? 'コースデモを一時停止' : 'コースデモを再生');
+    }
+    playBtn.addEventListener('click', function () {
+      if (audio.paused) { audio.play().catch(function () {}); } else { audio.pause(); }
+    });
+    audio.addEventListener('play', function () { setPlaying(true); });
+    audio.addEventListener('pause', function () { setPlaying(false); });
+    audio.addEventListener('ended', function () { setPlaying(false); paint(0); timeEl.textContent = '0:00'; });
+    audio.addEventListener('timeupdate', function () {
+      var d = audio.duration || 0;
+      paint(d ? audio.currentTime / d : 0);
+      timeEl.textContent = fmt(audio.currentTime);
+    });
+    wave.addEventListener('click', function (e) {
+      var d = audio.duration;
+      if (!isFinite(d) || !d) return;
+      var r = wave.getBoundingClientRect();
+      audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * d;
+    });
+  })();
+
+  /* カリキュラム・カルーセルの矢印スクロール */
+  (function () {
+    var track = document.getElementById('curTrack');
+    if (!track) return;
+    var prev = document.getElementById('curPrev');
+    var next = document.getElementById('curNext');
+    function step() {
+      var card = track.querySelector('.cur-card');
+      var gap = 18;
+      return card ? card.getBoundingClientRect().width + gap : 318;
+    }
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  })();
+</script>
+
+<!-- ========== YOUTUBE MODAL ========== -->
+<div class="yt-modal" id="ytModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="yt-modal__backdrop" data-yt-close></div>
+  <div class="yt-modal__box">
+    <button class="yt-modal__close" type="button" aria-label="閉じる" data-yt-close>&times;</button>
+    <div class="yt-modal__frame"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    function ytId(url) {
+      if (!url) return null;
+      try {
+        var u = new URL(url, location.href);
+        if (u.hostname.indexOf('youtu.be') > -1) return (u.pathname.slice(1).split('/')[0] || null);
+        if (u.hostname.indexOf('youtube.com') > -1) {
+          if (u.pathname === '/watch') return u.searchParams.get('v');
+          var m = u.pathname.match(/\/embed\/([^/?]+)/);
+          if (m) return m[1];
+        }
+      } catch (e) {}
+      return null;
+    }
+    var modal = document.getElementById('ytModal');
+    var frame = modal.querySelector('.yt-modal__frame');
+    function open(id) {
+      frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+      modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); frame.innerHTML = ''; document.body.style.overflow = '';
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a) return;
+      var id = ytId(a.getAttribute('href'));
+      if (id) { e.preventDefault(); open(id); }
+    });
+    modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-yt-close')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+  })();
+</script>
+
+</body>
+</html>
