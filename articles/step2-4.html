@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP2-4：トップベースの作り方｜ロードマップPROコース</title>
+<meta name="description" content="トップベースの役割は“前に出る輪郭”。音色と打ち込みを決め、EQでキックと住み分け、Kickstart 2でMix 60%のサイドチェインをかける3つの処理。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP2-4：トップベースの作り方 ── キックと噛み合わせる3つの処理">
+<meta property="og:description" content="トップベースの役割は「低域の太さ」ではない。“前に出る輪郭”を作ること。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step2-4.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css">
+</head>
+
+<body class="is-locked" data-prev-id="2-3" data-article-id="2-4" data-next-id="2-5">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 2-4 ／ トップベースの作り方</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 2-4</div>
+  <h1 class="hero-jp-title"><em>トップベース</em>の作り方</h1>
+  <p class="hero-ja">キックと噛み合わせる3つの処理</p>
+  <p class="hero-lead">役割は「低域の太さ」ではない。<br>“前に出る輪郭”を作ること。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約9分</b></span>
+    <span>STEP <b>02</b> ／ 10</span>
+    <span>手順 <b>3</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">キックと<em>噛み合う</em><br>トップベースを作る</h2>
+
+      <p class="lead-p">
+        前の STEP で、<strong>キックが4小節に配置されました。</strong><br>
+        ここからは、そのキックと噛み合う<em>トップベース</em>を作るフェーズです。
+      </p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Sound</span>
+          <span class="card-num">01</span>
+          <h3 class="card-title">音色と打ち込みを決める</h3>
+          <p>プリセットを選んで整えるだけでいい。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">EQ</span>
+          <span class="card-num">02</span>
+          <h3 class="card-title">EQでキックと住み分ける</h3>
+          <p>150Hz以下をカット、300Hzと800Hzを+1dB。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Sidechain</span>
+          <span class="card-num">03</span>
+          <h3 class="card-title">サイドチェインでダッキング</h3>
+          <p>Kickstart 2 で Mix 60%。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Sound</div>
+      <h2 class="sec-title">音色と打ち込みを<em>決める</em></h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">トップベースの役割</div>
+        <p>トップベースの役割は<strong>「低域の太さ」ではありません。</strong></p>
+        <p>ミックスの中で<em>“前に出る輪郭”</em>を作ることです。</p>
+        <p>だから、音作りに時間をかけない。最短でいくなら<strong>プリセットを選んで整えるだけ</strong>が正解です。</p>
+      </div>
+
+      <h3 class="sub-title">Splice 検索ワード</h3>
+
+      <div class="copybox">
+        <div class="copybox-val"><span class="copybox-label">Melodic Techno</span>melodic techno bass</div>
+        <button type="button" class="copy-btn" data-copy="melodic techno bass">コピー</button>
+      </div>
+      <div class="copybox">
+        <div class="copybox-val"><span class="copybox-label">Techno</span>techno bass</div>
+        <button type="button" class="copy-btn" data-copy="techno bass">コピー</button>
+      </div>
+      <div class="copybox">
+        <div class="copybox-val"><span class="copybox-label">House</span>house bass</div>
+        <button type="button" class="copy-btn" data-copy="house bass">コピー</button>
+      </div>
+
+      <p>候補は<strong>5つ以内</strong>に絞る。ジャンルに特化した音がすぐ見つかります。</p>
+
+      <h3 class="sub-title">打ち込みの3原則</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">①</div>
+          <div class="anatomy-name">ルート音が基本<span class="anatomy-en">Root Note</span></div>
+          <div class="anatomy-desc">曲のルート音を追う。A minor なら A で打つ。<strong>経過音は最小限。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">②</div>
+          <div class="anatomy-name">短く刻む<span class="anatomy-en">1/8 or 1/16</span></div>
+          <div class="anatomy-desc">短い音はアタックが強く、存在感が出る。<strong>低域の濁りも防げる。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">③</div>
+          <div class="anatomy-name">キックとズラす必要はない<span class="anatomy-en">Same Timing</span></div>
+          <div class="anatomy-desc">同じタイミングで打ち込んでOK。<strong>キックとの住み分けはサイドチェインが作る。</strong></div>
+        </div>
+      </div>
+
+      <!-- 購入者特典 -->
+      <h3 class="sub-title">★ ロードマップ購入者特典</h3>
+
+      <p>
+        ベースの打ち込みをやれと急に言われても、難しいですよね。安心してください。
+        <strong>プロの打ち込み方を購入者限定動画で徹底解説しました。</strong>
+      </p>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <div class="video-empty">
+            <strong>COMING SOON</strong>
+            <span>【徹底解説】グルーブ感のあるベースの打ち込み方<br>（解説動画：10分）のURLをいただければ埋め込みます。</span>
+          </div>
+        </div>
+        <p class="video-cap">★ 購入者特典 ／ 解説動画 10分 ── 「アイデアが出なくて分からない…」という最悪のパターンを回避してください。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">▼ ベースラインをプレゼント</div>
+        <p>ダウンロードして DAW に貼るだけ。3ジャンル分を用意しています。</p>
+        <ul>
+          <li>テクノのベースライン</li>
+          <li>ハウスのベースライン</li>
+          <li>メロディックテクノのベースライン</li>
+        </ul>
+        <p><em>アイデアは、即真似 ＞ 創造的にアレンジ ＞ 自分だけのオリジナルに。</em></p>
+        <p>※ ダウンロードリンクをいただければ、ここにボタンを設置します。</p>
+      </div>
+
+      <!-- 音量基準 -->
+      <h3 class="sub-title">音量基準 ── mvMeter で −1〜−3VU に揃える</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここを揃えないと</div>
+        <p>OTT や CamelCrusher が<strong>過剰にかかって音が潰れます。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">揃えておくと得られること</div>
+        <ul>
+          <li>OTT を薄くかけても潰れない</li>
+          <li>CamelCrusher で過剰に歪まない</li>
+          <li>EQ後も音量が見失われない</li>
+          <li>キックとの相対バランスがとりやすい</li>
+          <li>ミックス後半の過剰・不足を防げる</li>
+        </ul>
+        <p>これが<strong>後の処理すべてを安定させる基準値</strong>です。</p>
+      </div>
+
+      <!-- 処理の流れ -->
+      <h3 class="sub-title">処理の流れ ── 4ステップ</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">EQ（1回目）<span class="anatomy-en">Cut</span></div>
+          <div class="anatomy-desc"><strong>100Hz以下をカット。</strong>超低域はキック・サブの領域。ここを削るだけで中高域のアタックが前に出ます。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">OTT を 20%<span class="anatomy-en">Density</span></div>
+          <div class="anatomy-desc">Depth 20%、Time 100%。<em>“圧縮”ではなく“密度を詰める”</em>目的で使う。かけすぎ禁止。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">CamelCrusher<span class="anatomy-en">Warmth</span></div>
+          <div class="anatomy-desc">プリセット「British Clean」、Drive 20〜30%、Mix 50%前後。歪ませるのではなく<strong>“温める”感覚</strong>で。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">EQ（2回目）<span class="anatomy-en">Re-Cut</span></div>
+          <div class="anatomy-desc">CamelCrusher の歪みで低域が再び出るため、<strong>もう一度100Hz以下をカット。</strong></div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Ableton Live ユーザーは Saturator で代替できる</h3>
+
+      <div class="devices">
+        <div class="device">
+          <div class="device-shot"><img src="img/device/ableton-saturator.png" alt="Ableton Live の Saturator" loading="lazy"></div>
+          <div class="device-body">
+            <span class="device-en">Saturator 設定</span>
+            <h3 class="device-name">CamelCrusher の代替</h3>
+            <p>Mode「Soft Sine」／ Drive +2〜3dB ／ Dry/Wet 50%前後 ／ Color OFF ／ Soft Clip OFF。</p>
+            <span class="device-daw">Ableton Live 付属</span>
+          </div>
+        </div>
+        <div class="device">
+          <div class="device-body" style="padding-top:24px;">
+            <span class="device-en">目的</span>
+            <h3 class="device-name">歪ませることではなく<br>「温める」こと</h3>
+            <p>
+              → 圧縮された中域に自然な倍音が加わる<br>
+              → 音量を上げなくても前に出てくる<br>
+              → CamelCrusher と同等の効果
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>音色・打ち込み・音量基準が揃ったら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── EQ</div>
+      <h2 class="sec-title">EQ でキックと<em>住み分ける</em></h2>
+
+      <p>やることは<strong>3つだけ</strong>です。</p>
+
+      <div class="parts">
+        <div class="part">
+          <p class="part-name">Cut</p>
+          <span class="part-freq">150Hz以下 ／ 大胆にカット</span>
+          <p class="part-lead">キック・サブの領域を完全に空ける。</p>
+          <dl>
+            <dt>効果</dt><dd>ローの濁り防止</dd>
+            <dt>効果</dt><dd>キックの主役帯域を空ける</dd>
+            <dt>効果</dt><dd>トップの存在感を中域に集中</dd>
+          </dl>
+        </div>
+        <div class="part">
+          <p class="part-name">Boost</p>
+          <span class="part-freq">300Hz ／ +1dB</span>
+          <p class="part-lead">温かみと厚みを作る。</p>
+          <dl>
+            <dt>効果</dt><dd>削りすぎて薄くなるのを防ぐ</dd>
+            <dt>効果</dt><dd>音が痩せて聴こえるのを防ぐ</dd>
+            <dt>効果</dt><dd>自然な厚みを作る</dd>
+          </dl>
+        </div>
+        <div class="part">
+          <p class="part-name">Boost</p>
+          <span class="part-freq">800Hz ／ +1dB</span>
+          <p class="part-lead">輪郭とアタック感を前に出す。</p>
+          <dl>
+            <dt>効果</dt><dd>抜け・アタック感が出る</dd>
+            <dt>効果</dt><dd>丸くなった輪郭を戻す</dd>
+            <dt>効果</dt><dd>リードやパッドと衝突しにくい</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この構造の意味</div>
+        <p><strong>150Hz以下で濁りを消す。</strong></p>
+        <p><strong>300Hz と 800Hz でトップのキャラクターだけを前に出す。</strong></p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">やりすぎ厳禁</div>
+        <p><em>+1dB ずつが正解です。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>3ポイントの EQ が終わったら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Sidechain</div>
+      <h2 class="sec-title">サイドチェインで<em>ダッキングする</em></h2>
+
+      <p>
+        <span class="term" data-term="サイドチェイン" data-desc="キックが鳴った瞬間に、他のトラックの音量を一時的に下げる処理。低域のぶつかりを避け、キックを前に出すために使う。">サイドチェイン</span>
+        ＝ キックが鳴った瞬間にトップベースの音量を一時的に下げる処理。
+      </p>
+
+      <p>使うのは <strong>Kickstart 2</strong>。最速で正解に到達できます。</p>
+
+      <a class="linkcard" href="https://www.kickstart-plugin.com" target="_blank" rel="noopener">
+        <span class="linkcard-thumb"><img src="img/link/kickstart2.jpg" alt="Kickstart 2 のプラグイン画面" loading="lazy"></span>
+        <span class="linkcard-text">
+          <span class="linkcard-tag linkcard-tag--paid">有料 ／ 約2,500円</span>
+          <span class="linkcard-eyebrow">Sidechain ── この手順で使う</span>
+          <span class="linkcard-title">Kickstart 2</span>
+          <span class="linkcard-sub">Nicky Romero &amp; Cableguys。ゼロ操作でプロ品質のサイドチェインが作れる。</span>
+          <span class="linkcard-domain">www.kickstart-plugin.com</span>
+        </span>
+      </a>
+
+      <h3 class="sub-title">推奨設定</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>設定値</th></tr></thead>
+          <tbody>
+            <tr><th>Shape</th><td>左上のデフォルト</td></tr>
+            <tr class="is-focus"><th>Mix</th><td><strong>60%</strong></td></tr>
+            <tr><th>Length</th><td>1/4</td></tr>
+            <tr><th>Mode</th><td>Sync</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜ 60% か？</div>
+        <p>
+          トップベースはすでに EQ で低域を整理済みで、<strong>キックと超低域で競合していません。</strong>
+          主役は中域の存在感です。だから<em>「軽くどかす」だけで十分</em>。
+        </p>
+        <p>100% にすると中域が引っ込みすぎて、グルーヴが不自然になります。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">サイドチェインで得られるもの</div>
+        <ul>
+          <li>キックが自然に前へ出る</li>
+          <li>ローエンドが濁らない</li>
+          <li>トップベースに“揺れ”が生まれる</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">サブベースは話が別</div>
+        <p>サブは必ず <strong>100%</strong> ダッキングします。<em>トップとサブで考え方を完全に分けてください。</em></p>
+        <p>詳しくは次の <a href="step2-5.html">STEP2-5</a> で扱います。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>Kickstart 2 の設定が終わったら、手順③はクリアです。</p>
+      </div>
+
+      <h3 class="sub-title">★ ロードマップ購入者特典</h3>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <div class="video-empty">
+            <strong>COMING SOON</strong>
+            <span>【ダッキング】Kickstart2 の使い方を基礎から解説<br>（解説動画：17分）のURLをいただければ埋め込みます。</span>
+          </div>
+        </div>
+        <p class="video-cap">★ 購入者特典 ／ 解説動画 17分 ── 「使い方を調べても分からず、結局使わなくなってしまう…」を回避してください。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 到達点 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">What You Got</div>
+      <h2 class="sec-title">この STEP で<em>手に入れたもの</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでの到達点</div>
+        <ul>
+          <li>トップベースの音色と打ち込みを決めた</li>
+          <li>EQ でキックと帯域を住み分けた</li>
+          <li>サイドチェインでキックと噛み合わせた</li>
+        </ul>
+        <p>つまり、<strong>“前に出て・濁らず・キックを邪魔しないトップベース”</strong>が完成した状態になりました。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この STEP 完了の意味</div>
+        <p><em>ローエンドはもう半分仕上がっています。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 2-5</div>
+      <h2 class="sec-title">サブベースの<em>低域設計</em>へ</h2>
+
+      <p>
+        次の【STEP2-5】では、<strong>サブベースの低域設計</strong>を行います。
+      </p>
+
+      <p>
+        トップベースが<em>“前に出る輪郭”</em>なら、サブベースは<em>曲の土台そのもの</em>です。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここが整っていないと</div>
+        <p>どれだけトップを整えても、<strong>低域は安定しません。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">逆に正しく設計できると</div>
+        <p><em>キックと一体化した強固なローエンド</em>が完成します。</p>
+      </div>
+
+      <p>次の STEP でお会いしましょう。ではまた。</p>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step2-3.html">
+          <em>Previous ── STEP 2-3</em>
+          <b>キックを4小節に配置する<br>── ループを固定して、ミックスの基準を作る</b>
+        </a>
+        <a class="next" href="https://note.com/preview/nba1a24f15d36?prev_access_key=5b89e5a375ca00edf1bd046c59ba5b90" target="_blank" rel="noopener">
+          <em>Next ── STEP 2-5</em>
+          <b>サブベースの作り方<br>── 役割は“太さだけ”。それ以外は全部不要</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step2-4.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js"></script>
+<script src="_article.js"></script>
+</body>
+</html>

@@ -66,9 +66,9 @@ const ROADMAP_DATA = {
         { id: "2-1", type: "lesson", title: "STEP2-1：プロが必ず行う「正しいキックの選び方」", pageUrl: "articles/step2-1.html", noteUrl: "https://note.com/preview/n3b634df5d619?prev_access_key=4d98fb6dd104c0fce67e08897f02e1fa", pdfUrl: "step2-1.pdf", videoUrl: "", status: "published" },
         { id: "2-2", type: "lesson", title: "STEP2-2：キックを1つに決める──構造で評価して、迷わず選ぶ", pageUrl: "articles/step2-2.html", noteUrl: "https://note.com/preview/n8292ee508aee?prev_access_key=0d78775940a4452a53b682f0f11a6374", pdfUrl: "step2-2.pdf", videoUrl: "", status: "published" },
         { id: "2-3", type: "lesson", title: "STEP2-3：キックを4小節に配置する──ループを固定して、ミックスの基準を作る", pageUrl: "articles/step2-3.html", noteUrl: "https://note.com/preview/nddcf55a4826c?prev_access_key=3852ca5bdec4c0c975a45822c04fe3a5", pdfUrl: "step2-3.pdf", videoUrl: "", status: "published" },
-        { id: "2-4", type: "lesson", title: "STEP2-4：トップベースの作り方──キックと噛み合わせる3つの処理", noteUrl: "https://note.com/preview/n5a43dd26644e?prev_access_key=290e11befa735cff9139a6dd0a40b035", pdfUrl: "step2-4.pdf", videoUrl: "", status: "published" },
-        { id: "2-5", type: "lesson", title: "STEP2-5：サブベースの作り方──役割は\"太さだけ\"。それ以外は全部不要", noteUrl: "https://note.com/preview/nba1a24f15d36?prev_access_key=5b89e5a375ca00edf1bd046c59ba5b90", pdfUrl: "step2-5.pdf", videoUrl: "", status: "published" },
-        { id: "2-6", type: "lesson", title: "STEP2-6：ローエンドを1本化する──3つのシンプルなテクニック", noteUrl: "https://note.com/preview/n16f4be730436?prev_access_key=b6babf5e6902988f180d08fcb436c836", pdfUrl: "step2-6.pdf", videoUrl: "", status: "published" }
+        { id: "2-4", type: "lesson", title: "STEP2-4：トップベースの作り方──キックと噛み合わせる3つの処理", pageUrl: "articles/step2-4.html", noteUrl: "https://note.com/preview/n5a43dd26644e?prev_access_key=290e11befa735cff9139a6dd0a40b035", pdfUrl: "step2-4.pdf", videoUrl: "", status: "published" },
+        { id: "2-5", type: "lesson", title: "STEP2-5：サブベースの作り方──役割は\"太さだけ\"。それ以外は全部不要", pageUrl: "articles/step2-5.html", noteUrl: "https://note.com/preview/nba1a24f15d36?prev_access_key=5b89e5a375ca00edf1bd046c59ba5b90", pdfUrl: "step2-5.pdf", videoUrl: "", status: "published" },
+        { id: "2-6", type: "lesson", title: "STEP2-6：ローエンドを1本化する──3つのシンプルなテクニック", pageUrl: "articles/step2-6.html", noteUrl: "https://note.com/preview/n16f4be730436?prev_access_key=b6babf5e6902988f180d08fcb436c836", pdfUrl: "step2-6.pdf", videoUrl: "", status: "published" }
       ]
     },
 

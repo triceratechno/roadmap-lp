@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP2-6：ローエンドを1本化する｜ロードマップPROコース</title>
+<meta name="description" content="パン・リバーブで空気を揃え、LOW BUSにまとめてGlueコンプで1本化し、モノラル・小音量で最終確認する。STEP2のローエンド設計を完成させる工程。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP2-6：ローエンドを1本化する ── 3つのシンプルなテクニック">
+<meta property="og:description" content="3つの音がひとつのローエンドとして動く状態を作る。STEP2の最終工程。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step2-6.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css">
+</head>
+
+<body class="is-locked" data-prev-id="2-5" data-article-id="2-6" data-next-id="3-overview">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 2-6 ／ ローエンドを1本化する</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 2-6</div>
+  <h1 class="hero-jp-title">ローエンドを<em>1本化する</em></h1>
+  <p class="hero-ja">3つのシンプルなテクニック</p>
+  <p class="hero-lead">キック・トップベース・サブベースを<br>「1本のローエンド」として統合する。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約8分</b></span>
+    <span>STEP <b>02</b> ／ 10</span>
+    <span>手順 <b>3</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">3つの音を<br><em>1本のローエンド</em>にする</h2>
+
+      <p class="lead-p">
+        前の STEP で、<strong>キック・トップベース・サブベースがそれぞれ完成しました。</strong><br>
+        ここからは、その3つを<em>「1本のローエンド」として統合する</em>フェーズです。
+      </p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Space</span>
+          <span class="card-num">01</span>
+          <h3 class="card-title">パン／リバーブで空間を整える</h3>
+          <p>すべてセンター固定。空気感だけを揃える。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Glue</span>
+          <span class="card-num">02</span>
+          <h3 class="card-title">LOW BUS で Glue をかける</h3>
+          <p>コンプで“同じ呼吸”をさせる。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Check</span>
+          <span class="card-num">03</span>
+          <h3 class="card-title">ローエンド最終チェック</h3>
+          <p>モノラル／小音量で崩れないか確認する。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Space</div>
+      <h2 class="sec-title">パン／リバーブで<em>空間を整える</em></h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">パンは全パート完全センター</div>
+        <p>
+          キック・サブベース・トップベース。<strong>ローエンドは定位がズレると即濁ります。</strong>
+          <em>例外なし。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">リバーブは「空気の統一」だけを目的に</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>トラック</th><th>リバーブ Mix</th><th>理由</th></tr></thead>
+          <tbody>
+            <tr><th>トップベース</th><td><strong>3〜6%</strong></td><td>前に出すぎを防ぐ</td></tr>
+            <tr><th>サブベース</th><td>基本ゼロ</td><td>低域は広げない</td></tr>
+            <tr><th>キック</th><td>完全ドライ</td><td>アタックを守る</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">目的を間違えないこと</div>
+        <p>
+          目的は<strong>広げることではありません。</strong>
+          トップベースだけが前に出すぎないよう、<em>空気感を薄く揃えるだけ</em>です。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>パンとリバーブが揃ったら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Glue</div>
+      <h2 class="sec-title">LOW BUS で <em>Glue</em> をかけ、<br>ローエンドを1本化する</h2>
+
+      <p><strong>ここが今回の核心です。</strong></p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">LOW BUS ルーティング</div>
+        <p>
+          キック ＋ トップベース ＋ サブベース を
+          <span class="term" data-term="LOW BUS（ローエンドバス）" data-desc="複数のトラックを1つにまとめて送る先。ここに挿したエフェクトは、まとめられた音全体に一括でかかる。">LOW BUS</span>
+          にまとめる。
+        </p>
+        <p>
+          DAW のグループ / バス / サブミックス機能を使って3トラックを1つの Bus へルーティング。
+          これで<strong>ローエンド全体を1本のフェーダーで動かせる状態</strong>になります。
+        </p>
+        <p><em>「3つの音」から「1本の塊」に変わります。</em></p>
+      </div>
+
+      <h3 class="sub-title">Glue コンプの設定値</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パラメータ</th><th>設定値</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr><th>アタック</th><td><strong>0.3ms</strong></td><td>キックのアタックを潰さず自然に通す</td></tr>
+            <tr class="is-focus"><th>リリース</th><td><strong>500〜700ms</strong></td><td>次のキックまでにゆっくり戻る</td></tr>
+            <tr><th>レシオ</th><td><strong>4 : 1</strong></td><td>キックとベースをしっかり一体化</td></tr>
+            <tr class="is-focus"><th>ゲインリダクション</th><td><strong>−5dB 前後</strong></td><td>キックの瞬間にベースごと呼吸が揃う</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>※ Glue コンプがなければ、<strong>DAW付属のコンプで構いません。</strong></p>
+
+      <div class="devices">
+        <div class="device">
+          <div class="device-shot"><img src="img/device/ableton-compressor.png" alt="Ableton Live の Compressor" loading="lazy"></div>
+          <div class="device-body">
+            <span class="device-en">Compression</span>
+            <h3 class="device-name">DAW付属コンプで代替</h3>
+            <p>アタック 0.3ms／リリース 500〜700ms／レシオ 4:1／GR −5dB前後 を再現できれば、どのコンプでも構いません。</p>
+            <span class="device-daw">Ableton Live 付属 Compressor</span>
+          </div>
+        </div>
+        <div class="device">
+          <div class="device-shot"><img src="img/device/ableton-saturator.png" alt="Ableton Live の Saturator" loading="lazy"></div>
+          <div class="device-body">
+            <span class="device-en">Saturation</span>
+            <h3 class="device-name">手順③で使うサチュレーター</h3>
+            <p>LOW BUS の最後に薄くかけて、ローエンドを“見えやすく”する。</p>
+            <span class="device-daw">Ableton Live 付属 Saturator</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Glue で何が変わるか</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">Before ── Glue なし</p>
+          <p class="vs-head">バラバラに動く</p>
+          <ul>
+            <li>キックとベースが別々に動く</li>
+            <li>ローエンドがバラバラに聴こえる</li>
+            <li>低域が濁り、前に出ない</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">After ── Glue あり</p>
+          <p class="vs-head">同じ呼吸で動く</p>
+          <ul>
+            <li>キックとベースが同じ呼吸で動く</li>
+            <li>ローエンドが“1本の塊”に</li>
+            <li>低域が太く・安定し、前に出る</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">黄金設定</div>
+        <p>
+          <em>リリース 500〜700ms × −5dB GR</em> は、
+          ダンスミュージックの<strong>「どっしりしたローエンド」</strong>を作る黄金設定です。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>LOW BUS の Glue が設定できたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Check</div>
+      <h2 class="sec-title">ローエンド<em>最終チェック</em>を行う</h2>
+
+      <p>仕上げとして<strong>3つの確認</strong>をします。</p>
+
+      <h3 class="sub-title">1. モノラルチェック</h3>
+
+      <p>ローエンドが崩れないかを確認します。</p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>DAW</th><th>やり方</th></tr></thead>
+          <tbody>
+            <tr><th>Ableton Live</th><td>Master に Utility を挿して Mono ボタン ON</td></tr>
+            <tr><th>Studio One</th><td>Master の Mono アイコンをクリック</td></tr>
+            <tr><th>FL Studio</th><td>Master の Stereo Separation を右へ（Mono方向）</td></tr>
+            <tr><th>Logic</th><td>Stereo Output の Gain → Mono ON</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">確認項目</div>
+        <ul>
+          <li>キックとベースのバランスが変わっていないか</li>
+          <li>ローエンドが急に痩せたり消えたりしていないか</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">崩れた場合</div>
+        <p>ローエンドに<strong>ステレオ処理がかかりすぎている証拠</strong>です。</p>
+      </div>
+
+      <h3 class="sub-title">2. 小音量チェック</h3>
+
+      <p>
+        音量を極端に下げて、<strong>キックの輪郭とベースの存在感が残っているか</strong>確認します。
+        スマホ・AirPods でも強い曲になるかどうかです。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">消えた場合</div>
+        <p>ローエンドの土台が<strong>まだ弱い状態</strong>です。</p>
+      </div>
+
+      <h3 class="sub-title">3. LOW BUS にサチュレーションを微量だけ</h3>
+
+      <p>
+        LOW BUS の最後にサチュレーションを薄くかける。
+        <strong>ドライブを上げ、気持ち前に出た瞬間から少し戻すだけ。</strong>
+        ローエンドが<em>“見えやすく”</em>なり、存在感が整います。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">目的を間違えないこと</div>
+        <p><em>存在感を整えることであって、音を変えることではありません。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>3つのチェックが終わったら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 到達点 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Step 2 Complete</div>
+      <h2 class="sec-title">この STEP で<em>手に入れたもの</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでの到達点</div>
+        <ul>
+          <li>パン・リバーブで空間の空気を揃えた</li>
+          <li>LOW BUS で Glue をかけてローエンドを1本化した</li>
+          <li>モノラル・小音量・サチュレーションで最終安定化した</li>
+        </ul>
+        <p>つまり、<strong>“3つの音がひとつのローエンドとして動く状態”</strong>が完成しました。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP2 完了</div>
+        <p><em>STEP2 のローエンド設計が、すべて完成しています。</em></p>
+        <p>サポートラインに<strong>「STEP2 完了」</strong>と送ってください。</p>
+      </div>
+
+      <div class="template">
+        <div class="template-head">
+          <span class="template-title">▼ 投稿テンプレ（コピペOK）</span>
+          <button type="button" class="copy-btn" data-copy="【STEP2完了報告】ローエンド設計
+キックのサンプル名：
+BPM / Key：
+トップベースの音色：
+サブベースの音色：
+LOW BUS の Glue 設定 → できた / 質問あり
+モノラルチェック → 崩れなかった / 崩れた
+小音量チェック → 残った / 消えた">コピー</button>
+        </div>
+        <p class="template-body">【STEP2完了報告】ローエンド設計
+キックのサンプル名：
+BPM / Key：
+トップベースの音色：
+サブベースの音色：
+LOW BUS の Glue 設定 → できた / 質問あり
+モノラルチェック → 崩れなかった / 崩れた
+小音量チェック → 残った / 消えた</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 3</div>
+      <h2 class="sec-title">“ノリを決める”<br><em>ドラムス</em>の構築へ</h2>
+
+      <p>
+        次の【STEP3】では、<strong>“ノリを決める”ドラムスの構築</strong>に進みます。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">土台を固めたあなたなら</div>
+        <p><em>次の工程は驚くほどスムーズになります。</em></p>
+      </div>
+
+      <p>次の STEP でお会いしましょう。ではまた。</p>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step2-5.html">
+          <em>Previous ── STEP 2-5</em>
+          <b>サブベースの作り方<br>── 役割は“太さだけ”</b>
+        </a>
+        <a class="next" href="https://note.com/preview/nc7f24367887c?prev_access_key=2b2570dcb392497e3f1904a1f89113cd" target="_blank" rel="noopener">
+          <em>Next ── STEP 3 全体解説</em>
+          <b>ドラムは“音を足す工程”じゃない。<br>グルーブを設計する工程だ。</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step2-6.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js"></script>
+<script src="_article.js"></script>
+</body>
+</html>

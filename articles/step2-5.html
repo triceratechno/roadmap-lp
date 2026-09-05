@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP2-5：サブベースの作り方｜ロードマップPROコース</title>
+<meta name="description" content="サブベースに必要なのは“太さ”だけ。150Hz以上を48dB/octで全カットし、Kickstart 2をMix 100%でかけてキックと1本化する。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP2-5：サブベースの作り方 ── 役割は“太さだけ”。それ以外は全部不要">
+<meta property="og:description" content="“太くする”発想ではなく“いらないものを全部削る”発想で作る。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step2-5.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css">
+</head>
+
+<body class="is-locked" data-prev-id="2-4" data-article-id="2-5" data-next-id="2-6">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 2-5 ／ サブベースの作り方</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 2-5</div>
+  <h1 class="hero-jp-title"><em>サブベース</em>の作り方</h1>
+  <p class="hero-ja">役割は“太さだけ”。それ以外は全部不要</p>
+  <p class="hero-lead">“太くする”発想ではなく<br>“いらないものを全部削る”発想で作る。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約7分</b></span>
+    <span>STEP <b>02</b> ／ 10</span>
+    <span>手順 <b>3</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">トップを支える<br><em>サブベース</em>を作る</h2>
+
+      <p class="lead-p">
+        前の STEP で、<strong>トップベースが完成しました。</strong><br>
+        ここからは、そのトップを支える<em>サブベース</em>を作るフェーズです。
+      </p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Sound</span>
+          <span class="card-num">01</span>
+          <h3 class="card-title">役割と音色を決める</h3>
+          <p>サイン波かSAW波。素直な音を選ぶ。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Cut</span>
+          <span class="card-num">02</span>
+          <h3 class="card-title">150Hz以上をすべてカット</h3>
+          <p>48dB/oct で役割を1本に固定する。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Sidechain</span>
+          <span class="card-num">03</span>
+          <h3 class="card-title">Mix 100% でダッキング</h3>
+          <p>トップの60%とは明確に分ける。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Sound</div>
+      <h2 class="sec-title">役割と音色を<em>決める</em></h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">サブベースに求める役割は、たった1つ</div>
+        <p><em>「キックと一体化した“1本のローエンド”を作ること」</em></p>
+        <p>だからサブに必要なのは<strong>「太さ」と「安定感」だけ</strong>です。</p>
+      </div>
+
+      <h3 class="sub-title">トップ vs サブ ── 役割の分担</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">Top Bass ── トップの担当</p>
+          <p class="vs-head">サブでは不要なもの</p>
+          <ul>
+            <li>キャラクター</li>
+            <li>輪郭・存在感</li>
+            <li>アタック感</li>
+            <li>空間系エフェクト</li>
+            <li>ステレオ感</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">Sub Bass ── サブの担当</p>
+          <p class="vs-head">サブに必要なもの</p>
+          <ul>
+            <li>太さ</li>
+            <li>安定感</li>
+            <li>それ以外は不要</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub-title">音選びは、この2択</h3>
+
+      <div class="cards cards--2">
+        <div class="card">
+          <span class="card-en">Option 01</span>
+          <h3 class="card-title">シンセのサイン波 or SAW波</h3>
+          <p>余計な歪みや高域がほとんどない、素直な音。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Option 02</span>
+          <h3 class="card-title">Splice で探す</h3>
+          <p>「sub bass」「clean sub」「low bass」で検索してシンプルなサンプルを選ぶ。</p>
+        </div>
+      </div>
+
+      <div class="copybox">
+        <div class="copybox-val"><span class="copybox-label">Splice 検索ワード</span>sub bass / clean sub / low bass</div>
+        <button type="button" class="copy-btn" data-copy="sub bass">コピー</button>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">選ぶ基準</div>
+        <p><em>“何もしなくていい素直な音”</em>を選ぶのが、サブのスタートです。</p>
+      </div>
+
+      <h3 class="sub-title">打ち込みは、トップのMIDIをコピーするだけ</h3>
+
+      <p>
+        新たなトラックに複製して、<strong>シンセを差し替えるだけ。</strong>特別な打ち込みは不要です。
+      </p>
+
+      <h3 class="sub-title">音量基準 ── mvMeter で −1VU に揃える</h3>
+
+      <p>
+        <strong>キックより少しだけ低い位置</strong>に設定する。これがサブの基準値です。
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">−1VU に揃えると</div>
+        <ul>
+          <li>キックが主役のままローエンドが安定する</li>
+          <li>後のミックスでフェーダーを触り直さずに済む</li>
+          <li>トップ・サブ・キックのバランスが崩れない</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>音色・打ち込み・音量基準が揃ったら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Cut</div>
+      <h2 class="sec-title">150Hz以上を<em>すべてカット</em>して<br>役割を1本に固定する</h2>
+
+      <p>
+        サブベースに必要なのは<strong>“太さ”だけ</strong>です。
+        アタック・輪郭・存在感・キャラクター ── これらはすべてトップベースの担当。
+        だからサブでは<em>150Hz以上を一切残してはいけません。</em>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">やることはひとつ</div>
+        <p><strong>ハイパスフィルターで 150Hz 以上を全部カットする。</strong></p>
+        <p>スロープは <em>48dB/oct</em>。</p>
+      </div>
+
+      <h3 class="sub-title">サブの帯域設計</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>帯域</th><th>扱い</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>50〜120Hz</th><td><strong>サブの有効帯域。</strong>ここだけで成立する</td></tr>
+            <tr><th>150Hz 以上</th><td>すべて削除（48dB/oct でカット）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">NG ── 150Hz以上を残すと</p>
+          <p class="vs-head">こうなる</p>
+          <ul>
+            <li>トップベースと役割が重なる</li>
+            <li>キックのアタックと干渉する</li>
+            <li>中域の濁りの原因になる</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">OK ── カットで得られるもの</p>
+          <p class="vs-head">こうなる</p>
+          <ul>
+            <li>トップ・キックと絶対にぶつからない</li>
+            <li>ローエンドの濁りが消える</li>
+            <li>サブの太さだけが残る</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">サブベースの作り方の本質</div>
+        <p><strong>“太くする”発想ではなく、“いらないものを全部削る”発想で作る。</strong></p>
+        <p>その結果、<em>低域だけがズドンと残ります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>150Hz 以上がカットできたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Sidechain</div>
+      <h2 class="sec-title">サイドチェインで<em>ダッキングする</em></h2>
+
+      <p>
+        操作方法は <a href="step2-4.html">STEP2-4</a>（トップベース）と<strong>完全に同じ</strong>です。
+        Kickstart 2 を同じ波形・同じ設定で挿す。<em>ただし Mix は必ず 100%。</em>
+      </p>
+
+      <h3 class="sub-title">Mix 値の違い</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>Mix</th><th>結果</th><th>どちらで使うか</th></tr></thead>
+          <tbody>
+            <tr><th>60%</th><td>キックの頭が潰れる</td><td>トップベースはこれ</td></tr>
+            <tr><th>80%</th><td>低域が濁る</td><td>使わない</td></tr>
+            <tr class="is-focus"><th>100%</th><td><strong>もっとも安定したローエンドになる</strong></td><td>サブベースはこれ一択</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜサブは 100% か？</div>
+        <p>サブはキックと<strong>“1本化する”</strong>必要があるためです。</p>
+        <p>
+          <em>100% で完全にスペースを空けて、はじめてキックとサブが一体になります。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここは明確に分ける</div>
+        <p><strong>トップは 60%、サブは 100%。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>Kickstart 2 の Mix を 100% にしたら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 到達点 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">What You Got</div>
+      <h2 class="sec-title">この STEP で<em>手に入れたもの</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでの到達点</div>
+        <ul>
+          <li>サブベースの音色と打ち込みを決めた</li>
+          <li>150Hz 以上をカットして役割を1本に固定した</li>
+          <li>サイドチェインでキックと一体化した</li>
+        </ul>
+        <p>つまり、<strong>“濁らず・揺れず・キックと完全に一体化したサブベース”</strong>が完成しました。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この STEP 完了の意味</div>
+        <p><em>ローエンドの土台が完成しています。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 2-6</div>
+      <h2 class="sec-title">3つを<em>1本のローエンド</em>に統合する</h2>
+
+      <p>
+        次の【STEP2-6】では、キック・トップベース・サブベースを
+        <strong>「1本のローエンド」として統合します。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここが分岐点</div>
+        <p>
+          ローエンドが<em>「理解できたつもり」から「判断できる状態」へ変わる</em>分岐点です。
+        </p>
+        <p>ここを越えると、キックとサブが1本化し、トップが自然に前へ出ます。</p>
+      </div>
+
+      <p>次の STEP でお会いしましょう。ではまた。</p>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step2-4.html">
+          <em>Previous ── STEP 2-4</em>
+          <b>トップベースの作り方<br>── キックと噛み合わせる3つの処理</b>
+        </a>
+        <a class="next" href="https://note.com/preview/n16f4be730436?prev_access_key=b6babf5e6902988f180d08fcb436c836" target="_blank" rel="noopener">
+          <em>Next ── STEP 2-6</em>
+          <b>ローエンドを1本化する<br>── 3つのシンプルなテクニック</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step2-5.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js"></script>
+<script src="_article.js"></script>
+</body>
+</html>
