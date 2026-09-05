@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP2-3：キックを4小節に配置する｜ロードマップPROコース</title>
+<meta name="description" content="4つ打ちでグリッドに完全配置し、mvMeterで0VU基準を作り、フェーダーを−6dBにしてヘッドルームを確保する。ローエンド設計のスタートラインを引く工程。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP2-3：キックを4小節に配置する ── ループを固定して、ミックスの基準を作る">
+<meta property="og:description" content="配置・ゲイン調整・ヘッドルーム確保。ローエンド設計のスタートラインに立つ。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step2-3.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css">
+</head>
+
+<body class="is-locked" data-prev-id="2-2" data-article-id="2-3" data-next-id="2-4">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 2-3 ／ キックを4小節に配置する</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 2-3</div>
+  <h1 class="hero-jp-title">キックを<em>4小節に配置する</em></h1>
+  <p class="hero-ja">ループを固定して、ミックスの基準を作る</p>
+  <p class="hero-lead">配置・ゲイン調整・ヘッドルーム確保。<br>ここからは“配置とミックス”のフェーズです。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約7分</b></span>
+    <span>STEP <b>02</b> ／ 10</span>
+    <span>手順 <b>3</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">“配置とミックス”の<br><em>フェーズへ</em></h2>
+
+      <p class="lead-p">
+        前の STEP で、<strong>キックが1つに決まりました。</strong><br>
+        ここからは“配置とミックス”のフェーズです。
+      </p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Place</span>
+          <span class="card-num">01</span>
+          <h3 class="card-title">4小節に配置する</h3>
+          <p>グリッドに完全に合わせて、均等に4発。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Gain</span>
+          <span class="card-num">02</span>
+          <h3 class="card-title">mvMeter でゲイン調整</h3>
+          <p>0VU基準で、数値で合わせる。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">Headroom</span>
+          <span class="card-num">03</span>
+          <h3 class="card-title">フェーダーを −6dB に</h3>
+          <p>音を足していくための余白を確保する。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Place</div>
+      <h2 class="sec-title">キックを<em>4小節に配置する</em></h2>
+
+      <p>
+        キックを置く場所は、<strong>ジャンルで決まっています。</strong>
+        このロードマップでは<em>4つ打ち</em>。1小節に4発、均等に配置する。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ズレは NG</div>
+        <p><em>グリッドに完全に合わせてください。</em></p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">少しでもズレると起きること</div>
+        <ul>
+          <li><span class="term" data-term="サイドチェイン" data-desc="キックが鳴る瞬間だけ他の音を自動的に下げる処理。キックの位置がズレると、下がるタイミングもズレる。">サイドチェイン</span>が噛み合わない</li>
+          <li>ベースが波打つ</li>
+          <li>グルーヴが崩れる</li>
+          <li>全体が薄く聴こえる</li>
+        </ul>
+      </div>
+
+      <h3 class="sub-title">配置が終わったら、最低10回ループ再生する</h3>
+
+      <p>
+        「なんか違う」「Tailが長い気がする」「クリックが強い？」<br>
+        <strong>この違和感が出たら正常です。</strong>耳が正しい方向に動いている証拠。
+      </p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">違和感 01</span>
+          <h3 class="card-title">「なんか違う気がする」</h3>
+          <p>→ 正常。キックを選び直す。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">違和感 02</span>
+          <h3 class="card-title">「Tailが長い気がする」</h3>
+          <p>→ BPMに合っていない。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">違和感 03</span>
+          <h3 class="card-title">「クリックが強すぎる」</h3>
+          <p>→ 別のキックを試す。</p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この違和感こそ</div>
+        <p><em>耳が育っている証拠です。</em>違和感があれば、キックを選び直す判断をしてください。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>キックが4小節に均等に置けたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Gain</div>
+      <h2 class="sec-title">mvMeter で<em>ゲイン調整する</em></h2>
+
+      <p>
+        キックの音量を<strong>「気がする」で判断してはいけません。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜ数値で見るのか</div>
+        <p>
+          人間の聴覚は曖昧です。その曖昧さを排除するために、
+          <span class="term" data-term="VU（ブイユー）" data-desc="音量の“体感的な大きさ”を示すメーター。ピークではなく平均的なエネルギーを見るため、トラック間の音量バランスを揃える基準に使う。">mvMeter</span>
+          で<em>数値で確認します。</em>
+        </p>
+      </div>
+
+      <a class="linkcard linkcard--music" href="https://www.tbproaudio.de/products/mvmeter2" target="_blank" rel="noopener">
+        <span class="linkcard-thumb"><img src="img/link/mvmeter2.jpg" alt="mvMeter2 のVUメーター画面" loading="lazy"></span>
+        <span class="linkcard-text">
+          <span class="linkcard-tag linkcard-tag--free">無料</span>
+          <span class="linkcard-eyebrow">Metering ── この手順で使う</span>
+          <span class="linkcard-title">mvMeter2</span>
+          <span class="linkcard-sub">VU基準で音量を計測する。まだ入れていない人は、ここからダウンロードしてください。</span>
+          <span class="linkcard-domain">tbproaudio.de</span>
+        </span>
+      </a>
+
+      <h3 class="sub-title">やること ── 4ステップ</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">挿す<span class="anatomy-en">Insert</span></div>
+          <div class="anatomy-desc">キックトラックのエフェクトチェーンの<strong>一番最初</strong>に mvMeter を挿す。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">VUに切替<span class="anatomy-en">Switch</span></div>
+          <div class="anatomy-desc">メータータイプを「VU」に切り替える。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">ソロ再生<span class="anatomy-en">Solo</span></div>
+          <div class="anatomy-desc">キックをソロ再生しながら調整する。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">0VUに合わせる<span class="anatomy-en">Align</span></div>
+          <div class="anatomy-desc"><strong>サンプルのゲイン</strong>を動かして、針を <em>0VU前後（−1〜+1）</em> に合わせる。</div>
+        </div>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">重要 ── フェーダーは触らない</div>
+        <p><strong>サンプルゲインで合わせるのが正解です。</strong></p>
+        <p>
+          フェーダーを動かすと、後のバランス作りが崩れます。
+          サンプルゲインなら<em>素材の基準レベル</em>が作れます。
+        </p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">0VUに揃えた状態が</div>
+        <p><em>このトラックのローエンド設計の原点になります。</em></p>
+      </div>
+
+      <h3 class="sub-title">トラック別のVU基準値</h3>
+
+      <p>キック以外のトラックも、この基準に揃えていきます。今後の全STEPで使う表です。</p>
+
+      <div class="guide">
+        <div class="guide-head">
+          <span class="guide-no">VU</span>
+          <h3 class="guide-title">VUガイド<span>VU Guide</span></h3>
+        </div>
+        <a class="guide-figure" href="img/guide/vu-guide.jpg" target="_blank" rel="noopener">
+          <img src="img/guide/vu-guide.jpg" alt="トラック別のVU基準値の図解" loading="lazy">
+        </a>
+        <p class="guide-cap"><span>キック <strong>0VU</strong> が基準。ベース −1〜−3、スネア/クラップ −1〜−3、ボーカル 0〜−3、FX/アンビエンス −10〜−12。</span><span class="guide-zoom">原寸で開く</span></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>針が −1〜+1 に収まったら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Headroom</div>
+      <h2 class="sec-title">フェーダーを <em>−6dB</em> に下げて<br>ヘッドルームを準備する</h2>
+
+      <p>
+        0VUに揃えた後、最後にフェーダーを <strong>−6dB</strong> に下げてください。
+        これは<span class="term" data-term="ヘッドルーム" data-desc="音が歪む上限までの余白。ここを残しておくと、後から音を足しても飽和せずに済む。">ヘッドルーム</span>の確保です。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">0dB のまま進むと</div>
+        <p>
+          今後ベース・シンセ・ドラムと音を重ねていくと、トラック全体の音量はどんどん上がります。
+          そのとき、最初からフェーダーが 0dB だと、<strong>すぐに飽和してミックスが詰まります。</strong>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">−6dB にしておく理由</div>
+        <ul>
+          <li>後から音を足すための余白を作る</li>
+          <li>他パートとのバランス調整がしやすくなる</li>
+          <li>ミックスが飽和するのを防ぐ</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この −6dB は</div>
+        <p>あくまで<em>「出発点」</em>です。後の工程でバランスを見ながら調整していきます。</p>
+      </div>
+
+      <h3 class="sub-title">トラック別のフェーダー基準</h3>
+
+      <p>キックの −6dB を起点に、他のトラックもこの表に沿って置いていきます。</p>
+
+      <div class="guide">
+        <div class="guide-head">
+          <span class="guide-no">LV</span>
+          <h3 class="guide-title">レベルガイド<span>Level Guide</span></h3>
+        </div>
+        <a class="guide-figure" href="img/guide/level-guide.jpg" target="_blank" rel="noopener">
+          <img src="img/guide/level-guide.jpg" alt="トラック別のフェーダー基準の図解" loading="lazy">
+        </a>
+        <p class="guide-cap"><span>キック <strong>0dB</strong> をリファレンスポイントに、ベース −3〜−5、スネア/クラップ −4〜−6、FX/アンビエンス −10〜−14。</span><span class="guide-zoom">原寸で開く</span></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>フェーダーが −6dB になったら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 到達点 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">What You Got</div>
+      <h2 class="sec-title">この STEP で<em>手に入れたもの</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでの到達点</div>
+        <ul>
+          <li>キックを4小節に均等配置した</li>
+          <li>mvMeter で 0VU 基準を作った</li>
+          <li>フェーダーを −6dB にしてヘッドルームを確保した</li>
+        </ul>
+        <p>つまり、<strong>“ローエンド設計のスタートラインに立った状態”</strong>になりました。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">この STEP 完了の意味</div>
+        <p><em>キック選びが完成しています。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 2-4</div>
+      <h2 class="sec-title">“曲の表情”を作る<br><em>トップベース</em>へ</h2>
+
+      <p>
+        次の【STEP2-4】では、<strong>“曲の表情”を作るトップベース</strong>を、正しく整えます。
+      </p>
+
+      <p>
+        キックだけでは見えなかった、<em>“低域の立体構造”</em>が一気に理解できるフェーズです。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここを知らずに進むと</div>
+        <p><strong>今日作ったキックの強さが、すべて失われます。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">逆に、ここを越えると</div>
+        <p>あなたの曲は<em>どのスピーカーでも抜けるローエンド</em>を手にできます。</p>
+      </div>
+
+      <p>次の STEP でお会いしましょう。ではまた。</p>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step2-2.html">
+          <em>Previous ── STEP 2-2</em>
+          <b>キックを1つに決める<br>── 構造で評価して、迷わず選ぶ</b>
+        </a>
+        <a class="next" href="https://note.com/preview/n5a43dd26644e?prev_access_key=290e11befa735cff9139a6dd0a40b035" target="_blank" rel="noopener">
+          <em>Next ── STEP 2-4</em>
+          <b>トップベースの作り方<br>── キックと噛み合わせる3つの処理</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step2-3.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js"></script>
+<script src="_article.js"></script>
+</body>
+</html>
