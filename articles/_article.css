@@ -1617,3 +1617,74 @@ table.ref tbody tr.is-focus th { color: var(--ok); }
   white-space: nowrap;
 }
 .guide-zoom::after { content: ' ↗'; }
+
+/* ===== DAW付属デバイス（スクリーンショット付きカード） ===== */
+.devices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.device {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+@media (hover: hover) {
+  .device:hover { transform: translateY(-2px); border-color: var(--accent); }
+}
+
+/* UIのスクショなので切り抜かず全体を見せる */
+.device-shot {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  padding: 12px;
+  background: var(--deep);
+  border-bottom: 1px solid var(--border);
+}
+.device-shot img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.device-body { padding: 20px 20px 22px; }
+
+.device-en {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.device-name {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.device p { margin: 0; font-size: 13.5px; line-height: 1.9; color: var(--muted); }
+
+.device-daw {
+  display: block;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+@media (max-width: 720px) {
+  .devices { grid-template-columns: 1fr; }
+  .device-shot { aspect-ratio: auto; padding: 16px; }
+}
