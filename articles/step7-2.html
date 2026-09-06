@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP7-2：ドロップを16小節へ展開する実践ルール｜ロードマップPROコース</title>
+<meta name="description" content="8小節のドロップを16小節へ延ばし、オートメーションでループ感を消し、後半にライドを足す。6カテゴリの音を具体的に配置してドロップ①を完成形にする。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP7-2：実践編：配置して初めて“曲”になる。ドロップを16小節へ展開する実践ルール">
+<meta property="og:description" content="作るのではなく、配置する。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step7-2.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="7-1" data-article-id="7-2" data-next-id="7-3">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 7-2 ／ Eight To Sixteen</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 7-2</div>
+  <h1 class="hero-en">Eight To<br>Sixteen</h1>
+  <p class="hero-ja">配置して初めて、“曲”になる。</p>
+  <p class="hero-lead">ドロップを16小節へ展開する、実践ルール。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約8分</b></span>
+    <span>STEP <b>7-2</b> ／ 6</span>
+    <span>手順 <b>2</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">並べ始めた瞬間、<br><em>手が止まる。</em></h2>
+
+      <p class="lead-p">
+        8小節のループは、もう作れる。音も悪くない。ドロップっぽい雰囲気も出ている。
+        それなのに ── <strong>タイムラインに並べ始めた瞬間、手が止まる。</strong>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この状態</div>
+        <ul>
+          <li>どこまでドロップを引き延ばせばいいのか</li>
+          <li>途中で何を変えればいいのか</li>
+          <li>そもそも、同じ音を並べて意味があるのか</li>
+        </ul>
+        <p>こうして、多くのDTMerは<em>「8小節は作れるのに、曲にならない」状態</em>に戻ってしまいます。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">原因はただひとつ</div>
+        <p><strong>「配置のルール」を知らないまま、曲を組み立てようとしているから。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPでやること</div>
+        <p>8小節のループを<strong>「完成したドロップ」にすること</strong>だけ。</p>
+        <ul>
+          <li>8小節のドロップを<strong>16小節まで延ばす</strong></li>
+          <li>前半と後半で<strong>役割（主役・リズム）を切り替える</strong></li>
+          <li>ライド・オートメーション・FXを使って<strong>「聴き続けられる展開」</strong>を作る</li>
+        </ul>
+        <p><em>新しい音を作る必要はありません。今ある素材を、正しい順番で並べるだけ。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Extend</div>
+      <h2 class="sec-title">8小節のドロップを<br><em>16小節に延長する</em></h2>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">8小節のドロップをタイムラインに置く<span class="anatomy-en">Place</span></div>
+          <div class="anatomy-desc">ここまで作ってきた8小節は、そのままドロップ①になる。<strong>ここを疑わない。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">コピペして16小節にする<span class="anatomy-en">Copy</span></div>
+          <div class="anatomy-desc">ここでようやく<strong>「ドロップ①の完成形」</strong>が見えてくる。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">オートメーションでループ感を消す<span class="anatomy-en">Automate</span></div>
+          <div class="anatomy-desc"><a href="step5-3.html">STEP5-3</a> で学んだカットオフオートメーションを使い、<strong>“退屈なループ感”を潰しておく。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">後半8小節にだけ「ライド」を足す<span class="anatomy-en">Ride</span></div>
+          <div class="anatomy-desc"><a href="step3-2.html">STEP3-2</a> で扱った疾走感のライド。<strong>ドロップの中に流れが生まれる。</strong></div>
+        </div>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">16小節の中で潰しておくもの</div>
+        <ul>
+          <li>同じ8小節が繰り返されている感じ</li>
+          <li>ずっと同じ強さで鳴っている感じ</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">後半にライドを足すと</div>
+        <ul>
+          <li>ドロップの中に流れが生まれる</li>
+          <li>16小節が<strong>一本の展開として聴こえる</strong></li>
+          <li>エネルギーが後半に向かって前に進む</li>
+        </ul>
+        <p>ここができたら、<em>ドロップ①はもう“核”ではなく、完成形です。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>16小節＋オートメーション＋後半ライドができたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Place</div>
+      <h2 class="sec-title">「置く音」と<br><em>「抜く音」</em>を決める</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ドロップの目的</div>
+        <p><strong>基準点・最大出力。ここだけは、全部鳴っていい。</strong></p>
+        <p>
+          なぜなら、<em>他のパートが引き算されているから。</em>
+          ドロップ①は「音が多いから強い」のではなく、<strong>相対的に一番強い。</strong>
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>カテゴリ</th><th>鳴らす？</th><th>どう扱うか</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>ローエンド</th><td><strong>◎</strong></td><td>STEP2で作ったキック／トップベース／サブベースを<strong>すべてそのまま</strong>配置</td></tr>
+            <tr class="is-focus"><th>ドラムス</th><td><strong>◎</strong></td><td><strong>前半と後半で分けて</strong>配置。ライドが入る／入らないの差が疾走感を作る</td></tr>
+            <tr class="is-focus"><th>ボーカル</th><td><strong>◎</strong></td><td>主役の方。主役でなければボリュームを下げる</td></tr>
+            <tr class="is-focus"><th>リード</th><td><strong>◎</strong></td><td>主役の方。<strong>主役は常にひとつ。混ぜない</strong></td></tr>
+            <tr><th>FX</th><td><strong>○</strong></td><td>4つの合図を配置（下の表）</td></tr>
+            <tr><th>アンビエンス</th><td><strong>○</strong></td><td>STEP6で作ったアンビエンスをそのまま配置</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">主役の決め方</div>
+        <ul>
+          <li><strong>ボーカルが主役</strong>なら → リードはボリュームを下げて入れる</li>
+          <li><strong>リードが主役</strong>なら → 最後の4小節だけボーカルを入れる</li>
+        </ul>
+      </div>
+
+      <h3 class="sub-title">FX の配置位置</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>配置位置</th><th>FXの種類</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>1小節目</th><td><strong>ダウンリフター</strong></td></tr>
+            <tr><th>4小節目終わりに向かって</th><td>リバースFX</td></tr>
+            <tr><th>8小節目終わりに向かって</th><td>アップリフター</td></tr>
+            <tr class="is-focus"><th>16小節目終わりに向かって</th><td><strong>トランジション</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><a href="step6-1.html">STEP6-1</a> で学んだ<strong>「4つの合図」</strong>が、ここで本領発揮します。</p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>6カテゴリすべての配置が決まれば、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Review</div>
+      <h2 class="sec-title">このSTEPで<br>起きている<em>本質</em></h2>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">変えていないもの</div>
+        <ul>
+          <li>音色は<strong>ほとんど変えていない</strong></li>
+          <li>メロディも<strong>同じ</strong></li>
+          <li>ベースも<strong>同じ</strong></li>
+        </ul>
+        <p>それでも、<em>ドロップの中に明確な展開が生まれています。</em></p>
+        <p>これが、<strong>プロが無意識にやっている「配置の設計」</strong>です。</p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 7-2 ── クリア条件</h2>
+          <div class="clear-count">0 / 5</div>
+        </div>
+        <p class="clear-sub">次の5つが揃っていれば、STEP7-2はクリアです。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">8小節をコピペして16小節にした</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">カットオフオートメーションでループ感を消した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">後半8小節にだけライドを足した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">主役をボーカル or リードのどちらか1つに決めた</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">FXを1／4／8／16小節目の4か所に配置した</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 7-3</div>
+      <h2 class="sec-title">次は、<em>ビルドアップ。</em></h2>
+
+      <p>
+        ここまでで、あなたは<strong>ドロップ①を16小節まで完成</strong>させました。
+        ドロップはもう「ただのループ」ではなく、<em>楽曲の核として成立しています。</em>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ビルドアップでやるのは、派手に盛ることではない</div>
+        <ul>
+          <li>ドロップ①へどう期待値を積み上げるか</li>
+          <li>どこまで削り、どこで緊張感を作るか</li>
+        </ul>
+        <p><em>この設計ひとつで、曲の“入りの気持ちよさ”は大きく変わります。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step7-1.html">
+          <em>Previous ── STEP 7-1</em>
+          <b>8小節のループから楽曲へ<br>楽曲構成の設計図。各パートの役割と考え方</b>
+        </a>
+        <a class="next" href="step7-3.html">
+          <em>Next ── STEP 7-3</em>
+          <b>盛り上げるな、削れ。<br>ドロップを爆発させるビルドアップ思考術</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step7-2.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>

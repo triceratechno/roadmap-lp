@@ -126,10 +126,10 @@ const ROADMAP_DATA = {
       description: "FXとアンビエンスで世界観を作り、ループから完成形へ。",
       status: "completed",
       articles: [
-        { id: "6-overview", type: "overview", title: "STEP6 全体解説：展開と空気で、8小節を\"楽曲\"に変える", noteUrl: "https://note.com/preview/n539c22dd8d5b?prev_access_key=09e2517abd457d085189027444cfa6b6", pdfUrl: "step6_overview.pdf", videoUrl: "https://note.com/preview/n558c5fc6c328?prev_access_key=7a1c39ef7125e4db89667a23e126bdbb", status: "published" },
-        { id: "6-1", type: "lesson", title: "STEP6-1：退屈な\"8小節ループ\"を終わらせる｜ドロップに\"展開\"を生むFX設計術", noteUrl: "https://note.com/preview/n33b784933052?prev_access_key=1bd96fec4bbd5fbac170f16dee768d85", pdfUrl: "step6-1.pdf", videoUrl: "", status: "published" },
-        { id: "6-2", type: "lesson", title: "STEP6-2：展開を支配せよ。FXの役割と思考法を徹底解説", noteUrl: "https://note.com/preview/n3226a97d3231?prev_access_key=4a5e80ae7a2e71880fa3ec8e02a68206", pdfUrl: "step6-2.pdf", videoUrl: "", status: "published" },
-        { id: "6-3", type: "lesson", title: "STEP6-3：楽曲に\"空気\"を与えろ。アンビエンスで世界観を完成させる", noteUrl: "https://note.com/preview/nef22f2d809ae?prev_access_key=954e71a8829d6ff099696288055d1829", pdfUrl: "step6-3.pdf", videoUrl: "", status: "published" }
+        { id: "6-overview", type: "overview", title: "STEP6 全体解説：展開と空気で、8小節を\"楽曲\"に変える", pageUrl: "articles/step6-overview.html", noteUrl: "https://note.com/preview/n539c22dd8d5b?prev_access_key=09e2517abd457d085189027444cfa6b6", pdfUrl: "step6_overview.pdf", videoUrl: "https://note.com/preview/n558c5fc6c328?prev_access_key=7a1c39ef7125e4db89667a23e126bdbb", status: "published" },
+        { id: "6-1", type: "lesson", title: "STEP6-1：退屈な\"8小節ループ\"を終わらせる｜ドロップに\"展開\"を生むFX設計術", pageUrl: "articles/step6-1.html", noteUrl: "https://note.com/preview/n33b784933052?prev_access_key=1bd96fec4bbd5fbac170f16dee768d85", pdfUrl: "step6-1.pdf", videoUrl: "", status: "published" },
+        { id: "6-2", type: "lesson", title: "STEP6-2：展開を支配せよ。FXの役割と思考法を徹底解説", pageUrl: "articles/step6-2.html", noteUrl: "https://note.com/preview/n3226a97d3231?prev_access_key=4a5e80ae7a2e71880fa3ec8e02a68206", pdfUrl: "step6-2.pdf", videoUrl: "", status: "published" },
+        { id: "6-3", type: "lesson", title: "STEP6-3：楽曲に\"空気\"を与えろ。アンビエンスで世界観を完成させる", pageUrl: "articles/step6-3.html", noteUrl: "https://note.com/preview/nef22f2d809ae?prev_access_key=954e71a8829d6ff099696288055d1829", pdfUrl: "step6-3.pdf", videoUrl: "", status: "published" }
       ]
     },
 
@@ -141,13 +141,13 @@ const ROADMAP_DATA = {
       description: "イントロからアウトロまで、曲全体の構造を組み立てる。",
       status: "completed",
       articles: [
-        { id: "7-overview", type: "overview", title: "STEP7 全体解説：8小節のループは、もう終わり。配置だけで\"1曲\"は完成する。", noteUrl: "https://note.com/preview/na92691e408bd?prev_access_key=0686eb5fb03058b631d7b6665597b942", pdfUrl: "step7_overview.pdf", videoUrl: "https://note.com/preview/nedc1e29eac10?prev_access_key=9bff0002c554c37e635c6da2e66f97b4", status: "published" },
-        { id: "7-1", type: "lesson", title: "STEP7-1：8小節のループから楽曲へ──楽曲構成の設計図。各パートの役割と考え方", noteUrl: "https://note.com/preview/neceba72076f8?prev_access_key=bab05843f44dfca64b470798ae923d2c", pdfUrl: "step7-1.pdf", videoUrl: "", status: "published" },
-        { id: "7-2", type: "lesson", title: "STEP7-2：実践編：配置して初めて\"曲\"になる。ドロップを16小節へ展開する実践ルール", noteUrl: "https://note.com/preview/n6be4730f68a7?prev_access_key=bf0ca6cd62b9045869bb0b8fd9df6b7a", pdfUrl: "step7-2.pdf", videoUrl: "", status: "published" },
-        { id: "7-3", type: "lesson", title: "STEP7-3：盛り上げるな、削れ。ドロップを爆発させるビルドアップ思考術", noteUrl: "https://note.com/preview/n96ebf227f8f0?prev_access_key=d827c31193709c4e041c1d74e89c99e5", pdfUrl: "step7-3.pdf", videoUrl: "", status: "published" },
-        { id: "7-4", type: "lesson", title: "STEP7-4：楽曲の\"顔\"を決めろ。ボーカルで作る\"強烈なフック\"設計完全ガイド", noteUrl: "https://note.com/preview/n14c518a28c4e?prev_access_key=26295c9f76df2186792acd2b9cb30f83", pdfUrl: "step7-4.pdf", videoUrl: "", status: "published" },
-        { id: "7-5", type: "lesson", title: "STEP7-5：ブレイクは設計で作れ。ドロップをリセットし、フックを最大化する構造を解説", noteUrl: "https://note.com/preview/n2a603c8e2718?prev_access_key=fb64c34ac3b65e4c855b293e6ede9ca3", pdfUrl: "step7-5.pdf", videoUrl: "", status: "published" },
-        { id: "7-6", type: "lesson", title: "STEP7-6：イントロとアウトロを捨てる──配信リリース時代の\"省略する構成設計\"", noteUrl: "https://note.com/preview/n3790c90fbb8a?prev_access_key=45b1f908236f8dd253c84b2ca28389b1", pdfUrl: "step7-6.pdf", videoUrl: "", status: "published" }
+        { id: "7-overview", type: "overview", title: "STEP7 全体解説：8小節のループは、もう終わり。配置だけで\"1曲\"は完成する。", pageUrl: "articles/step7-overview.html", noteUrl: "https://note.com/preview/na92691e408bd?prev_access_key=0686eb5fb03058b631d7b6665597b942", pdfUrl: "step7_overview.pdf", videoUrl: "https://note.com/preview/nedc1e29eac10?prev_access_key=9bff0002c554c37e635c6da2e66f97b4", status: "published" },
+        { id: "7-1", type: "lesson", title: "STEP7-1：8小節のループから楽曲へ──楽曲構成の設計図。各パートの役割と考え方", pageUrl: "articles/step7-1.html", noteUrl: "https://note.com/preview/neceba72076f8?prev_access_key=bab05843f44dfca64b470798ae923d2c", pdfUrl: "step7-1.pdf", videoUrl: "", status: "published" },
+        { id: "7-2", type: "lesson", title: "STEP7-2：実践編：配置して初めて\"曲\"になる。ドロップを16小節へ展開する実践ルール", pageUrl: "articles/step7-2.html", noteUrl: "https://note.com/preview/n6be4730f68a7?prev_access_key=bf0ca6cd62b9045869bb0b8fd9df6b7a", pdfUrl: "step7-2.pdf", videoUrl: "", status: "published" },
+        { id: "7-3", type: "lesson", title: "STEP7-3：盛り上げるな、削れ。ドロップを爆発させるビルドアップ思考術", pageUrl: "articles/step7-3.html", noteUrl: "https://note.com/preview/n96ebf227f8f0?prev_access_key=d827c31193709c4e041c1d74e89c99e5", pdfUrl: "step7-3.pdf", videoUrl: "", status: "published" },
+        { id: "7-4", type: "lesson", title: "STEP7-4：楽曲の\"顔\"を決めろ。ボーカルで作る\"強烈なフック\"設計完全ガイド", pageUrl: "articles/step7-4.html", noteUrl: "https://note.com/preview/n14c518a28c4e?prev_access_key=26295c9f76df2186792acd2b9cb30f83", pdfUrl: "step7-4.pdf", videoUrl: "", status: "published" },
+        { id: "7-5", type: "lesson", title: "STEP7-5：ブレイクは設計で作れ。ドロップをリセットし、フックを最大化する構造を解説", pageUrl: "articles/step7-5.html", noteUrl: "https://note.com/preview/n2a603c8e2718?prev_access_key=fb64c34ac3b65e4c855b293e6ede9ca3", pdfUrl: "step7-5.pdf", videoUrl: "", status: "published" },
+        { id: "7-6", type: "lesson", title: "STEP7-6：イントロとアウトロを捨てる──配信リリース時代の\"省略する構成設計\"", pageUrl: "articles/step7-6.html", noteUrl: "https://note.com/preview/n3790c90fbb8a?prev_access_key=45b1f908236f8dd253c84b2ca28389b1", pdfUrl: "step7-6.pdf", videoUrl: "", status: "published" }
       ]
     },
 

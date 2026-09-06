@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP7-3：盛り上げるな、削れ。ビルドアップ思考術｜ロードマップPROコース</title>
+<meta name="description" content="ビルドアップはドロップを最大化するための「距離・空間・期待値」の設計区間。音数・低域・空白の3レイヤーで引き算し、FXを役割で配置する。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP7-3：盛り上げるな、削れ。ドロップを爆発させるビルドアップ思考術">
+<meta property="og:description" content="人は音量ではなく、直前との「差」で迫力を感じる。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step7-3.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="7-2" data-article-id="7-3" data-next-id="7-4">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 7-3 ／ Subtract To Explode</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 7-3</div>
+  <h1 class="hero-en">Subtract<br>To Explode</h1>
+  <p class="hero-ja">盛り上げるな、削れ。</p>
+  <p class="hero-lead">ドロップを爆発させる、ビルドアップ思考術。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約11分</b></span>
+    <span>STEP <b>7-3</b> ／ 6</span>
+    <span>手順 <b>4</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">なぜかプロの曲と並べると、<br><em>迫力で負ける。</em></h2>
+
+      <p class="lead-p">
+        ドロップを作れるようになった。音も悪くない。配置も、それっぽい。
+        それなのに ── <strong>なぜかプロの曲と並べると、迫力で負ける。</strong>
+      </p>
+
+      <p>音量でもない。音数でもない。派手さの問題でもありません。</p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">多くのDTMerがぶつかる壁</div>
+        <ul>
+          <li>「もう、何をすればいいかわからない」</li>
+          <li>「これ以上、足すものが思いつかない」</li>
+          <li>「なのに、なぜか小さく聞こえる」</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">プロの曲を聴くと、気づくこと</div>
+        <p><strong>ドロップ前、ほとんど何も起きていない。</strong></p>
+        <p>音数は減り、低域は消え、距離は遠い。<em>なのに、ドロップに入った瞬間、一気にデカく聞こえる。</em></p>
+        <p>音が増えたわけでも、音量が上がったわけでもありません。</p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">多くの人の理解</p>
+          <p>ビルドアップは<strong>「盛り上げる場所」</strong></p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">プロは逆</p>
+          <p><strong>ドロップ前に、あえて引く。</strong></p>
+          <p>こうして差を作り、<em>ドロップを大きく感じさせる。</em></p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">このSTEPでの定義</div>
+        <p><strong>ビルドアップとは、ドロップを最大化するための「距離・空間・期待値」の設計区間。</strong></p>
+        <p><em>盛り上げる場所ではない。削る場所です。</em></p>
+      </div>
+
+      <h3 class="sub-title">これはセンスではなく、構造の話</h3>
+
+      <p>
+        人は、音量の絶対値や音数の多さではなく、<strong>直前との“差”で迫力を感じます。</strong>
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">だから</div>
+        <p>ビルドアップで<strong>削る</strong> → ドロップで<strong>戻す</strong></p>
+        <p><em>この落差を設計できた瞬間、同じ音素材でも、体感は別物になります。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Goal</div>
+      <h2 class="sec-title">ビルドアップの<br><em>ゴールを先に決める</em></h2>
+
+      <p>
+        ビルドアップで最初にやることは、音を足すことではありません。
+        <strong>ドロップをどう感じさせたいかを先に決めることです。</strong>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここを決めないまま進むと</div>
+        <p>ライザーやFXを重ねるだけになり、<strong>ドロップで「戻る場所」がなくなります。</strong></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">今回のゴール</div>
+        <p><strong>ドロップを、より「広く・迫力ある」ように聴かせること。</strong></p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">よくある発想</p>
+          <p>ドロップを広くしたい → <strong>ドロップで足す</strong></p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">プロの設計</p>
+          <p>ドロップを広くしたい → <strong>ビルドアップで、あえて広く・遠くしておく</strong></p>
+        </div>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">ビルドアップで作る状態</p>
+          <ul>
+            <li>音像は広い</li>
+            <li>距離は遠い</li>
+            <li>空間はあるが、芯がない</li>
+            <li>低域の重さを感じない</li>
+          </ul>
+          <p><em>一見すると弱そうですが、これで正解です。</em></p>
+        </div>
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">ビルドアップでやらないこと</p>
+          <ul>
+            <li>ドロップと同じ密度にしない</li>
+            <li>主役を前に出さない</li>
+            <li>低域の芯を残さない</li>
+          </ul>
+          <p><em>これらはすべて、ドロップでやる仕事です。</em></p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>「やらないこと」を決められたら、手順①はクリアです。以降の手順が迷わなくなります。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Layers</div>
+      <h2 class="sec-title">引き算の<em>3レイヤー</em>を入れる</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ポイント：引き算を一度でやらない</div>
+        <p>プロは、次の<strong>3つの観点を分けて操作します。</strong></p>
+        <p>この順で整えると、<em>軽いのにスカスカではないビルドアップ</em>になります。</p>
+      </div>
+
+      <h3 class="sub-title">レイヤー① 音数（編成）の引き算</h3>
+
+      <p>最初に触るのは、EQでもFXでもなく<strong>編成</strong>です。</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">判断基準はひとつ</div>
+        <p><strong>ドロップで戻った瞬間、「あ、帰ってきた」と感じさせたい音か？</strong></p>
+        <p>YESなら、<em>ビルドアップでは削ります。</em></p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>カテゴリ</th><th>鳴らす？</th><th>どう扱うか</th></tr></thead>
+          <tbody>
+            <tr><th>ローエンド</th><td><strong>△</strong></td><td>ローカットしたキック ○ ／ トップベース ○。<strong>サブは抜く</strong></td></tr>
+            <tr><th>ドラムス</th><td><strong>○</strong></td><td>リズムは残す</td></tr>
+            <tr><th>ボーカル</th><td><strong>△</strong></td><td>断片的に</td></tr>
+            <tr><th>リード</th><td><strong>△</strong></td><td>気配だけ</td></tr>
+            <tr class="is-focus"><th>FX</th><td><strong>◎</strong></td><td><strong>ここが主役</strong></td></tr>
+            <tr><th>アンビエンス</th><td><strong>○</strong></td><td>空間を満たす</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">目的</div>
+        <p>寂しくすることではなく、<strong>戻る余地を作ることです。</strong></p>
+      </div>
+
+      <h3 class="sub-title">レイヤー② 帯域の引き算（低域だけ削る）</h3>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここでの正解は、非対称な引き算</div>
+        <p><strong>低域：削る ／ 高域：削らない</strong></p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col">
+          <p class="vs-tag">低域が作るもの</p>
+          <p>重さ・近さ・実体感</p>
+          <p>ここを弱めることで、<strong>音は一気に遠く・軽くなります。</strong></p>
+        </div>
+        <div class="vs-col">
+          <p class="vs-tag">高域が作るもの</p>
+          <p>広がり・奥行き・空気</p>
+          <p>今回のゴールである<strong>「広く・遠く」を支える要素</strong>なので、残します。</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">レイヤー③ 空白の引き算（時間）</h3>
+
+      <p>
+        最後は、音ではなく<strong>時間</strong>。空白は、ビルドアップで<em>最も効く引き算</em>です。
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">やること</div>
+        <ul>
+          <li>ドロップ直前の1拍抜く</li>
+          <li>最後の一瞬を無音にする</li>
+        </ul>
+        <p>重要なのは長さではなく、<strong>「止まった」と脳が認識する一瞬を作ること。</strong></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜ空白が効くのか</div>
+        <p>
+          音が鳴り続けていると、人の脳は慣れます。
+          でも、<strong>一瞬でも止まると、次を予測する。</strong>
+        </p>
+        <p><em>これが期待値です。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>音数・低域・空白の3点で引き算ができたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Direction</div>
+      <h2 class="sec-title">FXを<em>役割</em>で配置する</h2>
+
+      <p>
+        手順②までで、ビルドアップは<strong>軽く・広く・遠い状態</strong>になっています。
+        ここから必要なのは、音量や密度ではなく<em>方向と距離感</em>です。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">FXは数を増やすものではない</div>
+        <p><strong>役割で配置します。</strong>今回使うのは、この3つだけ。</p>
+      </div>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">Riser</span>
+          <h3 class="card-title">ライザー ── 上昇</h3>
+          <p>盛り上げるための音ではなく、<strong>空間ごと上へ持ち上げるための音。</strong></p>
+          <p>前に出さず、主役にもせず、<em>音量ではなくピッチや高域の開きで存在を感じさせる。</em></p>
+        </div>
+        <div class="card">
+          <span class="card-en">Reverse</span>
+          <h3 class="card-title">リバースFX ── 吸引</h3>
+          <p>ドロップ直前の<strong>引力</strong>を作る。広がった空間を、一気に中心へ引き込む。</p>
+          <p><em>ドロップの頭に正確に合わせ、低域は使わず、「吸い込まれる感覚」を重視。</em></p>
+        </div>
+        <div class="card">
+          <span class="card-en">Ambience</span>
+          <h3 class="card-title">アンビエンス ── 空間</h3>
+          <p><strong>今回もっとも重要な要素。</strong>音数が少なく低域がなくても、空間が満たされている状態を作る。</p>
+          <p><em>ノイズ・残響・テール音など、空気として存在する音を残す。</em></p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">FX全体の関係性</div>
+        <ul>
+          <li>ライザー：<strong>上へ</strong></li>
+          <li>アンビエンス：<strong>広く・奥へ</strong></li>
+          <li>リバースFX：<strong>内側へ</strong></li>
+        </ul>
+        <p>この<em>3方向が同時に存在すると、ビルドアップは一気に立体的になります。</em></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">大事なこと</div>
+        <p><strong>FXを前に出さないことで、ドロップが近くなる。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>上昇・吸引・空間の3方向が配置できたら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Check</div>
+      <h2 class="sec-title">ドロップに着地させる<br><em>最終チェック</em></h2>
+
+      <p>
+        手順④でやることは、新しく何かを足すことではありません。
+        <strong>ビルドアップが、本当にドロップを最大化できているかを確認する。</strong>それだけです。
+      </p>
+
+      <h3 class="sub-title">チェック① ドロップの主役を先に出していないか</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ビルドアップで存在感を持っていたらNG</div>
+        <ul>
+          <li>キック</li>
+          <li>低域のサブベース</li>
+          <li>主役リード もしくは 主役ボーカル</li>
+        </ul>
+        <p>
+          ドロップは<strong>「戻ってくる場所」</strong>である必要があります。
+          <em>主役が帰ってくる余地が残っていれば、OK。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">チェック② FXが主役になっていないか</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ドロップ直前で一番耳に残る音が</div>
+        <p>ライザー／ノイズ／FX成分 だった場合、<strong>FXが前に出すぎています。</strong></p>
+        <p>
+          FXの役割は<em>次に何かが起きると予告すること。</em>
+          主役になった瞬間、<strong>ドロップの役割を奪います。</strong>
+        </p>
+      </div>
+
+      <h3 class="sub-title">チェック③ ドロップで体感が一気に変わるか</h3>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ドロップ直前〜ドロップ頭をループ再生する</div>
+        <p>ここで感じたいのは、次の体感の変化です。</p>
+        <ul>
+          <li>音が近づいた</li>
+          <li>太くなった</li>
+          <li>重心が一気に下に落ちた</li>
+        </ul>
+        <p>
+          <strong>音量が上がっていなくても、この感覚があれば、ビルドアップは正しく機能しています。</strong>
+        </p>
+      </div>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <div class="video-empty">
+            <strong>COMING SOON</strong>
+            <span>【超簡単】海外プロ級のビルドアップを“ノブ1つ回すだけ”で作る方法<br>#Endless Smile（解説動画：6分）のURLをいただければ埋め込みます。</span>
+          </div>
+        </div>
+        <p class="video-cap">解説動画（6分）── あなたのビルドアップ、ちゃんと緊張感を作れていますか？ ドロップのインパクトは、実はビルドアップで作れます。</p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 7-3 ── クリア条件</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、STEP7-3はクリアです。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ビルドアップのゴール（広く・遠く・軽く）を先に決めた</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">音数・低域・空白の3レイヤーで引き算した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ライザー・リバースFX・アンビエンスを役割で配置した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ドロップで体感が一気に変わることを確認した</span></label></li>
+        </ul>
+      </div>
+
+      <p>
+        ここまで来たあなたは、もう<em>音を足して悩む人ではありません。</em>
+        <strong>ドロップを強くするために、直前を設計できる人です。</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 7-4</div>
+      <h2 class="sec-title">次に作るのは、<br>曲の核となる<em>「フック」。</em></h2>
+
+      <p>
+        ビルドアップとドロップは完成しました。<strong>曲の一番エネルギーが高い場所は決まりました。</strong>
+        ただし、ダンスミュージックはドロップだけでは成立しません。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">大切なのは、フックを最初に作らないこと</div>
+        <p>
+          私の考え方では、<strong>まずドロップを完成させ、その中から「曲を象徴する一部分」を切り出す。</strong>
+          <em>それがフックになります。</em>
+        </p>
+      </div>
+
+      <p><strong>フックは装飾ではありません。曲全体を成立させる中心点です。</strong></p>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step7-2.html">
+          <em>Previous ── STEP 7-2</em>
+          <b>実践編：配置して初めて“曲”になる。<br>ドロップを16小節へ展開する実践ルール</b>
+        </a>
+        <a class="next" href="step7-4.html">
+          <em>Next ── STEP 7-4</em>
+          <b>楽曲の“顔”を決めろ。<br>ボーカルで作る“強烈なフック”設計完全ガイド</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step7-3.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP7-5：ブレイクは設計で作れ。フックを最大化する構造｜ロードマップPROコース</title>
+<meta name="description" content="ブレイクは休憩ではない。ドロップ①を終わらせ、フックにつなぐための再構築の時間。8小節で完結させ、置く音を最初から決めて迷いを消す。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP7-5：ブレイクは設計で作れ。ドロップをリセットし、フックを最大化する構造を解説">
+<meta property="og:description" content="ブレイクは聴かせるパートではない。次の展開を成立させるための準備パートだ。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step7-5.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="7-4" data-article-id="7-5" data-next-id="7-6">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 7-5 ／ Reset And Connect</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 7-5</div>
+  <h1 class="hero-en">Reset And<br>Connect</h1>
+  <p class="hero-ja">ブレイクは、設計で作れ。</p>
+  <p class="hero-lead">ドロップをリセットし、フックを最大化する構造。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約9分</b></span>
+    <span>STEP <b>7-5</b> ／ 6</span>
+    <span>手順 <b>2</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">各パートは良いのに、<br><em>曲として“流れ”が弱い。</em></h2>
+
+      <p class="lead-p">
+        ここまでのSTEPで、ドロップ・ビルドアップ・フックという、<strong>楽曲の核となるパーツを完成させています。</strong>
+        正直、この時点で「それっぽい曲」にはなっているはずです。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">それでも残る違和感</div>
+        <ul>
+          <li>ドロップが思ったほど強く聴こえない</li>
+          <li>曲全体が平坦に感じる</li>
+          <li>途中で飽きられてしまう</li>
+        </ul>
+      </div>
+
+      <p>
+        私自身も、ずっとここで止まっていました。
+        楽曲を作り始めた頃、私が一番気にしていたのは、<em>迫力のあるドロップと、期待感を高めるビルドアップ</em>だった。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">でも実際には</div>
+        <p>
+          リスナーはあなたの曲を3分、4分と聴き続けます。
+          その中で展開がなければ、曲はループのように感じられ、
+          <strong>逆にずっと強いままだと、ドロップの迫力は弱く聴こえてしまう。</strong>
+        </p>
+        <p>
+          アルバムをリリースする段階で、<em>最も多くの楽曲を研究したのが、このパート</em>でした。
+          <strong>ブレイクです。</strong>
+        </p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ブレイクは、こういう場所ではない</div>
+        <ul>
+          <li>なんとなく音を抜く場所</li>
+          <li>ドロップ前の休憩地点</li>
+        </ul>
+        <p>ここをどう作るかで、<strong>ドロップ①の価値・フックの印象・ドロップ②の迫力と期待感</strong>のすべてが決まります。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPでやること</div>
+        <p><strong>「ブレイクを“設計”として作れるようになる」</strong>ここまで。</p>
+        <ul>
+          <li>ドロップ①を一度リセットする</li>
+          <li>フック②につなぐために</li>
+          <li>どこで、何を鳴らすのか</li>
+        </ul>
+        <p><em>これらを、小節単位で設計します。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Role</div>
+      <h2 class="sec-title">8小節ブレイクの<br><em>役割と設計</em>を決める</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">このブレイクの役割は、ただ一つ</div>
+        <p><strong>ドロップ①を終わらせ、フックにつなぐための再構築の時間を作ること。</strong></p>
+        <p><em>ブレイクは聴かせるパートではない。次の展開を成立させるための準備パートです。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">やるべきこと</div>
+        <ul>
+          <li>ドロップ①の流れを引きずらない</li>
+          <li>エネルギーを一段下げる</li>
+          <li>フックが自然に入れる状態を作る</li>
+        </ul>
+        <p>
+          ブレイクは<strong>8小節で完結</strong>させます。引き伸ばさない。盛り上げ切らない。
+          重要なのは、<em>この8小節の終わりで「次に進めるかどうか」。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">なぜ、このブレイクは「8小節」なのか</h3>
+
+      <p>
+        このブレイクは、いわゆる<strong>16小節のブレイクを採用しません。</strong>理由はシンプルです。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">今のダンスミュージックが置かれている環境</div>
+        <ul>
+          <li>TikTok</li>
+          <li>Instagram Reels</li>
+          <li>YouTube Shorts</li>
+        </ul>
+        <p>
+          こうした<strong>「最初の数秒で判断される環境」</strong>の中にあります。
+          じっくり待ってくれるリスナーは、<em>もはや多数派ではありません。</em>
+        </p>
+        <p>つまり、<strong>展開の“間”を長く取りすぎること自体がリスク</strong>になり始めています。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">トップレベルの楽曲に共通する構造</div>
+        <ul>
+          <li>ブレイクは短く</li>
+          <li>役割が明確で</li>
+          <li>次の展開に直結している</li>
+        </ul>
+      </div>
+
+      <h3 class="sub-title">8小節でやるのは「3つ」だけ</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">一度フラットにする<span class="anatomy-en">Flatten</span></div>
+          <div class="anatomy-desc">ドロップ①の余韻を引きずらない。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">情報量を整理する<span class="anatomy-en">Reduce</span></div>
+          <div class="anatomy-desc">だらだら待たせない。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">フックを迎え入れる状態を作る<span class="anatomy-en">Prepare</span></div>
+          <div class="anatomy-desc">それでいて、雑に次へ行かない。</div>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>役割と長さ（8小節）が決まった時点で、ブレイクはもう迷いません。手順①クリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Instruments</div>
+      <h2 class="sec-title">8小節に<em>置く楽器</em>を決める</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">目的</div>
+        <p><strong>落差を作り、感情を前に出す。</strong></p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>カテゴリ</th><th>鳴らす？</th><th>どう扱うか</th></tr></thead>
+          <tbody>
+            <tr><th>ローエンド</th><td><strong>×</strong></td><td>入れない。<strong>低域を一度切ることで、耳が一度リセットされる</strong></td></tr>
+            <tr><th>ドラムス</th><td><strong>△</strong></td><td>ハット／トップループ・パーカッションはOK。<strong>主張の強いスネア・クラップ／ライドは厳禁</strong></td></tr>
+            <tr class="is-focus"><th>ボーカル</th><td><strong>◎</strong></td><td>ローエンドを抜いた状態で聴かせると、<strong>感情が前に出る</strong></td></tr>
+            <tr><th>リード</th><td><strong>○</strong></td><td>完成形を出さず、<strong>気配だけ</strong></td></tr>
+            <tr><th>FX</th><td><strong>△</strong></td><td>1小節目にインパクト（<strong>必須</strong>）／8小節目終わりにアップリフター</td></tr>
+            <tr class="is-focus"><th>アンビエンス</th><td><strong>◎</strong></td><td>STEP6で作ったアンビエンスを配置。<strong>つなぐために使う</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">なぜ主張の強いドラムスは厳禁なのか</div>
+        <p>
+          せっかく楽曲のエネルギーを一旦抑えるためにブレイクを入れるのに、
+          <strong>主張の強いドラムスが入ってしまうと、楽曲のエネルギーが不要に残り続けてしまうから。</strong>
+        </p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">Vocals と Lead、どちらかを「Main Sound」に</div>
+        <p>ここでも<strong>主役はひとつ</strong>です。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">考え方はシンプル</div>
+        <ul>
+          <li>迫力は出さない</li>
+          <li>音数は最小限</li>
+          <li>フックの邪魔をしない</li>
+        </ul>
+        <p>
+          この8小節でやるのは、<em>盛り上げることではありません。</em>
+          <strong>フックが自然に始められる状態を作ること。</strong>
+        </p>
+      </div>
+
+      <h3 class="sub-title">手順②の本質 ──「展開の意味付け」</h3>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここでやっているのは、アレンジの小技ではない</div>
+        <p><strong>展開の意味付け</strong>です。</p>
+        <ul>
+          <li>何を覚えさせ</li>
+          <li>何を期待させ</li>
+          <li>何で応えるのか</li>
+        </ul>
+        <p>
+          その順番を、<strong>フック → ビルドアップ② → ドロップ②</strong> という形で固定します。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでで作ったものをコピペするだけ</div>
+        <p>
+          <strong>フック → ビルドアップ① → ドロップ①</strong> をコピペするだけで、
+          <em>楽曲全体の流れが完成します。</em>
+        </p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 7-5 ── クリア条件</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、STEP7-5はクリアです。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ブレイクの役割を「ドロップ①を終わらせ、フックにつなぐこと」に固定した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ブレイクを8小節で作った（引き伸ばしていない）</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ローエンドを抜き、主張の強いドラムスを入れていない</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">1小節目にインパクトを置いた</span></label></li>
+        </ul>
+      </div>
+
+      <p>
+        ブレイクはもう、「なんとなく作るパート」ではありません。
+        <strong>次の展開を最大化するための設計装置</strong>になりました。
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 7-6</div>
+      <h2 class="sec-title">次は、<br><em>イントロとアウトロ。</em></h2>
+
+      <p>
+        今のダンスミュージックは、TikTok、Instagram Reels、YouTube Shorts など、
+        <strong>最初の数秒で判断される世界</strong>に置かれています。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">その影響で、主流になってきている作り分け</div>
+        <ul>
+          <li>配信・視聴を前提とした<strong>フック始まりの Radio Edit</strong></li>
+          <li>DJが曲と曲をつなぐための<strong>がっつりイントロがある Extended Mix</strong></li>
+        </ul>
+        <p><em>ここを理解すると、「最初で飽きられない曲」を意図して作れるようになります。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step7-4.html">
+          <em>Previous ── STEP 7-4</em>
+          <b>楽曲の“顔”を決めろ。<br>ボーカルで作る“強烈なフック”設計完全ガイド</b>
+        </a>
+        <a class="next" href="step7-6.html">
+          <em>Next ── STEP 7-6</em>
+          <b>イントロとアウトロを捨てる<br>── 配信リリース時代の“省略する構成設計”</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step7-5.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>

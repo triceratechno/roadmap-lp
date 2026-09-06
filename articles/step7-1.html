@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP7-1：楽曲構成の設計図。各パートの役割と考え方｜ロードマップPROコース</title>
+<meta name="description" content="曲は「強度の波」でできている。各パートの役割を言語化し、ドロップ①を起点に展開を組み立て、パートごとに置く音と抜く音を決める。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP7-1：8小節のループから楽曲へ ── 楽曲構成の設計図。各パートの役割と考え方">
+<meta property="og:description" content="曲は「足す」ものではなく「配置で完成する」。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step7-1.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="7-overview" data-article-id="7-1" data-next-id="7-2">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 7-1 ／ The Blueprint</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 7-1</div>
+  <h1 class="hero-en">The<br>Blueprint</h1>
+  <p class="hero-ja">8小節のループから、楽曲へ。</p>
+  <p class="hero-lead">楽曲構成の設計図 ── 各パートの役割と考え方。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約11分</b></span>
+    <span>STEP <b>7-1</b> ／ 6</span>
+    <span>手順 <b>3</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">素材は、<br><em>もう全部そろっている。</em></h2>
+
+      <p class="lead-p">
+        STEP6までで、キック、ベース、ドラム、メロディ、ボーカル、FX、アンビエンス。
+        <strong>楽曲を構成する“すべての素材”を、正しい順番で作り終えました。</strong>
+      </p>
+
+      <p>
+        これは、正直に言って異常です。
+        多くのDTMerは、音作りで迷い、プリセット探しに時間を溶かし、<em>構成に入る前に力尽きる。</em>
+        そして、完成しない。<strong>でもあなたは、もう違う。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここではっきりさせておきます</div>
+        <p>「曲が完成しない原因」は、音が足りないことではありません。</p>
+        <p>足りないのは、<strong>“どこに・何を・どれだけ置くか”という設計図。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPで理解すること、3つだけ</div>
+        <ul>
+          <li>各パートが持つ本当の役割</li>
+          <li>ドロップを起点にした、迷わない構成の組み立て方</li>
+          <li>各パートで「何を置き、何を抜くか」の明確な判断基準</li>
+        </ul>
+        <p>これだけで、<strong>8小節のループは「楽曲」になります。</strong></p>
+      </div>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/jv7GhCAi_g4"
+            title="【9割のDTMerへ】ダンスミュージックの楽曲展開はこう作る：ループ→トラック"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-cap">解説動画（7分）── ループから1曲に展開する ／ ダンスミュージックの基本構造 ／ 海外プロの設計思考 ／ 8小節から展開する具体手順。この動画を見れば、何となくで聞いていた楽曲の構造が手に取るように分かるようになります。</p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">最重要ポイント</div>
+        <p>
+          あなたがここまで作ってきた8小節は、<strong>そのまま「ドロップ①」になります。</strong>
+        </p>
+        <p>
+          つまり、あなたはもう<em>「曲の一番強い核」を完成させている。</em>
+          あとは、その核を中心に前後を整理するだけです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Roles</div>
+      <h2 class="sec-title">各パートの<em>役割</em>を理解する</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">前提：曲は「強度の波」でできている</div>
+        <ul>
+          <li>ずっと強い曲は、<strong>疲れる</strong></li>
+          <li>ずっと静かな曲は、<strong>眠くなる</strong></li>
+          <li><strong>強い → 弱い → 強い</strong> の落差があるから気持ちいい</li>
+        </ul>
+        <p>つまり、曲の快感は<em>「音色」ではなく、強度のコントロールで作られています。</em></p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パート</th><th>役割</th><th>やること／やらないこと</th></tr></thead>
+          <tbody>
+            <tr><th>イントロ</th><td>世界観への入口</td><td>盛り上げる場所ではない。<strong>「まだ本編じゃない」と理解させる</strong></td></tr>
+            <tr><th>フック①</th><td>曲の“顔”を先に刻む</td><td>盛り上げではなく<strong>名刺。</strong>「この曲はこれだ」と分からせる</td></tr>
+            <tr><th>ビルドアップ①</th><td>緊張の増幅</td><td>音を増やす場所ではない。<strong>落ちる前に緊張を最大化する</strong></td></tr>
+            <tr class="is-focus"><th>ドロップ①</th><td><strong>全パートの基準点</strong></td><td><strong>フルに使っていい唯一の場所。</strong>他パートは全部ここを基準に「弱く」作る</td></tr>
+            <tr><th>ブレイク</th><td>落差を作り、感情を回収する</td><td>休憩ではない。ドロップで“体”が動くなら、<strong>ブレイクは“心”が動く場所</strong></td></tr>
+            <tr><th>フック②</th><td>曲の「顔」に戻る</td><td>フック①と<strong>同じでいい。むしろその方がいい</strong></td></tr>
+            <tr><th>ビルドアップ②</th><td>同じ構造で、違う期待</td><td><strong>1点だけ変える。</strong>ボーカルを抜く／リードをチラ見せ／ハットの密度</td></tr>
+            <tr><th>ドロップ②</th><td>回収と最大到達点</td><td>①を踏襲しつつ、<strong>何か1つだけ増やす</strong></td></tr>
+            <tr><th>アウトロ</th><td>終わりを作る</td><td>ドラマを作ろうとしない。<strong>余韻を残して、静かに閉じる</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>各パートの役割を言語化できたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Order</div>
+      <h2 class="sec-title">ドロップ①を起点に、<br><em>展開を組み立てる</em></h2>
+
+      <h3 class="sub-title">なぜ、イントロから作ってはいけないのか</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">これは、完成しない人の思考</div>
+        <p>「曲なんだから、イントロから作るよね？」</p>
+        <p>理由はシンプル。<strong>イントロには“正解の強さ”が存在しないから。</strong></p>
+        <ul>
+          <li>どれくらい薄くすればいいのか</li>
+          <li>どこまで音を入れていいのか</li>
+          <li>何小節にすればいいのか</li>
+        </ul>
+        <p><em>基準がない状態で作るから、必ず途中で「あれ？この後どうすればいいんだっけ…」になります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">基準は「一番強い場所」にしか作れない</div>
+        <p>曲の中で、唯一、正解の強さが明確な場所 ── それが<strong>ドロップ①。</strong></p>
+        <ul>
+          <li>一番強くていい</li>
+          <li>一番音数が多くていい</li>
+          <li>一番エネルギーが高くていい</li>
+        </ul>
+        <p><em>ここだけは、迷いがない。だからプロは、必ずドロップを基準点にします。</em></p>
+      </div>
+
+      <h3 class="sub-title">正しい組み立て順（この順番は固定）</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">ドロップ①を「完成形」として置く<span class="anatomy-en">Core</span></div>
+          <div class="anatomy-desc">8小節をコピー＆ペーストして、<strong>16小節にする。</strong>（具体的な配置の型は <a href="step7-2.html">STEP7-2</a>）</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">ドロップ①の「前」を作る<span class="anatomy-en">Before</span></div>
+          <div class="anatomy-desc">後ろではなく、前から。<strong>前が決まらないと、落ち方が決まらない。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">フックを置く<span class="anatomy-en">Hook</span></div>
+          <div class="anatomy-desc">ドロップ①より明確に弱く、ビルドアップ①よりは情報を持つ。<strong>主役は1つだけ。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">ブレイクを作る<span class="anatomy-en">Break</span></div>
+          <div class="anatomy-desc">ローエンドを引く／情報量を減らす／空間を広げる。<strong>耳と感情を一度リセット。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">5</div>
+          <div class="anatomy-name">フック② → ビルドアップ② → ドロップ②<span class="anatomy-en">Repeat</span></div>
+          <div class="anatomy-desc">フック②は同じ。ビルドアップ②は<strong>1点だけ変える。</strong>ドロップ②は<strong>1つだけ足す。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">6</div>
+          <div class="anatomy-name">イントロとアウトロを作る<span class="anatomy-en">Ends</span></div>
+          <div class="anatomy-desc">入口と出口を整えるだけ。<strong>新しい展開を作る場所ではない。</strong></div>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ドロップ起点思考の最大のメリット</div>
+        <p>判断基準が、<strong>「ドロップとの比較」という1つに集約される。</strong></p>
+        <ul>
+          <li>ドロップより弱い → <strong>OK</strong></li>
+          <li>ドロップと同じ → <strong>NG</strong></li>
+          <li>ドロップより強い → <strong>ありえない</strong></li>
+        </ul>
+        <p><em>これだけで、曲作りが「迷い」から「設計」に変わります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>ドロップ①を起点にした展開順が固定できたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Subtract</div>
+      <h2 class="sec-title">パートごとに<br><em>「置く音」と「抜く音」</em>を決める</h2>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">前提：曲は「全部鳴っていない」から成立する</div>
+        <p>
+          多くのDTMerは「せっかく作った音は全部使いたい」「消すのはもったいない」と考えます。
+          <strong>でも現実は逆。プロの曲は「使っていない音」のほうが多い。</strong>
+        </p>
+        <p><em>構成とは、音を足す作業ではなく、音を置く場所を限定する作業です。</em></p>
+      </div>
+
+      <h3 class="sub-title">まずやること：音を6カテゴリに分ける</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>#</th><th>カテゴリ</th><th>含まれるもの</th></tr></thead>
+          <tbody>
+            <tr><th>1</th><td>ローエンド</td><td>キック／トップベース／サブベース</td></tr>
+            <tr><th>2</th><td>ドラムス</td><td>スネア／クラップ／ハット／ライド／パーカッション</td></tr>
+            <tr><th>3</th><td>ボーカル</td><td>─</td></tr>
+            <tr><th>4</th><td>リード</td><td>─</td></tr>
+            <tr><th>5</th><td>FX</td><td>ダウン・アップリフター／トランジション／ライザー／リバースFX／インパクト</td></tr>
+            <tr><th>6</th><td>アンビエンス</td><td>─</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>この分類ができていないと、<strong>配置は必ず破綻します。</strong></p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">配置の大原則</div>
+        <p><strong>ドロップ①だけが、フル構成を許されている場所。それ以外は、必ず何かを抜く。</strong></p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パート</th><th>ローエンド</th><th>ドラムス</th><th>主役</th><th>FX</th><th>アンビエンス</th></tr></thead>
+          <tbody>
+            <tr><th>フック</th><td>×</td><td>×</td><td><strong>◎ 1つだけ</strong></td><td>○</td><td>○</td></tr>
+            <tr><th>ビルドアップ</th><td>△</td><td>○</td><td>△</td><td>◎</td><td>○</td></tr>
+            <tr class="is-focus"><th>ドロップ①</th><td><strong>◎</strong></td><td><strong>◎</strong></td><td><strong>◎</strong></td><td>○</td><td>○</td></tr>
+            <tr><th>ブレイク</th><td>×</td><td>△</td><td>◎</td><td>△</td><td>◎</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>※ フックは「ボーカル or リード」の<strong>どちらか1つだけ</strong>が主役。詳細は各レッスンで扱います。</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">手順③の本質</div>
+        <p>
+          曲が完成する人は、<strong>「何を鳴らすか」より先に、「何を鳴らさないか」を決めている。</strong>
+        </p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 7-1 ── クリア条件</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、STEP7-1はクリアです。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">各パートの役割を、自分の言葉で説明できる</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">曲は「音の良さ」ではなく「強度の波」で成立していると理解した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ドロップ①を起点にした組み立て順（6ステップ）を固定した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">すべての音を6カテゴリに分類した</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 7-2</div>
+      <h2 class="sec-title">次は、<em>配置の実演。</em></h2>
+
+      <p>
+        考え方が分かっても、<strong>実際にDAW上でどう並べるかが分からなければ意味がありません。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">次にやること</div>
+        <ul>
+          <li>ドロップ①をどこに置くのか</li>
+          <li>そこから前後に、どうパートを並べていくのか</li>
+          <li>各パートで、どのトラックをONにし、どれをミュートするのか</li>
+        </ul>
+        <p><em>STEP7-1で“設計思想”はインストールされました。次は、それをそのまま使う作業です。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step7-overview.html">
+          <em>Previous ── STEP 7 全体解説</em>
+          <b>8小節のループは、もう終わり。<br>配置だけで“1曲”は完成する。</b>
+        </a>
+        <a class="next" href="step7-2.html">
+          <em>Next ── STEP 7-2</em>
+          <b>実践編：配置して初めて“曲”になる。<br>ドロップを16小節へ展開する実践ルール</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step7-1.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>

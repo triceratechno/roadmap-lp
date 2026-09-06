@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP6-1：ドロップに“展開”を生むFX設計術｜ロードマップPROコース</title>
+<meta name="description" content="ダウンリフターをドロップの頭に、アップリフターを8小節の最後に、トランジションでブレイクへ橋渡し。FXの配置だけで「今、何が起きている曲なのか」をリスナーに伝える。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP6-1：退屈な“8小節ループ”を終わらせる｜ドロップに“展開”を生むFX設計術">
+<meta property="og:description" content="新しい音は足さない。それでもドロップは意味を持って進み始める。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step6-1.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="6-overview" data-article-id="6-1" data-next-id="6-2">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 6-1 ／ Signals In The Drop</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 6-1</div>
+  <h1 class="hero-en">Signals In<br>The Drop</h1>
+  <p class="hero-ja">退屈な“8小節ループ”を<br>終わらせる。</p>
+  <p class="hero-lead">ドロップに“展開”を生む、FX設計術。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約10分</b></span>
+    <span>STEP <b>6-1</b> ／ 3</span>
+    <span>手順 <b>4</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">一番大変なところは、<br><em>もう越えている。</em></h2>
+
+      <p class="lead-p">
+        STEP5で、音を選び、メロディを組み立て、密度と存在感を整えてきました。
+        8小節のループとして再生すれば、<strong>「これはちゃんとした曲の核だ」と感じられるはず</strong>です。
+      </p>
+
+      <p>それでも ── 次の段階に進もうとした瞬間、手が止まる。</p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">心当たりはありませんか</div>
+        <ul>
+          <li>ここからどう展開させればいいのか分からない</li>
+          <li>無理に音を足すと、逆に崩れる</li>
+          <li>構成を考え始めた途端、迷子になる</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">それは失敗でも停滞でもありません</div>
+        <p>むしろ、<strong>正しい順番でここまで来た証拠</strong>です。</p>
+        <p>なぜなら、STEP5までで作ったものは、<em>もともと「展開させる前提の素材」だから。</em></p>
+      </div>
+
+      <h3 class="sub-title">なぜ多くのDTMerはここで止まるのか</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">多くの人が進む方向</p>
+          <ul>
+            <li>コードを変える</li>
+            <li>メロディを書き直す</li>
+            <li>構成テンプレを探す</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">プロの曲が展開して聴こえる理由</p>
+          <p>
+            リスナーに対して、<strong>「次に何が起きるか」を、音で事前に伝えている。</strong>
+          </p>
+          <p>この“伝え方”を担っているのが、<em>FXとアンビエンス。</em></p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">これはテクニック論ではない</div>
+        <p><strong>構造の話です。</strong></p>
+        <p>この2つを理解した瞬間、<em>8小節ループはほぼ自動的に「曲」になります。</em></p>
+      </div>
+
+      <h3 class="sub-title">このSTEPでやってほしいこと</h3>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ゴール</div>
+        <p><strong>「今、何が起きている曲なのか」を、リスナーに音で理解させること。</strong></p>
+        <p>メロディを変えること・音を足すこと・構成を組むことは、<em>まだ不要です。</em></p>
+      </div>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">ダウンリフターを“ドロップの頭”に置く<span class="anatomy-en">Start</span></div>
+          <div class="anatomy-desc">始まりを明確にする。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">アップリフターを8小節の“最後”に<span class="anatomy-en">End</span></div>
+          <div class="anatomy-desc">終わりと予告を同時に作る。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">トランジションで橋渡しを作る<span class="anatomy-en">Bridge</span></div>
+          <div class="anatomy-desc">ドロップ → ブレイクダウン。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">FXの役割を整理する<span class="anatomy-en">Organize</span></div>
+          <div class="anatomy-desc">なぜ機能しているのかを言語化する。</div>
+        </div>
+      </div>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <div class="video-empty">
+            <strong>COMING SOON</strong>
+            <span>STEP6-1 の解説動画のURLを<br>いただければ埋め込みます。</span>
+          </div>
+        </div>
+        <p class="video-cap">解説動画 ── 手を動かす前に、まずこちらをご覧ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Start</div>
+      <h2 class="sec-title">ダウンリフターを<br><em>“ドロップの頭”</em>に置く</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">結論</div>
+        <p>ダウンリフターは、ドロップそのものを<strong>“分かりやすくするため”</strong>に使います。</p>
+        <p>
+          盛り上げるための装飾ではなく、
+          <em>「ここで始まった」「ここが重要だ」という情報を、一瞬でリスナーに伝えるための音。</em>
+        </p>
+      </div>
+
+      <p>
+        ドロップの迫力や解放感は、音量や低域の量で決まるものではありません。
+        <strong>最初の一撃が、どれだけ明確か。</strong>その設計に、ダウンリフターは使われます。
+      </p>
+
+      <h3 class="sub-title">なぜ「ドロップの頭」なのか？</h3>
+
+      <div class="callout callout--core">
+        <div class="callout-head">理由はシンプル</div>
+        <p>
+          リスナーがドロップの迫力を判断するのは、<strong>鳴り始めてからの“最初の瞬間”だから。</strong>
+        </p>
+      </div>
+
+      <p>ダウンリフターをドロップの1小節目に置くことで、次の情報を<em>言葉なしで伝えられます。</em></p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">伝わること</div>
+        <ul>
+          <li>ここからドロップが始まった</li>
+          <li>大事な場面に入った</li>
+          <li>エネルギーが解放された</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ドロップ前で終わらせてしまうと</div>
+        <p>
+          助走にはなっても、<strong>衝突によるインパクトが生まれません。</strong>
+        </p>
+        <p>
+          ダウンリフターは、<em>ドロップの音とぶつかる位置にあるからこそ、最大限に効果を発揮します。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">何が起きているのか（耳の仕組み）</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">フルレンジ → フルレンジ</p>
+          <p>変化として感じにくい。</p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">抑え → 解放</p>
+          <p><strong>人はこちらを強く感じます。</strong></p>
+        </div>
+      </div>
+
+      <p>
+        ダウンリフターの下降エネルギーが、ドロップ頭のキックやメインサウンドに衝突することで、
+        <strong>音量を上げていないのに、低域を足していないのに「重くなった」「強くなった」と錯覚します。</strong>
+      </p>
+
+      <p>これは派手さの問題ではなく、<em>時間軸上のエネルギー集中によるものです。</em></p>
+
+      <h3 class="sub-title">実際のやり方</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>設定</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>置く場所</th><td><strong>ドロップの頭（1小節目）</strong></td></tr>
+            <tr><th>長さ（基本）</th><td><strong>4小節程度</strong></td></tr>
+            <tr><th>長さ（空間系）</th><td>メロディックテクノ／フューチャーレイブなら <strong>8小節</strong>もあり</td></tr>
+            <tr><th>加工</th><td>フィルター操作や複雑なオートメーションは<strong>不要</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">これができていれば十分</div>
+        <p><strong>「落ちて、消える」</strong></p>
+      </div>
+
+      <h3 class="sub-title">よくあるNG例</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">音量を上げすぎてしまう</div>
+        <p>
+          ダウンリフターは、キックやメロディよりも<strong>耳につきやすい中高域を多く含んでいます。</strong>
+        </p>
+        <ul>
+          <li>高音域が耳に刺さる</li>
+          <li>FXだけが目立つ</li>
+          <li>ドロップより先にダウンリフターが聴こえる</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">判断基準</div>
+        <p>
+          ダウンリフターがキックやメロディより前に出てきたら、<strong>それは出しすぎ。</strong>
+        </p>
+        <p>基準は<em>「聴こえるか」ではなく、「感じられるか」。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">この手順ができると</div>
+        <ul>
+          <li>始まりが一瞬で分かる</li>
+          <li>解放感が自然に伝わる</li>
+          <li>音量を上げなくても迫力が出る</li>
+        </ul>
+        <p>派手さは増えていません。でも、<strong>理解しやすさと説得力は確実に上がっています。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>ドロップの頭にダウンリフターが置けたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── End</div>
+      <h2 class="sec-title">アップリフターを<br>8小節の<em>“最後”</em>に入れる</h2>
+
+      <p>
+        このFXは、ドロップの中で<strong>「次に進む準備が始まった」</strong>ことを伝えるために使います。
+        盛り上げるための音ではありません。<em>終わりと予告を同時に作るための合図</em>です。
+      </p>
+
+      <h3 class="sub-title">なぜ「8小節の最後」なのか？</h3>
+
+      <p>
+        STEP5までで作ったドロップは、音色もメロディもすでに完成しています。
+        それでもループに聴こえてしまう理由は、ひとつ。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">終わりに“合図”がないから</div>
+        <p>人は音楽を、<strong>「始まり」と「終わり」の連続として認識しています。</strong></p>
+        <p>つまり ── <em>終わりが分からないフレーズは、永遠に続くループとして処理される。</em></p>
+      </div>
+
+      <h3 class="sub-title">アップリフターの本当の役割</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">よくある誤解</p>
+          <p>アップリフター＝盛り上げ</p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">STEP6-1 での役割</p>
+          <p><strong>「この8小節は、ここで終わります」<br>「次に、何かが起きます」</strong></p>
+          <p>と伝えること。</p>
+        </div>
+      </div>
+
+      <p>
+        だから置く場所は、ドロップ全体でも、ドロップの途中でもない。
+        <strong>8小節の“最後”がベストです。</strong>
+      </p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>設定</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>置く場所</th><td><strong>ドロップの8小節目の後半</strong></td></tr>
+            <tr><th>長さ</th><td>4小節 or 8小節分</td></tr>
+            <tr><th>質感</th><td>派手にする必要はない。<strong>「次が来る気配」だけ</strong>で十分</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまで来ると、ドロップはこう聴こえ始める</div>
+        <ul>
+          <li>8小節ごとに区切りがある</li>
+          <li>次に進む“気配”が分かる</li>
+          <li>ただの繰り返しではなくなる</li>
+        </ul>
+        <p>つまり、<strong>時間の流れが生まれる。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>8小節の最後にアップリフターが置けたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Bridge</div>
+      <h2 class="sec-title">トランジションで<br><em>「ドロップ → ブレイクダウン」</em>の<br>橋渡しを作る</h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">役割はひとつ</div>
+        <p><strong>ドロップからブレイクダウンへ、エネルギーを保ったまま渡すこと。</strong></p>
+      </div>
+
+      <h3 class="sub-title">トランジションFXの正体</h3>
+
+      <p>
+        このトランジションは、<strong>穏やかに上がり、穏やかに下がる</strong>
+        ── アップリフターとダウンリフターの<em>中間にあるFX</em>です。
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">性質</div>
+        <ul>
+          <li>強く煽らない</li>
+          <li>急に落とさない</li>
+          <li>でも、確実に「切り替わった」と伝える</li>
+        </ul>
+        <p>だからこそ、<strong>1つでアップ／ダウン両方の役割をこなせます。</strong></p>
+      </div>
+
+      <h3 class="sub-title">使う場所は「ここ」しかない</h3>
+
+      <p>
+        置くのは、<strong>ドロップの終わりからブレイクダウンの頭</strong>にかけて。
+        それ以外では、基本的に使いません。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜか</div>
+        <p>現代のダンスミュージックでは、<strong>ドロップ①が一番の見せ場</strong>で、そのあとドロップ②へ向かうブレイクが入ります。</p>
+        <p>このブレイクは、<em>エネルギーを完全には壊さない。でも、次のドロップを強くするため、一度落ち着かせる</em>という<strong>矛盾した役割</strong>を持っています。</p>
+        <p>ここを雑につなぐと、<strong>展開が唐突になります。</strong></p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">強いダウンリフターだけだと</p>
+          <p><strong>落ちすぎる</strong></p>
+        </div>
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">何も置かないと</p>
+          <p><strong>切り替わりが急になる</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">トランジションで手に入るもの</div>
+        <ul>
+          <li>ドロップ①の勢いを保ち</li>
+          <li>自然にブレイクへ入れる</li>
+          <li>プロが必ず作っている<strong>“橋渡し”</strong>が完成する</li>
+        </ul>
+      </div>
+
+      <h3 class="sub-title">配置の考え方（現代的な例）</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>ジャンル</th><th>ドロップの長さ</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>Martin Garrix など現代のダンスミュージック</th><td><strong>基本 16小節</strong></td></tr>
+            <tr><th>メロディックテクノ／テクノ</th><td>32小節のものもある</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">16小節の場合</div>
+        <ul>
+          <li>16小節目に向かって、トランジションがゆるやかに立ち上がり</li>
+          <li>ブレイクの頭で、穏やかに収まる</li>
+        </ul>
+        <p>これだけで、<em>「ドロップが終わった」「次の展開に入った」</em>とリスナーは無意識に理解します。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">派手さは不要</div>
+        <p>むしろ、<strong>気づかれないくらいが正解。</strong>役割はただ一つ、<em>「今、場面が切り替わった」と伝えること。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>ドロップとブレイクの橋渡しが作れたら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Organize</div>
+      <h2 class="sec-title">FXの役割を<em>整理する</em></h2>
+
+      <p>
+        ここでは、<strong>新しいFXは一切追加しません。</strong>
+        すでに置いたFXが、<em>なぜ機能しているのか</em>を言語化し、整理します。
+      </p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>FX</th><th>場所</th><th>伝えていること</th></tr></thead>
+          <tbody>
+            <tr><th>ダウンリフター</th><td>ドロップの頭</td><td><strong>ここで始まった</strong></td></tr>
+            <tr><th>アップリフター</th><td>8小節の最後</td><td><strong>ここで一区切りついた／次が来る</strong></td></tr>
+            <tr class="is-focus"><th>トランジションFX</th><td>ドロップ終わり〜ブレイク頭</td><td><strong>今、場面が切り替わった</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        この時点で、ドロップは単なる「音の集合」ではありません。
+        <strong>構造を持った出来事</strong>になっています。
+      </p>
+
+      <h3 class="sub-title">重要なのは、FXの“種類”ではない</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">大事ではないこと</p>
+          <ul>
+            <li>どんなFXを使ったか</li>
+            <li>どのプラグインを挿したか</li>
+          </ul>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">音で説明できているか</p>
+          <ul>
+            <li>どこで始まったのか</li>
+            <li>どこで一区切りついたのか</li>
+            <li>次に進む準備が、どこで始まったのか</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        違うFXを使っても、別のサンプルに差し替えても、
+        <strong>この役割が守られていれば、ドロップは問題なく成立します。</strong>
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまで整理できた人は、自然とこうなる</div>
+        <ul>
+          <li>FXを足す前に「役割」を考える</li>
+          <li>ループに戻っても迷わない</li>
+          <li>展開を“感覚”ではなく<strong>“設計”で作れる</strong></li>
+        </ul>
+        <p><em>つまり、STEP7で構成を組む準備が、この時点ですでに整っています。</em></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここから先は</div>
+        <p>音を増やすフェーズではありません。<strong>意味を配置するフェーズ</strong>です。</p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 6-1 ── クリア条件</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、STEP6-1はクリアです。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ドロップの頭にダウンリフターを置き、始まりを明確にした</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">8小節の最後にアップリフターを入れ、次の展開を予告した</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ドロップ終わりにトランジションFXを置き、ブレイクへ橋渡しした</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">それぞれのFXに役割を与え、言葉で説明できる</span></label></li>
+        </ul>
+      </div>
+
+      <p>
+        新しい音は足していません。メロディも変えていません。
+        それでも、ドロップは「ただ鳴っている音」から
+        <strong>意味を持って進む展開</strong>に変わったはずです。
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 6-2</div>
+      <h2 class="sec-title">視点を、<br><em>少しだけ外に広げる。</em></h2>
+
+      <p>
+        STEP6-1では、ドロップの中に<strong>「時間の流れ」と「区切り」</strong>を作るFXを扱いました。
+        これで、ドロップはもう「8小節の繰り返し」ではなく、<em>中で動いているパート</em>として成立しています。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">次にやること</div>
+        <p>今後のステップで必ず使うFXの<strong>“役割理解”</strong>。ライザー・リバースFX・インパクト。</p>
+        <p><strong>ただし、この STEP ではまだ配置しません。</strong></p>
+        <ul>
+          <li>これらのFXは何のために存在するのか</li>
+          <li>どのパート（ビルドアップ／ブレイク）で使われるのか</li>
+          <li>なぜ「盛り上げる音」だと思うと失敗するのか</li>
+        </ul>
+        <p><em>実際に「何小節使うか」「どこに置くか」を決めるのは、STEP7（構成設計）だからです。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step6-overview.html">
+          <em>Previous ── STEP 6 全体解説</em>
+          <b>展開と空気で、<br>8小節を“楽曲”に変える</b>
+        </a>
+        <a class="next" href="step6-2.html">
+          <em>Next ── STEP 6-2</em>
+          <b>展開を支配せよ。<br>FXの役割と思考法を徹底解説</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step6-1.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>
