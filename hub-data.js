@@ -95,9 +95,9 @@ const ROADMAP_DATA = {
       description: "ジャンルに合うボーカルを選び、海外プロのボーカル処理で仕上げる。",
       status: "completed",
       articles: [
-        { id: "4-overview", type: "overview", title: "STEP4 全体解説：ボーカルで\"楽曲の世界観\"を完成させる", noteUrl: "https://note.com/preview/ndd14c3fe8a70?prev_access_key=8c5297acec8813419baf75e6d0375d76", pdfUrl: "step4_overview.pdf", videoUrl: "https://note.com/preview/n7b91551b26a8?prev_access_key=d4b08ddafac59959a9e5f2e1479ec5c1", status: "published" },
-        { id: "4-1", type: "lesson", title: "STEP4-1：もう迷わない。ジャンルに合うボーカルの選び方", noteUrl: "https://note.com/preview/n0432442d2e63?prev_access_key=7ec0b4afc423ae1a14b428b81a8a552c", pdfUrl: "step4-1.pdf", videoUrl: "", status: "published" },
-        { id: "4-2", type: "lesson", title: "STEP4-2：多くのDTMerが一生知らない\"海外プロのボーカル処理\"完全解説", noteUrl: "https://note.com/preview/n6c6a7a25b783?prev_access_key=2095b6a18e40a977c1a7c2e9c36255ae", pdfUrl: "step4-2.pdf", videoUrl: "", status: "published" }
+        { id: "4-overview", type: "overview", title: "STEP4 全体解説：ボーカルで\"楽曲の世界観\"を完成させる", pageUrl: "articles/step4-overview.html", noteUrl: "https://note.com/preview/ndd14c3fe8a70?prev_access_key=8c5297acec8813419baf75e6d0375d76", pdfUrl: "step4_overview.pdf", videoUrl: "https://note.com/preview/n7b91551b26a8?prev_access_key=d4b08ddafac59959a9e5f2e1479ec5c1", status: "published" },
+        { id: "4-1", type: "lesson", title: "STEP4-1：もう迷わない。ジャンルに合うボーカルの選び方", pageUrl: "articles/step4-1.html", noteUrl: "https://note.com/preview/n0432442d2e63?prev_access_key=7ec0b4afc423ae1a14b428b81a8a552c", pdfUrl: "step4-1.pdf", videoUrl: "", status: "published" },
+        { id: "4-2", type: "lesson", title: "STEP4-2：多くのDTMerが一生知らない\"海外プロのボーカル処理\"完全解説", pageUrl: "articles/step4-2.html", noteUrl: "https://note.com/preview/n6c6a7a25b783?prev_access_key=2095b6a18e40a977c1a7c2e9c36255ae", pdfUrl: "step4-2.pdf", videoUrl: "", status: "published" }
       ]
     },
 

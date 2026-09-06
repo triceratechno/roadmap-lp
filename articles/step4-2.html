@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP4-2：海外プロのボーカル処理 完全解説｜ロードマップPROコース</title>
+<meta name="description" content="EQ→Plateリバーブ→コンプレッサー→センド＋ダッキング→グルーコンプ。この5つの順番だけで、声を前に残しながら空間に溶かし、言葉がはっきり聞こえる状態を作る。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP4-2：多くのDTMerが一生知らない“海外プロのボーカル処理”完全解説">
+<meta property="og:description" content="原因は、センスでも耳でもなく“処理の順番と役割”を知らなかっただけ。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step4-2.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906f">
+</head>
+
+<body class="is-locked" data-prev-id="4-1" data-article-id="4-2" data-next-id="5-overview">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 4-2 ／ Five In Order</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 4-2</div>
+  <h1 class="hero-en">Five<br>In Order</h1>
+  <p class="hero-ja">多くのDTMerが一生知らない<br>“海外プロのボーカル処理”。</p>
+  <p class="hero-lead">EQ → Plate → コンプ → センド → グルー。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約12分</b></span>
+    <span>STEP <b>4-2</b> ／ 2</span>
+    <span>手順 <b>5</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">良い声を乗せたのに、<br><em>浮いてしまう。</em></h2>
+
+      <p class="lead-p">
+        EQを触っても、コンプをかけても、リバーブを足しても、
+        なぜかプロっぽいまとまりが出てこない。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">原因はシンプルです</div>
+        <p><strong>“ボーカルを馴染ませる正しい順番”を知らなかっただけ。</strong></p>
+      </div>
+
+      <p>
+        エド・シーラン、アデル、ジョナス・ブルーを手がけるエンジニアの手法を研究し、
+        <strong>DTM初心者でも順番どおりに再現できる形</strong>に落とし込みました。
+      </p>
+
+      <h3 class="sub-title">ボーカルの基本処理は、この5ステップだけ</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">EQ<span class="anatomy-en">Space</span></div>
+          <div class="anatomy-desc">不要な成分を削り、ボーカルの<strong>「居場所」</strong>を作る。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">Plate リバーブ<span class="anatomy-en">Texture</span></div>
+          <div class="anatomy-desc">ツヤと質感を足して、<strong>“前に残る声”</strong>を仕込む。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">コンプレッサー<span class="anatomy-en">Merge</span></div>
+          <div class="anatomy-desc">声とツヤを、<strong>ひとつの完成されたボーカル</strong>にする。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">センド ＋ ダッキング<span class="anatomy-en">Distance</span></div>
+          <div class="anatomy-desc">空間に入れつつ、<strong>言葉と一音目を守る。</strong></div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">5</div>
+          <div class="anatomy-name">グルーコンプ<span class="anatomy-en">Glue</span></div>
+          <div class="anatomy-desc">声と空間を接着し、<strong>最初からそこにあった音</strong>にする。</div>
+        </div>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この順番は変えないでください</div>
+        <p>
+          多くのDTMerが迷子になる原因は、空間系を足しすぎることでもコンプ不足でもありません。
+          <em>“どこで何を作って、どこでまとめるか”を理解していないだけ</em>です。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPのゴール</div>
+        <p>
+          ボーカルを鳴らした瞬間、<strong>「最初の一音が聞こえる」「声が前に残っている」</strong>と感じられればクリアです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Space</div>
+      <h2 class="sec-title">EQで不要な成分を削り、<br>ボーカルの<em>「居場所」</em>を作る</h2>
+
+      <p>
+        EQは「音作り」の工程ではありません。<strong>“設計”の工程</strong>です。
+        目的はひとつだけ。<em>「この声が、どこに立つのか」を決めること。</em>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">EQをしないまま進むとどうなるか</div>
+        <ul>
+          <li>濁った低中域にコンプが反応する</li>
+          <li>不要な帯域にリバーブが付着する</li>
+          <li>結果、<strong>「モコモコした残響」</strong>になる</li>
+        </ul>
+        <p><em>リバーブが悪いのではなく、送る前の声が汚れているだけです。</em></p>
+      </div>
+
+      <h3 class="sub-title">①-1　mvMeter で 0VU に揃える</h3>
+
+      <p>
+        EQの前に、必ずやることがあります。<strong>音量の基準を作ること</strong>です。
+      </p>
+
+      <p>
+        EQもコンプもリバーブも、<em>入力音量によって挙動が変わります。</em>
+        音量がバラバラなまま処理すると、こうなります。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">基準を作らないと</div>
+        <ul>
+          <li>EQで削りすぎたり足りなかったりする</li>
+          <li>コンプが強くかかりすぎる</li>
+          <li>リバーブが過剰に反応する</li>
+        </ul>
+        <p>
+          <strong>「設定は合っているはずなのに、毎回音が変わる」</strong>の原因のほとんどが、ここを飛ばしていることです。
+        </p>
+      </div>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">mvMeter2 をインサート<span class="anatomy-en">Insert</span></div>
+          <div class="anatomy-desc">ボーカルトラックの先頭に挿す。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">モードを VU に<span class="anatomy-en">Mode</span></div>
+          <div class="anatomy-desc"><strong>VU（−18dB 基準）</strong>に設定する。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">Gain で 0VU に<span class="anatomy-en">Adjust</span></div>
+          <div class="anatomy-desc">平均が <strong>0VU</strong> になるように Gain を調整する。</div>
+        </div>
+      </div>
+
+      <a class="linkcard" href="https://www.tbproaudio.de/products/mvmeter2" target="_blank" rel="noopener">
+        <span class="linkcard-thumb"><img src="img/link/mvmeter2.jpg" alt="mvMeter2 のVUメーター画面" loading="lazy"></span>
+        <span class="linkcard-text">
+          <span class="linkcard-tag linkcard-tag--free">無料</span>
+          <span class="linkcard-eyebrow">Metering ── この手順で使う</span>
+          <span class="linkcard-title">mvMeter2</span>
+          <span class="linkcard-sub">VU（−18dB基準）モードで使用。ボーカルは 0VU が基準値。</span>
+          <span class="linkcard-domain">tbproaudio.de</span>
+        </span>
+      </a>
+
+      <p>これで初めて、<strong>すべての工程が同じ土俵に立ちます。</strong></p>
+
+      <h3 class="sub-title">①-2　EQ で中低域を整理する</h3>
+
+      <p>
+        次に行うのが、<strong>150〜300Hz を中心とした中低域の整理</strong>です。
+        ボーカルが馴染まない原因の<em>半分以上</em>は、この帯域にあります。
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この帯域に潜んでいるもの</div>
+        <ul>
+          <li>声の胴鳴り</li>
+          <li>マイクの箱鳴り</li>
+          <li>部屋鳴りの残骸</li>
+        </ul>
+        <p>
+          これらが残ったまま空間処理へ進むと、
+          <strong>「声が前にも後ろにも行かない」最悪の状態</strong>になります。
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>帯域</th><th>処理</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>Low Cut</th><td><strong>150 〜 300Hz</strong></td></tr>
+            <tr><th>200 〜 400Hz</th><td>軽く削る</td></tr>
+            <tr><th>5 〜 8kHz</th><td>残して明瞭さを確保</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここでの合言葉</div>
+        <p><strong>「削ってから、足す」</strong></p>
+        <p>
+          まだ前に出さない。輝かせない。<em>ただ“置ける声”にするだけ</em>です。
+        </p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この工程を雑にすると</div>
+        <p>後続の Plate リバーブ・コンプ・センドが<strong>すべて意味を失います。</strong></p>
+        <p>逆に、<em>ここを丁寧にやるだけで後工程は驚くほど簡単になります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>EQで中低域を整理し「置ける声」にできたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Texture</div>
+      <h2 class="sec-title">Plateリバーブで<br><em>“ツヤと質感”</em>を与える</h2>
+
+      <p>
+        手順①で、ボーカルはすでに「使える状態」になっています。
+        ここで多くのDTMerは「よし、次は空間だ」と Hall や Room を使い始めます。
+        <strong>これが、ボーカルが遠くなる最大の分岐点です。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここで入れるのは“空間”ではない</div>
+        <p><strong>質感を整えるための Plate です。</strong></p>
+      </div>
+
+      <h3 class="sub-title">なぜ Plate なのか？</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>種類</th><th>性質</th><th>結果</th></tr></thead>
+          <tbody>
+            <tr><th>Hall</th><td>空間が広すぎ・初期反射が遅い</td><td>声が<strong>後ろへ引っ張られる</strong></td></tr>
+            <tr><th>Room</th><td>空間が近すぎ・箱鳴り感が出やすい</td><td>曲全体と<strong>馴染みにくい</strong></td></tr>
+            <tr class="is-focus"><th>Plate</th><td><strong>反射が均一・初期反射が速い</strong></td><td><strong>距離感を崩さず質感だけ足せる</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><em>「前に残る声」には Plate 一択です。</em></p>
+
+      <h3 class="sub-title">なぜコンプの前に入れるのか？</h3>
+
+      <div class="callout callout--core">
+        <div class="callout-head">Plate はコンプの BEFORE に入れる</div>
+        <p>
+          リバーブ成分ごとコンプでまとめることで、<strong>声とツヤが“一体化”します。</strong>
+        </p>
+        <p>
+          後段に回すと、<em>ツヤが別物として浮き、センド処理と干渉します。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">設定の基準</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パラメータ</th><th>設定値</th></tr></thead>
+          <tbody>
+            <tr><th>Decay</th><td><strong>1.2 〜 1.8 秒</strong></td></tr>
+            <tr class="is-focus"><th>PreDelay</th><td><strong>20 〜 40ms</strong></td></tr>
+            <tr><th>Mix</th><td><strong>8 〜 15%</strong></td></tr>
+            <tr><th>Low Cut</th><td>300Hz</td></tr>
+            <tr><th>High Cut</th><td>8kHz</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">PreDelay が重要な理由</div>
+        <p>
+          立ち上がりは<strong>ドライが先に出て、残響は後ろに回ります。</strong>
+        </p>
+        <p><em>つまり、声が前に残ったまま、ツヤだけが加わる。</em></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">その他のパラメータについて</div>
+        <p>
+          リバーブプラグインにはダンピング・DIFF・MOD・EQ など多くのパラメータがあります。
+          <strong>EQで 200Hz以下と 8,000Hz以上をカットする</strong>のがおすすめです。
+        </p>
+        <p>プリセット「<strong>Plate Vocal</strong>」から始めるのも◎。</p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">手順②の役割</div>
+        <p><strong>「声を空間に入れる準備」</strong></p>
+        <p>
+          まだ奥行きは作らない。距離は動かさない。
+          <em>ただ“前に残れる質感”を仕込むだけ</em>です。
+        </p>
+      </div>
+
+      <h3 class="sub-title">DAW付属プラグインでのやり方</h3>
+
+      <p>
+        「有料プラグインを買わないといけない…」そう思った人もいますよね。<strong>安心してください。</strong>
+        DAW付属のプラグインでもできる Plate リバーブの設定を、動画で徹底解説しています。
+      </p>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/xw9rgphwtzU"
+            title="【リバーブ】Ableton Live付属プラグインリバーブを使ったplateリバーブ艶出し方法解説"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-cap">解説動画（8分）── 「プラグインを買わないとうまく音を作れない…」というプラグインマニアになってしまうパターンを、ここで回避してください。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>Plateリバーブでツヤを足し「前に残る声」を作れたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Merge</div>
+      <h2 class="sec-title">コンプレッサーで<br><em>声とツヤをまとめる</em></h2>
+
+      <p>
+        手順②までで「声」と「ツヤ」が生まれました。
+        <strong>しかしこの時点では、まだ別々に存在している状態です。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここでのコンプの目的</div>
+        <p>音量を揃えることでも、前に押し出すことでもありません。</p>
+        <p><strong>オリジナルの声と Plate リバーブを“違和感なく溶かし合わせる”こと。</strong></p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この工程を入れないとどうなるか</div>
+        <ul>
+          <li>フレーズごとにツヤの出方が変わる</li>
+          <li>語尾だけリバーブが浮く</li>
+          <li>声と空気が別レイヤーに聞こえる</li>
+        </ul>
+        <p>
+          <em>「音は綺麗なのに、なぜかバラバラに感じる」</em>というのは、
+          センド処理以前に<strong>ボーカル内部の統一感ができていないサイン</strong>です。
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パラメータ</th><th>設定値</th><th>理由</th></tr></thead>
+          <tbody>
+            <tr><th>Ratio</th><td><strong>3 〜 4 : 1</strong></td><td>溶かし合わせるのに十分な圧縮</td></tr>
+            <tr class="is-focus"><th>Attack</th><td><strong>20 〜 30ms</strong></td><td>声の立ち上がりを殺さない</td></tr>
+            <tr class="is-focus"><th>Release</th><td><strong>80 〜 120ms</strong></td><td>Plateの余韻と声の減衰を揃える</td></tr>
+            <tr><th>GR</th><td><strong>−3 〜 −6dB</strong></td><td>質感を固定する深さ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">よくある失敗</div>
+        <ul>
+          <li>コンプをかけすぎて<strong>ツヤが潰れる</strong></li>
+          <li>アタックが速すぎて<strong>Plateの美しさが消える</strong></li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③の役割</div>
+        <p><strong>「声とツヤを、ひとつの“完成されたボーカル”にする工程」</strong></p>
+        <p>
+          ここまでで、<em>ボーカル単体としては完成</em>です。
+          次の手順④では、この完成したボーカルを曲全体の空間へ<strong>“外側から”馴染ませます。</strong>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>声とPlateが一体化した「完成されたボーカル」を作れたら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順④ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Distance</div>
+      <h2 class="sec-title">センド処理で<br><em>「言葉が聞こえる距離感」</em>を完成させる</h2>
+
+      <p>
+        手順③までで、音量・質感・一体感がすべて整った<strong>ボーカル単体</strong>が完成しています。
+        ここから行うのは、その完成したボーカルを<em>曲全体の「空気」に入れる工程</em>です。
+      </p>
+
+      <h3 class="sub-title">なぜ空間処理はセンドで行うのか？</h3>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">Insert で直がけ ── NG</p>
+          <ul>
+            <li>ボーカル専用の空間ができる</li>
+            <li>伴奏と空間スケールが合わない</li>
+            <li>どうしても浮いて聞こえる</li>
+          </ul>
+          <p>
+            これは<strong>設定の問題ではなく、構造上の問題</strong>です。
+          </p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">センドで処理 ── 正解</p>
+          <ul>
+            <li>ボーカルと伴奏が<strong>同じ空間レイヤーを共有</strong></li>
+            <li>“別録り感”が消える</li>
+            <li>曲全体の奥行きが一体化する</li>
+          </ul>
+          <p>
+            ボーカルが<em>“曲の中で鳴っている音”</em>として成立します。
+          </p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">センドで作る2つの空間</h3>
+
+      <div class="cards cards--2">
+        <div class="card">
+          <span class="card-en">Send 01</span>
+          <h3 class="card-title">リバーブセンド ── 距離感・奥行き</h3>
+          <ul>
+            <li><strong>Hall系</strong>を使用</li>
+            <li>Low Cut：<strong>180 〜 250Hz</strong></li>
+            <li>High Cut：<strong>8kHz 前後</strong></li>
+          </ul>
+          <p>
+            低域を切る → 濁りを防ぐ。高域を切る → 子音の被りを防ぐ。<br>
+            <em>リバーブは感じるが、ボーカルの輪郭は崩れない状態</em>になります。
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-en">Send 02</span>
+          <h3 class="card-title">ディレイセンド ── 余韻・広がり</h3>
+          <ul>
+            <li><strong>1/4 or 1/8</strong></li>
+            <li>EQで中低域を削る</li>
+            <li>必要に応じて軽く歪み</li>
+          </ul>
+          <p>
+            帯域を絞ることで、「聞こえる」より
+            <strong>「気づいたらある」余韻</strong>になります。
+          </p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">決定的ポイント：ダッキングは必ず入れる</h3>
+
+      <p>
+        センドに送っただけでは、リバーブ／ディレイが<strong>オリジナルボーカルと被ってしまいます。</strong>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">送っただけで必ず起きる問題</div>
+        <ul>
+          <li>歌い出しの<strong>最初の一音が聞こえない</strong></li>
+          <li>モヤっとして何を言っているかわからない</li>
+        </ul>
+        <p>
+          これはリバーブが多いのでも設定が悪いのでもありません。
+          <em>「同時に鳴りすぎている」ことが原因</em>です。
+        </p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col">
+          <p class="vs-tag">ボーカルが鳴っている間</p>
+          <p><strong>空間は引っ込む</strong></p>
+        </div>
+        <div class="vs-col">
+          <p class="vs-tag">ボーカルの合間</p>
+          <p><strong>空間だけが広がる</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ダッキングで手に入る状態</div>
+        <ul>
+          <li>ボーカルが前に立ち</li>
+          <li>歌詞が<strong>100%聞こえ</strong></li>
+          <li>それでも空間は失われない</li>
+        </ul>
+        <p>
+          <strong>「前に立つ声」＋「合間で広がる空間」</strong>──
+          <em>このコントラストこそが、プロのボーカル距離感の正体</em>です。
+        </p>
+      </div>
+
+      <h3 class="sub-title">ダッキング設定例（リバーブBus・ディレイBus 共通）</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>設定値</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>サイドチェイン</th><td><strong>ボーカルをトリガーに</strong></td></tr>
+            <tr><th>Ratio</th><td><strong>7.5 : 1</strong></td></tr>
+            <tr><th>Attack</th><td><strong>0.1 〜 3ms</strong></td></tr>
+            <tr><th>Release</th><td><strong>10 〜 80ms</strong></td></tr>
+            <tr class="is-focus"><th>GR</th><td><strong>−5dB を目安</strong>（Thresholdで調整）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">よくある失敗</div>
+        <ul>
+          <li>Release を遅くしすぎて<strong>空間が戻らない</strong></li>
+          <li>GR が浅く、<strong>ダッキングが機能していない</strong></li>
+        </ul>
+        <p>結果、<em>最初の一音が聞こえないままになります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順④ クリア条件</div>
+        <p>センド＋ダッキングで「言葉が聞こえる距離感」を作れたら、手順④はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順⑤ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順⑤ ── Glue</div>
+      <h2 class="sec-title">グルーコンプで<br><em>ひとつの声にする</em></h2>
+
+      <p>
+        手順④までで、オリジナル・リバーブ・ディレイが正しい距離感で並んでいます。
+        <strong>しかし、まだわずかに「別々のレイヤー」として存在しています。</strong>
+      </p>
+
+      <p>
+        プロのボーカルは、声・ツヤ・空間・余韻が<em>最初から一体だったかのように聞こえる。</em>
+        これを実現するのが、最後のグルーコンプです。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">グルーコンプでやっていることの正体</div>
+        <p>音量調整でも派手な圧縮でもありません。</p>
+        <p><strong>「仕上げたボーカル」と空間の“動きそのもの”を揃えること。</strong></p>
+        <ul>
+          <li>声が動けば、空間も一緒に動く</li>
+          <li>声が止まれば、空間も自然に収束する</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この工程を省くと</div>
+        <p>
+          フレーズ終わりで違和感が残り、<strong>空間の余韻だけが少し浮きます。</strong>
+        </p>
+        <p><em>「音は合っているのに、プロ感が出ない」惜しいミックス</em>になります。</p>
+      </div>
+
+      <h3 class="sub-title">バスにまとめるもの</h3>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">仕上げたボーカル<span class="anatomy-en">Vocal</span></div>
+          <div class="anatomy-desc">EQ → Plate → コンプ まで済んだもの。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">リバーブ Bus<span class="anatomy-en">Reverb</span></div>
+          <div class="anatomy-desc">センドで作った空間。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">ディレイ Bus<span class="anatomy-en">Delay</span></div>
+          <div class="anatomy-desc">センドで作った余韻。</div>
+        </div>
+      </div>
+
+      <p>この<strong>バスに Glue Compressor を挿します。</strong></p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パラメータ</th><th>設定値</th></tr></thead>
+          <tbody>
+            <tr><th>Ratio</th><td><strong>2 〜 4 : 1</strong></td></tr>
+            <tr><th>Attack</th><td><strong>20 〜 30ms</strong>（声の立ち上がりを殺さない）</td></tr>
+            <tr><th>Release</th><td><strong>Auto</strong> または <strong>100 〜 300ms</strong></td></tr>
+            <tr class="is-focus"><th>GR</th><td><strong>1 〜 2dB 程度</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">効いているか分からないくらいで正解</div>
+        <p>
+          <strong>外すと違和感が出る</strong>、その状態がベストです。
+        </p>
+        <p><em>グルーは調整ではなく、接着です。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順⑤ クリア条件</div>
+        <p>グルーコンプで声と空間が一体化したら、STEP4-2はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== おさらい ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Review</div>
+      <h2 class="sec-title">今回の<em>おさらい</em></h2>
+
+      <p>
+        「良いボーカルなのに、なぜ曲に馴染まないのか？」の答えはシンプルです。
+        原因は、センスでも耳でもなく<strong>“処理の順番と役割”を知らなかっただけ。</strong>
+      </p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>手順</th><th>処理</th><th>役割</th></tr></thead>
+          <tbody>
+            <tr><th>①</th><td>EQ</td><td>不要な成分を削り「居場所」を作る</td></tr>
+            <tr><th>②</th><td>Plate リバーブ</td><td>ツヤと質感で“前に残る声”を仕込む</td></tr>
+            <tr><th>③</th><td>コンプレッサー</td><td>声とツヤを一つの完成されたボーカルにまとめる</td></tr>
+            <tr class="is-focus"><th>④</th><td>センド＋ダッキング</td><td><strong>空間に入れつつ最初の一音と言葉を守る</strong></td></tr>
+            <tr><th>⑤</th><td>グルーコンプ</td><td>声と空間を接着し最初からそこにあった音にする</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ここまでできていれば</div>
+        <ul>
+          <li>浮かない・濁らない・遠くならない</li>
+          <li>言葉がはっきり聞こえる</li>
+        </ul>
+        <p>あなたのボーカルは<strong>「曲の中心に座るボーカル」</strong>になっています。</p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 4-2 ── 完成チェック</h2>
+          <div class="clear-count">0 / 5</div>
+        </div>
+        <p class="clear-sub">この5つを通過したら、ボーカルは完成です。</p>
+
+        <ul class="clear-list">
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">mvMeterで 0VU に揃えてから、EQで150〜300Hzをローカットした</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">Plate（Mix 8〜15%）をコンプの前に挿した</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">コンプ（Attack 20〜30ms / GR −3〜−6dB）で声とツヤを一体化した</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">リバーブ・ディレイはセンドで作り、ダッキング（GR −5dB）を入れた</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">歌い出しの最初の一音が、はっきり聞こえる</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 完了報告 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Report</div>
+      <h2 class="sec-title">STEP4、<em>完了です。</em></h2>
+
+      <p>
+        STEP4が完了したら、<strong>サポートラインに「STEP4完了」と送ってください。</strong>
+        下のテンプレートをコピーして使えます。
+      </p>
+
+      <div class="template">
+        <div class="template-head">
+          <span class="template-title">▼ STEP4 完了報告テンプレ（コピペOK）</span>
+          <button type="button" class="copy-btn" data-copy="【STEP4完了報告】ボーカル設計
+・ジャンル／世界観：
+・使ったサンプル名：
+・BPM / キー：　　　　（曲と一致：はい / トランスポーズ　　半音）
+・ドライサンプル：はい / いいえ
+
+処理の順番
+① EQ　Low Cut　　　Hz
+② Plate　Decay　　秒 / PreDelay　　ms / Mix　　%
+③ コンプ　GR　　dB
+④ センド＋ダッキング　GR　　dB
+⑤ グルーコンプ　GR　　dB
+
+チェック結果
+・最初の一音が聞こえる：はい / いいえ
+・言葉がはっきり聞こえる：はい / いいえ
+
+気になっている点：">コピー</button>
+        </div>
+        <p class="template-body">【STEP4完了報告】ボーカル設計
+・ジャンル／世界観：
+・使ったサンプル名：
+・BPM / キー：　　　　（曲と一致：はい / トランスポーズ　　半音）
+・ドライサンプル：はい / いいえ
+
+処理の順番
+① EQ　Low Cut　　　Hz
+② Plate　Decay　　秒 / PreDelay　　ms / Mix　　%
+③ コンプ　GR　　dB
+④ センド＋ダッキング　GR　　dB
+⑤ グルーコンプ　GR　　dB
+
+チェック結果
+・最初の一音が聞こえる：はい / いいえ
+・言葉がはっきり聞こえる：はい / いいえ
+
+気になっている点：</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 5</div>
+      <h2 class="sec-title">メロディーは“センス”ではない。<br><em>“手順”で作れる。</em></h2>
+
+      <p>
+        次の【STEP5】では、ダンスミュージックを作る人が必ずどこかで立ち止まるテーマ
+        <strong>「どうやって“刺さるメロディー”を作ればいいのか？」</strong>に進みます。
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">そこには「型」がある</div>
+        <ul>
+          <li>迷わない</li>
+          <li>無駄に作り直さない</li>
+          <li>最短で完成まで持っていける</li>
+        </ul>
+        <p><em>明確な「型」が存在します。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step4-1.html">
+          <em>Previous ── STEP 4-1</em>
+          <b>もう迷わない。<br>ジャンルに合うボーカルの選び方</b>
+        </a>
+        <a class="next" href="https://note.com/preview/na257ddfdbe08?prev_access_key=932c452bc1530d558f7144ceb02e11e5" target="_blank" rel="noopener">
+          <em>Next ── STEP 5 全体解説</em>
+          <b>8小節で止まらない。<br>1曲を引っ張るメロディ設計</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step4-2.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906f"></script>
+<script src="_article.js?v=20260906f"></script>
+</body>
+</html>

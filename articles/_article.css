@@ -2160,3 +2160,13 @@ a.dl-item:hover {
   .stack-name { font-size: 14px; }
   .stack-tag { padding: 3px 8px; font-size: 9px; }
 }
+
+/* ファイル名・検索ワードなどを本文中で示すとき */
+code {
+  padding: 2px 7px;
+  font-family: 'SFMono-Regular', Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--white);
+  background: var(--deep);
+  border: 1px solid var(--border);
+}
