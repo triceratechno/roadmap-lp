@@ -240,19 +240,6 @@
 
       <p>上から順に、<strong>この順番のまま</strong>挿していってください。</p>
 
-      <p>
-        画面は Studio One ですが、<strong>やることはどの DAW でも同じ</strong>です。
-        Ableton Live なら EQ Eight のローカットで同じことができます。
-      </p>
-
-      <figure class="figure">
-        <img src="img/step2-4/eq-ableton.webp" alt="Ableton Live の EQ Eight でバンド1をハイパスにし、低域を落とした状態" loading="lazy" width="496" height="198">
-        <figcaption>
-          Ableton Live の EQ Eight。左端のバンドをハイパスにして低域を落とします。<br>
-          ※ 画面の Freq は 178Hz ですが、<strong>この手順では 100Hz に合わせてください。</strong>
-        </figcaption>
-      </figure>
-
       <ol class="chain">
         <li class="chain-step">
           <div class="chain-head">
@@ -264,13 +251,13 @@
           </div>
           <div class="chain-body">
             <figure class="chain-shot">
-              <img src="img/step2-4/eq-first.webp" alt="Pro EQ3 で 100Hz 以下を 48dB/Oct でカットした状態" loading="lazy">
-              <figcaption class="chain-cap">画面は Studio One の Pro EQ3。左下の LC（ローカット）だけを使い、他のバンドは触っていない。</figcaption>
+              <img src="img/step2-4/eq-lowcut.png" alt="Ableton Live の EQ Eight でバンド1をハイパスにし、Freq 100Hz で低域をカットした状態" loading="lazy" width="626" height="248">
+              <figcaption class="chain-cap">赤丸の2か所だけ。<strong>バンド1をハイパス（左端の形）にして、Freq を 100Hz。</strong>他のバンドは触りません。</figcaption>
             </figure>
             <div class="chain-desc">
               <ul class="chain-params">
                 <li><b>カット帯域</b><span>100Hz 以下</span></li>
-                <li><b>スロープ</b><span>48dB/Oct</span></li>
+                <li><b>バンド</b><span>1をハイパスに</span></li>
               </ul>
               <p>超低域はキック・サブの領域。<strong>ここを削るだけで中高域のアタックが前に出ます。</strong></p>
             </div>
@@ -334,16 +321,16 @@
           </div>
           <div class="chain-body">
             <figure class="chain-shot">
-              <img src="img/step2-4/eq-second.webp" alt="処理後にもう一度 100Hz 以下をカットした状態。アナライザーの山が増えている" loading="lazy">
-              <figcaption class="chain-cap">設定は1回目と完全に同じ。でもアナライザーを見ると、100Hz 付近から上の山が明らかに育っている。これが“戻ってきた低域”。</figcaption>
+              <img src="img/step2-4/eq-lowcut.png" alt="処理後にもう一度、EQ Eight で 100Hz 以下をカットした状態" loading="lazy" width="626" height="248">
+              <figcaption class="chain-cap"><strong>1回目とまったく同じ設定です。</strong>新しく EQ をもう一つ挿して、同じハイパスを 100Hz でかけ直します。</figcaption>
             </figure>
             <div class="chain-desc">
               <ul class="chain-params">
                 <li><b>カット帯域</b><span>100Hz 以下</span></li>
-                <li><b>スロープ</b><span>48dB/Oct（1回目と同じ）</span></li>
+                <li><b>バンド</b><span>1をハイパスに（1回目と同じ）</span></li>
               </ul>
               <p>CamelCrusher の歪みで<strong>低域が再び出てくる</strong>ため、もう一度同じところをカットします。</p>
-              <p><em>「なぜ2回やるのか」の答えは、この画面の中にあります。</em></p>
+              <p><em>同じことを繰り返すのではなく、“歪みで戻ってきた低域”を落とすための2回目です。</em></p>
             </div>
           </div>
         </li>
