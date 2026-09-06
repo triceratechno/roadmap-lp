@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP5-3：8小節を“展開する音”に変える｜ロードマップPROコース</title>
+<meta name="description" content="メロディを書き直さずに、Cutoffオートメーションだけで同じ8小節を“前に進んでいる音楽”に変える。やりすぎを防ぐON/OFFチェックまで。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP5-3：8小節を“展開する音”に変える──Cutoffで作るプロの存在感設計">
+<meta property="og:description" content="効いてるか分からないくらいが、一番“プロっぽい”。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step5-3.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906f">
+</head>
+
+<body class="is-locked" data-prev-id="5-2" data-article-id="5-3" data-next-id="5-4">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 5-3 ／ Loop To Flow</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 5-3</div>
+  <h1 class="hero-en">Loop<br>To Flow</h1>
+  <p class="hero-ja">8小節を“展開する音”に変える。</p>
+  <p class="hero-lead">Cutoffで作る、プロの存在感設計。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約9分</b></span>
+    <span>STEP <b>5-3</b> ／ 5</span>
+    <span>手順 <b>4</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <!-- ===== 導入 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Problem</div>
+      <h2 class="sec-title">なぜ、8小節のメロディは<br><em>すぐ飽きてしまうのか</em></h2>
+
+      <p class="lead-p">
+        音程は悪くない。リズムも合っている。コードとも噛み合っている。
+        <strong>それなのに、再生しているうちに自分で飽きてくる。</strong>
+      </p>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">多くの人がやること</p>
+          <ul>
+            <li>音を足す</li>
+            <li>別のフレーズを作る</li>
+            <li>新しいプリセットを探す</li>
+          </ul>
+          <p><strong>どれも根本解決になりません。</strong></p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">本当の原因</p>
+          <p><strong>メロディじゃない。</strong></p>
+          <p>
+            <em>時間の中で、音がまったく変化していないこと。</em>
+          </p>
+        </div>
+      </div>
+
+      <p>
+        プロの楽曲を聴くと、印象的なメロディほど<strong>驚くほどシンプル</strong>です。
+        それでも飽きないのは、<em>音が「少しずつ変わり続けている」から。</em>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">このSTEPで得られるのは、ひとつだけ</div>
+        <p>
+          <strong>「8小節のメロディループを、書き直さずに“展開しているように聴かせる技術”」</strong>
+        </p>
+        <p>
+          メロディを増やす必要も、音数を足す必要も、新しいプリセットを探す必要もありません。
+          <em>Cutoffのオートメーションだけで、同じ8小節を“前に進んでいる音楽”に変えます。</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== Cutoffとは ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Basics</div>
+      <h2 class="sec-title"><em>Cutoff</em> とは何か</h2>
+
+      <p>
+        シンセのフィルターセクションにある
+        <span class="term" data-term="Cutoff" data-desc="フィルターが効き始める周波数を決めるつまみ。ローパスフィルターなら、この周波数より上の音がカットされる。">Cutoff（カットオフ）</span>
+        つまみ。一言でいうと ──
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">Cutoff の正体</div>
+        <p><strong>「どこまでの高い音を通すか」を決めるつまみ。</strong></p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col">
+          <p class="vs-tag">Cutoff を下げると</p>
+          <ul>
+            <li>高い音（高周波数）が削られる</li>
+            <li>音がこもる</li>
+            <li>暗く、奥に引っ込んだ印象になる</li>
+          </ul>
+          <p><strong>→ エネルギーが下がったように聴こえる</strong></p>
+        </div>
+        <div class="vs-col">
+          <p class="vs-tag">Cutoff を上げると</p>
+          <ul>
+            <li>高い音までしっかり出る</li>
+            <li>音が明るくなる</li>
+            <li>前に出てくる印象になる</li>
+          </ul>
+          <p><strong>→ エネルギーが上がったように聴こえる</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">つまり Cutoff とは</div>
+        <p>
+          <strong>音量を変えずに、音の“勢い”や“前後感”をコントロールできるノブ。</strong>
+        </p>
+        <p>
+          音量を上げ下げすると不自然になりやすい。
+          でもCutoffなら、<em>メロディを壊さず、印象だけを変えられます。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">音色づくりだけで終わらせない</h3>
+
+      <p>
+        多くのDTMerは、Cutoffを「音色づくりのためのつまみ」だと思っています。それも正しい。
+        <strong>でも、プロはもう一段深く使っています。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">もう一つの使い方</div>
+        <p><strong>Cutoff は、展開を作るためのつまみでもある。</strong></p>
+        <p>
+          同じメロディ・同じリズム・同じ音色でも、
+          <em>Cutoffを時間軸で動かすだけで、音楽は「進んでいるように聴こえる」。</em>
+        </p>
+      </div>
+
+      <p>ここが分かれば、<strong>8小節ループはもう敵じゃない。</strong></p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順① ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Fix</div>
+      <h2 class="sec-title">動かす前に、<em>音を固定する</em></h2>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">ここで多くの人が失敗する</div>
+        <ul>
+          <li>音作りをしながら Cutoff を書く</li>
+          <li>プリセットを変えながらオートメーションを書く</li>
+        </ul>
+        <p><strong>これは順番が逆です。</strong></p>
+      </div>
+
+      <p>STEP5-3に入る前に、次の状態を必ず作っておいてください。</p>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">メロディは8小節で完成している<span class="anatomy-en">Melody</span></div>
+          <div class="anatomy-desc">STEP5-2の土台ループ。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">リズムもすでに決まっている<span class="anatomy-en">Rhythm</span></div>
+          <div class="anatomy-desc">ドラムと噛み合った状態。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">フィルタータイプは固定<span class="anatomy-en">Filter</span></div>
+          <div class="anatomy-desc">LPF など。途中で変えない。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">レゾナンスも基本触らない<span class="anatomy-en">Reso</span></div>
+          <div class="anatomy-desc">動かすのは Cutoff だけ。</div>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">合言葉</div>
+        <p><strong>「この音で行く」と決めてから、動かす。</strong></p>
+        <p>
+          これができていないと、Cutoffを動かしても
+          <em>「何が良くなったのか分からない」状態になります。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>音を固定して「この音で行く」と決められたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順② ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Curve</div>
+      <h2 class="sec-title">Cutoffオートメーションの<br><em>“基本形”</em>を作る</h2>
+
+      <p>難しいことを一切考えず、<strong>8小節に1本の流れ</strong>を作ります。</p>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">少し閉じた位置からスタート<span class="anatomy-en">Start</span></div>
+          <div class="anatomy-desc">全開ではなく、やや暗いところから始める。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">8小節かけて、ゆっくり開く<span class="anatomy-en">Open</span></div>
+          <div class="anatomy-desc">なだらかな右肩上がりのカーブを書くイメージ。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">急な段差を作らない<span class="anatomy-en">Smooth</span></div>
+          <div class="anatomy-desc">カクカクさせない。あくまで「流れ」。</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">判断基準（超重要）</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>位置</th><th>感じ方</th></tr></thead>
+          <tbody>
+            <tr><th>1〜2小節目</th><td>やや暗い</td></tr>
+            <tr><th>4小節目</th><td>少し明るくなったと感じる</td></tr>
+            <tr class="is-focus"><th>8小節目</th><td><strong>前に出てきたと感じる</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">数値は覚えなくていい</div>
+        <p>
+          この<strong>「感じる」という感覚がすべて</strong>です。
+          数値は曲によって変わるので、<em>Hzを覚える必要はありません。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>8小節で1本のなだらかなカーブが書けたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順③ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Restraint</div>
+      <h2 class="sec-title">「変化を感じさせる」と<br><em>「変わりすぎ」</em>の境界線</h2>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">一番やってはいけないこと</div>
+        <p><strong>“効いている感”を出そうとすること。</strong></p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">よくあるNG例</p>
+          <ul>
+            <li>毎小節ごとに Cutoff を上下させる</li>
+            <li>リズムに完全同期させる</li>
+            <li>LFOで細かく揺らす</li>
+          </ul>
+          <p>
+            これをやると、展開ではなく<strong>「落ち着きのなさ」</strong>になります。
+          </p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">正しい考え方</p>
+          <ul>
+            <li>Cutoff は裏方</li>
+            <li>主役はあくまでメロディ</li>
+            <li>変化は<strong>「方向」だけでいい</strong></li>
+          </ul>
+          <p>
+            <em>同じメロディなのに、気づいたら景色が変わっている。</em>これが理想。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>「方向」だけのなだらかな変化で書けたら、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 手順④ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Check</div>
+      <h2 class="sec-title">やりすぎを防ぐ、<br>プロの<em>チェック方法</em></h2>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">オートメーションを OFF にする<span class="anatomy-en">Off</span></div>
+          <div class="anatomy-desc">Cutoffを固定値に戻す。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">再生する<span class="anatomy-en">Play</span></div>
+          <div class="anatomy-desc">8小節を通して聴く。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">もう一度 ON に戻す<span class="anatomy-en">On</span></div>
+          <div class="anatomy-desc">戻した瞬間の印象だけを見る。</div>
+        </div>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">ONにした瞬間「お、戻った」</p>
+          <p><strong>OK</strong></p>
+        </div>
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">ONにした瞬間「うるさい」「派手すぎる」</p>
+          <p><strong>やりすぎ</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">判断のしかた</div>
+        <p>
+          Cutoffは、<strong>戻したときに物足りなくなるかどうか</strong>で判断します。
+        </p>
+        <p><em>効いてるか分からないくらいが、一番“プロっぽい”。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順④ クリア条件</div>
+        <p>ON/OFF切り替えチェックで「お、戻った」と感じたら、手順④はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 実例 ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Case Study</div>
+      <h2 class="sec-title">実例：「prayer」で<br>実際に使った<em>Cutoffオートメーション</em></h2>
+
+      <p>
+        私が実際にリリースした「prayer」で使っているCutoffオートメーションを見てください。
+        このトラックでも、<strong>メロディ自体は8小節でほぼ固定されています。</strong>
+      </p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">やっていること／やっていないこと</div>
+        <ul>
+          <li>フレーズは変えていない</li>
+          <li>音色も途中で差し替えていない</li>
+          <li><strong>Cutoffだけを、時間軸で動かしている</strong></li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">特に意識したのは「開ききらないこと」</div>
+        <p>
+          盛り上げたい場所でも、<strong>Cutoffを全開にはしていません。</strong>
+        </p>
+        <p>
+          全開にした瞬間、<em>それ以上“前に行く余白”がなくなるから。</em>
+        </p>
+      </div>
+
+      <div class="video-slot">
+        <div class="video-frame">
+          <div class="video-empty">
+            <strong>COMING SOON</strong>
+            <span>【メロディアレンジ】カットオフオートメーションの基準を<br>Before→Afterで解説（解説動画：9分）のURLをいただければ埋め込みます。</span>
+          </div>
+        </div>
+        <p class="video-cap">解説動画（9分）── この動画で確認してほしいのは「派手さ」ではなく<strong>「どれくらい地味か」</strong>。これくらいの変化量でも、曲はちゃんと展開して聴こえます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== おさらい ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Review</div>
+      <h2 class="sec-title">今回の<em>おさらい</em></h2>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><th>Cutoff とは</th><td>高音域の通り道を決めるノブ</td></tr>
+            <tr><th>下げる</th><td>暗く・奥へ</td></tr>
+            <tr><th>上げる</th><td>明るく・前へ</td></tr>
+            <tr><th>いつ動かすか</th><td><strong>音作りが終わってから</strong></td></tr>
+            <tr class="is-focus"><th>どう動かすか</th><td><strong>8小節に1本の流れを作る</strong></td></tr>
+            <tr><th>注意</th><td>やりすぎたら、ほぼ確実に逆効果</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 5-3 ── クリア条件</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、STEP5-3はクリアです。</p>
+
+        <ul class="clear-list">
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">音を固定してから、Cutoffオートメーションを書き始めた</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">8小節に1本の、なだらかな右肩上がりのカーブを書いた</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">毎小節の上下・リズム同期・LFOの細かい揺らしをしていない</span>
+            </label>
+          </li>
+          <li class="clear-item">
+            <label>
+              <input type="checkbox">
+              <span class="clear-box" aria-hidden="true">✓</span>
+              <span class="clear-text">ON/OFFチェックで「お、戻った」と感じた（「うるさい」ではない）</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        ここまで来たあなたは、もう<strong>「ループが退屈」という理由で止まりません。</strong>
+        音を足さなくても、メロディを書き直さなくても、<em>音楽を前に進められる側に来ています。</em>
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ===== 次へ ===== -->
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 5-4</div>
+      <h2 class="sec-title">まだ音が<br><em>“スカスカ”に感じるはず。</em></h2>
+
+      <p>
+        Cutoffで「動き」は作れました。
+        でもこの段階では、まだ音はスカスカに感じるはずです。
+        <strong>それは失敗じゃない。順番が正しい証拠。</strong>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">次にやること</div>
+        <ul>
+          <li><strong>EQ</strong> で不要な帯域を整理し</li>
+          <li><strong>OTT</strong> でエネルギーを前に押し出し</li>
+          <li><strong>CamelCrusher</strong> で密度をパンパンにする</li>
+        </ul>
+        <p>この3つを使って、<em>メロディをミックスの前線に立たせる方法</em>を解説します。</p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step5-2.html">
+          <em>Previous ── STEP 5-2</em>
+          <b>メロディはまず<br>8小節の「土台」から作る</b>
+        </a>
+        <a class="next" href="step5-4.html">
+          <em>Next ── STEP 5-4</em>
+          <b>EQ・OTT・歪みで“音を存在に変える”<br>── メロディ密度の最終調整</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step5-3.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906f"></script>
+<script src="_article.js?v=20260906f"></script>
+</body>
+</html>

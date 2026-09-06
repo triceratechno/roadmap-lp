@@ -109,12 +109,12 @@ const ROADMAP_DATA = {
       description: "音色を決め、土台を作り、展開・存在感・空間を順に積み上げる。",
       status: "completed",
       articles: [
-        { id: "5-overview", type: "overview", title: "STEP5 全体解説：8小節で止まらない。1曲を引っ張るメロディ設計", noteUrl: "https://note.com/preview/na257ddfdbe08?prev_access_key=932c452bc1530d558f7144ceb02e11e5", pdfUrl: "step5_overview.pdf", videoUrl: "https://note.com/preview/nb604b1097e3d?prev_access_key=a0115c6e23cf0850207eabe87d5df009", status: "published" },
-        { id: "5-1", type: "lesson", title: "STEP5-1：メロディーはここで決まる。主役となるリード音色を1つ選べ", noteUrl: "https://note.com/preview/n8bd7a9fc2904?prev_access_key=3b065b382b403e07831f4e3d311b4f04", pdfUrl: "step5-1.pdf", videoUrl: "", status: "published" },
-        { id: "5-2", type: "lesson", title: "STEP5-2：メロディはまず8小節の「土台」から作る", noteUrl: "https://note.com/preview/n37425d44c2fc?prev_access_key=d1fa77d837eb21c34c70f3232fa12d67", pdfUrl: "step5-2.pdf", videoUrl: "", status: "published" },
-        { id: "5-3", type: "lesson", title: "STEP5-3：8小節を\"展開する音\"に変える──Cutoffで作るプロの存在感設計", noteUrl: "https://note.com/preview/nad5fc78e0b9c?prev_access_key=19e2e9ccf1d90889d02c2e2f27220816", pdfUrl: "step5-3.pdf", videoUrl: "", status: "published" },
-        { id: "5-4", type: "lesson", title: "STEP5-4：EQ・OTT・歪みで\"音を存在に変える\"──メロディ密度の最終調整", noteUrl: "https://note.com/preview/n0bc79e305d52?prev_access_key=4aa6d6e59565f8dce562c2d17615acc9", pdfUrl: "step5-4.pdf", videoUrl: "", status: "published" },
-        { id: "5-5", type: "lesson", title: "STEP5-5：メロディ完成の最後の一手｜リードを楽曲に馴染ませる空間設計術", noteUrl: "https://note.com/preview/nb1bb763a142f?prev_access_key=f08d360c60f472404d5287f7d6158f12", pdfUrl: "step5-5.pdf", videoUrl: "", status: "published" }
+        { id: "5-overview", type: "overview", title: "STEP5 全体解説：8小節で止まらない。1曲を引っ張るメロディ設計", pageUrl: "articles/step5-overview.html", noteUrl: "https://note.com/preview/na257ddfdbe08?prev_access_key=932c452bc1530d558f7144ceb02e11e5", pdfUrl: "step5_overview.pdf", videoUrl: "https://note.com/preview/nb604b1097e3d?prev_access_key=a0115c6e23cf0850207eabe87d5df009", status: "published" },
+        { id: "5-1", type: "lesson", title: "STEP5-1：メロディーはここで決まる。主役となるリード音色を1つ選べ", pageUrl: "articles/step5-1.html", noteUrl: "https://note.com/preview/n8bd7a9fc2904?prev_access_key=3b065b382b403e07831f4e3d311b4f04", pdfUrl: "step5-1.pdf", videoUrl: "", status: "published" },
+        { id: "5-2", type: "lesson", title: "STEP5-2：メロディはまず8小節の「土台」から作る", pageUrl: "articles/step5-2.html", noteUrl: "https://note.com/preview/n37425d44c2fc?prev_access_key=d1fa77d837eb21c34c70f3232fa12d67", pdfUrl: "step5-2.pdf", videoUrl: "", status: "published" },
+        { id: "5-3", type: "lesson", title: "STEP5-3：8小節を\"展開する音\"に変える──Cutoffで作るプロの存在感設計", pageUrl: "articles/step5-3.html", noteUrl: "https://note.com/preview/nad5fc78e0b9c?prev_access_key=19e2e9ccf1d90889d02c2e2f27220816", pdfUrl: "step5-3.pdf", videoUrl: "", status: "published" },
+        { id: "5-4", type: "lesson", title: "STEP5-4：EQ・OTT・歪みで\"音を存在に変える\"──メロディ密度の最終調整", pageUrl: "articles/step5-4.html", noteUrl: "https://note.com/preview/n0bc79e305d52?prev_access_key=4aa6d6e59565f8dce562c2d17615acc9", pdfUrl: "step5-4.pdf", videoUrl: "", status: "published" },
+        { id: "5-5", type: "lesson", title: "STEP5-5：メロディ完成の最後の一手｜リードを楽曲に馴染ませる空間設計術", pageUrl: "articles/step5-5.html", noteUrl: "https://note.com/preview/nb1bb763a142f?prev_access_key=f08d360c60f472404d5287f7d6158f12", pdfUrl: "step5-5.pdf", videoUrl: "", status: "published" }
       ]
     },
 
