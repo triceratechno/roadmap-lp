@@ -159,9 +159,9 @@ const ROADMAP_DATA = {
       description: "VU・Level・Panの3つの基準を使い、混ざる音を作る。",
       status: "completed",
       articles: [
-        { id: "8-overview", type: "overview", title: "STEP8 全体解説：ミキシングは\"音を良くする工程\"じゃない。壊さず終わらせる設計だ。", noteUrl: "https://note.com/preview/ndc5e7dbcc3f0?prev_access_key=594159d0ff546bddd4153b42c21b2ad8", pdfUrl: "step8_overview.pdf", videoUrl: "https://note.com/preview/nbd6468eeb72d?prev_access_key=9ec41c58b4d84c4233d35b0409206b0d", status: "published" },
-        { id: "8-1", type: "lesson", title: "STEP8-1：ミキシングの土台を整える ── 音量・役割・パンの最終確認", noteUrl: "https://note.com/preview/n641d599d4496?prev_access_key=6a582b3327bb3ec74bcdbf1c669bea87", pdfUrl: "step8-1.pdf", videoUrl: "", status: "published" },
-        { id: "8-2", type: "lesson", title: "STEP8-2：ミキシングを終わらせる判断基準 ── 壊さず仕上げる4つの最終チェック", noteUrl: "https://note.com/preview/nc856ef836689?prev_access_key=2a6bd9e2fd3d4ec0abda4c75296e5221", pdfUrl: "step8-2.pdf", videoUrl: "", status: "published" }
+        { id: "8-overview", type: "overview", title: "STEP8 全体解説：ミキシングは\"音を良くする工程\"じゃない。壊さず終わらせる設計だ。", pageUrl: "articles/step8-overview.html", noteUrl: "https://note.com/preview/ndc5e7dbcc3f0?prev_access_key=594159d0ff546bddd4153b42c21b2ad8", pdfUrl: "step8_overview.pdf", videoUrl: "https://note.com/preview/nbd6468eeb72d?prev_access_key=9ec41c58b4d84c4233d35b0409206b0d", status: "published" },
+        { id: "8-1", type: "lesson", title: "STEP8-1：ミキシングの土台を整える ── 音量・役割・パンの最終確認", pageUrl: "articles/step8-1.html", noteUrl: "https://note.com/preview/n641d599d4496?prev_access_key=6a582b3327bb3ec74bcdbf1c669bea87", pdfUrl: "step8-1.pdf", videoUrl: "", status: "published" },
+        { id: "8-2", type: "lesson", title: "STEP8-2：ミキシングを終わらせる判断基準 ── 壊さず仕上げる4つの最終チェック", pageUrl: "articles/step8-2.html", noteUrl: "https://note.com/preview/nc856ef836689?prev_access_key=2a6bd9e2fd3d4ec0abda4c75296e5221", pdfUrl: "step8-2.pdf", videoUrl: "", status: "published" }
       ]
     },
 
@@ -173,7 +173,7 @@ const ROADMAP_DATA = {
       description: "音圧と音質を整え、配信レベルの最終形にする。",
       status: "completed",
       articles: [
-        { id: "9-overview", type: "overview", title: "STEP9 解説：マスタリングの前に、絶対に知っておくべき判断基準 ── 音圧に振り回されず「送り出せる曲」にするために", noteUrl: "https://note.com/preview/n9c55473beb5e?prev_access_key=4dddf1db8a937be1dcdcfd0c2854debf", pdfUrl: "step9_overview.pdf", videoUrl: "", status: "published" }
+        { id: "9-overview", type: "overview", title: "STEP9 解説：マスタリングの前に、絶対に知っておくべき判断基準 ── 音圧に振り回されず「送り出せる曲」にするために", pageUrl: "articles/step9-overview.html", noteUrl: "https://note.com/preview/n9c55473beb5e?prev_access_key=4dddf1db8a937be1dcdcfd0c2854debf", pdfUrl: "step9_overview.pdf", videoUrl: "", status: "published" }
       ]
     },
 
@@ -185,7 +185,7 @@ const ROADMAP_DATA = {
       description: "完成した曲を世界に届けるための最終ステップ。",
       status: "completed",
       articles: [
-        { id: "10-overview", type: "overview", title: "STEP10 解説：書き出し〜公開準備 ── あなたの曲を「本当に世界へ出す」最後の一歩", noteUrl: "https://note.com/preview/n36fde1328993?prev_access_key=3ee740ff7293fa9819293e0f39e7bdc0", pdfUrl: "step10_overview.pdf", videoUrl: "", status: "published" }
+        { id: "10-overview", type: "overview", title: "STEP10 解説：書き出し〜公開準備 ── あなたの曲を「本当に世界へ出す」最後の一歩", pageUrl: "articles/step10-overview.html", noteUrl: "https://note.com/preview/n36fde1328993?prev_access_key=3ee740ff7293fa9819293e0f39e7bdc0", pdfUrl: "step10_overview.pdf", videoUrl: "", status: "published" }
       ]
     }
   ]

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP8-2：ミキシングを終わらせる判断基準 ── 4つの最終チェック｜ロードマップPROコース</title>
+<meta name="description" content="周波数の整理・空間の整合・ステレオ／モノの確認・出口条件の設定。ヘッドルームとLUFSで「次に進んでいい」を数値で判断する。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP8-2：ミキシングを終わらせる判断基準 ── 壊さず仕上げる4つの最終チェック">
+<meta property="og:description" content="足りていないのは「触っていいかどうかを判断する基準」だ。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step8-2.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="8-1" data-article-id="8-2" data-next-id="9-overview">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 8-2 ／ Know When To Stop</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 8-2</div>
+  <h1 class="hero-en">Know When<br>To Stop</h1>
+  <p class="hero-ja">ミキシングを終わらせる、判断基準。</p>
+  <p class="hero-lead">壊さず仕上げる、4つの最終チェック。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約13分</b></span>
+    <span>STEP <b>8-2</b> ／ 2</span>
+    <span>手順 <b>4</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">土台は整った。<br><em>でも、まだ足りない。</em></h2>
+
+      <p class="lead-p">
+        STEP8-1で、あなたはすでに重要なことをやっています。
+        音量に極端な破綻がないかを確認し、主役・支え・装飾が正しい立場にいるかを整理し、
+        <strong>パンを、感覚ではなく理由で配置した。</strong>
+      </p>
+
+      <p>つまり ── <em>音を壊さないための土台は、もう整っています。</em></p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">それでも、次に感じる感覚</div>
+        <ul>
+          <li>大きな破綻はない</li>
+          <li>でも、まだ“完成”とは言い切れない</li>
+          <li>どこまで触っていいのか、判断がつかない</li>
+        </ul>
+        <p><strong>ここが、リリースできる人と、止まる人の分岐点になります。</strong></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">足りないのは、テクニックではない</div>
+        <p>
+          EQが足りないわけでも、コンプが下手なわけでもありません。
+          足りていないのは ── <strong>「触っていいかどうかを判断する基準」</strong>です。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPでやること</div>
+        <p><strong>「もう触らなくていいか」を自分で判断できる状態を作ること。</strong></p>
+        <p>EQやコンプで音を良くする必要はありません。プロが必ず確認している、次の4つだけ。</p>
+      </div>
+
+      <div class="anatomy">
+        <div class="anatomy-row">
+          <div class="anatomy-no">1</div>
+          <div class="anatomy-name">周波数の整理<span class="anatomy-en">Frequency</span></div>
+          <div class="anatomy-desc">不要な帯域を取り除く。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">2</div>
+          <div class="anatomy-name">空間の整合<span class="anatomy-en">Space</span></div>
+          <div class="anatomy-desc">同じ世界で鳴っているか。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">3</div>
+          <div class="anatomy-name">ステレオ／モノの確認<span class="anatomy-en">Mono</span></div>
+          <div class="anatomy-desc">再生環境で崩れないか。</div>
+        </div>
+        <div class="anatomy-row">
+          <div class="anatomy-no">4</div>
+          <div class="anatomy-name">出口条件の設定<span class="anatomy-en">Exit</span></div>
+          <div class="anatomy-desc">数値で次に進む判断。</div>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">順番にも意味がある</div>
+        <p><strong>周波数 → 空間 → ステレオ → 出口条件。</strong></p>
+        <p><em>下から積み上げて、最後に「次に進んでいいか」を数値で判断する流れです。</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Frequency</div>
+      <h2 class="sec-title">周波数の<em>整理</em></h2>
+      <p class="sec-title-en">EQで音を作らない</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">確認するのは、たった一つ</div>
+        <p><strong>「この音は、存在する理由のある帯域だけを使っているか？」</strong></p>
+      </div>
+
+      <h3 class="sub-title">ルール：100Hz以下のカット</h3>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">キック・サブベース以外は、100Hz以下を必ずカット</div>
+        <ul>
+          <li>トップベース</li>
+          <li>ドラムス</li>
+          <li>ボーカル</li>
+          <li>リード</li>
+          <li>FX</li>
+          <li>アンビエンス</li>
+        </ul>
+        <p>これらはすべて、<strong>100Hz以下に“存在する理由がない”。</strong></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">理由はシンプル</div>
+        <ul>
+          <li>その帯域は、<strong>キックとサブベースの仕事場</strong></li>
+          <li>残すと、低域が濁る</li>
+          <li>自分では気づかないまま、ミックス全体を重くする</li>
+        </ul>
+        <p><em>※ここはプロも絶対のルールです。</em></p>
+      </div>
+
+      <p>
+        重要なのは、<strong>聴こえているかどうかではなく、混ざっているかどうか。</strong>
+        100Hz以下の不要な成分は、<em>単体では分からなくても、全体では確実に悪さをします。</em>
+      </p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>役割</th><th>正しい状態</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>主役</th><td><strong>必要な帯域がはっきりしている</strong></td></tr>
+            <tr><th>支え</th><td>主役の邪魔をしない帯域に収まっている</td></tr>
+            <tr><th>装飾</th><td>存在感はあるが、前に出てこない</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">やってはいけないこと</div>
+        <p>100Hz以下を、<strong>足りないから足す／良く聴こえないからブーストする。</strong></p>
+        <p><em>それをやり始めた瞬間、STEP8-2ではなく、音作りに逆戻りです。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順① クリア条件</div>
+        <p>キックとサブ以外の低域を整理し、役割を守れたら、手順①はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Space</div>
+      <h2 class="sec-title">空間の<em>整合</em></h2>
+      <p class="sec-title-en">距離感が一つの世界になっているか</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここで見るのは、広がりでも派手さでもない</div>
+        <p><strong>「この曲は、同じ空間で鳴っているか？」</strong>それだけです。</p>
+      </div>
+
+      <p>
+        STEP6までで、あなたはすでにリードやボーカルにリバーブ（必要に応じてディレイ）をかけています。
+        S8-2では、それを<strong>「足す／作る」必要はありません。かかりすぎていないかを確認するだけ。</strong>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">かかりすぎのサイン</div>
+        <ul>
+          <li>ダッキングが効いておらず、<strong>最初の一音がはっきり聞こえない</strong></li>
+          <li>リード／ボーカルが、ドラムスの後ろ側に引っ込んで聞こえる</li>
+          <li>「お風呂で聴いているのか？」と思うような、反響が残りすぎる鳴り方</li>
+        </ul>
+        <p>これらはすべて、空間演出ではなく<em>距離感の破綻が起きているサイン</em>です。</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>役割</th><th>含まれるもの</th><th>あるべき距離</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>主役</th><td>キック、リード or ボーカル</td><td><strong>一番近くに感じられる</strong></td></tr>
+            <tr><th>支え</th><td>トップベース、サブベース、スネア・クラップ、ハット・ライド</td><td>主役を包み込む位置にいる</td></tr>
+            <tr><th>装飾</th><td>トップループ・パーカッション、FX、アンビエンス</td><td>背景に溶け込み、前に出てこない</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">重要なのは</div>
+        <p>それぞれが<strong>別の空間にいないこと。</strong></p>
+        <p><em>深さの量ではなく、同じ世界に存在しているかを見ます。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">ワンポイントアドバイス</div>
+        <p>
+          <strong>トップベースとドラムスには、ルームリバーブを5%だけかける。</strong>
+        </p>
+        <p>
+          この2つは完全にセンターに固定したいわけでも、広がりすぎてもほしくない役割にあるため、
+          <em>パンだけでなくリバーブでわずかに空間を足したほうが完成度が上がります。</em>
+        </p>
+        <p>
+          5%以上は不要で、ダッキングも必要ありません。トラック直挿しで問題なく、
+          <strong>ドラムスはバストラックにまとめて一括でかけると調整が早く、ミックスも安定します。</strong>
+          これはミキシングエンジニアも使う鉄板の考え方です。
+        </p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">やってはいけないこと</div>
+        <ul>
+          <li>目立たせたいからリバーブを足す</li>
+          <li>雰囲気を出したくて深くしすぎる</li>
+          <li>トラックごとに別々の空間を作る</li>
+        </ul>
+        <p><em>空間は、演出ではなく、整合です。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順② クリア条件</div>
+        <p>音が同じ場所で鳴っているように感じられたら、手順②はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Mono</div>
+      <h2 class="sec-title">ステレオ／モノの<em>確認</em></h2>
+      <p class="sec-title-en">再生環境が変わっても崩れないか</p>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>DAW</th><th>やり方</th></tr></thead>
+          <tbody>
+            <tr><th>Studio One</th><td>マスターチャンネルに <strong>Mixtool</strong> を挿し、Mono ボタンを ON</td></tr>
+            <tr><th>Ableton Live</th><td>マスターチャンネルに <strong>Utility</strong> を挿し、Width を <strong>0%</strong> に</td></tr>
+            <tr><th>そのほか</th><td>スマホ・Bluetoothスピーカーなど、モノラル再生環境で再生してもOK</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここでは音を良くしようとしない</div>
+        <p><strong>崩れるかどうかだけを確認します。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">チェックポイント</div>
+        <ul>
+          <li>主役が消えていないか</li>
+          <li>低域が弱くなりすぎていないか</li>
+          <li>音量バランスが極端に変わっていないか</li>
+        </ul>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col vs-col--ng">
+          <p class="vs-tag">崩れる</p>
+          <p><strong>ステレオ依存が強すぎる</strong></p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">崩れない</p>
+          <p><strong>次に進んでOK</strong></p>
+        </div>
+      </div>
+
+      <p>修正は最小限でいい。<em>「致命的かどうか」だけを見ます。</em></p>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">手順③ クリア条件</div>
+        <p>モノラルにしても致命的に崩れなければ、手順③はクリアです。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Exit</div>
+      <h2 class="sec-title">出口条件の<em>設定</em></h2>
+      <p class="sec-title-en">マスタリングに渡していいかを「数値」で判断する</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">使う指標は、たった2つ</div>
+        <ul>
+          <li><strong>ヘッドルーム（ピーク）</strong>── 一瞬の最大音量。音が割れるかどうか＝「危険ラインの確認」</li>
+          <li><strong>LUFS</strong>── 曲全体の平均的な音量。どれくらい大きく聴こえるか＝「全体の大きさの確認」</li>
+        </ul>
+        <p><em>この2つは役割がまったく違うため、両方を見る必要があります。</em></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">私が最も知ってほしいポイント</div>
+        <p>
+          なぜなら、<strong>私が初の楽曲リリースの時に、一番迷ったから。</strong>
+        </p>
+        <p>
+          耳だけで判断しようとして、<em>一曲のミキシングアレンジだけで20回も修正しました。</em>
+          はじめから知っていたら、15回分くらい省略できたと思います。
+        </p>
+      </div>
+
+      <h3 class="sub-title">出口条件① ヘッドルームの基準</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>基準</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>マスターのピーク</th><td><strong>−6 dBFS 〜 −4 dBFS 程度</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">この状態が作れていればOK</div>
+        <ul>
+          <li>0dB に張り付いていない</li>
+          <li>リミッターで無理やり抑えていない</li>
+        </ul>
+        <p>
+          重要なのは、「今、音圧が足りるか」ではありません。
+          <strong>マスタリングで“動かせる余白”があるか。</strong>それだけを見ます。
+        </p>
+      </div>
+
+      <h3 class="sub-title">出口条件② LUFS の基準</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>基準</th><th>理由</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>Integrated LUFS</th><td><strong>−16 〜 −14 LUFS 前後</strong></td><td>小さすぎない。でも、潰しすぎていない</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">この段階で −12 LUFS を超えていたら</div>
+        <p>
+          それは<strong>出口条件を超えています。</strong>
+          「これはミックスではなく、もうマスタリングの領域に踏み込んでいる」
+          <em>そう判断して、一度戻るべきです。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">出口条件③ 数値と感覚が矛盾していないか</h3>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">この3つが揃っていれば、それ以上触る理由はない</div>
+        <ul>
+          <li>ヘッドルームは残っている</li>
+          <li>LUFS も適正</li>
+          <li>それでも、聴いていて大きな違和感がない</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">LUFS が足りなく感じるとき</div>
+        <p>
+          手早く稼ぐ一番シンプルな方法は、<strong>中域の音量を上げること。</strong>
+          人の耳は中域を最も大きく感じるため、ここが効きます。
+        </p>
+        <p>
+          応急処置としては、マスターバスにEQを挿し、<strong>中域を ±3dB（目安 ±2dB）程度持ち上げてみる。</strong>
+          <em>ここは、勇気を持って大胆に試してほしい。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">原因が分かっているなら、ミキシングに戻る</div>
+        <ul>
+          <li>リードの中域が弱い</li>
+          <li>トップベースが細い</li>
+          <li>ボーカルが前に出ていない</li>
+        </ul>
+        <p>
+          その場合は、マスターではなく<strong>トラック単位で調整</strong>してください。
+          <em>そのほうが、結果は確実にきれいになります。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">ここが核心</div>
+        <p><strong>未完成でもいい。完璧である必要はない。</strong></p>
+        <p>ヘッドルームがある／LUFSが適正／構造が崩れていない ── この3点が揃っていれば、<em>その曲はもう壊れない状態です。</em></p>
+        <p>それ以上触る行為は、改善ではなく<strong>「不安への対処」</strong>になります。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Complete</div>
+      <h2 class="sec-title">STEP8、<em>完了です。</em></h2>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 8-2 ── クリア条件</h2>
+          <div class="clear-count">0 / 3</div>
+        </div>
+        <p class="clear-sub">これが、リリースできる人が持っている感覚です。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">「数値的にも問題ない」と言える</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">「触らなくていい理由」が説明できる</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">「次に進んでいい」と判断できる</span></label></li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">正直に言います。ここまで来たあなたは、かなりすごい</div>
+        <p>ほとんどのDTMerは、この場所まで辿り着けません。多くの人は、</p>
+        <ul>
+          <li>ミキシングが怖くて触れない</li>
+          <li>触り始めて、逆に壊してしまう</li>
+          <li>「まだ早い気がする」と言い続けて、完成させない</li>
+        </ul>
+        <p><strong>でも、あなたは違う。</strong></p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">このSTEPで手に入れたのは、一生使える力</div>
+        <ul>
+          <li>感覚に振り回されない</li>
+          <li>流行に焦らない</li>
+          <li>比較して崩れない</li>
+        </ul>
+        <p>そして何より、<strong>曲を完成させられる人の思考</strong>です。</p>
+        <p><em>あなたの曲は今、派手ではないかもしれない。でも、壊れない。揺れない。迷わない。</em></p>
+      </div>
+
+      <h3 class="sub-title">お願いです。STEP8完了の連絡をください</h3>
+
+      <div class="action">
+        <span class="action-tag">SUPPORT</span>
+        <h3 class="action-title">ラボ専用LINEに「STEP8完了」と送る</h3>
+        <p><a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener">https://lin.ee/73qcA3u</a></p>
+      </div>
+
+      <div class="template">
+        <div class="template-head">
+          <span class="template-title">▼ STEP8 完了報告テンプレ（コピペOK）</span>
+          <button type="button" class="copy-btn" data-copy="【STEP8完了報告】ミキシング
+・ゲイン：表の基準内に収まった / 外れているトラックあり
+・レベル：主役がはっきり分かる / 分かりにくい
+・パン：理由のある配置だけが残った / まだ整理中
+・100Hz以下：キック・サブ以外すべてカットした
+・モノラルチェック：崩れなかった / 崩れた
+・マスターのピーク：　　dBFS
+・Integrated LUFS：　　LUFS
+
+どのパートはスムーズか：
+どこで詰まっているか：">コピー</button>
+        </div>
+        <p class="template-body">【STEP8完了報告】ミキシング
+・ゲイン：表の基準内に収まった / 外れているトラックあり
+・レベル：主役がはっきり分かる / 分かりにくい
+・パン：理由のある配置だけが残った / まだ整理中
+・100Hz以下：キック・サブ以外すべてカットした
+・モノラルチェック：崩れなかった / 崩れた
+・マスターのピーク：　　dBFS
+・Integrated LUFS：　　LUFS
+
+どのパートはスムーズか：
+どこで詰まっているか：</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 9</div>
+      <h2 class="sec-title">次は、<br><em>マスタリングの基礎。</em></h2>
+
+      <p>
+        ここから先は、自分の曲を「良くする」工程ではありません。
+        <strong>外に届けるための最終調整</strong>です。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP9 で整理すること</div>
+        <ul>
+          <li>マスタリングで何をやるのか</li>
+          <li>ミックスとマスターの役割の違い</li>
+          <li>自分でやっていいこと／やらなくていいこと</li>
+          <li>どこまで仕上げれば十分なのか</li>
+        </ul>
+        <p><em>ここを理解すると、音圧に振り回されず、比較して落ち込まなくなります。</em></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">STEP8 で整えた「壊れない状態」は</div>
+        <p>STEP9 で<strong>「安心して送り出せる状態」</strong>へ変わります。</p>
+        <p><em>ロードマップ完走まで、あと1記事。</em></p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step8-1.html">
+          <em>Previous ── STEP 8-1</em>
+          <b>ミキシングの土台を整える<br>── 音量・役割・パンの最終確認</b>
+        </a>
+        <a class="next" href="step9-overview.html">
+          <em>Next ── STEP 9</em>
+          <b>マスタリングの前に、<br>絶対に知っておくべき判断基準</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step8-2.pdf" download>↓ このレッスンのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>
