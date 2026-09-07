@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 限定公開：リンクを知っている人のみ。検索エンジンには載せない -->
+<meta name="robots" content="noindex, nofollow">
+<title>まだ1曲も完成していない。それでも、彼は止まっていない。｜ロードマップPROコース受講生の話</title>
+<meta name="description" content="DJとして他人の曲をかけ続けてきた男が、自分の曲を作るまでの話。教材は買った。海外の講座も、韓国のスクールも。それでも1曲が終わらなかった理由と、いまSTEP7まで来るまでを13コマの漫画にしました。">
+
+<!-- OGP / Twitter Card ／ TODO: 専用OGP(og-story.jpg)ができたら差し替え -->
+<meta property="og:title" content="まだ1曲も完成していない。それでも、彼は止まっていない。">
+<meta property="og:description" content="教材は買った。海外の講座も、韓国のスクールも。それでも1曲が終わらなかった。ロードマップPROコース受講生MOBさんの、現在進行形の話。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/on-the-way.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/hero-thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="まだ1曲も完成していない。それでも、彼は止まっていない。">
+<meta name="twitter:description" content="教材は買った。それでも1曲が終わらなかった。ロードマップPROコース受講生の、現在進行形の話。">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/hero-thumbnail.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --panel: #111111;
+    --border: #1e1e1e;
+    --accent: #00c8ff;
+    --accent2: #0080ff;
+    --gold: #f5c518;
+    --gold-glow: rgba(245,197,24,0.25);
+    --text: #e8e8e8;
+    --muted: #9a9a9a;
+    --white: #ffffff;
+    /* 漫画パート専用：物語の「中」は真っ黒、現実に戻ると --black */
+    --story-bg: #000000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ===== NOISE ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ===== ANNOUNCE BAR ===== */
+  .announce-bar {
+    background: rgba(0,200,255,0.08);
+    border-bottom: 1px solid rgba(0,200,255,0.2);
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 100;
+  }
+  .announce-bar strong { color: var(--gold); }
+  .announce-dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); margin-right: 8px; vertical-align: middle;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--story-bg);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--story-bg));
+    pointer-events: none;
+  }
+  .hero-img {
+    width: 100%; max-width: 760px; margin: 0 auto 44px;
+    display: block; border-radius: 3px;
+  }
+  .hero-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.42em; color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(24px, 6.2vw, 44px);
+    font-weight: 900; line-height: 1.55; letter-spacing: 0.02em;
+    color: var(--white); margin-bottom: 26px;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero-lead {
+    font-size: clamp(14px, 3.6vw, 17px);
+    color: var(--muted); max-width: 640px; margin: 0 auto;
+  }
+  .hero-scroll {
+    margin-top: 56px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px; letter-spacing: 0.34em; color: var(--muted);
+  }
+  .hero-scroll span {
+    display: block; width: 1px; height: 46px; margin: 14px auto 0;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+
+  /* ===== STORY (漫画パート) ===== */
+  .story {
+    background: var(--story-bg);
+    padding: 0 20px 120px;
+  }
+  .story-inner { max-width: 720px; margin: 0 auto; }
+
+  .act {
+    display: flex; align-items: center; gap: 16px;
+    margin: 76px 0 44px;
+    color: var(--muted);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 0.3em;
+  }
+  .act::before, .act::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .panel { margin: 0 0 52px; }
+  .panel img {
+    width: 100%; display: block;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    background: #0a0a0a;
+  }
+  .panel--wide img { aspect-ratio: 16 / 9; }
+  .panel figcaption {
+    margin-top: 20px;
+    font-size: clamp(14px, 3.8vw, 16.5px);
+    line-height: 2;
+    color: var(--text);
+  }
+  .panel figcaption .quote {
+    display: block;
+    margin-top: 14px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: clamp(15px, 4.2vw, 19px);
+    line-height: 1.85;
+  }
+  .panel figcaption .num {
+    color: var(--gold); font-weight: 700;
+  }
+
+  /* 空プレースホルダ（画像未配置時） */
+  .panel.is-empty img { display: none; }
+  .panel.is-empty::before {
+    content: attr(data-slot);
+    display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 4 / 3;
+    border: 1px dashed rgba(0,200,255,0.35);
+    border-radius: 2px;
+    color: rgba(0,200,255,0.55);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.2em;
+    background: rgba(0,200,255,0.03);
+  }
+  .panel--wide.is-empty::before { aspect-ratio: 16 / 9; }
+
+  /* 8-2：スクロールの手を止めるための余白 */
+  .panel--beat { margin: 150px 0 150px; }
+  .panel--beat figcaption .quote {
+    font-size: clamp(17px, 5vw, 24px);
+    letter-spacing: 0.02em;
+  }
+
+  /* 6コマ畳みかけの共通キャプション */
+  .panel-group-caption {
+    margin: -20px 0 52px;
+    font-size: clamp(14px, 3.8vw, 16.5px);
+    line-height: 2;
+  }
+
+  /* ===== 現実へ戻る境界 ===== */
+  .to-reality {
+    background: linear-gradient(to bottom, var(--story-bg), var(--black));
+    padding: 90px 20px 0;
+  }
+  .to-reality-inner { max-width: 720px; margin: 0 auto; }
+  .to-reality img {
+    width: 100%; display: block; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .is-empty-photo {
+    display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 16 / 10;
+    border: 1px dashed rgba(245,197,24,0.35);
+    color: rgba(245,197,24,0.6);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px; letter-spacing: 0.2em;
+    background: rgba(245,197,24,0.03);
+    text-align: center; padding: 20px;
+  }
+
+  /* ===== SECTION 共通 ===== */
+  section.block { padding: 100px 20px; }
+  .inner { max-width: 760px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 0.34em;
+    color: var(--accent); margin-bottom: 18px;
+  }
+  h2 {
+    font-size: clamp(21px, 5.6vw, 34px);
+    font-weight: 900; line-height: 1.6; color: var(--white);
+    margin-bottom: 30px; letter-spacing: 0.01em;
+  }
+  h2 .gold { color: var(--gold); }
+  .block p { font-size: clamp(14px, 3.8vw, 16.5px); margin-bottom: 22px; }
+  .block p:last-child { margin-bottom: 0; }
+  .lead-big {
+    font-size: clamp(16px, 4.6vw, 21px) !important;
+    font-weight: 700; color: var(--white); line-height: 1.85;
+  }
+
+  /* ===== B0 ノートのその後 ===== */
+  .after-note { background: var(--black); }
+  .after-note .inner { max-width: 640px; }
+  .after-note p { line-height: 2.0; color: var(--muted); }
+  .after-note p strong { color: var(--white); font-weight: 700; }
+  .an-turn { margin-top: 46px !important; padding-top: 34px; border-top: 1px solid var(--border); }
+  .an-count {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 17vw, 104px); line-height: 0.9;
+    color: var(--accent); letter-spacing: 0.02em; margin: 6px 0 4px;
+  }
+  .an-count-label { color: var(--muted); font-size: 13px; letter-spacing: 0.18em; }
+  .an-hit {
+    font-size: clamp(19px, 5.2vw, 27px) !important;
+    font-weight: 900; color: var(--white) !important; line-height: 1.75;
+    border-left: 2px solid var(--gold); padding-left: 18px; margin: 34px 0 !important;
+  }
+  .an-hit .gold { color: var(--gold); }
+  .an-return {
+    font-size: clamp(16px, 4.4vw, 20px) !important;
+    font-weight: 700; color: var(--white) !important; line-height: 1.9;
+  }
+
+  /* ===== ノート → 教材の変換 ===== */
+  .tf-before { max-width: min(220px, 46vw); margin: 0 auto; }
+  .tf-before img {
+    width: 100%; display: block; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .tf-before figcaption {
+    margin-top: 10px; font-size: 12px; color: var(--muted);
+    letter-spacing: 0.06em; line-height: 1.6;
+  }
+  .tf-arrow {
+    width: 1px; height: 46px; margin: 22px auto 20px;
+    background: linear-gradient(to bottom, var(--border), var(--gold));
+    position: relative;
+  }
+  .tf-arrow::after {
+    content: ''; position: absolute; left: 50%; bottom: -1px;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent; border-right: 5px solid transparent;
+    border-top: 8px solid var(--gold);
+  }
+  .tf-note {
+    font-size: clamp(14px, 4vw, 17px); color: var(--muted);
+    margin: 0 auto 30px; line-height: 1.9;
+  }
+  .tf-note .gold { color: var(--gold); font-weight: 700; }
+
+  /* ===== 受講生の声 ===== */
+  .vgrid {
+    max-width: 900px; margin: 6px auto 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+  }
+  .vitem { text-align: center; }
+  .vava {
+    width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
+    display: block; margin: 0 auto 15px;
+    border: 2px solid rgba(0,200,255,0.35);
+  }
+  .vquote {
+    font-size: 13.5px !important; color: var(--muted);
+    line-height: 1.95; margin: 18px 0 0 !important; text-align: left;
+  }
+  .vquote strong { color: var(--white); font-weight: 700; }
+  .vname { font-size: 13px !important; font-weight: 700; color: var(--white); margin: 0 !important; }
+  .vmeta { font-size: 11px !important; color: var(--muted); margin: 6px 0 0 !important; line-height: 1.85; }
+  .vmeta .hit { color: var(--gold); font-weight: 700; }
+  .vdisc { text-align: center; font-size: 11px !important; color: #666; margin: 34px 0 0 !important; }
+  @media (max-width: 720px) {
+    .vgrid { grid-template-columns: 1fr; gap: 38px; max-width: 440px; }
+  }
+
+  /* ===== B1 ノート → 商品 ===== */
+  .bridge { background: var(--black); border-top: 1px solid var(--border); }
+  .bridge .inner { text-align: center; }
+  .bridge-headline {
+    font-size: clamp(20px, 5.6vw, 34px);
+    font-weight: 900; color: var(--white); line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .bridge-headline .gold { color: var(--gold); }
+  .bridge-visual {
+    width: 100%; max-width: 620px; margin: 0 auto 34px; display: block;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 2px;
+  }
+  .bridge-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 6vw, 38px);
+    letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px;
+  }
+  .bridge-sub { color: var(--muted); font-size: 14px; letter-spacing: 0.1em; }
+
+  /* ===== B2 3段階 ===== */
+  .flow {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin: 36px 0 30px;
+  }
+  .flow-step {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 22px 12px; text-align: center; border-radius: 2px;
+    position: relative;
+  }
+  .flow-step .n {
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+    color: var(--accent); display: block; line-height: 1;
+  }
+  .flow-step .t {
+    font-weight: 900; color: var(--white); font-size: clamp(14px, 4vw, 18px);
+    margin-top: 8px; display: block;
+  }
+  .flow-step .d { font-size: 11.5px; color: var(--muted); margin-top: 6px; display: block; }
+  .flow-step--first { border-color: rgba(245,197,24,0.5); }
+  .flow-step--first .n { color: var(--gold); }
+  .flow-note {
+    font-size: 13.5px; color: var(--muted); text-align: center;
+    border-left: 2px solid var(--accent); padding-left: 14px; text-align: left;
+  }
+
+  /* ===== B3 反響 ===== */
+  .proof-shot {
+    width: 100%; max-width: 520px; margin: 0 auto 26px; display: block;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 2px;
+  }
+  .voices { display: grid; gap: 12px; margin-top: 28px; }
+  .voice {
+    background: var(--panel); border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    padding: 16px 18px; font-size: 14.5px; border-radius: 2px;
+  }
+
+  /* ===== B4 実績 ===== */
+  .metrics {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin-top: 34px;
+  }
+  .metric {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 22px 16px; text-align: center; border-radius: 2px;
+  }
+  .metric .v {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 8vw, 42px);
+    color: var(--gold); line-height: 1; letter-spacing: 0.04em;
+  }
+  .metric .l { font-size: 12px; color: var(--muted); margin-top: 10px; display: block; line-height: 1.6; }
+  .disclaimer { font-size: 12px; color: var(--muted); margin-top: 20px; }
+
+  /* ===== B6 由来 ===== */
+  .tricera-grid { display: grid; gap: 10px; margin: 30px 0 34px; }
+  .tricera-row {
+    display: grid; grid-template-columns: 58px 1fr; align-items: center;
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 16px 18px; border-radius: 2px;
+  }
+  .tricera-row .k {
+    font-family: 'Bebas Neue', sans-serif; font-size: 30px;
+    color: var(--accent); line-height: 1;
+  }
+  .tricera-row .w { font-size: 14.5px; }
+  .tricera-row .w b { color: var(--white); font-weight: 700; }
+  .donation {
+    border: 1px solid rgba(245,197,24,0.35);
+    background: rgba(245,197,24,0.04);
+    padding: 24px; border-radius: 2px; margin-top: 12px;
+  }
+  .donation .t { color: var(--gold); font-weight: 900; margin-bottom: 10px; }
+
+  /* ===== B7 向き不向き ===== */
+  .fit { display: grid; gap: 14px; margin-top: 30px; }
+  @media (min-width: 720px) { .fit { grid-template-columns: 1fr 1fr; } }
+  .fit-box { border: 1px solid var(--border); background: var(--panel); padding: 24px; border-radius: 2px; }
+  .fit-box h3 { font-size: 15px; font-weight: 900; margin-bottom: 14px; letter-spacing: 0.04em; }
+  .fit-box--no h3 { color: var(--muted); }
+  .fit-box--yes { border-color: rgba(0,200,255,0.35); }
+  .fit-box--yes h3 { color: var(--accent); }
+  .fit-box ul { list-style: none; }
+  .fit-box li { font-size: 14px; padding: 7px 0 7px 20px; position: relative; line-height: 1.75; }
+  .fit-box li::before {
+    content: ''; position: absolute; left: 4px; top: 15px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
+  }
+  .fit-box--yes li::before { background: var(--accent); }
+
+  /* ===== 受付枠 ===== */
+  .commit {
+    border: 1px solid rgba(245,197,24,0.35);
+    background: rgba(245,197,24,0.04);
+    padding: 40px 26px; border-radius: 2px; text-align: center;
+  }
+  .commit-eyebrow { font-size: 12.5px; color: var(--muted); letter-spacing: 0.14em; margin-bottom: 16px; }
+  .commit-headline {
+    font-size: clamp(18px, 5.2vw, 26px); font-weight: 900;
+    color: var(--gold); margin-bottom: 24px; line-height: 1.6;
+  }
+  .commit p { font-size: clamp(13.5px, 3.6vw, 15.5px); color: var(--text); }
+  .commit strong { color: var(--gold); font-weight: 900; }
+
+  /* ===== 最後の一押し ===== */
+  .finale { background: var(--story-bg); text-align: center; border-top: 1px solid var(--border); }
+  .finale p { font-size: clamp(15px, 4.2vw, 19px); line-height: 2.1; }
+  .finale .big {
+    font-size: clamp(20px, 6vw, 32px); font-weight: 900;
+    color: var(--white); margin: 44px 0 14px; line-height: 1.6;
+  }
+  .finale .sig {
+    font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.24em;
+    color: var(--accent); font-size: 17px; margin-top: 6px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-wrap { text-align: center; padding: 20px 20px 110px; background: var(--story-bg); }
+
+  .offer-card {
+    max-width: 860px; margin: 0 auto 32px;
+    background: var(--deep);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 34px 26px;
+    display: grid; gap: 28px;
+    text-align: left;
+  }
+  @media (min-width: 760px) {
+    .offer-card {
+      grid-template-columns: 38% 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 46px 44px;
+    }
+  }
+  .offer-visual { text-align: center; }
+  .offer-visual img {
+    width: 100%; max-width: 240px; height: auto; display: inline-block;
+    filter: drop-shadow(0 18px 34px rgba(0,0,0,0.65));
+  }
+  @media (min-width: 760px) { .offer-visual img { max-width: 100%; } }
+
+  .offer-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12.5px; letter-spacing: 0.3em; color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .offer-title {
+    font-size: clamp(19px, 5vw, 27px); font-weight: 900;
+    color: var(--white); line-height: 1.6; margin-bottom: 18px;
+  }
+  .offer-lead {
+    font-size: clamp(13.5px, 3.6vw, 15px); color: var(--muted);
+    line-height: 1.95; margin-bottom: 22px;
+  }
+  .offer-proof {
+    background: rgba(0,200,255,0.05);
+    border: 1px solid rgba(0,200,255,0.22);
+    border-radius: 8px; padding: 18px 20px; margin-bottom: 22px;
+  }
+  .offer-proof-title {
+    font-size: 12.5px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .offer-proof p {
+    font-size: clamp(13px, 3.5vw, 14.5px) !important;
+    color: var(--text); line-height: 1.9; margin: 0 0 8px !important;
+  }
+  .offer-proof-note { font-size: 11.5px; color: var(--muted); }
+  .offer-slots {
+    font-size: 13px !important; color: var(--muted);
+    margin-bottom: 22px !important;
+  }
+  .offer-slots strong { color: var(--gold); font-weight: 700; }
+  .offer-btn {
+    display: block; text-align: center;
+    background: var(--gold); color: #000;
+    font-weight: 900; font-size: clamp(14px, 3.9vw, 16.5px);
+    letter-spacing: 0.04em; padding: 18px 26px;
+    text-decoration: none; border-radius: 4px;
+    transition: background .2s, transform .2s;
+  }
+  .offer-btn:hover { background: #ffd740; transform: translateY(-2px); }
+
+  .cta-sub {
+    display: inline-block; margin-top: 22px;
+    border: 1px solid rgba(0,200,255,0.5); color: var(--accent);
+    font-size: 14px; letter-spacing: 0.04em; padding: 14px 30px;
+    text-decoration: none; border-radius: 2px; transition: background .2s;
+  }
+  .cta-sub:hover { background: rgba(0,200,255,0.08); }
+  .cta-note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--black); border-top: 1px solid var(--border);
+    padding: 40px 20px; text-align: center;
+    font-size: 12px; color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+
+  /* ===== STICKY CTA (mobile) ===== */
+  .sticky-cta-bar { display: none; }
+  @media (max-width: 720px) {
+    .sticky-cta-bar {
+      display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(0,200,255,0.3);
+      padding: 10px 16px; text-align: center;
+      transform: translateY(100%); opacity: 0;
+      transition: transform .4s ease, opacity .4s ease; pointer-events: none;
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .sticky-cta-bar a {
+      display: block; background: var(--gold); color: #000;
+      font-weight: 900; font-size: 14px; letter-spacing: 0.06em;
+      padding: 14px 20px; text-decoration: none; border-radius: 2px;
+    }
+    body { padding-bottom: 70px; }
+    section.block { padding: 76px 20px; }
+    .panel--beat { margin: 110px 0; }
+  }
+
+  /* ===== (2) 受講生マンガ 専用 ===== */
+  .who {
+    max-width: 620px; margin: 0 auto 30px;
+    border: 1px solid var(--border); background: var(--panel);
+    border-radius: 2px; padding: 14px 18px;
+    font-size: 13px; color: var(--muted); line-height: 1.9; text-align: left;
+  }
+  .who strong { color: var(--white); font-weight: 700; }
+  .who .tag {
+    display: inline-block; font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em; color: var(--accent);
+    margin-right: 10px;
+  }
+  .bridge2 { background: var(--black); border-top: 1px solid var(--border); }
+  .bridge2 .inner { text-align: center; max-width: 640px; }
+  .bridge2 p { line-height: 2.0; color: var(--muted); }
+  .bridge2 .hit {
+    font-size: clamp(18px, 5vw, 26px) !important;
+    font-weight: 900; color: var(--white) !important; line-height: 1.8;
+    margin: 30px 0 !important;
+  }
+  .bridge2 .hit .gold { color: var(--gold); }
+  .backlink {
+    display: inline-block; margin-top: 26px; font-size: 13px;
+    color: var(--muted); text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 3px;
+  }
+  .backlink:hover { color: var(--accent); border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-eyebrow">ON THE WAY</div>
+  <h1>まだ1曲も完成していない。<br>それでも、<span class="accent">彼は止まっていない。</span></h1>
+  <p class="hero-lead">DJとして、他人の曲でフロアを作ってきた人の話です。<br>13コマ、5分ほどで読めます。</p>
+  <div class="who">
+    <span class="tag">WHOSE STORY</span>これは<strong>ロードマップPROコース受講生・MOBさん</strong>の物語です。<br>
+    トリケラテクノ本人の話ではありません。ご本人の許可を得て、名前を変えて掲載しています。
+  </div>
+  <div class="hero-scroll">SCROLL<span></span></div>
+</header>
+
+<!-- ============ 漫画パート ============ -->
+<main class="story">
+  <div class="story-inner">
+
+    <!-- ---- ACT 1 — かける側 ---- -->
+    <div class="act reveal">ACT 1 — かける側</div>
+    <figure class="panel reveal" data-slot="1-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/1-1.jpg" alt="まばらな客の前でDJをする後ろ姿">
+      <figcaption>金曜の夜。フロアは、半分も埋まっていない。<br>それでも、何をかければ人が動くかは、もう分かる。</figcaption>
+    </figure>
+    <figure class="panel reveal" data-slot="1-2">
+      <img loading="lazy" decoding="async" src="manga2/opt/1-2.jpg" alt="終演後、誰もいない箱でラップトップを閉じる手">
+      <figcaption>今夜かけた曲の全部が、他人の曲だった。<span class="quote">——自分で作った曲を、ここでかけたい。</span></figcaption>
+    </figure>
+
+    <!-- ---- ACT 2 — 0曲 ---- -->
+    <div class="act reveal">ACT 2 — 0曲</div>
+    <figure class="panel reveal" data-slot="2-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/2-1.jpg" alt="暗い部屋でスマホのメッセージを見る">
+      <figcaption>そんな頃、ある数字を教わった。<br>トップDJの1時間、15曲の内訳。</figcaption>
+    </figure>
+    <figure class="panel panel--beat reveal" data-slot="2-2">
+      <img loading="lazy" decoding="async" src="manga2/opt/2-2.jpg" alt="空のライブラリ画面">
+      <figcaption>自分の曲が3分の1。自分のリミックスが3分の1。<br>残りが、トレンド曲。<span class="quote">——俺が出せるのは、0曲だった。</span></figcaption>
+    </figure>
+
+    <!-- ---- ACT 3 — 知識はあった ---- -->
+    <div class="act reveal">ACT 3 — 知識はあった</div>
+    <figure class="panel reveal" data-slot="3-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/3-1.jpg" alt="ほぼ空のDAWと積み上がった教材ウィンドウ">
+      <figcaption>30代。DTM歴3ヶ月。<br>DAWはある。教材も買った。海外の講座も、韓国のスクールも。</figcaption>
+    </figure>
+    <figure class="panel reveal" data-slot="3-2">
+      <img loading="lazy" decoding="async" src="manga2/opt/3-2.jpg" alt="同じ構成が違う区切りで表示された2つの記事">
+      <figcaption>なのに、1曲も終わらない。<br>開く記事ごとに、同じ場所が違う名前で呼ばれていた。</figcaption>
+    </figure>
+    <figure class="panel panel--beat reveal" data-slot="3-3">
+      <img loading="lazy" decoding="async" src="manga2/opt/3-3.jpg" alt="頭を抱える後ろ姿">
+      <figcaption><span class="quote">——調べるほど、分からなくなっていく。</span></figcaption>
+    </figure>
+
+    <p class="panel-group-caption reveal">
+      教材は足りていた。<br>
+      足りなかったのは、どれを、どの順番でやるかだった。
+    </p>
+
+    <!-- ---- ACT 4 — 順番 ---- -->
+    <div class="act reveal">ACT 4 — 順番</div>
+    <figure class="panel reveal" data-slot="4-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/4-1.jpg" alt="番号のついた項目が並ぶ一覧を指す手">
+      <figcaption>そこで初めて、順番に並んだものを見た。<br>最初にやることは、曲を作ることですらなかった。</figcaption>
+    </figure>
+
+    <!-- ---- ACT 5 — 詰まりの連続 ---- -->
+    <div class="act reveal">ACT 5 — 詰まりの連続</div>
+    <figure class="panel reveal" data-slot="5-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/5-1.jpg" alt="同じ大きさの波形が2本ぶつかっている画面">
+      <figcaption>足せば良くなると思っていた。<br>原因は逆で、二つの音が同じ場所で主役を張っていた。<span class="quote">——下げたら、収まった。</span></figcaption>
+    </figure>
+    <figure class="panel reveal" data-slot="5-2">
+      <img loading="lazy" decoding="async" src="manga2/opt/5-2.jpg" alt="エラーダイアログの前で手が止まっている">
+      <figcaption>次は、プラグインが自分のPCで動かなかった。<br>検索して出てくるのは、非対応という一行だけ。<br>独学なら、たぶんここで終わっていた。</figcaption>
+    </figure>
+    <figure class="panel reveal" data-slot="5-3">
+      <img loading="lazy" decoding="async" src="manga2/opt/5-3.jpg" alt="片耳を押さえる横顔とEQカーブの窪み">
+      <figcaption>ボーカルが、なぜか耳に痛い。<br>その「なぜか」に、数字がついた。<span class="quote">——6000Hzを、2dB下げる。</span></figcaption>
+    </figure>
+
+    <!-- ---- ACT 6 — その日 ---- -->
+    <div class="act reveal">ACT 6 — その日</div>
+    <figure class="panel reveal" data-slot="6-1">
+      <img loading="lazy" decoding="async" src="manga2/opt/6-1.jpg" alt="トラックが増え展開が組まれたアレンジ画面">
+      <figcaption>いま、STEP7。<br>まだ完成していない。<br>でも、次に何をやればいいかは、もう分かる。</figcaption>
+    </figure>
+    <figure class="panel panel--wide reveal" data-slot="6-2">
+      <img loading="lazy" decoding="async" src="manga2/opt/6-2.jpg" alt="誰もいないフロアとプレイリストの空き枠">
+      <figcaption>あと少しで、この場所で、自分の曲がかかる。<span class="quote">——その日は、まだ来ていない。</span></figcaption>
+    </figure>
+
+  </div>
+</main>
+
+<!-- ============ ブリッジ ============ -->
+<section class="block bridge2">
+  <div class="inner reveal">
+    <div class="eyebrow">WHAT CHANGED</div>
+    <p>MOBさんが特別だったわけではありません。<br>教材を買っても1曲が終わらない状態から、彼は始めています。</p>
+    <p class="hit">変わったのは、<span class="gold">やる順番</span>だけです。</p>
+    <p>いま彼はSTEP7。完成した曲は、まだ1曲もありません。<br>
+    それでも、次に何をやるかを見失っていないことが、以前との違いです。</p>
+    <a class="backlink" href="origin-story.html?utm_source=on_the_way&amp;utm_medium=owned&amp;utm_campaign=manga2&amp;utm_content=backlink">← この順番を作った人の話も読む（創生秘話）</a>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-wrap">
+  <div class="offer-card reveal">
+    <div class="offer-visual">
+      <img src="roadmap-book.png" alt="ロードマップPROコース" loading="lazy" decoding="async">
+    </div>
+    <div class="offer-body">
+      <div class="offer-eyebrow">ROADMAP PRO COURSE</div>
+      <h3 class="offer-title">MOBさんが、<br>順番に潰していったものです。</h3>
+      <p class="offer-lead">1曲を完成させるまでの道のりを、10のSTEPに分解しました。3ヶ月のLINEサポートと楽曲フィードバックで、詰まったところを一つずつ解いていきます。</p>
+      <a class="offer-btn" href="https://triceratechno.github.io/roadmap-lp/triceratechno-lp.html?utm_source=on_the_way&utm_medium=owned&utm_campaign=manga2&utm_content=final_cta">ロードマップPROコースを見てみる →</a>
+    </div>
+  </div>
+
+  <a class="cta-sub" href="https://lin.ee/Nr0ZLCh" target="_blank" rel="noopener">まだ迷っている方は、公式LINEで質問する</a>
+</div>
+
+<footer>
+  <p>&copy; TRICERA TECHNO</p>
+</footer>
+
+<div class="sticky-cta-bar" role="complementary" aria-label="ロードマップの詳細へ">
+  <a href="https://triceratechno.github.io/roadmap-lp/triceratechno-lp.html?utm_source=on_the_way&utm_medium=owned&utm_campaign=manga2&utm_content=sticky">→ ロードマップの詳細を見る</a>
+</div>
+
+<script>
+  // 画像が未配置のコマはプレースホルダ表示に切り替える
+  document.querySelectorAll('.panel img').forEach(function (img) {
+    function markEmpty() {
+      var p = img.closest('.panel');
+      if (p) p.classList.add('is-empty');
+    }
+    img.addEventListener('error', markEmpty);
+    if (img.complete && img.naturalWidth === 0) markEmpty();
+  });
+
+  // スクロールで出現
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (r) { r.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function (r) { observer.observe(r); });
+  })();
+
+  // スティッキーCTA（スマホのみ）：漫画が終わるまでは出さない
+  (function () {
+    var bar = document.querySelector('.sticky-cta-bar');
+    var gate = document.querySelector('.bridge2');
+    if (!bar) return;
+    var visible = false;
+    function update() {
+      var trigger = gate ? gate.offsetTop - window.innerHeight : window.innerHeight * 0.7;
+      var shouldShow = window.scrollY > trigger;
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        bar.classList.toggle('visible', visible);
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+</body>
+</html>
