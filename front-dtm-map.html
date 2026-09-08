@@ -3,6 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  /* 常にページ最上部から表示する。
+     - ブラウザのスクロール位置復元を無効化（スマホで「途中から開く」主因）
+     - 外部リンクに付いた #price 等のハッシュを除去してトップ着地に統一
+     - ユーザーが自分でスクロールし始めた後は一切干渉しない */
+  (function () {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    var moved = false;
+    ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(function (t) {
+      window.addEventListener(t, function () { moved = true; }, { passive: true, once: true });
+    });
+    function toTop() {
+      if (moved) return;
+      try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+      catch (e) { window.scrollTo(0, 0); }
+    }
+    toTop();
+    document.addEventListener('DOMContentLoaded', toTop);
+    window.addEventListener('load', toTop);
+  })();
+</script>
 <title>DTMの地図｜音楽経験ゼロから、はじめての1音まで｜トリケラテクノ</title>
 <meta name="description" content="音楽経験ゼロでも大丈夫。DAWを開く前に読む、「DTMの地図」。全8章＋実践で、初めて自分のPCから音が鳴る。才能も楽譜の知識もいりません。価格は¥500。">
 
@@ -14,6 +39,8 @@
      実リンク：
        ロードマップLP … triceratechno-lp.html
        公式LINE       … https://lin.ee/73qcA3u
+     購入者数（ヒーロー／PRICE／最終CTA の3箇所）：
+       `<strong>17</strong>名が購入` を一括置換すれば全箇所に反映
 =========================================================== -->
 
 <!-- OGP / Twitter Card -->
@@ -174,6 +201,31 @@
   .hero-credit { text-align: center; font-size: 12px; color: var(--muted); margin-top: 18px; letter-spacing: 0.03em; }
   .hero-credit strong { color: var(--accent); font-weight: 700; }
   @media (max-width: 820px) { .hero-credit { text-align: center; } }
+
+  /* ===== 購入者数バッジ（ソーシャルプルーフ） ===== */
+  .buyers {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    margin-top: 16px; padding: 8px 18px; border-radius: 999px;
+    border: 1px solid rgba(0,200,255,0.34); background: rgba(0,200,255,0.07);
+    font-size: 13px; color: var(--text); letter-spacing: 0.04em; line-height: 1;
+  }
+  .buyers strong {
+    font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 22px;
+    color: var(--accent); letter-spacing: 0.04em; margin: 0 1px; position: relative; top: 1px;
+  }
+  .buyers-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none;
+    animation: buyersPulse 2.4s ease-out infinite;
+  }
+  @keyframes buyersPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0,200,255,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(0,200,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,200,255,0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .buyers-dot { animation: none; } }
+  /* 最終CTA内は .final p の指定（16px/line-height 1.9）を打ち消す */
+  .final p.buyers { font-size: 13px; line-height: 1; max-width: none; margin: 0 auto 26px; color: var(--text); }
+  @media (max-width: 640px) { .buyers { font-size: 12px; padding: 7px 15px; } .buyers strong { font-size: 20px; } }
   .btn--gold-offer { position: relative; flex-direction: column; gap: 4px; padding: 15px 40px; background: var(--gold); color: #1a1400; box-shadow: 0 8px 30px rgba(245,197,24,0.28); }
   .btn--gold-offer:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,197,24,0.4); }
   .bgo-l1 { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
@@ -584,10 +636,11 @@
   .voices-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .voice-item { text-align: center; }
   .voice-ava { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 18px; border: 2px solid rgba(0,200,255,0.35); }
-  .voice-quote { font-size: 13.5px; color: var(--text); line-height: 1.95; margin: 0 0 14px; text-align: left; }
+  .voice-quote { font-size: 13.5px; color: var(--text); line-height: 1.95; margin: 14px 0 0; text-align: left; }
   .voice-quote strong { color: var(--white); font-weight: 700; }
-  .voice-name { font-size: 13px; font-weight: 700; color: var(--white); }
-  .voice-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .voice-name { font-size: 13px; font-weight: 700; color: var(--white); margin: 0; }
+  .voice-meta { font-size: 11px; color: var(--muted); margin: 6px 0 0; line-height: 1.85; }
+  .voice-meta .hit { color: var(--gold); font-weight: 700; }
   .voice-disc { text-align: center; font-size: 11px; color: #666; margin-top: 30px; }
   @media (max-width: 720px) {
     .voices-grid { grid-template-columns: 1fr; gap: 34px; max-width: 460px; }
@@ -726,6 +779,7 @@
           <span class="bgo-l1"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></span>
           <span class="bgo-l2 sale-hide">通常 <s>¥1,980</s> ・ 8/16まで</span>
         </a>
+        <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>17</strong>名が購入</p>
       </div>
       <p class="hero-credit">作者：トリケラテクノ　―　相談実績<strong>100件超</strong>／総フォロワー<strong>1,700人超</strong></p>
     </div>
@@ -985,6 +1039,7 @@
         <p class="price-tax"><span class="sale-only">税込・ローンチ記念の期間限定価格</span><span class="normal-only">税込</span></p>
         <p class="price-deadline sale-hide">🔥 <strong>8/16まで</strong>の特別価格</p>
         <p class="price-desc">記事8本＋解説動画8本（計60分）＋特典3つで、<strong style="color:var(--text);"><span class="sale-only">¥500。</span><span class="normal-only">¥1,980。</span></strong><br>まず"自分にもできた"を、あなたに。</p>
+        <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>17</strong>名が購入</p>
         <!-- 仮リンク：決済URLに差し替え -->
         <span class="btn btn--gold-offer">
           <span class="bgo-rib sale-hide">75%OFF</span>
@@ -1203,28 +1258,28 @@
 <section class="section">
   <div class="wrap">
     <div class="section-label center reveal">VOICES</div>
-    <h2 class="h-jp reveal">その先へ進んだ、<em>受講生の声</em>。</h2>
+    <h2 class="h-jp reveal">トリケラテクノの教材で学んだ<br><em>受講生のリアルな変化</em></h2>
     <div class="voices-grid reveal">
       <div class="voice-item">
         <img class="voice-ava" src="ジジさんアイコン.jpg" alt="ジジさん">
-        <p class="voice-quote">「DTM初心者の私は右も左も分かってませんでした。まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>トリケラさんはDTMの先生でもあり、優秀なモチベーターでもあった</strong>。挫折しそうな時も、言葉を思い出すとがんばれました。」</p>
         <p class="voice-name">ジジさん</p>
-        <p class="voice-meta">DTM歴1年未満 ・ STEP1〜10 完走</p>
+        <p class="voice-meta">DTM歴1年未満 ・ STEP1〜10 完走<br><span class="hit">3ヶ月で1曲完成</span></p>
+        <p class="voice-quote">「DTM初心者の私は右も左も分かってませんでした。まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>トリケラさんはDTMの先生でもあり、優秀なモチベーターでもあった</strong>。挫折しそうな時も、言葉を思い出すとがんばれました。」</p>
       </div>
       <div class="voice-item">
         <img class="voice-ava" src="yasu-icon.png" alt="やすさん">
-        <p class="voice-quote">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日、曲作りに夢中になっています。根拠づけてしっかり書かれていて読みやすく、<strong>自分が欲しかった情報がたくさん詰まっていた</strong>。友人にもぜひすすめたいです。」</p>
         <p class="voice-name">やすさん</p>
-        <p class="voice-meta">DTM歴3〜5年 ・ STEP1〜10 完走</p>
+        <p class="voice-meta">DTM歴3〜5年 ・ STEP1〜10 完走<br><span class="hit">順番を変えて2週間で完成</span></p>
+        <p class="voice-quote">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日、曲作りに夢中になっています。根拠づけてしっかり書かれていて読みやすく、<strong>自分が欲しかった情報がたくさん詰まっていた</strong>。友人にもぜひすすめたいです。」</p>
       </div>
       <div class="voice-item">
-        <img class="voice-ava" src="nob-icon.png" alt="Nobさん">
-        <p class="voice-quote">「レファレンス曲をベースに、ステップアップ方式で楽曲完成までを細かく学べたので、今後は<strong>自分一人でも曲を完成させられるという『自信』が手に入った</strong>。チュートリアルを理解して活用できるベースが、自分の中にできました。」</p>
-        <p class="voice-name">Nobさん</p>
-        <p class="voice-meta">DTM歴1年未満 ・ STEP7 進行中</p>
+        <img class="voice-ava" src="eternalfield-icon.jpg" alt="Eternal Fieldさん">
+        <p class="voice-name">Eternal Fieldさん</p>
+        <p class="voice-meta">DTM歴3年 ・ STEP1〜10 完走<br><span class="hit">3ヶ月で1曲完成・リリース達成</span></p>
+        <p class="voice-quote">「購入前は、<strong>なかなか曲作りが進まなかった</strong>。今までSTEM分離をしてこなかったので、<strong>"プロの曲ってこうなっているのか"</strong>と、解像度が上がった。」</p>
       </div>
     </div>
-    <p class="voice-disc reveal">※「トリケラテクノ ロードマップ」受講生の声です。個人の感想であり、成果を保証するものではありません。</p>
+    <p class="voice-disc reveal">※「トリケラテクノ ロードマップ」受講生の声です。個人の感想・成果例であり、誰にでも同じ結果を保証するものではありません。</p>
   </div>
 </section>
 
@@ -1268,6 +1323,7 @@
   <div class="final-inner wrap">
     <h2 class="reveal">DAWを開く前に、<br>この<span style="color:var(--accent);">地図</span>を。</h2>
     <p class="reveal">才能はいりません。<br><br>順番に読むだけで、あなたの4小節ループが、DAWから鳴ります。<br>4小節はいつか1曲になり、1曲が、あなたをアーティ<span class="nowrap-tail">ストにする。</span><br><strong>すべては、この<span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>の一歩から。</strong></p>
+    <p class="buyers reveal"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>17</strong>名が購入</p>
     <!-- 仮リンク：決済URLに差し替え -->
     <a class="btn btn--primary reveal" href="https://note.com/triceratechno/n/n3412916bbf68" target="_blank" rel="noopener"><span class="sale-only">¥500で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span><span class="normal-only">¥1,980で、最初の一歩を<span class="nowrap-tail">踏み出す →</span></span></a>
     <span class="btn-sub reveal">不安なことがあれば、まずは公式LINEで気軽に相談して<span class="nowrap-tail">ください。</span></span>

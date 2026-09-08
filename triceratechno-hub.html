@@ -7,17 +7,18 @@
 <meta name="description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
 <meta name="robots" content="noindex,nofollow">
 
-<!-- OGP / Twitter Card (※デプロイ時、og:url と og:image を絶対URLに差し替え推奨) -->
+<!-- OGP / Twitter Card -->
 <meta property="og:title" content="ロードマップHUB｜トリケラテクノ流">
 <meta property="og:description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="トリケラテクノ">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="mockup-pro.png">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/triceratechno-hub.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/mockup-pro.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ロードマップHUB｜トリケラテクノ流">
 <meta name="twitter:description" content="最短で1曲完成するための10STEP。購入者専用の学習進捗ハブ。">
-<meta name="twitter:image" content="mockup-pro.png">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/mockup-pro.png">
 
 <!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="tricera-icon.jpg">
@@ -36,7 +37,7 @@
     --gold: #f5c518;
     --gold-glow: rgba(245,197,24,0.25);
     --text: #e8e8e8;
-    --muted: #666;
+    --muted: #9a9a9a;
     --white: #ffffff;
   }
 
@@ -1755,7 +1756,7 @@
     <div class="hub-hero-grid"></div>
     <div class="hub-hero-inner">
       <div class="tag">FOR MEMBERS ONLY</div>
-      <p class="hub-hero-eyebrow">TRICERATECHNO ROADMAP 1.0</p>
+      <p class="hub-hero-eyebrow">TRICERATECHNO ROADMAP PRO</p>
       <h1 class="hub-hero-title">ROADMAP <span>HUB</span></h1>
       <p class="hub-hero-subtitle">最短で1曲完成するための10STEP</p>
       <p class="hub-hero-lead">あなたの学習進捗を、ひとつにまとめました。</p>
@@ -2086,7 +2087,7 @@
   })();
   </script>
 
-  <script src="hub-data.js"></script>
+  <script src="hub-data.js?v=20260906f"></script>
   <script>
   (function () {
     'use strict';
@@ -2284,7 +2285,12 @@
 
         const articlesHtml = (step.articles || []).map(article => {
           const aStatus = normArticleStatus(article.status);
-          const hasUrl = !!(article.noteUrl && String(article.noteUrl).trim());
+          // pageUrl（自作記事ページ）があればそちらを優先。無ければ従来どおり noteUrl。
+          const readUrl = (article.pageUrl && String(article.pageUrl).trim())
+            || (article.noteUrl && String(article.noteUrl).trim())
+            || '';
+          const isOwnPage = !!(article.pageUrl && String(article.pageUrl).trim());
+          const hasUrl = !!readUrl;
           const hasPdf = !!(article.pdfUrl && String(article.pdfUrl).trim());
           const hasVideo = !!(article.videoUrl && String(article.videoUrl).trim());
           const isOverview = article.type === 'overview';
@@ -2312,8 +2318,9 @@
                 : `<span class="hub-article-video disabled" aria-disabled="true" aria-label="動画（準備中）">▶ 動画</span>`)
             : '';
 
+          // 自作ページは同一タブで開く（戻るボタンでHUBに戻れる）。noteは別タブ。
           const ctaHtml = canRead
-            ? `<a class="hub-article-cta" href="${esc(article.noteUrl)}" target="_blank" rel="noopener" data-article-id="${esc(article.id)}">→ 読む</a>`
+            ? `<a class="hub-article-cta" href="${esc(readUrl)}"${isOwnPage ? '' : ' target="_blank" rel="noopener"'} data-article-id="${esc(article.id)}">→ 読む</a>`
             : `<span class="hub-article-cta disabled" aria-disabled="true">→ 読む</span>`;
 
           return `

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEP9：マスタリングの前に、絶対に知っておくべき判断基準｜ロードマップPROコース</title>
+<meta name="description" content="マスタリングは音圧を競う工程ではない。「この曲は、この状態で世界に出していい」と判断するための工程。LUFSとTrue Peakで止めていいラインを決める。">
+<meta name="robots" content="noindex,nofollow">
+
+<meta property="og:title" content="STEP9：マスタリングの前に、絶対に知っておくべき判断基準 ── 音圧に振り回されず「送り出せる曲」にするために">
+<meta property="og:description" content="LUFSを知るのは、潰すためではない。安心して手を止めるため。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/articles/step9-overview.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/roadmap-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_article.css?v=20260906g">
+</head>
+
+<body class="is-locked" data-prev-id="8-2" data-article-id="9-overview" data-next-id="10-overview">
+
+<!-- ===== 合言葉ゲート ===== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-tag">PURCHASERS ONLY</div>
+    <h2 class="gate-title" id="gateTitle">ROADMAP PRO</h2>
+    <p class="gate-desc">合言葉を入力してアクセスしてください。</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" placeholder="合言葉" aria-label="合言葉" autocomplete="off">
+      <button class="gate-btn" type="submit">アクセスする</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>合言葉が違います。</p>
+    <p class="gate-note">合言葉が分からない場合は<br><a href="https://note.com/triceratechno" target="_blank" rel="noopener">トリケラテクノ</a>までお問い合わせください。</p>
+  </div>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <a class="topbar-back" href="../triceratechno-hub.html">← HUBに戻る</a>
+  <div class="topbar-title">STEP 9 ／ Decide To Stop</div>
+  <div class="topbar-progress" id="readProgress"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <p class="hero-eyebrow">TRICERA TECHNO LAB ｜ ROADMAP PRO COURSE</p>
+  <div class="hero-step">STEP 9</div>
+  <h1 class="hero-en">Decide<br>To Stop</h1>
+  <p class="hero-ja">マスタリングの前に、<br>絶対に知っておくべき判断基準。</p>
+  <p class="hero-lead">音圧に振り回されず「送り出せる曲」にするために。</p>
+  <div class="hero-meta">
+    <span>読了 <b>約12分</b></span>
+    <span>STEP <b>09</b> ／ 10</span>
+    <span>手順 <b>4</b></span>
+  </div>
+</header>
+
+<main class="article-body">
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Introduction</div>
+      <h2 class="sec-title">「で、マスタリングって…<br><em>何をすればいいの？」</em></h2>
+
+      <p class="lead-p">
+        STEP8までで、あなたはすでに楽曲の構造を整理し、音量・パン・空間を“理由を持って”配置し、
+        <strong>「ここで止めていい」と数値で判断できる状態</strong>まで到達しています。
+      </p>
+
+      <p>
+        これは、<em>DTMを始めた多くの人が一度も経験しない地点</em>です。
+        正直に言うと、ミックスがここまで整っていれば、<strong>曲はもう壊れません。</strong>
+      </p>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">だが ── ここで、ほぼ全員が次の壁にぶつかる</div>
+        <ul>
+          <li>音圧を上げる工程？</li>
+          <li>リミッターを強くかける？</li>
+          <li>プロの曲と同じLUFSに合わせる？</li>
+        </ul>
+        <p>
+          調べれば調べるほど、不安は増える。そして多くの人が、
+          <strong>STEP8で整えた曲を、STEP9で自分の手で壊してしまう。</strong>
+        </p>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">問題は、知識不足ではない</div>
+        <p>
+          どこまでやれば十分なのか／どこから先はやりすぎなのか／自分でやっていいことは何か
+          ── <strong>この線引き＝判断基準がないこと</strong>です。
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">このSTEPでやること、3つだけ</div>
+        <ul>
+          <li>ミックスとマスタリングの役割を分ける</li>
+          <li>やっていいこと／やらないことの線を引く</li>
+          <li>LUFS と True Peak で「止めていいライン」を決める</li>
+        </ul>
+        <p>
+          <strong>音圧は、目指すものではなく積み上げの結果です。</strong>
+        </p>
+      </div>
+
+      <div class="vs">
+        <div class="vs-col">
+          <p class="vs-tag">STEP8 で作ったもの</p>
+          <p class="vs-head">壊れない曲</p>
+        </div>
+        <div class="vs-col vs-col--ok">
+          <p class="vs-tag">STEP9 で作るもの</p>
+          <p class="vs-head">外に出せる曲</p>
+        </div>
+      </div>
+
+      <p>
+        音が完璧になるわけではありません。<strong>不安が消える。それが最大の変化です。</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順① ── Separate</div>
+      <h2 class="sec-title">ミックスとマスタリングの<br><em>役割分離</em></h2>
+      <p class="sec-title-en">ここを間違えると、9割迷う</p>
+
+      <div class="vs">
+        <div class="vs-col">
+          <p class="vs-tag">ミックスの役割</p>
+          <ul>
+            <li>音の関係性を作る</li>
+            <li>主役・支え・装飾を成立させる</li>
+            <li>周波数・空間・定位を整理する</li>
+          </ul>
+          <p><strong>→ 曲の中身を作る工程</strong></p>
+        </div>
+        <div class="vs-col">
+          <p class="vs-tag">マスタリングの役割</p>
+          <ul>
+            <li>再生環境差への耐性を確認する</li>
+            <li>全体の音量感を現実的な位置に揃える</li>
+            <li>配信・公開に耐える状態へ整える</li>
+          </ul>
+          <p><strong>→ 外に出すための最終調整</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">重要な前提</div>
+        <p><strong>マスタリングで曲の中身は変えない。</strong></p>
+        <p>
+          もしマスタリング中に「バランスが気になる」「リードが大きい気がする」「キックが弱い気がする」
+          と思ったら、それは <a href="step8-1.html">STEP8</a> に戻るサインです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順② ── Allowed</div>
+      <h2 class="sec-title">マスタリングで<br><em>「やっていいこと」</em></h2>
+
+      <p>STEP9でやっていい処理は、<strong>基本的に次の3つだけ</strong>です。目的は音作りではなく、仕上げの調整。</p>
+
+      <div class="cards cards--3">
+        <div class="card">
+          <span class="card-en">01</span>
+          <h3 class="card-title">軽いEQ（ごくわずか）</h3>
+          <ul>
+            <li>明らかな低域の溜まりを軽く整理</li>
+            <li>全体の傾き（暗すぎ／明るすぎ）を微調整</li>
+          </ul>
+          <p><strong>±2dB以内が目安。</strong>それ以上動かすなら、ミックスに戻る。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">02</span>
+          <h3 class="card-title">軽いダイナミクス整理</h3>
+          <p>グルー目的。全体の動きをまとめるため。</p>
+          <p><strong>1〜2dB程度の変化で十分。</strong>音圧を稼ぐ場所ではない。</p>
+        </div>
+        <div class="card">
+          <span class="card-en">03</span>
+          <h3 class="card-title">最終リミッター</h3>
+          <p>役割は一つ。<strong>配信に耐える音量へ揃えること。</strong></p>
+          <p>DAW付属でOK。</p>
+        </div>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">EQ のコツ（私のやり方）</div>
+        <p>
+          リード・ボーカルがはっきり聞こえづらいと感じたとき、
+          <strong>中域をがっつり（5dBくらい）上げてみる。</strong>
+          そこで「はっきり音が聞こえるようになった」と思ったら、<em>＋2dBに下げる。</em>
+        </p>
+        <p>EQでブーストするのはありですが、<strong>やりすぎは禁物です。</strong></p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">グルーコンプの設定</div>
+        <p>
+          曲としての一体感はやはり重要。<strong>このグルーコンプはプロのエンジニアも入れるくらい大事なポイント</strong>です。
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>パラメータ</th><th>設定値</th></tr></thead>
+          <tbody>
+            <tr><th>Ratio</th><td><strong>4 : 1</strong></td></tr>
+            <tr class="is-focus"><th>ゲインリダクション</th><td><strong>1 〜 2dB</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><em>ダイナミクスを失わないが、一曲としてのまとまりが出てきます。</em></p>
+
+      <h3 class="sub-title">リミッターでやること</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>項目</th><th>設定</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>出力</th><td><strong>−1.0 dBTP 以下</strong></td></tr>
+            <tr class="is-focus"><th>スレッショルド（またはインプット）</th><td>Integrated LUFS が <strong>−14 〜 −13 前後</strong>に収まる位置を探す</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">このとき重要なこと</div>
+        <p>
+          「どこまで上げられるか」ではなく、<strong>「どこまでなら壊れないか」</strong>を見ること。
+        </p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">リミッターを調整しながら、必ず耳で確認する3つ</div>
+        <ul>
+          <li><strong>アタックが潰れていないか</strong> → キックやスネアの立ち上がりが鈍っていないか</li>
+          <li><strong>低域が歪んでいないか</strong> → キックやベースがモコモコ、ビリついていないか</li>
+          <li><strong>サビで苦しくなっていないか</strong> → 音が詰まり、押し潰された印象になっていないか</li>
+        </ul>
+        <p>
+          もしどれか一つでも違和感が出るなら、<em>それ以上リミッターをかけるべきではありません。</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順③ ── Forbidden</div>
+      <h2 class="sec-title">やらなくていいこと<br><em>── 多くの人がここで壊す</em></h2>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">STEP9 では、以下は不要</div>
+        <ul>
+          <li>音色を作り直す</li>
+          <li>大きくバランスを変える</li>
+          <li>帯域を派手にブーストする</li>
+          <li><strong>プロと同じLUFSを目指す</strong></li>
+        </ul>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">特に危険なのが、比較して落ち込むこと</div>
+        <p>
+          プロのマスターは、<strong>専用環境・専門の耳・別エンジニア視点</strong>で仕上げられています。
+        </p>
+        <p>
+          私も、DTMを知れば知るほど、専用の環境やプロのエンジニアとの差を感じて心が折れそうになる時があります。
+          <em>でも、安心してほしい。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">そんな彼らも、初めからプロではなかった</div>
+        <p>
+          家の小さなスピーカーで、ミキシングやマスタリングを見よう見まねで始めた。
+          <strong>彼らにもそんな時期が必ずありました。</strong>
+          でも、一曲完成させ、それを何度も繰り返し、専門家と呼ばれるようになったわけです。
+        </p>
+        <p>
+          あなたはまだ、スタジオのような場所ではなく、部屋で楽曲制作をしているかもしれない。
+          専門家のようなアイデアはまだ、ないかもしれない。
+          <em>でも、トリケラテクノのロードマップを使って、マスタリングまで来ることができました。</em>
+        </p>
+        <p>
+          <strong>比較するのは、世界のプロたちではない。昨日の自分より一歩でも前進した自分です。</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">手順④ ── Numbers</div>
+      <h2 class="sec-title">LUFS と数値で決める<br><em>最終判断ライン</em></h2>
+      <p class="sec-title-en">ここが STEP9 の核心</p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">大前提：プラットフォームは音圧を揃える</div>
+        <p>主要プラットフォームは<strong>ノーマライズ前提</strong>です。</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>プラットフォーム</th><th>基準</th></tr></thead>
+          <tbody>
+            <tr><th>Spotify</th><td>約 −14 LUFS</td></tr>
+            <tr><th>YouTube</th><td>約 −14 LUFS</td></tr>
+            <tr><th>Apple Music</th><td>約 −16 LUFS</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        つまり、<strong>大きく作っても、再生時に下げられる。</strong>
+        だからこそ、<em>音圧を上げ過ぎて潰すメリットはほぼありません。</em>
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">Beatport など非圧縮の世界は別</div>
+        <p>
+          圧縮していない楽曲ファイルを購入できる Beatport のようなサイトだと、<strong>−7LUFS とかはざらにあります。</strong>
+          これは、DJがフェスやイベントのような大きな会場で、
+          <em>小さな粗が目立ちやすくなるほどの大音量のサウンドを使うため</em>です。
+        </p>
+        <p>
+          実際に、トッププロデューサーたちは<strong>配信用・非圧縮音源用・クラブ用・フェス用</strong>と、
+          会場の音の鳴り方（特に低音）ごとにマスタリングを変えています。
+          <em>このロードマップでは、配信をゴールにしているので、音圧をそこまで目指しません。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">STEP9 で推奨する現実的な数値</h3>
+
+      <div class="table-wrap">
+        <table class="ref">
+          <thead><tr><th>指標</th><th>基準</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr class="is-focus"><th>Integrated LUFS</th><td><strong>−14 〜 −13 LUFS 前後</strong></td><td>計測開始から現在までの全信号を平均したラウドネス</td></tr>
+            <tr><th>Short-Term LUFS（ドロップ）</th><td><strong>−10 〜 −9 LUFS 程度</strong></td><td>直近3秒間のラウドネス</td></tr>
+            <tr><th>Short-Term LUFS（それ以外）</th><td>−12 〜 −14 付近</td><td>常に詰まっている状態は、聴いていて疲れる</td></tr>
+            <tr class="is-focus"><th>True Peak</th><td><strong>−1.0 dBTP 以下</strong></td><td>再生や変換後に発生する“実際のピーク”の上限</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--core">
+        <div class="callout-head">なぜ True Peak が必要か</div>
+        <p>
+          配信では音源がエンコードされます（＝WAVなどをAAC/MP3等の配信用形式に変換すること）。
+          <strong>この変換でピークが持ち上がり、0dB を超えると歪みます。</strong>
+        </p>
+        <p>だから安全策として、<em>True Peak：−1.0 dBTP 以下</em>にしておけば、配信後に歪みにくい。</p>
+      </div>
+
+      <div class="callout callout--ng">
+        <div class="callout-head">もし −12 LUFS 以上を狙っているなら</div>
+        <p>それは<strong>音圧競争の領域</strong>です。</p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">正解はこれ</div>
+        <p>Spotify / Apple Music / YouTube では、</p>
+        <ul>
+          <li>LUFSを合わせにいかない</li>
+          <li>潰さない</li>
+          <li>バランスを保つ</li>
+        </ul>
+        <p><strong>→ 結果として −14 前後になる。それが正解です。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">The Core Truth</div>
+      <h2 class="sec-title">STEP9 の<em>本質</em></h2>
+
+      <div class="callout callout--core">
+        <div class="callout-head">マスタリングは、音圧を競う工程ではない</div>
+        <p><strong>「この曲は、この状態で世界に出していい」と判断するための工程です。</strong></p>
+        <p><em>LUFSを知るのは、潰すためではない。安心して手を止めるため。</em></p>
+      </div>
+
+      <div class="clear">
+        <div class="clear-head">
+          <h2 class="clear-title">STEP 9 ── 最終判断フロー</h2>
+          <div class="clear-count">0 / 4</div>
+        </div>
+        <p class="clear-sub">次の4つが揃っていれば、その曲は出していい。これ以上触る理由はありません。</p>
+        <ul class="clear-list">
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">Integrated LUFS が −14 〜 −13</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">True Peak が −1.0 dBTP 以下</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">サビで潰れ・歪み・苦しさがない</span></label></li>
+          <li class="clear-item"><label><input type="checkbox"><span class="clear-box" aria-hidden="true">✓</span><span class="clear-text">ノーマライズ後を想定してもバランスが崩れない</span></label></li>
+        </ul>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">あなたが手に入れたもの</div>
+        <p>
+          マスタリングのテクニックだけではありません。それは ──
+          <strong>「止めていい」と判断できる基準</strong>です。
+        </p>
+        <p>
+          音圧を追いかけて迷う状態から、<em>判断して手を止められる状態へ移行しました。</em>
+        </p>
+      </div>
+
+      <h3 class="sub-title">ラボ専用LINEで完了報告を</h3>
+
+      <div class="action">
+        <span class="action-tag">SUPPORT</span>
+        <h3 class="action-title">「STEP9まで完了しました」の一言だけでも</h3>
+        <p><a href="https://lin.ee/73qcA3u" target="_blank" rel="noopener">https://lin.ee/73qcA3u</a></p>
+        <p>
+          マスタリングで実際に出たLUFS数値の報告／「−14でも音が小さく感じる」という相談／
+          リミッターをかけるとサビが苦しくなる現象／True Peakが超えてしまうケースの相談など、
+          <em>個別の状況に合わせて返信します。</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="sec reveal">
+    <div class="wrap">
+      <div class="sec-label">Next ── STEP 10</div>
+      <h2 class="sec-title">次はいよいよ、<br><em>最後のSTEP。</em></h2>
+
+      <p>
+        STEP10では、完成した楽曲を<strong>実際に世界へ送り出すための工程</strong>を解説します。
+      </p>
+
+      <div class="callout callout--core">
+        <div class="callout-head">STEP10 で扱うこと</div>
+        <ul>
+          <li>配信前に必ず揃えるもの</li>
+          <li>書き出し時の最終チェック</li>
+          <li>配信申請で迷わないための考え方</li>
+          <li>初配信で実際につまずいたポイント（体験談）</li>
+        </ul>
+        <p>
+          「どう出すか分からない」「ミスしたら怖い」──<em>そんな不安を、ここで完全に終わらせます。</em>
+        </p>
+      </div>
+
+      <div class="callout callout--ok">
+        <div class="callout-head">STEP10 を終えたとき</div>
+        <p>
+          あなたの曲は<strong>PCの中のデータではなく、誰かが再生できる“作品”</strong>になります。
+        </p>
+      </div>
+
+      <div class="finish">
+        <button type="button" class="finish-btn" id="finishBtn">この記事を読了にする</button>
+        <p class="finish-note" id="finishNote">押すとHUBの進捗％に反映されます。</p>
+      </div>
+
+      <nav class="pager">
+        <a href="step8-2.html">
+          <em>Previous ── STEP 8-2</em>
+          <b>ミキシングを終わらせる判断基準<br>── 壊さず仕上げる4つの最終チェック</b>
+        </a>
+        <a class="next" href="step10-overview.html">
+          <em>Next ── STEP 10</em>
+          <b>書き出し〜公開準備<br>あなたの曲を「本当に世界へ出す」最後の一歩</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-links">
+    <a href="../triceratechno-hub.html">← ロードマップHUB</a>
+    <a href="../step9.pdf" download>↓ このSTEPのPDF（スライド版）</a>
+    <a href="https://note.com/triceratechno" target="_blank" rel="noopener">note</a>
+  </div>
+  <p class="footer-note">
+    TRICERA TECHNO ／ 最短で1曲完成するためのロードマップPROコース<br>
+    購入者専用ページ。URLの共有・転載はご遠慮ください。
+  </p>
+</footer>
+
+<script src="../hub-data.js?v=20260906g"></script>
+<script src="_article.js?v=20260906g"></script>
+</body>
+</html>
