@@ -2032,6 +2032,31 @@
   }
 
   /* レファレンス曲チップ */
+  /* ===== 受講者数バッジ（ソーシャルプルーフ） =====
+     人数を変えるときは `<strong>11</strong>名のDTMerが受講中` を一括置換する。
+     ヒーロー／PRICE／最終CTA の3箇所すべてに反映される。 */
+  .buyers {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    margin-top: 16px; padding: 8px 18px; border-radius: 999px;
+    border: 1px solid rgba(0,200,255,0.34); background: rgba(0,200,255,0.07);
+    font-size: 13px; color: var(--text); letter-spacing: 0.04em; line-height: 1;
+  }
+  .buyers strong {
+    font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 22px;
+    color: var(--accent); letter-spacing: 0.04em; margin: 0 1px; position: relative; top: 1px;
+  }
+  .buyers-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none;
+    animation: buyersPulse 2.4s ease-out infinite;
+  }
+  @keyframes buyersPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0,200,255,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(0,200,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,200,255,0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .buyers-dot { animation: none; } }
+  @media (max-width: 640px) { .buyers { font-size: 12px; padding: 7px 15px; } .buyers strong { font-size: 20px; } }
+
   .review-ref {
     display: flex;
     align-items: center;
@@ -2978,6 +3003,7 @@
       </p>
       <div class="intro-video-cta-btn">
         <a href="#price" class="buy-btn">今すぐ始める →</a>
+        <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p>
       </div>
     </div>
   </div>
@@ -3408,6 +3434,7 @@
   <div class="reveal">
     <div class="section-label" style="justify-content:center; margin-bottom:16px;">PRICING</div>
     <h2 style="text-align:center;">今すぐ<em>始める</em></h2>
+    <div style="text-align:center; margin-top:14px;"><p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p></div>
 
     <div class="price-cards">
 
@@ -4116,6 +4143,7 @@
     <strong style="color:var(--text);">動き出せるのは、今だけかもしれない。</strong>
   </p>
   <a href="#price" class="buy-btn" style="font-size:17px; padding:20px 56px; display:inline-block;">7日間、試してみる →</a>
+  <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p>
   <p style="margin-top:18px; font-size:12px; color:var(--muted); letter-spacing:0.06em;">
     🛡️ 購入後7日以内・全額返金保証あり
   </p>
