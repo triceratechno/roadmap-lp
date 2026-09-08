@@ -2941,7 +2941,7 @@
 <!-- ===== ANNOUNCE BAR ===== -->
 <div class="announce-bar">
   <span class="announce-dot"></span>
-  3ヶ月LINEサポート　<span id="announceMonth"></span>の受付枠　<strong>残り2名</strong>
+  3ヶ月LINEサポート　<span id="announceMonth"></span>の受付枠　<strong>残り<span data-slots-remaining>2</span>名</strong>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -3448,7 +3448,7 @@
           <li>7日間返金保証</li>
         </ul>
         <p style="font-size:12px; color:var(--gold); letter-spacing:0.06em; text-align:center; margin-bottom:10px;">
-          <span class="announce-dot" style="background:var(--gold);"></span><span id="cardMonth"></span>のサポート受付枠　<strong>残り2名</strong>
+          <span class="announce-dot" style="background:var(--gold);"></span><span id="cardMonth"></span>のサポート受付枠　<strong>残り<span data-slots-remaining>2</span>名</strong>
         </p>
         <a href="https://buy.stripe.com/dRm28k9R3f9afIHbqPgEg01" target="_blank" class="buy-btn">今すぐ購入する →</a>
         <p style="margin-top:12px; font-size:11px; color:var(--muted); text-align:center; letter-spacing:0.05em;">Stripeの安全な決済ページへ移動します</p>
@@ -3531,7 +3531,7 @@
           これらを「形式的にこなす」のではなく、<br>
           1人1人の状況に合わせて本気でやり切るには、<br>
           私が同時に向き合える人数に限界があります。<br><br>
-          だから、受付枠は1ヶ月<strong>5名まで</strong>。<br>
+          だから、受付枠は1ヶ月<strong><span data-slots-capacity>5</span>名まで</strong>。<br>
           枠が埋まれば、翌月以降のご案内になります。
         </p>
       </div>
@@ -4002,7 +4002,7 @@
         <div class="review-avatar">i</div>
         <div>
           <p class="review-name">ikok_musicさん</p>
-          <p class="review-meta">DTM歴1〜3年 ・ Ableton Live</p>
+          <p class="review-meta">DTM歴3年 ・ Ableton Live</p>
           <div class="review-stars">★★★★★</div>
         </div>
         <div class="review-badge review-badge--progress">STEP 2 進行中</div>
@@ -4031,6 +4031,14 @@
       </div>
       <p class="review-oneliner">この場所にこんな音が隠れていたのか、とビックリした</p>
       <p class="review-body">「購入前は<strong>曲が完成しなくて焦っていた</strong>（色んな意味で）。一曲を完成させたくて申し込みました。STEP1〜2を進める中で、<strong>分離することで「この場所にこんな音が隠れていたのか」とビックリ</strong>しました。何もかも初めての経験で戸惑いながらも、一つひとつこなしています。<strong>完成までの過程がしっかり意味があり、且つ最短で習える</strong>のがいいです。」</p>
+      <a class="review-ref" href="https://youtu.be/rVp454wjqls" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/rVp454wjqls/mqdefault.jpg" alt="Tesla"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ テックハウス</span></span>
+          <span class="review-ref-title">Tesla <span>— mau P</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
     </div>
 
   </div>
@@ -4383,5 +4391,6 @@
     });
   })();
 </script>
+<script src="slots.js"></script>
 </body>
 </html>
