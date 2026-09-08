@@ -2038,9 +2038,13 @@
   /* バッジ→ボタンを縦に積むためのラッパー
      （.buyers は inline-flex なので、囲まないとボタンと同じ行に並んでしまう） */
   .cta-stack {
-    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
   }
-  .cta-stack .buyers { margin-top: 0; }
+  /* 近接の原則：バッジとボタンは1つの塊として扱うため、
+     p の margin-bottom(20px) と .buy-btn の margin-top(28px) を打ち消し、
+     間隔は gap だけで管理する（外側は .intro-video-cta-btn の 36px が担う） */
+  .cta-stack .buyers { margin: 0; }
+  .cta-stack .buy-btn { margin-top: 0; }
 
   .buyers {
     display: inline-flex; align-items: center; justify-content: center; gap: 9px;
