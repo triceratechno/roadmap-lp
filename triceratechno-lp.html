@@ -275,6 +275,8 @@
     color: var(--accent);
     font-style: normal;
   }
+  /* 変化後＝ゴールド。動詞だけを光らせて視線を一点に刺す */
+  .hero-lead em.is-after { color: var(--gold); }
 
   .hero-desc {
     font-size: clamp(12px, 1.8vw, 14px);
@@ -2036,6 +2038,17 @@
      人数を変えるときは `<strong>11</strong>名のDTMerが受講中` を一括置換する。
      ヒーロー／PRICE／最終CTA の3箇所すべてに反映される。 */
   /* バッジを横並びにする行。幅が足りなければ自動で2段に折り返す */
+  /* 到達・成果を示すバッジ。面ではなく文字と線だけをゴールドにする
+     （ゴールドの塗りつぶしはCTAボタンだけに残し、ボタンの一意性を守る） */
+  .buyers--after { border-color: rgba(245,197,24,0.4); background: rgba(245,197,24,0.07); }
+  .buyers--after .buyers-dot { background: var(--gold); animation-name: buyersPulseGold; }
+  .buyers--after strong { color: var(--gold); }
+  @keyframes buyersPulseGold {
+    0%   { box-shadow: 0 0 0 0 rgba(245,197,24,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(245,197,24,0); }
+    100% { box-shadow: 0 0 0 0 rgba(245,197,24,0); }
+  }
+
   .buyers-row {
     display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
   }
@@ -2106,7 +2119,9 @@
     background: rgba(0,200,255,0.07); border: 1px solid rgba(0,200,255,0.3);
     font-size: 11.5px; color: var(--text); letter-spacing: 0.02em; line-height: 1.5;
   }
-  .pain-proof b { color: var(--accent); font-weight: 700; }
+  /* 枠はシアン（＝痛みの側）のまま。名前と結果だけをゴールドにして、
+     暗いPAINセクションの中に光が差しているように見せる */
+  .pain-proof b { color: var(--gold); font-weight: 700; }
 
   .cta-stack {
     display: flex; flex-direction: column; align-items: center; gap: 10px;
@@ -3070,7 +3085,7 @@
         ＋3ヶ月個別サポート付き
       </p>
       <p class="hero-lead">
-        このコースで<em>何が変わるのか</em>、まず1分で確認してください。
+        このコースで何が<em class="is-after">変わる</em>のか、まず1分で確認してください。
       </p>
 
       <a class="intro-video-frame" style="margin-top:32px;" href="https://youtu.be/3g7p_QcPx-g" aria-label="ROADMAP PROコース紹介動画を再生">
@@ -3086,7 +3101,7 @@
       <div class="intro-video-cta-btn cta-stack">
         <div class="buyers-row">
           <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p>
-          <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>最短<strong>2</strong>週間で1曲完成</p>
+          <p class="buyers buyers--after"><span class="buyers-dot" aria-hidden="true"></span>最短<strong>2</strong>週間で1曲完成</p>
         </div>
         <a href="#price" class="buy-btn">今すぐ始める →</a>
       </div>
@@ -3164,19 +3179,19 @@
     <li>
       <img class="pain-avatar" src="persona-beginner.jpg" alt="完全初心者">
       <span>曲を作ってみたい。<br>でも音楽はずっと&quot;聴く専門&quot;。本当にゼロから作れるのか、不安しかない。
-        <span class="pain-proof">▶ ここから始めた <b>ジジさん</b>（DTM歴1年未満）は、3ヶ月で1曲完成</span>
+        <span class="pain-proof">▶ ここから始めた <b>ジジさん</b>（DTM歴1年未満）は、<b>3ヶ月で1曲完成</b></span>
       </span>
     </li>
     <li>
       <img class="pain-avatar" src="persona-dj.jpg" alt="音楽経験ありDTM初心者">
       <span>DJはやってきた。次は&quot;自分の曲&quot;を作りたい。<br>でも作る側は完全に初心者。何から始めればいいか分からない。
-        <span class="pain-proof">▶ ここから始めた <b>私（トリケラテクノ）</b>は、順番を決めて2ヶ月で1曲目を完成</span>
+        <span class="pain-proof">▶ ここから始めた <b>私（トリケラテクノ）</b>は、順番を決めて<b>2ヶ月で1曲目を完成</b></span>
       </span>
     </li>
     <li>
       <img class="pain-avatar" src="persona-dtm-stuck.jpg" alt="DTM経験者・未完成">
       <span>8小節のループは作れる。<br>でも、もう半年以上「完成した曲」がない。
-        <span class="pain-proof">▶ ここから始めた <b>Eternal Fieldさん</b>（DTM歴3年）は、3ヶ月で2曲リリース</span>
+        <span class="pain-proof">▶ ここから始めた <b>Eternal Fieldさん</b>（DTM歴3年）は、<b>3ヶ月で2曲リリース</b></span>
       </span>
     </li>
   </ul>
