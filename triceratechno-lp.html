@@ -1582,14 +1582,31 @@
     background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,200,255,0.04) 0%, transparent 70%);
   }
 
+  /* 全幅で横スクロールのスライダー。scroll-snapで1枚ずつ吸着し、
+     端で止まる（循環しない・JS不要）。グリッドだとサイドカードが
+     267pxしか取れず、項目の多いPREMIUMが細長くなるため。
+     上下のpaddingは featured の translateY(-10px) とグローの逃げ。 */
   .price-cards {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr 1fr;
+    display: flex;
+    align-items: stretch;          /* 3枚の高さを揃え、CTAの位置を合わせる */
     gap: 16px;
-    max-width: 900px;
-    margin: 48px auto 0;
-    align-items: start;
+    max-width: 948px;              /* 900px + 左右padding24px */
+    margin: 16px auto 0;
+    padding: 32px 24px 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
   }
+  .price-cards > .price-card {
+    flex: 0 0 320px;               /* グリッド時の267pxから+53px */
+    scroll-snap-align: center;
+  }
+  /* PCは細いスクロールバーを残す（横に動かせることの手がかり） */
+  .price-cards::-webkit-scrollbar { height: 6px; }
+  .price-cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
+  .price-cards::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 3px; }
+  .price-cards::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
 
   .price-card {
     background: #111;
@@ -1733,31 +1750,32 @@
     box-sizing: border-box;
   }
 
-  .price-swipe-hint { display: none; }
+  .price-swipe-hint {
+    display: block;
+    text-align: center;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-top: 14px;
+  }
 
   /* PRICE: モバイルは横スワイプのスライダーにする。
      scroll-snapで1枚ずつ吸着し、端で止まる（循環しない・JS不要）。
      縦積みだとPREMIUMまで到達するのに長大なスクロールが必要なため。 */
   @media (max-width: 768px) {
     .price-cards {
-      display: flex;
-      grid-template-columns: none;
-      align-items: stretch;          /* 3枚の高さを揃え、CTAの位置を合わせる */
       gap: 14px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: 24px;
       /* セクションのpadding(24px)を打ち消して画面端まで使う */
-      margin: 32px -24px 0;
-      padding: 0 24px 10px;
+      margin: 24px -24px 0;
+      padding: 20px 24px 10px;
+      max-width: none;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      scrollbar-width: none;         /* タッチでは自明なのでバーを隠す */
     }
     .price-cards::-webkit-scrollbar { display: none; }
-    .price-card {
+    .price-cards > .price-card {
       flex: 0 0 84%;                 /* 次のカードが覗き、スワイプできると分かる */
       max-width: 340px;
-      scroll-snap-align: center;
       padding: 28px 22px 32px;
     }
     .price-card--featured {
@@ -3803,7 +3821,7 @@
 
     </div>
 
-    <p class="price-swipe-hint">← スワイプして比較 →</p>
+    <p class="price-swipe-hint">← 横にスライドして3プランを比較 →</p>
 
     <!-- カード下：3ブロック -->
     <div class="post-price-grid reveal">
