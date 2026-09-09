@@ -1675,9 +1675,21 @@
     filter: drop-shadow(0 8px 20px rgba(0,0,0,0.7));
   }
 
+  /* 共通シリーズ名（小）＋プラン差分（大）の2段構成。
+     3枚とも「ロードマップPROコース」を大書きすると幅を食うため、
+     差分だけを大きく見せて折り返しを減らす */
+  .price-card-series {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
   .price-card-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     letter-spacing: 0.05em;
     color: var(--white);
     line-height: 1.2;
@@ -1733,22 +1745,47 @@
     box-sizing: border-box;
   }
 
-  /* PRICE: stack cards vertically on mobile */
+  .price-swipe-hint { display: none; }
+
+  /* PRICE: モバイルは横スワイプのスライダーにする。
+     scroll-snapで1枚ずつ吸着し、端で止まる（循環しない・JS不要）。
+     縦積みだとPREMIUMまで到達するのに長大なスクロールが必要なため。 */
   @media (max-width: 768px) {
     .price-cards {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 32px;
+      display: flex;
+      grid-template-columns: none;
+      align-items: stretch;          /* 3枚の高さを揃え、CTAの位置を合わせる */
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 24px;
+      /* セクションのpadding(24px)を打ち消して画面端まで使う */
+      margin: 32px -24px 0;
+      padding: 0 24px 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .price-cards::-webkit-scrollbar { display: none; }
     .price-card {
+      flex: 0 0 84%;                 /* 次のカードが覗き、スワイプできると分かる */
+      max-width: 340px;
+      scroll-snap-align: center;
       padding: 28px 22px 32px;
     }
     .price-card--featured {
       transform: none;
-      order: -1;
+      order: 0;                      /* 価格の昇順を維持 */
     }
     .price-card-badge {
       top: -14px;
+    }
+    .price-swipe-hint {
+      display: block;
+      text-align: center;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-top: 14px;
     }
   }
 
@@ -3711,7 +3748,7 @@
         <div class="price-card-img">
           <img src="mockup.png" alt="ロードマップPROコース">
         </div>
-        <p class="price-card-name">ロードマップPROコース<br>（サポートなし）</p>
+        <p class="price-card-name"><span class="price-card-series">ロードマップPROコース</span>サポートなし</p>
         <div class="price-card-amount">¥9,800</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
@@ -3731,7 +3768,7 @@
         <div class="price-card-img">
           <img src="mockup-pro.png" alt="ロードマップPROコース">
         </div>
-        <p class="price-card-name">ロードマップPROコース<br>+ 3ヶ月サポート</p>
+        <p class="price-card-name"><span class="price-card-series">ロードマップPROコース</span>+ 3ヶ月サポート</p>
         <div class="price-card-amount">¥19,800</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
@@ -3756,7 +3793,7 @@
         <div class="price-card-img">
           <img src="mockup-lifetime.png" alt="ロードマップPROコース ビデオコンサル付き">
         </div>
-        <p class="price-card-name">ロードマップPROコース<br>+ ビデオコンサル10回</p>
+        <p class="price-card-name"><span class="price-card-series">ロードマップPROコース</span>+ ビデオコンサル10回</p>
         <div class="price-card-amount">¥129,800</div>
         <p class="price-card-tax">税込・買い切り・追加費用なし</p>
         <ul class="price-checklist">
@@ -3777,6 +3814,8 @@
       </div>
 
     </div>
+
+    <p class="price-swipe-hint">← スワイプして比較 →</p>
 
     <!-- カード下：3ブロック -->
     <div class="post-price-grid reveal">
