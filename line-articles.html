@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTRX0X4Y77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTRX0X4Y77');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 公式LINE限定：リンクを知っている人のみ。検索エンジンには載せない -->
+<meta name="robots" content="noindex, nofollow">
+<title>公式LINE限定 記事一覧｜トリケラテクノ</title>
+<meta name="description" content="公式LINE登録者だけが読める記事をまとめた入口。ロードマップ・DTMの教科書・プラグイン解説10本・ミキシング・マスタリング・VUメーター。">
+<meta property="og:title" content="公式LINE限定 記事一覧｜トリケラテクノ">
+<meta property="og:description" content="遠回りせず、最短で1曲完成まで進むための入口。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="トリケラテクノ">
+<meta property="og:locale" content="ja_JP">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#080808; --deep:#0d0d0d; --panel:#111111; --panel2:#151515;
+    --border:#1e1e1e; --border2:#2a2a2a;
+    --accent:#00c8ff; --accent2:#0080ff;
+    --gold:#f5c518;
+    --line-green:#06c755;
+    --text:#e8e8e8; --muted:#9a9a9a; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:104px}
+  body{
+    background:var(--black); color:var(--text);
+    font-family:'Noto Sans JP',sans-serif; font-weight:300; line-height:1.9;
+    overflow-x:hidden; -webkit-text-size-adjust:100%;
+  }
+  body::before{
+    content:''; position:fixed; inset:0; z-index:1000; pointer-events:none; opacity:.4;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ===== HERO ===== */
+  .hero{padding:56px 0 36px;text-align:center;position:relative}
+  .hero::after{
+    content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+  .hero-badge{
+    display:inline-block;font-size:11px;letter-spacing:.18em;font-weight:700;
+    color:var(--accent);border:1px solid rgba(0,200,255,.35);
+    background:rgba(0,200,255,.07);border-radius:999px;padding:6px 16px;margin-bottom:22px;
+  }
+  .hero h1{
+    font-weight:900;line-height:1.45;letter-spacing:.01em;
+    font-size:clamp(24px,6.2vw,36px);color:var(--white);margin-bottom:6px;
+  }
+  .hero h1 .cy{color:var(--accent)}
+  .hero-sub{
+    font-family:'Bebas Neue',sans-serif;font-size:clamp(13px,3.4vw,16px);
+    letter-spacing:.28em;color:var(--muted);margin-bottom:26px;
+  }
+  .hero-lead{font-size:15px;line-height:2.05;color:var(--text)}
+  .hero-lead strong{color:var(--white);font-weight:700}
+  .hero-lead .em{
+    display:inline-block;color:var(--gold);font-weight:700;
+    border-bottom:1px solid rgba(245,197,24,.4);
+  }
+
+  /* ===== STICKY NAV ===== */
+  .navbar{
+    position:sticky;top:0;z-index:900;
+    background:rgba(8,8,8,.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .navbar-inner{max-width:760px;margin:0 auto;padding:10px 0 8px}
+  .nav-scroll{
+    display:flex;gap:8px;overflow-x:auto;padding:0 20px 6px;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .nav-scroll::-webkit-scrollbar{display:none}
+  .nav-chip{
+    flex:0 0 auto;font-size:12.5px;font-weight:700;white-space:nowrap;
+    color:var(--muted);background:var(--panel);border:1px solid var(--border2);
+    border-radius:999px;padding:7px 14px;transition:.2s;
+  }
+  .nav-chip:hover{color:var(--text);border-color:#3a3a3a}
+  .nav-chip.active{color:var(--black);background:var(--accent);border-color:var(--accent)}
+  .progress-row{
+    display:flex;align-items:center;gap:10px;padding:0 20px 4px;
+    font-size:11px;color:var(--muted);letter-spacing:.06em;
+  }
+  .progress-track{flex:1;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s ease}
+  .progress-num{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--accent)}
+  .prog-reset{cursor:pointer;text-decoration:underline;background:none;border:0;color:inherit;font:inherit;padding:0}
+
+  /* ===== SECTION ===== */
+  .section{padding:44px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-mark{
+    font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.2em;
+    color:var(--accent);border:1px solid rgba(0,200,255,.3);border-radius:4px;
+    padding:2px 9px;flex:0 0 auto;
+  }
+  .sec-title{font-size:clamp(19px,4.8vw,24px);font-weight:900;color:var(--white);letter-spacing:.02em}
+  .sec-lead{font-size:13.5px;color:var(--muted);margin-bottom:20px;padding-left:2px}
+
+  /* ===== CARD ===== */
+  .cards{display:flex;flex-direction:column;gap:12px}
+  .card{
+    display:flex;align-items:flex-start;gap:14px;
+    background:var(--panel);border:1px solid var(--border);border-radius:12px;
+    padding:16px 16px 16px 14px;transition:.22s;position:relative;
+  }
+  .card:hover{background:var(--panel2);border-color:#333;transform:translateY(-2px)}
+  .card.is-read{opacity:.55}
+  .card.is-read .card-title{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.3)}
+  .card-check{
+    flex:0 0 auto;width:26px;height:26px;margin-top:2px;border-radius:50%;
+    border:1.5px solid var(--border2);background:transparent;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .card-check:hover{border-color:var(--accent)}
+  .card-check svg{width:13px;height:13px;opacity:0;transition:.2s;stroke:var(--black)}
+  .card.is-read .card-check{background:var(--accent);border-color:var(--accent)}
+  .card.is-read .card-check svg{opacity:1}
+  .card-body{flex:1;min-width:0}
+  .card-link{display:block}
+  .card-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
+  .rank{
+    font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.1em;
+    color:var(--gold);background:rgba(245,197,24,.1);
+    border:1px solid rgba(245,197,24,.35);border-radius:4px;padding:1px 8px;
+  }
+  .tag{
+    font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);
+    background:#181818;border:1px solid var(--border2);border-radius:3px;padding:2px 7px;
+  }
+  .card-title{
+    font-size:15px;font-weight:700;color:var(--white);line-height:1.62;
+    word-break:break-word;
+  }
+  .card:hover .card-title{color:var(--accent)}
+  .card-desc{font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:4px}
+  .card-go{flex:0 0 auto;align-self:center;color:#555;font-size:18px;transition:.2s}
+  .card:hover .card-go{color:var(--accent);transform:translateX(3px)}
+
+  /* 主役カード（ロードマップ） */
+  .card--primary{
+    border-color:rgba(0,200,255,.35);
+    background:linear-gradient(135deg,rgba(0,200,255,.07),var(--panel) 60%);
+  }
+  .card--primary .card-title{font-size:16.5px}
+
+  /* 準備中カード */
+  .card--todo{border-style:dashed;border-color:#3a2f00;background:rgba(245,197,24,.04)}
+  .card--todo .card-title{color:var(--muted)}
+  .card--todo .card-go{color:#3a3a3a}
+  .todo-note{font-size:11.5px;color:var(--gold);letter-spacing:.04em;margin-top:6px}
+
+  /* ===== 最後に ===== */
+  .outro{
+    margin:60px 0 0;padding:36px 22px;border-radius:16px;
+    background:linear-gradient(180deg,var(--deep),#0a0a0a);
+    border:1px solid var(--border2);text-align:center;
+  }
+  .outro h2{font-size:clamp(17.5px,4.4vw,23px);font-weight:900;color:var(--white);line-height:1.65;margin-bottom:16px}
+  .outro p{font-size:14.5px;line-height:2;color:var(--text)}
+  .outro .strongline{color:var(--gold);font-weight:700}
+
+  .tpl-box{
+    text-align:left;background:var(--black);border:1px solid var(--border2);
+    border-radius:10px;padding:16px 16px 14px;margin:24px 0 18px;
+  }
+  .tpl-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .tpl-label{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
+  .tpl-copy{
+    font-size:11.5px;font-weight:700;color:var(--text);background:var(--panel);
+    border:1px solid var(--border2);border-radius:6px;padding:6px 12px;cursor:pointer;transition:.2s;
+  }
+  .tpl-copy:hover{border-color:var(--accent);color:var(--accent)}
+  .tpl-copy.done{color:var(--line-green);border-color:var(--line-green)}
+  .tpl-body{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:13px;line-height:2;color:var(--text);white-space:pre-wrap;
+  }
+  .cta-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--line-green);color:#fff;font-weight:900;font-size:16px;
+    border-radius:999px;padding:18px 24px;letter-spacing:.03em;
+    box-shadow:0 8px 28px rgba(6,199,85,.25);transition:.22s;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(6,199,85,.35)}
+  .cta-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.8}
+
+  footer{
+    margin-top:56px;padding:28px 0 40px;border-top:1px solid var(--border);
+    text-align:center;font-size:11.5px;color:#5a5a5a;letter-spacing:.06em;
+  }
+
+  @media(max-width:480px){
+    .wrap{padding:0 16px}
+    .nav-scroll,.progress-row{padding-left:16px;padding-right:16px}
+    .card{padding:14px 12px}
+    .outro{padding:30px 16px;border-radius:14px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <span class="hero-badge">公式LINE 限定</span>
+  <h1>ここに来たあなたは、<br><span class="cy">正解です。</span></h1>
+  <p class="hero-sub">START FROM HERE</p>
+  <p class="hero-lead">
+    遠回りせず、最短で <span class="em">1曲完成</span> まで進むための入口を用意しました。<br>
+    <strong>必要なものだけ、すべてここに置いています。</strong>
+  </p>
+</header>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <div class="nav-scroll" id="navScroll"></div>
+    <div class="progress-row">
+      <span>読了</span>
+      <span class="progress-num" id="progNum">0 / 0</span>
+      <span class="progress-track"><span class="progress-fill" id="progFill"></span></span>
+      <button class="prog-reset" id="progReset" type="button">リセット</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="main"></main>
+
+<div class="wrap">
+  <section class="outro" id="sec-contact">
+    <h2>ここにあるものを順番に進めれば、<br>「何をすればいいか分からない」は、<br>もうなくなります。</h2>
+    <p>あとは、やるだけです。<br>
+    もし途中で止まったら、<br>
+    <span class="strongline">下のボタンから相談してください。</span></p>
+
+    <div class="tpl-box">
+      <div class="tpl-head">
+        <span class="tpl-label">相談テンプレ</span>
+        <button class="tpl-copy" id="tplCopy" type="button">コピーする</button>
+      </div>
+      <div class="tpl-body" id="tplBody">- ニックネーム：
+- DTM歴・DAW：
+- 作りたいジャンル：
+- 今いちばん困っていること：</div>
+    </div>
+
+    <a class="cta-btn" href="https://lin.ee/Nr0ZLCh" target="_blank" rel="noopener" id="ctaLine">
+      LINEで相談する
+    </a>
+    <p class="cta-note">
+      いただいた悩みは、すべて私が一つずつ目を通して回答します。<br>
+      どんな小さなことでも構いません。
+    </p>
+  </section>
+</div>
+
+<footer>© TRICERA TECHNO — 公式LINE限定ページ</footer>
+
+<script>
+/* =========================================================
+   記事データ：ここだけ書き換えれば一覧が更新されます
+   url を null にすると「準備中」カードになります
+   ========================================================= */
+var P = 'https://note.com/preview/';
+var SECTIONS = [
+  {
+    id:'roadmap', mark:'01', title:'ロードマップ',
+    lead:'迷ったらここに戻ってくる、全体の順路',
+    items:[
+      { title:'DTM完全攻略ロードマップ：1曲完成までの全手順',
+        desc:'ここから始めてください。',
+        tags:['最初に読む'], primary:true,
+        url:P+'n2d28332a4ab2?prev_access_key=e6398053f0822a0e5082ebc57e1595c0' }
+    ]
+  },
+  {
+    id:'textbook', mark:'02', title:'DTMの教科書',
+    lead:'基礎を一気に理解する',
+    items:[
+      { title:'DTMの教科書', desc:'基礎を一気に理解する', tags:['基礎','PDF'],
+        url:'https://drive.google.com/file/d/1oeXNcdYfKl1vD-gZYa-uzgTsyu5ffxz8/view?usp=sharing' }
+    ]
+  },
+  {
+    id:'youtube', mark:'03', title:'YouTube解説記事',
+    lead:'動画を見る時間がない日は、読んで進める',
+    items:[
+      { title:'YouTube完全解説集（全7本）',
+        desc:'YouTubeで公開した動画を、文字で超シンプルに解説したマガジン。楽曲展開／ボーカルのリバーブFX／ロボットボイス／ビルドアップ／ベースのグルーブ／ジャンル別キック ほか。',
+        tags:['マガジン','動画連動'],
+        url:'https://note.com/triceratechno/m/m685d969a10c1' }
+    ]
+  },
+  {
+    id:'plugin', mark:'04', title:'プラグイン解説',
+    lead:'計10記事 / 人気順 — プロが使う処理をそのまま再現',
+    items:[
+      { rank:'1位', title:'【リバーブ徹底解説】空間が全てを決める', tags:['リバーブ'],
+        url:P+'n211f53562a42?prev_access_key=f62dc85ff32e45ba075dd6df4840e323' },
+      { rank:'2位', title:'【図解あり】キックとベースのEQ処理 完全ガイド', tags:['EQ'],
+        url:P+'n8e0ace82a755?prev_access_key=eb669770cff7b561aae5784dc848034a' },
+      { rank:'3位', title:'【知らないと損する】キックを-9dBで置くルールとミックス整理法', tags:['音量設計'],
+        url:P+'nf0441838426f?prev_access_key=581a4994fc0e33eead29298b9e80a29a' },
+      { title:'サチュレーションとディストーションの違い', tags:['歪み'],
+        url:P+'nb225006a521b?prev_access_key=46e81a5688c8a337698c4a20edd31172' },
+      { title:'【裏技】リバーブだけにサイドチェインをかける方法', tags:['リバーブ','サイドチェイン'],
+        url:P+'n0759583e166b?prev_access_key=9f7d347b6ddcee9e24ce174fea18f294' },
+      { title:'【サイドチェイン】Kickstart2を使ったダッキング徹底解説', tags:['サイドチェイン'],
+        url:P+'ne924cdc11cc4?prev_access_key=1a4efacf593c92a917babf2b9e975d03' },
+      { title:'【超定番】無料プラグイン ”OTT” の正しい使い方', tags:['無料プラグイン'],
+        url:P+'n0bded7c3610b?prev_access_key=c90e809f57a8581b9616b6745cb42f49' },
+      { title:'【コンプ解説】一体感を生むならGlueコンプ一択でしょ！', tags:['コンプ'],
+        url:P+'n9ed63781617b?prev_access_key=4f1e2b36cd4b44ba5a9890eb00b2a994' },
+      { title:'【DTM効率化】Send・Bus・Dry/Wetの違いを徹底解説', tags:['ルーティング'],
+        url:P+'nd1914ab36adc?prev_access_key=353d571453a6ff1b620d75fbc626b3e7' },
+      { title:'【音作り】Serumで作るメロディックテクノのベース', tags:['音作り','Serum'],
+        url:P+'n87e619af9845?prev_access_key=32ac1c8260bf3f6316556cd90f7d2729' }
+    ]
+  },
+  {
+    id:'mixing', mark:'05', title:'ミキシング',
+    lead:'バラバラの音を、1曲としてまとめる',
+    items:[
+      { title:'トリケラテクノ流ミキシング術 ── 全て教えます。', tags:['ミックス'],
+        url:P+'n7da424782dc0?prev_access_key=2ecc5338563d2e9144f54a72fde7cc21' }
+    ]
+  },
+  {
+    id:'mastering', mark:'06', title:'マスタリング',
+    lead:'最後の仕上げで差をつける',
+    items:[
+      { title:'マスタリング解説', desc:'最後の仕上げで差をつける', tags:['マスタリング'],
+        url:P+'nb97a5c776c81?prev_access_key=d53e8a509d0431806b9ea74466676ebf' }
+    ]
+  },
+  {
+    id:'vu', mark:'07', title:'VUメーター',
+    lead:'音量バランスを、感覚ではなく数値で',
+    items:[
+      { title:'VUメーター完全ガイド ── 初心者でも迷わない音量バランスの作り方', tags:['音量'],
+        url:P+'nde4afeb5fdcd?prev_access_key=f5cd14c677ad314f8742410603f8855e' }
+    ]
+  }
+];
+
+/* ---------- 描画 ---------- */
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+var KEY = 'tt_line_articles_read_v1';
+var readSet = new Set();
+try { readSet = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch(e) {}
+
+var CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+var uid = 0;
+var main = document.getElementById('main');
+var navScroll = document.getElementById('navScroll');
+
+SECTIONS.forEach(function(sec){
+  var el = document.createElement('section');
+  el.className = 'section';
+  el.id = 'sec-' + sec.id;
+
+  var html = '<div class="sec-head"><span class="sec-mark">' + esc(sec.mark) + '</span>'
+           + '<h2 class="sec-title">' + esc(sec.title) + '</h2></div>'
+           + '<p class="sec-lead">' + esc(sec.lead) + '</p><div class="cards">';
+
+  sec.items.forEach(function(it){
+    var id = sec.id + '-' + (uid++);
+    var isRead = readSet.has(id);
+    var cls = ['card'];
+    if (it.primary) cls.push('card--primary');
+    if (!it.url) cls.push('card--todo');
+    if (isRead) cls.push('is-read');
+
+    var top = (it.rank ? '<span class="rank">' + esc(it.rank) + '</span>' : '')
+            + (it.tags || []).map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join('');
+
+    var inner = (top ? '<div class="card-top">' + top + '</div>' : '')
+              + '<p class="card-title">' + esc(it.title) + '</p>'
+              + (it.desc ? '<p class="card-desc">' + esc(it.desc) + '</p>' : '')
+              + (it.todo ? '<p class="todo-note">▲ ' + esc(it.todo) + '</p>' : '');
+
+    var body = it.url
+      ? '<a class="card-link" href="' + esc(it.url) + '" target="_blank" rel="noopener" data-track="' + esc(it.title) + '">' + inner + '</a>'
+      : '<div class="card-link">' + inner + '</div>';
+
+    html += '<article class="' + cls.join(' ') + '" data-id="' + id + '">'
+          + '<button class="card-check" type="button" aria-label="読んだ" aria-pressed="' + isRead + '">' + CHECK_SVG + '</button>'
+          + '<div class="card-body">' + body + '</div>'
+          + '<span class="card-go">→</span></article>';
+  });
+
+  el.innerHTML = html + '</div>';
+  main.appendChild(el);
+
+  var chip = document.createElement('a');
+  chip.className = 'nav-chip';
+  chip.href = '#sec-' + sec.id;
+  chip.textContent = sec.title;
+  chip.dataset.target = 'sec-' + sec.id;
+  navScroll.appendChild(chip);
+});
+
+var chipContact = document.createElement('a');
+chipContact.className = 'nav-chip';
+chipContact.href = '#sec-contact';
+chipContact.textContent = '相談する';
+chipContact.dataset.target = 'sec-contact';
+navScroll.appendChild(chipContact);
+
+/* ---------- 読了チェック ---------- */
+var progNum = document.getElementById('progNum');
+var progFill = document.getElementById('progFill');
+var totalReadable = document.querySelectorAll('.card:not(.card--todo)').length;
+
+function saveRead(){
+  try { localStorage.setItem(KEY, JSON.stringify(Array.from(readSet))); } catch(e) {}
+}
+function renderProgress(){
+  var done = 0;
+  document.querySelectorAll('.card:not(.card--todo)').forEach(function(c){
+    if (readSet.has(c.dataset.id)) done++;
+  });
+  progNum.textContent = done + ' / ' + totalReadable;
+  progFill.style.width = totalReadable ? (done / totalReadable * 100) + '%' : '0%';
+}
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('.card-check');
+  if (!btn) return;
+  var card = btn.closest('.card');
+  var id = card.dataset.id;
+  if (readSet.has(id)) {
+    readSet.delete(id); card.classList.remove('is-read'); btn.setAttribute('aria-pressed','false');
+  } else {
+    readSet.add(id); card.classList.add('is-read'); btn.setAttribute('aria-pressed','true');
+  }
+  saveRead(); renderProgress();
+});
+document.getElementById('progReset').addEventListener('click', function(){
+  readSet.clear(); saveRead();
+  document.querySelectorAll('.card.is-read').forEach(function(c){
+    c.classList.remove('is-read');
+    var b = c.querySelector('.card-check');
+    if (b) b.setAttribute('aria-pressed','false');
+  });
+  renderProgress();
+});
+renderProgress();
+
+/* ---------- スクロールスパイ ---------- */
+var chips = Array.prototype.slice.call(document.querySelectorAll('.nav-chip'));
+var spy = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if (!en.isIntersecting) return;
+    chips.forEach(function(c){ c.classList.toggle('active', c.dataset.target === en.target.id); });
+    var active = navScroll.querySelector('.nav-chip.active');
+    if (active && active.scrollIntoView) {
+      active.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+    }
+  });
+}, {rootMargin:'-110px 0px -70% 0px', threshold:0});
+document.querySelectorAll('.section, #sec-contact').forEach(function(s){ spy.observe(s); });
+
+/* ---------- 相談テンプレのコピー ---------- */
+var tplCopy = document.getElementById('tplCopy');
+tplCopy.addEventListener('click', function(){
+  var text = document.getElementById('tplBody').textContent;
+  var done = function(){
+    tplCopy.textContent = 'コピーしました';
+    tplCopy.classList.add('done');
+    if (window.gtag) gtag('event','copy_template',{page:'line-articles'});
+    setTimeout(function(){
+      tplCopy.textContent = 'コピーする';
+      tplCopy.classList.remove('done');
+    }, 2200);
+  };
+  var fallback = function(){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    done();
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+});
+
+/* ---------- 計測 ---------- */
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[data-track]');
+  if (a && window.gtag) gtag('event','article_click',{article:a.dataset.track});
+});
+document.getElementById('ctaLine').addEventListener('click', function(){
+  if (window.gtag) gtag('event','line_cta_click',{page:'line-articles'});
+});
+</script>
+</body>
+</html>
