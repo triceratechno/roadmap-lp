@@ -2035,6 +2035,11 @@
   /* ===== 受講者数バッジ（ソーシャルプルーフ） =====
      人数を変えるときは `<strong>11</strong>名のDTMerが受講中` を一括置換する。
      ヒーロー／PRICE／最終CTA の3箇所すべてに反映される。 */
+  /* バッジを横並びにする行。幅が足りなければ自動で2段に折り返す */
+  .buyers-row {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  }
+
   /* バッジ→ボタンを縦に積むためのラッパー
      （.buyers は inline-flex なので、囲まないとボタンと同じ行に並んでしまう） */
   /* ===== ① FUTURE→実例ブリッジ ===== */
@@ -3079,7 +3084,10 @@
         ゼロからでも1曲完成させるPROコースで、音楽制作の可能性を最大限に引き出しましょう。DTM初心者を対象としたこのPROコースでは、楽曲制作の基礎的な知識の解説からアイデア出し、アレンジ、そして最終的なマスタリングまで、必要なすべてのステップを丁寧に解説します。
       </p>
       <div class="intro-video-cta-btn cta-stack">
-        <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p>
+        <div class="buyers-row">
+          <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>すでに<strong>11</strong>名のDTMerが受講中</p>
+          <p class="buyers"><span class="buyers-dot" aria-hidden="true"></span>最短<strong>2</strong>週間で1曲完成</p>
+        </div>
         <a href="#price" class="buy-btn">今すぐ始める →</a>
       </div>
     </div>
