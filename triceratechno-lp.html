@@ -708,7 +708,7 @@
 
   .pain-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 18px;
     padding: 20px 24px;
     background: var(--panel);
@@ -2037,6 +2037,72 @@
      ヒーロー／PRICE／最終CTA の3箇所すべてに反映される。 */
   /* バッジ→ボタンを縦に積むためのラッパー
      （.buyers は inline-flex なので、囲まないとボタンと同じ行に並んでしまう） */
+  /* ===== ① FUTURE→実例ブリッジ ===== */
+  .future-real {
+    max-width: 620px; margin: 34px auto 0; padding: 22px 26px;
+    border: 1px solid rgba(245,197,24,0.32); border-radius: 14px;
+    background: rgba(245,197,24,0.06); text-align: center;
+  }
+  .future-real p { margin: 0; font-size: 15px; line-height: 1.95; color: #c2c2c2; }
+  .future-real strong { color: var(--gold); }
+
+  /* ===== ③④ 完走実績バー（PRICE直前） ===== */
+  .proof { max-width: 980px; margin: 0 auto; padding: 0 24px; text-align: center; }
+  .proof-head { font-size: clamp(22px, 3.6vw, 34px); font-weight: 900; margin-bottom: 10px; }
+  .proof-head em { color: var(--accent); font-style: normal; }
+  .proof-sub { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
+  .proof-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 26px;
+  }
+  .proof-card {
+    padding: 24px 18px; border-radius: 14px;
+    background: var(--panel); border: 1px solid var(--border);
+  }
+  .proof-card img {
+    width: 46px; height: 46px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 12px;
+  }
+  .proof-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .proof-before { font-size: 11.5px; color: var(--muted); margin-bottom: 14px; letter-spacing: 0.02em; }
+  .proof-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1;
+    color: var(--gold); letter-spacing: 0.03em;
+  }
+  .proof-num span { font-size: 17px; margin-left: 2px; }
+  .proof-result { font-size: 13px; color: var(--text); margin-top: 8px; font-weight: 700; }
+  .proof-listen {
+    display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 14px 22px; border-radius: 12px;
+    background: rgba(245,197,24,0.07); border: 1px solid rgba(245,197,24,0.4);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .proof-listen:hover { background: rgba(245,197,24,0.13); border-color: rgba(245,197,24,0.7); }
+  .proof-listen-ico {
+    width: 38px; height: 38px; border-radius: 50%; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #2a2000 0%, #1a1400 100%);
+    border: 1px solid rgba(245,197,24,0.45);
+  }
+  .proof-listen-ico svg { width: 17px; height: 17px; fill: var(--gold); }
+  .proof-listen-txt { text-align: left; }
+  .proof-listen-lead { display: block; font-size: 11px; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 3px; }
+  .proof-listen-main { display: block; font-size: 14px; font-weight: 700; color: #fff; }
+  @media (max-width: 720px) {
+    .proof-grid { grid-template-columns: 1fr; gap: 12px; }
+    .proof-card { display: flex; align-items: center; gap: 16px; text-align: left; padding: 18px; }
+    .proof-card img { margin: 0; }
+    .proof-card-body { flex: 1; }
+    .proof-num { font-size: 32px; }
+  }
+
+  /* ===== ⑤ PAINの各悩みに実例チップ ===== */
+  .pain-proof {
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 10px;
+    padding: 5px 11px; border-radius: 999px;
+    background: rgba(0,200,255,0.07); border: 1px solid rgba(0,200,255,0.3);
+    font-size: 11.5px; color: var(--text); letter-spacing: 0.02em; line-height: 1.5;
+  }
+  .pain-proof b { color: var(--accent); font-weight: 700; }
+
   .cta-stack {
     display: flex; flex-direction: column; align-items: center; gap: 10px;
   }
@@ -3089,7 +3155,9 @@
   <ul class="pain-list">
     <li>
       <img class="pain-avatar" src="persona-beginner.jpg" alt="完全初心者">
-      <span>曲を作ってみたい。<br>でも音楽はずっと&quot;聴く専門&quot;。本当にゼロから作れるのか、不安しかない。</span>
+      <span>曲を作ってみたい。<br>でも音楽はずっと&quot;聴く専門&quot;。本当にゼロから作れるのか、不安しかない。
+        <span class="pain-proof">▶ ここから始めた <b>ジジさん</b>（DTM歴1年未満）は、3ヶ月で1曲完成</span>
+      </span>
     </li>
     <li>
       <img class="pain-avatar" src="persona-dj.jpg" alt="音楽経験ありDTM初心者">
@@ -3097,7 +3165,9 @@
     </li>
     <li>
       <img class="pain-avatar" src="persona-dtm-stuck.jpg" alt="DTM経験者・未完成">
-      <span>8小節のループは作れる。<br>でも、もう半年以上「完成した曲」がない。</span>
+      <span>8小節のループは作れる。<br>でも、もう半年以上「完成した曲」がない。
+        <span class="pain-proof">▶ ここから始めた <b>Eternal Fieldさん</b>は、3ヶ月で2曲リリース</span>
+      </span>
     </li>
   </ul>
   <p class="pain-bridge">実は、<strong>これはあなただけじゃない。</strong></p>
@@ -3435,6 +3505,54 @@
     </div>
   </div>
 
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 完走実績（PRICE直前） ===== -->
+<section class="proof reveal">
+  <h2 class="proof-head">DTM歴は、<em>関係なかった。</em></h2>
+  <p class="proof-sub">経験年数もDAWもバラバラ。共通しているのは、順番どおりに進めたことだけ。</p>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <img src="ジジさんアイコン.jpg" alt="ジジさん">
+      <div class="proof-card-body">
+        <p class="proof-name">ジジさん</p>
+        <p class="proof-before">DTM歴1年未満 ・ FL Studio</p>
+        <p class="proof-num">3<span>ヶ月</span></p>
+        <p class="proof-result">で1曲完成</p>
+      </div>
+    </div>
+    <div class="proof-card">
+      <img src="yasu-icon.png" alt="やすさん">
+      <div class="proof-card-body">
+        <p class="proof-name">やすさん</p>
+        <p class="proof-before">DTM歴3〜5年 ・ Ableton Live</p>
+        <p class="proof-num">2<span>週間</span></p>
+        <p class="proof-result">で1曲完成</p>
+      </div>
+    </div>
+    <div class="proof-card">
+      <img src="eternalfield-icon.jpg" alt="Eternal Fieldさん">
+      <div class="proof-card-body">
+        <p class="proof-name">Eternal Fieldさん</p>
+        <p class="proof-before">DTM歴3年 ・ Ableton Live</p>
+        <p class="proof-num">3<span>ヶ月</span></p>
+        <p class="proof-result">で2曲リリース</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="proof-listen" href="https://linkco.re/U2y3V0M5" target="_blank" rel="noopener">
+    <span class="proof-listen-ico" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
+    </span>
+    <span class="proof-listen-txt">
+      <span class="proof-listen-lead">RESULT</span>
+      <span class="proof-listen-main">受講生が完成させた曲を聴いてみる →</span>
+    </span>
+  </a>
 </section>
 
 <div class="divider"></div>
@@ -3864,6 +3982,13 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="future-real reveal">
+    <p>
+      ここまでは、想像の話に聞こえたかもしれません。<br>
+      <strong>でもこれは、受講生が実際に通った3ヶ月です。</strong>
+    </p>
   </div>
 
   <!-- MINI CTA #2: 感情ピーク型（3ヶ月後の未来直後） -->
