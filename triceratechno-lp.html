@@ -1262,6 +1262,90 @@
     }
   }
 
+  /* ===== SUPPORT: 添削サイクル / LINE風fig ===== */
+  /* D: 約束を数字で示すバッジ行 */
+  .sup-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; }
+  .sup-badge {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 8px 18px; border-radius: 999px; line-height: 1;
+    border: 1px solid rgba(245,197,24,0.4); background: rgba(245,197,24,0.07);
+    font-size: 13px; color: var(--text); letter-spacing: 0.04em;
+  }
+  .sup-badge strong {
+    font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 22px;
+    color: var(--gold); letter-spacing: 0.04em; position: relative; top: 1px;
+  }
+  @media (max-width: 640px) { .sup-badge { font-size: 12px; padding: 7px 15px; } .sup-badge strong { font-size: 20px; } }
+
+  /* B: 10STEPぶんの提出→添削サイクル */
+  .cycle { margin-top: 52px; }
+  .cycle-head { text-align: center; margin-bottom: 8px; font-size: clamp(19px, 3vw, 27px); font-weight: 900; line-height: 1.5; }
+  .cycle-head em { color: var(--gold); font-style: normal; }
+  .cycle-sub { text-align: center; font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+  .cycle-list {
+    list-style: none; margin: 0 auto; padding: 0; max-width: 620px;
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+  }
+  .cycle-list li {
+    display: grid; grid-template-columns: 64px 1fr auto; align-items: center;
+    gap: 14px; padding: 13px 18px;
+    border-bottom: 1px solid var(--border); background: var(--panel);
+  }
+  .cycle-list li:last-child { border-bottom: none; }
+  .cycle-step {
+    font-family: 'Bebas Neue', sans-serif; font-size: 19px; letter-spacing: 0.06em;
+    color: var(--muted); line-height: 1;
+  }
+  .cycle-name { font-size: 13.5px; color: #c2c2c2; line-height: 1.5; }
+  .cycle-mark {
+    font-size: 11px; letter-spacing: 0.1em; white-space: nowrap;
+    color: var(--gold); border: 1px solid rgba(245,197,24,0.4); border-radius: 999px; padding: 4px 11px;
+  }
+  .cycle-list li.is-goal { background: rgba(245,197,24,0.06); }
+  .cycle-list li.is-goal .cycle-step,
+  .cycle-list li.is-goal .cycle-name { color: var(--gold); font-weight: 700; }
+  .cycle-list li.is-goal .cycle-mark { background: var(--gold); color: #1a1400; border-color: var(--gold); font-weight: 700; }
+  .cycle-foot { text-align: center; font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.9; }
+  .cycle-foot strong { color: var(--gold); }
+  @media (max-width: 560px) {
+    .cycle-list li { grid-template-columns: 52px 1fr; row-gap: 6px; padding: 12px 14px; }
+    .cycle-mark { grid-column: 2; justify-self: start; }
+  }
+
+  /* C: LINE風のやり取り */
+  .talk { max-width: 620px; margin: 0 auto; }
+  .talk + .talk { margin-top: 26px; }
+  .talk-cap {
+    font-size: 11px; letter-spacing: 0.16em; color: var(--muted);
+    text-transform: uppercase; margin-bottom: 12px; text-align: center;
+  }
+  .talk-window {
+    background: #0b1a13; border: 1px solid #1d3329; border-radius: 14px; padding: 18px 16px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .talk-row { display: flex; gap: 9px; align-items: flex-end; }
+  .talk-row--me { flex-direction: row-reverse; }
+  .talk-ico {
+    width: 30px; height: 30px; border-radius: 50%; flex: none; overflow: hidden;
+    background: #223; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted);
+  }
+  .talk-ico img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .talk-bubble {
+    max-width: 78%; padding: 11px 14px; border-radius: 14px;
+    font-size: 13px; line-height: 1.75; color: #1b1b1b; background: #fff;
+    border-top-left-radius: 4px; white-space: pre-line;
+  }
+  .talk-row--me .talk-bubble {
+    background: #8de055; color: #14210c;
+    border-top-left-radius: 14px; border-top-right-radius: 4px;
+  }
+  .talk-bubble b { font-weight: 700; }
+  .talk-name { font-size: 10.5px; color: #6f8a7c; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .talk-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.8; }
+  @media (max-width: 560px) { .talk-bubble { max-width: 84%; font-size: 12.5px; } }
+
   /* ===== SUPPORT ===== */
   .support-box {
     border: 1px solid var(--border);
@@ -3894,19 +3978,138 @@
 <!-- ===== SUPPORT ===== -->
 <section class="reveal">
   <div class="section-label">SUPPORT</div>
-  <h2>迷ったら<em>すぐ質問</em><br>3ヶ月サポート付き</h2>
+  <h2>1曲目は、<em>一人で作らせない。</em></h2>
   <p>教材を買って、読んで終わり——そんな経験ありませんか？<br>
   私は初心者のころ、海外の英語PDF教材を買ったが質問できず、買っただけで終わりました。<br><strong>気軽に聞ける人がいれば、2年の遠回りはなかった。</strong>その後悔がこのサポートの原点です。</p>
 
+  <!-- D: 約束を数字で -->
+  <div class="sup-badges">
+    <span class="sup-badge">返信 <strong>24</strong> 時間以内</span>
+    <span class="sup-badge">添削 <strong>無制限</strong></span>
+    <span class="sup-badge">サポート <strong>3</strong> ヶ月</span>
+  </div>
+
+  <!-- B: 10STEPぶんの提出→添削サイクル -->
+  <div class="cycle">
+    <p class="cycle-head">全10STEP、各STEPの終わりに、<br><em>あなたの曲を添削します。</em></p>
+    <p class="cycle-sub">回数無制限。何度でも。</p>
+    <ul class="cycle-list">
+      <li>
+        <span class="cycle-step">STEP 01</span>
+        <span class="cycle-name">レファレンス分析｜目指す曲を決める</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 02</span>
+        <span class="cycle-name">ローエンド設計｜楽曲の土台を作る</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 03</span>
+        <span class="cycle-name">ドラム構築｜グルーブを作る</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 04</span>
+        <span class="cycle-name">ボーカル処理｜曲に馴染ませる</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 05</span>
+        <span class="cycle-name">メロディ制作｜主役を作る</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 06</span>
+        <span class="cycle-name">FX・アンビエンス｜展開と空気感</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 07</span>
+        <span class="cycle-name">アレンジ構成｜曲を展開する</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 08</span>
+        <span class="cycle-name">ミキシング｜全体を整える</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li>
+        <span class="cycle-step">STEP 09</span>
+        <span class="cycle-name">マスタリング｜仕上げる</span>
+        <span class="cycle-mark">提出 → 添削</span>
+      </li>
+      <li class="is-goal">
+        <span class="cycle-step">STEP 10</span>
+        <span class="cycle-name">配信申請｜リリース準備</span>
+        <span class="cycle-mark">完 成</span>
+      </li>
+    </ul>
+    <p class="cycle-foot">読んで終わりではなく、<strong>10回、あなたの曲に直接コメントが返ってきます</strong>。<br>提出は何度でも。納得いくまで作り直して大丈夫です。</p>
+  </div>
+
+  <!-- C: 実際のやり取り -->
+  <div style="margin-top:56px;">
+    <p class="talk-cap">— 実際のやり取り —</p>
+
+    <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico">受</span>
+          <div>
+            <p class="talk-name">受講生（DTM歴1年未満）</p>
+            <p class="talk-bubble">【STEP1-1 課題】レファレンス決定報告
+アーティスト名：mau P ／ 曲名：Tesla
+構成のメモ → <b>できていない</b>
+各楽器の音が聴き分け出来なくて苦戦しています。サポート依頼お願い致します</p>
+          </div>
+        </div>
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">構成は<b>私の方でも楽曲を購入して</b>しっかり行いますので、明後日を目処にお送りいたします！（待っている間にSTEP2を読んでいただけると制作スタートがスムーズです！）</p>
+        </div>
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">お待たせしました！レファレンス分析の結果を送ります！
+1-32小節 イントロ／33-40 フック／41-48 ビルドアップ／49-104 ドロップ…</p>
+        </div>
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">もしAbleton Liveを使われているなら、<b>プロジェクトファイルをそのまま送ります</b>ので、ご連絡ください！</p>
+        </div>
+      </div>
+      <p class="talk-note">つまずいた工程は、<strong style="color:var(--gold);">こちらで代わりに分析して渡します</strong>。</p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico">受</span>
+          <div>
+            <p class="talk-name">受講生（DTM歴3年）</p>
+            <p class="talk-bubble">分離後のファイルが全部で7種類あるのですが、今回のSTEP1-2ではどのファイルをダウンロードすればよいでしょうか？
+また、今回のリファレンスにはボーカルが入っていないと思うのですが、「Vocals」のステムもダウンロードしておいたほうがよいでしょうか？</p>
+          </div>
+        </div>
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">おはようございます！MVSEPでの柔軟な対応いいですね！
+ボーカルが入っていないのでボーカルステムはダウンロードしなくて大丈夫ですよ！</p>
+        </div>
+      </div>
+      <p class="talk-note">「こんな細かいこと聞いていいのかな」——<strong style="color:var(--gold);">その一つひとつに答えます</strong>。</p>
+    </div>
+
+  </div>
+
+  <!-- 補足 -->
   <div class="support-box">
     <ul class="support-list">
-      <li>ロードマップの各STEPに関する質問（回数無制限）</li>
-      <li>制作途中の楽曲へのリアルなフィードバック</li>
-      <li>「ここで進んでいい？」という判断相談に明確に答える</li>
       <li>アレンジ・構成・音選び・バランスの方向性確認</li>
+      <li>「ここで進んでいい？」という判断相談に明確に答える</li>
       <li>すでに制作中の楽曲の持ち込みもOK</li>
       <li>途中で完全に止まっていてもOK・いつ再開してもOK</li>
-      <li>返信は原則24時間以内、最長でも48時間以内</li>
+      <li>必要に応じて、画面越しのビデオコンサルにも対応（別途）</li>
     </ul>
   </div>
 </section>
