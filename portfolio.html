@@ -516,6 +516,50 @@ ul { list-style:none; }
   transition: background 0.2s, color 0.2s;
 }
 .lesson-card:hover .lesson-go { background: var(--accent); color: #001018; }
+.lesson-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.lesson-proof-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(0,200,255,0.06);
+  border: 1px solid rgba(0,200,255,0.28);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: #b4b4cc;
+  white-space: nowrap;
+}
+.lesson-proof-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(0,200,255,0.8);
+  flex-shrink: 0;
+}
+.lesson-proof-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #5fdcff;
+  margin: 0 1px;
+}
+.lesson-proof-item--gold {
+  background: rgba(245,197,24,0.06);
+  border-color: rgba(245,197,24,0.3);
+}
+.lesson-proof-item--gold::before {
+  background: #f5c518;
+  box-shadow: 0 0 6px rgba(245,197,24,0.75);
+}
+.lesson-proof-item--gold .lesson-proof-num { color: #f5c518; }
 
 /* ===== REVIEW CARDS (roadmap LP と同構造) ===== */
 .review-list { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; }
@@ -2021,6 +2065,9 @@ ul { list-style:none; }
             <span class="lesson-price-num">¥1,980</span>
             <span class="lesson-price-note">買い切り・記事8本＋動画8本</span>
           </div>
+          <div class="lesson-proof">
+            <span class="lesson-proof-item">すでに<span class="lesson-proof-num">17</span>名が購入</span>
+          </div>
           <span class="lesson-go">DTMの地図を見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -2037,6 +2084,10 @@ ul { list-style:none; }
           <div class="lesson-price">
             <span class="lesson-price-num">¥9,800~</span>
             <span class="lesson-price-note">買い切り・10STEP＋3ヶ月サポート</span>
+          </div>
+          <div class="lesson-proof">
+            <span class="lesson-proof-item">すでに<span class="lesson-proof-num">11</span>名のDTMerが受講中</span>
+            <span class="lesson-proof-item lesson-proof-item--gold">最短<span class="lesson-proof-num">2</span>週間で1曲完成</span>
           </div>
           <span class="lesson-go">ロードマップを見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
