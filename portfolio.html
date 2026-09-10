@@ -516,6 +516,50 @@ ul { list-style:none; }
   transition: background 0.2s, color 0.2s;
 }
 .lesson-card:hover .lesson-go { background: var(--accent); color: #001018; }
+.lesson-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.lesson-proof-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(0,200,255,0.06);
+  border: 1px solid rgba(0,200,255,0.28);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: #b4b4cc;
+  white-space: nowrap;
+}
+.lesson-proof-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(0,200,255,0.8);
+  flex-shrink: 0;
+}
+.lesson-proof-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #5fdcff;
+  margin: 0 1px;
+}
+.lesson-proof-item--gold {
+  background: rgba(245,197,24,0.06);
+  border-color: rgba(245,197,24,0.3);
+}
+.lesson-proof-item--gold::before {
+  background: #f5c518;
+  box-shadow: 0 0 6px rgba(245,197,24,0.75);
+}
+.lesson-proof-item--gold .lesson-proof-num { color: #f5c518; }
 
 /* ===== REVIEW CARDS (roadmap LP と同構造) ===== */
 .review-list { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; }
@@ -2021,6 +2065,9 @@ ul { list-style:none; }
             <span class="lesson-price-num">¥1,980</span>
             <span class="lesson-price-note">買い切り・記事8本＋動画8本</span>
           </div>
+          <div class="lesson-proof">
+            <span class="lesson-proof-item">すでに<span class="lesson-proof-num">17</span>名が購入</span>
+          </div>
           <span class="lesson-go">DTMの地図を見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -2037,6 +2084,10 @@ ul { list-style:none; }
           <div class="lesson-price">
             <span class="lesson-price-num">¥9,800~</span>
             <span class="lesson-price-note">買い切り・10STEP＋3ヶ月サポート</span>
+          </div>
+          <div class="lesson-proof">
+            <span class="lesson-proof-item">すでに<span class="lesson-proof-num">11</span>名のDTMerが受講中</span>
+            <span class="lesson-proof-item lesson-proof-item--gold">最短<span class="lesson-proof-num">2</span>週間で1曲完成</span>
           </div>
           <span class="lesson-go">ロードマップを見る <i class="fa-solid fa-arrow-right"></i></span>
         </div>
@@ -2201,6 +2252,50 @@ ul { list-style:none; }
         <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
       </a>
       </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">i</div>
+        <div>
+          <p class="review-name">ikok_musicさん</p>
+          <p class="review-meta">DTM歴3年 ・ Ableton Live</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 2 進行中</div>
+      </div>
+      <p class="review-oneliner">海外のダンスミュージックは、まったく違う考え方で作られていた</p>
+      <p class="review-body">「購入前は<strong>見よう見まねでリメイクはできても、曲作りの根本がわからず、何から始めればいいかわからなかった</strong>。今は<strong>海外のダンスミュージックが、これまで学んできた作編曲とはまったく違う考え方で作られている</strong>ことがわかりました。バラバラに見えていた点と点が、一本の線になってつながっていく感覚があります。学習HUBもPDF・動画・テキスト記事も一つひとつのクオリティが非常に高く、<strong>安心して人にすすめられます</strong>。」</p>
+      <a class="review-ref" href="https://youtu.be/cOD-R4hRUuM" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/cOD-R4hRUuM/mqdefault.jpg" alt="4ware"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ プログレッシブハウス</span></span>
+          <span class="review-ref-title">4ware <span>— deadmau5</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">イ</div>
+        <div>
+          <p class="review-name">イノケンさん</p>
+          <p class="review-meta">DTM歴1年未満 ・ Ableton Live</p>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-badge review-badge--progress">STEP 2 進行中</div>
+      </div>
+      <p class="review-oneliner">この場所にこんな音が隠れていたのか、とビックリした</p>
+      <p class="review-body">「購入前は<strong>曲が完成しなくて焦っていた</strong>（色んな意味で）。一曲を完成させたくて申し込みました。STEP1〜2を進める中で、<strong>分離することで「この場所にこんな音が隠れていたのか」とビックリ</strong>しました。何もかも初めての経験で戸惑いながらも、一つひとつこなしています。<strong>完成までの過程がしっかり意味があり、且つ最短で習える</strong>のがいいです。」</p>
+      <a class="review-ref" href="https://youtu.be/rVp454wjqls" target="_blank" rel="noopener">
+        <span class="review-ref-thumb"><img src="https://img.youtube.com/vi/rVp454wjqls/mqdefault.jpg" alt="Tesla"></span>
+        <span class="review-ref-body">
+          <span class="review-ref-label">オリジナル曲のイメージ<span class="review-ref-genre"> ・ テックハウス</span></span>
+          <span class="review-ref-title">Tesla <span>— mau P</span></span>
+        </span>
+        <svg class="review-ref-yt" width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+      </a>
+    </div>
     </div>
 
     <!-- ===== REAL FEEDBACK CASE ===== -->
