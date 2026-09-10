@@ -330,7 +330,7 @@ var SECTIONS = [
     lead:'迷ったらここに戻ってくる、全体の順路',
     items:[
       { title:'DTM完全攻略ロードマップ：1曲完成までの全手順',
-        desc:'ここから始めてください。',
+        desc:'何から手をつけるか、毎回そこで止まる。1曲を終わらせる順番を、最初に決める。',
         tags:['最初に読む'], primary:true, img:IMG+'roadmap.png',
         url:P+'n2d28332a4ab2?prev_access_key=e6398053f0822a0e5082ebc57e1595c0' }
     ]
@@ -339,7 +339,7 @@ var SECTIONS = [
     id:'textbook', mark:'02', title:'DTMの教科書',
     lead:'基礎を一気に理解する',
     items:[
-      { title:'DTMの教科書', desc:'基礎を一気に理解する', tags:['基礎','PDF'],
+      { title:'DTMの教科書', desc:'調べるたびに脱線して、結局進まない。基礎はまとめて一度で通す。', tags:['基礎','PDF'],
         img:IMG+'textbook.png',
         url:'https://drive.google.com/file/d/1oeXNcdYfKl1vD-gZYa-uzgTsyu5ffxz8/view?usp=sharing' }
     ]
@@ -349,7 +349,7 @@ var SECTIONS = [
     lead:'動画を見る時間がない日は、読んで進める',
     items:[
       { title:'YouTube完全解説集（全7本）',
-        desc:'YouTubeで公開した動画を、文字で超シンプルに解説したマガジン。楽曲展開／ボーカルのリバーブFX／ロボットボイス／ビルドアップ／ベースのグルーブ／ジャンル別キック ほか。',
+        desc:'動画を見る時間が取れない日に。手を止めずに読める、動画の文字版が7本。',
         tags:['マガジン','動画連動'], img:IMG+'youtube-complete.png',
         url:'https://note.com/triceratechno/m/m685d969a10c1' }
     ]
@@ -359,33 +359,43 @@ var SECTIONS = [
     lead:'計10記事 / 人気順 — プロが使う処理をそのまま再現',
     items:[
       { rank:'1位', title:'【リバーブ徹底解説】空間が全てを決める', tags:['リバーブ'],
+        desc:'かけるほど音が奥に引っ込む ── 原因は残響ではなく、空間の設計。',
         img:IMG+'pg01-reverb.png',
         url:P+'n211f53562a42?prev_access_key=f62dc85ff32e45ba075dd6df4840e323' },
       { rank:'2位', title:'【図解あり】キックとベースのEQ処理 完全ガイド', tags:['EQ'],
+        desc:'低音が団子になって抜けない。キックとベースの棲み分けを、図で。',
         img:IMG+'pg02-eq.png',
         url:P+'n8e0ace82a755?prev_access_key=eb669770cff7b561aae5784dc848034a' },
       { rank:'3位', title:'【知らないと損する】キックを-9dBで置くルールとミックス整理法', tags:['音量設計'],
+        desc:'毎回バランスが崩れるのは、基準がないから。置く場所を1つ決める。',
         img:IMG+'pg03-kick9db.png',
         url:P+'nf0441838426f?prev_access_key=581a4994fc0e33eead29298b9e80a29a' },
       { title:'サチュレーションとディストーションの違い', tags:['歪み'],
+        desc:'歪み系を雰囲気で選んでいる人へ。2つの違いが分かれば、選べる。',
         img:IMG+'pg04-saturation.png',
         url:P+'nb225006a521b?prev_access_key=46e81a5688c8a337698c4a20edd31172' },
       { title:'【裏技】リバーブだけにサイドチェインをかける方法', tags:['リバーブ','サイドチェイン'],
+        desc:'残響で輪郭が濁る。原音は残したまま、空間だけ引かせる裏技。',
         img:IMG+'pg05-reverb-sc.png',
         url:P+'n0759583e166b?prev_access_key=9f7d347b6ddcee9e24ce174fea18f294' },
       { title:'【サイドチェイン】Kickstart2を使ったダッキング徹底解説', tags:['サイドチェイン'],
+        desc:'キックが埋もれる。定番プラグインで、縦の隙間を作る。',
         img:IMG+'pg06-kickstart2.png',
         url:P+'ne924cdc11cc4?prev_access_key=1a4efacf593c92a917babf2b9e975d03' },
       { title:'【超定番】無料プラグイン ”OTT” の正しい使い方', tags:['無料プラグイン'],
+        desc:'とりあえず挿して満足していないか。効きすぎるOTTを、正しい量で。',
         img:IMG+'pg07-ott.png',
         url:P+'n0bded7c3610b?prev_access_key=c90e809f57a8581b9616b6745cb42f49' },
       { title:'【コンプ解説】一体感を生むならGlueコンプ一択でしょ！', tags:['コンプ'],
+        desc:'トラックがバラバラに聞こえる。まとめ役のコンプで、1曲にする。',
         img:IMG+'pg08-glue.png',
         url:P+'n9ed63781617b?prev_access_key=4f1e2b36cd4b44ba5a9890eb00b2a994' },
       { title:'【DTM効率化】Send・Bus・Dry/Wetの違いを徹底解説', tags:['ルーティング'],
+        desc:'全部インサートで済ませている人へ。3つの使い分けが、作業速度を変える。',
         img:IMG+'pg09-sendbus.png',
         url:P+'nd1914ab36adc?prev_access_key=353d571453a6ff1b620d75fbc626b3e7' },
       { title:'【音作り】Serumで作るメロディックテクノのベース', tags:['音作り','Serum'],
+        desc:'プリセット頼みから抜けたい。Serumで、ジャンルの土台を1から作る。',
         img:IMG+'pg10-serum.png',
         url:P+'n87e619af9845?prev_access_key=32ac1c8260bf3f6316556cd90f7d2729' }
     ]
@@ -395,6 +405,7 @@ var SECTIONS = [
     lead:'バラバラの音を、1曲としてまとめる',
     items:[
       { title:'トリケラテクノ流ミキシング術 ── 全て教えます。', tags:['ミックス'],
+        desc:'個別のテクは知っている。それでもまとまらない人へ、私の手順を最初から最後まで。',
         img:IMG+'mixing.png',
         url:P+'n7da424782dc0?prev_access_key=2ecc5338563d2e9144f54a72fde7cc21' }
     ]
@@ -403,7 +414,7 @@ var SECTIONS = [
     id:'mastering', mark:'06', title:'マスタリング',
     lead:'最後の仕上げで差をつける',
     items:[
-      { title:'マスタリング解説', desc:'最後の仕上げで差をつける', tags:['マスタリング'],
+      { title:'マスタリング解説', desc:'書き出すと音が小さい、細い。最後の工程で止まっている人へ。', tags:['マスタリング'],
         img:IMG+'icon-mastering.png', iconStyle:true,
         url:P+'nb97a5c776c81?prev_access_key=d53e8a509d0431806b9ea74466676ebf' }
     ]
@@ -413,6 +424,7 @@ var SECTIONS = [
     lead:'音量バランスを、感覚ではなく数値で',
     items:[
       { title:'VUメーター完全ガイド ── 初心者でも迷わない音量バランスの作り方', tags:['音量'],
+        desc:'耳だけで決めて、毎回ブレる。音量を数値で判断できるようにする。',
         img:IMG+'vu.png',
         url:P+'nde4afeb5fdcd?prev_access_key=f5cd14c677ad314f8742410603f8855e' }
     ]
