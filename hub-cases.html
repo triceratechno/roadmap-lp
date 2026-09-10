@@ -654,6 +654,35 @@
     font-weight: 700;
   }
 
+  /* ===== LINE風のやり取り（triceratechno-lp.html の .talk-* と同設計） ===== */
+  .talk { margin: 24px 0; }
+  .talk-cap {
+    font-size: 11px; letter-spacing: 0.14em; color: var(--muted);
+    margin-bottom: 10px; text-align: center;
+  }
+  .talk-window {
+    background: #0b1a13; border: 1px solid #1d3329; border-radius: 14px;
+    padding: 18px 16px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .talk-row { display: flex; gap: 9px; align-items: flex-end; }
+  .talk-row--me { flex-direction: row-reverse; }
+  .talk-ico {
+    width: 30px; height: 30px; border-radius: 50%; flex: none; overflow: hidden;
+    background: #223;
+  }
+  .talk-ico img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .talk-name { font-size: 10.5px; color: #6f8a7c; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .talk-bubble {
+    max-width: 78%; padding: 11px 14px; border-radius: 14px;
+    font-size: 13.5px; line-height: 1.8; color: #1b1b1b; background: #fff;
+    border-top-left-radius: 4px; white-space: pre-line;
+  }
+  .talk-row--me .talk-bubble {
+    background: #8de055; color: #14210c;
+    border-top-left-radius: 14px; border-top-right-radius: 4px;
+  }
+  @media (max-width: 560px) { .talk-bubble { max-width: 84%; font-size: 13px; } }
+
   .ref-body blockquote {
     border-left: 2px solid var(--gold);
     background: rgba(245,197,24,0.04);
@@ -1142,10 +1171,18 @@
 
       <p class="lesson-title"><span>教訓①</span>　解析ツールの結果が違っても、慌てない</p>
 
-      <blockquote>
-        <p>「Mix in keyというソフトで解析したところ、Tunebatとキーが違って表示されました」</p>
-        <cite>── NOBさんが最初にぶつかった壁</cite>
-      </blockquote>
+      <div class="talk">
+      <p class="talk-cap">— NOBさんが最初にぶつかった壁 —</p>
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico"><img src="nob-icon.png" alt="NOBさん"></span>
+          <div>
+            <p class="talk-name">NOBさん</p>
+            <p class="talk-bubble">Mix in keyというソフトで解析したところ、Tunebatとキーが違って表示されました</p>
+          </div>
+        </div>
+      </div>
+      </div>
 
       <p>ツールごとに結果が違うのは、普通のこと。完璧な答えを探すより、<strong>複数チェックして最後は一緒に決めればいい</strong>。</p>
 
@@ -1154,9 +1191,14 @@
       <p>NOBさんが自力で書いた構成メモ。用語は「ヴァース①」「ドロップ①」…と自己流だった。<br>
       でも返したフィードバックは ──</p>
 
-      <blockquote>
-        <p>「ほとんど小節の区切り方に違いはありません。使われている楽器も同様です。」</p>
-      </blockquote>
+      <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">ほとんど小節の区切り方に違いはありません。使われている楽器も同様です。</p>
+        </div>
+      </div>
+      </div>
 
       <p><strong>区切り位置は、最初から正解だった。違っていたのは呼び方だけ。</strong>最初から完璧に呼べる人は、誰もいない。</p>
 
@@ -1216,16 +1258,30 @@
 
       <p class="lesson-title"><span>教訓①</span>　解析ツールに出なくても、諦めない</p>
 
-      <blockquote>
-        <p>「Circle (zts mix) にはしないことにしました。理由はTunebatに検索をかけても出ないからです。」</p>
-        <cite>── ジジさんからの最初の連絡</cite>
-      </blockquote>
+      <div class="talk">
+      <p class="talk-cap">— ジジさんからの最初の連絡 —</p>
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico"><img src="ジジさんアイコン.jpg" alt="ジジさん"></span>
+          <div>
+            <p class="talk-name">ジジさん</p>
+            <p class="talk-bubble">Circle (zts mix) にはしないことにしました。理由はTunebatに検索をかけても出ないからです。</p>
+          </div>
+        </div>
+      </div>
+      </div>
 
       <p>ここで私は、踏み込みました。</p>
 
-      <blockquote>
-        <p>「ジジさんの Circle への熱い思いを、私は知っています。だからこそ、私が構成のメモを作って送らせてください。」</p>
-      </blockquote>
+      <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">ジジさんの Circle への熱い思いを、私は知っています。
+だからこそ、私が構成のメモを作って送らせてください。</p>
+        </div>
+      </div>
+      </div>
 
       <p>結果、ジジさんは本当に心が動く1曲で制作できた。<strong>レファレンスは "ツールにHITするか" ではなく "感情が動くか" で選ぶ。</strong></p>
 
@@ -1233,10 +1289,14 @@
 
       <p>「DTM初心者中の初心者」と自認していたジジさん。それでもロードマップを読みながら、曲の構成を小節単位で分解しきった。</p>
 
-      <blockquote>
-        <p>「送っていただいた内容に大きな違いはございません。」</p>
-        <cite>── 私が返したフィードバック</cite>
-      </blockquote>
+      <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">送っていただいた内容に大きな違いはございません。</p>
+        </div>
+      </div>
+      </div>
 
       <p class="lesson-title">ジジさんが残した名言</p>
 
@@ -1294,18 +1354,34 @@
 
       <p class="lesson-title"><span>教訓①</span>　解析ツールに出ない時の、現実解</p>
 
-      <blockquote>
-        <p>「Tunebatで検索しても今回のリファレンス曲が出てこない」</p>
-        <cite>── うさださんも同じ壁にぶつかった</cite>
-      </blockquote>
+      <div class="talk">
+      <p class="talk-cap">— うさださんも同じ壁にぶつかった —</p>
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico"><img src="usada-icon.png" alt="うさださん"></span>
+          <div>
+            <p class="talk-name">うさださん</p>
+            <p class="talk-bubble">Tunebatで検索しても今回のリファレンス曲が出てこない</p>
+          </div>
+        </div>
+      </div>
+      </div>
 
       <p>Beatport、アーティスト本人の表記 ── <strong>信頼できる情報源を素直に使えばいい。</strong>完璧主義になる必要はない。</p>
 
       <p class="lesson-title"><span>教訓②</span>　「サビがない曲」の構造を理解する</p>
 
-      <blockquote>
-        <p>「はっきりとしたサビがない曲のように感じ、ビルドアップとドロップの違いが判りませんでした。」</p>
-      </blockquote>
+      <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico"><img src="usada-icon.png" alt="うさださん"></span>
+          <div>
+            <p class="talk-name">うさださん</p>
+            <p class="talk-bubble">はっきりとしたサビがない曲のように感じ、ビルドアップとドロップの違いが判りませんでした。</p>
+          </div>
+        </div>
+      </div>
+      </div>
 
       <p>テクノに、ポップスのような明確な「サビ」はない。代わりにあるのは<strong>エネルギーの高低差</strong>。「ビルドアップ → ドロップ → ブレイク → ドロップ」という基本の流れを掴んだ瞬間、構造が一気に腹落ちした。</p>
 
@@ -1369,14 +1445,22 @@
 
       <p class="lesson-title"><span>教訓①</span>　「同じ音が再現できなくて止まる」は、次に進むサイン</p>
 
-      <blockquote>
-        <p>「同じ音を再現するのができなくて、止まってしまいました！」</p>
-      </blockquote>
-
-      <blockquote>
-        <p>「独学だとほぼ100%通る場所なので、むしろ次のステップに進むタイミングです。私も2年間は一曲も完成できませんでした。」</p>
-        <cite>── 私が返した言葉</cite>
-      </blockquote>
+      <div class="talk">
+      <div class="talk-window">
+        <div class="talk-row">
+          <span class="talk-ico"><img src="yasu-icon.png" alt="やすさん"></span>
+          <div>
+            <p class="talk-name">やすさん</p>
+            <p class="talk-bubble">同じ音を再現するのができなくて、止まってしまいました！</p>
+          </div>
+        </div>
+        <div class="talk-row talk-row--me">
+          <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
+          <p class="talk-bubble">独学だとほぼ100%通る場所なので、むしろ次のステップに進むタイミングです。
+私も2年間は一曲も完成できませんでした。</p>
+        </div>
+      </div>
+      </div>
 
       <p>止まることは、失敗ではない。<strong>「自分1人では限界がある」と気づけたこと自体が、進歩。</strong></p>
 
