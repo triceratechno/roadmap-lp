@@ -20,6 +20,10 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="トリケラテクノ">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://triceratechno.github.io/roadmap-lp/line-articles.html">
+<meta property="og:image" content="https://triceratechno.github.io/roadmap-lp/line-articles-img/ogp-header.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://triceratechno.github.io/roadmap-lp/line-articles-img/ogp-header.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -117,25 +121,50 @@
   .sec-lead{font-size:13.5px;color:var(--muted);margin-bottom:20px;padding-left:2px}
 
   /* ===== CARD ===== */
-  .cards{display:flex;flex-direction:column;gap:12px}
+  .cards{display:flex;flex-direction:column;gap:14px}
   .card{
-    display:flex;align-items:flex-start;gap:14px;
-    background:var(--panel);border:1px solid var(--border);border-radius:12px;
-    padding:16px 16px 16px 14px;transition:.22s;position:relative;
+    position:relative;background:var(--panel);border:1px solid var(--border);
+    border-radius:12px;overflow:hidden;transition:.22s;
   }
   .card:hover{background:var(--panel2);border-color:#333;transform:translateY(-2px)}
-  .card.is-read{opacity:.55}
+  .card.is-read{opacity:.5}
   .card.is-read .card-title{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.3)}
+  .card.is-read .card-media img{filter:grayscale(1)}
+
+  /* サムネイル。高さを先に確保してレイアウトシフトを防ぐ */
+  .card-media{
+    position:relative;width:100%;aspect-ratio:16/9;
+    background:#0c0c0c;border-bottom:1px solid var(--border);overflow:hidden;
+  }
+  .card-media img{width:100%;height:100%;object-fit:cover;display:block}
+  /* 記事バナーが無いものは、特典アイキャッチのカテゴリタイルを置く */
+  .card-media.is-icon{
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 45%,#17171c,#0a0a0c);
+  }
+  .card-media.is-icon img{width:auto;height:66%;object-fit:contain;border-radius:10px}
+  /* 画像そのものが無いもの（マガジン等）はラベルのみの面で受ける */
+  .card-media.is-blank{
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#141821,#0b0b0e);
+  }
+  .card-media.is-blank span{
+    font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.26em;
+    color:#4a5568;border:1px solid #23252d;border-radius:6px;padding:8px 16px;
+  }
+
   .card-check{
-    flex:0 0 auto;width:26px;height:26px;margin-top:2px;border-radius:50%;
-    border:1.5px solid var(--border2);background:transparent;cursor:pointer;
+    position:absolute;top:10px;left:10px;z-index:3;
+    width:30px;height:30px;border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);cursor:pointer;
     display:flex;align-items:center;justify-content:center;transition:.2s;
   }
   .card-check:hover{border-color:var(--accent)}
-  .card-check svg{width:13px;height:13px;opacity:0;transition:.2s;stroke:var(--black)}
+  .card-check svg{width:14px;height:14px;opacity:0;transition:.2s;stroke:var(--black)}
   .card.is-read .card-check{background:var(--accent);border-color:var(--accent)}
   .card.is-read .card-check svg{opacity:1}
-  .card-body{flex:1;min-width:0}
+
+  .card-text{padding:14px 48px 16px 16px}
   .card-link{display:block}
   .card-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
   .rank{
@@ -153,7 +182,7 @@
   }
   .card:hover .card-title{color:var(--accent)}
   .card-desc{font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:4px}
-  .card-go{flex:0 0 auto;align-self:center;color:#555;font-size:18px;transition:.2s}
+  .card-go{position:absolute;right:16px;bottom:14px;color:#555;font-size:18px;transition:.2s}
   .card:hover .card-go{color:var(--accent);transform:translateX(3px)}
 
   /* 主役カード（ロードマップ） */
@@ -212,7 +241,7 @@
   @media(max-width:480px){
     .wrap{padding:0 16px}
     .nav-scroll,.progress-row{padding-left:16px;padding-right:16px}
-    .card{padding:14px 12px}
+    .card-text{padding:13px 44px 15px 13px}
     .outro{padding:30px 16px;border-radius:14px}
   }
   /* タッチ端末ではhoverが指を離しても residual に残り、
@@ -294,6 +323,7 @@
    url を null にすると「準備中」カードになります
    ========================================================= */
 var P = 'https://note.com/preview/';
+var IMG = 'line-articles-img/';   // サムネイル置き場
 var SECTIONS = [
   {
     id:'roadmap', mark:'01', title:'ロードマップ',
@@ -301,7 +331,7 @@ var SECTIONS = [
     items:[
       { title:'DTM完全攻略ロードマップ：1曲完成までの全手順',
         desc:'ここから始めてください。',
-        tags:['最初に読む'], primary:true,
+        tags:['最初に読む'], primary:true, img:IMG+'roadmap.png',
         url:P+'n2d28332a4ab2?prev_access_key=e6398053f0822a0e5082ebc57e1595c0' }
     ]
   },
@@ -310,6 +340,7 @@ var SECTIONS = [
     lead:'基礎を一気に理解する',
     items:[
       { title:'DTMの教科書', desc:'基礎を一気に理解する', tags:['基礎','PDF'],
+        img:IMG+'icon-textbook.png', iconStyle:true,
         url:'https://drive.google.com/file/d/1oeXNcdYfKl1vD-gZYa-uzgTsyu5ffxz8/view?usp=sharing' }
     ]
   },
@@ -319,7 +350,7 @@ var SECTIONS = [
     items:[
       { title:'YouTube完全解説集（全7本）',
         desc:'YouTubeで公開した動画を、文字で超シンプルに解説したマガジン。楽曲展開／ボーカルのリバーブFX／ロボットボイス／ビルドアップ／ベースのグルーブ／ジャンル別キック ほか。',
-        tags:['マガジン','動画連動'],
+        tags:['マガジン','動画連動'], blankLabel:'MAGAZINE',
         url:'https://note.com/triceratechno/m/m685d969a10c1' }
     ]
   },
@@ -328,24 +359,34 @@ var SECTIONS = [
     lead:'計10記事 / 人気順 — プロが使う処理をそのまま再現',
     items:[
       { rank:'1位', title:'【リバーブ徹底解説】空間が全てを決める', tags:['リバーブ'],
+        img:IMG+'pg01-reverb.png',
         url:P+'n211f53562a42?prev_access_key=f62dc85ff32e45ba075dd6df4840e323' },
       { rank:'2位', title:'【図解あり】キックとベースのEQ処理 完全ガイド', tags:['EQ'],
+        img:IMG+'pg02-eq.png',
         url:P+'n8e0ace82a755?prev_access_key=eb669770cff7b561aae5784dc848034a' },
       { rank:'3位', title:'【知らないと損する】キックを-9dBで置くルールとミックス整理法', tags:['音量設計'],
+        img:IMG+'pg03-kick9db.png',
         url:P+'nf0441838426f?prev_access_key=581a4994fc0e33eead29298b9e80a29a' },
       { title:'サチュレーションとディストーションの違い', tags:['歪み'],
+        img:IMG+'pg04-saturation.png',
         url:P+'nb225006a521b?prev_access_key=46e81a5688c8a337698c4a20edd31172' },
       { title:'【裏技】リバーブだけにサイドチェインをかける方法', tags:['リバーブ','サイドチェイン'],
+        img:IMG+'pg05-reverb-sc.png',
         url:P+'n0759583e166b?prev_access_key=9f7d347b6ddcee9e24ce174fea18f294' },
       { title:'【サイドチェイン】Kickstart2を使ったダッキング徹底解説', tags:['サイドチェイン'],
+        img:IMG+'pg06-kickstart2.png',
         url:P+'ne924cdc11cc4?prev_access_key=1a4efacf593c92a917babf2b9e975d03' },
       { title:'【超定番】無料プラグイン ”OTT” の正しい使い方', tags:['無料プラグイン'],
+        img:IMG+'pg07-ott.png',
         url:P+'n0bded7c3610b?prev_access_key=c90e809f57a8581b9616b6745cb42f49' },
       { title:'【コンプ解説】一体感を生むならGlueコンプ一択でしょ！', tags:['コンプ'],
+        img:IMG+'pg08-glue.png',
         url:P+'n9ed63781617b?prev_access_key=4f1e2b36cd4b44ba5a9890eb00b2a994' },
       { title:'【DTM効率化】Send・Bus・Dry/Wetの違いを徹底解説', tags:['ルーティング'],
+        img:IMG+'pg09-sendbus.png',
         url:P+'nd1914ab36adc?prev_access_key=353d571453a6ff1b620d75fbc626b3e7' },
       { title:'【音作り】Serumで作るメロディックテクノのベース', tags:['音作り','Serum'],
+        img:IMG+'pg10-serum.png',
         url:P+'n87e619af9845?prev_access_key=32ac1c8260bf3f6316556cd90f7d2729' }
     ]
   },
@@ -354,6 +395,7 @@ var SECTIONS = [
     lead:'バラバラの音を、1曲としてまとめる',
     items:[
       { title:'トリケラテクノ流ミキシング術 ── 全て教えます。', tags:['ミックス'],
+        img:IMG+'mixing.png',
         url:P+'n7da424782dc0?prev_access_key=2ecc5338563d2e9144f54a72fde7cc21' }
     ]
   },
@@ -362,6 +404,7 @@ var SECTIONS = [
     lead:'最後の仕上げで差をつける',
     items:[
       { title:'マスタリング解説', desc:'最後の仕上げで差をつける', tags:['マスタリング'],
+        img:IMG+'icon-mastering.png', iconStyle:true,
         url:P+'nb97a5c776c81?prev_access_key=d53e8a509d0431806b9ea74466676ebf' }
     ]
   },
@@ -370,6 +413,7 @@ var SECTIONS = [
     lead:'音量バランスを、感覚ではなく数値で',
     items:[
       { title:'VUメーター完全ガイド ── 初心者でも迷わない音量バランスの作り方', tags:['音量'],
+        img:IMG+'vu.png',
         url:P+'nde4afeb5fdcd?prev_access_key=f5cd14c677ad314f8742410603f8855e' }
     ]
   }
@@ -411,18 +455,27 @@ SECTIONS.forEach(function(sec){
     var top = (it.rank ? '<span class="rank">' + esc(it.rank) + '</span>' : '')
             + (it.tags || []).map(function(t){ return '<span class="tag">' + esc(t) + '</span>'; }).join('');
 
-    var inner = (top ? '<div class="card-top">' + top + '</div>' : '')
+    /* サムネイル。img があれば画像、無ければラベル面。
+       iconStyle は特典アイキャッチから切り出したカテゴリタイル（正方形）用 */
+    var media = it.img
+      ? '<div class="card-media' + (it.iconStyle ? ' is-icon' : '') + '">'
+        + '<img src="' + esc(it.img) + '" alt="" loading="lazy" decoding="async"></div>'
+      : '<div class="card-media is-blank"><span>' + esc(it.blankLabel || 'ARTICLE') + '</span></div>';
+
+    var inner = media + '<div class="card-text">'
+              + (top ? '<div class="card-top">' + top + '</div>' : '')
               + '<p class="card-title">' + esc(it.title) + '</p>'
               + (it.desc ? '<p class="card-desc">' + esc(it.desc) + '</p>' : '')
-              + (it.todo ? '<p class="todo-note">▲ ' + esc(it.todo) + '</p>' : '');
+              + (it.todo ? '<p class="todo-note">▲ ' + esc(it.todo) + '</p>' : '')
+              + '</div>';
 
     var body = it.url
       ? '<a class="card-link" href="' + esc(it.url) + '" target="_blank" rel="noopener" data-track="' + esc(it.title) + '">' + inner + '</a>'
       : '<div class="card-link">' + inner + '</div>';
 
     html += '<article class="' + cls.join(' ') + '" data-id="' + id + '">'
+          + body
           + '<button class="card-check" type="button" aria-label="読んだ" aria-pressed="' + isRead + '">' + CHECK_SVG + '</button>'
-          + '<div class="card-body">' + body + '</div>'
           + '<span class="card-go">→</span></article>';
   });
 
