@@ -2250,7 +2250,7 @@
   .future-real strong { color: var(--gold); }
 
   /* ===== ③④ 完走実績バー（PRICE直前） ===== */
-  .proof { max-width: 980px; margin: 0 auto; padding: 0 24px; text-align: center; }
+  .proof { max-width: 980px; margin: 64px auto 0; padding: 0 24px; text-align: center; }
   .proof-head { font-size: clamp(22px, 3.6vw, 34px); font-weight: 900; margin-bottom: 10px; }
   .proof-head em { color: var(--accent); font-style: normal; }
   .proof-sub { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
@@ -2272,6 +2272,22 @@
   }
   .proof-num span { font-size: 17px; margin-left: 2px; }
   .proof-result { font-size: 13px; color: var(--text); margin-top: 8px; font-weight: 700; }
+  .proof-quote {
+    font-size: 12.5px;
+    line-height: 1.85;
+    color: #b0b0b0;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+  }
+  .proof-quote strong { color: var(--text); font-weight: 700; }
+  .proof-note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 22px;
+  }
   .proof-listen {
     display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
     padding: 14px 22px; border-radius: 12px;
@@ -3719,54 +3735,6 @@
 
 <div class="divider"></div>
 
-<!-- ===== 完走実績（PRICE直前） ===== -->
-<section class="proof reveal">
-  <h2 class="proof-head">DTM歴は、<em>関係なかった。</em></h2>
-  <p class="proof-sub">経験年数もDAWもバラバラ。共通しているのは、順番どおりに進めたことだけ。</p>
-
-  <div class="proof-grid">
-    <div class="proof-card">
-      <img src="ジジさんアイコン.jpg" alt="ジジさん">
-      <div class="proof-card-body">
-        <p class="proof-name">ジジさん</p>
-        <p class="proof-before">DTM歴1年未満 ・ FL Studio</p>
-        <p class="proof-num">3<span>ヶ月</span></p>
-        <p class="proof-result">で1曲完成</p>
-      </div>
-    </div>
-    <div class="proof-card">
-      <img src="yasu-icon.png" alt="やすさん">
-      <div class="proof-card-body">
-        <p class="proof-name">やすさん</p>
-        <p class="proof-before">DTM歴3〜5年 ・ Ableton Live</p>
-        <p class="proof-num">2<span>週間</span></p>
-        <p class="proof-result">で1曲完成</p>
-      </div>
-    </div>
-    <div class="proof-card">
-      <img src="eternalfield-icon.jpg" alt="Eternal Fieldさん">
-      <div class="proof-card-body">
-        <p class="proof-name">Eternal Fieldさん</p>
-        <p class="proof-before">DTM歴3年 ・ Ableton Live</p>
-        <p class="proof-num">3<span>ヶ月</span></p>
-        <p class="proof-result">で2曲リリース</p>
-      </div>
-    </div>
-  </div>
-
-  <a class="proof-listen" href="https://linkco.re/U2y3V0M5" target="_blank" rel="noopener">
-    <span class="proof-listen-ico" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
-    </span>
-    <span class="proof-listen-txt">
-      <span class="proof-listen-lead">RESULT</span>
-      <span class="proof-listen-main">受講生が完成させた曲を聴いてみる →</span>
-    </span>
-  </a>
-</section>
-
-<div class="divider"></div>
-
 <!-- ===== PRICE ===== -->
 <div class="price-section" id="price">
   <div class="price-bg"></div>
@@ -3864,6 +3832,56 @@
     </div>
 
     <p class="price-swipe-hint">← 横にスライドして3プランを比較 →</p>
+
+    <!-- ===== 受講生のリアルな変化（価格の直後）===== -->
+    <section class="proof reveal">
+      <h2 class="proof-head">DTM歴は、<em>関係なかった。</em></h2>
+      <p class="proof-sub">経験年数もDAWもバラバラ。共通しているのは、順番どおりに進めたことだけ。</p>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <img src="ジジさんアイコン.jpg" alt="ジジさん">
+          <div class="proof-card-body">
+            <p class="proof-name">ジジさん</p>
+            <p class="proof-before">DTM歴1年未満 ・ FL Studio</p>
+            <p class="proof-num">3<span>ヶ月</span></p>
+            <p class="proof-result">で1曲完成</p>
+            <p class="proof-quote">「まず何をするのか、曲を最後まで作り上げるには何が必要なのかを教えてもらいました。<strong>DTMの先生でもあり、優秀なモチベーターでもあった。</strong>」</p>
+          </div>
+        </div>
+        <div class="proof-card">
+          <img src="yasu-icon.png" alt="やすさん">
+          <div class="proof-card-body">
+            <p class="proof-name">やすさん</p>
+            <p class="proof-before">DTM歴3〜5年 ・ Ableton Live</p>
+            <p class="proof-num">2<span>週間</span></p>
+            <p class="proof-result">で1曲完成</p>
+            <p class="proof-quote">「購入前は<strong>曲の製作の仕方がまったく分からない状態</strong>でした。今は毎日、曲作りに夢中になっています。」</p>
+          </div>
+        </div>
+        <div class="proof-card">
+          <img src="eternalfield-icon.jpg" alt="Eternal Fieldさん">
+          <div class="proof-card-body">
+            <p class="proof-name">Eternal Fieldさん</p>
+            <p class="proof-before">DTM歴3年 ・ Ableton Live</p>
+            <p class="proof-num">3<span>ヶ月</span></p>
+            <p class="proof-result">で2曲リリース</p>
+            <p class="proof-quote">「購入前は、<strong>なかなか曲作りが進まなかった</strong>。<strong>この3ヶ月で作った2曲は宝物です。</strong>」</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="proof-listen" href="https://linkco.re/U2y3V0M5" target="_blank" rel="noopener">
+        <span class="proof-listen-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
+        </span>
+        <span class="proof-listen-txt">
+          <span class="proof-listen-lead">RESULT</span>
+          <span class="proof-listen-main">受講生が完成させた曲を聴いてみる →</span>
+        </span>
+      </a>
+      <p class="proof-note">※「トリケラテクノ ロードマップ」受講生の声です。個人の感想・成果例であり、誰にでも同じ結果を保証するものではありません。</p>
+    </section>
 
     <!-- カード下：3ブロック -->
     <div class="post-price-grid reveal">
