@@ -1482,22 +1482,51 @@
     color: var(--muted);
     line-height: 1.5;
   }
-  .price-compare-table td:last-child {
+  /* 3列構成：選択肢 / 3ヶ月の費用 / 1曲は完成するか
+     最終列は文章なので nowrap を外して折り返させる */
+  .price-compare-table thead th {
+    padding: 0 12px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-weight: 400;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .price-compare-table thead th:nth-child(2) { text-align: right; white-space: nowrap; }
+  .price-compare-table td:nth-child(2) {
     text-align: right;
     font-weight: 600;
     white-space: nowrap;
     color: rgba(255,255,255,0.5);
   }
+  .price-compare-table td:last-child {
+    font-size: 12.5px;
+    line-height: 1.7;
+    padding-left: 18px;
+  }
   .price-compare-table tr.highlight td {
     color: var(--text);
     font-weight: 700;
   }
-  .price-compare-table tr.highlight td:last-child {
-    color: var(--accent);
+  .price-compare-table tr.highlight td:nth-child(2) {
+    color: var(--gold);
     font-size: 15px;
   }
+  .price-compare-table tr.highlight td:last-child {
+    color: var(--gold);
+    font-size: 12.5px;
+  }
+  .price-compare-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-top: 18px;
+    text-align: center;
+  }
+  .price-compare-note strong { color: var(--text); }
   .price-compare-table tr.highlight {
-    background: rgba(0,200,255,0.04);
+    background: rgba(245,197,24,0.05);
     border-radius: 4px;
   }
 
@@ -3827,23 +3856,41 @@
     <!-- カード下：3ブロック -->
     <div class="post-price-grid reveal">
 
-      <!-- ① 比較表 -->
+      <!-- ① 比較表：軸は「安さ」ではなく「1曲が完成するか」 -->
       <div class="post-price-block" style="text-align:center">
-        <p class="post-price-block-title">他の選択肢と比べると</p>
+        <p class="post-price-block-title">1曲完成までの、現実的な選択肢</p>
         <table class="price-compare-table">
-          <tr>
-            <td>音楽スクール（月謝制）</td>
-            <td>月9,900円〜 × 3ヶ月<br><strong>約30,000円〜</strong></td>
-          </tr>
-          <tr>
-            <td>マンツーマンレッスン<br><span style="font-size:11px; color:var(--muted);">週1回 × 3ヶ月</span></td>
-            <td><strong>約60,000〜84,000円</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td>このコース<br><span style="font-size:11px; opacity:0.7;">サポート込み・買い切り</span></td>
-            <td>¥19,800</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>選択肢</th>
+              <th>3ヶ月でかかる費用</th>
+              <th>1曲は完成するか</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>独学<br><span style="font-size:11px; color:var(--muted);">YouTube・無料記事</span></td>
+              <td><strong>¥0</strong></td>
+              <td>私は<strong style="color:rgba(255,255,255,0.75);">2年かかっても完成しなかった</strong></td>
+            </tr>
+            <tr>
+              <td>音楽スクール<br><span style="font-size:11px; color:var(--muted);">集団・月謝制</span></td>
+              <td><strong>約30,000円〜</strong></td>
+              <td>教わるのは操作。完成は自力</td>
+            </tr>
+            <tr>
+              <td>マンツーマンレッスン<br><span style="font-size:11px; color:var(--muted);">週1回 × 3ヶ月</span></td>
+              <td><strong>約60,000〜84,000円</strong></td>
+              <td>講師しだい・教材は残らない</td>
+            </tr>
+            <tr class="highlight">
+              <td>このコース<br><span style="font-size:11px; opacity:0.7;">サポート込み・買い切り</span></td>
+              <td>¥19,800</td>
+              <td>最短<strong>2週間</strong>で完成した人がいる</td>
+            </tr>
+          </tbody>
         </table>
+        <p class="price-compare-note">3ヶ月で割れば月6,600円ほど。しかも<strong>428ページの教材は、サポートが終わっても永久に残ります。</strong></p>
       </div>
 
       <!-- ② 返金保証（中央） -->
