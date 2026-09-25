@@ -142,6 +142,28 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 .sample-ref-case em{font-style:normal;color:var(--accent)}
 .sample-ref-file{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:400;line-height:1.6;word-break:break-all}
 
+/* YouTubeサムネ（クリックでモーダル再生） */
+.yt-thumb{position:relative;display:block;width:100%;padding:0;margin:0 0 14px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#000;cursor:pointer;aspect-ratio:16/9;transition:border-color .2s}
+.yt-thumb:hover{border-color:var(--accent)}
+.yt-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease,opacity .2s}
+.yt-thumb:hover img{transform:scale(1.04);opacity:.85}
+.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:rgba(0,0,0,.55);border:2px solid rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.yt-play::before{content:"";display:block;width:0;height:0;margin-left:5px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent #fff}
+.yt-thumb:hover .yt-play{background:var(--accent);border-color:var(--accent)}
+.yt-thumb:hover .yt-play::before{border-left-color:var(--black)}
+
+/* YouTube モーダル */
+.yt-modal{position:fixed;inset:0;z-index:12000;display:flex;align-items:center;justify-content:center;padding:24px}
+.yt-modal[hidden]{display:none!important}
+.yt-modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(3px)}
+.yt-modal-inner{position:relative;width:100%;max-width:960px}
+.yt-modal-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.yt-modal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-modal-title{margin-top:12px;font-size:13px;color:var(--muted);text-align:center;line-height:1.6}
+.yt-modal-close{position:absolute;top:-44px;right:0;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--panel);color:var(--white);font-size:18px;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
+.yt-modal-close:hover{border-color:var(--accent);color:var(--accent)}
+body.yt-open{overflow:hidden}
+
 /* Checklist */
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin:20px 0}
 .check-item{position:relative;padding:6px 0 6px 26px;font-size:13.5px;color:#cfcfcf;line-height:1.6}
@@ -625,12 +647,16 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
 
     <div class="sample-ref">
       <div class="sample-ref-case">CASE <em>01</em></div>
+      <button type="button" class="yt-thumb" data-yt="n1_X-GkwkC8" data-yt-title="Argy &amp; 7 SKIES ── Murda" aria-label="Argy &amp; 7 SKIES ── Murda を再生">
+        <img src="https://i.ytimg.com/vi/n1_X-GkwkC8/maxresdefault.jpg" data-yt-fallback="https://i.ytimg.com/vi/n1_X-GkwkC8/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play" aria-hidden="true"></span>
+      </button>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
           <div class="sample-ref-kind">楽曲</div>
           <div class="sample-ref-name">Argy &amp; 7 SKIES ── Murda</div>
         </div>
-        <a href="https://youtu.be/n1_X-GkwkC8?si=GoJONgf16YjDWk_O" class="sample-ref-link" target="_blank" rel="noopener">楽曲を聴く</a>
+        <a href="https://youtu.be/n1_X-GkwkC8?si=GoJONgf16YjDWk_O" class="sample-ref-link" target="_blank" rel="noopener">YouTubeで開く</a>
       </div>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
@@ -642,12 +668,16 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     </div>
     <div class="sample-ref">
       <div class="sample-ref-case">CASE <em>02</em></div>
+      <button type="button" class="yt-thumb" data-yt="R69J7gj8nnk" data-yt-title="Argy, ØSHER, Ovadia ── Feel Alive" aria-label="Argy, ØSHER, Ovadia ── Feel Alive を再生">
+        <img src="https://i.ytimg.com/vi/R69J7gj8nnk/maxresdefault.jpg" data-yt-fallback="https://i.ytimg.com/vi/R69J7gj8nnk/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play" aria-hidden="true"></span>
+      </button>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
           <div class="sample-ref-kind">楽曲</div>
           <div class="sample-ref-name">Argy, ØSHER, Ovadia ── Feel Alive</div>
         </div>
-        <a href="https://youtu.be/R69J7gj8nnk?si=5wixy5e8nK4chupV" class="sample-ref-link" target="_blank" rel="noopener">楽曲を聴く</a>
+        <a href="https://youtu.be/R69J7gj8nnk?si=5wixy5e8nK4chupV" class="sample-ref-link" target="_blank" rel="noopener">YouTubeで開く</a>
       </div>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
@@ -659,12 +689,16 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     </div>
     <div class="sample-ref">
       <div class="sample-ref-case">CASE <em>03</em></div>
+      <button type="button" class="yt-thumb" data-yt="kqWHiViHrgY" data-yt-title="Argy ── Tataki" aria-label="Argy ── Tataki を再生">
+        <img src="https://i.ytimg.com/vi/kqWHiViHrgY/maxresdefault.jpg" data-yt-fallback="https://i.ytimg.com/vi/kqWHiViHrgY/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play" aria-hidden="true"></span>
+      </button>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
           <div class="sample-ref-kind">楽曲</div>
           <div class="sample-ref-name">Argy ── Tataki</div>
         </div>
-        <a href="https://youtu.be/kqWHiViHrgY?si=WkBOFRWaVKRlCYhI" class="sample-ref-link" target="_blank" rel="noopener">楽曲を聴く</a>
+        <a href="https://youtu.be/kqWHiViHrgY?si=WkBOFRWaVKRlCYhI" class="sample-ref-link" target="_blank" rel="noopener">YouTubeで開く</a>
       </div>
       <div class="sample-ref-row">
         <div class="sample-ref-text">
@@ -1064,6 +1098,16 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
      合言葉: ミドル（仮）
      変更手順: python3 -c "import hashlib; print(hashlib.sha256('新しい合言葉'.encode()).hexdigest())"
 -->
+<!-- ===== YOUTUBE MODAL ===== -->
+<div class="yt-modal" id="ytModal" hidden role="dialog" aria-modal="true" aria-label="楽曲プレーヤー">
+  <div class="yt-modal-bg" data-yt-close></div>
+  <div class="yt-modal-inner">
+    <button type="button" class="yt-modal-close" data-yt-close aria-label="閉じる">&times;</button>
+    <div class="yt-modal-frame" id="ytModalFrame"></div>
+    <p class="yt-modal-title" id="ytModalTitle"></p>
+  </div>
+</div>
+
 <script>
 (function(){
   'use strict';
@@ -1135,9 +1179,49 @@ body.is-locked>*:not(.password-gate){visibility:hidden}
     });
   }
 
+  // ===== YOUTUBE MODAL =====
+  function initYouTube(){
+    const modal = document.getElementById('ytModal');
+    const frame = document.getElementById('ytModalFrame');
+    const label = document.getElementById('ytModalTitle');
+    if(!modal || !frame) return;
+
+    document.querySelectorAll('.yt-thumb img[data-yt-fallback]').forEach(img=>{
+      img.addEventListener('error',function(){
+        const fb = this.dataset.ytFallback;
+        if(fb && this.src !== fb){ this.src = fb; }
+      });
+    });
+
+    function open(id, title){
+      frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+      label.textContent = title || '';
+      modal.hidden = false;
+      document.body.classList.add('yt-open');
+    }
+    function close(){
+      modal.hidden = true;
+      frame.innerHTML = '';
+      label.textContent = '';
+      document.body.classList.remove('yt-open');
+    }
+
+    document.querySelectorAll('.yt-thumb').forEach(btn=>{
+      btn.addEventListener('click',()=>open(btn.dataset.yt, btn.dataset.ytTitle));
+    });
+    modal.querySelectorAll('[data-yt-close]').forEach(el=>{
+      el.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', e=>{
+      if(e.key === 'Escape' && !modal.hidden) close();
+    });
+  }
+
   document.addEventListener('DOMContentLoaded',()=>{
     initGate();
     initTabs();
+    initYouTube();
   });
 })();
 </script>
