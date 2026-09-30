@@ -14,7 +14,7 @@
 
 window.TRICERA_SLOTS = {
   remaining: 2,     // ← 今月の残り枠。ここだけ変更する
-  capacity: 3,      // 1ヶ月あたりの受付上限
+  capacity: 2,      // 1ヶ月あたりの受付上限
   month: '10月'      // 表示する受付月。null にすると今日の月を自動表示
 };
 
