@@ -515,6 +515,49 @@
   .why-reason p strong { color: var(--text); font-weight: 700; }
   .why-reason .ev { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 13px; color: var(--gold); }
   .why-reason .ev .note { color: var(--muted); font-size: 11px; }
+
+  /* ===== REAL VOICE（購入者から実際に届いたメッセージ） ===== */
+  .rv-wrap { max-width: 720px; margin: 0 auto; }
+  .rv-hit {
+    display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+    width: max-content; max-width: 100%; margin: 0 auto 26px; padding: 10px 20px;
+    border: 1px solid rgba(245,197,24,0.4); background: rgba(245,197,24,0.07);
+    border-radius: 999px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; line-height: 1.5;
+  }
+  .rv-hit .rv-arrow { color: var(--gold); }
+  .rv-hit .rv-after { color: var(--gold); font-weight: 700; }
+  .rv-msg { display: flex; gap: 14px; align-items: flex-start; }
+  .rv-ava {
+    flex: none; width: 46px; height: 46px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--panel2); border: 2px solid rgba(0,200,255,0.35);
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--accent); line-height: 1;
+  }
+  .rv-bubble {
+    position: relative; flex: 1 1 auto; min-width: 0;
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 4px 14px 14px 14px; padding: 24px 26px;
+  }
+  .rv-bubble::before {
+    content: ''; position: absolute; top: 15px; left: -8px; width: 0; height: 0;
+    border-top: 8px solid transparent; border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--border);
+  }
+  .rv-text { margin: 0; font-size: 14.5px; line-height: 2.05; color: var(--text); }
+  .rv-text strong { color: var(--white); font-weight: 700; }
+  .rv-from {
+    margin: 18px 0 0; padding-top: 15px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); letter-spacing: 0.03em;
+  }
+  .rv-from strong { color: var(--text); font-weight: 700; font-size: 13px; }
+  .rv-disc { text-align: center; font-size: 11px; color: #666; margin: 24px 0 0; line-height: 1.85; }
+  @media (max-width: 560px) {
+    .rv-msg { gap: 10px; }
+    .rv-ava { width: 38px; height: 38px; font-size: 18px; }
+    .rv-bubble { padding: 19px 18px; border-radius: 4px 12px 12px 12px; }
+    .rv-text { font-size: 13.5px; line-height: 1.98; }
+    .rv-hit { font-size: 12px; padding: 9px 16px; gap: 8px; }
+  }
   @media (max-width: 560px) {
     .why-stats { grid-template-columns: repeat(2, 1fr); }
   }
@@ -1067,6 +1110,35 @@
 
 <div class="divider"></div>
 
+<!-- ========== 9.5 REAL VOICE（購入者から届いたメッセージ） ========== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label center reveal">REAL VOICE</div>
+    <h2 class="h-jp reveal"><span class="sale-only">¥500</span><span class="normal-only">¥1,980</span>で、ここまで<em>変わった人</em>がいます。</h2>
+    <div class="rv-wrap reveal">
+      <p class="rv-hit">
+        <span>今まで何度も挫折していた</span>
+        <span class="rv-arrow">→</span>
+        <span class="rv-after">初めて8小節が完成</span>
+      </p>
+      <div class="rv-msg">
+        <span class="rv-ava" aria-hidden="true">M</span>
+        <div class="rv-bubble">
+          <p class="rv-text">早速、勉強させていただきます。<br>
+          前回の１９８０円の講座を通して<strong>初めて８小節を作ることができました！</strong><br>
+          <strong>今まで何度も挫折していた</strong>のですが、説明がわかりやすく壁を乗り越えられました。<br>
+          引き続き１曲完成を目指して講座を受けさせていただきます。<br>
+          noteの記事も楽しみにしております。</p>
+          <p class="rv-from">— <strong>Mさん</strong>／「DTMの地図」購入者</p>
+        </div>
+      </div>
+      <p class="rv-disc">※ 購入者の方から実際に届いたメッセージを、原文のまま掲載しています。個人の感想・成果例であり、誰にでも同じ結果を保証するものではありません。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ========== 8.5 選ばれる理由 ========== -->
 <section class="section">
   <div class="wrap">
@@ -1259,7 +1331,7 @@
 <section class="section">
   <div class="wrap">
     <div class="section-label center reveal">VOICES</div>
-    <h2 class="h-jp reveal">トリケラテクノの教材で学んだ<br><em>受講生のリアルな変化</em></h2>
+    <h2 class="h-jp reveal">ロードマップを完走した<br><em>受講生のリアルな変化</em></h2>
     <div class="voices-grid reveal">
       <div class="voice-item">
         <img class="voice-ava" src="ジジさんアイコン.jpg" alt="ジジさん">
