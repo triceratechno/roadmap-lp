@@ -1348,6 +1348,16 @@
   }
   .talk-row { display: flex; gap: 9px; align-items: flex-end; }
   .talk-row--me { flex-direction: row-reverse; }
+  /* 添付カード＋吹き出しを「1人の1発言」としてまとめるラッパー。
+     .talk-attach を .talk-row の直下に置くと、吹き出しと並ぶflexアイテムに
+     なって幅を奪い合い、スマホでは中の文字が1文字ずつ縦に潰れる。 */
+  .talk-stack {
+    min-width: 0; max-width: 78%;
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+  .talk-row--me .talk-stack { align-items: flex-end; }
+  .talk-stack .talk-attach,
+  .talk-stack .talk-bubble { max-width: 100%; }
   .talk-ico {
     width: 30px; height: 30px; border-radius: 50%; flex: none; overflow: hidden;
     background: #223; display: flex; align-items: center; justify-content: center;
@@ -1366,7 +1376,11 @@
   .talk-bubble b { font-weight: 700; }
   .talk-name { font-size: 10.5px; color: #6f8a7c; margin-bottom: 5px; letter-spacing: 0.04em; }
   .talk-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.8; }
-  @media (max-width: 560px) { .talk-bubble { max-width: 84%; font-size: 12.5px; } }
+  @media (max-width: 560px) {
+    .talk-bubble { max-width: 84%; font-size: 12.5px; }
+    .talk-stack { max-width: 84%; }
+    .talk-stack .talk-bubble { max-width: 100%; }
+  }
 
   /* ===== SUPPORT ===== */
   .support-box {
@@ -4290,7 +4304,7 @@
           <span class="talk-ico"><img src="eternalfield-icon.jpg" alt="Eternal Fieldさん"></span>
           <div>
             <p class="talk-name">Eternal Fieldさん（DTM歴3年）</p>
-          <div class="talk-attach">
+            <div class="talk-attach">
               <span class="talk-attach-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm0 7V3.5L19.5 9H14z"/></svg></span>
               <span class="talk-attach-txt"><span class="talk-attach-name">Trance_Project.zip</span><span class="talk-attach-sub">ギガファイル便</span></span>
             </div>
@@ -4306,11 +4320,13 @@
         </div>
         <div class="talk-row talk-row--me">
           <span class="talk-ico"><img src="tricera-icon.jpg" alt="トリケラテクノ"></span>
-                    <div class="talk-attach">
+          <div class="talk-stack">
+            <div class="talk-attach">
               <span class="talk-attach-ico"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
               <span class="talk-attach-txt"><span class="talk-attach-name">フィードバック動画</span><span class="talk-attach-sub">YouTube ・ 限定公開</span></span>
             </div>
-          <p class="talk-bubble">動画では、①送っていただいた部分のフィードバック ②ドラムスのグルーブ感をさらに上げるためのアイデア ③ボーカルについて の3点をお話しさせていただきました！</p>
+            <p class="talk-bubble">動画では、①送っていただいた部分のフィードバック ②ドラムスのグルーブ感をさらに上げるためのアイデア ③ボーカルについて の3点をお話しさせていただきました！</p>
+          </div>
         </div>
       </div>
       <p class="talk-note">送った曲は、<strong style="color:var(--gold);">実際に開いて数値まで確認します</strong>。</p>
@@ -4326,7 +4342,7 @@
           <span class="talk-ico"><img src="eternalfield-icon.jpg" alt="Eternal Fieldさん"></span>
           <div>
             <p class="talk-name">Eternal Fieldさん（DTM歴3年）</p>
-          <div class="talk-attach">
+            <div class="talk-attach">
               <span class="talk-attach-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm0 7V3.5L19.5 9H14z"/></svg></span>
               <span class="talk-attach-txt"><span class="talk-attach-name">Trance_STEP7.zip</span><span class="talk-attach-sub">ギガファイル便</span></span>
             </div>
