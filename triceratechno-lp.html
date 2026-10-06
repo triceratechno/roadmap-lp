@@ -1266,7 +1266,7 @@
   /* D: 約束を数字で示すバッジ行 */
   .sup-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; }
   .sup-badge {
-    display: inline-flex; align-items: center; gap: 9px;
+    display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
     padding: 8px 18px; border-radius: 999px; line-height: 1;
     border: 1px solid rgba(245,197,24,0.4); background: rgba(245,197,24,0.07);
     font-size: 13px; color: var(--text); letter-spacing: 0.04em;
@@ -2315,7 +2315,11 @@
 
   /* ===== ⑤ PAINの各悩みに実例チップ ===== */
   .pain-proof {
-    display: flex; width: fit-content; align-items: center; gap: 7px; margin-top: 10px;
+    /* display:flex にすると素のテキストと <b> がそれぞれ独立した
+       （匿名）flexアイテムになり、スマホ幅で1片ずつ別々に折り返されて
+       縦積みに崩れる。block + fit-content なら「独立した行」は保ちつつ
+       中身は普通のインラインテキストとして自然に折り返す。 */
+    display: block; width: fit-content; max-width: 100%; margin-top: 10px;
     padding: 5px 11px; border-radius: 999px;
     background: rgba(0,200,255,0.07); border: 1px solid rgba(0,200,255,0.3);
     font-size: 11.5px; color: var(--text); letter-spacing: 0.02em; line-height: 1.5;
@@ -2334,7 +2338,10 @@
   .cta-stack .buy-btn { margin-top: 0; }
 
   .buyers {
+    /* inline-flex なので中の素テキストも匿名flexアイテムになる。
+       短い文言なので nowrap で1行に固定し、狭幅での縦崩れを防ぐ */
     display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    white-space: nowrap;
     margin-top: 16px; padding: 8px 18px; border-radius: 999px;
     border: 1px solid rgba(0,200,255,0.34); background: rgba(0,200,255,0.07);
     font-size: 13px; color: var(--text); letter-spacing: 0.04em; line-height: 1;
@@ -3229,14 +3236,62 @@
       grid-template-columns: 1fr;
     }
 
-    /* Tables: horizontal scroll within the table instead of breaking page
-       layout. Affects .price-compare-table (td:last-child has nowrap which
-       can cause overflow on narrow screens). */
+    /* Tables: 3列を狭幅に押し込むと各セルが1〜2文字ずつで折り返されて
+       読めなくなる。横スクロールにしても気づかれないので、スマホでは
+       1行=1カードの縦積みに組み替える（見出しは ::before でラベル化）。 */
     table {
       display: block;
       max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    }
+
+    .price-compare-table thead,
+    .ba-table thead { display: none; }
+    .price-compare-table tbody,
+    .ba-table tbody { display: block; }
+    .price-compare-table tbody tr,
+    .ba-table tbody tr { display: block; padding: 14px 14px; }
+    .price-compare-table td,
+    .ba-table td {
+      display: block;
+      width: auto !important;
+      padding: 0;
+      text-align: left !important;
+      white-space: normal !important;
+    }
+
+    /* 比較表：選択肢名 → 費用 → 完成するか */
+    .price-compare-table td:first-child {
+      font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.5;
+    }
+    .price-compare-table td:nth-child(2) { margin-top: 8px; font-size: 15px; }
+    .price-compare-table td:nth-child(2)::before {
+      content: '3ヶ月でかかる費用：';
+      font-size: 10.5px; font-weight: 400; letter-spacing: 0.08em;
+      color: var(--muted); margin-right: 4px;
+    }
+    .price-compare-table td:last-child { margin-top: 6px; padding-left: 0; }
+    .price-compare-table td:last-child::before {
+      content: '1曲は完成するか';
+      display: block; font-size: 10.5px; letter-spacing: 0.08em;
+      color: var(--muted); margin-bottom: 2px;
+    }
+
+    /* Before / After 表：項目名 → 受講前 → 3ヶ月後 */
+    .ba-table td:first-child {
+      font-size: 12px !important; letter-spacing: 0.1em;
+      color: var(--white); font-weight: 700;
+    }
+    .ba-table td:nth-child(2),
+    .ba-table td:nth-child(3) { margin-top: 7px; }
+    .ba-table td:nth-child(2)::before {
+      content: '受講前';
+      display: block; font-size: 10.5px; letter-spacing: 0.08em;
+      color: var(--muted); margin-bottom: 1px;
+    }
+    .ba-table td:nth-child(3)::before {
+      content: '3ヶ月後 ✦';
+      display: block; font-size: 10.5px; letter-spacing: 0.08em;
+      color: var(--gold); margin-bottom: 1px;
     }
 
     /* Inline-style fixed widths (e.g. jacket cards' max-width:180px in WHO
