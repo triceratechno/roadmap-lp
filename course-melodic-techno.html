@@ -11,7 +11,7 @@
        購入CTA   … NOTE_COURSE_URL（課題曲チュートリアルの有料記事URL。全「アクセスする」ボタン共通）
        トレーラー … TRAILER_URL（39秒トレーラー動画のYouTube URL。hero-video の href）
        OGP画像   … course-melodic-ogp.jpg（専用サムネ未作成。暫定でヒーローサムネを使用）
-       価格       … ¥5,980（note有料記事）
+       価格       … 通常¥6,980 ／ ローンチセール¥4,980（12/6まで・note有料記事）
 =========================================================== -->
 
 <!-- OGP / Twitter Card -->
@@ -212,8 +212,16 @@
   .buy-mockup img { position: relative; width: 100%; display: block; pointer-events: none; user-select: none; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.75)) drop-shadow(0 0 26px rgba(0,200,255,0.28)); }
   .buy-brand { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 0.1em; color: var(--white); line-height: 1.1; }
   .buy-name { font-size: 13px; letter-spacing: 0.06em; color: var(--muted); margin-top: 4px; }
-  .buy-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 74px; line-height: 1; margin: 8px 0 4px; letter-spacing: 0.02em; }
+  .buy-was { font-family: 'Bebas Neue', sans-serif; color: var(--muted); font-size: 30px; line-height: 1; margin: 12px 0 0; letter-spacing: 0.02em; text-decoration: line-through; text-decoration-thickness: 2px; }
+  .buy-was .yen { font-size: 18px; vertical-align: 4px; }
+  .buy-tag { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 74px; line-height: 1; margin: 2px 0 4px; letter-spacing: 0.02em; }
   .buy-tag .yen { font-size: 34px; vertical-align: 8px; }
+  .buy-off { display: inline-block; vertical-align: 16px; margin-left: 12px; background: var(--gold); color: var(--black); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; padding: 5px 12px; border-radius: 999px; }
+  .buy-sale { display: inline-block; background: var(--gold); color: var(--black); font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; padding: 7px 18px; border-radius: 4px; margin: 2px 0 6px; }
+  @media (max-width: 520px) {
+    .buy-tag { font-size: 58px; }
+    .buy-off { display: block; margin: 10px auto 0; vertical-align: baseline; width: fit-content; }
+  }
   .buy-tax { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
   .buy-list { list-style: none; text-align: left; max-width: 340px; margin: 0 auto 28px; }
   .buy-list li { position: relative; padding: 11px 0 11px 30px; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--text); }
@@ -499,7 +507,9 @@
       <span class="buy-mockup"><img src="mockup-new-world.png" alt="NEW WORLD パッケージ"></span>
       <p class="buy-brand">NEW WORLD</p>
       <p class="buy-name">メロディックテクノ 0→1曲完成コース</p>
-      <p class="buy-tag"><span class="yen">¥</span>5,980</p>
+      <p class="buy-was"><span class="yen">¥</span>6,980</p>
+      <p class="buy-tag"><span class="yen">¥</span>4,980<span class="buy-off">29%OFF</span></p>
+      <p class="buy-sale">ローンチセール ── 12/6まで</p>
       <p class="buy-tax">税込・買い切り</p>
       <ul class="buy-list">
         <li>1曲を通しで作る解説動画</li>
